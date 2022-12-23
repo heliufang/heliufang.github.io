@@ -1,0 +1,752 @@
+<html>
+<head>
+	<title>贺刘芳的搬砖日记-文章页</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../../../css/common.css"/>
+	<link rel="stylesheet" href="../../../../../css/post.css"/>
+	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css"/>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
+</head>
+<body>
+	<!-- 导航模板 -->
+	<!-- 导航 -->
+<div class="qy-nav">
+  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
+    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-chart-screen"></i> 首页</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
+      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    </li>
+  </ul>
+</div>
+<!-- 搜索弹框 -->
+<div id="searchShade" class="searchShade">
+  <div id="searchLayer">
+    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <div id="searchResult">
+      <!-- <ul>
+        <li>java笔记
+        <li>
+      </ul> -->
+    </div>
+
+  </div>
+</div>
+<script>
+  window.onload = function () {
+    //下拉菜单
+    layui.use('dropdown', function () {
+      var dropdown = layui.dropdown
+      dropdown.render({
+        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
+        data: [
+          {
+            title: '首页'
+            , id: 11
+            , href: '/'
+            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
+          },
+          {
+            title: '关于'
+            , id: 22
+            , href: '/about'
+            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
+          },
+          {
+            title: '搜索'
+            , id: 33
+            , href: '#'
+            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
+          }
+        ],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id'); //表格列表的预埋数据
+            if(data.id == 33){
+              $("#searchShade").show()
+            }
+        }
+      })
+
+    })
+
+    //点击搜索
+    $("#searchBtn").click(function () {
+      $("#searchShade").show()
+    })
+
+    //关闭弹框
+    $("#closeBtn").click(function () {
+      $("#searchShade").hide()
+    })
+
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+      $.ajax({
+        url: path,
+        dataType: "json",
+        success: function (datas) {
+          // console.log('datas :>> ', datas);
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function () {
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var data_title = data.title.trim().toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var first_occur = -1;
+              if (data_title != '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  if (index_title < 0) {
+                    isMatch = false;
+                  }
+                });
+              }
+              // show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            $resultContent.innerHTML = str;
+          });
+        }
+      });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+  }
+
+
+</script>
+	<!-- 中间内容区域 -->
+	<div class="layui-container  center" id="top">
+		<div class="layui-row layui-col-space20">
+			<div class="layui-col-md3 hide-xs hide-sm" >
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-speaker"></i> 公告</div>
+					<div class="layui-card-body">
+						<!-- 个人信息模块 -->
+						<div class="userinfo">
+							<img src="/head.png">
+							<div class="name">淡泊明志，宁静致远</div>
+							<div class="other">
+								<div class="item">
+									<p class="num">
+										39
+									</p>
+									<p class="title">文章</p>
+								</div>
+								<div class="item">
+									<p class="num">
+										8
+									</p>
+									<p class="title">分类</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i class="layui-icon layui-icon-template-1"></i> 分类</div>
+					<div class="layui-card-body">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</div>
+				<!-- 归档 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-date"></i> 归档</div>
+					<div class="layui-card-body">
+						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/12/">2022 十二月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/12/">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
+					</div>
+				</div>
+				
+				<div style="height: 90%;width: 267px;" id="toc-area"  class="layui-card">
+				  <div class="layui-card-header">本文目录</div>
+				  <div class="layui-card-body" style="overflow:auto;height: calc(100% - 60px - 50px);">
+				   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-bootstrap-table%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 bootstrap-table插件介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8B%E8%BD%BD"><span class="toc-text">2 下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">3 入门案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%90%AD%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="toc-text">3.1 搭建工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">3.2 编写测试代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%89%8D%E7%AB%AF%E5%88%86%E9%A1%B5%E5%AE%9E%E7%8E%B0"><span class="toc-text">4 前端分页实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="toc-text">5 工具栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%90%8E%E7%AB%AF%E5%88%86%E9%A1%B5"><span class="toc-text">6 后端分页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+				  </div>
+				  <div class="readprocess">
+					  <div>已阅读：<span id="progressTxt"></span>%</div>
+					  <div class="layui-progress" lay-filter="demo">
+						<div class="layui-progress-bar" lay-percent="10%"></div>
+					  </div>
+				  </div>
+				</div>
+				
+			</div>
+			<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
+				
+				<div class="article-title">
+					<h1>bootstrap-table插件笔记</h1>
+					<p>
+						<i class="layui-icon layui-icon-time"></i>发表于：2021-08-01
+						|
+						<i class="layui-icon layui-icon-form"></i>字数统计：3.3k
+					</p>
+				</div>
+				
+					
+				<!-- 文章内容 -->
+				<div id="article">
+				    <h2 id="1-bootstrap-table插件介绍"><a href="#1-bootstrap-table插件介绍" class="headerlink" title="1 bootstrap-table插件介绍"></a>1 bootstrap-table插件介绍</h2><p>一个基于bootstrap的表格渲染插件,可以极大的简化表格的渲染操作</p>
+<h2 id="2-下载"><a href="#2-下载" class="headerlink" title="2 下载"></a>2 下载</h2><p>github：<a target="_blank" rel="noopener" href="https://github.com/wenzhixin/bootstrap-table">https://github.com/wenzhixin/bootstrap-table</a></p>
+<p>中文官网：<a target="_blank" rel="noopener" href="https://www.bootstrap-table.com.cn/">https://www.bootstrap-table.com.cn/</a></p>
+<p>英文官网：<a target="_blank" rel="noopener" href="https://bootstrap-table.com/">https://bootstrap-table.com/</a></p>
+<p>下载后相关的依赖都在dist文件夹下</p>
+<p><img src="/2021/08/01/1426392655180468224/images/image-20210801161820257.png" alt="image-20210801161820257"></p>
+<h2 id="3-入门案例"><a href="#3-入门案例" class="headerlink" title="3 入门案例"></a>3 入门案例</h2><p>请求json数据渲染表格</p>
+<h3 id="3-1-搭建工程"><a href="#3-1-搭建工程" class="headerlink" title="3.1 搭建工程"></a>3.1 搭建工程</h3><p><img src="/2021/08/01/1426392655180468224/images/image-20210801002706695.png" alt="image-20210801002706695"></p>
+<p>其中<code>data.json</code>的数据文件内容如下：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">[</span>
+	<span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;1&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;tom&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sal&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;4000&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sex&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;男&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;18&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;2&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;jerry&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sal&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;2000&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sex&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;女&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;26&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;3&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;heliufang&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sal&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;8000&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sex&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;男&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;25&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;4&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;lucy&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sal&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;2500&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sex&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;女&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;28&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;5&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;linda&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sal&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;1000&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sex&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;女&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;16&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;6&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;jack&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sal&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;2500&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;sex&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;男&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;28&quot;</span><span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">]</span></code></pre>
+
+<p>这个data.json只是在做前端分页的时候使用</p>
+<h3 id="3-2-编写测试代码"><a href="#3-2-编写测试代码" class="headerlink" title="3.2 编写测试代码"></a>3.2 编写测试代码</h3><p>【1.入门案例.html】</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入相关样式表 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap3/css/bootstrap.min.css&quot;</span>/&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap3/css/bootstrap-theme.min.css&quot;</span>/&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table.min.css&quot;</span>/&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 创建表格容器 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;table&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入相关js --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/jquery-1.11.0.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap3/js/bootstrap.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table-zh-CN.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">			<span class="hljs-comment">//通过bootrap-table插件渲染表格</span></span>
+<span class="language-javascript">			$(<span class="hljs-string">&#x27;#table&#x27;</span>).<span class="hljs-title function_">bootstrapTable</span>(&#123;</span>
+<span class="language-javascript">			    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;json/data.json&#x27;</span>,<span class="hljs-comment">//请求的url</span></span>
+<span class="language-javascript">			    <span class="hljs-attr">columns</span>: [&#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;id&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;序号&#x27;</span></span>
+<span class="language-javascript">			    &#125;, &#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;name&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;姓名&#x27;</span></span>
+<span class="language-javascript">			    &#125;, &#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;sal&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;薪水&#x27;</span></span>
+<span class="language-javascript">			    &#125;, &#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;sex&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;性别&#x27;</span></span>
+<span class="language-javascript">			    &#125;,&#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;age&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;年龄&#x27;</span></span>
+<span class="language-javascript">			    &#125;]</span>
+<span class="language-javascript">			&#125;);</span>
+<span class="language-javascript">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<p>测试结果如下：</p>
+<p><img src="/2021/08/01/1426392655180468224/images/image-20210801004401622.png" alt="image-20210801004401622"></p>
+<p>可以看到插件自动帮我们把数据渲染好了,是不是很方便！！！</p>
+<h2 id="4-前端分页实现"><a href="#4-前端分页实现" class="headerlink" title="4 前端分页实现"></a>4 前端分页实现</h2><p>【2.前端分页.html】将【1.入门案例.html】中的渲染的js代码改成如下：</p>
+<pre><code class="hljs js"><span class="hljs-comment">//通过bootrap-table插件渲染表格</span>
+$(<span class="hljs-string">&#x27;#table&#x27;</span>).<span class="hljs-title function_">bootstrapTable</span>(&#123;
+    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;json/data.json&#x27;</span>,
+    <span class="hljs-attr">columns</span>: [&#123;
+        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;id&#x27;</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;序号&#x27;</span>
+    &#125;, &#123;
+        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;name&#x27;</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;姓名&#x27;</span>
+    &#125;, &#123;
+        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;sal&#x27;</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;薪水&#x27;</span>
+    &#125;, &#123;
+        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;sex&#x27;</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;性别&#x27;</span>
+    &#125;,&#123;
+        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;age&#x27;</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;年龄&#x27;</span>
+    &#125;],
+    <span class="hljs-attr">striped</span>: <span class="hljs-literal">false</span>,    <span class="hljs-comment">//是否显示行间隔色</span>
+    <span class="hljs-attr">cache</span>: <span class="hljs-literal">false</span>,     <span class="hljs-comment">//是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）</span>
+    <span class="hljs-attr">pagination</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">//是否显示分页（*）</span>
+    <span class="hljs-attr">sortable</span>: <span class="hljs-literal">true</span>,   <span class="hljs-comment">//是否启用排序</span>
+    <span class="hljs-attr">sortOrder</span>: <span class="hljs-string">&quot;asc&quot;</span>, <span class="hljs-comment">//排序方式</span>
+    <span class="hljs-attr">sidePagination</span>: <span class="hljs-string">&quot;client&quot;</span>,<span class="hljs-comment">//分页方式：client客户端分页，server服务端分页（*）</span>
+    <span class="hljs-attr">pageNumber</span>: <span class="hljs-number">1</span>,<span class="hljs-comment">//初始化加载第一页，默认第一页,并记录</span>
+    <span class="hljs-attr">pageSize</span>: <span class="hljs-number">2</span>,<span class="hljs-comment">//每页的记录行数（*）</span>
+    <span class="hljs-attr">pageList</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>], <span class="hljs-comment">//可供选择的每页的行数（*）</span>
+    <span class="hljs-attr">search</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否显示表格搜索</span>
+    <span class="hljs-attr">strictSearch</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否使用严格搜索模式</span>
+    <span class="hljs-attr">showColumns</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">//是否显示所有的列（选择显示的列）</span>
+    <span class="hljs-attr">showRefresh</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否显示刷新按钮</span>
+    <span class="hljs-attr">minimumCountColumns</span>: <span class="hljs-number">2</span>,<span class="hljs-comment">//最少允许的列数</span>
+    <span class="hljs-attr">clickToSelect</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否启用点击选中行</span>
+    <span class="hljs-comment">//height: 500,//行高，如果没有设置height属性，表格自动根据记录条数设置表格高度</span>
+    <span class="hljs-attr">uniqueId</span>: <span class="hljs-string">&quot;id&quot;</span>,<span class="hljs-comment">//每一行的唯一标识，一般为主键列</span>
+    <span class="hljs-attr">showToggle</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否显示详细视图和列表视图的切换按钮</span>
+    <span class="hljs-attr">cardView</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否显示详细视图</span>
+    <span class="hljs-attr">detailView</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否显示父子表</span>
+&#125;);</code></pre>
+
+<p>效果如下：</p>
+<p><img src="/2021/08/01/1426392655180468224/images/image-20210801010453656.png" alt="image-20210801010453656"></p>
+<h2 id="5-工具栏"><a href="#5-工具栏" class="headerlink" title="5 工具栏"></a>5 工具栏</h2><p>工具栏实现分为两步</p>
+<ul>
+<li><p>准备工具按钮容器</p>
+</li>
+<li><p>bootstrap-table中引用插件</p>
+</li>
+</ul>
+<p>​       加上这个配置即可：toolbar: ‘#toolbar’, &#x2F;&#x2F;工具按钮用哪个容器</p>
+<p>案例【3.工具栏.html】 </p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入相关样式表 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap3/css/bootstrap.min.css&quot;</span>/&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap3/css/bootstrap-theme.min.css&quot;</span>/&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table.min.css&quot;</span>/&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 工具栏容器 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toolbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-left: 5px;&quot;</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-default col-md-4&quot;</span>&gt;</span>新增<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-info col-md-4&quot;</span>&gt;</span>修改<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-danger col-md-4&quot;</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 创建表格容器 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;table&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入相关js --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/jquery-1.11.0.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap3/js/bootstrap.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table-zh-CN.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">			<span class="hljs-comment">//通过bootrap-table插件渲染表格</span></span>
+<span class="language-javascript">			$(<span class="hljs-string">&#x27;#table&#x27;</span>).<span class="hljs-title function_">bootstrapTable</span>(&#123;</span>
+<span class="language-javascript">			    <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;json/data.json&#x27;</span>,</span>
+<span class="language-javascript">			    <span class="hljs-attr">columns</span>: [&#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;id&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;序号&#x27;</span></span>
+<span class="language-javascript">			    &#125;, &#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;name&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;姓名&#x27;</span></span>
+<span class="language-javascript">			    &#125;, &#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;sal&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;薪水&#x27;</span></span>
+<span class="language-javascript">			    &#125;, &#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;sex&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;性别&#x27;</span></span>
+<span class="language-javascript">			    &#125;,&#123;</span>
+<span class="language-javascript">			        <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;age&#x27;</span>,</span>
+<span class="language-javascript">			        <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;年龄&#x27;</span></span>
+<span class="language-javascript">			    &#125;],</span>
+<span class="language-javascript">				<span class="hljs-attr">toolbar</span>: <span class="hljs-string">&#x27;#toolbar&#x27;</span>,              <span class="hljs-comment">//工具按钮用哪个容器</span></span>
+<span class="language-javascript">				<span class="hljs-attr">striped</span>: <span class="hljs-literal">true</span>,                      <span class="hljs-comment">//是否显示行间隔色</span></span>
+<span class="language-javascript">				<span class="hljs-attr">cache</span>: <span class="hljs-literal">false</span>,                       <span class="hljs-comment">//是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）</span></span>
+<span class="language-javascript">				<span class="hljs-attr">pagination</span>: <span class="hljs-literal">true</span>,                   <span class="hljs-comment">//是否显示分页（*）</span></span>
+<span class="language-javascript">				<span class="hljs-attr">sortable</span>: <span class="hljs-literal">true</span>,                     <span class="hljs-comment">//是否启用排序</span></span>
+<span class="language-javascript">				<span class="hljs-attr">sortOrder</span>: <span class="hljs-string">&quot;asc&quot;</span>,                   <span class="hljs-comment">//排序方式</span></span>
+<span class="language-javascript">				<span class="hljs-attr">sidePagination</span>: <span class="hljs-string">&quot;client&quot;</span>,           <span class="hljs-comment">//分页方式：client客户端分页，server服务端分页（*）</span></span>
+<span class="language-javascript">				<span class="hljs-attr">pageNumber</span>: <span class="hljs-number">1</span>,                      <span class="hljs-comment">//初始化加载第一页，默认第一页,并记录</span></span>
+<span class="language-javascript">				<span class="hljs-attr">pageSize</span>: <span class="hljs-number">2</span>,                     <span class="hljs-comment">//每页的记录行数（*）</span></span>
+<span class="language-javascript">				<span class="hljs-attr">pageList</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>],        <span class="hljs-comment">//可供选择的每页的行数（*）</span></span>
+<span class="language-javascript">				<span class="hljs-attr">search</span>: <span class="hljs-literal">true</span>,                      <span class="hljs-comment">//是否显示表格搜索</span></span>
+<span class="language-javascript">				<span class="hljs-attr">strictSearch</span>: <span class="hljs-literal">false</span>,</span>
+<span class="language-javascript">				<span class="hljs-attr">showColumns</span>: <span class="hljs-literal">true</span>,                  <span class="hljs-comment">//是否显示所有的列（选择显示的列）</span></span>
+<span class="language-javascript">				<span class="hljs-attr">showRefresh</span>: <span class="hljs-literal">true</span>,                  <span class="hljs-comment">//是否显示刷新按钮</span></span>
+<span class="language-javascript">				<span class="hljs-attr">minimumCountColumns</span>: <span class="hljs-number">2</span>,             <span class="hljs-comment">//最少允许的列数</span></span>
+<span class="language-javascript">				<span class="hljs-attr">clickToSelect</span>: <span class="hljs-literal">true</span>,                <span class="hljs-comment">//是否启用点击选中行</span></span>
+<span class="language-javascript">				<span class="hljs-comment">//height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数设置表格高度</span></span>
+<span class="language-javascript">				<span class="hljs-attr">uniqueId</span>: <span class="hljs-string">&quot;id&quot;</span>,                     <span class="hljs-comment">//每一行的唯一标识，一般为主键列</span></span>
+<span class="language-javascript">				<span class="hljs-attr">showToggle</span>: <span class="hljs-literal">false</span>,                   <span class="hljs-comment">//是否显示详细视图和列表视图的切换按钮</span></span>
+<span class="language-javascript">				<span class="hljs-attr">cardView</span>: <span class="hljs-literal">false</span>,                    <span class="hljs-comment">//是否显示详细视图</span></span>
+<span class="language-javascript">				<span class="hljs-attr">detailView</span>: <span class="hljs-literal">false</span>,                  <span class="hljs-comment">//是否显示父子表</span></span>
+<span class="language-javascript">			&#125;);</span>
+<span class="language-javascript">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+<p>效果如下：</p>
+<p><img src="/2021/08/01/1426392655180468224/images/image-20210801102854453.png" alt="image-20210801102854453"></p>
+<h2 id="6-后端分页"><a href="#6-后端分页" class="headerlink" title="6 后端分页"></a>6 后端分页</h2><p>后端接口,我后端是java写的具体分页代码就不上了,这里把接口文档写出来</p>
+<ul>
+<li><p>请求方式：GET</p>
+</li>
+<li><p>URL:  <a target="_blank" rel="noopener" href="http://localhost:8080/user/searchPage">http://localhost:8080/user/searchPage</a></p>
+</li>
+<li><p>请求参数</p>
+</li>
+</ul>
+<pre><code class="hljs plaintext">pageNum:查询的是哪一页
+pageSize：每页显示的条数
+name：姓名
+age：年龄
+比如：http://localhost:8080/user/searchPage?name=tom&amp;age=&amp;pageSize=2&amp;pageNum=1</code></pre>
+
+<ul>
+<li>响应(json)</li>
+</ul>
+<p>注意：这里必须是返回{“total”:””,”rows”,[]}这种格式的数据</p>
+<p><code>total</code>是总共的记录数量</p>
+<p><code>rows</code>是当前页查出来的记录对象数组</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+  <span class="hljs-attr">&quot;total&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;rows&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+    <span class="hljs-punctuation">&#123;</span>
+      <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tom&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;age&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">18</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;gender&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;createTime&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2021-02-22 09:53:24&quot;</span>
+    <span class="hljs-punctuation">&#125;</span>
+  <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>【4.后端分页.html】</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入相关样式表 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap3/css/bootstrap.min.css&quot;</span>/&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap3/css/bootstrap-theme.min.css&quot;</span>/&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table.min.css&quot;</span>/&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+			<span class="hljs-comment">&lt;!-- 工具栏 --&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toolbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-left: 5px;&quot;</span>&gt;</span>
+				<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-inline&quot;</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-success&quot;</span>&gt;</span>新增<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+					 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
+						<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>姓名<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-control&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;nameTxt&quot;</span>/&gt;</span>
+					<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-group&quot;</span>&gt;</span>
+						<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>年龄<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-control&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;ageTxt&quot;</span>/&gt;</span>
+					<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+					<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;search()&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-info&quot;</span>&gt;</span>查询<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+				<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+			<span class="hljs-comment">&lt;!-- 创建表格容器 --&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myTable&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 引入相关js --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/jquery-1.11.0.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap3/js/bootstrap.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;bootstrap-table/bootstrap-table-zh-CN.min.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">			 <span class="hljs-comment">//封装一个初始化表格的方法</span></span>
+<span class="language-javascript">			<span class="hljs-keyword">function</span> <span class="hljs-title function_">initTable</span>(<span class="hljs-params">tableId,url,columns,query</span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-comment">//将原有的表格销毁</span></span>
+<span class="language-javascript">				$(<span class="hljs-string">&quot;#&quot;</span>+tableId).<span class="hljs-title function_">bootstrapTable</span>(<span class="hljs-string">&#x27;destroy&#x27;</span>);</span>
+<span class="language-javascript">				<span class="hljs-comment">//通过bootrap-table插件渲染表格</span></span>
+<span class="language-javascript">				<span class="hljs-keyword">var</span> myTable = $(<span class="hljs-string">&#x27;#&#x27;</span>+tableId).<span class="hljs-title function_">bootstrapTable</span>(&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">method</span>: <span class="hljs-string">&#x27;GET&#x27;</span>,  <span class="hljs-comment">//请求方式（*）</span></span>
+<span class="language-javascript">					<span class="hljs-attr">url</span>: url,</span>
+<span class="language-javascript">					<span class="hljs-attr">columns</span>: columns,</span>
+<span class="language-javascript">					<span class="hljs-attr">toolbar</span>: <span class="hljs-string">&#x27;#toolbar&#x27;</span>, <span class="hljs-comment">//工具按钮用哪个容器</span></span>
+<span class="language-javascript">					<span class="hljs-attr">striped</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">//是否显示行间隔色</span></span>
+<span class="language-javascript">					<span class="hljs-attr">cache</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）</span></span>
+<span class="language-javascript">					<span class="hljs-attr">pagination</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否显示分页（*）</span></span>
+<span class="language-javascript">					<span class="hljs-attr">sortable</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否启用排序</span></span>
+<span class="language-javascript">					<span class="hljs-attr">sortOrder</span>: <span class="hljs-string">&quot;asc&quot;</span>, <span class="hljs-comment">//排序方式</span></span>
+<span class="language-javascript">					<span class="hljs-attr">sidePagination</span>: <span class="hljs-string">&quot;server&quot;</span>, <span class="hljs-comment">//分页方式：client客户端分页，server服务端分页</span></span>
+<span class="language-javascript">					<span class="hljs-attr">pageNumber</span>: <span class="hljs-number">1</span>, <span class="hljs-comment">//初始化加载第一页，默认第一页,并记录</span></span>
+<span class="language-javascript">					<span class="hljs-attr">pageSize</span>: <span class="hljs-number">2</span>, <span class="hljs-comment">//每页的记录行数（*）</span></span>
+<span class="language-javascript">					<span class="hljs-attr">pageList</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">20</span>],<span class="hljs-comment">//可供选择的每页的行数（*）</span></span>
+<span class="language-javascript">					<span class="hljs-attr">search</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否显示表格搜索</span></span>
+<span class="language-javascript">					<span class="hljs-attr">strictSearch</span>: <span class="hljs-literal">false</span>,</span>
+<span class="language-javascript">					<span class="hljs-attr">showColumns</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否显示所有的列（选择显示的列）</span></span>
+<span class="language-javascript">					<span class="hljs-attr">showRefresh</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否显示刷新按钮</span></span>
+<span class="language-javascript">					<span class="hljs-attr">minimumCountColumns</span>: <span class="hljs-number">2</span>,<span class="hljs-comment">//最少允许的列数</span></span>
+<span class="language-javascript">					<span class="hljs-attr">clickToSelect</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否启用点击选中行</span></span>
+<span class="language-javascript">					<span class="hljs-comment">//height: 500,//行高，如果没有设置height属性，表格自动根据记录条数设置表格高度</span></span>
+<span class="language-javascript">					<span class="hljs-attr">uniqueId</span>: <span class="hljs-string">&quot;id&quot;</span>,<span class="hljs-comment">//每一行的唯一标识，一般为主键列</span></span>
+<span class="language-javascript">					<span class="hljs-attr">showToggle</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否显示详细视图和列表视图的切换按钮</span></span>
+<span class="language-javascript">					<span class="hljs-attr">cardView</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否显示详细视图</span></span>
+<span class="language-javascript">					<span class="hljs-attr">detailView</span>: <span class="hljs-literal">false</span>,<span class="hljs-comment">//是否显示父子表</span></span>
+<span class="language-javascript">					<span class="hljs-comment">//得到查询的参数</span></span>
+<span class="language-javascript">					queryParams : <span class="hljs-keyword">function</span> (<span class="hljs-params">params</span>) &#123;</span>
+<span class="language-javascript">						<span class="hljs-comment">//这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的</span></span>
+<span class="language-javascript">						<span class="hljs-comment">/* var temp = &#123;</span></span>
+<span class="hljs-comment"><span class="language-javascript">							pageSize: params.limit,                         //页面大小</span></span>
+<span class="hljs-comment"><span class="language-javascript">							pageNum: (params.offset / params.limit) + 1,   //页码</span></span>
+<span class="hljs-comment"><span class="language-javascript">							//sort: params.sort,      //排序列名</span></span>
+<span class="hljs-comment"><span class="language-javascript">							//sortOrder: params.order //排位命令（desc，asc）</span></span>
+<span class="hljs-comment"><span class="language-javascript">							//自定义的参数</span></span>
+<span class="hljs-comment"><span class="language-javascript">							name:params.name, //姓名</span></span>
+<span class="hljs-comment"><span class="language-javascript">							age:params.age //年龄</span></span>
+<span class="hljs-comment"><span class="language-javascript">						&#125;; */</span></span>
+<span class="language-javascript">						<span class="hljs-keyword">if</span>(<span class="hljs-literal">null</span> == query || <span class="hljs-literal">undefined</span> == query)&#123;</span>
+<span class="language-javascript">							query = &#123;&#125;;</span>
+<span class="language-javascript">						&#125;</span>
+<span class="language-javascript">						query.<span class="hljs-property">pageSize</span> = params.<span class="hljs-property">limit</span>; <span class="hljs-comment">//页面大小</span></span>
+<span class="language-javascript">						query.<span class="hljs-property">pageNum</span> = (params.<span class="hljs-property">offset</span> / params.<span class="hljs-property">limit</span>) + <span class="hljs-number">1</span>;  <span class="hljs-comment">//页码</span></span>
+<span class="language-javascript">						<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(query);</span>
+<span class="language-javascript">						<span class="hljs-keyword">return</span> query;</span>
+<span class="language-javascript">					&#125;</span>
+<span class="language-javascript">				&#125;);</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">			<span class="hljs-comment">//初始化列信息</span></span>
+<span class="language-javascript">			<span class="hljs-keyword">var</span> columns =  [</span>
+<span class="language-javascript">				&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;id&#x27;</span>,</span>
+<span class="language-javascript">					<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;序号&#x27;</span></span>
+<span class="language-javascript">				&#125;, </span>
+<span class="language-javascript">				&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;name&#x27;</span>,</span>
+<span class="language-javascript">					<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;姓名&#x27;</span></span>
+<span class="language-javascript">				&#125;, </span>
+<span class="language-javascript">				&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;gender&#x27;</span>,</span>
+<span class="language-javascript">					<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;性别&#x27;</span>,</span>
+<span class="language-javascript">					<span class="hljs-comment">//formatter 为格式化函数,后端返回的性别类型: 1男2女 所以这里要处理一下再显示</span></span>
+<span class="language-javascript">					<span class="hljs-attr">formatter</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">value, row, index</span>)&#123;</span>
+<span class="language-javascript">						<span class="hljs-comment">//console.log(value);//当前列数据</span></span>
+<span class="language-javascript">						<span class="hljs-comment">//console.log(row);//当前行json数据</span></span>
+<span class="language-javascript">						<span class="hljs-keyword">if</span>(value == <span class="hljs-number">1</span>)&#123;</span>
+<span class="language-javascript">							<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;男&quot;</span>;</span>
+<span class="language-javascript">						&#125;</span>
+<span class="language-javascript">						<span class="hljs-keyword">return</span> <span class="hljs-string">&quot;女&quot;</span>;</span>
+<span class="language-javascript">					&#125;</span>
+<span class="language-javascript">				&#125;,</span>
+<span class="language-javascript">				&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;age&#x27;</span>,</span>
+<span class="language-javascript">					<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;年龄&#x27;</span></span>
+<span class="language-javascript">				&#125;,</span>
+<span class="language-javascript">				&#123;</span>
+<span class="language-javascript">						<span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;&#x27;</span>,</span>
+<span class="language-javascript">						<span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;操作&#x27;</span>,</span>
+<span class="language-javascript">                    	<span class="hljs-comment">//如果需要对列处理可以写在formatter函数中</span></span>
+<span class="language-javascript">						<span class="hljs-attr">formatter</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">value,row,index</span>)&#123;</span>
+<span class="language-javascript">							<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;&lt;button onclick=&quot;updateFun(&#x27;</span>+row.<span class="hljs-property">id</span>+<span class="hljs-string">&#x27;)&quot; type=&quot;button&quot; class=&quot;btn btn-warning btn-xs&quot;&gt;修改&lt;/button&gt;&amp;nbsp;&#x27;</span></span>
+<span class="language-javascript">								   + <span class="hljs-string">&#x27;&lt;button onclick=&quot;deleteFun(&#x27;</span>+row.<span class="hljs-property">id</span>+<span class="hljs-string">&#x27;)&quot; type=&quot;button&quot; class=&quot;btn btn-danger btn-xs&quot;&gt;删除&lt;/button&gt;&#x27;</span></span>
+<span class="language-javascript">						&#125;</span>
+<span class="language-javascript">				&#125;</span>
+<span class="language-javascript">			 ];</span>
+<span class="language-javascript">			<span class="hljs-comment">//点击修改按钮</span></span>
+<span class="language-javascript">			<span class="hljs-keyword">function</span> <span class="hljs-title function_">updateFun</span>(<span class="hljs-params">data</span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;修改：&quot;</span>+data)</span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">			<span class="hljs-comment">//点击删除按钮</span></span>
+<span class="language-javascript">			<span class="hljs-keyword">function</span> <span class="hljs-title function_">deleteFun</span>(<span class="hljs-params">data</span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;删除：&quot;</span>+data)</span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">			</span>
+<span class="language-javascript">			<span class="hljs-comment">//点击查询按钮</span></span>
+<span class="language-javascript">			<span class="hljs-keyword">function</span> <span class="hljs-title function_">search</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-keyword">var</span> name = $(<span class="hljs-string">&quot;#nameTxt&quot;</span>).<span class="hljs-title function_">val</span>();</span>
+<span class="language-javascript">				<span class="hljs-keyword">var</span> age = $(<span class="hljs-string">&quot;#ageTxt&quot;</span>).<span class="hljs-title function_">val</span>();</span>
+<span class="language-javascript">				<span class="hljs-keyword">var</span> queryParams = &#123;name,age&#125;;</span>
+<span class="language-javascript"><span class="hljs-title function_">initTable</span>(<span class="hljs-string">&quot;myTable&quot;</span>,<span class="hljs-string">&#x27;http://localhost:8080/user/searchPage&#x27;</span>,columns,queryParams);</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">			<span class="hljs-comment">//第一次进入页面加载表格</span></span>
+<span class="language-javascript">		    <span class="hljs-title function_">initTable</span>(<span class="hljs-string">&quot;myTable&quot;</span>,<span class="hljs-string">&#x27;http://localhost:8080/user/searchPage&#x27;</span>,columns,<span class="hljs-literal">null</span>);</span>
+<span class="language-javascript">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+<p>运行效果如下：</p>
+<p><img src="/2021/08/01/1426392655180468224/images/image-20210801160235625.png" alt="image-20210801160235625"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/laowangc/p/8875526.html">Bootstrap-table 使用总结</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/web-panpan/p/7278367.html">BOOTSTRAP TABLE表格前台分页，点击TAB选项，重新刷新表格</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/benmumu/p/9594019.html">Bootstrap Table 中文文档（完整翻译版）</a></p>
+
+				</div>
+		</div>
+	</div>
+	</div>
+	
+	<ul class="layui-fixbar"><a id="toTopBtn" href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></a></ul>
+	
+	<!-- 底部版权 -->
+	<div class="qy-footer">
+    <div class="font-Area">
+        Copyright © 2018~2022 Heliufang All Rights Reserved
+    </div>
+</div>
+
+<script>
+    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
+    function DynamicLine() {
+        function n(n, e, t) {
+            return n.getAttribute(e) || t
+        }
+
+        function e(n) {
+            return document.getElementsByTagName(n)
+        }
+
+        function t() {
+            var t = e("script"),
+                o = t.length,
+                i = t[o - 1];
+            return {
+                l: o,
+                z: n(i, "zIndex", -1),
+                o: n(i, "opacity", .5),
+                c: n(i, "color", "0,0,50"), //颜色rgb
+                n: n(i, "count", 99)
+            }
+        }
+
+        function o() {
+            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        }
+
+        function i() {
+            r.clearRect(0, 0, a, c);
+            var n, e, t, o, m, l;
+            s.forEach(function (i, x) {
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
+                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
+                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+            }),
+                x(i)
+        }
+        var a, c, u, m = document.createElement("canvas"),
+            d = t(),
+            l = "c_n" + d.l,
+            r = m.getContext("2d"),
+            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+            w = Math.random,
+            y = {
+                x: null,
+                y: null,
+                max: 2e4
+            };
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
+            m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
+        for (var s = [], f = 0; d.n > f; f++) {
+            var h = w() * a,
+                g = w() * c,
+                v = 2 * w() - 1,
+                p = 2 * w() - 1;
+            s.push({
+                x: h,
+                y: g,
+                xa: v,
+                ya: p,
+                max: 6e3
+            })
+        }
+        u = s.concat([y]),
+            setTimeout(function () {
+                i()
+            }, 100)
+    }
+    DynamicLine()
+</script>
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<script src="../../../../../js/clipboard.min.js"></script>
+<script src="../../../../../js/clipboard-use.js"></script>
+
+<script src="../js/mouse.js"></script>
+
+<!-- 谷歌代码高亮 -->
+<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<script>
+	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	var element = null
+	var layer = null
+	layui.use(['element','layer'], function(){
+	  element = layui.element;
+	  layer = layui.layer
+	});
+	
+	$(function() { 
+	    var elm = $('#toc-area'); 
+	    var startPos = $(elm).offset().top; 
+		var totalTop = $(document).height(); 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+			//文章阅读进度条
+			var percent = ((p/totalTop)*100).toFixed(2)
+			if(percent > 100){
+				percent = 100
+			}
+			if(percent == 0){
+				percent = 0
+			}
+			element.progress('demo', percent+"%");
+			$("#progressTxt").text(percent)
+			//固定文章目录
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '60px' : ''); 
+	    }); 
+		//谷歌代码高亮
+		$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+
+		let timer = null;
+		//点击回到顶部
+		//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+		$("#toTopBtn").click(function(){
+			var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var t = parseInt(oTop / 60) //每次六十分之一
+			var time = setInterval(function () {
+				// document.body.scrollTop = document.body.scrollTop - 50;
+				document.body.scrollTop = document.body.scrollTop - t;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
+		})
+
+		
+	});
+	
+</script>
+</html>

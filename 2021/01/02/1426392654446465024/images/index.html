@@ -1,0 +1,690 @@
+<html>
+<head>
+	<title>贺刘芳的搬砖日记-文章页</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../../../css/common.css"/>
+	<link rel="stylesheet" href="../../../../../css/post.css"/>
+	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css"/>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
+</head>
+<body>
+	<!-- 导航模板 -->
+	<!-- 导航 -->
+<div class="qy-nav">
+  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
+    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-chart-screen"></i> 首页</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
+      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    </li>
+  </ul>
+</div>
+<!-- 搜索弹框 -->
+<div id="searchShade" class="searchShade">
+  <div id="searchLayer">
+    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <div id="searchResult">
+      <!-- <ul>
+        <li>java笔记
+        <li>
+      </ul> -->
+    </div>
+
+  </div>
+</div>
+<script>
+  window.onload = function () {
+    //下拉菜单
+    layui.use('dropdown', function () {
+      var dropdown = layui.dropdown
+      dropdown.render({
+        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
+        data: [
+          {
+            title: '首页'
+            , id: 11
+            , href: '/'
+            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
+          },
+          {
+            title: '关于'
+            , id: 22
+            , href: '/about'
+            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
+          },
+          {
+            title: '搜索'
+            , id: 33
+            , href: '#'
+            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
+          }
+        ],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id'); //表格列表的预埋数据
+            if(data.id == 33){
+              $("#searchShade").show()
+            }
+        }
+      })
+
+    })
+
+    //点击搜索
+    $("#searchBtn").click(function () {
+      $("#searchShade").show()
+    })
+
+    //关闭弹框
+    $("#closeBtn").click(function () {
+      $("#searchShade").hide()
+    })
+
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+      $.ajax({
+        url: path,
+        dataType: "json",
+        success: function (datas) {
+          // console.log('datas :>> ', datas);
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function () {
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var data_title = data.title.trim().toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var first_occur = -1;
+              if (data_title != '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  if (index_title < 0) {
+                    isMatch = false;
+                  }
+                });
+              }
+              // show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            $resultContent.innerHTML = str;
+          });
+        }
+      });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+  }
+
+
+</script>
+	<!-- 中间内容区域 -->
+	<div class="layui-container  center" id="top">
+		<div class="layui-row layui-col-space20">
+			<div class="layui-col-md3 hide-xs hide-sm" >
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-speaker"></i> 公告</div>
+					<div class="layui-card-body">
+						<!-- 个人信息模块 -->
+						<div class="userinfo">
+							<img src="/head.png">
+							<div class="name">淡泊明志，宁静致远</div>
+							<div class="other">
+								<div class="item">
+									<p class="num">
+										39
+									</p>
+									<p class="title">文章</p>
+								</div>
+								<div class="item">
+									<p class="num">
+										8
+									</p>
+									<p class="title">分类</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i class="layui-icon layui-icon-template-1"></i> 分类</div>
+					<div class="layui-card-body">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</div>
+				<!-- 归档 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-date"></i> 归档</div>
+					<div class="layui-card-body">
+						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/12/">2022 十二月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/12/">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
+					</div>
+				</div>
+				
+				<div style="height: 90%;width: 267px;" id="toc-area"  class="layui-card">
+				  <div class="layui-card-header">本文目录</div>
+				  <div class="layui-card-body" style="overflow:auto;height: calc(100% - 60px - 50px);">
+				   <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="toc-text">1 响应式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="toc-text">什么是响应式布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91%E4%B8%8E%E7%A7%BB%E5%8A%A8web%E5%BC%80%E5%8F%91%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">响应式开发与移动web开发的比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">2 媒体查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E5%88%86%E7%B1%BB"><span class="toc-text">设备分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">媒体查询的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%8E%9F%E7%94%9F%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">3 原生响应式的实现</span></a></li></ol>
+				  </div>
+				  <div class="readprocess">
+					  <div>已阅读：<span id="progressTxt"></span>%</div>
+					  <div class="layui-progress" lay-filter="demo">
+						<div class="layui-progress-bar" lay-percent="10%"></div>
+					  </div>
+				  </div>
+				</div>
+				
+			</div>
+			<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
+				
+				<div class="article-title">
+					<h1>响应式、媒体查询</h1>
+					<p>
+						<i class="layui-icon layui-icon-time"></i>发表于：2021-01-02
+						|
+						<i class="layui-icon layui-icon-form"></i>字数统计：1.7k
+					</p>
+				</div>
+				
+					
+				<!-- 文章内容 -->
+				<div id="article">
+				    <h1 id="1-响应式"><a href="#1-响应式" class="headerlink" title="1 响应式"></a>1 响应式</h1><h2 id="什么是响应式布局"><a href="#什么是响应式布局" class="headerlink" title="什么是响应式布局"></a>什么是响应式布局</h2><blockquote>
+<p>响应式布局（respond layout）是Ethan Marcotte在2010年5月份提出的一个概念，简而言之，就是<strong>一个网站能够兼容多个终端（手机、平板、pc电脑、手表）</strong> ——而不是为每个终端做一个特定的版本。这个概念是为解决移动互联网浏览而诞生的。</p>
+</blockquote>
+<p><strong>为什么要有响应式布局？</strong> </p>
+<ul>
+<li>在移动互联日益成熟的时候，在PC端开发的网页已经无法满足移动设备的要求。</li>
+<li>通常的做法是针对移动端单独做一套特定的版本。</li>
+<li>如果终端越来越多，那么需要开发的版本就会越来越多（大屏设备的普及）</li>
+<li><strong>响应式布局</strong> ：一个网站能够兼容多个终端（节约开发成本）</li>
+</ul>
+<p><strong>优点：</strong> </p>
+<p>面对不同分辨率设备灵活性强</p>
+<p>能够快捷解决多设备显示适应问题</p>
+<p><strong>缺点：</strong></p>
+<p>兼容各种设备工作量大，效率低下</p>
+<p>代码累赘，会出现隐藏无用的元素，加载时间加长</p>
+<p>其实这是一种折中性质的设计解决方案，多方面因素影响而达不到最佳效果</p>
+<p>一定程度上改变了网站原有的布局结构，会出现用户混淆的情况</p>
+<p>响应式开发现状：</p>
+<ul>
+<li>如果已经存在PC的网站了，那么一般不会使用响应式开发，而是针对移动端再开发一套系统（比如京东、淘宝）</li>
+<li>在<strong>新建站点</strong> 上采用响应式开发的越来越多。</li>
+<li>在国内，响应式开发还不是特别的流行。但响应式开发是大势所趋，会越来越流行。</li>
+</ul>
+<h2 id="响应式开发与移动web开发的比较"><a href="#响应式开发与移动web开发的比较" class="headerlink" title="响应式开发与移动web开发的比较"></a>响应式开发与移动web开发的比较</h2><table>
+<thead>
+<tr>
+<th>开发方式</th>
+<th>移动web开发+pc开发</th>
+<th>响应式开发</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>引用场景</td>
+<td>一般已经有了PC端网站，只需要端独开发移动端网站即可</td>
+<td>针对一些新建网站，并且要求适配移动端</td>
+</tr>
+<tr>
+<td>开发</td>
+<td>针对性强，开发效率高</td>
+<td>兼容各种终端，效率低</td>
+</tr>
+<tr>
+<td>适配</td>
+<td>只能适配移动端或者PC端，pad上体验比较差</td>
+<td>可以适配各种终端</td>
+</tr>
+<tr>
+<td>效率</td>
+<td>代码简洁，加载快</td>
+<td>代码相对复杂，加载慢</td>
+</tr>
+</tbody></table>
+<h1 id="2-媒体查询"><a href="#2-媒体查询" class="headerlink" title="2 媒体查询"></a>2 媒体查询</h1><blockquote>
+<p>媒体查询（Media Query）是CSS提出来的一个新的属性，通过媒体查询可以查询到screen的宽度，从而指定某个宽度区间的网页布局。</p>
+</blockquote>
+<h2 id="设备分类"><a href="#设备分类" class="headerlink" title="设备分类"></a>设备分类</h2><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>宽度范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>大屏设备</td>
+<td>&gt;1200px</td>
+</tr>
+<tr>
+<td>中屏设备</td>
+<td>992px~1200px</td>
+</tr>
+<tr>
+<td>小屏设备</td>
+<td>768px~992px</td>
+</tr>
+<tr>
+<td>超小屏设备</td>
+<td>&lt; 768px</td>
+</tr>
+</tbody></table>
+<p><img src="/2021/01/02/1426392654446465024/images/image-20210101175025018.png" alt="image-20210101175025018"></p>
+<h2 id="媒体查询的使用"><a href="#媒体查询的使用" class="headerlink" title="媒体查询的使用"></a>媒体查询的使用</h2><p>需求：</p>
+<pre><code class="hljs html"><span class="hljs-comment">&lt;!--</span>
+<span class="hljs-comment">需求：</span>
+<span class="hljs-comment">    大屏设备(&gt;1200px)   版心：1170px   背景色：红色</span>
+<span class="hljs-comment">    中屏设备(992-1200)  版心：970px    背景色：蓝色</span>
+<span class="hljs-comment">    小屏设备(768-992)   版心：750px    背景色：黄色</span>
+<span class="hljs-comment">    超小屏设备(&lt;768px)  版心：100%     背景色：绿色</span>
+<span class="hljs-comment">--&gt;</span></code></pre>
+
+<p><strong>响应式开发的原理：使用媒体查询实现不同终端的布局和样式的切换。</strong></p>
+<p>媒体查询语法：</p>
+<pre><code class="hljs css"><span class="hljs-comment">/*查询屏幕*/</span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> 条件 &#123;
+&#125;
+
+<span class="hljs-comment">/*条件的写法*/</span>
+<span class="hljs-comment">/*min-width:只要屏幕宽度超过这个值的设备样式就能生效*/</span>
+<span class="hljs-comment">/*max-width:只要屏幕宽度小于这个值的设备样式就能生效*/</span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) &#123;
+  <span class="hljs-selector-class">.container</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">1170px</span>;
+    <span class="hljs-attribute">background-color</span>: red;
+  &#125;
+&#125;
+
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">992px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">1200px</span>) &#123;
+  <span class="hljs-selector-class">.container</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">970px</span>;
+    <span class="hljs-attribute">background-color</span>: blue;
+  &#125;
+&#125;
+
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">992px</span>) &#123;
+  <span class="hljs-selector-class">.container</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">750px</span>;
+    <span class="hljs-attribute">background-color</span>: yellow;
+  &#125;
+&#125;
+
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">768px</span>) &#123;
+  <span class="hljs-selector-class">.container</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">background-color</span>: green;
+  &#125;
+&#125;</code></pre>
+
+<p><strong>弊端：现在只有一个div，要做一套响应式布局，就需要如此多的代码，非常的麻烦，因此我们会更多的借助一些响应式的框架，比如bootstrap。</strong></p>
+<h1 id="3-原生响应式的实现"><a href="#3-原生响应式的实现" class="headerlink" title="3 原生响应式的实现"></a>3 原生响应式的实现</h1><p>第一步：通过媒体查询实现响应式的版心</p>
+<p>第二步：再调整版心内的细节样式</p>
+<p>【原生响应式实现demo】</p>
+<p>html</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>原生响应式<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;./index.css&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- 头部 导航 --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left pull-left hide-xs&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right pull-right hide-xs&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hide-sm&quot;</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hide-sm&quot;</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>三<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- 原生响应式 实现栅格布局-媒体查询 + 浮动+ 百分百  --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container product&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;column&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">    	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.btn&#x27;</span>).<span class="hljs-property">onclick</span>= <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">            <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.left&#x27;</span>).<span class="hljs-property">classList</span>.<span class="hljs-title function_">toggle</span>(<span class="hljs-string">&#x27;hide-xs&#x27;</span>);</span>
+<span class="language-javascript">        &#125;;</span>
+<span class="language-javascript">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<p>less</p>
+<pre><code class="hljs less">* &#123;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">list-style</span>: none;
+    <span class="hljs-attribute">box-sizing</span>: border-box;
+&#125;
+
+<span class="hljs-comment">// 版心</span>
+<span class="hljs-selector-class">.container</span> &#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">1200px</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto;
+&#125;
+<span class="hljs-selector-class">.pull-left</span> &#123;
+    <span class="hljs-attribute">float</span>: left;
+&#125;
+
+<span class="hljs-selector-class">.pull-right</span> &#123;
+    <span class="hljs-attribute">float</span>: right;
+&#125;
+
+<span class="hljs-selector-class">.clearfix</span>&#123;
+    <span class="hljs-attribute">overflow</span>: hidden;
+&#125;
+<span class="hljs-selector-class">.header</span> &#123;
+    <span class="hljs-attribute">position</span>: relative;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">70px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+    <span class="hljs-selector-tag">ul</span> &#123;
+        <span class="hljs-selector-tag">li</span> &#123;
+            <span class="hljs-attribute">float</span>: left;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">80px</span>;
+            <span class="hljs-attribute">background-color</span>:green;
+            <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+            <span class="hljs-attribute">text-align</span>: center;
+            <span class="hljs-attribute">line-height</span>: <span class="hljs-number">50px</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">10px</span>;
+        &#125;
+    &#125;
+    <span class="hljs-selector-class">.btn</span> &#123;
+        <span class="hljs-attribute">position</span>: absolute;
+        <span class="hljs-attribute">right</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">top</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">80px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;
+        <span class="hljs-attribute">background-color</span>: yellow;
+        <span class="hljs-attribute">color</span>: red;
+        <span class="hljs-attribute">text-align</span>: center;
+        <span class="hljs-attribute">line-height</span>: <span class="hljs-number">50px</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">40px</span>;
+        <span class="hljs-attribute">display</span>: none;
+    &#125;
+&#125;
+
+<span class="hljs-selector-class">.product</span> &#123;
+    <span class="hljs-selector-class">.column</span>&#123;
+        <span class="hljs-attribute">float</span>: left;    
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">33.33%</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+        <span class="hljs-comment">// border: 1px solid #000;</span>
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        <span class="hljs-selector-class">.in</span> &#123;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f99</span>;
+            <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;
+        &#125;
+        
+    &#125;
+&#125;
+
+<span class="hljs-comment">// 关键是 有一套响应式的版心 </span>
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) &#123;
+    <span class="hljs-selector-class">.container</span> &#123;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">1170px</span>;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">992px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">1200px</span>) &#123;
+    <span class="hljs-selector-class">.container</span> &#123;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">970px</span>;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">992px</span>) &#123;
+    <span class="hljs-selector-class">.container</span> &#123;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">750px</span>;
+    &#125;
+    <span class="hljs-selector-class">.hide-sm</span> &#123;
+        <span class="hljs-attribute">display</span>: none;
+    &#125;
+    <span class="hljs-selector-class">.product</span> &#123;
+        <span class="hljs-selector-class">.column</span>&#123;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">50%</span>;
+        &#125;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">768px</span>) &#123;
+    <span class="hljs-selector-class">.container</span> &#123;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    &#125;
+    <span class="hljs-selector-class">.hide-xs</span> &#123;
+        <span class="hljs-attribute">display</span>: none;
+    &#125;
+    <span class="hljs-comment">// 设置导航样式</span>
+    <span class="hljs-selector-class">.header</span> &#123;
+        <span class="hljs-selector-tag">ul</span> &#123;
+            <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">60px</span>;
+            <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+            <span class="hljs-selector-tag">li</span> &#123;
+                <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+                <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+                <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">5px</span>;
+            &#125;
+        &#125;
+        <span class="hljs-selector-class">.btn</span> &#123;
+            <span class="hljs-attribute">display</span>: block;
+        &#125;
+       
+    &#125;
+
+    <span class="hljs-selector-class">.product</span> &#123;
+        <span class="hljs-selector-class">.column</span>&#123;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+        &#125;
+    &#125;
+&#125;</code></pre>
+
+
+				</div>
+		</div>
+	</div>
+	</div>
+	
+	<ul class="layui-fixbar"><a id="toTopBtn" href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></a></ul>
+	
+	<!-- 底部版权 -->
+	<div class="qy-footer">
+    <div class="font-Area">
+        Copyright © 2018~2022 Heliufang All Rights Reserved
+    </div>
+</div>
+
+<script>
+    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
+    function DynamicLine() {
+        function n(n, e, t) {
+            return n.getAttribute(e) || t
+        }
+
+        function e(n) {
+            return document.getElementsByTagName(n)
+        }
+
+        function t() {
+            var t = e("script"),
+                o = t.length,
+                i = t[o - 1];
+            return {
+                l: o,
+                z: n(i, "zIndex", -1),
+                o: n(i, "opacity", .5),
+                c: n(i, "color", "0,0,50"), //颜色rgb
+                n: n(i, "count", 99)
+            }
+        }
+
+        function o() {
+            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        }
+
+        function i() {
+            r.clearRect(0, 0, a, c);
+            var n, e, t, o, m, l;
+            s.forEach(function (i, x) {
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
+                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
+                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+            }),
+                x(i)
+        }
+        var a, c, u, m = document.createElement("canvas"),
+            d = t(),
+            l = "c_n" + d.l,
+            r = m.getContext("2d"),
+            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+            w = Math.random,
+            y = {
+                x: null,
+                y: null,
+                max: 2e4
+            };
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
+            m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
+        for (var s = [], f = 0; d.n > f; f++) {
+            var h = w() * a,
+                g = w() * c,
+                v = 2 * w() - 1,
+                p = 2 * w() - 1;
+            s.push({
+                x: h,
+                y: g,
+                xa: v,
+                ya: p,
+                max: 6e3
+            })
+        }
+        u = s.concat([y]),
+            setTimeout(function () {
+                i()
+            }, 100)
+    }
+    DynamicLine()
+</script>
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<script src="../../../../../js/clipboard.min.js"></script>
+<script src="../../../../../js/clipboard-use.js"></script>
+
+<script src="../js/mouse.js"></script>
+
+<!-- 谷歌代码高亮 -->
+<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<script>
+	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	var element = null
+	var layer = null
+	layui.use(['element','layer'], function(){
+	  element = layui.element;
+	  layer = layui.layer
+	});
+	
+	$(function() { 
+	    var elm = $('#toc-area'); 
+	    var startPos = $(elm).offset().top; 
+		var totalTop = $(document).height(); 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+			//文章阅读进度条
+			var percent = ((p/totalTop)*100).toFixed(2)
+			if(percent > 100){
+				percent = 100
+			}
+			if(percent == 0){
+				percent = 0
+			}
+			element.progress('demo', percent+"%");
+			$("#progressTxt").text(percent)
+			//固定文章目录
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '60px' : ''); 
+	    }); 
+		//谷歌代码高亮
+		$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+
+		let timer = null;
+		//点击回到顶部
+		//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+		$("#toTopBtn").click(function(){
+			var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var t = parseInt(oTop / 60) //每次六十分之一
+			var time = setInterval(function () {
+				// document.body.scrollTop = document.body.scrollTop - 50;
+				document.body.scrollTop = document.body.scrollTop - t;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
+		})
+
+		
+	});
+	
+</script>
+</html>

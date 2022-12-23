@@ -1,0 +1,2268 @@
+<html>
+<head>
+	<title>贺刘芳的搬砖日记-文章页</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../../../css/common.css"/>
+	<link rel="stylesheet" href="../../../../../css/post.css"/>
+	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css"/>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
+</head>
+<body>
+	<!-- 导航模板 -->
+	<!-- 导航 -->
+<div class="qy-nav">
+  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
+    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-chart-screen"></i> 首页</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
+      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    </li>
+  </ul>
+</div>
+<!-- 搜索弹框 -->
+<div id="searchShade" class="searchShade">
+  <div id="searchLayer">
+    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <div id="searchResult">
+      <!-- <ul>
+        <li>java笔记
+        <li>
+      </ul> -->
+    </div>
+
+  </div>
+</div>
+<script>
+  window.onload = function () {
+    //下拉菜单
+    layui.use('dropdown', function () {
+      var dropdown = layui.dropdown
+      dropdown.render({
+        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
+        data: [
+          {
+            title: '首页'
+            , id: 11
+            , href: '/'
+            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
+          },
+          {
+            title: '关于'
+            , id: 22
+            , href: '/about'
+            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
+          },
+          {
+            title: '搜索'
+            , id: 33
+            , href: '#'
+            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
+          }
+        ],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id'); //表格列表的预埋数据
+            if(data.id == 33){
+              $("#searchShade").show()
+            }
+        }
+      })
+
+    })
+
+    //点击搜索
+    $("#searchBtn").click(function () {
+      $("#searchShade").show()
+    })
+
+    //关闭弹框
+    $("#closeBtn").click(function () {
+      $("#searchShade").hide()
+    })
+
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+      $.ajax({
+        url: path,
+        dataType: "json",
+        success: function (datas) {
+          // console.log('datas :>> ', datas);
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function () {
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var data_title = data.title.trim().toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var first_occur = -1;
+              if (data_title != '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  if (index_title < 0) {
+                    isMatch = false;
+                  }
+                });
+              }
+              // show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            $resultContent.innerHTML = str;
+          });
+        }
+      });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+  }
+
+
+</script>
+	<!-- 中间内容区域 -->
+	<div class="layui-container  center" id="top">
+		<div class="layui-row layui-col-space20">
+			<div class="layui-col-md3 hide-xs hide-sm" >
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-speaker"></i> 公告</div>
+					<div class="layui-card-body">
+						<!-- 个人信息模块 -->
+						<div class="userinfo">
+							<img src="/head.png">
+							<div class="name">淡泊明志，宁静致远</div>
+							<div class="other">
+								<div class="item">
+									<p class="num">
+										39
+									</p>
+									<p class="title">文章</p>
+								</div>
+								<div class="item">
+									<p class="num">
+										8
+									</p>
+									<p class="title">分类</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i class="layui-icon layui-icon-template-1"></i> 分类</div>
+					<div class="layui-card-body">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</div>
+				<!-- 归档 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-date"></i> 归档</div>
+					<div class="layui-card-body">
+						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/12/">2022 十二月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/12/">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
+					</div>
+				</div>
+				
+				<div style="height: 90%;width: 267px;" id="toc-area"  class="layui-card">
+				  <div class="layui-card-header">本文目录</div>
+				  <div class="layui-card-body" style="overflow:auto;height: calc(100% - 60px - 50px);">
+				   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 微信公众号介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B3%A8%E5%86%8C%E8%AE%A2%E9%98%85%E5%8F%B7"><span class="toc-text">2 注册订阅号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B3%A8%E5%86%8C%E6%B5%8B%E8%AF%95%E5%8F%B7"><span class="toc-text">3 注册测试号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="toc-text">4 程序运行流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">5 搭建开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%86%85%E5%A4%96%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-text">6 内外网穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%BC%80%E5%8F%91%E6%8E%A5%E5%85%A5"><span class="toc-text">7 开发接入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%8E%A5%E6%94%B6%E7%94%A8%E6%88%B7%E6%B6%88%E6%81%AF"><span class="toc-text">8 接收用户消息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%9B%9E%E5%A4%8D%E7%94%A8%E6%88%B7%E6%B6%88%E6%81%AF%E5%B0%81%E8%A3%85"><span class="toc-text">9 回复用户消息封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E5%9B%9E%E5%A4%8D%E6%B6%88%E6%81%AF%E5%85%A5%E9%97%A8demo"><span class="toc-text">9.1  回复消息入门demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E5%9F%BA%E7%A1%80%E6%B6%88%E6%81%AF%E7%B1%BB%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-text">9.2 基础消息类的封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF%E7%B1%BB%E5%B0%81%E8%A3%85"><span class="toc-text">9.3 文本消息类封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-4-%E5%9B%BE%E6%96%87%E6%B6%88%E6%81%AF%E5%B0%81%E8%A3%85"><span class="toc-text">9.4 图文消息封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-5-%E6%B5%8B%E8%AF%95"><span class="toc-text">9.5 测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-6-%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-text">9.6 自动回复机器人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E2%98%85access-token%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-text">10 ★access token的获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E2%98%85%E5%B0%81%E8%A3%85%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">10.1 ★封装请求工具类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E5%88%9B%E5%BB%BAAccessToken%E7%B1%BB"><span class="toc-text">10.2 创建AccessToken类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-WxService%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%8E%B7%E5%8F%96AccessToken%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">10.3 WxService中添加获取AccessToken的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95"><span class="toc-text">11 自定义菜单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-%E5%B0%81%E8%A3%85%E8%8F%9C%E5%8D%95%E7%B1%BB"><span class="toc-text">11.1 封装菜单类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-%E6%B5%8B%E8%AF%95"><span class="toc-text">11.2 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E8%AE%BE%E7%BD%AE%E5%92%8C%E8%8E%B7%E5%8F%96%E8%A1%8C%E4%B8%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">12 设置和获取行业信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-%E8%AE%BE%E7%BD%AE%E8%A1%8C%E4%B8%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">12.1 设置行业信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-%E8%8E%B7%E5%8F%96%E8%A1%8C%E4%B8%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">12.2 获取行业信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF"><span class="toc-text">13 发送模板消息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%96%B0%E5%A2%9E%E5%92%8C%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90"><span class="toc-text">14 新增和获取临时素材</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14-1-%E6%96%B0%E5%A2%9E%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90"><span class="toc-text">14.1 新增临时素材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-2-%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90"><span class="toc-text">14.2 获取临时素材</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%92%8C%E6%89%AB%E6%8F%8F"><span class="toc-text">15 二维码生成和扫描</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#15-1-%E7%94%9F%E6%88%90%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="toc-text">15.1 生成带参数的临时二维码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-2-%E6%89%AB%E6%8F%8F%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="toc-text">15.2 扫描二维码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-text">16 获取用户信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-%E8%8E%B7%E5%8F%96%E5%B7%B2%E5%85%B3%E6%B3%A8%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-text">16.1 获取已关注的用户信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-%E7%BD%91%E9%A1%B5%E6%8E%88%E6%9D%83"><span class="toc-text">16.2 网页授权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6"><span class="toc-text">17 微信公众号开发框架</span></a></li></ol>
+				  </div>
+				  <div class="readprocess">
+					  <div>已阅读：<span id="progressTxt"></span>%</div>
+					  <div class="layui-progress" lay-filter="demo">
+						<div class="layui-progress-bar" lay-percent="10%"></div>
+					  </div>
+				  </div>
+				</div>
+				
+			</div>
+			<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
+				
+				<div class="article-title">
+					<h1>微信公众号开发-Java版学习笔记</h1>
+					<p>
+						<i class="layui-icon layui-icon-time"></i>发表于：2021-08-14
+						|
+						<i class="layui-icon layui-icon-form"></i>字数统计：13k
+					</p>
+				</div>
+				
+					
+				<!-- 文章内容 -->
+				<div id="article">
+				    <p>本文基于罗召勇老师的教程加上自己的理解整理</p>
+<p>本文源码已上传至我的码云: <a target="_blank" rel="noopener" href="https://gitee.com/heliufang/wx">https://gitee.com/heliufang/wx</a></p>
+<p>微信公众号开发整体不难,主要是熟悉微信公众号常用的一些接口文档,然后会一门后端语言(比如java)即可。</p>
+<p>罗召勇老师教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nb411P76t?from=search&seid=14211630633615797421">微信公众号开发-Java版（蓝桥罗召勇）</a></p>
+<p>微信公众号文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html">微信公众号官方文档</a></p>
+<h2 id="1-微信公众号介绍"><a href="#1-微信公众号介绍" class="headerlink" title="1 微信公众号介绍"></a>1 微信公众号介绍</h2><p>账号分为<code>服务号</code>、<code>订阅号</code>、小程序</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808110213141.png" alt="image-20210808110213141"></p>
+<p>服务号和订阅号开发类似,但是申请服务号必须是企业,所以学习的话申请一个订阅号+测试账号即可。为啥要申请测试账号呢？因为订阅号的接口功能有限,为了学习开发以及熟悉更多的接口,所以还需要申请一个测试号。</p>
+<h2 id="2-注册订阅号"><a href="#2-注册订阅号" class="headerlink" title="2 注册订阅号"></a>2 注册订阅号</h2><p>第一步：访问：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/">https://mp.weixin.qq.com/</a>  点击<code>立即注册</code>按钮</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808110839008.png" alt="image-20210808110839008"></p>
+<p>第二步：注册类型页面选择<code>订阅号</code></p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808110933591.png" alt="image-20210808110933591"></p>
+<p>第三步：填写相关信息，点击注册即可</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808111031011.png" alt="image-20210808111031011"></p>
+<h2 id="3-注册测试号"><a href="#3-注册测试号" class="headerlink" title="3 注册测试号"></a>3 注册测试号</h2><p>因为订阅号的接口权限是有限的,为了熟悉更多的微信公众号接口,所以需要申请一个测试号。</p>
+<p>第一步：用注册的订阅号登录</p>
+<p>第二步：在目录中【设置与开发】—&gt;【开发者工具】下选择公众平台测试账号,点击进入后申请即可。</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808112917414.png" alt="image-20210808112917414"></p>
+<p>申请成功之后,就可以配置相关信息进行开发了,具体怎么配置后面再解释</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808113103181.png" alt="image-20210808113103181"></p>
+<h2 id="4-程序运行流程"><a href="#4-程序运行流程" class="headerlink" title="4 程序运行流程"></a>4 程序运行流程</h2><p>用户在公众号发送请求到<code>微信服务器</code></p>
+<p><code>微信服务器</code>将请求转发到<code>我们自己的服务器</code></p>
+<p><code>我们自己的服务器</code>处理完之后再把结果发送到<code>微信服务器</code></p>
+<p>最后<code>微信服务器</code>再把结果响应给客户</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808114624893.png" alt="image-20210808114624893"></p>
+<h2 id="5-搭建开发环境"><a href="#5-搭建开发环境" class="headerlink" title="5 搭建开发环境"></a>5 搭建开发环境</h2><p>罗老师用的是eclipse并且没有用maven环境,我用的是eclipse+maven+jdk7+tomcat8.0。maven的话可以兼容idea，而且下载依赖方便。</p>
+<p>新建一个名为<code>wx</code>的maven项目(这个项目名字任意都行),<code>pom.xml</code>的依赖如下：</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 阿里云小蜜-自动回复机器人 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.aliyun<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>aliyun-java-sdk-chatbot<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.aliyun<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>aliyun-java-sdk-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.5.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- xml操作相关依赖 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.thoughtworks.xstream<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>xstream<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.4.11.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.dom4j<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dom4j<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 阿里json解析 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>fastjson<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.2.28<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 这个是编码解码的 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>commons-codec<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>commons-codec<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.10<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span></code></pre>
+
+<p>编写一个测试的servlet</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">import</span> javax.servlet.ServletException;
+<span class="hljs-keyword">import</span> javax.servlet.annotation.WebServlet;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServlet;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletResponse;
+
+<span class="hljs-meta">@WebServlet(&quot;/test&quot;)</span> 
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpServlet</span>&#123;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		System.out.println(<span class="hljs-string">&quot;请求到达了&quot;</span>);
+		resp.getWriter().write(<span class="hljs-string">&quot;hello weixin&quot;</span>);
+	&#125;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		
+	&#125;
+
+&#125;</code></pre>
+
+<p>启动项目访问：<a target="_blank" rel="noopener" href="http://localhost:8080/wx/test">http://localhost:8080/wx/test</a></p>
+<p>浏览器看到如下效果说明搭建成功</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808120644851.png" alt="image-20210808120644851"></p>
+<h2 id="6-内外网穿透"><a href="#6-内外网穿透" class="headerlink" title="6 内外网穿透"></a>6 内外网穿透</h2><p>外网默认是访问不到自己电脑上的项目的,为了让外网能够访问,所以需要做内外网穿透.这个不需要自己实现,可以借助一些工具,如花生壳、ngrok.这里用的是ngrok.</p>
+<p><a target="_blank" rel="noopener" href="https://www.ngrok.cc/_book/start/ngrok_linux.html">ngrok文档</a></p>
+<p>第一步：访问<a target="_blank" rel="noopener" href="https://www.ngrok.cc/">ngrok官网</a>,注册ngrok账号。</p>
+<p>第二步：使用注册的账号登录</p>
+<p>第三步：【隧道管理—&gt;开通隧道】立即购买,可以购买最后那个免费的，也可以花10块钱买一个。免费的有时候不稳定,可以买一个10块。</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808195028874.png" alt="image-20210808195028874"></p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808195438170.png" alt="image-20210808195438170"></p>
+<p>开通之后在隧道管理下就可以看到刚刚开通的隧道</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808195618721.png" alt="image-20210808195618721"></p>
+<p>第四步：下载客户端工具,我电脑是windows的所以下载windows版</p>
+<p>各版本工具下载地址：<a target="_blank" rel="noopener" href="https://www.ngrok.cc/download.html">https://www.ngrok.cc/download.html</a></p>
+<p>第五步：启动ngrok客户端工具,运行bat,输入隧道id，回车</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808195948516.png" alt="image-20210808195948516"></p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808200101402.png" alt="image-20210808200101402"></p>
+<p>看到下面这个状态为【online】表示启动成功<br><img src="/2021/08/14/1426556608602836992/images/image-20210808200116096.png" alt="image-20210808200116096"></p>
+<p>然后就可以通过<a target="_blank" rel="noopener" href="http://heliufang.vipgz4.idcfengye.com这个域名访问本地8080端口上的项目了,比如访问之前搭建的wx项目/">http://heliufang.vipgz4.idcfengye.com这个域名访问本地8080端口上的项目了,比如访问之前搭建的wx项目</a></p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808200322739.png" alt="image-20210808200322739"></p>
+<h2 id="7-开发接入"><a href="#7-开发接入" class="headerlink" title="7 开发接入"></a>7 开发接入</h2><p>接入之后微信服务器和我们自己的项目就接通了。那么如何接入呢?</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html">接入的官方文档</a></p>
+<ul>
+<li>第一步：登录<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">微信公众测试号</a>的管理界面,填写好相关信息</li>
+</ul>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808213637686.png" alt="image-20210808213637686"></p>
+<p>上图中的url就是自己电脑的项目</p>
+<p>点击上图的提交按钮之后,微信会向上图中的url发送一个get请求,请求参数如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">signature</td>
+<td align="left">微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。</td>
+</tr>
+<tr>
+<td align="left">timestamp</td>
+<td align="left">时间戳</td>
+</tr>
+<tr>
+<td align="left">nonce</td>
+<td align="left">随机数</td>
+</tr>
+<tr>
+<td align="left">echostr</td>
+<td align="left">随机字符串</td>
+</tr>
+</tbody></table>
+<ul>
+<li>第二步：编写代码校验,用代码实现下面的逻辑</li>
+</ul>
+<p> 1）将token、timestamp、nonce三个参数进行字典序排序</p>
+<p> 2）将三个参数字符串拼接成一个字符串进行sha1加密 </p>
+<p> 3）开发者获得加密后的字符串可与signature对比，标识该请求来源于微信,如果比对成功,请原样返回echostr参数内容</p>
+<p>在之前搭建的名为<code>wx</code>的项目中新建一个【WxServlet.java】</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.PrintWriter;
+<span class="hljs-keyword">import</span> javax.servlet.ServletException;
+<span class="hljs-keyword">import</span> javax.servlet.annotation.WebServlet;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServlet;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletResponse;
+<span class="hljs-keyword">import</span> com.qy.service.WxService;
+
+<span class="hljs-meta">@WebServlet(&quot;/api&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WxServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpServlet</span>&#123;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		System.out.println(<span class="hljs-string">&quot;请求到达了&quot;</span>);
+		<span class="hljs-comment">//取出微信服务器传过来的参数</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">signature</span> <span class="hljs-operator">=</span> req.getParameter(<span class="hljs-string">&quot;signature&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">timestamp</span> <span class="hljs-operator">=</span> req.getParameter(<span class="hljs-string">&quot;timestamp&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">nonce</span> <span class="hljs-operator">=</span> req.getParameter(<span class="hljs-string">&quot;nonce&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">echostr</span> <span class="hljs-operator">=</span> req.getParameter(<span class="hljs-string">&quot;echostr&quot;</span>);
+        <span class="hljs-comment">//自定义一个check方法用来校验接入</span>
+		<span class="hljs-type">boolean</span> <span class="hljs-variable">success</span> <span class="hljs-operator">=</span> WxService.check(timestamp, nonce, signature);
+		<span class="hljs-keyword">if</span>(success)&#123;
+			System.out.println(<span class="hljs-string">&quot;接入成功&quot;</span>);
+			<span class="hljs-type">PrintWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> resp.getWriter();
+			writer.write(echostr);<span class="hljs-comment">//接入成功需要原样返回echostr</span>
+		&#125;<span class="hljs-keyword">else</span>&#123;
+			System.out.println(<span class="hljs-string">&quot;接入失败&quot;</span>);
+		&#125;
+	&#125;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		
+	&#125;
+&#125;</code></pre>
+
+<p>新建一个【WxService.java】并添加一个check工具方法</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> org.apache.commons.codec.digest.DigestUtils;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WxService</span> &#123;
+	
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">TOKEN</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;hlf&quot;</span>;<span class="hljs-comment">//在微信配置界面自定义的token</span>
+	
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 接入校验</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> timestamp</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> nonce</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> signature</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">check</span><span class="hljs-params">(String timestamp, String nonce, String signature)</span> &#123;
+		<span class="hljs-comment">//1.将token、timestamp、nonce三个参数进行字典序排序</span>
+		String[] arr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>[]&#123;TOKEN,timestamp,nonce&#125;;
+		Arrays.sort(arr);
+		<span class="hljs-comment">//2.将三个参数字符串拼接成一个字符串进行sha1加密  https://www.cnblogs.com/2333/p/6405386.html</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> arr[<span class="hljs-number">0</span>]+arr[<span class="hljs-number">1</span>]+arr[<span class="hljs-number">2</span>];
+		str = DigestUtils.sha1Hex(str);<span class="hljs-comment">//sha1加密,这里没有像罗老师那样手写,直接用的commons-codec包的工具类</span>
+		System.out.println(<span class="hljs-string">&quot;str:&quot;</span>+str);
+		<span class="hljs-comment">//3.将加密后的字符串和signature比较</span>
+		System.out.println(signature);
+		<span class="hljs-keyword">return</span> str.equalsIgnoreCase(signature);
+	&#125;
+&#125;
+</code></pre>
+
+<p>启动项目,点击提交按钮,出现下面这个代表接入成功。</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210808220055857.png" alt="image-20210808220055857"></p>
+<h2 id="8-接收用户消息"><a href="#8-接收用户消息" class="headerlink" title="8 接收用户消息"></a>8 接收用户消息</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html">接受普通消息</a></p>
+<blockquote>
+<p>当普通微信用户向公众账号发消息时，微信服务器将POST消息的XML数据包到开发者填写的URL上。</p>
+</blockquote>
+<p>也就是说用户发消息给微信服务器,微信服务器会发送<code>post请求</code>到我们自己的服务器,并且传送一个xml的数据给我们自己的服务器。</p>
+<p>例如文本消息是这样的</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">xml</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ToUserName</span>&gt;</span>&lt;![CDATA[toUser]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">ToUserName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FromUserName</span>&gt;</span>&lt;![CDATA[fromUser]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">FromUserName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CreateTime</span>&gt;</span>1348831860<span class="hljs-tag">&lt;/<span class="hljs-name">CreateTime</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MsgType</span>&gt;</span>&lt;![CDATA[text]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">MsgType</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>&lt;![CDATA[this is a test]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MsgId</span>&gt;</span>1234567890123456<span class="hljs-tag">&lt;/<span class="hljs-name">MsgId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">xml</span>&gt;</span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ToUserName</td>
+<td align="left">开发者微信号</td>
+</tr>
+<tr>
+<td align="left">FromUserName</td>
+<td align="left">发送方帐号（一个OpenID）</td>
+</tr>
+<tr>
+<td align="left">CreateTime</td>
+<td align="left">消息创建时间 （整型）</td>
+</tr>
+<tr>
+<td align="left">MsgType</td>
+<td align="left">消息类型，文本为text</td>
+</tr>
+<tr>
+<td align="left">Content</td>
+<td align="left">文本消息内容</td>
+</tr>
+<tr>
+<td align="left">MsgId</td>
+<td align="left">消息id，64位整型</td>
+</tr>
+</tbody></table>
+<p>java中这样的数据读取并不方便。可以转换一下,先通过dom4j这个包转成dom对象,再把标签名和对应的标签的值保存到HashMap集合中,这样后面处理数据就很方便了,具体代码实现如下：</p>
+<p>在【WxServlet】中编写<code>doPost</code>方法,在<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index">测试号管理界面</a>,扫码关注测试公众号</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		Map&lt;String,String&gt; map = WxService.parseRequest(req.getInputStream());
+		System.out.println(map);<span class="hljs-comment">//关注测试号,给测试公众号发消息,就可以看到打印结果了</span>
+	&#125;</code></pre>
+
+<p>在【WxService】中添加<code>parseRequest</code>方法</p>
+<pre><code class="hljs java"><span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 将接受到的消息转化成map</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> req</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span>  Map&lt;String, String&gt; <span class="hljs-title function_">parseRequest</span><span class="hljs-params">(InputStream is)</span> &#123;
+		Map&lt;String,String&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;String,String&gt;();
+		<span class="hljs-comment">//1.通过io流得到文档对象</span>
+		<span class="hljs-type">SAXReader</span> <span class="hljs-variable">saxReader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SAXReader</span>();
+		<span class="hljs-type">Document</span> <span class="hljs-variable">document</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+		<span class="hljs-keyword">try</span> &#123;
+			document = saxReader.read(is);
+		&#125; <span class="hljs-keyword">catch</span> (DocumentException e) &#123;
+			e.printStackTrace();
+		&#125;
+		<span class="hljs-comment">//2.通过文档对象得到根节点对象</span>
+		<span class="hljs-type">Element</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> document.getRootElement();
+		<span class="hljs-comment">//3.通过根节点对象获取所有子节点对象</span>
+		List&lt;Element&gt; elements = root.elements();
+		<span class="hljs-comment">//4.将所有节点放入map</span>
+		<span class="hljs-keyword">for</span> (Element element : elements) &#123;
+			map.put(element.getName(), element.getStringValue());
+		&#125;
+		<span class="hljs-keyword">return</span> map;
+	&#125;</code></pre>
+
+<h2 id="9-回复用户消息封装"><a href="#9-回复用户消息封装" class="headerlink" title="9 回复用户消息封装"></a>9 回复用户消息封装</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html">被动回复用户消息</a></p>
+<blockquote>
+<p>当用户发送消息给公众号时（或某些特定的用户操作引发的事件推送时），会产生一个POST请求，开发者可以在响应包（Get）中返回特定XML结构，来对该消息进行响应（现支持回复文本、图片、图文、语音、视频、音乐）。严格来说，发送被动响应消息其实并不是一种接口，而是对微信服务器发过来消息的一次回复。</p>
+<p><strong>一旦遇到以下情况，微信都会在公众号会话中，向用户下发系统提示“该公众号暂时无法提供服务，请稍后再试”：</strong></p>
+<p>1、开发者在5秒内未回复任何内容 2、开发者回复了异常数据，比如JSON数据等</p>
+</blockquote>
+<p>上面这段文字来自官方,可以看出</p>
+<ul>
+<li><p>回复必须是xml的类型</p>
+</li>
+<li><p>可以回复多种类型的xml(文本、图片、图文、语音、视频、音乐)</p>
+</li>
+<li><p>接收到消息没有做出响应就会抛出：<code>该公众号暂时无法提供服务，请稍后再试</code></p>
+</li>
+</ul>
+<h3 id="9-1-回复消息入门demo"><a href="#9-1-回复消息入门demo" class="headerlink" title="9.1  回复消息入门demo"></a>9.1  回复消息入门demo</h3><p>这个demo就是给用户回复一个文本消息</p>
+<p>回复的xml格式如下：</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">xml</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ToUserName</span>&gt;</span>&lt;![CDATA[toUser]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">ToUserName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FromUserName</span>&gt;</span>&lt;![CDATA[fromUser]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">FromUserName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CreateTime</span>&gt;</span>12345678<span class="hljs-tag">&lt;/<span class="hljs-name">CreateTime</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MsgType</span>&gt;</span>&lt;![CDATA[text]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">MsgType</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>&lt;![CDATA[你好]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">xml</span>&gt;</span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ToUserName</td>
+<td align="left">是</td>
+<td align="left">接收方帐号（收到的OpenID）</td>
+</tr>
+<tr>
+<td align="left">FromUserName</td>
+<td align="left">是</td>
+<td align="left">开发者微信号</td>
+</tr>
+<tr>
+<td align="left">CreateTime</td>
+<td align="left">是</td>
+<td align="left">消息创建时间 （整型）</td>
+</tr>
+<tr>
+<td align="left">MsgType</td>
+<td align="left">是</td>
+<td align="left">消息类型，文本为text</td>
+</tr>
+<tr>
+<td align="left">Content</td>
+<td align="left">是</td>
+<td align="left">回复的消息内容（换行：在content中能够换行，微信客户端就支持换行显示）</td>
+</tr>
+</tbody></table>
+<p>在wxservlet中doPost编写如下代码</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		<span class="hljs-comment">//设置编码格式,不然中文会乱码</span>
+		req.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+		resp.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+        <span class="hljs-comment">//将请求中的xml参数转成map</span>
+		Map&lt;String,String&gt; map = WxService.parseRequest(req.getInputStream());
+		System.out.println(map);
+		<span class="hljs-comment">//回复消息</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">textMsg</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[&quot;</span>+map.get(<span class="hljs-string">&quot;FromUserName&quot;</span>)+<span class="hljs-string">&quot;]]&gt;&lt;/ToUserName&gt;&lt;FromUserName&gt;&lt;![CDATA[&quot;</span>+map.get(<span class="hljs-string">&quot;ToUserName&quot;</span>)+<span class="hljs-string">&quot;]]&gt;&lt;/FromUserName&gt;&lt;CreateTime&gt;12345678&lt;/CreateTime&gt;&lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;&lt;Content&gt;&lt;![CDATA[你好]]&gt;&lt;/Content&gt;&lt;/xml&gt;&quot;</span>;
+		resp.getWriter().print(textMsg);
+	&#125;</code></pre>
+
+<p>然后用测试号发消息,公众号都会回复一个  【你好】</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210810221633028.png" alt="image-20210810221633028"></p>
+<p>这样写代码功能是可以实现,但是这样拼接字符串,再回复消息很不方便.然后自然就想到可以用java类来封装消息,响应的时候将java类转成xml(通过<code>xstream</code>这个工具包实现)。下面就以文本消息和图文消息为例进行封装,其它消息类似。</p>
+<h3 id="9-2-基础消息类的封装"><a href="#9-2-基础消息类的封装" class="headerlink" title="9.2 基础消息类的封装"></a>9.2 基础消息类的封装</h3><p>把公共的属性放到基础消息类中,然后其它消息类继承即可。</p>
+<p><code>@XStreamAlias</code> 这个注解配置的就是转成xml时对应的节点名字</p>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BaseMsg</span> &#123;
+	<span class="hljs-meta">@XStreamAlias(&quot;ToUserName&quot;)</span>
+	<span class="hljs-keyword">private</span> String toUserName;<span class="hljs-comment">//接收方的账号(收到的openid)</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;FromUserName&quot;)</span>
+	<span class="hljs-keyword">private</span> String fromUserName;<span class="hljs-comment">//开发者的微信号</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;CreateTime&quot;)</span>
+	<span class="hljs-keyword">private</span> String createTime;<span class="hljs-comment">//消息创建时间</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;MsgType&quot;)</span>
+	<span class="hljs-keyword">private</span> String msgType;<span class="hljs-comment">//消息类型</span>
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">BaseMsg</span><span class="hljs-params">(Map&lt;String,String&gt; requestMap)</span> &#123;
+		<span class="hljs-built_in">super</span>();
+		<span class="hljs-built_in">this</span>.toUserName = requestMap.get(<span class="hljs-string">&quot;FromUserName&quot;</span>);
+		<span class="hljs-built_in">this</span>.fromUserName = requestMap.get(<span class="hljs-string">&quot;ToUserName&quot;</span>);
+		<span class="hljs-built_in">this</span>.createTime = requestMap.get(<span class="hljs-string">&quot;CreateTime&quot;</span>);
+	&#125;
+    
+    <span class="hljs-comment">//get and set ...</span>
+&#125;</code></pre>
+
+<h3 id="9-3-文本消息类封装"><a href="#9-3-文本消息类封装" class="headerlink" title="9.3 文本消息类封装"></a>9.3 文本消息类封装</h3><p>回复的xml的格式说明可以参考9.1入门demo.回复文本的封装类如下：</p>
+<pre><code class="hljs java"><span class="hljs-meta">@XStreamAlias(&quot;xml&quot;)</span> <span class="hljs-comment">//xml指的就是xml这个根节点名称</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TextMsg</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">BaseMsg</span> &#123;
+	<span class="hljs-meta">@XStreamAlias(&quot;Content&quot;)</span>
+	<span class="hljs-keyword">private</span> String content;<span class="hljs-comment">//回复的文本内容</span>
+	
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">TextMsg</span><span class="hljs-params">(Map&lt;String,String&gt; requestMap,String content)</span> &#123;
+		<span class="hljs-built_in">super</span>(requestMap);
+		<span class="hljs-built_in">this</span>.setMsgType(<span class="hljs-string">&quot;text&quot;</span>);
+		<span class="hljs-built_in">this</span>.content = content;
+	&#125;
+    
+    <span class="hljs-comment">//get and set ...</span>
+&#125;</code></pre>
+
+<h3 id="9-4-图文消息封装"><a href="#9-4-图文消息封装" class="headerlink" title="9.4 图文消息封装"></a>9.4 图文消息封装</h3><p>图文消息格式说明</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">xml</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ToUserName</span>&gt;</span>&lt;![CDATA[toUser]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">ToUserName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">FromUserName</span>&gt;</span>&lt;![CDATA[fromUser]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">FromUserName</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">CreateTime</span>&gt;</span>12345678<span class="hljs-tag">&lt;/<span class="hljs-name">CreateTime</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">MsgType</span>&gt;</span>&lt;![CDATA[news]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">MsgType</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ArticleCount</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">ArticleCount</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Articles</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Title</span>&gt;</span>&lt;![CDATA[title1]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>&lt;![CDATA[description1]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PicUrl</span>&gt;</span>&lt;![CDATA[picurl]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">PicUrl</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Url</span>&gt;</span>&lt;![CDATA[url]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">Url</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">item</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Articles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">xml</span>&gt;</span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ToUserName</td>
+<td align="left">是</td>
+<td align="left">接收方帐号（收到的OpenID）</td>
+</tr>
+<tr>
+<td align="left">FromUserName</td>
+<td align="left">是</td>
+<td align="left">开发者微信号</td>
+</tr>
+<tr>
+<td align="left">CreateTime</td>
+<td align="left">是</td>
+<td align="left">消息创建时间 （整型）</td>
+</tr>
+<tr>
+<td align="left">MsgType</td>
+<td align="left">是</td>
+<td align="left">消息类型，图文为news</td>
+</tr>
+<tr>
+<td align="left">ArticleCount</td>
+<td align="left">是</td>
+<td align="left">图文消息个数；当用户发送文本、图片、语音、视频、图文、地理位置这六种消息时，开发者只能回复1条图文消息；其余场景最多可回复8条图文消息</td>
+</tr>
+<tr>
+<td align="left">Articles</td>
+<td align="left">是</td>
+<td align="left">图文消息信息，注意，如果图文数超过限制，则将只发限制内的条数</td>
+</tr>
+<tr>
+<td align="left">Title</td>
+<td align="left">是</td>
+<td align="left">图文消息标题</td>
+</tr>
+<tr>
+<td align="left">Description</td>
+<td align="left">是</td>
+<td align="left">图文消息描述</td>
+</tr>
+<tr>
+<td align="left">PicUrl</td>
+<td align="left">是</td>
+<td align="left">图片链接，支持JPG、PNG格式，较好的效果为大图360<em>200，小图200</em>200</td>
+</tr>
+<tr>
+<td align="left">Url</td>
+<td align="left">是</td>
+<td align="left">点击图文消息跳转链接</td>
+</tr>
+</tbody></table>
+<p>首先封装一个article类,对应就是xml中的item这个节点</p>
+<pre><code class="hljs java"><span class="hljs-meta">@XStreamAlias(&quot;item&quot;)</span><span class="hljs-comment">//映射到xml中的item这个节点</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Article</span> &#123;
+	<span class="hljs-meta">@XStreamAlias(&quot;Title&quot;)</span>
+	<span class="hljs-keyword">private</span> String title;<span class="hljs-comment">//图文消息标题</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;Description&quot;)</span>
+	<span class="hljs-keyword">private</span> String description;<span class="hljs-comment">//图文消息描述</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;PicUrl&quot;)</span>
+	<span class="hljs-keyword">private</span> String picUrl;<span class="hljs-comment">//图片链接</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;Url&quot;)</span>
+	<span class="hljs-keyword">private</span> String url;<span class="hljs-comment">//点击图文消息跳转链接</span>
+    
+    <span class="hljs-comment">//get and set ...</span>
+&#125;</code></pre>
+
+<p>然后再封装一个图文消息类</p>
+<pre><code class="hljs java"><span class="hljs-meta">@XStreamAlias(&quot;xml&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">NewsMsg</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">BaseMsg</span> &#123;
+	
+	<span class="hljs-meta">@XStreamAlias(&quot;ArticleCount&quot;)</span>
+	<span class="hljs-keyword">private</span> String articleCount;<span class="hljs-comment">//图文消息个数</span>
+	<span class="hljs-meta">@XStreamAlias(&quot;Articles&quot;)</span>
+	<span class="hljs-keyword">private</span> List&lt;Article&gt; articles;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">NewsMsg</span><span class="hljs-params">(Map&lt;String, String&gt; requestMap,List&lt;Article&gt; articles)</span> &#123;
+		<span class="hljs-built_in">super</span>(requestMap);
+		<span class="hljs-built_in">this</span>.setMsgType(<span class="hljs-string">&quot;news&quot;</span>);
+		<span class="hljs-built_in">this</span>.articles = articles;
+		<span class="hljs-built_in">this</span>.setArticleCount(<span class="hljs-built_in">this</span>.articles.size()+<span class="hljs-string">&quot;&quot;</span>);
+	&#125;
+    <span class="hljs-comment">//get and set ...</span>
+&#125;</code></pre>
+
+<h3 id="9-5-测试"><a href="#9-5-测试" class="headerlink" title="9.5 测试"></a>9.5 测试</h3><p>前面已经将基础消息和图文消息封装好了,现在用封装好的消息类来回复</p>
+<p>第一步：将<code>wxservlet</code>的<code>doPost</code>方法改成如下</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		<span class="hljs-comment">//设置编码格式,不然中文会乱码</span>
+		req.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+		resp.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+        <span class="hljs-comment">//将请求中的xml参数转成map</span>
+		Map&lt;String,String&gt; map = WxService.parseRequest(req.getInputStream());
+		System.out.println(map);
+        <span class="hljs-comment">//处理完将响应一个xml给微信</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">respXml</span> <span class="hljs-operator">=</span> WxService.getRespose(map);
+		System.out.println(respXml);
+		resp.getWriter().print(respXml);
+	&#125;</code></pre>
+
+<p>第二步：WxService添加如下方法：</p>
+<pre><code class="hljs java"><span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 事件消息回复</span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">getRespose</span><span class="hljs-params">(Map&lt;String, String&gt; requestMap)</span> &#123;
+		<span class="hljs-type">BaseMsg</span> <span class="hljs-variable">msg</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+		<span class="hljs-comment">// 根据用户发送消息的类型,做不同的处理</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">msgType</span> <span class="hljs-operator">=</span> requestMap.get(<span class="hljs-string">&quot;MsgType&quot;</span>);
+		<span class="hljs-keyword">switch</span> (msgType) &#123;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;text&quot;</span>:
+			msg = dealTextMsg(requestMap);
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;news&quot;</span>:
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">default</span>:
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		<span class="hljs-comment">// System.out.println(msg);</span>
+		<span class="hljs-comment">// 将处理结果转化成xml的字符串返回</span>
+		<span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != msg) &#123;
+			<span class="hljs-keyword">return</span> beanToXml(msg);
+		&#125;
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+	&#125;
+
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 将回复的消息类转成xml字符串</span>
+<span class="hljs-comment">	 * </span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> msg</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">beanToXml</span><span class="hljs-params">(BaseMsg msg)</span> &#123;
+		<span class="hljs-type">XStream</span> <span class="hljs-variable">stream</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XStream</span>();
+		stream.processAnnotations(TextMsg.class);
+		stream.processAnnotations(NewsMsg.class);
+		<span class="hljs-type">String</span> <span class="hljs-variable">xml</span> <span class="hljs-operator">=</span> stream.toXML(msg);
+		<span class="hljs-keyword">return</span> xml;
+	&#125;
+
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 当用户发送是文本消息的处理逻辑</span>
+<span class="hljs-comment">	 * </span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> map</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> BaseMsg <span class="hljs-title function_">dealTextMsg</span><span class="hljs-params">(Map&lt;String, String&gt; requestMap)</span> &#123;
+		<span class="hljs-comment">// 获取用户发送的消息内容</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">msg</span> <span class="hljs-operator">=</span> requestMap.get(<span class="hljs-string">&quot;Content&quot;</span>);
+		<span class="hljs-comment">// 如果是图文回复一个图文消息</span>
+		<span class="hljs-keyword">if</span> (msg.equals(<span class="hljs-string">&quot;图文&quot;</span>)) &#123;
+			List&lt;Article&gt; articles = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Article&gt;();
+			articles.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Article</span>(<span class="hljs-string">&quot;码云博客&quot;</span>, <span class="hljs-string">&quot;这个是我个人的码云博客,基于hexo搭建,里面的文章都是使用markdown编写&quot;</span>,
+					<span class="hljs-string">&quot;https://heliufang.gitee.io/uploads/banner.jpg&quot;</span>, <span class="hljs-string">&quot;https://heliufang.gitee.io/&quot;</span>));
+			<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NewsMsg</span>(requestMap, articles);
+		&#125;
+		<span class="hljs-comment">//否则回复一个文本消息,文本内容为&#x27;当前时间+你好&#x27;</span>
+        <span class="hljs-comment">//当然这个内容可以自定义,在这里也可以接入自动回复机器人</span>
+		<span class="hljs-type">TextMsg</span> <span class="hljs-variable">textMsg</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextMsg</span>(requestMap, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(System.currentTimeMillis()).toLocaleString() + <span class="hljs-string">&quot;你好&quot;</span>);
+		<span class="hljs-keyword">return</span> textMsg;
+	&#125;</code></pre>
+
+<p>然后分别给公众号发一个1和图文</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210810231459572.png" alt="image-20210810231459572"></p>
+<h3 id="9-6-自动回复机器人"><a href="#9-6-自动回复机器人" class="headerlink" title="9.6 自动回复机器人"></a>9.6 自动回复机器人</h3><p>罗老师教程中的图灵机器人已经要收费.我使用的是阿里云的<code>阿里云小蜜</code>这个机器人来做的回复.</p>
+<p>阿里云小蜜机器人可以免费体验三个月。</p>
+<p>具体代码可以查看阿里云小蜜的文档：<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/60221.html">阿里云产品服务协议(云小蜜)</a></p>
+<h2 id="10-★access-token的获取"><a href="#10-★access-token的获取" class="headerlink" title="10 ★access token的获取"></a>10 ★access token的获取</h2><p>access_token是公众号的全局唯一接口调用凭据，<strong>公众号调用各接口时都需使用access_token</strong>。开发者需要进行妥善保存.access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html">access token文档</a></p>
+<p>目前access_token的有效期通过返回的<code>expire_in</code>来传达，目前是7200秒之内的值。中控服务器需要根据这个有效时间提前去刷新新access_token</p>
+<p>总结：调用很多接口需要access_token，获取access_token之后需要保存起来,过期了再重新获取,而不是每次都重新获取。</p>
+<p><strong>接口调用请求说明</strong></p>
+<blockquote>
+<p>https请求方式: GET <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET</a></p>
+</blockquote>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">grant_type</td>
+<td align="left">是</td>
+<td align="left">获取access_token填写client_credential</td>
+</tr>
+<tr>
+<td align="left">appid</td>
+<td align="left">是</td>
+<td align="left">第三方用户唯一凭证</td>
+</tr>
+<tr>
+<td align="left">secret</td>
+<td align="left">是</td>
+<td align="left">第三方用户唯一凭证密钥，即appsecret</td>
+</tr>
+</tbody></table>
+<p><strong>返回说明</strong></p>
+<p>正常情况下，微信会返回下述JSON数据包给公众号：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;access_token&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;expires_in&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">7200</span><span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">获取到的凭证</td>
+</tr>
+<tr>
+<td align="left">expires_in</td>
+<td align="left">凭证有效时间，单位：秒</td>
+</tr>
+</tbody></table>
+<h3 id="10-1-★封装请求工具类"><a href="#10-1-★封装请求工具类" class="headerlink" title="10.1 ★封装请求工具类"></a>10.1 ★封装请求工具类</h3><p>因为需要发送请求给微信服务器,所以需要有请求的工具类。罗老师用的是java自带的请求类，相对来说比较繁琐。所以我这里采用的是Apache HttpClient,这个用起来更加的简单。</p>
+<p>第一步：pom.xml中导入依赖</p>
+<pre><code class="hljs xml"><span class="hljs-comment">&lt;!--httpClient需要的依赖--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>httpclient<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.5.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-comment">&lt;!--//httpclient缓存--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>httpclient-cache<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.5<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-comment">&lt;!--//http的mime类型都在这里面--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.httpcomponents<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>httpmime<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.3.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+
+<p>第二步：基于<code>Apache HttpClient</code>封装<code>HttpUtils</code>工具类,我封装了4个方法,可以支持get请求和post请求。后面很多需要用的地方直接调用即可。</p>
+<p>可以参考这个博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shan-kylin/p/9453514.html">HttpClient发送get&#x2F;post请求</a></p>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">HttpUtils</span> &#123;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;
+		<span class="hljs-comment">// 1.测试get请求</span>
+		<span class="hljs-comment">/*</span>
+<span class="hljs-comment">		 String getUrl = &quot;http://localhost:8080/user/searchPage?pageNum=1&amp;pageSize=2&quot;;</span>
+<span class="hljs-comment">		 System.out.println(sendGet(getUrl));</span>
+<span class="hljs-comment">		 */</span>
+		
+		<span class="hljs-comment">// 2.测试post请求 携带x-www-form-urlencoded数据格式</span>
+		<span class="hljs-comment">/*String postUrlForm = &quot;http://localhost:8080/user&quot;;</span>
+<span class="hljs-comment">		Map paramMap = new HashMap();</span>
+<span class="hljs-comment">		paramMap.put(&quot;name&quot;, &quot;杰克&quot;);</span>
+<span class="hljs-comment">		paramMap.put(&quot;age&quot;, &quot;20&quot;);</span>
+<span class="hljs-comment">		paramMap.put(&quot;gender&quot;, &quot;1&quot;);</span>
+<span class="hljs-comment">		System.out.println(sendPost(postUrlForm, paramMap));*/</span>
+		
+		<span class="hljs-comment">//3.测试post请求 携带json数据格式</span>
+		<span class="hljs-comment">/*String postUrlJson = &quot;http://localhost:8080/user&quot;;</span>
+<span class="hljs-comment">		String jsonParam = &quot;&#123;\&quot;name\&quot;:\&quot;jack\&quot;,\&quot;age\&quot;:\&quot;18\&quot;,\&quot;gender\&quot;:\&quot;2\&quot;&#125;&quot;;</span>
+<span class="hljs-comment">		System.out.println(sendPost(postUrlJson,jsonParam));*/</span>
+		
+		<span class="hljs-comment">//4 测试post 携带文件</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">postUrlFile</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;http://localhost:8080/user/upload&quot;</span>;
+		<span class="hljs-type">Map</span> <span class="hljs-variable">paramMap</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>();
+		paramMap.put(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;tom&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">localFile</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;d:\\logo.png&quot;</span>;
+		<span class="hljs-type">String</span> <span class="hljs-variable">fileParamName</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;file&quot;</span>;
+		System.out.println(sendPost(postUrlFile, paramMap,localFile,fileParamName));
+	&#125;
+
+	<span class="hljs-comment">// 1.httpClient发送get请求</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">sendGet</span><span class="hljs-params">(String url)</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;
+		<span class="hljs-type">CloseableHttpResponse</span> <span class="hljs-variable">response</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+		<span class="hljs-keyword">try</span> &#123;
+			<span class="hljs-comment">// 根据地址获取请求</span>
+			<span class="hljs-type">HttpGet</span> <span class="hljs-variable">request</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpGet</span>(url);<span class="hljs-comment">// 这里发送get请求</span>
+			<span class="hljs-comment">// 获取当前客户端对象</span>
+			<span class="hljs-type">CloseableHttpClient</span> <span class="hljs-variable">httpClient</span> <span class="hljs-operator">=</span> HttpClients.createDefault();
+			<span class="hljs-comment">// 通过请求对象获取响应对象</span>
+			response = httpClient.execute(request);
+			<span class="hljs-comment">// 判断网络连接状态码是否正常(0--200都数正常)</span>
+			<span class="hljs-keyword">if</span> (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) &#123;
+				result = EntityUtils.toString(response.getEntity(), <span class="hljs-string">&quot;utf-8&quot;</span>);
+			&#125;
+		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+			e.printStackTrace();
+		&#125; <span class="hljs-keyword">finally</span> &#123;
+			<span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != response) &#123;
+				<span class="hljs-keyword">try</span> &#123;
+					response.close();
+				&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;
+					e.printStackTrace();
+				&#125;
+			&#125;
+		&#125;
+		<span class="hljs-keyword">return</span> result;
+	&#125;
+
+	<span class="hljs-comment">// 2.httpClient发送post请求 携带x-www-form-urlencoded数据格式</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">sendPost</span><span class="hljs-params">(String url, Map&lt;String, String&gt; map)</span> &#123;
+		<span class="hljs-type">CloseableHttpResponse</span> <span class="hljs-variable">httpResponse</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+		<span class="hljs-type">String</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;
+		<span class="hljs-keyword">try</span> &#123;
+			<span class="hljs-comment">// 1、创建一个httpClient客户端对象</span>
+			<span class="hljs-type">CloseableHttpClient</span> <span class="hljs-variable">httpClient</span> <span class="hljs-operator">=</span> HttpClients.createDefault();
+			<span class="hljs-comment">// 2、创建一个HttpPost请求</span>
+			<span class="hljs-type">HttpPost</span> <span class="hljs-variable">httpPost</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpPost</span>(url);
+			<span class="hljs-comment">// 设置请求头</span>
+			httpPost.setHeader(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>); <span class="hljs-comment">// 设置传输的数据格式</span>
+			<span class="hljs-comment">// 携带普通的参数params的方式</span>
+			List&lt;BasicNameValuePair&gt; params = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;BasicNameValuePair&gt;();
+			Set&lt;String&gt; keys = map.keySet();
+			<span class="hljs-keyword">for</span> (String key : keys) &#123;
+				params.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">BasicNameValuePair</span>(key, map.get(key)));
+			&#125;
+			<span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> EntityUtils.toString(<span class="hljs-keyword">new</span> <span class="hljs-title class_">UrlEncodedFormEntity</span>(params, Consts.UTF_8));
+			<span class="hljs-comment">// 这里就是：username=kylin&amp;password=123456</span>
+			System.out.println(str);
+
+			<span class="hljs-comment">// 放参数进post请求里面 从名字可以知道 这个类是专门处理x-www-form-urlencoded 添加参数的</span>
+			httpPost.setEntity(<span class="hljs-keyword">new</span> <span class="hljs-title class_">UrlEncodedFormEntity</span>(params, <span class="hljs-string">&quot;UTF-8&quot;</span>));
+
+			<span class="hljs-comment">// 7、执行post请求操作，并拿到结果</span>
+			httpResponse = httpClient.execute(httpPost);
+			<span class="hljs-comment">// 获取结果实体</span>
+			<span class="hljs-type">HttpEntity</span> <span class="hljs-variable">entity</span> <span class="hljs-operator">=</span> httpResponse.getEntity();
+			<span class="hljs-keyword">if</span> (entity != <span class="hljs-literal">null</span>) &#123;
+				result = EntityUtils.toString(entity, <span class="hljs-string">&quot;UTF-8&quot;</span>);
+			&#125; <span class="hljs-keyword">else</span> &#123;
+				EntityUtils.consume(entity);<span class="hljs-comment">//// 如果entity为空，那么直接消化掉即可</span>
+			&#125;
+		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+			e.printStackTrace();
+		&#125; <span class="hljs-keyword">finally</span> &#123;
+			<span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != httpResponse) &#123;
+				<span class="hljs-keyword">try</span> &#123;
+					httpResponse.close();
+				&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;
+					e.printStackTrace();
+				&#125;
+			&#125;
+		&#125;
+		<span class="hljs-keyword">return</span> result;
+	&#125;
+
+	<span class="hljs-comment">// 3.httpClient发送post请求 携带json数据格式</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">sendPost</span><span class="hljs-params">(String url, String jsonStr)</span> &#123;
+		<span class="hljs-type">CloseableHttpResponse</span> <span class="hljs-variable">httpResponse</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+		<span class="hljs-type">String</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;
+		<span class="hljs-keyword">try</span> &#123;
+			<span class="hljs-comment">// 1.创建httpClient</span>
+			<span class="hljs-type">CloseableHttpClient</span> <span class="hljs-variable">httpClient</span> <span class="hljs-operator">=</span> HttpClients.createDefault();
+			<span class="hljs-comment">// 2.创建post请求方式实例</span>
+			<span class="hljs-type">HttpPost</span> <span class="hljs-variable">httpPost</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpPost</span>(url);
+
+			<span class="hljs-comment">// 2.1设置请求头 发送的是json数据格式</span>
+			httpPost.setHeader(<span class="hljs-string">&quot;Content-type&quot;</span>, <span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);
+			httpPost.setHeader(<span class="hljs-string">&quot;Connection&quot;</span>, <span class="hljs-string">&quot;Close&quot;</span>);
+
+			<span class="hljs-comment">// 3.设置参数---设置消息实体 也就是携带的数据</span>
+			<span class="hljs-comment">/*</span>
+<span class="hljs-comment">			 * 比如传递： &#123; &quot;username&quot;: &quot;aries&quot;, &quot;password&quot;: &quot;666666&quot; &#125;</span>
+<span class="hljs-comment">			 */</span>
+			<span class="hljs-comment">//String jsonStr = &quot; &#123;\&quot;username\&quot;:\&quot;aries\&quot;,\&quot;password\&quot;:\&quot;666666\&quot;&#125;&quot;;</span>
+			<span class="hljs-type">StringEntity</span> <span class="hljs-variable">entity</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringEntity</span>(jsonStr.toString(), Charset.forName(<span class="hljs-string">&quot;UTF-8&quot;</span>));
+			entity.setContentEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>); <span class="hljs-comment">// 设置编码格式</span>
+			<span class="hljs-comment">// 发送Json格式的数据请求</span>
+			entity.setContentType(<span class="hljs-string">&quot;application/json&quot;</span>);
+			<span class="hljs-comment">// 把请求消息实体塞进去</span>
+			httpPost.setEntity(entity);
+
+			<span class="hljs-comment">// 4.执行http的post请求</span>
+			<span class="hljs-comment">// 4.执行post请求操作，并拿到结果</span>
+			httpResponse = httpClient.execute(httpPost);
+			<span class="hljs-comment">// 获取结果实体</span>
+			<span class="hljs-type">HttpEntity</span> <span class="hljs-variable">httpEntity</span> <span class="hljs-operator">=</span> httpResponse.getEntity();
+			<span class="hljs-keyword">if</span> (httpEntity != <span class="hljs-literal">null</span>) &#123;
+				result = EntityUtils.toString(httpEntity, <span class="hljs-string">&quot;UTF-8&quot;</span>);
+			&#125; <span class="hljs-keyword">else</span> &#123;
+				EntityUtils.consume(httpEntity);<span class="hljs-comment">//// 如果httpEntity为空，那么直接消化掉即可</span>
+			&#125;
+		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+			e.printStackTrace();
+		&#125; <span class="hljs-keyword">finally</span> &#123;
+			<span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != httpResponse) &#123;
+				<span class="hljs-keyword">try</span> &#123;
+					httpResponse.close();
+				&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;
+					e.printStackTrace();
+				&#125;
+			&#125;
+		&#125;
+		<span class="hljs-keyword">return</span> result;
+	&#125;
+
+	<span class="hljs-comment">// 4.httpClient发送post请求 携带文件</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">sendPost</span><span class="hljs-params">(String url, Map&lt;String, String&gt; map,String localFile, String fileParamName)</span> &#123;
+		<span class="hljs-type">HttpPost</span> <span class="hljs-variable">httpPost</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HttpPost</span>(url);
+		<span class="hljs-type">CloseableHttpClient</span> <span class="hljs-variable">httpClient</span> <span class="hljs-operator">=</span> HttpClients.createDefault();
+        <span class="hljs-type">String</span> <span class="hljs-variable">resultString</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-type">CloseableHttpResponse</span> <span class="hljs-variable">response</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">try</span> &#123;
+            <span class="hljs-comment">// 把文件转换成流对象FileBody</span>
+            <span class="hljs-type">FileBody</span> <span class="hljs-variable">bin</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileBody</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(localFile));
+
+            <span class="hljs-type">MultipartEntityBuilder</span> <span class="hljs-variable">builder</span> <span class="hljs-operator">=</span> MultipartEntityBuilder.create();
+
+            <span class="hljs-comment">// 相当于&lt;input type=&quot;file&quot; name=&quot;fileParamName&quot;/&gt; 其中fileParamName以传进来的为准</span>
+            builder.addPart(fileParamName, bin);
+            <span class="hljs-comment">// 相当于&lt;input type=&quot;text&quot; name=&quot;userName&quot; value=userName&gt;</span>
+            <span class="hljs-comment">/*builder.addPart(&quot;filesFileName&quot;,</span>
+<span class="hljs-comment">                    new StringBody(fileParamName, ContentType.create(&quot;text/plain&quot;, Consts.UTF_8)));*/</span>
+            <span class="hljs-keyword">if</span> (map != <span class="hljs-literal">null</span>) &#123;
+                <span class="hljs-keyword">for</span> (String key : map.keySet()) &#123;
+                    builder.addPart(key,
+                            <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBody</span>(map.get(key), ContentType.create(<span class="hljs-string">&quot;text/plain&quot;</span>, Consts.UTF_8)));
+                &#125;
+            &#125;
+            <span class="hljs-type">HttpEntity</span> <span class="hljs-variable">reqEntity</span> <span class="hljs-operator">=</span> builder.build();
+            httpPost.setEntity(reqEntity);
+            <span class="hljs-comment">// 发起请求 并返回请求的响应</span>
+            response = httpClient.execute(httpPost, HttpClientContext.create());
+            resultString = EntityUtils.toString(response.getEntity(), <span class="hljs-string">&quot;utf-8&quot;</span>);
+        &#125;  <span class="hljs-keyword">catch</span> (Exception e) &#123;
+            e.printStackTrace();
+        &#125; <span class="hljs-keyword">finally</span> &#123;
+            <span class="hljs-keyword">try</span> &#123;
+                <span class="hljs-keyword">if</span> (response != <span class="hljs-literal">null</span>)
+                    response.close();
+            &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        <span class="hljs-keyword">return</span> resultString;
+	&#125;
+&#125;</code></pre>
+
+<h3 id="10-2-创建AccessToken类"><a href="#10-2-创建AccessToken类" class="headerlink" title="10.2 创建AccessToken类"></a>10.2 创建AccessToken类</h3><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AccessToken</span> &#123;
+	<span class="hljs-keyword">private</span> String token;
+	<span class="hljs-keyword">private</span> <span class="hljs-type">long</span> expiresTime;<span class="hljs-comment">//过期时间</span>
+	
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">AccessToken</span><span class="hljs-params">(String token, String expiresIn)</span> &#123;
+		<span class="hljs-built_in">super</span>();
+		<span class="hljs-built_in">this</span>.token = token;
+		<span class="hljs-comment">//当前时间+有效期 = 过期时间</span>
+		<span class="hljs-built_in">this</span>.expiresTime = System.currentTimeMillis()+Integer.parseInt(expiresIn);
+	&#125;
+	
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 判断token是否过期</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isExpire</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> System.currentTimeMillis() &gt; expiresTime;
+	&#125;
+    <span class="hljs-comment">//get and set ...</span>
+&#125;</code></pre>
+
+<h3 id="10-3-WxService中添加获取AccessToken的方法"><a href="#10-3-WxService中添加获取AccessToken的方法" class="headerlink" title="10.3 WxService中添加获取AccessToken的方法"></a>10.3 WxService中添加获取AccessToken的方法</h3><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> AccessToken at;<span class="hljs-comment">//token获取的次数有限,有效期也有限,所以需要保存起来</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">String</span> <span class="hljs-variable">GET_TOKEN_URL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET&quot;</span>;
+	
+	<span class="hljs-comment">//登录测试号管理界面-测试号信息下面可以得到你的APPID和APPSECRET</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">String</span> <span class="hljs-variable">APPID</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;wx7bf783afc5150a5a&quot;</span>;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">String</span> <span class="hljs-variable">APPSECRET</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;8d9930d60717c7aaa0620ad993d984d8&quot;</span>;
+<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 发送get请求获取AccessToken</span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getToken</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> GET_TOKEN_URL.replace(<span class="hljs-string">&quot;APPID&quot;</span>, APPID).replace(<span class="hljs-string">&quot;APPSECRET&quot;</span>, APPSECRET);
+		<span class="hljs-type">String</span> <span class="hljs-variable">tokenStr</span> <span class="hljs-operator">=</span> HttpUtils.sendGet(url);<span class="hljs-comment">//调用工具类发get请求</span>
+		System.out.println(tokenStr);
+		<span class="hljs-type">JSONObject</span> <span class="hljs-variable">jsonObject</span> <span class="hljs-operator">=</span> JSONObject.parseObject(tokenStr);
+		<span class="hljs-type">String</span> <span class="hljs-variable">token</span> <span class="hljs-operator">=</span> jsonObject.getString(<span class="hljs-string">&quot;access_token&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">expiresIn</span> <span class="hljs-operator">=</span> jsonObject.getString(<span class="hljs-string">&quot;expires_in&quot;</span>);
+		at = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AccessToken</span>(token, expiresIn);
+	&#125;
+	
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 获取AccessToken  向外提供</span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">getAccessToken</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-comment">//过期了或者没有值再去发送请求获取</span>
+		<span class="hljs-keyword">if</span>(at == <span class="hljs-literal">null</span> || at.isExpire()) &#123;
+			getToken();
+		&#125;
+		<span class="hljs-keyword">return</span> at.getToken();
+	&#125;</code></pre>
+
+<p>编写一个测试类获取AccessToken</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">import</span> com.qy.service.WxService;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestToken</span> &#123;
+
+	<span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getAccessToken</span><span class="hljs-params">()</span> &#123;
+        <span class="hljs-comment">//可以看到下面两次获取的值一致</span>
+		System.out.println(WxService.getAccessToken());
+		System.out.println(WxService.getAccessToken());
+	&#125;
+&#125;</code></pre>
+
+<h2 id="11-自定义菜单"><a href="#11-自定义菜单" class="headerlink" title="11 自定义菜单"></a>11 自定义菜单</h2><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Creating_Custom-Defined_Menu.html">自定义菜单文档</a></p>
+<p>请注意：</p>
+<ol>
+<li>自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。</li>
+<li>一级菜单最多4个汉字，二级菜单最多8个汉字，多出来的部分将会以“…”代替。</li>
+<li>创建自定义菜单后，菜单的刷新策略是，在用户进入公众号会话页或公众号profile页时，如果发现上一次拉取菜单的请求在5分钟以前，就会拉取一下菜单，如果菜单有更新，就会刷新客户端的菜单。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。</li>
+</ol>
+<p>自定义菜单接口可实现多种类型按钮，如下：</p>
+<ol>
+<li>click：点击推事件用户点击click类型按钮后，微信服务器会通过消息接口推送消息类型为event的结构给开发者（参考消息接口指南），并且带上按钮中开发者填写的key值，开发者可以通过自定义的key值与用户进行交互；</li>
+<li>view：跳转URL用户点击view类型按钮后，微信客户端将会打开开发者在按钮中填写的网页URL，可与网页授权获取用户基本信息接口结合，获得用户基本信息。</li>
+<li>scancode_push：扫码推事件用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后显示扫描结果（如果是URL，将进入URL），且会将扫码的结果传给开发者，开发者可以下发消息。</li>
+<li>scancode_waitmsg：扫码推事件且弹出“消息接收中”提示框用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后，将扫码的结果传给开发者，同时收起扫一扫工具，然后弹出“消息接收中”提示框，随后可能会收到开发者下发的消息。</li>
+<li>pic_sysphoto：弹出系统拍照发图用户点击按钮后，微信客户端将调起系统相机，完成拍照操作后，会将拍摄的相片发送给开发者，并推送事件给开发者，同时收起系统相机，随后可能会收到开发者下发的消息。</li>
+<li>pic_photo_or_album：弹出拍照或者相册发图用户点击按钮后，微信客户端将弹出选择器供用户选择“拍照”或者“从手机相册选择”。用户选择后即走其他两种流程。</li>
+<li>pic_weixin：弹出微信相册发图器用户点击按钮后，微信客户端将调起微信相册，完成选择操作后，将选择的相片发送给开发者的服务器，并推送事件给开发者，同时收起相册，随后可能会收到开发者下发的消息。</li>
+<li>location_select：弹出地理位置选择器用户点击按钮后，微信客户端将调起地理位置选择工具，完成选择操作后，将选择的地理位置发送给开发者的服务器，同时收起位置选择工具，随后可能会收到开发者下发的消息。</li>
+<li>media_id：下发消息（除文本消息）用户点击media_id类型按钮后，微信服务器会将开发者填写的永久素材id对应的素材下发给用户，永久素材类型可以是图片、音频、视频、图文消息。请注意：永久素材id必须是在“素材管理&#x2F;新增永久素材”接口上传后获得的合法id。</li>
+<li>view_limited：跳转图文消息URL用户点击view_limited类型按钮后，微信客户端将打开开发者在按钮中填写的永久素材id对应的图文消息URL，永久素材类型只支持图文消息。请注意：永久素材id必须是在“素材管理&#x2F;新增永久素材”接口上传后获得的合法id。</li>
+</ol>
+<p><strong>接口调用请求说明</strong></p>
+<p>http请求方式：POST（请使用https协议） <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN</a></p>
+<p>url中的ACCESS_TOKEN就是之前获取的,调用这个接口需要带上</p>
+<p>请求需携带json参数</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+ <span class="hljs-attr">&quot;button&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+ 	<span class="hljs-punctuation">&#123;</span>
+ 		  <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;click&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;一级点击&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;key&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;1&quot;</span>
+ 	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+ 	<span class="hljs-punctuation">&#123;</span>
+ 		  <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;view&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;个人博客&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;https://heliufang.gitee.io/&quot;</span>
+ 	<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+ 	<span class="hljs-punctuation">&#123;</span>
+          <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;有子菜单&quot;</span><span class="hljs-punctuation">,</span>
+          <span class="hljs-attr">&quot;sub_button&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span>
+          	<span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;click&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;三一点击&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;key&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;31&quot;</span>
+            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-punctuation">&#123;</span>
+                  <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;view&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;码云博客&quot;</span><span class="hljs-punctuation">,</span>
+                  <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;https://heliufang.gitee.io/&quot;</span>
+            <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-punctuation">&#123;</span>
+            	<span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;pic_photo_or_album&quot;</span><span class="hljs-punctuation">,</span>
+            	<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;拍照或发图&quot;</span><span class="hljs-punctuation">,</span>
+            	<span class="hljs-attr">&quot;key&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;33&quot;</span>
+            <span class="hljs-punctuation">&#125;</span>
+          <span class="hljs-punctuation">]</span>
+ 	<span class="hljs-punctuation">&#125;</span>
+ <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">button</td>
+<td align="left">是</td>
+<td align="left">一级菜单数组，个数应为1~3个</td>
+</tr>
+<tr>
+<td align="left">sub_button</td>
+<td align="left">否</td>
+<td align="left">二级菜单数组，个数应为1~5个</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">是</td>
+<td align="left">菜单的响应动作类型，view表示网页类型，click表示点击类型，miniprogram表示小程序类型</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">是</td>
+<td align="left">菜单标题，不超过16个字节，子菜单不超过60个字节</td>
+</tr>
+<tr>
+<td align="left">key</td>
+<td align="left">click等点击类型必须</td>
+<td align="left">菜单KEY值，用于消息接口推送，不超过128字节</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="left">view、miniprogram类型必须</td>
+<td align="left">网页 链接，用户点击菜单可打开链接，不超过1024字节。 type为miniprogram时，不支持小程序的老版本客户端将打开本url。</td>
+</tr>
+<tr>
+<td align="left">media_id</td>
+<td align="left">media_id类型和view_limited类型必须</td>
+<td align="left">调用新增永久素材接口返回的合法media_id</td>
+</tr>
+<tr>
+<td align="left">appid</td>
+<td align="left">miniprogram类型必须</td>
+<td align="left">小程序的appid（仅认证公众号可配置）</td>
+</tr>
+<tr>
+<td align="left">pagepath</td>
+<td align="left">miniprogram类型必须</td>
+<td align="left">小程序的页面路径</td>
+</tr>
+</tbody></table>
+<p><strong>返回结果</strong></p>
+<p>正确时的返回JSON数据包如下：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;errcode&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;errmsg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;ok&quot;</span><span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>错误时的返回JSON数据包如下（示例为无效菜单名长度）：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;errcode&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">40018</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;errmsg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;invalid button name size&quot;</span><span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>和前面xml的类似,我们需要对着请求的json数据封装按钮类,这样后面操作起来就比较方便,而且也方便维护。</p>
+<h3 id="11-1-封装菜单类"><a href="#11-1-封装菜单类" class="headerlink" title="11.1 封装菜单类"></a>11.1 封装菜单类</h3><p>&lt;1&gt;AbstractButton类</p>
+<pre><code class="hljs java"><span class="hljs-comment">//所有菜单(按钮)的父类</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AbstractButton</span> &#123;
+	<span class="hljs-keyword">private</span> String name;<span class="hljs-comment">//按钮标题</span>
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getName</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setName</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String name)</span> &#123;
+		<span class="hljs-built_in">this</span>.name = name;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">AbstractButton</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String name)</span> &#123;
+		<span class="hljs-built_in">this</span>.name = name;
+	&#125;
+&#125;</code></pre>
+
+<p>&lt;2&gt;Button类</p>
+<pre><code class="hljs java"><span class="hljs-comment">//一级菜单对象</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Button</span> &#123;
+	<span class="hljs-keyword">private</span> List&lt;AbstractButton&gt; button;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Button</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-built_in">this</span>.button = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;AbstractButton&gt;();
+	&#125;
+
+	<span class="hljs-keyword">public</span> List&lt;AbstractButton&gt; <span class="hljs-title function_">getButton</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.button;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setButton</span><span class="hljs-params">(<span class="hljs-keyword">final</span> List&lt;AbstractButton&gt; button)</span> &#123;
+		<span class="hljs-built_in">this</span>.button = button;
+	&#125;
+&#125;
+</code></pre>
+
+<p>&lt;3&gt;ClickButton类</p>
+<pre><code class="hljs java"><span class="hljs-comment">//点击类型的菜单</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ClickButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AbstractButton</span> &#123;
+	<span class="hljs-keyword">private</span> String type;
+	<span class="hljs-keyword">private</span> String key;
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.type;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setType</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String type)</span> &#123;
+		<span class="hljs-built_in">this</span>.type = type;
+	&#125;
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getKey</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.key;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setKey</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String key)</span> &#123;
+		<span class="hljs-built_in">this</span>.key = key;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">ClickButton</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String name, <span class="hljs-keyword">final</span> String key)</span> &#123;
+		<span class="hljs-built_in">super</span>(name);
+		<span class="hljs-built_in">this</span>.type = <span class="hljs-string">&quot;click&quot;</span>;<span class="hljs-comment">//点击类型</span>
+		<span class="hljs-built_in">this</span>.key = key;
+	&#125;
+&#125;</code></pre>
+
+<p>&lt;4&gt;ViewButton类</p>
+<pre><code class="hljs java"><span class="hljs-comment">//网页类型的菜单</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ViewButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AbstractButton</span> &#123;
+	<span class="hljs-keyword">private</span> String type;
+	<span class="hljs-keyword">private</span> String url;
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.type;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setType</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String type)</span> &#123;
+		<span class="hljs-built_in">this</span>.type = type;
+	&#125;
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getUrl</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.url;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setUrl</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String url)</span> &#123;
+		<span class="hljs-built_in">this</span>.url = url;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">ViewButton</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String name, <span class="hljs-keyword">final</span> String url)</span> &#123;
+		<span class="hljs-built_in">super</span>(name);
+		<span class="hljs-built_in">this</span>.type = <span class="hljs-string">&quot;view&quot;</span>;<span class="hljs-comment">//网页类型</span>
+		<span class="hljs-built_in">this</span>.url = url;
+	&#125;
+&#125;</code></pre>
+
+<p>&lt;5&gt; PhotoOrAlbumButton</p>
+<pre><code class="hljs java"><span class="hljs-comment">//拍照或传图菜单</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PhotoOrAlbumButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AbstractButton</span>&#123;
+	<span class="hljs-keyword">private</span> String type;
+	<span class="hljs-keyword">private</span> String key;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">PhotoOrAlbumButton</span><span class="hljs-params">(String name,String key)</span> &#123;
+		<span class="hljs-built_in">super</span>(name);
+		<span class="hljs-built_in">this</span>.type = <span class="hljs-string">&quot;pic_photo_or_album&quot;</span>;<span class="hljs-comment">//拍照获取传图</span>
+		<span class="hljs-built_in">this</span>.key = key;
+	&#125;
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getType</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> type;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setType</span><span class="hljs-params">(String type)</span> &#123;
+		<span class="hljs-built_in">this</span>.type = type;
+	&#125;
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">getKey</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> key;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setKey</span><span class="hljs-params">(String key)</span> &#123;
+		<span class="hljs-built_in">this</span>.key = key;
+	&#125;
+&#125;</code></pre>
+
+<p>&lt;6&gt;SubButton</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-comment">//二级菜单对象</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SubButton</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">AbstractButton</span> &#123;
+	<span class="hljs-keyword">private</span> List&lt;AbstractButton&gt; sub_button;
+
+	<span class="hljs-keyword">public</span> List&lt;AbstractButton&gt; <span class="hljs-title function_">getSub_button</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.sub_button;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSub_button</span><span class="hljs-params">(<span class="hljs-keyword">final</span> List&lt;AbstractButton&gt; sub_button)</span> &#123;
+		<span class="hljs-built_in">this</span>.sub_button = sub_button;
+	&#125;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title function_">SubButton</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String name)</span> &#123;
+		<span class="hljs-built_in">super</span>(name);
+		<span class="hljs-built_in">this</span>.sub_button = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;AbstractButton&gt;();
+	&#125;
+&#125;</code></pre>
+
+<h3 id="11-2-测试"><a href="#11-2-测试" class="headerlink" title="11.2 测试"></a>11.2 测试</h3><p>新增一个Test方法</p>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.qy.test;
+
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> com.alibaba.fastjson.JSONObject;
+<span class="hljs-keyword">import</span> com.qy.entity.button.AbstractButton;
+<span class="hljs-keyword">import</span> com.qy.entity.button.Button;
+<span class="hljs-keyword">import</span> com.qy.entity.button.ClickButton;
+<span class="hljs-keyword">import</span> com.qy.entity.button.PhotoOrAlbumButton;
+<span class="hljs-keyword">import</span> com.qy.entity.button.SubButton;
+<span class="hljs-keyword">import</span> com.qy.entity.button.ViewButton;
+<span class="hljs-keyword">import</span> com.qy.service.WxService;
+<span class="hljs-keyword">import</span> com.qy.utils.HttpUtils;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestButton</span> &#123;
+
+	<span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setButton</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-comment">//创建一级菜单</span>
+		<span class="hljs-type">Button</span> <span class="hljs-variable">button</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Button</span>();
+		<span class="hljs-comment">//在第三个菜单中创建二级菜单</span>
+		<span class="hljs-type">SubButton</span> <span class="hljs-variable">subButton</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SubButton</span>(<span class="hljs-string">&quot;有子菜单&quot;</span>);
+		List&lt;AbstractButton&gt; list2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();
+		list2.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ClickButton</span>(<span class="hljs-string">&quot;三一点击&quot;</span>, <span class="hljs-string">&quot;31&quot;</span>));
+		list2.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ViewButton</span>(<span class="hljs-string">&quot;码云博客&quot;</span>, <span class="hljs-string">&quot;https://heliufang.gitee.io/&quot;</span>));
+		list2.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">PhotoOrAlbumButton</span>(<span class="hljs-string">&quot;拍照或发图&quot;</span>,<span class="hljs-string">&quot;33&quot;</span>));
+		subButton.setSub_button(list2);
+		<span class="hljs-comment">//在一级菜单中添加三个按钮,</span>
+		List&lt;AbstractButton&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();
+		list.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ClickButton</span>(<span class="hljs-string">&quot;一级点击&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>));
+		list.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ViewButton</span>(<span class="hljs-string">&quot;个人博客&quot;</span>, <span class="hljs-string">&quot;https://heliufang.gitee.io/&quot;</span>));
+		list.add(subButton);
+		button.setButton(list);
+		<span class="hljs-comment">//转成json格式字符串</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">jsonString</span> <span class="hljs-operator">=</span> JSONObject.toJSONString(button);
+		<span class="hljs-comment">//System.out.println(jsonString);</span>
+		<span class="hljs-comment">//发送请求</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, WxService.getAccessToken());<span class="hljs-comment">//把token带上</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> HttpUtils.sendPost(url, jsonString);
+		System.out.println(result);
+	&#125;
+&#125;</code></pre>
+
+<p>运行效果如下：</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210813000312449.png" alt="image-20210813000312449"></p>
+<h2 id="12-设置和获取行业信息"><a href="#12-设置和获取行业信息" class="headerlink" title="12 设置和获取行业信息"></a>12 设置和获取行业信息</h2><h3 id="12-1-设置行业信息"><a href="#12-1-设置行业信息" class="headerlink" title="12.1 设置行业信息"></a>12.1 设置行业信息</h3><p>如果要发送模板消息,那么首先就得设置行业信息,如何设置和获取可以看下面接口。</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html">模板消息文档</a></p>
+<p>设置行业可在微信公众平台后台完成，每月可修改行业1次，帐号仅可使用所属行业中相关的模板，为方便第三方开发者，提供通过接口调用的方式来修改账号所属行业，具体如下：</p>
+<p><strong>接口调用请求说明</strong></p>
+<blockquote>
+<p>http请求方式: POST <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN</a></p>
+</blockquote>
+<p><strong>POST数据说明</strong></p>
+<p>POST数据示例如下：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;industry_id1&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;1&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;industry_id2&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;4&quot;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>参数说明</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">是</td>
+<td align="left">接口调用凭证</td>
+</tr>
+<tr>
+<td align="left">industry_id1</td>
+<td align="left">是</td>
+<td align="left">公众号模板消息所属行业编号-主行业</td>
+</tr>
+<tr>
+<td align="left">industry_id2</td>
+<td align="left">是</td>
+<td align="left">公众号模板消息所属行业编号-副行业</td>
+</tr>
+</tbody></table>
+<p><strong>行业代码查询</strong>,更多代码可以查询文档</p>
+<table>
+<thead>
+<tr>
+<th align="left">主行业</th>
+<th align="left">副行业</th>
+<th align="left">代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">IT科技</td>
+<td align="left">互联网&#x2F;电子商务</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">IT科技</td>
+<td align="left">IT软件与服务</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">IT科技</td>
+<td align="left">IT硬件与设备</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">…</td>
+<td align="left">…</td>
+<td align="left">…</td>
+</tr>
+</tbody></table>
+<p>编写测试代码</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setIndustry</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, WxService.getAccessToken());
+		<span class="hljs-type">String</span> <span class="hljs-variable">jsonStr</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&#123;\&quot;industry_id1\&quot;:\&quot;1\&quot;,\&quot;industry_id2\&quot;:\&quot;4\&quot;&#125;&quot;</span>;
+		<span class="hljs-type">String</span> <span class="hljs-variable">rString</span> <span class="hljs-operator">=</span> HttpUtils.sendPost(url, jsonStr);
+		System.out.println(rString);
+	&#125;</code></pre>
+
+<h3 id="12-2-获取行业信息"><a href="#12-2-获取行业信息" class="headerlink" title="12.2 获取行业信息"></a>12.2 获取行业信息</h3><p>获取帐号设置的行业信息。可登录微信公众平台，在公众号后台中查看行业信息。为方便第三方开发者，提供通过接口调用的方式来获取帐号所设置的行业信息，具体如下:</p>
+<p><strong>接口调用请求说明</strong></p>
+<blockquote>
+<p>http请求方式：GET <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN</a></p>
+</blockquote>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">是</td>
+<td align="left">接口调用凭证</td>
+</tr>
+</tbody></table>
+<p><strong>返回说明</strong></p>
+<p>正确调用后的返回示例：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+    <span class="hljs-attr">&quot;primary_industry&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;first_class&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;运输与仓储&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;second_class&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;快递&quot;</span><span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;secondary_industry&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;first_class&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;IT科技&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;second_class&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;互联网|电子商务&quot;</span><span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>返回参数说明</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必填</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">是</td>
+<td align="left">接口调用凭证</td>
+</tr>
+<tr>
+<td align="left">primary_industry</td>
+<td align="left">是</td>
+<td align="left">帐号设置的主营行业</td>
+</tr>
+<tr>
+<td align="left">secondary_industry</td>
+<td align="left">是</td>
+<td align="left">帐号设置的副营行业</td>
+</tr>
+</tbody></table>
+<p>编写测试代码</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getIndustry</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, WxService.getAccessToken());
+		<span class="hljs-type">String</span> <span class="hljs-variable">string</span> <span class="hljs-operator">=</span> HttpUtils.sendGet(url);
+		System.out.println(string);
+	&#125;</code></pre>
+
+<h2 id="13-发送模板消息"><a href="#13-发送模板消息" class="headerlink" title="13 发送模板消息"></a>13 发送模板消息</h2><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html">模板消息接口</a></p>
+<p>就是微信主动给用户推送消息,不需要像之前那样被动(用户发送之后再回复).</p>
+<p><strong>接口调用请求说明</strong></p>
+<blockquote>
+<p>http请求方式: POST <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN</a></p>
+</blockquote>
+<p>POST数据如下：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span>
+	<span class="hljs-attr">&quot;touser&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;oQxvI51GI5t9wBaBjmBXgJZZVM3A&quot;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-attr">&quot;template_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tQ0G9Pmd_n_ylmplYsEnexgabkJXH1S3J7BXahK454g&quot;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://heliufang.gitee.io/&quot;</span><span class="hljs-punctuation">,</span>
+	<span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+		<span class="hljs-attr">&quot;first&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+			<span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;您好!您投递的简历有新的反馈&quot;</span><span class="hljs-punctuation">,</span>
+			<span class="hljs-attr">&quot;color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#173177&quot;</span>
+		<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;company&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+			<span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;广州壹新网络科技有限公司&quot;</span><span class="hljs-punctuation">,</span>
+			<span class="hljs-attr">&quot;color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#173177&quot;</span>
+		<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;time&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+			<span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2021-8-5 23:31:23&quot;</span><span class="hljs-punctuation">,</span>
+			<span class="hljs-attr">&quot;color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#173177&quot;</span>
+		<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;result&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+			<span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;已通过&quot;</span><span class="hljs-punctuation">,</span>
+			<span class="hljs-attr">&quot;color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#ff0000&quot;</span>
+		<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;remark&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+			<span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;带身份证&quot;</span><span class="hljs-punctuation">,</span>
+			<span class="hljs-attr">&quot;color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#173177&quot;</span>
+		<span class="hljs-punctuation">&#125;</span>
+	<span class="hljs-punctuation">&#125;</span>
+<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>参数说明</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必填</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">touser</td>
+<td align="left">是</td>
+<td align="left">接收者openid</td>
+</tr>
+<tr>
+<td align="left">template_id</td>
+<td align="left">是</td>
+<td align="left">模板ID,这个需要在管理界面配置</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="left">否</td>
+<td align="left">模板跳转链接（海外帐号没有跳转能力）</td>
+</tr>
+<tr>
+<td align="left">data</td>
+<td align="left">是</td>
+<td align="left">模板数据</td>
+</tr>
+<tr>
+<td align="left">color</td>
+<td align="left">否</td>
+<td align="left">模板内容字体颜色，不填默认为黑色</td>
+</tr>
+</tbody></table>
+<p><strong>返回码说明</strong></p>
+<p>在调用模板消息接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;errcode&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;errmsg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;ok&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;msgid&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">200228332</span><span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>★第一步：在微信测试号管理后台配置模板：</p>
+<ul>
+<li><p>模板标题: 简历反馈提醒</p>
+</li>
+<li><p>模板内容：</p>
+</li>
+</ul>
+<pre><code class="hljs plaintext">&#123;&#123;first.DATA&#125;&#125; 
+公司名：&#123;&#123;company.DATA&#125;&#125; 
+投递时间：&#123;&#123;time.DATA&#125;&#125; 
+反馈结果：&#123;&#123;result.DATA&#125;&#125; &#123;&#123;remark.DATA&#125;&#125;</code></pre>
+
+<p>创建好之后是下面这个样子</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210814170124702.png" alt="image-20210814170124702"></p>
+<p>第二步：编写代码</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sendTemplateMsg</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, WxService.getAccessToken());
+		<span class="hljs-comment">//实际开发中应封装成java类,再把java对象转成类似下面的jsonstr</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">jsonStr</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;touser\&quot;: \&quot;oQxvI51GI5t9wBaBjmBXgJZZVM3A\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;template_id\&quot;: \&quot;tQ0G9Pmd_n_ylmplYsEnexgabkJXH1S3J7BXahK454g\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;url\&quot;: \&quot;https://heliufang.gitee.io/\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;data\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		\&quot;first\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;value\&quot;: \&quot;您好!您投递的简历有新的反馈\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		&#125;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		\&quot;company\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;value\&quot;: \&quot;广州壹新网络科技有限公司\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		&#125;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		\&quot;time\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;value\&quot;: \&quot;2021-8-5 23:31:23\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		&#125;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		\&quot;result\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;value\&quot;: \&quot;已通过\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;color\&quot;: \&quot;#ff0000\&quot;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		&#125;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		\&quot;remark\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;value\&quot;: \&quot;带身份证\&quot;,\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		&#125;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	&#125;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;&#125;&quot;</span>;
+		<span class="hljs-type">String</span> <span class="hljs-variable">rString</span> <span class="hljs-operator">=</span> HttpUtils.sendPost(url, jsonStr);
+		System.out.println(rString);
+	&#125;</code></pre>
+
+<p>测试结果如下</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210814171316722.png" alt="image-20210814171316722"></p>
+<h2 id="14-新增和获取临时素材"><a href="#14-新增和获取临时素材" class="headerlink" title="14 新增和获取临时素材"></a>14 新增和获取临时素材</h2><p>公众号经常有需要用到一些临时性的多媒体素材的场景，例如在使用接口特别是发送消息时，对多媒体文件、多媒体消息的获取和调用等操作，是通过media_id来进行的。素材管理接口对所有认证的订阅号和服务号开放。</p>
+<p>注意点：</p>
+<p>1、临时素材media_id是可复用的。</p>
+<p>2、<strong>媒体文件在微信后台保存时间为3天，即3天后media_id失效。</strong></p>
+<p>3、上传临时素材的格式、大小限制与公众平台官网一致。</p>
+<p>图片（image）: 10M，支持PNG\JPEG\JPG\GIF格式</p>
+<p>语音（voice）：2M，播放长度不超过60s，支持AMR\MP3格式</p>
+<p>视频（video）：10MB，支持MP4格式</p>
+<p>缩略图（thumb）：64KB，支持JPG格式</p>
+<h3 id="14-1-新增临时素材"><a href="#14-1-新增临时素材" class="headerlink" title="14.1 新增临时素材"></a>14.1 新增临时素材</h3><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/New_temporary_materials.html">新增临时素材文档</a></p>
+<p>罗老师用的是java自带的文件类上传,代码比较繁琐。而我使用HttpClient封装的HttpUtils上传就很简单了。</p>
+<p><strong>接口调用请求说明</strong></p>
+<blockquote>
+<p>http请求方式: POST <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&amp;type=TYPE">https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&amp;type=TYPE</a></p>
+</blockquote>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">是</td>
+<td align="left">调用接口凭证</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">是</td>
+<td align="left">媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）</td>
+</tr>
+<tr>
+<td align="left">media</td>
+<td align="left">是</td>
+<td align="left">form-data中媒体文件标识，有filename、filelength、content-type等信息</td>
+</tr>
+</tbody></table>
+<p><strong>返回说明</strong></p>
+<p>正确情况下的返回JSON数据包结果如下：</p>
+<pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;image&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;media_id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;atL80WWRNpMWhivoIGf9KTUUUO5pm6RxML8OPEUd7cbfb1Rs0kl2Yv0319KMQI-0&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;created_at&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">1628933345</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;item&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">&#125;</span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">type</td>
+<td align="left">媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb，主要用于视频与音乐格式的缩略图）</td>
+</tr>
+<tr>
+<td align="left">media_id</td>
+<td align="left">媒体文件上传后，获取标识</td>
+</tr>
+<tr>
+<td align="left">created_at</td>
+<td align="left">媒体文件上传时间戳</td>
+</tr>
+</tbody></table>
+<p>编写测试代码</p>
+<pre><code class="hljs java"><span class="hljs-comment">//上传图片</span>
+	<span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">uploadMedia</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&amp;type=TYPE&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, WxService.getAccessToken());
+		url = url.replace(<span class="hljs-string">&quot;TYPE&quot;</span>, <span class="hljs-string">&quot;image&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">string</span> <span class="hljs-operator">=</span> HttpUtils.sendPost(url, <span class="hljs-literal">null</span>, <span class="hljs-string">&quot;C:\\Users\\Administrator\\Desktop\\2.jpg&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+		System.out.println(string);
+	&#125;</code></pre>
+
+<h3 id="14-2-获取临时素材"><a href="#14-2-获取临时素材" class="headerlink" title="14.2 获取临时素材"></a>14.2 获取临时素材</h3><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Get_temporary_materials.html">获取临时素材文档</a></p>
+<p><strong>接口调用请求说明</strong></p>
+<blockquote>
+<p>http请求方式: GET,https调用 <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID">https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID</a> 请求示例（示例为通过curl命令获取多媒体文件） curl -I -G “<a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID&quot;">https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID&quot;</a></p>
+</blockquote>
+<p>把ACCESS_TOKEN和MEDIA_ID替换到url的位置,然后浏览器打开就可以下载了</p>
+<p><strong>参数说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">是</td>
+<td align="left">调用接口凭证</td>
+</tr>
+<tr>
+<td align="left">media_id</td>
+<td align="left">是</td>
+<td align="left">媒体文件ID</td>
+</tr>
+</tbody></table>
+<p><strong>返回说明</strong></p>
+<p>正确情况下的返回HTTP头如下：</p>
+<pre><code class="hljs text">HTTP/1.1 200 OK
+Connection: close
+Content-Type: image/jpeg
+Content-disposition: attachment; filename=&quot;MEDIA_ID.jpg&quot;
+Date: Sun, 06 Jan 2013 10:20:18 GMT
+Cache-Control: no-cache, must-revalidate
+Content-Length: 339721
+curl -G &quot;https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID&quot;</code></pre>
+
+<h2 id="15-二维码生成和扫描"><a href="#15-二维码生成和扫描" class="headerlink" title="15 二维码生成和扫描"></a>15 二维码生成和扫描</h2><h3 id="15-1-生成带参数的临时二维码"><a href="#15-1-生成带参数的临时二维码" class="headerlink" title="15.1 生成带参数的临时二维码"></a>15.1 生成带参数的临时二维码</h3><p>为了满足用户渠道推广分析和用户帐号绑定等场景的需要，公众平台提供了生成带参数二维码的接口。使用该接口可以获得多个带不同场景值的二维码，用户扫描后，公众号可以接收到事件推送。</p>
+<p>目前有2种类型的二维码：</p>
+<p>1、<code>临时二维码</code>，是有过期时间的，最长可以设置为在二维码生成后的30天（即2592000秒）后过期，但能够生成较多数量。临时二维码主要用于帐号绑定等不要求二维码永久保存的业务场景 2、<code>永久二维码</code>，是无过期时间的，但数量较少（目前为最多10万个）。永久二维码主要用于适用于帐号绑定、用户来源统计等场景。</p>
+<p><strong>获取带参数的二维码的过程包括两步，首先创建二维码ticket，然后凭借ticket到指定URL换取二维码。</strong></p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html">生成带参数的二维码文档</a></p>
+<p>测试代码将实现下面这样一个功能,点击页面上的生成按钮,在页面展示生成好的二维码</p>
+<p>【index.jsp】</p>
+ <pre><code class="hljs jsp">&lt;%@ page language=<span class="hljs-string">&quot;java&quot;</span> contentType=<span class="hljs-string">&quot;text/html; charset=UTF-8&quot;</span> pageEncoding=<span class="hljs-string">&quot;UTF-8&quot;</span>%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;
+&lt;title&gt;二维码测试页面&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;button type=<span class="hljs-string">&quot;button&quot;</span>&gt;生成二维码&lt;/button&gt;&lt;br&gt;
+	&lt;img alt=<span class="hljs-string">&quot;暂无图片&quot;</span> src=<span class="hljs-string">&quot;&quot;</span>&gt;
+&lt;/body&gt;
+&lt;script src=<span class="hljs-string">&quot;jquery.js&quot;</span>&gt;&lt;/script&gt;
+&lt;script&gt;
+	$(<span class="hljs-string">&quot;button&quot;</span>).click(function()&#123;
+		$.ajax(&#123;
+			url: <span class="hljs-string">&quot;/wx/getQrCode&quot;</span>,
+			type: <span class="hljs-string">&quot;get&quot;</span>,
+			dataType: <span class="hljs-string">&quot;json&quot;</span>,
+			success: function(resp)&#123;
+				console.log(resp);
+                <span class="hljs-comment">//通过ticket获取图片</span>
+				<span class="hljs-type">var</span> <span class="hljs-variable">src</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=&quot;</span>+resp.ticket;
+				$(<span class="hljs-string">&quot;img&quot;</span>).attr(<span class="hljs-string">&quot;src&quot;</span>,src)
+			&#125;
+		&#125;)
+	&#125;)
+&lt;/script&gt;
+&lt;/html&gt;</code></pre>
+
+<p>【后端servlet】</p>
+<pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/getQrCode&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QrCodeServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpServlet</span> &#123;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		<span class="hljs-comment">//设置编码格式,不然中文会乱码</span>
+		req.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+		resp.setCharacterEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+		<span class="hljs-comment">//发送post请求获取ticket,页面通过ticket就可以展示二维码图片了</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;TOKEN&quot;</span>, WxService.getAccessToken());
+		<span class="hljs-comment">/*600表示10分钟有效  scene_str是一个唯一标识,类似点击事件的key, QR_STR_SCENE表示临时二维码</span>
+<span class="hljs-comment">		 * &#123;</span>
+<span class="hljs-comment">				&quot;expire_seconds&quot;: 600, </span>
+<span class="hljs-comment">				&quot;action_name&quot;: &quot;QR_STR_SCENE&quot;, </span>
+<span class="hljs-comment">				&quot;action_info&quot;: &#123;</span>
+<span class="hljs-comment">					&quot;scene&quot;: &#123;</span>
+<span class="hljs-comment">						&quot;scene_str&quot;: &quot;test&quot;</span>
+<span class="hljs-comment">						</span>
+<span class="hljs-comment">					&#125;</span>
+<span class="hljs-comment">				&#125;</span>
+<span class="hljs-comment">			&#125;</span>
+<span class="hljs-comment">		 */</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">jsonStr</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;expire_seconds\&quot;: 600, \r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;action_name\&quot;: \&quot;QR_STR_SCENE\&quot;, \r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	\&quot;action_info\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		\&quot;scene\&quot;: &#123;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\&quot;scene_str\&quot;: \&quot;test\&quot;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;			\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;		&#125;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;	&#125;\r\n&quot;</span> + 
+				<span class="hljs-string">&quot;&#125;&quot;</span>;
+		<span class="hljs-type">String</span> <span class="hljs-variable">string</span> <span class="hljs-operator">=</span> HttpUtils.sendPost(url, jsonStr);
+		<span class="hljs-type">JSONObject</span> <span class="hljs-variable">object</span> <span class="hljs-operator">=</span> JSONObject.parseObject(string);
+		<span class="hljs-comment">//将响应结果返回页面,用于显示二维码</span>
+		resp.getWriter().write(string);
+	&#125;
+
+	<span class="hljs-meta">@Override</span>
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+	&#125;
+&#125;
+</code></pre>
+
+<p>访问页面,点击按钮就可以看到如下效果</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210814182247464.png" alt="image-20210814182247464"></p>
+<h3 id="15-2-扫描二维码"><a href="#15-2-扫描二维码" class="headerlink" title="15.2 扫描二维码"></a>15.2 扫描二维码</h3><p>用户扫描带场景值二维码时，可能推送以下两种事件：</p>
+<p>如果用户还未关注公众号，则用户可以关注公众号，关注后微信会将带场景值关注事件推送给开发者。</p>
+<p>如果用户已经关注公众号，在用户扫描后会自动进入会话，微信也会将带场景值扫描事件推送给开发者</p>
+<p>扫描临时二维码之后,会向服务器推送一个xml数据包,解析之后打印效果如下：</p>
+<pre><code class="hljs plaintext">&#123;
+Ticket=gQFr8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAya1JKeDQ2M3JmOEQxOGlybk54Y08AAgS6mBdhAwRYAgAA, 
+FromUserName=oQxvI51GI5t9wBaBjmBXgJZZVM3A,
+EventKey=test, 
+Event=SCAN, 
+CreateTime=1628936703, 
+ToUserName=gh_c8af0521f09a, 
+MsgType=event
+&#125;</code></pre>
+
+<p>实现扫码之后给用户回复一个[你扫码了]</p>
+<p>修改【WxService】的代码，修改getRespose方法,新增dealEvent和dealScanEvent方法</p>
+<pre><code class="hljs java"><span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 事件消息回复</span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">getRespose</span><span class="hljs-params">(Map&lt;String, String&gt; requestMap)</span> &#123;
+		<span class="hljs-type">BaseMsg</span> <span class="hljs-variable">msg</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+		<span class="hljs-comment">// 根据用户发送消息的类型,做不同的处理</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">msgType</span> <span class="hljs-operator">=</span> requestMap.get(<span class="hljs-string">&quot;MsgType&quot;</span>);
+		<span class="hljs-keyword">switch</span> (msgType) &#123;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;text&quot;</span>:
+			msg = dealTextMsg(requestMap);
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;news&quot;</span>:
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;event&quot;</span>:
+		    <span class="hljs-comment">//新增处理事件的方法</span>
+			msg = dealEvent(requestMap);
+			<span class="hljs-keyword">break</span>;
+		<span class="hljs-keyword">default</span>:
+			<span class="hljs-keyword">break</span>;
+		&#125;
+		<span class="hljs-comment">// System.out.println(msg);</span>
+		<span class="hljs-comment">// 将处理结果转化成xml的字符串返回</span>
+		<span class="hljs-keyword">if</span> (<span class="hljs-literal">null</span> != msg) &#123;
+			<span class="hljs-keyword">return</span> beanToXml(msg);
+		&#125;
+		<span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+	&#125;
+
+	<span class="hljs-comment">//处理事件</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> BaseMsg <span class="hljs-title function_">dealEvent</span><span class="hljs-params">(Map&lt;String, String&gt; requestMap)</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">event</span> <span class="hljs-operator">=</span> requestMap.get(<span class="hljs-string">&quot;Event&quot;</span>);
+		<span class="hljs-type">BaseMsg</span> <span class="hljs-variable">msg</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;
+        <span class="hljs-comment">//switch分发到具体事件</span>
+		<span class="hljs-keyword">switch</span> (event) &#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;SCAN&quot;</span>:
+                msg = dealScanEvent(requestMap);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                <span class="hljs-keyword">break</span>;
+		&#125;
+		<span class="hljs-keyword">return</span> msg;
+	&#125;
+
+	<span class="hljs-comment">//处理SCAN事件</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> BaseMsg <span class="hljs-title function_">dealScanEvent</span><span class="hljs-params">(Map&lt;String, String&gt; requestMap)</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">eventKey</span> <span class="hljs-operator">=</span> requestMap.get(<span class="hljs-string">&quot;EventKey&quot;</span>);
+		<span class="hljs-keyword">if</span>(<span class="hljs-string">&quot;test&quot;</span>.equals(eventKey)) &#123;
+			<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextMsg</span>(requestMap, <span class="hljs-string">&quot;你扫码了&quot;</span>);
+		&#125;
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextMsg</span>(requestMap, requestMap.toString());
+	&#125;</code></pre>
+
+<p>扫码之后效果如下：</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210814184046627.png" alt="image-20210814184046627"></p>
+<h2 id="16-获取用户信息"><a href="#16-获取用户信息" class="headerlink" title="16 获取用户信息"></a>16 获取用户信息</h2><p>一般在做网页授权的时候,会用到这个功能。</p>
+<h3 id="16-1-获取已关注的用户信息"><a href="#16-1-获取已关注的用户信息" class="headerlink" title="16.1 获取已关注的用户信息"></a>16.1 获取已关注的用户信息</h3><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId">获取用户基本信息(UnionID机制)</a></p>
+<p>在关注者与公众号产生消息交互后，公众号可获得关注者的OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的。对于不同公众号，同一用户的openid不同）。公众号可通过本接口来根据OpenID获取用户基本信息，包括昵称、头像、性别、所在城市、语言和关注时间。</p>
+<p><strong>获取用户基本信息（包括UnionID机制）</strong></p>
+<p>开发者可通过OpenID来获取用户基本信息。请使用https协议。</p>
+<blockquote>
+<p>接口调用请求说明 http请求方式: GET <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN">https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN</a></p>
+</blockquote>
+<p>参数说明</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">access_token</td>
+<td align="left">是</td>
+<td align="left">调用接口凭证</td>
+</tr>
+<tr>
+<td align="left">openid</td>
+<td align="left">是</td>
+<td align="left">普通用户的标识，对当前公众号唯一</td>
+</tr>
+<tr>
+<td align="left">lang</td>
+<td align="left">否</td>
+<td align="left">返回国家地区语言版本，zh_CN 简体，zh_TW 繁体，en 英语</td>
+</tr>
+</tbody></table>
+<p>openid可以登录测试号管理界面获取,对应关注者的微信号</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210814185850181.png" alt="image-20210814185850181"></p>
+<p>测试代码</p>
+<pre><code class="hljs java"><span class="hljs-meta">@Test</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getUserInfo</span><span class="hljs-params">()</span> &#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, WxService.getAccessToken());
+		url = url.replace(<span class="hljs-string">&quot;OPENID&quot;</span>, <span class="hljs-string">&quot;oQxvI51GI5t9wBaBjmBXgJZZVM3A&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">string</span> <span class="hljs-operator">=</span> HttpUtils.sendGet(url);
+		System.out.println(string);<span class="hljs-comment">//这里就可以看到打印的用户信息了</span>
+	&#125;</code></pre>
+
+<h3 id="16-2-网页授权"><a href="#16-2-网页授权" class="headerlink" title="16.2 网页授权"></a>16.2 网页授权</h3><p>可以获取未关注的用户信息,这部分需要有域名才能测试。</p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html">网页授权</a></p>
+<p>因为ngrok默认域名已经被微信封了,所以需要申请一个域名来测试</p>
+<p>第一步：在ngrok中使用自定义域名。</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210815145833067.png" alt="image-20210815145833067"></p>
+<p>第二步：微信测试号管理界面修改成自定义的域名</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210815145936625.png" alt="image-20210815145936625"></p>
+<p>第三步：测试号接口权限中配置网页授权的域名</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210815150238632.png" alt="image-20210815150238632"></p>
+<p>第四步：阿里云域名解析到ngrok的域名</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210815150319450.png" alt="image-20210815150319450"></p>
+<p>测试代码：</p>
+<p>【WxService】修改dealTextMsg方法</p>
+<p><img src="/2021/08/14/1426556608602836992/images/image-20210815150631184.png" alt="image-20210815150631184"></p>
+<p>新增一个【getUserInfo】的servlet,这个就是用户点击之后重定向的servlet</p>
+<pre><code class="hljs java"><span class="hljs-meta">@WebServlet(&quot;/getUserInfo&quot;)</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">GetUserInfoServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpServlet</span> &#123;
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> <span class="hljs-variable">serialVersionUID</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;
+       
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		<span class="hljs-comment">//1.用户同意授权，获取code</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">code</span> <span class="hljs-operator">=</span> request.getParameter(<span class="hljs-string">&quot;code&quot;</span>);
+		<span class="hljs-comment">//2.通过code获取网页授权的access_token</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot; https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code&quot;</span>;
+		url = url.replace(<span class="hljs-string">&quot;APPID&quot;</span>, WxService.APPID).replace(<span class="hljs-string">&quot;CODE&quot;</span>, code).replace(<span class="hljs-string">&quot;SECRET&quot;</span>, WxService.APPSECRET);
+		<span class="hljs-type">String</span> <span class="hljs-variable">string</span> <span class="hljs-operator">=</span> HttpUtils.sendGet(url);
+		<span class="hljs-type">JSONObject</span> <span class="hljs-variable">jsonObject</span> <span class="hljs-operator">=</span> JSONObject.parseObject(string);
+		<span class="hljs-type">String</span> <span class="hljs-variable">accessToken</span> <span class="hljs-operator">=</span> jsonObject.getString(<span class="hljs-string">&quot;access_token&quot;</span>);
+		<span class="hljs-type">String</span> <span class="hljs-variable">openid</span> <span class="hljs-operator">=</span> jsonObject.getString(<span class="hljs-string">&quot;openid&quot;</span>);
+		<span class="hljs-comment">//3.刷新access_token（如果需要）</span>
+		<span class="hljs-comment">//4.通过token获取用户信息</span>
+		<span class="hljs-type">String</span> <span class="hljs-variable">getUserInfoUrl</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN&quot;</span>;
+		getUserInfoUrl = getUserInfoUrl.replace(<span class="hljs-string">&quot;ACCESS_TOKEN&quot;</span>, accessToken).replace(<span class="hljs-string">&quot;OPENID&quot;</span>, openid);
+		<span class="hljs-type">String</span> <span class="hljs-variable">userInfoJsonStr</span> <span class="hljs-operator">=</span> HttpUtils.sendGet(getUserInfoUrl);
+		System.out.println(userInfoJsonStr);
+	&#125;
+
+	<span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doPost</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException &#123;
+		doGet(request, response);
+	&#125;
+
+&#125;
+</code></pre>
+
+
+
+<h2 id="17-微信公众号开发框架"><a href="#17-微信公众号开发框架" class="headerlink" title="17 微信公众号开发框架"></a>17 微信公众号开发框架</h2><p>前面的开发都是原生的写法,github上有很多现成的公众号开发框架。</p>
+<p>比如这个基于springboot的公众号开发框架：</p>
+<p>仓库：<a target="_blank" rel="noopener" href="https://github.com/binarywang/weixin-java-mp-demo">https://github.com/binarywang/weixin-java-mp-demo</a></p>
+<p>文档：<a target="_blank" rel="noopener" href="https://github.com/Wechat-Group/WxJava/wiki/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3">https://github.com/Wechat-Group/WxJava/wiki/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3</a></p>
+<p>最后多说一句只有把原生的基础打好了,才能更好的理解和使用框架,所以建议先学原生的公众号开发,再上手框架。</p>
+
+				</div>
+		</div>
+	</div>
+	</div>
+	
+	<ul class="layui-fixbar"><a id="toTopBtn" href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></a></ul>
+	
+	<!-- 底部版权 -->
+	<div class="qy-footer">
+    <div class="font-Area">
+        Copyright © 2018~2022 Heliufang All Rights Reserved
+    </div>
+</div>
+
+<script>
+    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
+    function DynamicLine() {
+        function n(n, e, t) {
+            return n.getAttribute(e) || t
+        }
+
+        function e(n) {
+            return document.getElementsByTagName(n)
+        }
+
+        function t() {
+            var t = e("script"),
+                o = t.length,
+                i = t[o - 1];
+            return {
+                l: o,
+                z: n(i, "zIndex", -1),
+                o: n(i, "opacity", .5),
+                c: n(i, "color", "0,0,50"), //颜色rgb
+                n: n(i, "count", 99)
+            }
+        }
+
+        function o() {
+            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        }
+
+        function i() {
+            r.clearRect(0, 0, a, c);
+            var n, e, t, o, m, l;
+            s.forEach(function (i, x) {
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
+                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
+                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+            }),
+                x(i)
+        }
+        var a, c, u, m = document.createElement("canvas"),
+            d = t(),
+            l = "c_n" + d.l,
+            r = m.getContext("2d"),
+            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+            w = Math.random,
+            y = {
+                x: null,
+                y: null,
+                max: 2e4
+            };
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
+            m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
+        for (var s = [], f = 0; d.n > f; f++) {
+            var h = w() * a,
+                g = w() * c,
+                v = 2 * w() - 1,
+                p = 2 * w() - 1;
+            s.push({
+                x: h,
+                y: g,
+                xa: v,
+                ya: p,
+                max: 6e3
+            })
+        }
+        u = s.concat([y]),
+            setTimeout(function () {
+                i()
+            }, 100)
+    }
+    DynamicLine()
+</script>
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<script src="../../../../../js/clipboard.min.js"></script>
+<script src="../../../../../js/clipboard-use.js"></script>
+
+<script src="../js/mouse.js"></script>
+
+<!-- 谷歌代码高亮 -->
+<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<script>
+	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	var element = null
+	var layer = null
+	layui.use(['element','layer'], function(){
+	  element = layui.element;
+	  layer = layui.layer
+	});
+	
+	$(function() { 
+	    var elm = $('#toc-area'); 
+	    var startPos = $(elm).offset().top; 
+		var totalTop = $(document).height(); 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+			//文章阅读进度条
+			var percent = ((p/totalTop)*100).toFixed(2)
+			if(percent > 100){
+				percent = 100
+			}
+			if(percent == 0){
+				percent = 0
+			}
+			element.progress('demo', percent+"%");
+			$("#progressTxt").text(percent)
+			//固定文章目录
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '60px' : ''); 
+	    }); 
+		//谷歌代码高亮
+		$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+
+		let timer = null;
+		//点击回到顶部
+		//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+		$("#toTopBtn").click(function(){
+			var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var t = parseInt(oTop / 60) //每次六十分之一
+			var time = setInterval(function () {
+				// document.body.scrollTop = document.body.scrollTop - 50;
+				document.body.scrollTop = document.body.scrollTop - t;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
+		})
+
+		
+	});
+	
+</script>
+</html>

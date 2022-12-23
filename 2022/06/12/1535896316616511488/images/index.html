@@ -1,0 +1,1853 @@
+<html>
+<head>
+	<title>贺刘芳的搬砖日记-文章页</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../../../css/common.css"/>
+	<link rel="stylesheet" href="../../../../../css/post.css"/>
+	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css"/>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
+</head>
+<body>
+	<!-- 导航模板 -->
+	<!-- 导航 -->
+<div class="qy-nav">
+  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
+    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-chart-screen"></i> 首页</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
+      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    </li>
+  </ul>
+</div>
+<!-- 搜索弹框 -->
+<div id="searchShade" class="searchShade">
+  <div id="searchLayer">
+    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <div id="searchResult">
+      <!-- <ul>
+        <li>java笔记
+        <li>
+      </ul> -->
+    </div>
+
+  </div>
+</div>
+<script>
+  window.onload = function () {
+    //下拉菜单
+    layui.use('dropdown', function () {
+      var dropdown = layui.dropdown
+      dropdown.render({
+        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
+        data: [
+          {
+            title: '首页'
+            , id: 11
+            , href: '/'
+            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
+          },
+          {
+            title: '关于'
+            , id: 22
+            , href: '/about'
+            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
+          },
+          {
+            title: '搜索'
+            , id: 33
+            , href: '#'
+            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
+          }
+        ],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id'); //表格列表的预埋数据
+            if(data.id == 33){
+              $("#searchShade").show()
+            }
+        }
+      })
+
+    })
+
+    //点击搜索
+    $("#searchBtn").click(function () {
+      $("#searchShade").show()
+    })
+
+    //关闭弹框
+    $("#closeBtn").click(function () {
+      $("#searchShade").hide()
+    })
+
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+      $.ajax({
+        url: path,
+        dataType: "json",
+        success: function (datas) {
+          // console.log('datas :>> ', datas);
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function () {
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var data_title = data.title.trim().toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var first_occur = -1;
+              if (data_title != '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  if (index_title < 0) {
+                    isMatch = false;
+                  }
+                });
+              }
+              // show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            $resultContent.innerHTML = str;
+          });
+        }
+      });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+  }
+
+
+</script>
+	<!-- 中间内容区域 -->
+	<div class="layui-container  center" id="top">
+		<div class="layui-row layui-col-space20">
+			<div class="layui-col-md3 hide-xs hide-sm" >
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-speaker"></i> 公告</div>
+					<div class="layui-card-body">
+						<!-- 个人信息模块 -->
+						<div class="userinfo">
+							<img src="/head.png">
+							<div class="name">淡泊明志，宁静致远</div>
+							<div class="other">
+								<div class="item">
+									<p class="num">
+										39
+									</p>
+									<p class="title">文章</p>
+								</div>
+								<div class="item">
+									<p class="num">
+										8
+									</p>
+									<p class="title">分类</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i class="layui-icon layui-icon-template-1"></i> 分类</div>
+					<div class="layui-card-body">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</div>
+				<!-- 归档 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-date"></i> 归档</div>
+					<div class="layui-card-body">
+						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/12/">2022 十二月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/12/">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
+					</div>
+				</div>
+				
+				<div style="height: 90%;width: 267px;" id="toc-area"  class="layui-card">
+				  <div class="layui-card-header">本文目录</div>
+				  <div class="layui-card-body" style="overflow:auto;height: calc(100% - 60px - 50px);">
+				   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p1-uniapp%E7%AE%80%E4%BB%8B"><span class="toc-text">p1 uniapp简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p2-uniapp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">p2 uniapp环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAuniapp%E9%A1%B9%E7%9B%AE"><span class="toc-text">创建uniapp项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%88%B0%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-text">运行到浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%88%B0%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="toc-text">运行到微信小程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%88%B0%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA"><span class="toc-text">运行到安卓手机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p3-uniapp%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%92%8C%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83"><span class="toc-text">p3 uniapp项目结构和开发规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83"><span class="toc-text">开发规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P4-globalStyle%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE"><span class="toc-text">P4 globalStyle全局配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P5-%E5%88%9B%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E9%A1%B5%E9%9D%A2"><span class="toc-text">P5 创建和配置页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p6-p7-tabBar-%E9%85%8D%E7%BD%AE"><span class="toc-text">p6-p7 tabBar 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p8-condition"><span class="toc-text">p8 condition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p9-text%E7%BB%84%E4%BB%B6"><span class="toc-text">p9 text组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p10-view%E7%BB%84%E4%BB%B6"><span class="toc-text">p10 view组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p11-button%E7%BB%84%E4%BB%B6"><span class="toc-text">p11 button组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p12-image%E7%BB%84%E4%BB%B6"><span class="toc-text">p12 image组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p13-uniapp%E6%A0%B7%E5%BC%8F-%E5%AD%97%E4%BD%93%E5%9B%BE%E7%89%87-sass"><span class="toc-text">p13 uniapp样式-字体图片-sass</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E5%8D%95%E4%BD%8D"><span class="toc-text">css单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E5%AF%BC%E5%85%A5"><span class="toc-text">样式导入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F%E4%B8%8E%E5%B1%80%E9%83%A8%E6%A0%B7%E5%BC%8F"><span class="toc-text">全局样式与局部样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8scss"><span class="toc-text">使用scss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"><span class="toc-text">字体图标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p14-16%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-text">p14 -16数据绑定和事件绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p17-%E5%BA%94%E7%94%A8%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">p17 应用和页面的生命周期函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p18-%E4%B8%8B%E6%8B%89%E5%88%B7%E6%96%B0"><span class="toc-text">p18 下拉刷新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p19-%E4%B8%8A%E6%8B%89-%E8%A7%A6%E5%BA%95-%E5%8A%A0%E8%BD%BD"><span class="toc-text">p19 上拉(触底)加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p20-%E5%8F%91%E9%80%81get%E8%AF%B7%E6%B1%82"><span class="toc-text">p20  发送get请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p21-%E6%95%B0%E6%8D%AE%E7%BC%93%E5%AD%98"><span class="toc-text">p21 数据缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#uni-setStorage"><span class="toc-text">uni.setStorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uni-setStorageSync"><span class="toc-text">uni.setStorageSync</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uni-getStorage"><span class="toc-text">uni.getStorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uni-getStorageSync"><span class="toc-text">uni.getStorageSync</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uni-removeStorage"><span class="toc-text">uni.removeStorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uni-removeStorageSync"><span class="toc-text">uni.removeStorageSync</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p22-%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%8A%E4%BC%A0%E5%92%8C%E9%A2%84%E8%A7%88"><span class="toc-text">p22 图片的上传和预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p23-%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91%E8%B7%A8%E7%AB%AF%E5%85%BC%E5%AE%B9"><span class="toc-text">p23 条件编译跨端兼容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p24-%E5%AF%BC%E8%88%AA"><span class="toc-text">p24 导航</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#navigator%E7%BB%84%E4%BB%B6%E5%AF%BC%E8%88%AA"><span class="toc-text">navigator组件导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-text">编程式导航</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p25-%E7%BB%84%E4%BB%B6%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">p25 组件的创建和组件生命周期函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">组件的创建和使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">组件的生命周期函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p26-%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="toc-text">p26 组件之间的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E2%80%94%E5%AD%90%E7%BB%84%E4%BB%B6"><span class="toc-text">父组件—子组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E2%80%94%E7%88%B6%E7%BB%84%E4%BB%B6"><span class="toc-text">子组件—父组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-text">全局组件通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#uni-emit-eventName-OBJECT"><span class="toc-text">uni.$emit(eventName,OBJECT)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#uni-on-eventName-callback"><span class="toc-text">uni.$on(eventName,callback)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p27-uni-ui%E6%89%A9%E5%B1%95%E7%BB%84%E4%BB%B6"><span class="toc-text">p27 uni-ui扩展组件</span></a></li></ol>
+				  </div>
+				  <div class="readprocess">
+					  <div>已阅读：<span id="progressTxt"></span>%</div>
+					  <div class="layui-progress" lay-filter="demo">
+						<div class="layui-progress-bar" lay-percent="10%"></div>
+					  </div>
+				  </div>
+				</div>
+				
+			</div>
+			<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
+				
+				<div class="article-title">
+					<h1>uniapp学习笔记</h1>
+					<p>
+						<i class="layui-icon layui-icon-time"></i>发表于：2022-06-12
+						|
+						<i class="layui-icon layui-icon-form"></i>字数统计：8.1k
+					</p>
+				</div>
+				
+					
+				<!-- 文章内容 -->
+				<div id="article">
+				    <p>笔记根据B站<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1BJ411W7pX">Uni-App从入门到实战-黑马程序员杭州校区出品</a>视频教程整理</p>
+<p>相关素材：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Dkj5iuGRG6j2HzK_8MDxFA">https://pan.baidu.com/s/1Dkj5iuGRG6j2HzK_8MDxFA</a>  提取码:7vm2，搬运来的链接，大家自取</p>
+<p>案例的接口文档：<a target="_blank" rel="noopener" href="https://www.showdoc.com.cn/128719739414963?page_id=2513235043485226">https://www.showdoc.com.cn/128719739414963?page_id=2513235043485226</a></p>
+<p>颜色对照表：<a target="_blank" rel="noopener" href="https://destiny001.gitee.io/color/">https://destiny001.gitee.io/color/</a></p>
+<h2 id="p1-uniapp简介"><a href="#p1-uniapp简介" class="headerlink" title="p1 uniapp简介"></a>p1 uniapp简介</h2><p><code>uni-app上手简单,可快速开发小程序、h5、安卓、ios应用</code>。学习本课程需有vue基础方可继续，当然了有想学习小程序的，也建议学习本课程，学会uni-app之后，原生小程序也可快速上手。</p>
+<h2 id="p2-uniapp环境搭建"><a href="#p2-uniapp环境搭建" class="headerlink" title="p2 uniapp环境搭建"></a>p2 uniapp环境搭建</h2><p>下载HBuilderX即可：<a target="_blank" rel="noopener" href="https://www.dcloud.io/hbuilderx.html">https://www.dcloud.io/hbuilderx.html</a></p>
+<h3 id="创建uniapp项目"><a href="#创建uniapp项目" class="headerlink" title="创建uniapp项目"></a>创建uniapp项目</h3><p><img src="/2022/06/12/1535896316616511488/images/image-20220605214331953.png" alt="image-20220605214331953"></p>
+<h3 id="运行到浏览器"><a href="#运行到浏览器" class="headerlink" title="运行到浏览器"></a>运行到浏览器</h3><p><img src="/2022/06/12/1535896316616511488/images/image-20220605214413231.png" alt="image-20220605214413231"></p>
+<h3 id="运行到微信小程序"><a href="#运行到微信小程序" class="headerlink" title="运行到微信小程序"></a>运行到微信小程序</h3><p><img src="/2022/06/12/1535896316616511488/images/image-20220605214452424.png" alt="image-20220605214452424"></p>
+<p><strong>注意</strong>：需要先在微信小程序中  <code>设置-安全设置  开启端口</code>  否则启动不了。</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220605214536999.png" alt="image-20220605214536999"></p>
+<h3 id="运行到安卓手机"><a href="#运行到安卓手机" class="headerlink" title="运行到安卓手机"></a>运行到安卓手机</h3><p>略</p>
+<h2 id="p3-uniapp项目结构和开发规范"><a href="#p3-uniapp项目结构和开发规范" class="headerlink" title="p3 uniapp项目结构和开发规范"></a>p3 uniapp项目结构和开发规范</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/project.html#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">项目结构文档</a></p>
+<pre><code class="hljs plaintext">├─pages                 业务页面文件存放的目录
+│  ├─index
+│  │  └─index.vue       index页面
+│  └─list
+│     └─list.vue        list页面
+├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此
+├─unpackage             非工程代码，一般存放运行或发行的编译结果
+├─main.js               Vue初始化入口文件
+├─App.vue               应用配置，用来配置App全局样式以及监听 应用生命周期
+├─manifest.json         配置应用名称、appid、logo、版本等打包信息，详见
+├─pages.json            配置页面路由、导航条、选项卡等页面类信息，详见
+└─uni.scss              这里是uni-app内置的常用样式变量</code></pre>
+
+<h3 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h3><p>为了实现多端兼容，综合考虑编译速度、运行性能等因素，<code>uni-app</code> 约定了如下开发规范：</p>
+<ul>
+<li>页面文件遵循 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/spec.html">Vue 单文件组件 (SFC) 规范(opens new window)</a></li>
+<li>组件标签靠近小程序规范，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/">uni-app 组件规范</a></li>
+<li>接口能力（JS API）靠近微信小程序规范，但需将前缀 <code>wx</code> 替换为 <code>uni</code>，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/">uni-app接口规范</a></li>
+<li>数据绑定及事件处理同 <code>Vue.js</code> 规范，同时补充了App及页面的生命周期</li>
+<li>为兼容多端运行，建议使用<code>flex布局</code>进行开发</li>
+</ul>
+<p><strong>总结</strong>：就是小程序的语法和vue的语法结合</p>
+<h2 id="P4-globalStyle全局配置"><a href="#P4-globalStyle全局配置" class="headerlink" title="P4 globalStyle全局配置"></a>P4 globalStyle全局配置</h2><p>对应<code>page.json</code>文件中<code>globalStyle</code>节点</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+<th align="left">平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">navigationBarBackgroundColor</td>
+<td align="left">HexColor</td>
+<td align="left">#F7F7F7</td>
+<td align="left">导航栏背景颜色（同状态栏背景色）</td>
+<td align="left">APP与H5为#F7F7F7，小程序平台请参考相应小程序文档</td>
+</tr>
+<tr>
+<td align="left">navigationBarTextStyle</td>
+<td align="left">String</td>
+<td align="left">white</td>
+<td align="left">导航栏标题颜色及状态栏前景颜色，仅支持 black&#x2F;white</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">navigationBarTitleText</td>
+<td align="left">String</td>
+<td align="left"></td>
+<td align="left">导航栏标题文字内容</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">navigationStyle</td>
+<td align="left">String</td>
+<td align="left">default</td>
+<td align="left">导航栏样式，仅支持 default&#x2F;custom。custom即取消默认的原生导航栏，需看<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/pages#customnav">使用注意</a></td>
+<td align="left">微信小程序 7.0+、百度小程序、H5、App（2.0.3+）</td>
+</tr>
+<tr>
+<td align="left">backgroundColor</td>
+<td align="left">HexColor</td>
+<td align="left">#ffffff</td>
+<td align="left">下拉显示出来的窗口的背景色</td>
+<td align="left">微信小程序</td>
+</tr>
+<tr>
+<td align="left">backgroundTextStyle</td>
+<td align="left">String</td>
+<td align="left">dark</td>
+<td align="left">下拉 loading 的样式，仅支持 dark &#x2F; light</td>
+<td align="left">微信小程序</td>
+</tr>
+<tr>
+<td align="left">enablePullDownRefresh</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">是否开启下拉刷新，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/page.html#lifecycle">页面生命周期</a>。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">onReachBottomDistance</td>
+<td align="left">Number</td>
+<td align="left">50</td>
+<td align="left">页面上拉触底事件触发时距页面底部距离，单位只支持px，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/page.html#lifecycle">页面生命周期</a></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>更多属性配置可以参考文档：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/pages.html#globalstyle">全局配置文档</a></p>
+<h2 id="P5-创建和配置页面"><a href="#P5-创建和配置页面" class="headerlink" title="P5 创建和配置页面"></a>P5 创建和配置页面</h2><p>第一步：新建文件夹以及创建vue文件</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220605221538951.png" alt="image-20220605221538951"></p>
+<p>message.vue的内容如下：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>message页面<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<p>第二步：在page.json文件中进行配置</p>
+<p>注意：<strong>pages数组中第一项表示应用启动页</strong></p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220605221816965.png" alt="image-20220605221816965"></p>
+<p>测试就可以看到页面了</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220605221952416.png" alt="image-20220605221952416"></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/pages.html#pages">页面样式配置文档</a></p>
+<h2 id="p6-p7-tabBar-配置"><a href="#p6-p7-tabBar-配置" class="headerlink" title="p6-p7 tabBar 配置"></a>p6-p7 tabBar 配置</h2><p><strong>属性说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">类型</th>
+<th align="left">必填</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+<th align="left">平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">color</td>
+<td align="left">HexColor</td>
+<td align="left">是</td>
+<td align="left"></td>
+<td align="left">tab 上的文字默认颜色</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">selectedColor</td>
+<td align="left">HexColor</td>
+<td align="left">是</td>
+<td align="left"></td>
+<td align="left">tab 上的文字选中时的颜色</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">backgroundColor</td>
+<td align="left">HexColor</td>
+<td align="left">是</td>
+<td align="left"></td>
+<td align="left">tab 的背景色</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">borderStyle</td>
+<td align="left">String</td>
+<td align="left">否</td>
+<td align="left">black</td>
+<td align="left">tabbar 上边框的颜色，可选值 black&#x2F;white</td>
+<td align="left">App 2.3.4+ 支持其他颜色值、H5 3.0.0+</td>
+</tr>
+<tr>
+<td align="left">blurEffect</td>
+<td align="left">String</td>
+<td align="left">否</td>
+<td align="left">none</td>
+<td align="left">iOS 高斯模糊效果，可选值 dark&#x2F;extralight&#x2F;light&#x2F;none（参考:<a target="_blank" rel="noopener" href="https://ask.dcloud.net.cn/article/36617">使用说明 (opens new window)</a>）</td>
+<td align="left">App 2.4.0+ 支持、H5 3.0.0+（只有最新版浏览器才支持）</td>
+</tr>
+<tr>
+<td align="left">list</td>
+<td align="left">Array</td>
+<td align="left">是</td>
+<td align="left"></td>
+<td align="left">tab 的列表，详见 list 属性说明，最少2个、最多5个 tab</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">position</td>
+<td align="left">String</td>
+<td align="left">否</td>
+<td align="left">bottom</td>
+<td align="left">可选值 bottom、top</td>
+<td align="left">top 值仅微信小程序支持</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/collocation/pages.html#tabbar">tabbar文档</a></p>
+<p>第一步：新增contact页面，参考p5。<strong>建完之后别忘了在pages.json中的pages节点下配置路径</strong></p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220610110727253.png" alt="image-20220610110727253"></p>
+<p>第二步：将图片拷贝的静态文件夹，有选中的图片和不选中的图片。可以用阿里图标库生成</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220610105106625.png" alt="image-20220610105106625"></p>
+<p>第三步：page.json中配置一下tabbar</p>
+<pre><code class="hljs json"><span class="hljs-attr">&quot;tabBar&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span>
+		<span class="hljs-attr">&quot;color&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#7A7E83&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;selectedColor&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#3cc51f&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;borderStyle&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;black&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;backgroundColor&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;#ffffff&quot;</span><span class="hljs-punctuation">,</span>
+		<span class="hljs-attr">&quot;list&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+			<span class="hljs-punctuation">&#123;</span>
+				<span class="hljs-attr">&quot;pagePath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages/index/index&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;iconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;static/image/home.png&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;selectedIconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;static/image/home-active.png&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;主页&quot;</span>
+			<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span> 
+			<span class="hljs-punctuation">&#123;</span>
+				<span class="hljs-attr">&quot;pagePath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages/message/message&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;iconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;static/image/message.png&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;selectedIconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;static/image/message-active.png&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;信息&quot;</span>
+			<span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span>
+			<span class="hljs-punctuation">&#123;</span>
+				<span class="hljs-attr">&quot;pagePath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages/contact/contact&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;iconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;static/image/contact.png&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;selectedIconPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;static/image/contact-active.png&quot;</span><span class="hljs-punctuation">,</span>
+				<span class="hljs-attr">&quot;text&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;我们&quot;</span>
+			<span class="hljs-punctuation">&#125;</span>
+		<span class="hljs-punctuation">]</span>
+	<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<p>然后在界面就可以看到效果了，点击之后可以切换到对应的界面</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220610111119764.png" alt="image-20220610111119764"></p>
+<h2 id="p8-condition"><a href="#p8-condition" class="headerlink" title="p8 condition"></a>p8 condition</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/collocation/pages.html#condition">condition文档</a></p>
+<p>启动模式配置，<strong>仅开发期间生效，用于模拟直达页面的场景</strong>，如：小程序转发后，用户点击所打开的页面。</p>
+<p><strong>属性说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">类型</th>
+<th align="left">是否必填</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">current</td>
+<td align="left">Number</td>
+<td align="left">是</td>
+<td align="left">当前激活的模式，list节点的索引值</td>
+</tr>
+<tr>
+<td align="left">list</td>
+<td align="left">Array</td>
+<td align="left">是</td>
+<td align="left">启动模式列表</td>
+</tr>
+</tbody></table>
+<p><strong>list说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">类型</th>
+<th align="left">是否必填</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">name</td>
+<td align="left">String</td>
+<td align="left">是</td>
+<td align="left">启动模式名称</td>
+</tr>
+<tr>
+<td align="left">path</td>
+<td align="left">String</td>
+<td align="left">是</td>
+<td align="left">启动页面路径</td>
+</tr>
+<tr>
+<td align="left">query</td>
+<td align="left">String</td>
+<td align="left">否</td>
+<td align="left">启动参数，可在页面的 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle">onLoad</a> 函数里获得</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong> 在 App 里真机运行可直接打开配置的页面，微信开发者工具里需要手动改变编译模式，如下图：</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220610113003166.png" alt="image-20220610113003166"></p>
+<p>第一步：新增details页面</p>
+<p>第二步：在pages.json中添加condition节点，配置如下</p>
+<pre><code class="hljs json"><span class="hljs-attr">&quot;condition&quot;</span> <span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span> <span class="hljs-comment">//模式配置，仅开发期间生效</span>
+		<span class="hljs-attr">&quot;current&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">//当前激活的模式(list 的索引项)</span>
+		<span class="hljs-attr">&quot;list&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+			<span class="hljs-punctuation">&#123;</span>
+				<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;详情页&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">//模式名称</span>
+				<span class="hljs-attr">&quot;path&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;pages/details/details&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">//启动页面，必选</span>
+				<span class="hljs-attr">&quot;query&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;id=10&quot;</span> <span class="hljs-comment">//启动参数，在页面的onLoad函数里面得到</span>
+			<span class="hljs-punctuation">&#125;</span>
+		<span class="hljs-punctuation">]</span>
+	<span class="hljs-punctuation">&#125;</span></code></pre>
+
+<h2 id="p9-text组件"><a href="#p9-text组件" class="headerlink" title="p9 text组件"></a>p9 text组件</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/text.html">text组件文档</a></p>
+<p>文本组件。</p>
+<p>用于包裹文本内容。</p>
+<p><strong>属性说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+<th align="left">平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">selectable</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">文本是否可选</td>
+<td align="left">App、H5、快手小程序</td>
+</tr>
+<tr>
+<td align="left">user-select</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">文本是否可选</td>
+<td align="left">微信小程序</td>
+</tr>
+<tr>
+<td align="left">space</td>
+<td align="left">String</td>
+<td align="left"></td>
+<td align="left">显示连续空格</td>
+<td align="left">App、H5、微信小程序</td>
+</tr>
+<tr>
+<td align="left">decode</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">是否解码</td>
+<td align="left">App、H5、微信小程序</td>
+</tr>
+</tbody></table>
+<p><strong>space 值说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ensp</td>
+<td align="left">中文字符空格一半大小</td>
+</tr>
+<tr>
+<td align="left">emsp</td>
+<td align="left">中文字符空格大小</td>
+</tr>
+<tr>
+<td align="left">nbsp</td>
+<td align="left">根据字体设置的空格大小</td>
+</tr>
+</tbody></table>
+<p>修改detail.vue</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>不可选文字(默认)<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">selectable</span>&gt;</span>可选文字<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>空格隔空    你搞个1<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">space</span>=<span class="hljs-string">&quot;ensp&quot;</span>&gt;</span>中文字符    空格一半大小<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">space</span>=<span class="hljs-string">&quot;emsp&quot;</span>&gt;</span>中文字符  空格大小<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">space</span>=<span class="hljs-string">&quot;nbsp&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 16px;&quot;</span>&gt;</span>根据字体 设置的空格大小<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>解码 &amp; &gt; <span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<p>测试就可以看到对应的效果</p>
+<h2 id="p10-view组件"><a href="#p10-view组件" class="headerlink" title="p10 view组件"></a>p10 view组件</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/view.html">view组件文档</a></p>
+<p>视图容器。</p>
+<p>它类似于传统html中的div，用于包裹各种元素内容。</p>
+<p>如果使用<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/tutorial/nvue-outline">nvue (opens new window)</a>，则需注意，包裹文字应该使用<code>&lt;text&gt;</code>组件。</p>
+<p><strong>属性说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">hover-class</td>
+<td align="left">String</td>
+<td align="left">none</td>
+<td align="left">指定按下去的样式类。当 hover-class&#x3D;”none” 时，没有点击态效果</td>
+</tr>
+<tr>
+<td align="left">hover-stop-propagation</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">指定是否阻止本节点的祖先节点出现点击态，App、H5、支付宝小程序、百度小程序不支持（支付宝小程序、百度小程序文档中都有此属性，实测未支持）</td>
+</tr>
+<tr>
+<td align="left">hover-start-time</td>
+<td align="left">Number</td>
+<td align="left">50</td>
+<td align="left">按住后多久出现点击态，单位毫秒</td>
+</tr>
+<tr>
+<td align="left">hover-stay-time</td>
+<td align="left">Number</td>
+<td align="left">400</td>
+<td align="left">手指松开后点击态保留时间，单位毫秒</td>
+</tr>
+</tbody></table>
+<p>在details.vue文件中加入下面的测试代码</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span> <span class="hljs-attr">hover-class</span>=<span class="hljs-string">&quot;box-active&quot;</span> <span class="hljs-attr">:hover-start-time</span>=<span class="hljs-string">&quot;2000&quot;</span> <span class="hljs-attr">:hover-stay-time</span>=<span class="hljs-string">&quot;2000&quot;</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;childbox&quot;</span> <span class="hljs-attr">hover-class</span>=<span class="hljs-string">&quot;childbox-active&quot;</span> <span class="hljs-attr">hover-stop-propagation</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	<span class="hljs-selector-class">.box</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;</span>
+<span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: green;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css">	<span class="hljs-selector-class">.box-active</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: deeppink;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css">	<span class="hljs-selector-class">.childbox</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;</span>
+<span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">50px</span>;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: greenyellow;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css">	<span class="hljs-selector-class">.childbox-active</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: deepskyblue;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<h2 id="p11-button组件"><a href="#p11-button组件" class="headerlink" title="p11 button组件"></a>p11 button组件</h2><p>按钮组件</p>
+<p><strong>属性说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+<th align="left">平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">size</td>
+<td align="left">String</td>
+<td align="left">default</td>
+<td align="left">按钮的大小</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">String</td>
+<td align="left">default</td>
+<td align="left">按钮的样式类型</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">plain</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">按钮是否镂空，背景色透明</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">是否禁用</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">loading</td>
+<td align="left">Boolean</td>
+<td align="left">false</td>
+<td align="left">名称前是否带 loading 图标</td>
+<td align="left">H5、App(App-nvue 平台，在 ios 上为雪花，Android上为圆圈)</td>
+</tr>
+</tbody></table>
+<p>更多属性可以看<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/button.html">button组件文档</a></p>
+<p>在details.vue文件中加入下面的测试代码即可看到效果</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>默认按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;mini&quot;</span>&gt;</span>mini按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>type=primary按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">plain</span>&gt;</span>type=primary的镂空按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>type=primary的禁用按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">loading</span>&gt;</span>type=primary的loading按钮<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+
+<h2 id="p12-image组件"><a href="#p12-image组件" class="headerlink" title="p12 image组件"></a>p12 image组件</h2><p>图片组件</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+<th align="left">平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">src</td>
+<td align="left">String</td>
+<td align="left"></td>
+<td align="left">图片资源地址</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">mode</td>
+<td align="left">String</td>
+<td align="left">‘scaleToFill’</td>
+<td align="left">图片裁剪、缩放的模式</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p><strong>Tips</strong></p>
+<ul>
+<li><code>&lt;image&gt;</code> 组件默认宽度 300px、高度 225px；<code>app-nvue平台，暂时默认为屏幕宽度</code></li>
+<li><code>src</code> 仅支持相对路径、绝对路径，支持 base64 码；</li>
+<li>页面结构复杂，css样式太多的情况，使用 image 可能导致样式生效较慢，出现 “闪一下” 的情况，此时设置 <code>image&#123;will-change: transform&#125;</code> ,可优化此问题。</li>
+<li>自定义组件里面使用 <code>&lt;image&gt;</code>时，若 <code>src</code> 使用相对路径可能出现路径查找失败的情况，故建议使用绝对路径。</li>
+</ul>
+<p><strong>mode 有效值：</strong></p>
+<p>mode 有 14 种模式，其中 5 种是缩放模式，9 种是裁剪模式。</p>
+<table>
+<thead>
+<tr>
+<th align="left">模式</th>
+<th align="left">值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">缩放</td>
+<td align="left">scaleToFill</td>
+<td align="left">不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素</td>
+</tr>
+<tr>
+<td align="left">缩放</td>
+<td align="left">aspectFit</td>
+<td align="left">保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</td>
+</tr>
+<tr>
+<td align="left">缩放</td>
+<td align="left">aspectFill</td>
+<td align="left">保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</td>
+</tr>
+</tbody></table>
+<p>更多参考<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/image.html">图片组件文档</a></p>
+<p>在details.vue中加入下面的代码</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://heliufang.gitee.io/2022/03/27/1513842928408203264/images/image-20220319113815361.png&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://heliufang.gitee.io/2022/03/27/1513842928408203264/images/image-20220319113815361.png&quot;</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;aspectFit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://heliufang.gitee.io/2022/03/27/1513842928408203264/images/image-20220319113815361.png&quot;</span> <span class="hljs-attr">mode</span>=<span class="hljs-string">&quot;aspectFill&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span></code></pre>
+
+<h2 id="p13-uniapp样式-字体图片-sass"><a href="#p13-uniapp样式-字体图片-sass" class="headerlink" title="p13 uniapp样式-字体图片-sass"></a>p13 uniapp样式-字体图片-sass</h2><h3 id="css单位"><a href="#css单位" class="headerlink" title="css单位"></a>css单位</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D">css单位文档</a></p>
+<p><code>uni-app</code> 支持的通用 css 单位包括 px、rpx</p>
+<ul>
+<li>px 即屏幕像素</li>
+<li>rpx 即响应式 px，一种根据屏幕宽度自适应的动态单位。<strong>以 750 宽的屏幕为基准，750rpx 恰好为屏幕宽</strong>度。屏幕变宽，<strong>rpx 实际显示效果会等比放大</strong>，但在 <strong>App（vue2 不含 nvue） 端和 H5（vue2） 端屏幕宽度达到 960px 时，默认将按照 375px 的屏幕宽度进行计算</strong>，具体配置参考：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/collocation/pages#globalstyle">rpx 计算配置</a> 。</li>
+</ul>
+<blockquote>
+<p><strong>举例说明：</strong></p>
+<ol>
+<li>若设计稿宽度为 750px，元素 A 在设计稿上的宽度为 100px，那么元素 A 在 <code>uni-app</code> 里面的宽度应该设为：<code>750 * 100 / 750</code>，结果为：100rpx。</li>
+<li>若设计稿宽度为 640px，元素 A 在设计稿上的宽度为 100px，那么元素 A 在 <code>uni-app</code> 里面的宽度应该设为：<code>750 * 100 / 640</code>，结果为：117rpx。</li>
+</ol>
+</blockquote>
+<p>vue 页面支持下面这些普通 H5 单位，但在 nvue 里不支持：</p>
+<ul>
+<li>rem 根字体大小可以通过 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/page-meta#page-meta">page-meta</a> 配置</li>
+<li>vh viewpoint height，视窗高度，1vh 等于视窗高度的 1%</li>
+<li>vw viewpoint width，视窗宽度，1vw 等于视窗宽度的 1%</li>
+</ul>
+<p>新建uniapp-style.vue页面</p>
+<p>假设设计稿的宽度为375px ，盒子的宽度为100px。那么根据公式 750*100&#x2F;375&#x3D;200rpx</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>
+			<span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>uniapp<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+		<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	<span class="hljs-selector-class">.box</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">width</span>: <span class="hljs-number">200</span>rpx;</span>
+<span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">200</span>rpx;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: red;</span>
+<span class="language-css">		<span class="hljs-attribute">font-size</span>: <span class="hljs-number">32</span>rpx;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<p>打开页面调试工具发现切换到宽度为375px的设备，发现盒子的像素确实是100px</p>
+<h3 id="样式导入"><a href="#样式导入" class="headerlink" title="样式导入"></a>样式导入</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#%E6%A0%B7%E5%BC%8F%E5%AF%BC%E5%85%A5">样式导入文档</a></p>
+<p>使用<code>@import</code>语句可以导入外联样式表，<code>@import</code>后跟需要导入的外联样式表的相对路径，用<code>;</code>表示语句结束。</p>
+<p>在uniapp-style.vue页面的同级目录下新建a.css文件，文件内容如下</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+	<span class="hljs-attribute">border</span>: <span class="hljs-number">1</span>rpx solid;
+&#125;</code></pre>
+
+<p>然后再uniapp-style.vue页面引入</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	<span class="hljs-keyword">@import</span> url(./a.css);</span>
+<span class="language-css">	<span class="hljs-selector-class">.box</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">width</span>: <span class="hljs-number">200</span>rpx;</span>
+<span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">200</span>rpx;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: red;</span>
+<span class="language-css">		<span class="hljs-attribute">font-size</span>: <span class="hljs-number">32</span>rpx;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<p>测试发现给盒子加上边框了。</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>目前支持的选择器有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">选择器</th>
+<th align="left">样例</th>
+<th align="left">样例描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">.class</td>
+<td align="left">.intro</td>
+<td align="left">选择所有拥有 class&#x3D;”intro” 的组件</td>
+</tr>
+<tr>
+<td align="left">#id</td>
+<td align="left">#firstname</td>
+<td align="left">选择拥有 id&#x3D;”firstname” 的组件</td>
+</tr>
+<tr>
+<td align="left">element</td>
+<td align="left">view</td>
+<td align="left">选择所有 view 组件</td>
+</tr>
+<tr>
+<td align="left">element, element</td>
+<td align="left">view, checkbox</td>
+<td align="left">选择所有文档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td align="left">::after</td>
+<td align="left">view::after</td>
+<td align="left">在 view 组件后边插入内容，<strong>仅 vue 页面生效</strong></td>
+</tr>
+<tr>
+<td align="left">::before</td>
+<td align="left">view::before</td>
+<td align="left">在 view 组件前边插入内容，<strong>仅 vue 页面生效</strong></td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ul>
+<li>在 <code>uni-app</code> 中不能使用 <code>*</code> 选择器。</li>
+<li>微信小程序自定义组件中仅支持 class 选择器</li>
+<li><code>page</code> 相当于 <code>body</code> 节点，例如：</li>
+</ul>
+<pre><code class="hljs css">&lt;!-- 设置页面背景颜色，使用 scoped 会导致失效 -- &gt; 
+  page &#123;
+	<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+&#125;</code></pre>
+
+<h3 id="全局样式与局部样式"><a href="#全局样式与局部样式" class="headerlink" title="全局样式与局部样式"></a>全局样式与局部样式</h3><p>定义在 App.vue 中的样式为全局样式，作用于每一个页面。在 pages 目录下 的 vue 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 App.vue 中相同的选择器。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>App.vue 中通过 <code>@import</code> 语句可以导入外联样式，一样作用于每一个页面。</li>
+<li>nvue 页面暂不支持全局样式</li>
+</ul>
+<h3 id="使用scss"><a href="#使用scss" class="headerlink" title="使用scss"></a>使用scss</h3><p>在页面加上 lang&#x3D;”scss” 会自动安装scss插件</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	<span class="hljs-keyword">@import</span> url(./a.css);</span>
+<span class="language-css">	<span class="hljs-selector-class">.box</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">width</span>: <span class="hljs-number">200</span>rpx;</span>
+<span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">200</span>rpx;</span>
+<span class="language-css">		<span class="hljs-attribute">background</span>: red;</span>
+<span class="language-css">		text&#123;</span>
+<span class="language-css">			<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16</span>rpx;</span>
+<span class="language-css">			<span class="hljs-attribute">color</span>: aqua;</span>
+<span class="language-css">		&#125;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<h3 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87">字体图标文档</a></p>
+<p><code>uni-app</code> 支持使用字体图标，使用方式与普通 <code>web</code> 项目相同，需要注意以下几点：</p>
+<ul>
+<li>支持 base64 格式字体图标。</li>
+<li>支持网络路径字体图标。</li>
+<li>小程序不支持在 css 中使用本地文件，包括本地的背景图和字体文件。需以 base64 方式方可使用。</li>
+<li>网络路径必须加协议头 <code>https</code>。</li>
+<li>从 <a target="_blank" rel="noopener" href="http://www.iconfont.cn/">http://www.iconfont.cn (opens new window)</a>上拷贝的代码，默认是没加协议头的。</li>
+<li>从 <a target="_blank" rel="noopener" href="http://www.iconfont.cn/">http://www.iconfont.cn (opens new window)</a>上下载的字体文件，都是同名字体（字体名都叫 iconfont，安装字体文件时可以看到），在 nvue 内使用时需要注意，此字体名重复可能会显示不正常，可以使用工具修改。</li>
+<li>使用本地路径图标字体需注意：<ol>
+<li>为方便开发者，在字体文件小于 40kb 时，<code>uni-app</code> 会自动将其转化为 base64 格式；</li>
+<li>字体文件大于等于 40kb，仍转换为 base64 方式使用的话可能有性能问题，如开发者必须使用，则需自己将其转换为 base64 格式使用，或将其挪到服务器上，从网络地址引用；</li>
+<li>字体文件的引用路径推荐使用以 ~@ 开头的绝对路径。</li>
+</ol>
+</li>
+</ul>
+<pre><code class="hljs css"><span class="hljs-keyword">@font-face</span> &#123;
+	<span class="hljs-attribute">font-family</span>: test1-icon;
+	<span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;~@/static/iconfont.ttf&#x27;</span>);
+&#125;</code></pre>
+
+<p>第一步：将字体图标文件拷贝到static文件夹下</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220610222656159.png" alt="image-20220610222656159"></p>
+<p>第二步：修改iconfont.css路径，都加上~@路径</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220610222737395.png" alt="image-20220610222737395"></p>
+<p>第三步：使用</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">text</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iconfont icon-shipin&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span></code></pre>
+
+<h2 id="p14-16数据绑定和事件绑定"><a href="#p14-16数据绑定和事件绑定" class="headerlink" title="p14 -16数据绑定和事件绑定"></a>p14 -16数据绑定和事件绑定</h2><p>和vue一模一样 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/vue-basics.html#%E4%BB%8B%E7%BB%8D">uniapp官网上的vue文档</a></p>
+<p>新建一个home.vue文件用来测试</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>数据绑定学习(和vue一样)<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 插值表达式和三目运算符 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;&quot;1&quot;+&quot;uniapp&quot;&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;1+1&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;flag?&#x27;真的&#x27;:&#x27;假的&#x27;&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- v-bind绑定数据 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;imgurl&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- v-for循环 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,index) in arr&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.id&quot;</span>&gt;</span>
+			序号：&#123;&#123;index&#125;&#125;，ID:&#123;&#123;item.id&#125;&#125;,姓名：&#123;&#123;item.name&#125;&#125;，年龄：&#123;&#123;item.age&#125;&#125;
+		<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;clickHandle1&quot;</span>&gt;</span>注册1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;clickHandle2(10,$event)&quot;</span>&gt;</span>注册2<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">msg</span>: <span class="hljs-string">&#x27;你好&#x27;</span>,</span>
+<span class="language-javascript">				<span class="hljs-attr">flag</span>: <span class="hljs-literal">false</span>,</span>
+<span class="language-javascript">				<span class="hljs-attr">imgurl</span>: <span class="hljs-string">&#x27;https://heliufang.gitee.io/2022/03/27/1513842928408203264/images/image-20220319113815361.png&#x27;</span>,</span>
+<span class="language-javascript">				<span class="hljs-attr">arr</span>: [</span>
+<span class="language-javascript">					&#123;<span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;赵云&#x27;</span>,<span class="hljs-attr">age</span>: <span class="hljs-number">18</span>&#125;,</span>
+<span class="language-javascript">					&#123;<span class="hljs-attr">id</span>: <span class="hljs-number">2</span>,<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;马超&#x27;</span>,<span class="hljs-attr">age</span>: <span class="hljs-number">28</span>&#125;,</span>
+<span class="language-javascript">					&#123;<span class="hljs-attr">id</span>: <span class="hljs-number">3</span>,<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;关羽&#x27;</span>,<span class="hljs-attr">age</span>: <span class="hljs-number">38</span>&#125;,</span>
+<span class="language-javascript">				]</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">clickHandle1</span>(<span class="hljs-params">e</span>)&#123;<span class="hljs-comment">//不传参数获取事件对象</span></span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e)</span>
+<span class="language-javascript">			&#125;,</span>
+<span class="language-javascript">			<span class="hljs-title function_">clickHandle2</span>(<span class="hljs-params">num,e</span>)&#123;<span class="hljs-comment">//传参</span></span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(num,e)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<h2 id="p17-应用和页面的生命周期函数"><a href="#p17-应用和页面的生命周期函数" class="headerlink" title="p17 应用和页面的生命周期函数"></a>p17 应用和页面的生命周期函数</h2><p>应用的生命周期函数–App.vue文件中</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">onLaunch</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;应用加载完毕-只执行一次&#x27;</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">onShow</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;应用显示&#x27;</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">onHide</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;应用隐藏&#x27;</span>)</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	<span class="hljs-keyword">@import</span> url(./static/fonts/iconfont.css);</span>
+<span class="language-css">	<span class="hljs-comment">/*每个页面公共css */</span></span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+
+<p>页面的生命周期函数–每个页面中   <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle">页面生命周期文档</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onLoad</td>
+<td align="left">监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参），参考<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/api/router#navigateto">示例</a></td>
+</tr>
+<tr>
+<td align="left">onShow</td>
+<td align="left">监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面</td>
+</tr>
+<tr>
+<td align="left">onReady</td>
+<td align="left">监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发</td>
+</tr>
+<tr>
+<td align="left">onHide</td>
+<td align="left">监听页面隐藏</td>
+</tr>
+</tbody></table>
+<p>例如在message.vue页面中加上页面的生命周期函数</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>message页面<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">onLoad</span>(<span class="hljs-params">obj</span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-comment">//页面加载完毕,obj是上个页面传递的数据</span></span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;页面加载完毕&#x27;</span>,obj)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">onShow</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;页面显示&#x27;</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">onReady</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;页面初次渲染完毕&#x27;</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">onHide</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;页面隐藏,通过切换tabbar可以看到我&#x27;</span>)</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p18-下拉刷新"><a href="#p18-下拉刷新" class="headerlink" title="p18 下拉刷新"></a>p18 下拉刷新</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/api/ui/pulldown.html">下拉刷新文档</a></p>
+<p>在 js 中定义 onPullDownRefresh 处理函数（和onLoad等生命周期函数同级），监听该页面用户下拉刷新事件。</p>
+<ul>
+<li>需要在 <code>pages.json</code> 里，找到的当前页面的pages节点，并在 <code>style</code> 选项中开启 <code>enablePullDownRefresh</code>。</li>
+</ul>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220611131049139.png" alt="image-20220611131049139"></p>
+<ul>
+<li>当处理完数据刷新后，<code>uni.stopPullDownRefresh</code> 可以停止当前页面的下拉刷新。</li>
+</ul>
+<p>message.vue代码</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		message页面
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item) in arr&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.id&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;refreshArr&quot;</span>&gt;</span>按钮触发下拉刷新<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">arr</span>: [<span class="hljs-string">&#x27;java&#x27;</span>,<span class="hljs-string">&#x27;前端&#x27;</span>,<span class="hljs-string">&#x27;UI&#x27;</span>,<span class="hljs-string">&#x27;测试&#x27;</span>]</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">refreshArr</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">startPullDownRefresh</span>()</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">onPullDownRefresh</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-variable language_">this</span>.<span class="hljs-property">arr</span> = [<span class="hljs-string">&#x27;UI&#x27;</span>,<span class="hljs-string">&#x27;测试&#x27;</span>,<span class="hljs-string">&#x27;java&#x27;</span>,<span class="hljs-string">&#x27;前端&#x27;</span>]</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">stopPullDownRefresh</span>() <span class="hljs-comment">//关闭下拉刷新</span></span>
+<span class="language-javascript">			&#125;,<span class="hljs-number">2000</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p19-上拉-触底-加载"><a href="#p19-上拉-触底-加载" class="headerlink" title="p19 上拉(触底)加载"></a>p19 上拉(触底)加载</h2><p>页面的可以配置触底的距离，也就是距离底部多少距离触发，默认是50</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220611144307276.png" alt="image-20220611144307276"></p>
+<p>页面生命周期中有个onReachBottom方法，用来监听触底。</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		message页面
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item-class&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item) in arr&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;item.id&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;refreshArr&quot;</span>&gt;</span>按钮触发下拉刷新<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">arr</span>: [<span class="hljs-string">&#x27;java&#x27;</span>,<span class="hljs-string">&#x27;前端&#x27;</span>,<span class="hljs-string">&#x27;UI&#x27;</span>,<span class="hljs-string">&#x27;测试&#x27;</span>]</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">refreshArr</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">startPullDownRefresh</span>()</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">onPullDownRefresh</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-variable language_">this</span>.<span class="hljs-property">arr</span> = [<span class="hljs-string">&#x27;UI&#x27;</span>,<span class="hljs-string">&#x27;测试&#x27;</span>,<span class="hljs-string">&#x27;java&#x27;</span>,<span class="hljs-string">&#x27;前端&#x27;</span>]</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">stopPullDownRefresh</span>() <span class="hljs-comment">//关闭下拉刷新</span></span>
+<span class="language-javascript">			&#125;,<span class="hljs-number">2000</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">onReachBottom</span>(<span class="hljs-params"></span>)&#123;<span class="hljs-comment">//触底的方法</span></span>
+<span class="language-javascript">            <span class="hljs-comment">//es6的语法扩展数组</span></span>
+<span class="language-javascript">			<span class="hljs-variable language_">this</span>.<span class="hljs-property">arr</span> = [...<span class="hljs-variable language_">this</span>.<span class="hljs-property">arr</span>,...[<span class="hljs-string">&#x27;UI&#x27;</span>,<span class="hljs-string">&#x27;测试&#x27;</span>,<span class="hljs-string">&#x27;java&#x27;</span>,<span class="hljs-string">&#x27;前端&#x27;</span>]]</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;触底&#x27;</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">arr</span>)</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	<span class="hljs-selector-class">.item-class</span>&#123;</span>
+<span class="language-css">		<span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span>
+<span class="language-css">	&#125;</span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<h2 id="p20-发送get请求"><a href="#p20-发送get请求" class="headerlink" title="p20  发送get请求"></a>p20  发送get请求</h2><p>搭建本地的node服务</p>
+<p>第一步，根据dtcmsdb4.sql文件来恢复数据库</p>
+<p>第二步,   npm i  安装依赖</p>
+<p>第三步，node .&#x2F;src&#x2F;app.js 来启动服务,注意：默认数据库账号密码都是root，如果本地不是请修改好</p>
+<p>第四步，浏览器输入 <a target="_blank" rel="noopener" href="http://localhost:8082/api/getlunbo">http://localhost:8082/api/getlunbo</a>   来访问接口 出现下面这样表示成功</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220611150847478.png" alt="image-20220611150847478"></p>
+<p>uniapp中通过uni.request(OBJECT)  发起网络请求。<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/api/request/request.html">uni.request文档</a></p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;getlunbo&quot;</span>&gt;</span>发起请求<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">getlunbo</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">request</span>(&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;http://localhost:8082/api/getlunbo&#x27;</span>,</span>
+<span class="language-javascript">					<span class="hljs-title function_">success</span>(<span class="hljs-params">resp</span>)&#123;</span>
+<span class="language-javascript">						<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(resp)</span>
+<span class="language-javascript">					&#125;</span>
+<span class="language-javascript">				&#125;)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p21-数据缓存"><a href="#p21-数据缓存" class="headerlink" title="p21 数据缓存"></a>p21 数据缓存</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/api/storage/storage.html">数据缓存文档</a></p>
+<h3 id="uni-setStorage"><a href="#uni-setStorage" class="headerlink" title="uni.setStorage"></a>uni.setStorage</h3><p>将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个异步接口。</p>
+<h3 id="uni-setStorageSync"><a href="#uni-setStorageSync" class="headerlink" title="uni.setStorageSync"></a>uni.setStorageSync</h3><p>将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。</p>
+<h3 id="uni-getStorage"><a href="#uni-getStorage" class="headerlink" title="uni.getStorage"></a>uni.getStorage</h3><p>从本地缓存中异步获取指定 key 对应的内容。</p>
+<h3 id="uni-getStorageSync"><a href="#uni-getStorageSync" class="headerlink" title="uni.getStorageSync"></a>uni.getStorageSync</h3><p>从本地缓存中同步获取指定 key 对应的内容。</p>
+<h3 id="uni-removeStorage"><a href="#uni-removeStorage" class="headerlink" title="uni.removeStorage"></a>uni.removeStorage</h3><p>从本地缓存中异步移除指定 key。</p>
+<h3 id="uni-removeStorageSync"><a href="#uni-removeStorageSync" class="headerlink" title="uni.removeStorageSync"></a>uni.removeStorageSync</h3><p>从本地缓存中同步移除指定 key。</p>
+<p>测试代码如下</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;saveData&quot;</span>&gt;</span>保存数据<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;getData&quot;</span>&gt;</span>获取数据<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;removeData&quot;</span>&gt;</span>删除数据<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">saveData</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-comment">// uni.setStorage(&#123;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	key: &#x27;id&#x27;,</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	data: 80,</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	success()&#123;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 		console.log(&#x27;保存成功&#x27;)</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	&#125;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// &#125;)</span></span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">setStorageSync</span>(<span class="hljs-string">&#x27;id&#x27;</span>,<span class="hljs-number">100</span>)</span>
+<span class="language-javascript">			&#125;,</span>
+<span class="language-javascript">			<span class="hljs-title function_">getData</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-comment">// uni.getStorage(&#123;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	key: &#x27;id&#x27;,</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	success(resp)&#123;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 		console.log(&#x27;获取成功：&#x27;,resp.data)</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	&#125;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// &#125;)</span></span>
+<span class="language-javascript">				<span class="hljs-keyword">let</span> resp = uni.<span class="hljs-title function_">getStorageSync</span>(<span class="hljs-string">&#x27;id&#x27;</span>)</span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;获取成功：&#x27;</span>,resp)</span>
+<span class="language-javascript">			&#125;,</span>
+<span class="language-javascript">			<span class="hljs-title function_">removeData</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-comment">// uni.removeStorage(&#123;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	key: &#x27;id&#x27;,</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	success() &#123;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 		console.log(&#x27;删除成功&#x27;)</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// 	&#125;</span></span>
+<span class="language-javascript">				<span class="hljs-comment">// &#125;)</span></span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">removeStorageSync</span>(<span class="hljs-string">&#x27;id&#x27;</span>)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p22-图片的上传和预览"><a href="#p22-图片的上传和预览" class="headerlink" title="p22 图片的上传和预览"></a>p22 图片的上传和预览</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/api/media/image.html">图片文档</a></p>
+<ul>
+<li>uni.chooseImage(OBJECT)</li>
+</ul>
+<p>从本地相册选择图片或使用相机拍照。</p>
+<p>App端如需要更丰富的相机拍照API（如直接调用前置摄像头），参考<a target="_blank" rel="noopener" href="https://www.html5plus.org/doc/zh_cn/camera.html">plus.camera</a></p>
+<ul>
+<li>uni.previewImage(OBJECT)</li>
+</ul>
+<p>预览图片。</p>
+<p>代码如下</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;warn&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;uploadImg&quot;</span>&gt;</span>上传图片<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item in imgList&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;item&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;previewImg(item)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span>&#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">imgList</span>: []</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">uploadImg</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">chooseImage</span>(&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;</span>
+<span class="language-javascript">						<span class="hljs-variable language_">this</span>.<span class="hljs-property">imgList</span> = res.<span class="hljs-property">tempFilePaths</span></span>
+<span class="language-javascript">						<span class="hljs-comment">//console.log(res)</span></span>
+<span class="language-javascript">					&#125;</span>
+<span class="language-javascript">				&#125;)</span>
+<span class="language-javascript">			&#125;,</span>
+<span class="language-javascript">			<span class="hljs-title function_">previewImg</span>(<span class="hljs-params">current</span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;预览图片&#x27;</span>)</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">previewImage</span>(&#123;</span>
+<span class="language-javascript">					current,<span class="hljs-comment">//current 为当前显示图片的链接/索引值</span></span>
+<span class="language-javascript">					<span class="hljs-attr">urls</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">imgList</span> <span class="hljs-comment">//需要预览的图片链接列表</span></span>
+<span class="language-javascript">				&#125;)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p23-条件编译跨端兼容"><a href="#p23-条件编译跨端兼容" class="headerlink" title="p23 条件编译跨端兼容"></a>p23 条件编译跨端兼容</h2><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/platform.html#%E8%B7%A8%E7%AB%AF%E5%85%BC%E5%AE%B9">条件编译文档</a></p>
+<p>条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。</p>
+<table>
+<thead>
+<tr>
+<th>条件编译写法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>#ifdef <strong>APP-PLUS</strong> 需条件编译的代码 #endif</td>
+<td>仅出现在 App 平台下的代码</td>
+</tr>
+<tr>
+<td>#ifndef <strong>H5</strong> 需条件编译的代码 #endif</td>
+<td>除了 H5 平台，其它平台均存在的代码</td>
+</tr>
+<tr>
+<td>#ifdef <strong>H5</strong> || <strong>MP-WEIXIN</strong> 需条件编译的代码 #endif</td>
+<td>在 H5 平台或微信小程序平台存在的代码（这里只有||，不可能出现&amp;&amp;，因为没有交集）</td>
+</tr>
+</tbody></table>
+<p>HbuilderX中输入if关键字会有代码提示</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- #ifdef H5 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>h5显示<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- #endif --&gt;</span>
+		<span class="hljs-comment">&lt;!-- #ifdef MP-WEIXIN --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>微信小程序中显示<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- #endif --&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">onLoad</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-comment">// #ifdef H5</span></span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;h5打印&#x27;</span>)</span>
+<span class="language-javascript">			<span class="hljs-comment">// #endif</span></span>
+<span class="language-javascript">			<span class="hljs-comment">// #ifdef MP-WEIXIN</span></span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;wx打印&#x27;</span>)</span>
+<span class="language-javascript">			<span class="hljs-comment">// #endif</span></span>
+<span class="language-javascript">			</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span>
+<span class="language-css">	view&#123;</span>
+<span class="language-css">		<span class="hljs-comment">/* #ifdef H5 */</span></span>
+<span class="language-css">		<span class="hljs-attribute">color</span>: red;</span>
+<span class="language-css">		<span class="hljs-comment">/* #endif */</span></span>
+<span class="language-css">		<span class="hljs-comment">/* #ifdef MP-WEIXIN */</span></span>
+<span class="language-css">		<span class="hljs-attribute">color</span>: deepskyblue;</span>
+<span class="language-css">		<span class="hljs-comment">/* #endif */</span></span>
+<span class="language-css">	&#125;</span>
+<span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+
+<h2 id="p24-导航"><a href="#p24-导航" class="headerlink" title="p24 导航"></a>p24 导航</h2><h3 id="navigator组件导航"><a href="#navigator组件导航" class="headerlink" title="navigator组件导航"></a>navigator组件导航</h3><p>页面跳转。  <a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/navigator.html">navigator文档</a></p>
+<p>该组件类似HTML中的<code>&lt;a&gt;</code>组件，但只能跳转本地页面。目标页面必须在pages.json中注册。</p>
+<p>该组件的功能有API方式，另见：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router?id=navigateto">https://uniapp.dcloud.io/api/router?id=navigateto(opens new window)</a></p>
+<p><strong>属性说明</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">类型</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+<th align="left">平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">url</td>
+<td align="left">String</td>
+<td align="left"></td>
+<td align="left">应用内的跳转链接，值为相对路径或绝对路径，如：”..&#x2F;first&#x2F;first”，”&#x2F;pages&#x2F;first&#x2F;first”，注意不能加 <code>.vue</code> 后缀</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">open-type</td>
+<td align="left">String</td>
+<td align="left">navigate</td>
+<td align="left">跳转方式</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p><strong>open-type 有效值</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">值</th>
+<th align="left">说明</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">navigate</td>
+<td align="left">对应 uni.navigateTo</td>
+<td align="left">保留当前页面，跳转到应用内的某个页面。带返回按钮</td>
+</tr>
+<tr>
+<td align="left">redirect</td>
+<td align="left">对应 uni.redirectTo</td>
+<td align="left">关闭当前页面，跳转到应用内的某个页面。不带返回按钮</td>
+</tr>
+<tr>
+<td align="left">switchTab</td>
+<td align="left">对应 uni.switchTab</td>
+<td align="left">跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。</td>
+</tr>
+</tbody></table>
+<h3 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router.html">编程式导航文档</a></p>
+<ul>
+<li><p>uni.navigateTo</p>
+</li>
+<li><p>uni.redirectTo</p>
+</li>
+<li><p>uni.switchTab</p>
+</li>
+</ul>
+<p>代码如下：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/pages/details/details&quot;</span>&gt;</span>跳转到详情页(带返回按钮)<span class="hljs-tag">&lt;/<span class="hljs-name">navigator</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/pages/details/details&quot;</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">&quot;redirect&quot;</span>&gt;</span>跳转到详情页redirect(不带返回按钮)<span class="hljs-tag">&lt;/<span class="hljs-name">navigator</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/pages/message/message&quot;</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">&quot;switchTab&quot;</span>&gt;</span>到tabbar的消息页<span class="hljs-tag">&lt;/<span class="hljs-name">navigator</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 编程式导航 和上面三个是对应的 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;routerNavigate&quot;</span>&gt;</span>跳转到详情页(带返回按钮)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;routerRedirect&quot;</span>&gt;</span>跳转到详情页(不带返回按钮)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;routerSwichtab&quot;</span>&gt;</span>到tabbar的消息页<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;</span>
+<span class="language-javascript">		<span class="hljs-title function_">onUnload</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;页面卸载&#x27;</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">routerNavigate</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">navigateTo</span>(&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/pages/details/details&#x27;</span></span>
+<span class="language-javascript">				&#125;)</span>
+<span class="language-javascript">			&#125;,</span>
+<span class="language-javascript">			<span class="hljs-title function_">routerRedirect</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">redirectTo</span>(&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/pages/details/details&#x27;</span></span>
+<span class="language-javascript">				&#125;)</span>
+<span class="language-javascript">			&#125;,</span>
+<span class="language-javascript">			<span class="hljs-title function_">routerSwichtab</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.<span class="hljs-title function_">switchTab</span>(&#123;</span>
+<span class="language-javascript">					<span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;/pages/message/message&#x27;</span></span>
+<span class="language-javascript">				&#125;)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p25-组件的创建和组件生命周期函数"><a href="#p25-组件的创建和组件生命周期函数" class="headerlink" title="p25 组件的创建和组件生命周期函数"></a>p25 组件的创建和组件生命周期函数</h2><blockquote>
+<p>和vue的组件创建以及生命周期是一样的。</p>
+</blockquote>
+<h3 id="组件的创建和使用"><a href="#组件的创建和使用" class="headerlink" title="组件的创建和使用"></a>组件的创建和使用</h3><p>新建components目录，并在目录下新建test组件</p>
+<p><img src="/2022/06/12/1535896316616511488/images/image-20220611221930789.png" alt="image-20220611221930789"></p>
+<p>test组件的内容如下</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		test组件
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;test&quot;</span></span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<p>然后在index.vue中应用test组件</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">test</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">test</span>&gt;</span> 
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../components/test.vue&#x27;</span> <span class="hljs-comment">//导入test组件</span></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">components</span>:&#123;</span>
+<span class="language-javascript">			test<span class="hljs-comment">//注册test组件</span></span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h3 id="组件的生命周期函数"><a href="#组件的生命周期函数" class="headerlink" title="组件的生命周期函数"></a>组件的生命周期函数</h3><p>index.vue</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">test</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;flag&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">test</span>&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;toggleTest&quot;</span>&gt;</span>切换test组件<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../components/test.vue&#x27;</span></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">components</span>:&#123;</span>
+<span class="language-javascript">			test</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span>&#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">flag</span>: <span class="hljs-literal">true</span></span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">toggleTest</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-variable language_">this</span>.<span class="hljs-property">flag</span> = !<span class="hljs-variable language_">this</span>.<span class="hljs-property">flag</span></span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<p>test.vue组件</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mout&quot;</span>&gt;</span>
+		test组件
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;test&quot;</span>,</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">num</span>: <span class="hljs-number">10</span></span>
+<span class="language-javascript">			&#125;;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">beforeCreate</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;beforeCreate...&#x27;</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">num</span>)</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;created&#x27;</span>,<span class="hljs-variable language_">this</span>.<span class="hljs-property">num</span>) <span class="hljs-comment">//页面渲染完毕</span></span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">beforeMount</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;beforeMount&#x27;</span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;mout&#x27;</span>))</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123; </span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;mounted&#x27;</span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;mout&#x27;</span>)) <span class="hljs-comment">//dom挂载完毕</span></span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">destroyed</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;destroyed&#x27;</span>) <span class="hljs-comment">//页面销毁</span></span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p26-组件之间的通信"><a href="#p26-组件之间的通信" class="headerlink" title="p26 组件之间的通信"></a>p26 组件之间的通信</h2><h3 id="父组件—子组件"><a href="#父组件—子组件" class="headerlink" title="父组件—子组件"></a>父组件—子组件</h3><p>父组件传递数据</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- 通过v-bind给子组件传数据 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">test</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;flag&quot;</span> <span class="hljs-attr">:msg</span>=<span class="hljs-string">&#x27;fmsg&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">test</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../components/test.vue&#x27;</span></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">components</span>:&#123;</span>
+<span class="language-javascript">			test</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span>&#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">flag</span>: <span class="hljs-literal">true</span>,</span>
+<span class="language-javascript">				<span class="hljs-attr">fmsg</span>: <span class="hljs-string">&#x27;儿子你好！&#x27;</span></span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<p>子组件接收数据</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mout&quot;</span>&gt;</span>
+		test组件，父组件传来的数据为：--- &#123;&#123;msg&#125;&#125;
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;test&quot;</span></span>
+<span class="language-javascript">		<span class="hljs-attr">props</span>: [<span class="hljs-string">&#x27;msg&#x27;</span>],<span class="hljs-comment">//接受父组件传来的数据</span></span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h3 id="子组件—父组件"><a href="#子组件—父组件" class="headerlink" title="子组件—父组件"></a>子组件—父组件</h3><p>父组件提供一个方法用来接收子组件的数据</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>
+		<span class="hljs-comment">&lt;!-- 将func方法传给子组件，子组件通过func方法给父组件传值 --&gt;</span>
+		<span class="hljs-tag">&lt;<span class="hljs-name">test</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;flag&quot;</span>  @<span class="hljs-attr">func</span>=<span class="hljs-string">&quot;receivedSon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">test</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../../components/test.vue&#x27;</span></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">components</span>:&#123;</span>
+<span class="language-javascript">			test</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">receivedSon</span>(<span class="hljs-params">msg</span>)&#123;</span>
+<span class="language-javascript">				<span class="hljs-comment">//接收到子组件传来的数据</span></span>
+<span class="language-javascript">				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(msg)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<p>子组件通过this.$emit调用，来给父组件传值</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mout&quot;</span>&gt;</span>
+		test组件
+		<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;sendFather&quot;</span>&gt;</span>给父组件传数据<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;test&quot;</span>,</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">num</span>: <span class="hljs-number">10</span></span>
+<span class="language-javascript">			&#125;;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">sendFather</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">                <span class="hljs-comment">//通过this.$emit调用，来给父组件传值</span></span>
+<span class="language-javascript">				<span class="hljs-variable language_">this</span>.$emit(<span class="hljs-string">&#x27;func&#x27;</span>,<span class="hljs-string">&#x27;爸爸你好，我是儿子&#x27;</span>)</span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h3 id="全局组件通信"><a href="#全局组件通信" class="headerlink" title="全局组件通信"></a>全局组件通信</h3><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/window/communication.html">页面通信文档</a></p>
+<h4 id="uni-emit-eventName-OBJECT"><a href="#uni-emit-eventName-OBJECT" class="headerlink" title="uni.$emit(eventName,OBJECT)"></a>uni.$emit(eventName,OBJECT)</h4><p>触发全局的自定义事件，附加参数都会传给监听器回调函数。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>String</td>
+<td>事件名</td>
+</tr>
+<tr>
+<td>OBJECT</td>
+<td>Object</td>
+<td>触发事件携带的附加参数</td>
+</tr>
+</tbody></table>
+<h4 id="uni-on-eventName-callback"><a href="#uni-on-eventName-callback" class="headerlink" title="uni.$on(eventName,callback)"></a>uni.$on(eventName,callback)</h4><p>监听全局的自定义事件，事件由 <code>uni.$emit</code> 触发，回调函数会接收事件触发函数的传入参数。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>String</td>
+<td>事件名</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>Function</td>
+<td>事件的回调函数</td>
+</tr>
+</tbody></table>
+<p>【案例：a组件更新b组件的数据】</p>
+<p>新建a组件</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		a组件<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;updateB&quot;</span>&gt;</span>修改b组件的数据<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;a&quot;</span>,</span>
+<span class="language-javascript">		<span class="hljs-attr">methods</span>: &#123;</span>
+<span class="language-javascript">			<span class="hljs-title function_">updateB</span>(<span class="hljs-params"></span>)&#123;</span>
+<span class="language-javascript">				uni.$emit(<span class="hljs-string">&#x27;updateNum&#x27;</span>,<span class="hljs-number">10</span>) <span class="hljs-comment">//触发全局的updateNum事件</span></span>
+<span class="language-javascript">			&#125;</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<p>新建b组件</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>
+		b组件的num=&#123;&#123;num&#125;&#125;
+	<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span>
+<span class="language-javascript">	<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span>
+<span class="language-javascript">		<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;b&quot;</span>,</span>
+<span class="language-javascript">		<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			<span class="hljs-keyword">return</span> &#123;</span>
+<span class="language-javascript">				<span class="hljs-attr">num</span>: <span class="hljs-number">0</span></span>
+<span class="language-javascript">			&#125;;</span>
+<span class="language-javascript">		&#125;,</span>
+<span class="language-javascript">		<span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;</span>
+<span class="language-javascript">			uni.$on(<span class="hljs-string">&#x27;updateNum&#x27;</span>,<span class="hljs-function"><span class="hljs-params">num</span> =&gt;</span>&#123; <span class="hljs-comment">//添加全局的事件</span></span>
+<span class="language-javascript">				<span class="hljs-variable language_">this</span>.<span class="hljs-property">num</span> += num</span>
+<span class="language-javascript">			&#125;)</span>
+<span class="language-javascript">		&#125;</span>
+<span class="language-javascript">	&#125;</span>
+<span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+
+<h2 id="p27-uni-ui扩展组件"><a href="#p27-uni-ui扩展组件" class="headerlink" title="p27 uni-ui扩展组件"></a>p27 uni-ui扩展组件</h2><p>uni-ui是DCloud提供的一个跨端ui库，它是基于vue组件的、flex布局的、无dom的<strong>跨全端ui框架</strong>。</p>
+<p>uni-ui不包括基础组件，<strong>它是基础组件的补充</strong>。</p>
+<p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/uniui/uni-ui.html">uni-ui扩展组件文档</a></p>
+<p>使用方法，登录后下载进入到Hbuilderx即可，默认已经全局注册，无需导入。</p>
+<p>后端项目跟着老师的视频敲就好</p>
+
+				</div>
+		</div>
+	</div>
+	</div>
+	
+	<ul class="layui-fixbar"><a id="toTopBtn" href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></a></ul>
+	
+	<!-- 底部版权 -->
+	<div class="qy-footer">
+    <div class="font-Area">
+        Copyright © 2018~2022 Heliufang All Rights Reserved
+    </div>
+</div>
+
+<script>
+    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
+    function DynamicLine() {
+        function n(n, e, t) {
+            return n.getAttribute(e) || t
+        }
+
+        function e(n) {
+            return document.getElementsByTagName(n)
+        }
+
+        function t() {
+            var t = e("script"),
+                o = t.length,
+                i = t[o - 1];
+            return {
+                l: o,
+                z: n(i, "zIndex", -1),
+                o: n(i, "opacity", .5),
+                c: n(i, "color", "0,0,50"), //颜色rgb
+                n: n(i, "count", 99)
+            }
+        }
+
+        function o() {
+            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        }
+
+        function i() {
+            r.clearRect(0, 0, a, c);
+            var n, e, t, o, m, l;
+            s.forEach(function (i, x) {
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
+                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
+                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+            }),
+                x(i)
+        }
+        var a, c, u, m = document.createElement("canvas"),
+            d = t(),
+            l = "c_n" + d.l,
+            r = m.getContext("2d"),
+            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+            w = Math.random,
+            y = {
+                x: null,
+                y: null,
+                max: 2e4
+            };
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
+            m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
+        for (var s = [], f = 0; d.n > f; f++) {
+            var h = w() * a,
+                g = w() * c,
+                v = 2 * w() - 1,
+                p = 2 * w() - 1;
+            s.push({
+                x: h,
+                y: g,
+                xa: v,
+                ya: p,
+                max: 6e3
+            })
+        }
+        u = s.concat([y]),
+            setTimeout(function () {
+                i()
+            }, 100)
+    }
+    DynamicLine()
+</script>
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<script src="../../../../../js/clipboard.min.js"></script>
+<script src="../../../../../js/clipboard-use.js"></script>
+
+<script src="../js/mouse.js"></script>
+
+<!-- 谷歌代码高亮 -->
+<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<script>
+	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	var element = null
+	var layer = null
+	layui.use(['element','layer'], function(){
+	  element = layui.element;
+	  layer = layui.layer
+	});
+	
+	$(function() { 
+	    var elm = $('#toc-area'); 
+	    var startPos = $(elm).offset().top; 
+		var totalTop = $(document).height(); 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+			//文章阅读进度条
+			var percent = ((p/totalTop)*100).toFixed(2)
+			if(percent > 100){
+				percent = 100
+			}
+			if(percent == 0){
+				percent = 0
+			}
+			element.progress('demo', percent+"%");
+			$("#progressTxt").text(percent)
+			//固定文章目录
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '60px' : ''); 
+	    }); 
+		//谷歌代码高亮
+		$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+
+		let timer = null;
+		//点击回到顶部
+		//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+		$("#toTopBtn").click(function(){
+			var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var t = parseInt(oTop / 60) //每次六十分之一
+			var time = setInterval(function () {
+				// document.body.scrollTop = document.body.scrollTop - 50;
+				document.body.scrollTop = document.body.scrollTop - t;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
+		})
+
+		
+	});
+	
+</script>
+</html>

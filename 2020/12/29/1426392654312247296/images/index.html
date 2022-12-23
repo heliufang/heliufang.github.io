@@ -1,0 +1,497 @@
+<html>
+<head>
+	<title>贺刘芳的搬砖日记-文章页</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../../../css/common.css"/>
+	<link rel="stylesheet" href="../../../../../css/post.css"/>
+	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css"/>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
+</head>
+<body>
+	<!-- 导航模板 -->
+	<!-- 导航 -->
+<div class="qy-nav">
+  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
+    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-chart-screen"></i> 首页</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
+      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    </li>
+  </ul>
+</div>
+<!-- 搜索弹框 -->
+<div id="searchShade" class="searchShade">
+  <div id="searchLayer">
+    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <div id="searchResult">
+      <!-- <ul>
+        <li>java笔记
+        <li>
+      </ul> -->
+    </div>
+
+  </div>
+</div>
+<script>
+  window.onload = function () {
+    //下拉菜单
+    layui.use('dropdown', function () {
+      var dropdown = layui.dropdown
+      dropdown.render({
+        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
+        data: [
+          {
+            title: '首页'
+            , id: 11
+            , href: '/'
+            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
+          },
+          {
+            title: '关于'
+            , id: 22
+            , href: '/about'
+            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
+          },
+          {
+            title: '搜索'
+            , id: 33
+            , href: '#'
+            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
+          }
+        ],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id'); //表格列表的预埋数据
+            if(data.id == 33){
+              $("#searchShade").show()
+            }
+        }
+      })
+
+    })
+
+    //点击搜索
+    $("#searchBtn").click(function () {
+      $("#searchShade").show()
+    })
+
+    //关闭弹框
+    $("#closeBtn").click(function () {
+      $("#searchShade").hide()
+    })
+
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+      $.ajax({
+        url: path,
+        dataType: "json",
+        success: function (datas) {
+          // console.log('datas :>> ', datas);
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function () {
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var data_title = data.title.trim().toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var first_occur = -1;
+              if (data_title != '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  if (index_title < 0) {
+                    isMatch = false;
+                  }
+                });
+              }
+              // show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            $resultContent.innerHTML = str;
+          });
+        }
+      });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+  }
+
+
+</script>
+	<!-- 中间内容区域 -->
+	<div class="layui-container  center" id="top">
+		<div class="layui-row layui-col-space20">
+			<div class="layui-col-md3 hide-xs hide-sm" >
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-speaker"></i> 公告</div>
+					<div class="layui-card-body">
+						<!-- 个人信息模块 -->
+						<div class="userinfo">
+							<img src="/head.png">
+							<div class="name">淡泊明志，宁静致远</div>
+							<div class="other">
+								<div class="item">
+									<p class="num">
+										39
+									</p>
+									<p class="title">文章</p>
+								</div>
+								<div class="item">
+									<p class="num">
+										8
+									</p>
+									<p class="title">分类</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i class="layui-icon layui-icon-template-1"></i> 分类</div>
+					<div class="layui-card-body">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</div>
+				<!-- 归档 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-date"></i> 归档</div>
+					<div class="layui-card-body">
+						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/12/">2022 十二月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/12/">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
+					</div>
+				</div>
+				
+				<div style="height: 90%;width: 267px;" id="toc-area"  class="layui-card">
+				  <div class="layui-card-header">本文目录</div>
+				  <div class="layui-card-body" style="overflow:auto;height: calc(100% - 60px - 50px);">
+				   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-rem%E5%AE%9A%E4%B9%89"><span class="toc-text">1 rem定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-rem%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="toc-text">2 rem实现响应式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-rem-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.1 rem+媒体查询实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-rem-JavaScript%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.2 rem+JavaScript实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%80%BB%E7%BB%93"><span class="toc-text">2.3 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-vscode%E7%9A%84rem%E6%8F%92%E4%BB%B6"><span class="toc-text">3 vscode的rem插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a></li></ol></li></ol>
+				  </div>
+				  <div class="readprocess">
+					  <div>已阅读：<span id="progressTxt"></span>%</div>
+					  <div class="layui-progress" lay-filter="demo">
+						<div class="layui-progress-bar" lay-percent="10%"></div>
+					  </div>
+				  </div>
+				</div>
+				
+			</div>
+			<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
+				
+				<div class="article-title">
+					<h1>rem布局</h1>
+					<p>
+						<i class="layui-icon layui-icon-time"></i>发表于：2020-12-29
+						|
+						<i class="layui-icon layui-icon-form"></i>字数统计：937
+					</p>
+				</div>
+				
+					
+				<!-- 文章内容 -->
+				<div id="article">
+				    <p>rem布局可以等比例的缩放页面(宽高都自适应,在移动端较好),用户体验相对百分比布局可能会更好一些</p>
+<h2 id="1-rem定义"><a href="#1-rem定义" class="headerlink" title="1 rem定义"></a>1 rem定义</h2><p><code>rem</code>（font size of the root element）是指相对于<code>根元素</code>的字体大小的单位。它是一个相对单位。</p>
+<p><code>em</code>（font size of the element）是指相对于<code>当前元素</code>的字体大小的单位。它也是一个相对单位。</p>
+<p>【01-em布局存在问题.html】</p>
+<ul>
+<li>css</li>
+</ul>
+<pre><code class="hljs css"><span class="hljs-selector-tag">body</span>&#123;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<span class="hljs-comment">/*此时在浏览器的调试窗口改变这个值,会等比例放大和缩小*/</span>
+&#125;
+<span class="hljs-selector-class">.box</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">25em</span>;<span class="hljs-comment">/* 500px*/</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">25em</span>;<span class="hljs-comment">/*500px*/</span>
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2.5em</span> auto;<span class="hljs-comment">/*20px*/</span>
+&#125;
+<span class="hljs-selector-class">.in</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">15em</span>;<span class="hljs-comment">/*300px*/</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">15em</span>;<span class="hljs-comment">/*300px*/</span>
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid blue;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2.5em</span> auto;<span class="hljs-comment">/*20px*/</span>
+    <span class="hljs-comment">/*font-size: 20px;*/</span>  <span class="hljs-comment">/*这里加上这行布局就乱了*/</span>
+&#125;</code></pre>
+
+<ul>
+<li>html</li>
+</ul>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;in&quot;</span>&gt;</span>
+    全栈工程师,呸,全干工程师才对。
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<p>总结：不能用em来布局,而是通过rem来布局。em来布局,当前元素的font-size一改变,布局就乱了。</p>
+<p>【02-rem布局.html】</p>
+<p>将【01-em布局存在问题.html】这个例子中的css改成rem</p>
+<pre><code class="hljs css"> <span class="hljs-selector-tag">html</span>&#123;
+     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<span class="hljs-comment">/*此时在浏览器的调试窗口改变这个值,会等比例放大和缩小*/</span>
+ &#125;
+<span class="hljs-selector-class">.box</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">25rem</span>;<span class="hljs-comment">/* 500px*/</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">25rem</span>;<span class="hljs-comment">/*500px*/</span>
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2.5rem</span> auto;<span class="hljs-comment">/*20px*/</span>
+&#125;
+<span class="hljs-selector-class">.in</span>&#123;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">15rem</span>;<span class="hljs-comment">/*300px*/</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">15rem</span>;<span class="hljs-comment">/*300px*/</span>
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid blue;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">2.5rem</span> auto;<span class="hljs-comment">/*20px*/</span>
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;<span class="hljs-comment">/*加上这个布局也不会乱*/</span>
+&#125;</code></pre>
+
+<h2 id="2-rem实现响应式"><a href="#2-rem实现响应式" class="headerlink" title="2 rem实现响应式"></a>2 rem实现响应式</h2><p>因为rem的基准点是根元素html的字体大小，因此<code>只需要设置不同屏幕的html的font-size大小</code>不一样就可以达到不同屏幕的适配了。 </p>
+<p>注意：</p>
+<ul>
+<li>在设置背景图片的时候一定要设置backgroud-size的rem,图片才能实现响应式。</li>
+<li>整体布局的时候不要使用rem,用rem整体布局会乱；比如一行放3个盒子或者n个盒子，可以使用百分比实现;rem只用来修饰font-size,height,width等等。</li>
+</ul>
+<h3 id="2-1-rem-媒体查询实现"><a href="#2-1-rem-媒体查询实现" class="headerlink" title="2.1 rem+媒体查询实现"></a>2.1 rem+媒体查询实现</h3><p>使用rem配合媒体查询可以适配多个终端<br>&#x2F;&#x2F;  320 360 375 384 400 414 424 480  484 540 720 750</p>
+<pre><code class="hljs css"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">320px</span>) &#123;
+    <span class="hljs-selector-tag">html</span> &#123;        
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">42.67px</span>;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">375px</span>) &#123;
+    <span class="hljs-selector-tag">html</span> &#123;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">50px</span>;;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">414px</span>) &#123;
+    <span class="hljs-selector-tag">html</span> &#123;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">55.2px</span>;;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>) &#123;
+    <span class="hljs-selector-tag">html</span> &#123;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">64px</span>;;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">640px</span>) &#123;
+    <span class="hljs-selector-tag">html</span> &#123;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">85.33px</span>;
+    &#125;
+&#125;
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">750px</span>) &#123;
+    <span class="hljs-selector-tag">html</span> &#123;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">100px</span>;;
+    &#125;
+&#125;</code></pre>
+
+<p>优点：使用媒体查询适配，速度快。</p>
+<p>缺点：适配多个终端时，需要添加响应的代码。</p>
+<h3 id="2-2-rem-JavaScript实现"><a href="#2-2-rem-JavaScript实现" class="headerlink" title="2.2 rem+JavaScript实现"></a>2.2 rem+JavaScript实现</h3><p>原理：通过js监听浏览器的宽度,动态设置html的font-size的值</p>
+<blockquote>
+<p> 一般情况下1rem的值设置为屏幕宽度的十分之一</p>
+</blockquote>
+<pre><code class="hljs js"><span class="hljs-comment">// 1rem大小为 屏幕宽度1/10</span>
+<span class="hljs-comment">// 动态监听屏幕宽度变化，实时设置rem大小</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">setRem</span>(<span class="hljs-params"></span>) &#123;
+    <span class="hljs-keyword">var</span> w = <span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span>; <span class="hljs-comment">//获取屏幕宽度</span>
+    <span class="hljs-comment">//最大宽度限制</span>
+    <span class="hljs-keyword">if</span> (w &gt; <span class="hljs-number">640</span>) &#123;
+        w = <span class="hljs-number">640</span>;
+    &#125; 
+    <span class="hljs-comment">//设置rem大小</span>
+    <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">style</span>.<span class="hljs-property">fontSize</span> = w / <span class="hljs-number">10</span> + <span class="hljs-string">&#x27;px&#x27;</span>;
+&#125;
+
+<span class="hljs-title function_">setRem</span>();
+
+<span class="hljs-comment">//监听浏览器窗口尺寸变化</span>
+<span class="hljs-variable language_">window</span>.<span class="hljs-property">onresize</span> = setRem;</code></pre>
+
+<p>优点：直接适配所有的终端</p>
+<p>缺点：必须在页面加载之前设置html的font-size值，不然会出现文字大小调动的情况。</p>
+<h3 id="2-3-总结"><a href="#2-3-总结" class="headerlink" title="2.3 总结"></a>2.3 总结</h3><p>rem+js的方式会更好一些</p>
+<h2 id="3-vscode的rem插件"><a href="#3-vscode的rem插件" class="headerlink" title="3 vscode的rem插件"></a>3 vscode的rem插件</h2><p>px2rem插件可以快速的将px转化成rem单位</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
+<li>第一步：安装插件,安装完插件后需要重启vscode</li>
+<li>第二步：右击插件—&gt;扩展设置—&gt;Root Font Size下输入框中设置font-size即可</li>
+<li>第三步：在样式中输入px时,在下拉选项中选择转化成rem即可</li>
+</ul>
+<p><img src="/2020/12/29/1426392654312247296/images/image-20201229190741841.png" alt="image-20201229190741841"></p>
+
+				</div>
+		</div>
+	</div>
+	</div>
+	
+	<ul class="layui-fixbar"><a id="toTopBtn" href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></a></ul>
+	
+	<!-- 底部版权 -->
+	<div class="qy-footer">
+    <div class="font-Area">
+        Copyright © 2018~2022 Heliufang All Rights Reserved
+    </div>
+</div>
+
+<script>
+    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
+    function DynamicLine() {
+        function n(n, e, t) {
+            return n.getAttribute(e) || t
+        }
+
+        function e(n) {
+            return document.getElementsByTagName(n)
+        }
+
+        function t() {
+            var t = e("script"),
+                o = t.length,
+                i = t[o - 1];
+            return {
+                l: o,
+                z: n(i, "zIndex", -1),
+                o: n(i, "opacity", .5),
+                c: n(i, "color", "0,0,50"), //颜色rgb
+                n: n(i, "count", 99)
+            }
+        }
+
+        function o() {
+            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        }
+
+        function i() {
+            r.clearRect(0, 0, a, c);
+            var n, e, t, o, m, l;
+            s.forEach(function (i, x) {
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
+                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
+                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+            }),
+                x(i)
+        }
+        var a, c, u, m = document.createElement("canvas"),
+            d = t(),
+            l = "c_n" + d.l,
+            r = m.getContext("2d"),
+            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+            w = Math.random,
+            y = {
+                x: null,
+                y: null,
+                max: 2e4
+            };
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
+            m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
+        for (var s = [], f = 0; d.n > f; f++) {
+            var h = w() * a,
+                g = w() * c,
+                v = 2 * w() - 1,
+                p = 2 * w() - 1;
+            s.push({
+                x: h,
+                y: g,
+                xa: v,
+                ya: p,
+                max: 6e3
+            })
+        }
+        u = s.concat([y]),
+            setTimeout(function () {
+                i()
+            }, 100)
+    }
+    DynamicLine()
+</script>
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<script src="../../../../../js/clipboard.min.js"></script>
+<script src="../../../../../js/clipboard-use.js"></script>
+
+<script src="../js/mouse.js"></script>
+
+<!-- 谷歌代码高亮 -->
+<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<script>
+	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	var element = null
+	var layer = null
+	layui.use(['element','layer'], function(){
+	  element = layui.element;
+	  layer = layui.layer
+	});
+	
+	$(function() { 
+	    var elm = $('#toc-area'); 
+	    var startPos = $(elm).offset().top; 
+		var totalTop = $(document).height(); 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+			//文章阅读进度条
+			var percent = ((p/totalTop)*100).toFixed(2)
+			if(percent > 100){
+				percent = 100
+			}
+			if(percent == 0){
+				percent = 0
+			}
+			element.progress('demo', percent+"%");
+			$("#progressTxt").text(percent)
+			//固定文章目录
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '60px' : ''); 
+	    }); 
+		//谷歌代码高亮
+		$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+
+		let timer = null;
+		//点击回到顶部
+		//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+		$("#toTopBtn").click(function(){
+			var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var t = parseInt(oTop / 60) //每次六十分之一
+			var time = setInterval(function () {
+				// document.body.scrollTop = document.body.scrollTop - 50;
+				document.body.scrollTop = document.body.scrollTop - t;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
+		})
+
+		
+	});
+	
+</script>
+</html>

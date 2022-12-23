@@ -1,0 +1,696 @@
+<html>
+<head>
+	<title>贺刘芳的搬砖日记-文章页</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="../../../../../layui/css/layui.css"/>
+	<link rel="stylesheet" href="../../../../../css/common.css"/>
+	<link rel="stylesheet" href="../../../../../css/post.css"/>
+	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css"/>
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
+</head>
+<body>
+	<!-- 导航模板 -->
+	<!-- 导航 -->
+<div class="qy-nav">
+  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
+    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-chart-screen"></i> 首页</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
+      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    </li>
+  </ul>
+</div>
+<!-- 搜索弹框 -->
+<div id="searchShade" class="searchShade">
+  <div id="searchLayer">
+    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <div id="searchResult">
+      <!-- <ul>
+        <li>java笔记
+        <li>
+      </ul> -->
+    </div>
+
+  </div>
+</div>
+<script>
+  window.onload = function () {
+    //下拉菜单
+    layui.use('dropdown', function () {
+      var dropdown = layui.dropdown
+      dropdown.render({
+        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
+        data: [
+          {
+            title: '首页'
+            , id: 11
+            , href: '/'
+            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
+          },
+          {
+            title: '关于'
+            , id: 22
+            , href: '/about'
+            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
+          },
+          {
+            title: '搜索'
+            , id: 33
+            , href: '#'
+            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
+          }
+        ],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id'); //表格列表的预埋数据
+            if(data.id == 33){
+              $("#searchShade").show()
+            }
+        }
+      })
+
+    })
+
+    //点击搜索
+    $("#searchBtn").click(function () {
+      $("#searchShade").show()
+    })
+
+    //关闭弹框
+    $("#closeBtn").click(function () {
+      $("#searchShade").hide()
+    })
+
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+      $.ajax({
+        url: path,
+        dataType: "json",
+        success: function (datas) {
+          // console.log('datas :>> ', datas);
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function () {
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var data_title = data.title.trim().toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var first_occur = -1;
+              if (data_title != '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  if (index_title < 0) {
+                    isMatch = false;
+                  }
+                });
+              }
+              // show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            $resultContent.innerHTML = str;
+          });
+        }
+      });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+  }
+
+
+</script>
+	<!-- 中间内容区域 -->
+	<div class="layui-container  center" id="top">
+		<div class="layui-row layui-col-space20">
+			<div class="layui-col-md3 hide-xs hide-sm" >
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-speaker"></i> 公告</div>
+					<div class="layui-card-body">
+						<!-- 个人信息模块 -->
+						<div class="userinfo">
+							<img src="/head.png">
+							<div class="name">淡泊明志，宁静致远</div>
+							<div class="other">
+								<div class="item">
+									<p class="num">
+										39
+									</p>
+									<p class="title">文章</p>
+								</div>
+								<div class="item">
+									<p class="num">
+										8
+									</p>
+									<p class="title">分类</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i class="layui-icon layui-icon-template-1"></i> 分类</div>
+					<div class="layui-card-body">
+						<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
+					</div>
+				</div>
+				<!-- 归档 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-date"></i> 归档</div>
+					<div class="layui-card-body">
+						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/12/">2022 十二月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/12/">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../../../archives/2018/10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
+					</div>
+				</div>
+				
+				<div style="height: 90%;width: 267px;" id="toc-area"  class="layui-card">
+				  <div class="layui-card-header">本文目录</div>
+				  <div class="layui-card-body" style="overflow:auto;height: calc(100% - 60px - 50px);">
+				   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="toc-text">总体实现方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF"><span class="toc-text">1 编写模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E%E7%94%9F%E6%88%90%E5%B8%A6%E6%95%B0%E6%8D%AE%E7%9A%84html%E6%96%87%E4%BB%B6"><span class="toc-text">2 模板引擎生成带数据的html文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%80%9A%E8%BF%87wkhtmltopdf%E5%B0%86%E7%94%9F%E6%88%90%E7%9A%84html%E6%96%87%E4%BB%B6%E8%BD%AC%E6%88%90pdf%E6%96%87%E4%BB%B6"><span class="toc-text">3 通过wkhtmltopdf将生成的html文件转成pdf文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E4%B8%8B%E8%BD%BDwkhtmltopdf"><span class="toc-text">3.1 下载wkhtmltopdf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%AE%89%E8%A3%85wkhtmltopdf"><span class="toc-text">3.2 安装wkhtmltopdf</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-windows%E5%AE%89%E8%A3%85"><span class="toc-text">3.2.1 windows安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-centos7-linux%E5%AE%89%E8%A3%85"><span class="toc-text">3.2.2 centos7-linux安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%B0%81%E8%A3%85%E4%B8%80%E4%B8%AAhtml%E8%BD%ACpdf%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">3.3 封装一个html转pdf的工具类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-wkhtmltopdf%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93"><span class="toc-text">3.4 wkhtmltopdf的一些问题总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-1-%E5%BC%BA%E5%88%B6%E5%88%86%E9%A1%B5%E9%97%AE%E9%A2%98"><span class="toc-text">3.4.1 强制分页问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-%E6%AF%8F%E9%A1%B5%E6%98%BE%E7%A4%BA%E8%A1%A8%E5%A4%B4"><span class="toc-text">3.4.2 每页显示表头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-3-%E8%A1%A8%E6%A0%BC%E5%88%86%E9%A1%B5%E6%97%B6%E8%A1%8C%E5%86%85%E5%AE%B9%E8%A2%AB%E6%88%AA%E6%96%AD%E9%97%AE%E9%A2%98"><span class="toc-text">3.4.3 表格分页时行内容被截断问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%99pdf%E7%9A%84%E6%AF%8F%E4%B8%80%E9%A1%B5%E9%83%BD%E5%8A%A0%E4%B8%8A%E6%96%87%E5%AD%97%E6%B0%B4%E5%8D%B0%E5%92%8C%E9%A1%B5%E7%A0%81"><span class="toc-text">4 给pdf的每一页都加上文字水印和页码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+				  </div>
+				  <div class="readprocess">
+					  <div>已阅读：<span id="progressTxt"></span>%</div>
+					  <div class="layui-progress" lay-filter="demo">
+						<div class="layui-progress-bar" lay-percent="10%"></div>
+					  </div>
+				  </div>
+				</div>
+				
+			</div>
+			<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
+				
+				<div class="article-title">
+					<h1>java生成pdf并加水印(通过wkhtmltopdf实现)</h1>
+					<p>
+						<i class="layui-icon layui-icon-time"></i>发表于：2021-08-03
+						|
+						<i class="layui-icon layui-icon-form"></i>字数统计：2.5k
+					</p>
+				</div>
+				
+					
+				<!-- 文章内容 -->
+				<div id="article">
+				    <p>公司项目有个需求就是根据模板动态的生成pdf文件,在网上看过很多方式生成的效果都不是很好。要么样式不支持，要么字体不支持。我这边项目的需求是这样：</p>
+<pre><code class="hljs plaintext">1.根据模板生成纸张方向为横向的pdf
+2.给pdf的每一页中间的位置都加上文字水印</code></pre>
+
+<p>研究了很久终于实现了效果，效果如下图所示：</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210801204853727.png" alt="image-20210801204853727"></p>
+<h2 id="总体实现方案"><a href="#总体实现方案" class="headerlink" title="总体实现方案"></a>总体实现方案</h2><ul>
+<li><p>准备好html模板 —&gt;就是写html,注意：样式少用css3的，并且不要使用外部样式.可以把样式写在style标签内部,也就是保证样式和html标签在同一个html文件中。</p>
+</li>
+<li><p>通过模板引擎将html模板生成含数据的html —&gt; 使用<code>beetl</code>模板引擎实现,当然你也可以用<code>freemarker</code>等模板引擎实现</p>
+</li>
+<li><p>把生成的html转成pdf—&gt;通过<code>wkhtmltopdf</code>这个程序实现</p>
+</li>
+<li><p>最后把生成的pdf文件加上水印—&gt;通过<code>itex</code>t实现</p>
+</li>
+</ul>
+<h2 id="1-编写模板"><a href="#1-编写模板" class="headerlink" title="1 编写模板"></a>1 编写模板</h2><p>模板如下,其实就是写html文件，可以看到<code>$&#123;xxx&#125;</code>这种占位符,这些数据都是动态的，用来给模板引擎识别的。</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210801205236360.png" alt="image-20210801205236360"></p>
+<h2 id="2-模板引擎生成带数据的html文件"><a href="#2-模板引擎生成带数据的html文件" class="headerlink" title="2 模板引擎生成带数据的html文件"></a>2 模板引擎生成带数据的html文件</h2><p>因为公司项目用的是<code>beetl</code>模板引擎所以我这里也就用beetl生成html文件.你也可以用其它的模板引擎生成,比如<code>freemarker</code>。如果这两个都不会，那就先去学习一下吧，O(∩_∩)O哈哈~,其实不难，这两个模板引擎的语法和jsp的语法很像。</p>
+<p>beetl官网：<a target="_blank" rel="noopener" href="https://www.kancloud.cn/xiandafu/beetl3_guide/2138944">https://www.kancloud.cn/xiandafu/beetl3_guide/2138944</a></p>
+<p>freemarker官网：<a target="_blank" rel="noopener" href="http://freemarker.foofun.cn/">http://freemarker.foofun.cn/</a></p>
+<p>beetl的maven依赖如下：</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.ibeetl<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>beetl<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.1.8.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+
+<p>大致代码如下：这里需要根据你自己的模板进行修改</p>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fileResourceLoaderTest</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception&#123;
+		<span class="hljs-type">String</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> System.getProperty(<span class="hljs-string">&quot;user.dir&quot;</span>)+File.separator+<span class="hljs-string">&quot;template&quot;</span>;
+		<span class="hljs-comment">//System.out.println(root);</span>
+		<span class="hljs-type">FileResourceLoader</span> <span class="hljs-variable">resourceLoader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileResourceLoader</span>(root,<span class="hljs-string">&quot;utf-8&quot;</span>);
+		<span class="hljs-type">Configuration</span> <span class="hljs-variable">cfg</span> <span class="hljs-operator">=</span> Configuration.defaultConfiguration();
+		<span class="hljs-type">GroupTemplate</span> <span class="hljs-variable">gt</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">GroupTemplate</span>(resourceLoader, cfg);
+		<span class="hljs-comment">//准备模板需要的动态数据</span>
+		<span class="hljs-type">Map</span> <span class="hljs-variable">map</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>();<span class="hljs-comment">//给模板的数据</span>
+		map.put(<span class="hljs-string">&quot;address&quot;</span>, <span class="hljs-string">&quot;清远市清城区横荷清远大道55号&quot;</span>);
+		<span class="hljs-comment">//通过模板位置构建模板对象</span>
+		<span class="hljs-type">Template</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> gt.getTemplate(<span class="hljs-string">&quot;/s01/order.html&quot;</span>);
+		<span class="hljs-comment">//将数据和模板绑定,</span>
+		t.binding(map);
+		<span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> t.render();
+		System.out.println(str);
+		<span class="hljs-comment">//生成html文件</span>
+		<span class="hljs-type">FileWriter</span> <span class="hljs-variable">writer</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileWriter</span>(<span class="hljs-string">&quot;C:\\Users\\Administrator\\Desktop\\a\\1.html&quot;</span>);
+		writer.write(str);
+	&#125;</code></pre>
+
+<h2 id="3-通过wkhtmltopdf将生成的html文件转成pdf文件"><a href="#3-通过wkhtmltopdf将生成的html文件转成pdf文件" class="headerlink" title="3 通过wkhtmltopdf将生成的html文件转成pdf文件"></a>3 通过wkhtmltopdf将生成的html文件转成pdf文件</h2><p><code>wkhtmltopdf</code>是一个程序,具体来说就是一个软件,也是生成pdf的关键技术。可以在java程序中调用这个软件来把html文件转成pdf文件。我对比了很多方案,我认为<code>wkhtmltopdf</code>是目前来说比较好的一种方案。</p>
+<h3 id="3-1-下载wkhtmltopdf"><a href="#3-1-下载wkhtmltopdf" class="headerlink" title="3.1 下载wkhtmltopdf"></a>3.1 下载wkhtmltopdf</h3><p>官网下载地址：<a target="_blank" rel="noopener" href="https://wkhtmltopdf.org/downloads.html">https://wkhtmltopdf.org/downloads.html</a></p>
+<p>根据自己的需要下载相应的版本即可</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210802230511892.png" alt="image-20210802230511892"></p>
+<h3 id="3-2-安装wkhtmltopdf"><a href="#3-2-安装wkhtmltopdf" class="headerlink" title="3.2 安装wkhtmltopdf"></a>3.2 安装wkhtmltopdf</h3><p>下载下来的安装包如下：</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210802230435552.png" alt="image-20210802230435552"></p>
+<h4 id="3-2-1-windows安装"><a href="#3-2-1-windows安装" class="headerlink" title="3.2.1 windows安装"></a>3.2.1 windows安装</h4><p>windows安装比较简单,一直点击下一步即可</p>
+<p>装好之后可以使用cmd命令行来运行</p>
+<p>在装好的路径下右键—&gt;打开命令窗口：</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210802232012602.png" alt="image-20210802232012602"></p>
+<p>命令格式：</p>
+<pre><code class="hljs plaintext">wkhtmltopdf.exe https://wkhtmltopdf.org/downloads.html c:\1.pdf</code></pre>
+
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210802232308095.png" alt="image-20210802232308095"></p>
+<p>可以看到其实就是把<a target="_blank" rel="noopener" href="https://wkhtmltopdf.org/downloads.html%E8%BF%99%E4%B8%AA%E7%BD%91%E9%A1%B5%E5%9C%A8c%E7%9B%98%E4%B8%8B%E7%94%9F%E6%88%901.pdf">https://wkhtmltopdf.org/downloads.html这个网页在c盘下生成1.pdf</a></p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210802232335699.png" alt="image-20210802232335699"></p>
+<p>当然也可以把本地的html文件转成pdf,比如：</p>
+<pre><code class="hljs plaintext">wkhtmltopdf.exe c:\1.html c:\1.pdf</code></pre>
+
+<p>这样生成的pdf默认是竖向的,但是公司项目需求是横向的所以要加上参数 <code>-O landscape</code></p>
+<pre><code class="hljs plaintext">wkhtmltopdf -O landscape c:\1.html c:\1.pdf</code></pre>
+
+<p>其它参数配置可以看看这个博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenjunwu/p/12792708.html">wkhtmltopdf 参数 详解</a></p>
+<h4 id="3-2-2-centos7-linux安装"><a href="#3-2-2-centos7-linux安装" class="headerlink" title="3.2.2 centos7-linux安装"></a>3.2.2 centos7-linux安装</h4><ul>
+<li>首先需要安装以下依赖：</li>
+</ul>
+<pre><code class="hljs shell">yum install libX11
+yum install libXext
+yum install libXrender
+yum install libjpeg
+yum install xorg-x11-fonts-75dpi
+yum install xorg-x11-fonts-Type1</code></pre>
+
+<ul>
+<li>然后执行安装命令</li>
+</ul>
+<pre><code class="hljs shell">rpm -ivh wkhtmltox-0.12.6-1.centos7.x86_64.rpm</code></pre>
+
+<p>至此linux上就安装好了,linux的运行wkhtmltopdf和windows类似</p>
+<p>比如将当前目录下的<code>1.html</code>转成<code>1.pdf</code></p>
+<pre><code class="hljs sh">/opt/wkhtmltopdf/bin/wkhtmltopdf -O landscape .\1.html .\1.pdf</code></pre>
+
+<p><code>/opt/wkhtmltopdf/bin/wkhtmltopdf</code>其实就是装好之后的路径,可以通过find命令查出来.每台linux的服务器可能不一样,所以要查一下。</p>
+<pre><code class="hljs shell">find / -name &#x27;wkhtmltopdf&#x27;</code></pre>
+
+<p>比如我查出来的结果如下：</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210802234806791.png" alt="image-20210802234806791"></p>
+<h3 id="3-3-封装一个html转pdf的工具类"><a href="#3-3-封装一个html转pdf的工具类" class="headerlink" title="3.3 封装一个html转pdf的工具类"></a>3.3 封装一个html转pdf的工具类</h3><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">WKHtmlToPdfUtil</span> &#123;
+	
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 *       测试</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> args</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@throws</span> Exception</span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception&#123;
+		htmlToPdf(<span class="hljs-string">&quot;https://www.baidu.com&quot;</span>,<span class="hljs-string">&quot;d:\\1.pdf&quot;</span>);
+    &#125;
+
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * 获取windows和linux调用wkhtmltopdf程序的命令</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> sourceFilePath</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> targetFilePath</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title function_">getCommand</span><span class="hljs-params">(String sourceFilePath, String targetFilePath)</span> &#123;
+        <span class="hljs-type">String</span> <span class="hljs-variable">system</span> <span class="hljs-operator">=</span> System.getProperty(<span class="hljs-string">&quot;os.name&quot;</span>);
+        <span class="hljs-keyword">if</span>(system.contains(<span class="hljs-string">&quot;Windows&quot;</span>)) &#123;
+        	System.out.println(<span class="hljs-string">&quot;windows&quot;</span>);
+        	<span class="hljs-comment">//-O landscape 表示纸张方向为横向  默认为纵向  如果要生成横向那么去掉-O landscape即可</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe -O landscape &quot;</span> + sourceFilePath + <span class="hljs-string">&quot; &quot;</span> + targetFilePath;
+        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(system.contains(<span class="hljs-string">&quot;Linux&quot;</span>)) &#123;
+        	System.out.println(<span class="hljs-string">&quot;linux&quot;</span>);
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/usr/local/bin/wkhtmltopdf -O landscape &quot;</span> + sourceFilePath + <span class="hljs-string">&quot; &quot;</span> + targetFilePath;
+        &#125;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;
+    &#125;
+	
+	<span class="hljs-comment">/**</span>
+<span class="hljs-comment">	 * html转pdf</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> sourceFilePath</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@param</span> targetFilePath</span>
+<span class="hljs-comment">	 * <span class="hljs-doctag">@return</span></span>
+<span class="hljs-comment">	 */</span>
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">htmlToPdf</span><span class="hljs-params">(String sourceFilePath, String targetFilePath)</span> &#123;
+		<span class="hljs-keyword">try</span> &#123;
+			System.out.println(<span class="hljs-string">&quot;转化开始&quot;</span>);
+			<span class="hljs-type">String</span> <span class="hljs-variable">command</span> <span class="hljs-operator">=</span> WKHtmlToPdfUtil.getCommand(sourceFilePath, targetFilePath);
+			System.out.println(<span class="hljs-string">&quot;command:&quot;</span>+command);
+	        <span class="hljs-type">Process</span> <span class="hljs-variable">process</span> <span class="hljs-operator">=</span> Runtime.getRuntime().exec(command);
+	        process.waitFor();  <span class="hljs-comment">//这个调用比较关键，就是等当前命令执行完成后再往下执行</span>
+	        System.out.println(<span class="hljs-string">&quot;html--&gt;pdf:success&quot;</span>);
+	        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+		&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;
+			e.printStackTrace();
+			System.out.println(<span class="hljs-string">&quot;html--&gt;pdf:error&quot;</span>);
+			<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+		&#125;
+	&#125;
+&#125;</code></pre>
+
+<h3 id="3-4-wkhtmltopdf的一些问题总结"><a href="#3-4-wkhtmltopdf的一些问题总结" class="headerlink" title="3.4 wkhtmltopdf的一些问题总结"></a>3.4 wkhtmltopdf的一些问题总结</h3><h4 id="3-4-1-强制分页问题"><a href="#3-4-1-强制分页问题" class="headerlink" title="3.4.1 强制分页问题"></a>3.4.1 强制分页问题</h4><p>添加样式，使用样式的容器将会独占一页，如果分页最后一页也会独占一页,给div容器加上以下样式即可。</p>
+<pre><code class="hljs css"><span class="hljs-attribute">page-break-after</span>: always <span class="hljs-meta">!important</span>;</code></pre>
+
+<h4 id="3-4-2-每页显示表头"><a href="#3-4-2-每页显示表头" class="headerlink" title="3.4.2 每页显示表头"></a>3.4.2 每页显示表头</h4><pre><code class="hljs css"><span class="hljs-selector-tag">thead</span> &#123;
+     <span class="hljs-attribute">display</span>:table-header-group;<span class="hljs-comment">/* 给thead加上这行保证每页都会带上表头 */</span>
+&#125;</code></pre>
+
+<p>给thead加上这行保证每页都会带上表头，同时也会解决表头与内容重叠问题.</p>
+<p>如果仍然存在表头和内容重叠问题,一般是因为表格的一行的内容超过一页。我就遇到过这种问题，我的解决方案是用js缩放页面。</p>
+<pre><code class="hljs js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByTagName</span>(<span class="hljs-string">&#x27;body&#x27;</span>)[<span class="hljs-number">0</span>].<span class="hljs-property">style</span>.<span class="hljs-property">zoom</span>=<span class="hljs-number">0.6</span>;<span class="hljs-comment">//0.6为缩放的比例</span></code></pre>
+
+<h4 id="3-4-3-表格分页时行内容被截断问题"><a href="#3-4-3-表格分页时行内容被截断问题" class="headerlink" title="3.4.3 表格分页时行内容被截断问题"></a>3.4.3 表格分页时行内容被截断问题</h4><p>给表格tbody的tr标签加上这个样式</p>
+<pre><code class="hljs css"><span class="hljs-selector-tag">tbody</span> <span class="hljs-selector-tag">tr</span>&#123;
+	<span class="hljs-attribute">page-break-inside</span>: avoid <span class="hljs-meta">!important</span>;
+&#125;</code></pre>
+
+<h2 id="4-给pdf的每一页都加上文字水印和页码"><a href="#4-给pdf的每一页都加上文字水印和页码" class="headerlink" title="4 给pdf的每一页都加上文字水印和页码"></a>4 给pdf的每一页都加上文字水印和页码</h2><p>如果你的项目没有这个需求可以不看这部分</p>
+<p>maven坐标如下：</p>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.lowagie<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>itextasian<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.lowagie<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>itext<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.1.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+
+<p>其中<code>itextasian</code>这个maven仓库默认是没有的,需要手动添加到自己的maven仓库</p>
+<p>我上传到百度云了：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1bN3MTRjzlQaqzF5FpfpySg">https://pan.baidu.com/s/1bN3MTRjzlQaqzF5FpfpySg</a><br>提取码：ijgf </p>
+<p>下载下来后将<code>lowagie.rar</code> 中的 <code>lowagie</code> 文件夹 直接拷贝到本地仓库的com文件夹下面即可</p>
+<p><img src="/2021/08/03/1426392656254210048/images/image-20210803232811879.png" alt="image-20210803232811879"></p>
+<p>demo代码如下</p>
+<pre><code class="hljs java"><span class="hljs-keyword">import</span> java.awt.Color;
+<span class="hljs-keyword">import</span> java.io.BufferedOutputStream;
+<span class="hljs-keyword">import</span> java.io.File;
+<span class="hljs-keyword">import</span> java.io.FileOutputStream;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.text.SimpleDateFormat;
+<span class="hljs-keyword">import</span> java.util.Calendar;
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> com.lowagie.text.DocumentException;
+<span class="hljs-keyword">import</span> com.lowagie.text.Element;
+<span class="hljs-keyword">import</span> com.lowagie.text.Image;
+<span class="hljs-keyword">import</span> com.lowagie.text.pdf.BaseFont;
+<span class="hljs-keyword">import</span> com.lowagie.text.pdf.PdfContentByte;
+<span class="hljs-keyword">import</span> com.lowagie.text.pdf.PdfGState;
+<span class="hljs-keyword">import</span> com.lowagie.text.pdf.PdfReader;
+<span class="hljs-keyword">import</span> com.lowagie.text.pdf.PdfStamper;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PDFAddWaterMart</span>&#123;
+	
+    <span class="hljs-meta">@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addTextMart</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception&#123;
+    	<span class="hljs-comment">// 要输出的pdf文件</span>
+        <span class="hljs-type">BufferedOutputStream</span> <span class="hljs-variable">bos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedOutputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;C:\\result1.pdf&quot;</span>)));
+        <span class="hljs-comment">// 将pdf文件先加水印然后输出</span>
+        setWatermarkText(bos, <span class="hljs-string">&quot;C:\\input.pdf&quot;</span>,<span class="hljs-string">&quot;壹新设计报价云平台&quot;</span>);
+    &#125;
+    
+    <span class="hljs-comment">//@Test</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addImageMart</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception&#123;
+    	<span class="hljs-comment">// 要输出的pdf文件</span>
+        <span class="hljs-type">BufferedOutputStream</span> <span class="hljs-variable">bos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedOutputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;C:\\result2.pdf&quot;</span>)));
+        <span class="hljs-type">Calendar</span> <span class="hljs-variable">cal</span> <span class="hljs-operator">=</span> Calendar.getInstance();
+        <span class="hljs-type">SimpleDateFormat</span> <span class="hljs-variable">format</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDateFormat</span>(<span class="hljs-string">&quot;yyyy-MM-dd hh:mm:ss&quot;</span>);
+        <span class="hljs-comment">// 将pdf文件先加水印然后输出</span>
+        setWatermarkImage(bos, <span class="hljs-string">&quot;C:\\input.pdf&quot;</span>, format.format(cal.getTime()) + <span class="hljs-string">&quot;  下载使用人：&quot;</span> + <span class="hljs-string">&quot;测试user&quot;</span>, <span class="hljs-number">16</span>);
+    &#125;
+    
+    
+    <span class="hljs-comment">/**</span>
+<span class="hljs-comment">     * 设置文字水印</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> bos</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> input</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> text</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> DocumentException</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> IOException</span>
+<span class="hljs-comment">     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setWatermarkText</span><span class="hljs-params">(BufferedOutputStream bos, String input,String text)</span>
+            <span class="hljs-keyword">throws</span> DocumentException, IOException &#123;
+        <span class="hljs-type">PdfReader</span> <span class="hljs-variable">reader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfReader</span>(input);
+        <span class="hljs-type">PdfStamper</span> <span class="hljs-variable">stamper</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfStamper</span>(reader, bos);
+        <span class="hljs-type">int</span> <span class="hljs-variable">total</span> <span class="hljs-operator">=</span> reader.getNumberOfPages()+<span class="hljs-number">1</span>;
+        PdfContentByte content;
+        <span class="hljs-type">BaseFont</span> <span class="hljs-variable">base</span> <span class="hljs-operator">=</span> BaseFont.createFont(<span class="hljs-string">&quot;STSong-Light&quot;</span>, <span class="hljs-string">&quot;UniGB-UCS2-H&quot;</span>, BaseFont.EMBEDDED);
+        <span class="hljs-type">PdfGState</span> <span class="hljs-variable">gs1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfGState</span>();
+        gs1.setFillOpacity(<span class="hljs-number">0.2f</span>);<span class="hljs-comment">//设置透明度</span>
+        <span class="hljs-type">PdfGState</span> <span class="hljs-variable">gs2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfGState</span>();
+        gs2.setFillOpacity(<span class="hljs-number">1f</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; total; i++) &#123;
+            content = stamper.getOverContent(i);<span class="hljs-comment">// 在内容上方加水印</span>
+            <span class="hljs-comment">//content = stamper.getUnderContent(i);//在内容下方加水印</span>
+            <span class="hljs-comment">//水印内容</span>
+            content.setGState(gs1);
+            content.beginText();
+            content.setColorFill(Color.GRAY);
+            content.setFontAndSize(base, <span class="hljs-number">50</span>);
+            content.setTextMatrix(<span class="hljs-number">70</span>, <span class="hljs-number">200</span>);
+            <span class="hljs-comment">//350为x坐标 350y坐标  45为旋转45度</span>
+            content.showTextAligned(Element.ALIGN_CENTER, text, <span class="hljs-number">350</span>, <span class="hljs-number">350</span>, <span class="hljs-number">45</span>);
+            content.endText();<span class="hljs-comment">//结束文字</span>
+            <span class="hljs-comment">//页脚内容</span>
+            content.setGState(gs2);
+            content.beginText();
+            content.setColorFill(Color.BLACK);
+            content.setFontAndSize(base, <span class="hljs-number">8</span>);
+            content.setTextMatrix(<span class="hljs-number">70</span>, <span class="hljs-number">200</span>);
+            content.showTextAligned(Element.ALIGN_CENTER, <span class="hljs-string">&quot;壹新设计报价云平台 www.newbeall.com 第&quot;</span>+i+ <span class="hljs-string">&quot;页,共&quot;</span>+(total-<span class="hljs-number">1</span>)+<span class="hljs-string">&quot;页&quot;</span>, <span class="hljs-number">370</span>, <span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+            content.endText();
+        &#125;
+        stamper.close();
+    &#125;
+    
+    <span class="hljs-comment">/**</span>
+<span class="hljs-comment">     * 设置图片水印</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> bos输出文件的位置</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> input</span>
+<span class="hljs-comment">     *            原PDF位置</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> waterMarkName</span>
+<span class="hljs-comment">     *            页脚添加水印</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@param</span> permission</span>
+<span class="hljs-comment">     *            权限码</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> DocumentException</span>
+<span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> IOException</span>
+<span class="hljs-comment">     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setWatermarkImage</span><span class="hljs-params">(BufferedOutputStream bos, String input, String waterMarkName, <span class="hljs-type">int</span> permission)</span>
+            <span class="hljs-keyword">throws</span> DocumentException, IOException &#123;
+    	
+        
+        <span class="hljs-type">PdfReader</span> <span class="hljs-variable">reader</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfReader</span>(input);
+        <span class="hljs-type">PdfStamper</span> <span class="hljs-variable">stamper</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfStamper</span>(reader, bos);
+        
+        <span class="hljs-type">int</span> <span class="hljs-variable">total</span> <span class="hljs-operator">=</span> reader.getNumberOfPages() + <span class="hljs-number">1</span>;
+        PdfContentByte content;
+        <span class="hljs-type">BaseFont</span> <span class="hljs-variable">base</span> <span class="hljs-operator">=</span> BaseFont.createFont(<span class="hljs-string">&quot;STSong-Light&quot;</span>, <span class="hljs-string">&quot;UniGB-UCS2-H&quot;</span>, BaseFont.EMBEDDED);
+        <span class="hljs-type">PdfGState</span> <span class="hljs-variable">gs</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PdfGState</span>();
+        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; total; i++) &#123;
+            content = stamper.getOverContent(i);<span class="hljs-comment">// 在内容上方加水印</span>
+            <span class="hljs-comment">// content = stamper.getUnderContent(i);//在内容下方加水印</span>
+            gs.setFillOpacity(<span class="hljs-number">0.2f</span>);
+            <span class="hljs-comment">// content.setGState(gs);</span>
+            content.beginText();
+            content.setColorFill(Color.LIGHT_GRAY);
+            content.setFontAndSize(base, <span class="hljs-number">50</span>);
+            content.setTextMatrix(<span class="hljs-number">70</span>, <span class="hljs-number">200</span>);
+            <span class="hljs-comment">//这里的水印图片换成你自己的</span>
+            <span class="hljs-type">Image</span> <span class="hljs-variable">image</span> <span class="hljs-operator">=</span> Image.getInstance(<span class="hljs-string">&quot;C:\\Users\\Administrator\\Desktop\\quotation12.png&quot;</span>);
+            <span class="hljs-comment">/*</span>
+<span class="hljs-comment">              img.setAlignment(Image.LEFT | Image.TEXTWRAP);</span>
+<span class="hljs-comment">              img.setBorder(Image.BOX); img.setBorderWidth(10);</span>
+<span class="hljs-comment">              img.setBorderColor(BaseColor.WHITE); img.scaleToFit(100072);//大小</span>
+<span class="hljs-comment">              img.setRotationDegrees(-30);//旋转</span>
+<span class="hljs-comment">             */</span>
+            image.setAbsolutePosition(<span class="hljs-number">200</span>, <span class="hljs-number">206</span>); <span class="hljs-comment">// set the first background</span>
+            image.scaleToFit(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>);<span class="hljs-comment">// image of the absolute</span>
+            image.setRotationDegrees(<span class="hljs-number">45</span>);<span class="hljs-comment">//旋转45度</span>
+            content.addImage(image);
+            content.setColorFill(Color.BLACK);
+            content.setFontAndSize(base, <span class="hljs-number">8</span>);
+            content.showTextAligned(Element.ALIGN_CENTER, <span class="hljs-string">&quot;下载时间：&quot;</span> + waterMarkName + <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-number">300</span>, <span class="hljs-number">10</span>, <span class="hljs-number">0</span>);
+            content.endText();
+
+        &#125;
+        stamper.close();
+    &#125;
+&#125;</code></pre>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangsen/p/9329687.html">java生成pdf</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenjunwu/p/12792708.html">wkhtmltopdf 参数 详解</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qlqwjy/p/9326468.html">Java给图片和PDF文件添加水印(图片水印和文字水印)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33745005/article/details/89970979">maven项目中使用itextasian</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/daxiongblog/p/12963501.html">使用 wkhtmltopdf 导出时遇到的问题</a></p>
+
+				</div>
+		</div>
+	</div>
+	</div>
+	
+	<ul class="layui-fixbar"><a id="toTopBtn" href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></a></ul>
+	
+	<!-- 底部版权 -->
+	<div class="qy-footer">
+    <div class="font-Area">
+        Copyright © 2018~2022 Heliufang All Rights Reserved
+    </div>
+</div>
+
+<script>
+    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
+    function DynamicLine() {
+        function n(n, e, t) {
+            return n.getAttribute(e) || t
+        }
+
+        function e(n) {
+            return document.getElementsByTagName(n)
+        }
+
+        function t() {
+            var t = e("script"),
+                o = t.length,
+                i = t[o - 1];
+            return {
+                l: o,
+                z: n(i, "zIndex", -1),
+                o: n(i, "opacity", .5),
+                c: n(i, "color", "0,0,50"), //颜色rgb
+                n: n(i, "count", 99)
+            }
+        }
+
+        function o() {
+            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+        }
+
+        function i() {
+            r.clearRect(0, 0, a, c);
+            var n, e, t, o, m, l;
+            s.forEach(function (i, x) {
+                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
+                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
+                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
+                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
+                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+            }),
+                x(i)
+        }
+        var a, c, u, m = document.createElement("canvas"),
+            d = t(),
+            l = "c_n" + d.l,
+            r = m.getContext("2d"),
+            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
+                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (n) {
+                    window.setTimeout(n, 1e3 / 45)
+                },
+            w = Math.random,
+            y = {
+                x: null,
+                y: null,
+                max: 2e4
+            };
+        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
+            m), o(), window.onresize = o,
+            window.onmousemove = function (n) {
+                n = n || window.event, y.x = n.clientX, y.y = n.clientY
+            },
+            window.onmouseout = function () {
+                y.x = null, y.y = null
+            };
+        for (var s = [], f = 0; d.n > f; f++) {
+            var h = w() * a,
+                g = w() * c,
+                v = 2 * w() - 1,
+                p = 2 * w() - 1;
+            s.push({
+                x: h,
+                y: g,
+                xa: v,
+                ya: p,
+                max: 6e3
+            })
+        }
+        u = s.concat([y]),
+            setTimeout(function () {
+                i()
+            }, 100)
+    }
+    DynamicLine()
+</script>
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<script src="../../../../../js/clipboard.min.js"></script>
+<script src="../../../../../js/clipboard-use.js"></script>
+
+<script src="../js/mouse.js"></script>
+
+<!-- 谷歌代码高亮 -->
+<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<script>
+	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	var element = null
+	var layer = null
+	layui.use(['element','layer'], function(){
+	  element = layui.element;
+	  layer = layui.layer
+	});
+	
+	$(function() { 
+	    var elm = $('#toc-area'); 
+	    var startPos = $(elm).offset().top; 
+		var totalTop = $(document).height(); 
+	    $.event.add(window, "scroll", function() { 
+	        var p = $(window).scrollTop(); 
+			//文章阅读进度条
+			var percent = ((p/totalTop)*100).toFixed(2)
+			if(percent > 100){
+				percent = 100
+			}
+			if(percent == 0){
+				percent = 0
+			}
+			element.progress('demo', percent+"%");
+			$("#progressTxt").text(percent)
+			//固定文章目录
+	        $(elm).css('position',((p) > startPos) ? 'fixed' : 'static'); 
+	        $(elm).css('top',((p) > startPos) ? '60px' : ''); 
+	    }); 
+		//谷歌代码高亮
+		$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
+
+		let timer = null;
+		//点击回到顶部
+		//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+		$("#toTopBtn").click(function(){
+			var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var t = parseInt(oTop / 60) //每次六十分之一
+			var time = setInterval(function () {
+				// document.body.scrollTop = document.body.scrollTop - 50;
+				document.body.scrollTop = document.body.scrollTop - t;
+				if (document.body.scrollTop === 0) {
+					clearInterval(time);
+				}
+			}, 1);
+		})
+
+		
+	});
+	
+</script>
+</html>
