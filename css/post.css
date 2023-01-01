@@ -164,3 +164,7 @@
   border-radius: 5px;
   padding: 3px 8px;
 }
+.catalogActive {
+  color: #41ca88;
+  font-weight: bold;
+}
