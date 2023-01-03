@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<title>贺刘芳的搬砖日记</title>
 	<meta charset="utf-8">
@@ -7,11 +6,12 @@
 	<link rel="stylesheet" href="../../../../../layui/css/layui.css" />
 	<link rel="stylesheet" href="../../../../../css/common.css" />
 	<link rel="stylesheet" href="../../../../../css/post.css" />
-	<link rel="stylesheet" href="../../../../../lib/google-code-prettify/skins/desert.css" />
+	<!-- 代码高亮 -->
+	<link rel="stylesheet" href="../../../../../lib/prism/prism.css" />
 <meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
 </head>
 
-<body>
+<body class="line-numbers" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!">
 	<!-- 导航模板 -->
 	<!-- 导航 -->
 <div class="qy-nav">
@@ -531,11 +531,10 @@ from emp
 </body>
 <script src="../../../../../js/jquery.min.js"></script>
 <script src="../../../../../layui/layui.js"></script>
-<script src="../../../../../js/clipboard.min.js"></script>
-<script src="../../../../../js/clipboard-use.js"></script>
+<!-- 鼠标点击特效 -->
 <script src="../../../../../js/mouse.js"></script>
-<!-- 谷歌代码高亮 -->
-<script type="text/javascript" src="../../../../../lib/google-code-prettify/run_prettify.js"></script>
+<!-- 代码高亮 -->
+<script src="../../../../../lib/prism/prism.js"></script>
 <script>
 	//注意：导航 依赖 element 模块，否则无法进行功能性操作
 	var element = null
@@ -566,7 +565,6 @@ from emp
 				$(elm).css('top', ((p) > startPos) ? '60px' : '');
 				//文章目录随页面滚动  //https://qzy.im/blog/2020/02/generate-article-catalogs-and-switch-catalog-following-article-s-scroll-using-javascript/
 				$('#tocMain').scrollTop($('#tocMain .toc').height()*percent*0.01);
-
 				// const catalogTrack = () => {
 				// 	let $currentHeading = $('h1');
 				// 	$('h1,h2,h3,h4,h5,h6').each(function(){
@@ -585,10 +583,14 @@ from emp
 				// };
 				// catalogTrack()
 			});
-			//谷歌代码高亮
-			$('pre').addClass('prettyprint').attr('style', 'overflow:auto;');
-
-			let timer = null;
+			//代码高亮
+			$('pre code').each(function(){
+				var codeType = $(this).attr("class")
+				codeType = "language-" + codeType
+				$(this).attr("class",codeType)
+			})
+			//代码复制以及显示代码语言
+        	$("pre").prepend('<div class="btn-copy copy-to-clipboard-button"></div>');
 			//点击回到顶部
 			//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
 			$("#toTopBtn").click(function () {

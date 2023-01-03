@@ -184,3 +184,6 @@ a {
   border-radius: 10px;
   background: #ededed;
 }
+.layui-card {
+  border-radius: 6px;
+}

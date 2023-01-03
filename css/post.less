@@ -34,6 +34,7 @@
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
+  border-radius: 6px;
 }
 
 .markdown-body #article ul li {
@@ -58,10 +59,10 @@
   background-color: #ffffff;
 }
 
-.markdown-body pre.prettyprint{
-  margin: 3px 0;
+.markdown-body pre[class^="language-"]{
   padding: 10px;
   position: relative;
+  border-radius: 6px;
 }
 
 .markdown-body code:not(pre code) {
@@ -168,8 +169,6 @@
   padding-left: 15px;
   box-sizing: border-box;
   text-align: center;
-  // height: 60px;
-  // background-color: deeppink;
 }
 
 //代码块复制按钮
@@ -177,12 +176,12 @@
   width: 15px;
   height: 15px;
   position: absolute;
-  top: -6px;
-  right: 2px;
+  top: 0;
+  right: 4px;
   color: #fff;
   cursor: pointer;
 }
-
+//复制成功的消息弹框
 #successInfo{
   position: fixed;
   top: 38px;
@@ -194,10 +193,4 @@
   z-index: 10000000;
   border-radius: 5px;
   padding: 3px 8px;
-}
-
-//目录激活样式
-.catalogActive{
-  color: #41ca88;
-  font-weight: bold;
 }
