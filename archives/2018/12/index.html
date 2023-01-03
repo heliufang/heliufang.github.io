@@ -115,6 +115,8 @@
                   index_title = data_title.indexOf(keyword);
                   if (index_title < 0) {
                     isMatch = false;
+                  }else{
+                    data_title = data_title.replace(new RegExp(keyword,'g'),'<span style="color:red">'+keyword+'</span>')
                   }
                 });
               }
@@ -181,14 +183,111 @@
 						<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../2022/12/">2022 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2022/10/">2022 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2022/07/">2022 七月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2022/06/">2022 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2022/03/">2022 三月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2021/08/">2021 八月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2021/07/">2021 七月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2021/05/">2021 五月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2021/01/">2021 一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2020/12/">2020 十二月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2020/11/">2020 十一月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2020/08/">2020 八月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2020/06/">2020 六月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2019/10/">2019 十月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../2019/07/">2019 七月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="">2018 十二月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../10/">2018 十月</a><span class="archive-list-count">1</span></li></ul>
 					</div>
 				</div>
+				<!-- 标签 -->
+				<div class="layui-card">
+					<div class="layui-card-header"><i style="font-weight: bold;"
+							class="layui-icon layui-icon-note"></i> 标签</div>
+					<div class="layui-card-body">
+						
+						
+							<a class="tag-a" href="/tags/MongoDB/">MongoDB</a>
+						
+							<a class="tag-a" href="/tags/数据库/">数据库</a>
+						
+							<a class="tag-a" href="/tags/css/">css</a>
+						
+							<a class="tag-a" href="/tags/rem/">rem</a>
+						
+							<a class="tag-a" href="/tags/swiper/">swiper</a>
+						
+							<a class="tag-a" href="/tags/轮播图/">轮播图</a>
+						
+							<a class="tag-a" href="/tags/vscode/">vscode</a>
+						
+							<a class="tag-a" href="/tags/响应式/">响应式</a>
+						
+							<a class="tag-a" href="/tags/媒体查询/">媒体查询</a>
+						
+							<a class="tag-a" href="/tags/重绘回流/">重绘回流</a>
+						
+							<a class="tag-a" href="/tags/web性能优化/">web性能优化</a>
+						
+							<a class="tag-a" href="/tags/bootstrap-table/">bootstrap-table</a>
+						
+							<a class="tag-a" href="/tags/bootstrap/">bootstrap</a>
+						
+							<a class="tag-a" href="/tags/art-template/">art-template</a>
+						
+							<a class="tag-a" href="/tags/js模板引擎/">js模板引擎</a>
+						
+							<a class="tag-a" href="/tags/gitee/">gitee</a>
+						
+							<a class="tag-a" href="/tags/Hexo/">Hexo</a>
+						
+							<a class="tag-a" href="/tags/markdown/">markdown</a>
+						
+							<a class="tag-a" href="/tags/java/">java</a>
+						
+							<a class="tag-a" href="/tags/pdf/">pdf</a>
+						
+							<a class="tag-a" href="/tags/linux/">linux</a>
+						
+							<a class="tag-a" href="/tags/swing/">swing</a>
+						
+							<a class="tag-a" href="/tags/JTable/">JTable</a>
+						
+							<a class="tag-a" href="/tags/ftp/">ftp</a>
+						
+							<a class="tag-a" href="/tags/微信公众号/">微信公众号</a>
+						
+							<a class="tag-a" href="/tags/windows/">windows</a>
+						
+							<a class="tag-a" href="/tags/jar/">jar</a>
+						
+							<a class="tag-a" href="/tags/sublime/">sublime</a>
+						
+							<a class="tag-a" href="/tags/vue/">vue</a>
+						
+							<a class="tag-a" href="/tags/vue-router/">vue-router</a>
+						
+							<a class="tag-a" href="/tags/RabbitMQ/">RabbitMQ</a>
+						
+							<a class="tag-a" href="/tags/uniapp/">uniapp</a>
+						
+							<a class="tag-a" href="/tags/es6/">es6</a>
+						
+							<a class="tag-a" href="/tags/js/">js</a>
+						
+							<a class="tag-a" href="/tags/mysql/">mysql</a>
+						
+							<a class="tag-a" href="/tags/html/">html</a>
+						
+							<a class="tag-a" href="/tags/移动端/">移动端</a>
+						
+							<a class="tag-a" href="/tags/springcloud/">springcloud</a>
+						
+							<a class="tag-a" href="/tags/less/">less</a>
+						
+							<a class="tag-a" href="/tags/vuex/">vuex</a>
+						
+							<a class="tag-a" href="/tags/typescript/">typescript</a>
+						
+							<a class="tag-a" href="/tags/node/">node</a>
+						
+							<a class="tag-a" href="/tags/eclipse/">eclipse</a>
+						
+							<a class="tag-a" href="/tags/react/">react</a>
+						
+					</div>
+				</div>
 			</div>
 			<div class="layui-col-md9 center-left">
 				
 					<div class="layui-card">
 						<div class="layui-card-header article-title">
-							<div class="title"><i class="layui-icon layui-icon-read"></i>&nbsp;&nbsp; sublime快捷键
+							<div class="title"><i class="layui-icon layui-icon-form"></i>&nbsp;&nbsp; sublime快捷键
 							</div>
-							<div class="time"><i class="layui-icon layui-icon-time"></i>&nbsp;&nbsp;2018-12-27
+							<div class="time"><i class="layui-icon layui-icon-date"></i>&nbsp;&nbsp;2018-12-27
 							</div>
 						</div>
 						<div class="layui-card-body">
@@ -205,9 +304,9 @@
 					
 					<div class="layui-card">
 						<div class="layui-card-header article-title">
-							<div class="title"><i class="layui-icon layui-icon-read"></i>&nbsp;&nbsp; eclipse杂记
+							<div class="title"><i class="layui-icon layui-icon-form"></i>&nbsp;&nbsp; eclipse杂记
 							</div>
-							<div class="time"><i class="layui-icon layui-icon-time"></i>&nbsp;&nbsp;2018-12-05
+							<div class="time"><i class="layui-icon layui-icon-date"></i>&nbsp;&nbsp;2018-12-05
 							</div>
 						</div>
 						<div class="layui-card-body">
@@ -336,13 +435,13 @@
 </script>
 
 	
-<script src="../../js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 
 	
-<script src="../../layui/layui.js"></script>
+<script src="../layui/layui.js"></script>
 
 	
-<script src="../../js/mouse.js"></script>
+<script src="../js/mouse.js"></script>
 
 </body>
 
