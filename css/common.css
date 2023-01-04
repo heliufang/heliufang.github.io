@@ -34,6 +34,9 @@ body {
   line-height: 2;
   color: #2c323c;
 }
+a {
+  color: #49b1f5;
+}
 .tag-a {
   margin: 6px;
   font-size: 10px;
