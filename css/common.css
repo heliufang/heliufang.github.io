@@ -30,7 +30,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif, Arial;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: #2c323c;
 }
@@ -105,6 +105,7 @@ a {
 .center {
   margin-top: 60px !important;
   padding: 1.25rem;
+  min-height: 80%;
 }
 .center .userinfo {
   text-align: center;
@@ -135,6 +136,7 @@ a {
   background: #000;
   color: #fff;
   position: relative;
+  padding: 10px;
 }
 .qy-footer .font-Area {
   width: 100%;
