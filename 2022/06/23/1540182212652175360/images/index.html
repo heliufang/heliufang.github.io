@@ -18,18 +18,34 @@
 	<!-- 导航 -->
 <div class="qy-nav">
   <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="layui-nav-item">贺刘芳的搬砖日记</li>
+    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;">贺刘芳的搬砖日记</a></li>
     <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
     <li class="hide-xs layui-nav-item "><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
     <li class="hide-xs layui-nav-item "><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li>
+    <li class="hide-xs layui-nav-item "><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
+    </li>
     <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " id="searchBtn"><a href="javascript:void(0);"><i
+    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i
           class="layui-icon layui-icon-search"></i> 搜索</a></li>
-    <li id="mobileMenu" style="float: right" class="hide-sm hide-md hide-lg layui-nav-item ">
-      <a href="javascript:void(0);"><i class="layui-icon layui-icon-down"></i> 菜单</a>
+    <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
+      <a href="javascript:;">菜单</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+        <dd><a href="/">首页</a></dd>
+        <dd><a href="/archives">归档</a></dd>
+        <dd><a href="/tags">标签</a></dd>
+        <dd><a href="/categories">分类</a></dd>
+        <dd><a href="/about">关于</a></dd>
+        <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
+        </dd>
+      </dl>
     </li>
   </ul>
+  <!-- 进度条 -->
+  <div class="progress" id="progressNav"></div>
+  <!-- loading -->
+  <div id="loadingBox" class="loadingBox">
+    <img src="/img/loading.gif">
+  </div>
 </div>
 <!-- 搜索弹框 -->
 <div id="searchShade" class="searchShade">
@@ -45,123 +61,7 @@
 
   </div>
 </div>
-<script>
-  window.onload = function () {
-    //下拉菜单
-    layui.use('dropdown', function () {
-      var dropdown = layui.dropdown
-      dropdown.render({
-        elem: '#mobileMenu', //可绑定在任意元素中，此处以上述按钮为例
-        data: [
-          {
-            title: '首页'
-            , id: 11
-            , href: '/'
-            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
-          },
-          {
-            title: '归档'
-            , id: 22
-            , href: '/archives'
-            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
-          },
-          {
-            title: '标签'
-            , id: 33
-            , href: '/tags'
-            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
-          },
-          {
-            title: '分类'
-            , id: 33
-            , href: '/categories'
-            // , templet: '<i class="layui-icon layui-icon-chart-screen"></i>  {{d.title}}'
-          },
-          {
-            title: '关于'
-            , id: 44
-            , href: '/about'
-            // , templet: '<i class="layui-icon layui-icon-chart-friends"></i>  {{d.title}}'
-          },
-          {
-            title: '搜索'
-            , id: 99
-            , href: '#'
-            // , templet: '<i class="layui-icon layui-icon-chart-search"></i>  {{d.title}}'
-          }
-        ],
-        click: function (data, othis) {
-          var elem = $(this.elem)
-            , listId = elem.data('id'); //表格列表的预埋数据
-            if(data.id == 99){
-              $("#searchShade").show()
-            }
-        }
-      })
 
-    })
-
-    //点击搜索
-    $("#searchBtn").click(function () {
-      $("#searchShade").show()
-    })
-
-    //关闭弹框
-    $("#closeBtn").click(function () {
-      $("#searchShade").hide()
-    })
-
-    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
-    var searchFunc = function (path, search_id, content_id) {
-      $.ajax({
-        url: path,
-        dataType: "json",
-        success: function (datas) {
-          // console.log('datas :>> ', datas);
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function () {
-            var str = '<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length <= 0) {
-              return;
-            }
-            // perform local searching
-            datas.forEach(function (data) {
-              var isMatch = true;
-              var data_title = data.title.trim().toLowerCase();
-              var data_url = data.url;
-              var index_title = -1;
-              var first_occur = -1;
-              if (data_title != '') {
-                keywords.forEach(function (keyword, i) {
-                  index_title = data_title.indexOf(keyword);
-                  if (index_title < 0) {
-                    isMatch = false;
-                  }else{
-                    data_title = data_title.replace(new RegExp(keyword,'g'),'<span style="color:red">'+keyword+'</span>')
-                  }
-                });
-              }
-              // show search results
-              if (isMatch) {
-                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                str += "</li>";
-              }
-            });
-            str += "</ul>";
-            $resultContent.innerHTML = str;
-          });
-        }
-      });
-    }
-    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
-
-  }
-
-
-</script>
 		<!-- 中间内容区域 -->
 		<div class="layui-container  center" id="top">
 			<div class="layui-row layui-col-space20">
@@ -200,7 +100,26 @@
     </div>
 </div>
 
-<!-- 左侧的公告、分类、归档、标签 -->
+<!-- 最新文章 -->
+<div class="layui-card">
+    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
+    <div class="layui-card-body">
+        
+        <ul>
+            
+                <li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li>
+            
+                <li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li>
+            
+                <li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li>
+            
+                <li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li>
+            
+                <li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li>
+            
+        </ul>
+    </div>
+</div>
 
 <!-- 分类 -->
 <div class="layui-card">
@@ -209,12 +128,14 @@
         <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
     </div>
 </div>
+
+
 						<!-- 文章目录 -->
 						
-							<div style="height: 90%;width: 267px;" id="toc-area" class="layui-card">
+							<div style="height: calc(100% - 60px - 60px - 10px);width: 267px;" id="toc-area" class="layui-card">
 								<div class="layui-card-header"><i class="layui-icon layui-icon-form"></i> 本文目录</div>
 								<div id="tocMain" class="layui-card-body"
-									style="overflow:auto;height: calc(100% - 60px - 50px);">
+									style="overflow:auto;height: calc(100% - 60px - 60px);">
 									<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#es%E7%AE%80%E4%BB%8B"><span class="toc-text">es简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es5-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="toc-text">es5-严格模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es5-JSON%E6%89%A9%E5%B1%95"><span class="toc-text">es5-JSON扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es5-Object%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E6%89%A9%E5%B1%95"><span class="toc-text">es5-Object对象方法扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es5-%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">es5-数组的扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es5-bind-call-apply"><span class="toc-text">es5 bind call apply</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-let%E5%92%8Cconst"><span class="toc-text">es6 let和const</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-text">let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const"><span class="toc-text">const</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-text">es6 对象的解构赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">es6 模板字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E5%86%99"><span class="toc-text">es6 对象的简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E5%BD%A2%E5%8F%82%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">es6 形参默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-text">es6 箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-Symbol"><span class="toc-text">es6 Symbol</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-iterator-%E9%81%8D%E5%8E%86%E5%99%A8"><span class="toc-text">es6 iterator 遍历器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-generator"><span class="toc-text">es6 generator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-promise"><span class="toc-text">es6 promise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-async"><span class="toc-text">es6 async</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E4%B8%89%E7%82%B9%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">es6 三点运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-class%E7%B1%BB%E4%BD%BF%E7%94%A8"><span class="toc-text">es6 class类使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">es6 字符串和数值的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95"><span class="toc-text">字符串扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E6%89%A9%E5%B1%95%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-text">数值扩展（了解）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">es6 数组方法的扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-text">es6 对象方法的扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-text">es6 深拷贝和浅拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-set%E5%92%8Cmap%E5%AE%B9%E5%99%A8"><span class="toc-text">es6 set和map容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es6-for-of"><span class="toc-text">es6 for of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#es7-%E5%B9%82%E8%BF%90%E7%AE%97%E5%92%8C%E6%95%B0%E7%BB%84%E5%8C%85%E5%90%AB"><span class="toc-text">es7 幂运算和数组包含</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#export%E5%92%8Cimport"><span class="toc-text">export和import</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#export-default%E5%92%8Cimport"><span class="toc-text">export default和import</span></a></li></ol></li></ol>
 								</div>
 								<div class="readprocess">
@@ -230,7 +151,7 @@
 				<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
 					
 						<div class="article-title">
-							<h1 style="margin-top: 0;">es6笔记</h1>
+							<h1>es6笔记</h1>
 							<p>
 								<i class="layui-icon layui-icon-date"></i>发表时间 2022-06-23
 									|
@@ -1043,19 +964,85 @@ export &#123;name,sayHello&#125; //导出
 				</div>
 			</div>
 		</div>
-		
-			<ul id="toTopBtn" class="layui-fixbar" style="display: none;"><a href="javascript:void(0)">
-					<li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li>
-				</a></ul>
-			
-				<!-- 底部版权 -->
-				<div class="qy-footer">
+		<!-- 置顶按钮 -->
+		<!-- 置顶 -->
+<ul id="toTopBtn" class="layui-fixbar" style="right: -70px;">
+    <a href="javascript:void(0)">
+        <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;">&#xe604;</li>
+    </a>
+</ul>
+		<!-- 底部版权 -->
+		<div class="qy-footer">
     <div class="font-Area">
-        Copyright © 2018~<span id="currentYear">2022</span> Heliufang All Rights Reserved
+        Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved 
     </div>
 </div>
-
+</body>
+<script src="../../../../../js/jquery.min.js"></script>
+<script src="../../../../../layui/layui.js"></script>
+<!-- 鼠标点击特效 -->
+<script src="../../../../../js/mouse.js"></script>
+<!-- 代码高亮 -->
+<script src="../../../../../lib/prism/prism.js"></script>
+<!-- 公共js -->
 <script>
+    //点击搜索
+    $("#searchBtn").click(function () {
+        $("#searchShade").show()
+        $("#searchLayer").addClass('layui-anim layui-anim-scaleSpring')
+    })
+    //关闭搜索弹框
+    $("#closeBtn").click(function () {
+        $("#searchShade").hide() 
+    })
+    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
+    var searchFunc = function (path, search_id, content_id) {
+        $.ajax({
+            url: path,
+            dataType: "json",
+            success: function (datas) {
+                //console.log('datas :>> ', datas);
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var first_occur = -1;
+                        if (data_title != '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                if (index_title < 0) {
+                                    isMatch = false;
+                                } else {
+                                    data_title = data_title.replace(new RegExp(keyword, 'g'), '<span style="color:red">' + keyword + '</span>')
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
+
+
     //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
     function DynamicLine() {
         function n(n, e, t) {
@@ -1138,38 +1125,49 @@ export &#123;name,sayHello&#125; //导出
                 i()
             }, 100)
     }
-    
     //随机背景线条
     DynamicLine()
-
-
+    //更新页脚年份
     document.querySelector("#currentYear").innerText = new Date().getFullYear()
+
+
+    //置顶  增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
+    $("#toTopBtn").click(function () {
+        var oTop = $(window).scrollTop()
+        var t = parseInt(oTop / 60) //每次六十分之一
+        var time = setInterval(function () {
+            console.log('toTopBtn...setInterval',$(window).scrollTop())
+            $(window).scrollTop($(window).scrollTop() - t)
+            if ($(window).scrollTop() === 0) {
+                clearInterval(time);
+            }
+        }, 1);
+    })
+    $.event.add(window, "scroll", function () {
+        //显示与隐藏置顶按钮   transition: all 0.5s;
+        $("#toTopBtn").css('transform', $(window).scrollTop() > 0 ? 'translateX(-85px)' : 'translateX(85px)');
+        $("#toTopBtn").css('transition', "all 0.5s");
+    })
+    //隐藏loading
+    $("#loadingBox").hide(); 
 </script>
-</body>
-<script src="../../../../../js/jquery.min.js"></script>
-<script src="../../../../../layui/layui.js"></script>
-<!-- 鼠标点击特效 -->
-<script src="../../../../../js/mouse.js"></script>
-<!-- 代码高亮 -->
-<script src="../../../../../lib/prism/prism.js"></script>
 <script>
-	//注意：导航 依赖 element 模块，否则无法进行功能性操作
+	//注意：导航和进度条 依赖 element 模块，否则无法进行功能性操作
 	var element = null
-	var layer = null
-	layui.use(['element', 'layer'], function () {
+	layui.use(['element'], function () {
 		element = layui.element;
-		layer = layui.layer
 	});
 	
 		$(function () {
 			var elm = $('#toc-area');
 			var startPos = $(elm).offset().top;
-			var totalTop = $(document).height();
+			//var totalTop = $(document).height();
 			$.event.add(window, "scroll", function () {
-				var p = $(window).scrollTop();
+				var totalTop = $(".markdown-body").height();
+				var p = $(window).scrollTop()+$("#toc-area").height();
 				//文章阅读进度条
 				var percent = ((p / totalTop) * 100).toFixed(2)
-				if (percent > 100) {
+				if (percent > 95) {
 					percent = 100
 				}
 				if (percent == 0) {
@@ -1177,16 +1175,14 @@ export &#123;name,sayHello&#125; //导出
 				}
 				element.progress('demo', percent + "%");
 				$("#progressTxt").text(percent)
+				console.log('percent', percent)
+				$("#progressNav").css("width", $(window).scrollTop() == 0? 0 : percent + "%")
 				//固定文章目录
-				console.log('p', p, "startPos", startPos)
-				// $(elm).css('position', (p > startPos) ? 'fixed' : 'static');
-				// $(elm).css('top', (p > startPos) ? '60px' : '');
-				$(elm).css('position', (p > 400) ? 'fixed' : 'static');
-				$(elm).css('top', (p > 400) ? '60px' : '');
-				//文章目录随页面滚动  //https://qzy.im/blog/2020/02/generate-article-catalogs-and-switch-catalog-following-article-s-scroll-using-javascript/
+				//console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
+				$(elm).css('position', ($(window).scrollTop() > startPos) ? 'fixed' : 'static');
+				$(elm).css('top', ($(window).scrollTop() > startPos) ? '60px' : '');
+				//文章目录随页面滚动
 				$('#tocMain').scrollTop($('#tocMain .toc').height() * percent * 0.01);
-				//显示与隐藏置顶按钮
-				$("#toTopBtn").css('display', p > 0 ? 'block' : 'none');
 			});
 			//代码高亮
 			$('pre code').each(function () {
@@ -1197,19 +1193,6 @@ export &#123;name,sayHello&#125; //导出
 			})
 			//代码复制以及显示代码语言
 			$("pre").prepend('<div class="copy-to-clipboard-button"></div>');
-			//点击回到顶部
-			//增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
-			$("#toTopBtn").click(function () {
-				var oTop = document.body.scrollTop || document.documentElement.scrollTop;
-				var t = parseInt(oTop / 60) //每次六十分之一
-				var time = setInterval(function () {
-					// document.body.scrollTop = document.body.scrollTop - 50;
-					document.body.scrollTop = document.body.scrollTop - t;
-					if (document.body.scrollTop === 0) {
-						clearInterval(time);
-					}
-				}, 1);
-			})
 		});
 	
 </script>
