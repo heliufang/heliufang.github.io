@@ -1,192 +1,9 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-	<title>贺刘芳的搬砖日记</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../../../../../layui/css/layui.css" />
-	<link rel="stylesheet" href="../../../../../css/common.css" />
-	<link rel="stylesheet" href="../../../../../css/post.css" />
-	<!-- 代码高亮 -->
-	<link rel="stylesheet" href="../../../../../lib/prism/prism.css" />
-	<link rel="shortcut icon" href="../../../../../img/favicon.ico">
-	
-	<link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css">
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
-</head>
-
-<body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!">
-	<!-- 导航模板 -->
-	<!-- 导航 -->
-<div class="qy-nav">
-  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li>
-    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
-    </li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
-   
-    <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
-      <a href="javascript:;">菜单</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/">首页</a></dd>
-        <dd><a href="/archives">归档</a></dd>
-        <dd><a href="/tags">标签</a></dd>
-        <dd><a href="/categories">分类</a></dd>
-        <dd><a href="/about">关于</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd>
-        <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
-        </dd>
-      </dl>
-    </li>
-  </ul>
-  <!-- 进度条 -->
-  <div class="progress" id="progressNav"></div>
-  <!-- loading -->
-  <div id="loadingBox" class="loadingBox">
-    <img src="/img/loading.gif">
-  </div>
-</div>
-<!-- 搜索弹框 -->
-<div id="searchShade" class="searchShade">
-  <div id="searchLayer">
-    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
-    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)"  autofocus  />
-    <div id="searchResult">
-      <!-- <ul>
-        <li>java笔记
-        <li>
-      </ul> -->
-    </div>
-
-  </div>
-</div>
-
-		<!-- 中间内容区域 -->
-		<div class="layui-container  center" id="top">
-			<div class="layui-row layui-col-space20">
-				<div class="layui-col-md3 hide-xs hide-sm">
-					<!-- 左侧的公告、分类、归档、标签 -->
-					<!-- 左侧的公告、分类、归档、标签 -->
-
-<!-- 个人信息 -->
-<div class="layui-card">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-speaker"></i> 公告</div>
-    <div class="layui-card-body">
-        <div class="userinfo">
-            <img src="/head.png">
-            <div class="name">淡泊明志，宁静致远</div>
-            <div class="icons">
-                <a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a>
-                <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a>
-                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a>
-            </div>
-            <div class="other">
-                <div class="item">
-                    <p class="num">
-                        40
-                    </p>
-                    <p class="title" style="color: #FF5722">文章</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        8
-                    </p>
-                    <p class="title">分类</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        44
-                    </p>
-                    <p class="title" style="color: #01AAED">标签</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<!-- 最新文章 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
-    <div class="layui-card-body">
-        
-        <ul>
-            
-                <li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li>
-            
-                <li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li>
-            
-                <li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li>
-            
-                <li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li>
-            
-                <li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li>
-            
-        </ul>
-    </div>
-</div>
-
-<!-- 分类 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-template-1"></i> 分类</div>
-    <div class="layui-card-body">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
-    </div>
-</div>
-
-
-						<!-- 文章目录 -->
-						
-							<div style="height: calc(100% - 60px - 60px);width: 267px;" id="toc-area" class="layui-card ahover">
-								<div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div>
-								<div id="tocMain" class="layui-card-body"
-									style="overflow:auto;height: calc(100% - 60px - 60px);">
-									<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p46-p50-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">p46-p50 对象的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">js的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">对象的简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">对象的属性的基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D%E5%92%8C%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">属性名和属性值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D"><span class="toc-text">属性名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">in运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型和引用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-text">对象字面量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p51-p65-%E5%87%BD%E6%95%B0"><span class="toc-text">p51-p65 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">创建和调用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E5%8F%82"><span class="toc-text">函数的实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0"><span class="toc-text">函数内部嵌套函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="toc-text">立即执行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">枚举对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%8F%90%E5%89%8D"><span class="toc-text">声明提前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#debug"><span class="toc-text">debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">使用工厂函数创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p66-p67%E5%8E%9F%E5%9E%8B"><span class="toc-text">p66-p67原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p68-toString"><span class="toc-text">p68 toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p69-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">p69 垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p70-78-%E6%95%B0%E7%BB%84"><span class="toc-text">p70-78 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%8F%96%E5%80%BC%E3%80%81%E8%B5%8B%E5%80%BC"><span class="toc-text">数组的创建、取值、赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">数组的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pop"><span class="toc-text">pop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unshift"><span class="toc-text">unshift</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shift"><span class="toc-text">shift</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slice"><span class="toc-text">slice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#splice"><span class="toc-text">splice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#concat"><span class="toc-text">concat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#join"><span class="toc-text">join</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse"><span class="toc-text">reverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-text">数组的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p79-call%E5%92%8Capply"><span class="toc-text">p79 call和apply</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p80-arguments"><span class="toc-text">p80 arguments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p81-Date%E5%AF%B9%E8%B1%A1"><span class="toc-text">p81 Date对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p82-Math"><span class="toc-text">p82 Math</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p83-%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="toc-text">p83 包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p84-String%E7%B1%BB"><span class="toc-text">p84 String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p85-p90-%E6%AD%A3%E5%88%99"><span class="toc-text">p85-p90 正则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p91-140"><span class="toc-text">p91-140</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dom"><span class="toc-text">dom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dom%E6%9F%A5%E8%AF%A2"><span class="toc-text">dom查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bom"><span class="toc-text">bom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator"><span class="toc-text">navigator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-text">json</span></a></li></ol></li></ol>
-								</div>
-								<div class="readprocess">
-									<div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%
-									</div>
-									<div class="layui-progress" lay-filter="demo">
-										<div class="layui-progress-bar" lay-percent="10%"></div>
-									</div>
-								</div>
-							</div>
-							
-				</div>
-				<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
-					
-						<div class="article-title">
-							<h1>js基础-笔记</h1>
-							<p>
-								<i class="layui-icon layui-icon-date"></i>发表时间 2022-06-17
-									|
-									<i class="layui-icon layui-icon-form"></i>累计字数 13.4k
-							</p>
-						</div>
-						
-						<!-- 文章内容 -->
-						<div id="article">
-							<p>b站js基础视频教程： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YW411T7GX">尚硅谷JavaScript基础</a></p>
-<p>课程相关资料： 链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15e8Ebq1P3D1ZsfSOsj4rSw">https://pan.baidu.com/s/15e8Ebq1P3D1ZsfSOsj4rSw</a>  提取码：<em>abtf</em></p>
-<h2 id="p46-p50-对象的简介"><a href="#p46-p50-对象的简介" class="headerlink" title="p46-p50 对象的简介"></a>p46-p50 对象的简介</h2><h3 id="js的数据类型"><a href="#js的数据类型" class="headerlink" title="js的数据类型"></a>js的数据类型</h3><pre><code>String 字符串
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../../../../layui/css/layui.css"><link rel="stylesheet" href="../../../../../css/common.css"><link rel="stylesheet" href="../../../../../css/post.css"><link rel="stylesheet" href="../../../../../lib/prism/prism.css"><link rel="shortcut icon" href="../../../../../img/favicon.ico"><link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div class="progress" id="progressNav"></div><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><p class="num">40</p><p class="title" style="color:#ff5722">文章</p></div><div class="item"><p class="num">8</p><p class="title">分类</p></div><div class="item"><p class="num">44</p><p class="title" style="color:#01aaed">标签</p></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li><li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li><li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li><li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li><li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 分类</div><div class="layui-card-body"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p46-p50-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">p46-p50 对象的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">js的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">对象的简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">对象的属性的基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D%E5%92%8C%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">属性名和属性值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D"><span class="toc-text">属性名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">in运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型和引用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-text">对象字面量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p51-p65-%E5%87%BD%E6%95%B0"><span class="toc-text">p51-p65 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">创建和调用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E5%8F%82"><span class="toc-text">函数的实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0"><span class="toc-text">函数内部嵌套函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="toc-text">立即执行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">枚举对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%8F%90%E5%89%8D"><span class="toc-text">声明提前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#debug"><span class="toc-text">debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">使用工厂函数创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p66-p67%E5%8E%9F%E5%9E%8B"><span class="toc-text">p66-p67原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p68-toString"><span class="toc-text">p68 toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p69-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">p69 垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p70-78-%E6%95%B0%E7%BB%84"><span class="toc-text">p70-78 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%8F%96%E5%80%BC%E3%80%81%E8%B5%8B%E5%80%BC"><span class="toc-text">数组的创建、取值、赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">数组的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pop"><span class="toc-text">pop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unshift"><span class="toc-text">unshift</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shift"><span class="toc-text">shift</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slice"><span class="toc-text">slice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#splice"><span class="toc-text">splice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#concat"><span class="toc-text">concat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#join"><span class="toc-text">join</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse"><span class="toc-text">reverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-text">数组的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p79-call%E5%92%8Capply"><span class="toc-text">p79 call和apply</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p80-arguments"><span class="toc-text">p80 arguments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p81-Date%E5%AF%B9%E8%B1%A1"><span class="toc-text">p81 Date对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p82-Math"><span class="toc-text">p82 Math</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p83-%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="toc-text">p83 包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p84-String%E7%B1%BB"><span class="toc-text">p84 String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p85-p90-%E6%AD%A3%E5%88%99"><span class="toc-text">p85-p90 正则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p91-140"><span class="toc-text">p91-140</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dom"><span class="toc-text">dom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dom%E6%9F%A5%E8%AF%A2"><span class="toc-text">dom查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bom"><span class="toc-text">bom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator"><span class="toc-text">navigator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-text">json</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>js基础-笔记</h1><p><i class="layui-icon layui-icon-date"></i>发表时间 2022-06-17 | <i class="layui-icon layui-icon-form"></i>累计字数 13.4k</p></div><div id="article"><p>b站js基础视频教程： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YW411T7GX">尚硅谷JavaScript基础</a></p><p>课程相关资料： 链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/15e8Ebq1P3D1ZsfSOsj4rSw">https://pan.baidu.com/s/15e8Ebq1P3D1ZsfSOsj4rSw</a> 提取码：<em>abtf</em></p><h2 id="p46-p50-对象的简介"><a href="#p46-p50-对象的简介" class="headerlink" title="p46-p50 对象的简介"></a>p46-p50 对象的简介</h2><h3 id="js的数据类型"><a href="#js的数据类型" class="headerlink" title="js的数据类型"></a>js的数据类型</h3><pre><code>String 字符串
 Number 数值
 Boolean 布尔值
 Null 空值
 Undefined 未定义
-</code></pre>
-<p>以上这五种类型属于基本数据类型，以后我们看到的值<strong>只要不是上边的5种，全都是对象</strong>     Object 对象</p>
-<h3 id="对象的简介"><a href="#对象的简介" class="headerlink" title="对象的简介"></a>对象的简介</h3><p>基本数据类型都是单一的值eg：”hello” 123 true。值和值之间没有任何的联系。对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性。</p>
-<pre><code>对象的分类：
+</code></pre><p>以上这五种类型属于基本数据类型，以后我们看到的值<strong>只要不是上边的5种，全都是对象</strong> Object 对象</p><h3 id="对象的简介"><a href="#对象的简介" class="headerlink" title="对象的简介"></a>对象的简介</h3><p>基本数据类型都是单一的值eg：”hello” 123 true。值和值之间没有任何的联系。对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性。</p><pre><code>对象的分类：
 *     1.内建对象
 *          由ES标准中定义的对象，在任何的ES的实现中都可以使用
 *          比如：Math String Number Boolean Function Object....
@@ -197,32 +14,12 @@ Undefined 未定义
 * 
 *     3.自定义对象
 *          由开发人员自己创建的对象
-</code></pre>
-<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><p>使用new关键字调用的函数，是构造函数constructor</p>
-<p>构造函数是专门用来创建对象的函数</p>
-<p>使用typeof检查一个对象时，会返回object</p>
-<pre><code class="js">var obj = new Object()
+</code></pre><h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><p>使用new关键字调用的函数，是构造函数constructor</p><p>构造函数是专门用来创建对象的函数</p><p>使用typeof检查一个对象时，会返回object</p><pre><code class="js">var obj = new Object()
 console.log(typeof obj) //object
-</code></pre>
-<h3 id="对象的属性的基本操作"><a href="#对象的属性的基本操作" class="headerlink" title="对象的属性的基本操作"></a>对象的属性的基本操作</h3><p>在对象中保存的值称为属性</p>
-<ul>
-<li>添加或修改属性：</li>
-</ul>
-<pre><code>语法：对象.属性名 = 属性值
-</code></pre>
-<ul>
-<li>读取属性</li>
-</ul>
-<pre><code>语法：对象.属性名
-</code></pre>
-<p>注意：如果读取对象中没有的属性，不会报错而是会返回undefined</p>
-<ul>
-<li>删除属性</li>
-</ul>
-<pre><code>语法：delete 对象.属性名
-</code></pre>
-<p>【对象案例】</p>
-<pre><code class="js">//创建对象
+</code></pre><h3 id="对象的属性的基本操作"><a href="#对象的属性的基本操作" class="headerlink" title="对象的属性的基本操作"></a>对象的属性的基本操作</h3><p>在对象中保存的值称为属性</p><ul><li>添加或修改属性：</li></ul><pre><code>语法：对象.属性名 = 属性值
+</code></pre><ul><li>读取属性</li></ul><pre><code>语法：对象.属性名
+</code></pre><p>注意：如果读取对象中没有的属性，不会报错而是会返回undefined</p><ul><li>删除属性</li></ul><pre><code>语法：delete 对象.属性名
+</code></pre><p>【对象案例】</p><pre><code class="js">//创建对象
 var obj = new Object()
 //添加属性
 obj.name = &#39;tom&#39;
@@ -232,17 +29,8 @@ obj.age = 18
 //delete obj.name
 //console.log(typeof obj) //object
 console.log(obj.name)
-</code></pre>
-<h3 id="属性名和属性值"><a href="#属性名和属性值" class="headerlink" title="属性名和属性值"></a>属性名和属性值</h3><h4 id="属性名"><a href="#属性名" class="headerlink" title="属性名"></a>属性名</h4><ul>
-<li><p>对象的属性名不强制要求遵守标识符的规范(什么乱七八糟的名字都可以使用).尽量按照标识符的规范去做</p>
-</li>
-<li><p>特殊的属性名要用[]。在[]中可以直接传递一个<code>变量</code>，这样变量值是多少就会读取那个属性</p>
-</li>
-</ul>
-<pre><code>语法：对象[&quot;属性名&quot;] = 属性值
-</code></pre>
-<p>【demo】</p>
-<pre><code class="js">var obj = new Object()
+</code></pre><h3 id="属性名和属性值"><a href="#属性名和属性值" class="headerlink" title="属性名和属性值"></a>属性名和属性值</h3><h4 id="属性名"><a href="#属性名" class="headerlink" title="属性名"></a>属性名</h4><ul><li><p>对象的属性名不强制要求遵守标识符的规范(什么乱七八糟的名字都可以使用).尽量按照标识符的规范去做</p></li><li><p>特殊的属性名要用[]。在[]中可以直接传递一个<code>变量</code>，这样变量值是多少就会读取那个属性</p></li></ul><pre><code>语法：对象[&quot;属性名&quot;] = 属性值
+</code></pre><p>【demo】</p><pre><code class="js">var obj = new Object()
 //属性名可以随意
 obj.val = 123
 console.log(obj.val) 
@@ -253,27 +41,19 @@ console.log(obj[&#39;123&#39;])
 var nihao = &#39;nihao&#39;
 obj[nihao] = &#39;你好&#39;
 console.log(obj[nihao])
-</code></pre>
-<h4 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h4><p>JS对象的属性值，可以是任意的数据类型，甚至也可以是一个对象和函数</p>
-<pre><code>//属性值
+</code></pre><h4 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h4><p>JS对象的属性值，可以是任意的数据类型，甚至也可以是一个对象和函数</p><pre><code>//属性值
 var obj = new Object()
 obj.test = null
 obj.test = undefined
 obj.test = true
 obj.test = function()&#123;&#125;
 obj.test = new Object()
-</code></pre>
-<h4 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h4><p>通过该运算符可以检查一个对象中是否含有指定的属性,如果有则返回true，没有则返回false</p>
-<pre><code>语法：&quot;属性名&quot; in 对象
-</code></pre>
-<pre><code class="js">var obj = new Object()
+</code></pre><h4 id="in运算符"><a href="#in运算符" class="headerlink" title="in运算符"></a>in运算符</h4><p>通过该运算符可以检查一个对象中是否含有指定的属性,如果有则返回true，没有则返回false</p><pre><code>语法：&quot;属性名&quot; in 对象
+</code></pre><pre><code class="js">var obj = new Object()
 obj.name = &#39;tom&#39;
 console.log(&quot;name&quot; in obj) //true
 console.log(&quot;age&quot; in obj) //false
-</code></pre>
-<h3 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h3><p>基本数据类型：String Number Boolean Null Undefined</p>
-<p>引用数据类型：Object</p>
-<pre><code>* JS中的变量都是保存到栈内存中的，
+</code></pre><h3 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h3><p>基本数据类型：String Number Boolean Null Undefined</p><p>引用数据类型：Object</p><pre><code>* JS中的变量都是保存到栈内存中的，
 *         基本数据类型的值直接在栈内存中存储，
 *         值与值之间是独立存在，修改一个变量不会影响其他的变量
 * 
@@ -284,42 +64,28 @@ console.log(&quot;age&quot; in obj) //false
 当比较两个基本数据类型的值时，就是比较值。
              而比较两个引用数据类型时，它是比较的对象的内存地址，【引用类型demo3】
              如果两个对象是一摸一样的，但是地址不同，它也会返回false
-</code></pre>
-<p>【基本数据类型demo】</p>
-<pre><code class="js">var a = 123;
+</code></pre><p>【基本数据类型demo】</p><pre><code class="js">var a = 123;
 var b = a;
 a++;
-</code></pre>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220614110432444.png" alt="image-20220614110432444"></p>
-<p>【引用类型demo1】</p>
-<pre><code class="js">var obj = new Object()
+</code></pre><p><img src="/2022/06/17/1543080309728350208/images/image-20220614110432444.png" alt="image-20220614110432444"></p><p>【引用类型demo1】</p><pre><code class="js">var obj = new Object()
 obj.name = &#39;swk&#39;
 var obj2 = obj
 obj2.name = &#39;zbj&#39;
 console.log(obj) //zbj
 console.log(obj2) //zbj
-</code></pre>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220614110552104.png" alt="image-20220614110552104"></p>
-<p>【引用类型demo2】 通过null切断引用</p>
-<pre><code class="js">var obj = new Object()
+</code></pre><p><img src="/2022/06/17/1543080309728350208/images/image-20220614110552104.png" alt="image-20220614110552104"></p><p>【引用类型demo2】 通过null切断引用</p><pre><code class="js">var obj = new Object()
 obj.name = &#39;swk&#39;
 var obj2 = obj
 obj2.name = &#39;zbj&#39;
 obj2 = null
 console.log(obj) //zbj
 console.log(obj2) //null
-</code></pre>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220614110748416.png" alt="image-20220614110748416"></p>
-<p>【引用类型demo3】</p>
-<pre><code class="false">var obj3 = new Object();
+</code></pre><p><img src="/2022/06/17/1543080309728350208/images/image-20220614110748416.png" alt="image-20220614110748416"></p><p>【引用类型demo3】</p><pre><code class="false">var obj3 = new Object();
 var obj4 = new Object();
 obj3.name = &quot;shs&quot;;
 obj4.name = &quot;shs&quot;;
 console.log(obj3 == obj4) //false
-</code></pre>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220614110839196.png" alt="image-20220614110839196"></p>
-<h3 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h3><p>就是 { } 来创建对象，有点像json</p>
-<pre><code>使用对象字面量，可以在创建对象时，直接指定对象中的属性
+</code></pre><p><img src="/2022/06/17/1543080309728350208/images/image-20220614110839196.png" alt="image-20220614110839196"></p><h3 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h3><p>就是 { } 来创建对象，有点像json</p><pre><code>使用对象字面量，可以在创建对象时，直接指定对象中的属性
              * 语法：&#123;属性名:属性值,属性名:属性值....&#125;
              *     对象字面量的属性名可以加引号也可以不加，建议不加,
              *     如果要使用一些特殊的名字，则必须加引号
@@ -327,9 +93,7 @@ console.log(obj3 == obj4) //false
              * 属性名和属性值是一组一组的名值对结构，
              *     名和值之间使用:连接，多个名值对之间使用,隔开
              *     如果一个属性之后没有其他的属性了，就不要写,
-</code></pre>
-<p>【对象字面量案例】</p>
-<pre><code class="js">//使用对象字面量创建对象，属性为空
+</code></pre><p>【对象字面量案例】</p><pre><code class="js">//使用对象字面量创建对象，属性为空
 var obj = &#123;&#125;
 obj.name = &#39;jerry&#39;//赋值和前面的一样
 console.log(obj) //&#123;name: &#39;jerry&#39;&#125;
@@ -342,34 +106,19 @@ var obj2 = &#123;
     dog: &#123;name: &#39;旺财&#39;,age: 3&#125;
 &#125;
 console.log(obj2)
-</code></pre>
-<h2 id="p51-p65-函数"><a href="#p51-p65-函数" class="headerlink" title="p51-p65 函数"></a>p51-p65 函数</h2><h3 id="创建和调用函数"><a href="#创建和调用函数" class="headerlink" title="创建和调用函数"></a>创建和调用函数</h3><ul>
-<li>函数创建的三种方式</li>
-</ul>
-<p>第一种：使用构造函数创建(不推荐)</p>
-<pre><code>var func = new Function(&#39;语句...&#39;)
-</code></pre>
-<p>第二种：使用 函数声明 来创建一个函数</p>
-<pre><code>语法：
+</code></pre><h2 id="p51-p65-函数"><a href="#p51-p65-函数" class="headerlink" title="p51-p65 函数"></a>p51-p65 函数</h2><h3 id="创建和调用函数"><a href="#创建和调用函数" class="headerlink" title="创建和调用函数"></a>创建和调用函数</h3><ul><li>函数创建的三种方式</li></ul><p>第一种：使用构造函数创建(不推荐)</p><pre><code>var func = new Function(&#39;语句...&#39;)
+</code></pre><p>第二种：使用 函数声明 来创建一个函数</p><pre><code>语法：
          function 函数名([形参1,形参2...形参N])&#123;
              语句...
          &#125;
-</code></pre>
-<p>第三种：函数表达式创建函数</p>
-<pre><code>var 函数名  = function([形参1,形参2...形参N])&#123;
+</code></pre><p>第三种：函数表达式创建函数</p><pre><code>var 函数名  = function([形参1,形参2...形参N])&#123;
                    语句....
              &#125;
-</code></pre>
-<ul>
-<li>函数的调用</li>
-</ul>
-<pre><code>封装到函数中的代码不会立即执行
+</code></pre><ul><li>函数的调用</li></ul><pre><code>封装到函数中的代码不会立即执行
 函数中的代码会在函数调用的时候执行
 调用函数 语法：函数对象()
 当调用函数时，函数中封装的代码会按照顺序执行
-</code></pre>
-<p>【函数的创建和调用案例】</p>
-<pre><code class="js">//1.通过构造函数创建函数对象（不常用）
+</code></pre><p>【函数的创建和调用案例】</p><pre><code class="js">//1.通过构造函数创建函数对象（不常用）
 var func = new Function(&#39;console.log(&quot;通过构造函数创建函数对象&quot;)&#39;)
 func() //调用函数
 console.log(typeof func) //function
@@ -383,12 +132,7 @@ var func3 = function()&#123;
     console.log(&quot;通过函数表达式创建函数对象&quot;)
 &#125;
 func3() //调用函数
-</code></pre>
-<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p>函数的参数可以是任意类型，声明的时候不需要写类型。</p>
-<p>函数调用时，解析器不会去检查参数的类型和数量，多余实参不会被赋值，</p>
-<p>如果实参的数量少于形参的数量，则没有对应实参的形参将是undefined。</p>
-<p>【函数的参数案例】</p>
-<pre><code class="js">function sum(a,b)&#123;
+</code></pre><h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><p>函数的参数可以是任意类型，声明的时候不需要写类型。</p><p>函数调用时，解析器不会去检查参数的类型和数量，多余实参不会被赋值，</p><p>如果实参的数量少于形参的数量，则没有对应实参的形参将是undefined。</p><p>【函数的参数案例】</p><pre><code class="js">function sum(a,b)&#123;
     console.log(a+b)
 &#125;
 //参数类型任意
@@ -399,9 +143,7 @@ sum(true,1) //2
 //参数个数任意
 sum(1) //NaN
 sum(1,2,3) //3  自动忽略第三个参数
-</code></pre>
-<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><p>可以使用 return 来设置函数的返回值</p>
-<pre><code>*     语法：
+</code></pre><h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><p>可以使用 return 来设置函数的返回值</p><pre><code>*     语法：
 *         return 值
 * 
 *     return后的值将会会作为函数的执行结果返回，
@@ -413,9 +155,7 @@ sum(1,2,3) //3  自动忽略第三个参数
 *     如果函数中不写return，则也会返回undefined
 * 
 *     return后可以跟任意类型的值
-</code></pre>
-<p>【返回值案例】</p>
-<pre><code class="js">function sum(a,b)&#123;
+</code></pre><p>【返回值案例】</p><pre><code class="js">function sum(a,b)&#123;
     //可以返回任意类型
     //return //不写变量或者不写return返回的是undefined
     //return a + b
@@ -427,10 +167,7 @@ sum(1,2,3) //3  自动忽略第三个参数
 &#125;
 var rs = sum(1,2) //定义变量接收返回值
 console.log(rs)
-</code></pre>
-<h3 id="函数的实参"><a href="#函数的实参" class="headerlink" title="函数的实参"></a>函数的实参</h3><p>实参可以是任意的数据类型，也可以是一个对象</p>
-<p>当我们的参数过多时，可以将参数封装到一个对象中，然后通过对象传递</p>
-<pre><code class="js">function sayHello(o)&#123;
+</code></pre><h3 id="函数的实参"><a href="#函数的实参" class="headerlink" title="函数的实参"></a>函数的实参</h3><p>实参可以是任意的数据类型，也可以是一个对象</p><p>当我们的参数过多时，可以将参数封装到一个对象中，然后通过对象传递</p><pre><code class="js">function sayHello(o)&#123;
     console.log(&quot;我是&quot;+o.name+&quot;,&quot;+o.age+&quot;岁了,&quot;+&quot;&quot;+o.gender+&quot;人&quot;+&quot;,我在&quot;+o.address);
     return o
 &#125;
@@ -448,17 +185,14 @@ function fun(a)&#123;
 fun(1)
 fun(sayHello)
 fun(sayHello(obj))
-</code></pre>
-<pre><code>* sayHello(obj)
+</code></pre><pre><code>* sayHello(obj)
 *     调用函数
 *     相当于使用的函数的返回值
 * 
 * sayHello
 *     函数对象
 *     相当于直接使用函数对象
-</code></pre>
-<h3 id="函数内部嵌套函数"><a href="#函数内部嵌套函数" class="headerlink" title="函数内部嵌套函数"></a>函数内部嵌套函数</h3><p>函数内部可以声明函数，可以无限嵌套</p>
-<pre><code class="js">function fun1()&#123;
+</code></pre><h3 id="函数内部嵌套函数"><a href="#函数内部嵌套函数" class="headerlink" title="函数内部嵌套函数"></a>函数内部嵌套函数</h3><p>函数内部可以声明函数，可以无限嵌套</p><pre><code class="js">function fun1()&#123;
     function fun2()&#123;
         console.log(&#39;我是 fun2&#39;)
     &#125;
@@ -468,10 +202,7 @@ var a = fun1()
 //console.log(a)
 //a()
 fun1()() //注意一下这种写法
-</code></pre>
-<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>页面加载后会立即执行.用一个括号把匿名函数包起来,然后再像函数调用那样加个括号运行。</p>
-<p>里面定义的变量是局部变量，不会影响全局的作用域</p>
-<pre><code class="js">//立即执行函数-不带参数
+</code></pre><h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>页面加载后会立即执行.用一个括号把匿名函数包起来,然后再像函数调用那样加个括号运行。</p><p>里面定义的变量是局部变量，不会影响全局的作用域</p><pre><code class="js">//立即执行函数-不带参数
 (function()&#123;
     console.log(&#39;立即运行&#39;)
 &#125;)();
@@ -480,9 +211,7 @@ fun1()() //注意一下这种写法
 (function(a,b)&#123;
     console.log(a+b)
 &#125;)(123,456)
-</code></pre>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>函数也可以称为对象的属性，如果一个函数作为一个对象的属性保存，那么我们称这个函数时这个对象的方法.调用这个函数就说调用对象的方法（method） 但是它只是名称上的区别没有其他的区别</p>
-<pre><code class="js">var obj = &#123;
+</code></pre><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>函数也可以称为对象的属性，如果一个函数作为一个对象的属性保存，那么我们称这个函数时这个对象的方法.调用这个函数就说调用对象的方法（method） 但是它只是名称上的区别没有其他的区别</p><pre><code class="js">var obj = &#123;
     name: &#39;孙悟空&#39;,
     age: 18,
     sayName: function()&#123;
@@ -494,9 +223,7 @@ function fun()&#123;
 &#125;
 fun() //调函数
 obj.sayName() //调方法
-</code></pre>
-<h3 id="枚举对象属性"><a href="#枚举对象属性" class="headerlink" title="枚举对象属性"></a>枚举对象属性</h3><p>把对象中所有的属性和值取出来</p>
-<pre><code>//枚举对象中的属性
+</code></pre><h3 id="枚举对象属性"><a href="#枚举对象属性" class="headerlink" title="枚举对象属性"></a>枚举对象属性</h3><p>把对象中所有的属性和值取出来</p><pre><code>//枚举对象中的属性
 //使用for ... in 语句
 /*
 * 语法：
@@ -506,9 +233,7 @@ obj.sayName() //调方法
 * 
 * for...in语句 对象中有几个属性，循环体就会执行几次
 *     每次执行时，会将对象中的一个属性的名字赋值给变量
-</code></pre>
-<p>【枚举对象属性案例】</p>
-<pre><code class="js">var obj = &#123;
+</code></pre><p>【枚举对象属性案例】</p><pre><code class="js">var obj = &#123;
     name: &#39;swk&#39;,
     age: 18,
     sayName: function()&#123;
@@ -518,9 +243,7 @@ obj.sayName() //调方法
 for(var key in obj)&#123;
     console.log(key,&quot;:&quot;,obj[key])
 &#125;
-</code></pre>
-<h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>作用域指一个变量的作用的范围</p>
-<pre><code>全局作用域
+</code></pre><h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>作用域指一个变量的作用的范围</p><pre><code>全局作用域
 *              【直接编写在script标签中的JS代码，都在全局作用域】
 *              全局作用域在页面打开时创建，在页面关闭时销毁
 *              在全局作用域中有一个全局对象【window】，
@@ -530,9 +253,7 @@ for(var key in obj)&#123;
 *                 【创建的函数都会作为window对象的方法保存】
 *              全局作用域中的变量都是全局变量，
 *                 【在页面的任意的部分都可以访问的到】
-</code></pre>
-<p>【案例】</p>
-<pre><code class="html">&lt;script&gt;
+</code></pre><p>【案例】</p><pre><code class="html">&lt;script&gt;
     var c = 345
 &lt;/script&gt;
 &lt;script&gt;
@@ -545,8 +266,7 @@ for(var key in obj)&#123;
     window.alert(&#39;xxx&#39;)
     console.log(c)
 &lt;/script&gt;
-</code></pre>
-<h3 id="声明提前"><a href="#声明提前" class="headerlink" title="声明提前"></a>声明提前</h3><pre><code>* 变量的声明提前
+</code></pre><h3 id="声明提前"><a href="#声明提前" class="headerlink" title="声明提前"></a>声明提前</h3><pre><code>* 变量的声明提前
 *     使用【var关键字声明的变量】，会在所有的代码执行之前被声明（但是不会赋值），
 *         但是如果声明变量时不适用var关键字，则变量不会被声明提前
 * 
@@ -554,9 +274,7 @@ for(var key in obj)&#123;
 *     使用【函数声明形式】创建的函数 function 函数()&#123;&#125;
 *         它会在所有的代码执行之前就被创建，所以我们可以在函数声明前来调用函数
 *        使用函数表达式创建的函数，不会被声明提前，所以不能在声明前调用    
-</code></pre>
-<p>【声明提前案例如下】</p>
-<pre><code class="js">//--------1.var声明的变量提前 相当于把var a 提取到代码最前面
+</code></pre><p>【声明提前案例如下】</p><pre><code class="js">//--------1.var声明的变量提前 相当于把var a 提取到代码最前面
 console.log(a) //undefined
 var a = 123
 //--------2.没用var声明的变量不提前，所以报错------------------
@@ -572,8 +290,7 @@ function fun()&#123;
 var fun1 = function()&#123;
     console.log(&#39;fun1&#39;)
 &#125;
-</code></pre>
-<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><pre><code>* 函数作用域    
+</code></pre><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><pre><code>* 函数作用域    
 *      调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁
 *      每调用一次函数就会创建一个新的函数作用域，他们之间是【互相独立】的
 *      在函数作用域中可以访问到全局作用域的变量
@@ -585,9 +302,7 @@ var fun1 = function()&#123;
 【在函数作用域也有声明提前的特性】
 【定义形参就相当于在函数作用域中声明了变量】
 【在函数中，不用var声明的变量都会成为全局变量】
-</code></pre>
-<p>【函数作用域案例】</p>
-<pre><code class="js">//1.函数作用域入门
+</code></pre><p>【函数作用域案例】</p><pre><code class="js">//1.函数作用域入门
 var a = 123
 function fun1()&#123;
     var a = 456
@@ -629,20 +344,13 @@ function fun6(e)&#123;
     console.log(e) //undefined
 &#125;
 fun6()
-</code></pre>
-<h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>谷歌浏览器为例，其它类似 首先用f12打开调试模式</p>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220614150539324.png" alt="image-20220614150539324"></p>
-<p>给某个变量加上监听，右键变量  add selected text to watches</p>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220614150645658.png" alt="image-20220614150645658"></p>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><pre><code>* 解析器在调用函数每次都会向函数内部传递进一个隐含的参数,
+</code></pre><h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>谷歌浏览器为例，其它类似 首先用f12打开调试模式</p><p><img src="/2022/06/17/1543080309728350208/images/image-20220614150539324.png" alt="image-20220614150539324"></p><p>给某个变量加上监听，右键变量 add selected text to watches</p><p><img src="/2022/06/17/1543080309728350208/images/image-20220614150645658.png" alt="image-20220614150645658"></p><h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><pre><code>* 解析器在调用函数每次都会向函数内部传递进一个隐含的参数,
 *     这个隐含的参数就是this，this指向的是一个对象，
 *     这个对象我们称为函数执行的 上下文对象，
 *     根据函数的调用方式的不同，this会指向不同的对象
 *         【1.以函数的形式调用时，this永远都是window】
 *         【2.以方法的形式调用时，this就是调用方法的那个对象】
-</code></pre>
-<p>【this案例】</p>
-<pre><code class="js">var name =&#39;全局的name&#39;
+</code></pre><p>【this案例】</p><pre><code class="js">var name =&#39;全局的name&#39;
 function fun()&#123;
     console.log(this)
     console.log(this.name)
@@ -656,9 +364,7 @@ sayName: fun
 obj.sayName() //以方法的形式调用 this是调用方法的对象
 
 console.log(obj.sayName == fun) //true
-</code></pre>
-<h3 id="使用工厂函数创建对象"><a href="#使用工厂函数创建对象" class="headerlink" title="使用工厂函数创建对象"></a>使用工厂函数创建对象</h3><p>创建工厂函数,函数中new Object并给属性赋值.</p>
-<pre><code class="js">//创建对象的的工厂方法
+</code></pre><h3 id="使用工厂函数创建对象"><a href="#使用工厂函数创建对象" class="headerlink" title="使用工厂函数创建对象"></a>使用工厂函数创建对象</h3><p>创建工厂函数,函数中new Object并给属性赋值.</p><pre><code class="js">//创建对象的的工厂方法
 function createPeople(name,age,gender)&#123;
     var obj = new Object()
     obj.name = name
@@ -671,8 +377,7 @@ console.log(typeof luban,luban)
 var aql = createPeople(&#39;安其拉&#39;,8,&#39;女&#39;)
 console.log(typeof aql,aql)
 //存在缺陷，类型都是object的，后面的构造函数可以解决这个问题
-</code></pre>
-<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre><code>*     构造函数就是一个普通的函数，创建方式和普通函数没有区别,
+</code></pre><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre><code>*     构造函数就是一个普通的函数，创建方式和普通函数没有区别,
 *     不同的是构造函数习惯上【首字母大写】
 * 
 * 构造函数和普通函数的区别就是调用方式的不同
@@ -695,9 +400,7 @@ console.log(typeof aql,aql)
  * 使用【instanceof】可以检查一个对象是否是一个类的实例
                   语法：对象 instanceof 构造函数
                 如果是，则返回true，否则返回false
-</code></pre>
-<p>【构造函数案例】</p>
-<pre><code class="js">function Person(name,age)&#123;
+</code></pre><p>【构造函数案例】</p><pre><code class="js">function Person(name,age)&#123;
     console.log(&#39;构造方法执行了&#39;)
     this.name = name
     this.age = age
@@ -722,9 +425,7 @@ console.log(new Dog(&#39;旺财&#39;,18))
 console.log(new Dog(&#39;旺财&#39;,18) instanceof Dog) //true
 console.log(new Person(&#39;猪八戒&#39;,18) instanceof Dog)// false
 console.log(new Person(&#39;猪八戒&#39;,18) instanceof Object)// true  Object是所有类的父类
-</code></pre>
-<p>【构造函数优化】</p>
-<pre><code class="js">/*
+</code></pre><p>【构造函数优化】</p><pre><code class="js">/*
 *   将函数定义在全局作用域，污染了全局作用域的命名空间
 *     而且定义在全局作用域中也很不安全
 */
@@ -740,8 +441,7 @@ function Person(name,age)&#123;
 &#125;
 var per = new Person(&#39;tom&#39;,18)
 per.sayName()
-</code></pre>
-<h2 id="p66-p67原型"><a href="#p66-p67原型" class="headerlink" title="p66-p67原型"></a>p66-p67原型</h2><pre><code>* 原型 prototype
+</code></pre><h2 id="p66-p67原型"><a href="#p66-p67原型" class="headerlink" title="p66-p67原型"></a>p66-p67原型</h2><pre><code>* 原型 prototype
 * 
 *     【创建的每一个函数，解析器都会向函数中添加一个属性prototype】
 *         这个属性对应着一个对象，这个对象就是所谓的原型对象
@@ -757,9 +457,7 @@ per.sayName()
 * 
 * 以后我们创建构造函数时，可以将这些对象共有的属性和方法，统一添加到构造函数的原型对象中，
 *     这样不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了
-</code></pre>
-<p>【原型案例1】</p>
-<pre><code class="js">function Person()&#123;
+</code></pre><p>【原型案例1】</p><pre><code class="js">function Person()&#123;
                 
 &#125;
 //console.log(Person.prototype)
@@ -782,9 +480,7 @@ per.sayHello()
 //给per添加属性a
 per.a = &#39;per中的a&#39;
 console.log(per.a) //先到自己中找，没有再到原型中找
-</code></pre>
-<p>【原型案例2：通过原型来优化之前的构造函数问题】</p>
-<pre><code class="js">//之前将方法放在全局中不优化，现在通过原型来优化构造函数中的方法
+</code></pre><p>【原型案例2：通过原型来优化之前的构造函数问题】</p><pre><code class="js">//之前将方法放在全局中不优化，现在通过原型来优化构造函数中的方法
 Person.prototype.sayName = function fun()&#123;
     console.log(&#39;大家好,我是&#39;,this.name)
 &#125;
@@ -797,9 +493,7 @@ var per1 = new Person(&#39;tom&#39;,18)
 var per2 = new Person(&#39;jerry&#39;,18)
 per1.sayName()
 per2.sayName()
-</code></pre>
-<p>【原型案例3：原型的其它方法和特性】</p>
-<pre><code class="js">var name = &#39;全局的name&#39;
+</code></pre><p>【原型案例3：原型的其它方法和特性】</p><pre><code class="js">var name = &#39;全局的name&#39;
 function MyClass()&#123;
 
 &#125;
@@ -825,10 +519,7 @@ console.log(m1.hasOwnProperty(&#39;hasOwnProperty&#39;)) //false
 console.log(m1.__proto__.hasOwnProperty(&#39;hasOwnProperty&#39;)) //false
 console.log(m1.__proto__.__proto__.hasOwnProperty(&#39;hasOwnProperty&#39;))//true
 console.log(m1.__proto__.__proto__)
-</code></pre>
-<h2 id="p68-toString"><a href="#p68-toString" class="headerlink" title="p68 toString"></a>p68 toString</h2><p>直接在页面中打印一个对象时，事实上是输出的对象的<strong>toString()方法的返回值</strong></p>
-<p>如果我们希望在输出对象时不输出[object Object]，可以为对象添加一个toString()方法</p>
-<pre><code class="js">function Person(name,age)&#123;
+</code></pre><h2 id="p68-toString"><a href="#p68-toString" class="headerlink" title="p68 toString"></a>p68 toString</h2><p>直接在页面中打印一个对象时，事实上是输出的对象的<strong>toString()方法的返回值</strong></p><p>如果我们希望在输出对象时不输出[object Object]，可以为对象添加一个toString()方法</p><pre><code class="js">function Person(name,age)&#123;
     this.name = name
     this.age = age
 &#125;
@@ -838,15 +529,13 @@ Person.prototype.toString = function()&#123;
 &#125;;
 var per = new Person(&#39;tom&#39;,18)
 console.log(per.toString())
-</code></pre>
-<h2 id="p69-垃圾回收"><a href="#p69-垃圾回收" class="headerlink" title="p69 垃圾回收"></a>p69 垃圾回收</h2><pre><code>*    当一个对象没有任何的变量或属性对它进行引用，此时我们将永远无法操作该对象，
+</code></pre><h2 id="p69-垃圾回收"><a href="#p69-垃圾回收" class="headerlink" title="p69 垃圾回收"></a>p69 垃圾回收</h2><pre><code>*    当一个对象没有任何的变量或属性对它进行引用，此时我们将永远无法操作该对象，
 *         此时这种对象就是一个垃圾，这种对象过多会占用大量的内存空间，导致程序运行变慢，
 *         所以这种垃圾必须进行清理。
 *      在JS中拥有自动的垃圾回收机制，会自动将这些垃圾对象从内存中销毁，
 *         我们不需要也不能进行垃圾回收的操作
 *      我们需要做的只是要【将不再使用的对象设置null即可】
-</code></pre>
-<h2 id="p70-78-数组"><a href="#p70-78-数组" class="headerlink" title="p70-78 数组"></a>p70-78 数组</h2><pre><code>* 数组（Array）
+</code></pre><h2 id="p70-78-数组"><a href="#p70-78-数组" class="headerlink" title="p70-78 数组"></a>p70-78 数组</h2><pre><code>* 数组（Array）
 *      数组也是一个对象
 *      它和我们普通对象功能类似，也是用来存储一些值的
 *      不同的是普通对象是使用字符串作为属性名的，
@@ -854,9 +543,7 @@ console.log(per.toString())
 *      索引：
 *         从0开始的整数就是索引
 *      【数组的存储性能比普通对象要好，在开发中我们经常使用数组来存储一些数据】
-</code></pre>
-<h3 id="数组的创建、取值、赋值"><a href="#数组的创建、取值、赋值" class="headerlink" title="数组的创建、取值、赋值"></a>数组的创建、取值、赋值</h3><p>创建方式：通过new Array或者 字面量[]创建</p>
-<pre><code class="js">var arr1 = new Array() //创建长度为0的数组
+</code></pre><h3 id="数组的创建、取值、赋值"><a href="#数组的创建、取值、赋值" class="headerlink" title="数组的创建、取值、赋值"></a>数组的创建、取值、赋值</h3><p>创建方式：通过new Array或者 字面量[]创建</p><pre><code class="js">var arr1 = new Array() //创建长度为0的数组
 console.log(arr1)
 var arr2 = new Array(1,2,3) //创建数组并放入三个元素
 console.log(arr2)
@@ -864,11 +551,7 @@ var arr3 = new Array(10) //创建长度为10的数组,注意当长度为1时不�
 console.log(arr3)
 var arr4 = [1,2,3] //通过字面量创建数组
 console.log(arr4)
-</code></pre>
-<p>修改或添加的语法：数组[索引] &#x3D; 值</p>
-<p>取值：数组[索引]    <strong>如果读取不存在的索引，他不会报错而是返回undefined</strong></p>
-<p>注意： <strong>数组中的元素可以是任意的数据类型</strong></p>
-<h3 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h3><pre><code>* 可以使用length属性来获取数组的长度(元素的个数)
+</code></pre><p>修改或添加的语法：数组[索引] &#x3D; 值</p><p>取值：数组[索引] <strong>如果读取不存在的索引，他不会报错而是返回undefined</strong></p><p>注意： <strong>数组中的元素可以是任意的数据类型</strong></p><h3 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h3><pre><code>* 可以使用length属性来获取数组的长度(元素的个数)
 * 语法：数组.length
 * 
 * 对于连续的数组，使用length可以获取到数组的长度（元素的个数）
@@ -881,9 +564,7 @@ console.log(arr4)
 
 * 向数组的最后一个位置添加元素
 * 语法：数组[数组.length] = 值;
-</code></pre>
-<p>【数组demo】</p>
-<pre><code class="js">//创建数组
+</code></pre><p>【数组demo】</p><pre><code class="js">//创建数组
 var arr = new Array()
 console.log(typeof arr) //object
 console.log(Array.isArray(arr)) //true
@@ -904,39 +585,28 @@ arr[arr.length] = 3
 arr[arr.length] = 4
 arr[arr.length] = 5
 console.log(arr,arr.length)
-</code></pre>
-<h3 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h3><h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><pre><code>*      该方法可以向数组的末尾添加一个或多个元素，并[返回数组的新的长度]
+</code></pre><h3 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h3><h4 id="push"><a href="#push" class="headerlink" title="push"></a>push</h4><pre><code>*      该方法可以向数组的末尾添加一个或多个元素，并[返回数组的新的长度]
 *      可以将要添加的元素作为方法的参数传递，这样这些元素将会自动添加到数组的末尾
 *      该方法会将数组新的长度作为返回值返回
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [1,2,3]
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [1,2,3]
 var rs = arr.push(4,5,6)
 console.log(arr) //[1,2,3,4,5,6]
 console.log(rs) //6
-</code></pre>
-<h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>该方法可以删除数组的最后一个元素,并将被删除的元素作为返回值返回</p>
-<pre><code class="js">var arr = [1,2,3]
+</code></pre><h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>该方法可以删除数组的最后一个元素,并将被删除的元素作为返回值返回</p><pre><code class="js">var arr = [1,2,3]
 var rs = arr.pop()
 console.log(arr) //[1,2]
 console.log(rs) //3
-</code></pre>
-<h4 id="unshift"><a href="#unshift" class="headerlink" title="unshift"></a>unshift</h4><pre><code>*     向数组开头添加一个或多个元素，并返回新的数组长度
+</code></pre><h4 id="unshift"><a href="#unshift" class="headerlink" title="unshift"></a>unshift</h4><pre><code>*     向数组开头添加一个或多个元素，并返回新的数组长度
 *     向前边插入元素以后，其他的元素索引会依次调整
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [1,2,3]
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [1,2,3]
 var rs = arr.unshift(&#39;a&#39;)
 console.log(arr)// [&#39;a&#39;, 1, 2, 3]
 console.log(rs)//4
-</code></pre>
-<h4 id="shift"><a href="#shift" class="headerlink" title="shift"></a>shift</h4><p>删除数组的第一个元素，并将被删除的元素作为返回值返回</p>
-<pre><code class="js">var arr = [1,2,3]
+</code></pre><h4 id="shift"><a href="#shift" class="headerlink" title="shift"></a>shift</h4><p>删除数组的第一个元素，并将被删除的元素作为返回值返回</p><pre><code class="js">var arr = [1,2,3]
 var rs = arr.shift()
 console.log(arr)// [ 2, 3]
 console.log(rs)//1
-</code></pre>
-<h4 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h4><pre><code>*      可以用来从数组提取指定元素
+</code></pre><h4 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h4><pre><code>*      可以用来从数组提取指定元素
 *      【该方法不会改变元素数组，而是将截取到的元素封装到一个新数组中返回】
 *      参数：
 *         1.截取开始的位置的索引,包含开始索引
@@ -945,16 +615,13 @@ console.log(rs)//1
 *          索引可以传递一个负值，如果传递一个负值，则从后往前计算
 *             1 倒数第一个
 *             2 倒数第二个
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [1,2,3,4,5,6]
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [1,2,3,4,5,6]
 //var rs = arr.slice(1,3)
 //var rs = arr.slice(1)
 var rs = arr.slice(1,-2) //1指的是索引为1的  -2代表倒数第二个 所以结果是2，3,4
 console.log(arr) 
 console.log(rs)
-</code></pre>
-<h4 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h4><pre><code>*      可以用于删除数组中的指定元素
+</code></pre><h4 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h4><pre><code>*      可以用于删除数组中的指定元素
 *      【使用splice()会影响到原数组，会将指定元素从原数组中删除】
 *         并将被删除的元素作为返回值返回
 *      参数：
@@ -962,45 +629,33 @@ console.log(rs)
 *         第二个，表示删除的数量
 *         第三个及以后。。
 *             可以传递一些新的元素，这些元素将会自动插入到开始位置索引前边
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [1,2,3,4,5,6]
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [1,2,3,4,5,6]
 //var rs = arr.splice(0,3)
 var rs = arr.splice(0,3,7,8,9)
 console.log(arr)
 console.log(rs)
-</code></pre>
-<h4 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h4><p>可以连接两个或多个数组，并将新的数组返回。该方法不会对原数组产生影响</p>
-<p>参数：除了写数组也可以是元素</p>
-<pre><code class="js">var arr = [&quot;孙悟空&quot;,&quot;猪八戒&quot;,&quot;沙和尚&quot;];
+</code></pre><h4 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h4><p>可以连接两个或多个数组，并将新的数组返回。该方法不会对原数组产生影响</p><p>参数：除了写数组也可以是元素</p><pre><code class="js">var arr = [&quot;孙悟空&quot;,&quot;猪八戒&quot;,&quot;沙和尚&quot;];
 var arr2 = [&quot;白骨精&quot;,&quot;玉兔精&quot;,&quot;蜘蛛精&quot;];
 var arr3 = [&quot;二郎神&quot;,&quot;太上老君&quot;,&quot;玉皇大帝&quot;];
 var rs = arr.concat(arr2,arr3,&#39;唐僧&#39;,&#39;哪吒&#39;)
 console.log(arr)
 console.log(rs)
-</code></pre>
-<h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><pre><code>*      该方法可以将数组转换为一个字符串
+</code></pre><h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><pre><code>*      该方法可以将数组转换为一个字符串
 *      【该方法不会对原数组产生影响，而是将转换后的字符串作为结果返回】
 *      在join()中可以指定一个字符串作为参数，这个字符串将会成为数组中元素的连接符
 *         如果不指定连接符，则默认使用,作为连接符
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [&quot;孙悟空&quot;,&quot;猪八戒&quot;,&quot;沙和尚&quot;];
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [&quot;孙悟空&quot;,&quot;猪八戒&quot;,&quot;沙和尚&quot;];
 //var rs = arr.join()
 var rs = arr.join(&quot;-&quot;)
 console.log(arr)
 console.log(rs)
-</code></pre>
-<h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><pre><code>*      该方法用来反转数组（前边的去后边，后边的去前边）,返回翻转之后的新数组
+</code></pre><h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><pre><code>*      该方法用来反转数组（前边的去后边，后边的去前边）,返回翻转之后的新数组
 *      该方法会直接修改原数组
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [&quot;孙悟空&quot;,&quot;猪八戒&quot;,&quot;沙和尚&quot;];
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [&quot;孙悟空&quot;,&quot;猪八戒&quot;,&quot;沙和尚&quot;];
 var rs = arr.reverse()
 console.log(arr == rs) //true
 console.log(arr) //[&#39;沙和尚&#39;, &#39;猪八戒&#39;, &#39;孙悟空&#39;]
-</code></pre>
-<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><pre><code>*     可以用来对数组中的元素进行排序
+</code></pre><h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><pre><code>*     可以用来对数组中的元素进行排序
 *     也会影响原数组，默认会按照Unicode编码进行排序
 
 * 即使对于纯数字的数组，使用sort()排序时，也会按照Unicode编码来排序，
@@ -1018,18 +673,14 @@ console.log(arr) //[&#39;沙和尚&#39;, &#39;猪八戒&#39;, &#39;孙悟空&#39
 * 
 *     如果需要升序排列，则返回 a-b
 *         如果需要降序排列，则返回b-a
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var arr = [5,4,2,1,1,3,6,8,7];
+</code></pre><p>【案例】</p><pre><code class="js">var arr = [5,4,2,1,1,3,6,8,7];
 //var rs = arr.sort() //升序
 var rs = arr.sort(function(a,b)&#123;
     return b-a
 &#125;) //降序
 console.log(arr == rs) //true
 console.log(arr) 
-</code></pre>
-<h3 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h3><p>所谓的遍历数组，就是将数组中所有的元素都取出来</p>
-<pre><code>* 一般我们都是使用for循环去遍历数组，
+</code></pre><h3 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h3><p>所谓的遍历数组，就是将数组中所有的元素都取出来</p><pre><code>* 一般我们都是使用for循环去遍历数组，
 *     JS中还为我们提供了一个方法，用来遍历数组
 * forEach()
 *          这个方法只支持IE8以上的浏览器
@@ -1044,9 +695,7 @@ console.log(arr)
 *         第一个参数，就是当前正在遍历的元素
 *         第二个参数，就是当前正在遍历的元素的索引
 *         第三个参数，就是正在遍历的数组
-</code></pre>
-<p>【例如】</p>
-<pre><code class="js">var arr = [1,2,3,4,5]
+</code></pre><p>【例如】</p><pre><code class="js">var arr = [1,2,3,4,5]
 for(var i=0;i&lt;arr.length;i++)&#123;
     console.log(arr[i])
 &#125;
@@ -1054,8 +703,7 @@ console.log(&#39;----------&#39;)
 arr.forEach(function(v,i,arr)&#123;
     console.log(i,v,arr)
 &#125;)
-</code></pre>
-<h2 id="p79-call和apply"><a href="#p79-call和apply" class="headerlink" title="p79 call和apply"></a>p79 call和apply</h2><pre><code>* call()和apply()
+</code></pre><h2 id="p79-call和apply"><a href="#p79-call和apply" class="headerlink" title="p79 call和apply"></a>p79 call和apply</h2><pre><code>* call()和apply()
 *      这两个方法都是函数对象的方法，需要通过函数对象来调用
 *      当对函数调用call()和apply()都会调用函数执行
 *      在调用call()和apply()可以将一个对象指定为第一个参数
@@ -1068,9 +716,7 @@ arr.forEach(function(v,i,arr)&#123;
 *         2.以方法的形式调用时，this是调用方法的对象
 *         3.以构造函数的形式调用时，this是新创建的那个对象
 *         4.使用call和apply调用时，this是指定的那个对象
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">function fun(a,b) &#123;
+</code></pre><p>【案例】</p><pre><code class="js">function fun(a,b) &#123;
     console.log(&quot;a = &quot;+a);
     console.log(&quot;b = &quot;+b);
     console.log(this);
@@ -1094,8 +740,7 @@ var obj = &#123;
 //call和apply的不同点
 //fun.call(obj,1,2) //1,2为参数
 //fun.apply(obj,[3,4]) //3,4为参数
-</code></pre>
-<h2 id="p80-arguments"><a href="#p80-arguments" class="headerlink" title="p80 arguments"></a>p80 arguments</h2><pre><code>* 在调用函数时，浏览器每次都会传递进两个隐含的参数：
+</code></pre><h2 id="p80-arguments"><a href="#p80-arguments" class="headerlink" title="p80 arguments"></a>p80 arguments</h2><pre><code>* 在调用函数时，浏览器每次都会传递进两个隐含的参数：
 *     1.函数的上下文对象 this
 *     2.封装实参的对象 arguments
 *          arguments是一个类数组对象,它也可以通过索引来操作数据，也可以获取长度
@@ -1107,24 +752,17 @@ var obj = &#123;
 *             arguments[1] 表示第二个实参 。。。
 *         它里边有一个属性叫做callee，
 *             这个属性对应一个函数对象，就是当前正在指向的函数的对象
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">function fun()&#123;
+</code></pre><p>【案例】</p><pre><code class="js">function fun()&#123;
     console.log(arguments.callee == fun) //true
     console.log(Array.isArray(arguments))//false
     console.log(arguments.length)//3
     console.log(arguments[1])//2
 &#125;
 fun(1,2,3)
-</code></pre>
-<h2 id="p81-Date对象"><a href="#p81-Date对象" class="headerlink" title="p81 Date对象"></a>p81 Date对象</h2><p>在JS中使用Date对象来表示一个时间</p>
-<p>创建Date对象的方式</p>
-<pre><code class="js">var d = new Date();//默认为当前时间
+</code></pre><h2 id="p81-Date对象"><a href="#p81-Date对象" class="headerlink" title="p81 Date对象"></a>p81 Date对象</h2><p>在JS中使用Date对象来表示一个时间</p><p>创建Date对象的方式</p><pre><code class="js">var d = new Date();//默认为当前时间
 var d2 = new Date(&quot;2/18/2011 11:10:30&quot;); //日期的格式  月份/日/年 时:分:秒
 var d3 = new Date(1655436727888) //通过时间戳创建
-</code></pre>
-<p>Date对象的一些方法</p>
-<pre><code>* getFullYear()
+</code></pre><p>Date对象的一些方法</p><pre><code>* getFullYear()
 *      获取当前日期对象的年份
 
 * getMonth()
@@ -1149,9 +787,7 @@ var d3 = new Date(1655436727888) //通过时间戳创建
 *      时间戳，指的是从格林威治标准时间的1970年1月1日，0时0分0秒
 *         到当前日期所花费的毫秒数（1秒 = 1000毫秒）
 *      计算机底层在保存时间时使用都是时间戳
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var d = new Date()
+</code></pre><p>【案例】</p><pre><code class="js">var d = new Date()
 var year = d.getFullYear()
 var month = d.getMonth()+1
 var date = d.getDate()
@@ -1165,8 +801,7 @@ var t = d.getTime()
 console.log(t)
 //获取当前时间的时间戳
 console.log(Date.now())
-</code></pre>
-<h2 id="p82-Math"><a href="#p82-Math" class="headerlink" title="p82 Math"></a>p82 Math</h2><pre><code> Math和其他的对象不同，它不是一个构造函数，
+</code></pre><h2 id="p82-Math"><a href="#p82-Math" class="headerlink" title="p82 Math"></a>p82 Math</h2><pre><code> Math和其他的对象不同，它不是一个构造函数，
 *     它属于一个工具类不用创建对象，它里边封装了数学运算相关的属性和方法
 *      比如
 *         Math.PI 表示的圆周率
@@ -1191,9 +826,7 @@ console.log(Date.now())
 *     返回x的y次幂
 * Math.sqrt()
 *  用于对一个数进行开方运算
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">console.log(Math.PI) //圆周率
+</code></pre><p>【案例】</p><pre><code class="js">console.log(Math.PI) //圆周率
 console.log(Math.abs(-1))//绝对值
 console.log(Math.ceil(1.2))//向上取整
 console.log(Math.floor(1.2))//向下取整
@@ -1201,8 +834,7 @@ console.log(Math.round(1.5))//四舍五入
 console.log(Math.round(Math.random()*9+1)) //获取1-10的随机数
 console.log(Math.max(10,45,30,100))//最大值
 console.log(Math.min(10,45,30,100))//最小值
-</code></pre>
-<h2 id="p83-包装类"><a href="#p83-包装类" class="headerlink" title="p83 包装类"></a>p83 包装类</h2><pre><code>* 基本数据类型
+</code></pre><h2 id="p83-包装类"><a href="#p83-包装类" class="headerlink" title="p83 包装类"></a>p83 包装类</h2><pre><code>* 基本数据类型
 *     String Number Boolean Null Undefined
 * 引用数据类型
 *     Object
@@ -1221,9 +853,7 @@ console.log(Math.min(10,45,30,100))//最小值
 *     当我们对一些基本数据类型的值去调用属性和方法时，
 *         浏览器会临时使用包装类将其转换为对象，然后在调用对象的属性和方法
 *         调用完以后，在将其转换为基本数据类型
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var num = new Number(1)
+</code></pre><p>【案例】</p><pre><code class="js">var num = new Number(1)
 console.log(num == 1) //true
 
 var bool = new Boolean(false)
@@ -1239,8 +869,7 @@ console.log(str.hello)//def
 var s = &#39;123&#39;
 s.hello = &#39;456&#39;
 console.log(s.hello) //undefined
-</code></pre>
-<h2 id="p84-String类"><a href="#p84-String类" class="headerlink" title="p84 String类"></a>p84 String类</h2><pre><code>* 在底层字符串是以字符数组的形式保存的
+</code></pre><h2 id="p84-String类"><a href="#p84-String类" class="headerlink" title="p84 String类"></a>p84 String类</h2><pre><code>* 在底层字符串是以字符数组的形式保存的
 * length属性
 *     可以用来获取字符串的长度
 * charAt()
@@ -1290,18 +919,14 @@ console.log(s.hello) //undefined
 *     将一个字符串转换为大写并返回
 * toLowerCase()
 *     -将一个字符串转换为小写并返回
-</code></pre>
-<p>【案例】</p>
-<pre><code class="js">var str = &#39;a,b,c&#39;
+</code></pre><p>【案例】</p><pre><code class="js">var str = &#39;a,b,c&#39;
 //var rs = str.concat(&#39;def&#39;,&#39;ghi&#39;)
 //var rs = str.slice(0,2)
 //var rs = str.substring(2,-1)
 var rs = str.substr(0,3)
 //var rs = str.split(&quot;,&quot;)
 console.log(rs)
-</code></pre>
-<h2 id="p85-p90-正则"><a href="#p85-p90-正则" class="headerlink" title="p85-p90 正则"></a>p85-p90 正则</h2><p>了解一下，要用的时候再来看就行</p>
-<pre><code>*     正则表达式用于定义一些字符串的规则，
+</code></pre><h2 id="p85-p90-正则"><a href="#p85-p90-正则" class="headerlink" title="p85-p90 正则"></a>p85-p90 正则</h2><p>了解一下，要用的时候再来看就行</p><pre><code>*     正则表达式用于定义一些字符串的规则，
 *         计算机可以根据正则表达式，来检查一个字符串是否符合规则，
 *         获取将字符串中符合规则的内容提取出来
 
@@ -1393,9 +1018,7 @@ console.log(rs)
 *         1.被替换的内容，可以接受一个正则表达式作为参数
 *         2.新的内容
 *  默认只会替换第一个
-</code></pre>
-<p>【入门案例】</p>
-<pre><code class="js">//var reg = new RegExp(&#39;a&#39;)
+</code></pre><p>【入门案例】</p><pre><code class="js">//var reg = new RegExp(&#39;a&#39;)
 //检查是否包含a，忽略大小写
 //var reg = new RegExp(&#39;a&#39;,&#39;i&#39;)
 
@@ -1411,21 +1034,7 @@ console.log(rs)
 //a&#123;3&#125;b
 var reg = /^a&#123;3&#125;ab$/
 console.log(reg.test(&#39;aaaab&#39;))
-</code></pre>
-<h2 id="p91-140"><a href="#p91-140" class="headerlink" title="p91-140"></a>p91-140</h2><h3 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h3><p>DOM，全称Document Object Model文档对象模型。文档表示的就是整个的HTML网页文档</p>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220617162901955.png" alt="image-20220617162901955"></p>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220617162930420.png" alt="image-20220617162930420"></p>
-<p><img src="/2022/06/17/1543080309728350208/images/image-20220617163000808.png" alt="image-20220617163000808"></p>
-<h4 id="dom查询"><a href="#dom查询" class="headerlink" title="dom查询"></a>dom查询</h4><ul>
-<li>获取整个文档： document</li>
-<li>获取body： document.body</li>
-<li>根据id获取节点： document.getElementById()</li>
-<li>根据标签名获取：document.getElementsByTagName</li>
-<li>根据类名获取： document.getElementsByClassName</li>
-<li>使用样式选择器查询，返回第一个：document.querySelector()</li>
-<li>使用样式选择器查询，返回所有结果：document.querySelectorAll()</li>
-</ul>
-<h3 id="bom"><a href="#bom" class="headerlink" title="bom"></a>bom</h3><pre><code>* BOM
+</code></pre><h2 id="p91-140"><a href="#p91-140" class="headerlink" title="p91-140"></a>p91-140</h2><h3 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h3><p>DOM，全称Document Object Model文档对象模型。文档表示的就是整个的HTML网页文档</p><p><img src="/2022/06/17/1543080309728350208/images/image-20220617162901955.png" alt="image-20220617162901955"></p><p><img src="/2022/06/17/1543080309728350208/images/image-20220617162930420.png" alt="image-20220617162930420"></p><p><img src="/2022/06/17/1543080309728350208/images/image-20220617163000808.png" alt="image-20220617163000808"></p><h4 id="dom查询"><a href="#dom查询" class="headerlink" title="dom查询"></a>dom查询</h4><ul><li>获取整个文档： document</li><li>获取body： document.body</li><li>根据id获取节点： document.getElementById()</li><li>根据标签名获取：document.getElementsByTagName</li><li>根据类名获取： document.getElementsByClassName</li><li>使用样式选择器查询，返回第一个：document.querySelector()</li><li>使用样式选择器查询，返回所有结果：document.querySelectorAll()</li></ul><h3 id="bom"><a href="#bom" class="headerlink" title="bom"></a>bom</h3><pre><code>* BOM
 *     浏览器对象模型
 *     BOM可以使我们通过JS来操作浏览器
 *     在BOM中为我们提供了一组对象，用来完成对浏览器的操作
@@ -1446,16 +1055,13 @@ console.log(reg.test(&#39;aaaab&#39;))
 * 
 *         这些【BOM对象在浏览器中都是作为window对象的属性保存的】，
 *             可以通过window对象来使用，也可以直接使用
-</code></pre>
-<h4 id="navigator"><a href="#navigator" class="headerlink" title="navigator"></a>navigator</h4><pre><code>* Navigator
+</code></pre><h4 id="navigator"><a href="#navigator" class="headerlink" title="navigator"></a>navigator</h4><pre><code>* Navigator
 *     代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器
 *     由于历史原因，Navigator对象中的大部分属性都已经不能帮助我们识别浏览器了
 *     【一般我们只会使用userAgent来判断浏览器的信息】，
 *         userAgent是一个字符串，这个字符串中包含有用来描述浏览器信息的内容，
 *         不同的浏览器会有不同的userAgent
-</code></pre>
-<p>例如：</p>
-<pre><code class="js">var ua = navigator.userAgent;
+</code></pre><p>例如：</p><pre><code class="js">var ua = navigator.userAgent;
 console.log(ua);
 if(/firefox/i.test(ua))&#123;
     alert(&quot;你是火狐！！！&quot;);
@@ -1466,8 +1072,7 @@ if(/firefox/i.test(ua))&#123;
 &#125;else if(&quot;ActiveXObject&quot; in window)&#123;
     alert(&quot;你是IE11，枪毙了你~~~&quot;);
 &#125;
-</code></pre>
-<h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><pre><code>/*
+</code></pre><h4 id="history"><a href="#history" class="headerlink" title="history"></a>history</h4><pre><code>/*
 * length
 *     属性，可以获取到当成访问的链接数量
 */
@@ -1495,9 +1100,7 @@ if(/firefox/i.test(ua))&#123;
 *         2:表示向后跳转两个页面
 */
 history.go(-2);
-</code></pre>
-<h4 id="location"><a href="#location" class="headerlink" title="location"></a>location</h4><p>该对象中封装了浏览器的地址栏的信息</p>
-<pre><code>//如果直接打印location，则可以获取到地址栏的信息（当前页面的完整路径）
+</code></pre><h4 id="location"><a href="#location" class="headerlink" title="location"></a>location</h4><p>该对象中封装了浏览器的地址栏的信息</p><pre><code>//如果直接打印location，则可以获取到地址栏的信息（当前页面的完整路径）
 //alert(location);
 
 /*
@@ -1526,13 +1129,9 @@ history.go(-2);
 *         不会生成历史记录，不能使用回退按钮回退
 */
 location.replace(&quot;01.BOM.html&quot;);
-</code></pre>
-<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>事件的冒泡</p>
-<pre><code>*     所谓的冒泡指的就是事件的向上传导，当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发
+</code></pre><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>事件的冒泡</p><pre><code>*     所谓的冒泡指的就是事件的向上传导，当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发
 *     在开发中大部分情况冒泡都是有用的,如果不希望发生事件冒泡可以通过事件对象来取消冒泡
-</code></pre>
-<p>事件的委派</p>
-<pre><code>* 我们希望，只绑定一次事件，即可应用到多个的元素上，即使元素是后添加的
+</code></pre><p>事件的委派</p><pre><code>* 我们希望，只绑定一次事件，即可应用到多个的元素上，即使元素是后添加的
 * 我们可以尝试将其绑定给元素的共同的祖先元素
 * 
 * 事件的委派
@@ -1542,9 +1141,7 @@ location.replace(&quot;01.BOM.html&quot;);
 
 * target
 *     event中的target表示的触发事件的对象，比如按钮或链接
-</code></pre>
-<p>事件的传播</p>
-<pre><code>* 事件的传播
+</code></pre><p>事件的传播</p><pre><code>* 事件的传播
 *     关于事件的传播网景公司和微软公司有不同的理解
 *     微软公司认为事件应该是由内向外传播，也就是当事件触发时，应该先触发当前元素上的事件，
 *         然后再向当前元素的祖先元素上传播，也就说事件应该在冒泡阶段执行。
@@ -1562,9 +1159,7 @@ location.replace(&quot;01.BOM.html&quot;);
 *             一般情况下我们不会希望在捕获阶段触发事件，所以这个参数一般都是false
 * 
 *     IE8及以下的浏览器中没有捕获阶段
-</code></pre>
-<p>事件的绑定</p>
-<pre><code>* 使用 对象.事件 = 函数 的形式绑定响应函数，
+</code></pre><p>事件的绑定</p><pre><code>* 使用 对象.事件 = 函数 的形式绑定响应函数，
 *     它只能同时为一个元素的一个事件绑定一个响应函数，
 *     不能绑定多个，如果绑定了多个，则后边会覆盖掉前边的
 
@@ -1579,8 +1174,7 @@ location.replace(&quot;01.BOM.html&quot;);
 *     这样当事件被触发时，响应函数将会按照函数的绑定顺序执行
 * 
 * 这个方法不支持IE8及以下的浏览器
-</code></pre>
-<h3 id="json"><a href="#json" class="headerlink" title="json"></a>json</h3><pre><code>* JSON
+</code></pre><h3 id="json"><a href="#json" class="headerlink" title="json"></a>json</h3><pre><code>* JSON
 *     JS中的对象只有JS自己认识，其他的语言都不认识
 *     JSON就是一个特殊格式的字符串，这个字符串可以被任意的语言所识别，
 *         并且可以转换为任意语言中的对象，JSON在开发中主要用来数据的交互
@@ -1618,247 +1212,4 @@ location.replace(&quot;01.BOM.html&quot;);
 * 
 *     eval()这个函数的功能很强大，可以直接执行一个字符串中的js代码，
 *         但是在开发中尽量不要使用，首先它的执行性能比较差，然后它还具有安全隐患
-</code></pre>
-
-						</div>
-						
-						
-
-				</div>
-			</div>
-		</div>
-		<!-- 置顶按钮 -->
-		<!-- 置顶 -->
-<ul id="toTopBtn" class="layui-fixbar" style="right: -70px;">
-    <a href="javascript:void(0)">
-        <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;">&#xe604;</li>
-    </a>
-</ul>
-		<!-- 底部版权 -->
-		<div class="qy-footer">
-    <div class="font-Area">
-        Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved 
-    </div>
-</div>
-</body>
-<script src="../../../../../js/jquery.min.js"></script>
-<script src="../../../../../layui/layui.js"></script>
-<!-- 鼠标点击特效 -->
-<script src="../../../../../js/mouse.js"></script>
-<!-- 代码高亮 -->
-<script src="../../../../../lib/prism/prism.js"></script>
-<!-- 公共js -->
-<script>
-    //点击搜索
-    $("#searchBtn").click(function () {
-        $("#searchShade").show()
-        $("#searchLayer").addClass('layui-anim layui-anim-scaleSpring')
-    })
-    //关闭搜索弹框
-    $("#closeBtn").click(function () {
-        $("#searchShade").hide() 
-    })
-    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
-    var searchFunc = function (path, search_id, content_id) {
-        $.ajax({
-            url: path,
-            dataType: "json",
-            success: function (datas) {
-                //console.log('datas :>> ', datas);
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var first_occur = -1;
-                        if (data_title != '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                if (index_title < 0) {
-                                    isMatch = false;
-                                } else {
-                                    data_title = data_title.replace(new RegExp(keyword, 'g'), '<span style="color:red">' + keyword + '</span>')
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    }
-    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
-
-
-    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
-    function DynamicLine() {
-        function n(n, e, t) {
-            return n.getAttribute(e) || t
-        }
-
-        function e(n) {
-            return document.getElementsByTagName(n)
-        }
-
-        function t() {
-            var t = e("script"),
-                o = t.length,
-                i = t[o - 1];
-            return {
-                l: o,
-                z: n(i, "zIndex", -1),
-                o: n(i, "opacity", .5),
-                c: n(i, "color", "0,0,50"), //颜色rgb
-                n: n(i, "count", 99)
-            }
-        }
-
-        function o() {
-            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-        }
-
-        function i() {
-            r.clearRect(0, 0, a, c);
-            var n, e, t, o, m, l;
-            s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
-                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
-                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
-                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-            }),
-                x(i)
-        }
-        var a, c, u, m = document.createElement("canvas"),
-            d = t(),
-            l = "c_n" + d.l,
-            r = m.getContext("2d"),
-            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
-                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-                    window.setTimeout(n, 1e3 / 45)
-                },
-            w = Math.random,
-            y = {
-                x: null,
-                y: null,
-                max: 2e4
-            };
-        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
-            m), o(), window.onresize = o,
-            window.onmousemove = function (n) {
-                n = n || window.event, y.x = n.clientX, y.y = n.clientY
-            },
-            window.onmouseout = function () {
-                y.x = null, y.y = null
-            };
-        for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a,
-                g = w() * c,
-                v = 2 * w() - 1,
-                p = 2 * w() - 1;
-            s.push({
-                x: h,
-                y: g,
-                xa: v,
-                ya: p,
-                max: 6e3
-            })
-        }
-        u = s.concat([y]),
-            setTimeout(function () {
-                i()
-            }, 100)
-    }
-    //随机背景线条
-    DynamicLine()
-    //更新页脚年份
-    document.querySelector("#currentYear").innerText = new Date().getFullYear()
-
-
-    //置顶  增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
-    $("#toTopBtn").click(function () {
-        var oTop = $(window).scrollTop()
-        var t = parseInt(oTop / 60) //每次六十分之一
-        var time = setInterval(function () {
-            console.log('toTopBtn...setInterval',$(window).scrollTop())
-            $(window).scrollTop($(window).scrollTop() - t)
-            if ($(window).scrollTop() === 0) {
-                clearInterval(time);
-            }
-        }, 1);
-    })
-    $.event.add(window, "scroll", function () {
-        //显示与隐藏置顶按钮   transition: all 0.5s;
-        $("#toTopBtn").css('transform', $(window).scrollTop() > 0 ? 'translateX(-85px)' : 'translateX(85px)');
-        $("#toTopBtn").css('transition', "all 0.5s");
-    })
-    //隐藏loading
-    $("#loadingBox").hide(); 
-</script>
-<script>
-	//注意：导航和进度条 依赖 element 模块，否则无法进行功能性操作
-	var element = null
-	layui.use(['element'], function () {
-		element = layui.element;
-	});
-	
-		$(function () {
-			var elm = $('#toc-area');
-			var startPos = $(elm).offset().top;
-			//var totalTop = $(document).height();
-			$.event.add(window, "scroll", function () {
-				var totalTop = $(".markdown-body").height();
-				// var p = $(window).scrollTop()+$("#toc-area").height();
-				var p = $(window).scrollTop()+startPos;
-				//文章阅读进度条
-				var percent = ((p / totalTop) * 100).toFixed(2)
-				if (percent > 99) {
-					percent = 100
-				}
-				if (percent == 0) {
-					percent = 0
-				}
-				element.progress('demo', percent + "%");
-				$("#progressTxt").text(percent)
-				console.log('percent', percent)
-				$("#progressNav").css("width", $(window).scrollTop() == 0? 0 : percent + "%")
-				//固定文章目录
-				console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
-				$(elm).css('position', ($(window).scrollTop() > startPos) ? 'fixed' : 'static');
-				$(elm).css('top', ($(window).scrollTop() > startPos) ? '60px' : '');
-				//文章目录随页面滚动
-				$('#tocMain').scrollTop($('#tocMain .toc').height() * percent * 0.01);
-			});
-			//代码高亮
-			$('pre code').each(function () {
-				var codeType = $(this).attr("class")
-				codeType = codeType == undefined || codeType == "" || codeType == null ? "plaintext" : codeType
-				codeType = "language-" + codeType
-				$(this).attr("class", codeType)
-			})
-			//代码复制以及显示代码语言
-			$("pre").prepend('<div class="copy-to-clipboard-button"></div>');
-		});
-	
-</script>
-
-</html>
+</code></pre></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px"><a href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display:list-item">&#xe604;</li></a></ul><div class="qy-footer"><div class="font-Area">Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved</div></div></body><script src="../../../../../js/jquery.min.js"></script><script src="../../../../../layui/layui.js"></script><script src="../../../../../js/mouse.js"></script><script src="../../../../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(n,o,i){$.ajax({url:n,dataType:"json",success:function(n){var e=document.getElementById(o),t=document.getElementById(i);e.addEventListener("input",function(){var e='<ul class="search-result-list">',i=this.value.trim().toLowerCase().split(/[\s\-]+/);t.innerHTML="",this.value.trim().length<=0||(n.forEach(function(n){var t=!0,o=n.title.trim().toLowerCase(),n=n.url;""!=o&&i.forEach(function(n,e){o.indexOf(n)<0?t=!1:o=o.replace(new RegExp(n,"g"),'<span style="color:red">'+n+"</span>")}),t&&(e=e+"<li><a href='"+n+"' class='search-result-title'>"+o+"</a></li>")}),e+="</ul>",t.innerHTML=e)})}})};function DynamicLine(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){r=i.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,s=i.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function l(){var t,o,i,a,c;m.clearRect(0,0,r,s),x.forEach(function(n,e){for(n.x+=n.xa,n.y+=n.ya,n.xa*=n.x>r||n.x<0?-1:1,n.ya*=n.y>s||n.y<0?-1:1,m.fillRect(n.x-.5,n.y-.5,1,1),o=e+1;o<u.length;o++)null!==(t=u[o]).x&&null!==t.y&&(i=n.x-t.x,a=n.y-t.y,(c=i*i+a*a)<t.max)&&(t===h&&c>=t.max/2&&(n.x-=.03*i,n.y-=.03*a),i=(t.max-c)/t.max,m.beginPath(),m.lineWidth=i/2,m.strokeStyle="rgba("+d.c+","+(.2+i)+")",m.moveTo(n.x,n.y),m.lineTo(t.x,t.y),m.stroke())}),w(l)}var r,s,u,o,i=document.createElement("canvas"),d=(a=(o=e("script")).length,o=o[a-1],{l:a,z:n(o,"zIndex",-1),o:n(o,"opacity",.5),c:n(o,"color","0,0,50"),n:n(o,"count",99)}),a="c_n"+d.l,m=i.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},c=Math.random,h={x:null,y:null,max:2e4};i.id=a,i.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(i),t(),window.onresize=t,window.onmousemove=function(n){n=n||window.event,h.x=n.clientX,h.y=n.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var x=[],y=0;y<d.n;y++){var f=c()*r,p=c()*s,g=2*c()-1,T=2*c()-1;x.push({x:f,y:p,xa:g,ya:T,max:6e3})}u=x.concat([h]),setTimeout(function(){l()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear(),$("#toTopBtn").click(function(){var n=$(window).scrollTop(),e=parseInt(n/60),t=setInterval(function(){console.log("toTopBtn...setInterval",$(window).scrollTop()),$(window).scrollTop($(window).scrollTop()-e),0===$(window).scrollTop()&&clearInterval(t)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide()</script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var l=$("#toc-area"),s=$(l).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),t=$(window).scrollTop()+s,e=(t/o*100).toFixed(2);element.progress("demo",(e=0==(e=99<e?100:e)?0:e)+"%"),$("#progressTxt").text(e),console.log("percent",e),$("#progressNav").css("width",0==$(window).scrollTop()?0:e+"%"),console.log("p",t+$("#toc-area").height(),"startPos",s+$("#toc-area").height(),"totalTop",o),$(l).css("position",$(window).scrollTop()>s?"fixed":"static"),$(l).css("top",$(window).scrollTop()>s?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>

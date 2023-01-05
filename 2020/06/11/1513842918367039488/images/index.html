@@ -1,228 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-	<title>贺刘芳的搬砖日记</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../../../../../layui/css/layui.css" />
-	<link rel="stylesheet" href="../../../../../css/common.css" />
-	<link rel="stylesheet" href="../../../../../css/post.css" />
-	<!-- 代码高亮 -->
-	<link rel="stylesheet" href="../../../../../lib/prism/prism.css" />
-	<link rel="shortcut icon" href="../../../../../img/favicon.ico">
-	
-	<link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css">
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
-</head>
-
-<body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!">
-	<!-- 导航模板 -->
-	<!-- 导航 -->
-<div class="qy-nav">
-  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li>
-    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
-    </li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
-   
-    <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
-      <a href="javascript:;">菜单</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/">首页</a></dd>
-        <dd><a href="/archives">归档</a></dd>
-        <dd><a href="/tags">标签</a></dd>
-        <dd><a href="/categories">分类</a></dd>
-        <dd><a href="/about">关于</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd>
-        <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
-        </dd>
-      </dl>
-    </li>
-  </ul>
-  <!-- 进度条 -->
-  <div class="progress" id="progressNav"></div>
-  <!-- loading -->
-  <div id="loadingBox" class="loadingBox">
-    <img src="/img/loading.gif">
-  </div>
-</div>
-<!-- 搜索弹框 -->
-<div id="searchShade" class="searchShade">
-  <div id="searchLayer">
-    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
-    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)"  autofocus  />
-    <div id="searchResult">
-      <!-- <ul>
-        <li>java笔记
-        <li>
-      </ul> -->
-    </div>
-
-  </div>
-</div>
-
-		<!-- 中间内容区域 -->
-		<div class="layui-container  center" id="top">
-			<div class="layui-row layui-col-space20">
-				<div class="layui-col-md3 hide-xs hide-sm">
-					<!-- 左侧的公告、分类、归档、标签 -->
-					<!-- 左侧的公告、分类、归档、标签 -->
-
-<!-- 个人信息 -->
-<div class="layui-card">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-speaker"></i> 公告</div>
-    <div class="layui-card-body">
-        <div class="userinfo">
-            <img src="/head.png">
-            <div class="name">淡泊明志，宁静致远</div>
-            <div class="icons">
-                <a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a>
-                <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a>
-                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a>
-            </div>
-            <div class="other">
-                <div class="item">
-                    <p class="num">
-                        40
-                    </p>
-                    <p class="title" style="color: #FF5722">文章</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        8
-                    </p>
-                    <p class="title">分类</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        44
-                    </p>
-                    <p class="title" style="color: #01AAED">标签</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<!-- 最新文章 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
-    <div class="layui-card-body">
-        
-        <ul>
-            
-                <li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li>
-            
-                <li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li>
-            
-                <li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li>
-            
-                <li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li>
-            
-                <li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li>
-            
-        </ul>
-    </div>
-</div>
-
-<!-- 分类 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-template-1"></i> 分类</div>
-    <div class="layui-card-body">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
-    </div>
-</div>
-
-
-						<!-- 文章目录 -->
-						
-							<div style="height: calc(100% - 60px - 60px);width: 267px;" id="toc-area" class="layui-card ahover">
-								<div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div>
-								<div id="tocMain" class="layui-card-body"
-									style="overflow:auto;height: calc(100% - 60px - 60px);">
-									<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-01"><span class="toc-text">Vue.js-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="toc-text">课程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFVue-js"><span class="toc-text">什么是Vue.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0%E6%B5%81%E8%A1%8C%E6%A1%86%E6%9E%B6"><span class="toc-text">为什么要学习流行框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%92%8C%E5%BA%93%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">框架和库的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node%EF%BC%88%E5%90%8E%E7%AB%AF%EF%BC%89%E4%B8%AD%E7%9A%84-MVC-%E4%B8%8E-%E5%89%8D%E7%AB%AF%E4%B8%AD%E7%9A%84-MVVM-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js-%E5%9F%BA%E6%9C%AC%E4%BB%A3%E7%A0%81-%E5%92%8C-MVVM-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-text">Vue.js 基本代码 和 MVVM 之间的对应关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-cloak"><span class="toc-text">v-cloak</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-text%E5%92%8Cv-html"><span class="toc-text">Vue指令之v-text和v-html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-bind%E7%9A%84%E4%B8%89%E7%A7%8D%E7%94%A8%E6%B3%95"><span class="toc-text">Vue指令之v-bind的三种用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-on%E5%92%8C%E8%B7%91%E9%A9%AC%E7%81%AF%E6%95%88%E6%9E%9C"><span class="toc-text">Vue指令之v-on和跑马灯效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-on%E7%9A%84%E7%BC%A9%E5%86%99%E5%92%8C%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">Vue指令之v-on的缩写和事件修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%9A"><span class="toc-text">事件修饰符：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-model%E5%92%8C%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">Vue指令之v-model和双向数据绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">简易计算器案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%A0%B7%E5%BC%8F"><span class="toc-text">在Vue中使用样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8class%E6%A0%B7%E5%BC%8F"><span class="toc-text">使用class样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F"><span class="toc-text">使用内联样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-for%E5%92%8Ckey%E5%B1%9E%E6%80%A7"><span class="toc-text">Vue指令之v-for和key属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-if%E5%92%8Cv-show"><span class="toc-text">Vue指令之v-if和v-show</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7vue-devtools"><span class="toc-text">Vue调试工具vue-devtools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%89%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">私有过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">全局过滤器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">键盘修饰符以及自定义键盘修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-x%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%90%E4%BA%86%E8%A7%A3%E5%8D%B3%E5%8F%AF%E3%80%91"><span class="toc-text">1.x中自定义键盘修饰符【了解即可】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-x%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">2.x中自定义键盘修饰符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0"><span class="toc-text">相关文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-02"><span class="toc-text">Vue.js-02</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%81%E7%89%8C%E7%AE%A1%E7%90%86%E6%A1%88%E4%BE%8B"><span class="toc-text">品牌管理案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%93%81%E7%89%8C"><span class="toc-text">添加新品牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%93%81%E7%89%8C"><span class="toc-text">删除品牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89%E5%93%81%E7%89%8C"><span class="toc-text">根据条件筛选品牌</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-resource-%E5%AE%9E%E7%8E%B0-get-post-jsonp%E8%AF%B7%E6%B1%82"><span class="toc-text">vue-resource 实现 get, post, jsonp请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8A%A8%E7%94%BB%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="toc-text">使用动画钩子函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for-%E7%9A%84%E5%88%97%E8%A1%A8%E8%BF%87%E6%B8%A1"><span class="toc-text">v-for 的列表过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F%E8%BF%87%E6%B8%A1"><span class="toc-text">列表的排序过渡</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0-1"><span class="toc-text">相关文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-03"><span class="toc-text">Vue.js-03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89Vue%E7%BB%84%E4%BB%B6"><span class="toc-text">定义Vue组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">全局组件定义的三种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%B1%95%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%92%8C%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6"><span class="toc-text">组件中展示数据和响应事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91%E4%B8%BA%E4%BB%80%E4%B9%88%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84data%E5%B1%9E%E6%80%A7%E5%BF%85%E9%A1%BB%E5%AE%9A%E4%B9%89%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95%E5%B9%B6%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="toc-text">【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8components%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%B9%89%E5%B1%80%E9%83%A8%E5%AD%90%E7%BB%84%E4%BB%B6"><span class="toc-text">使用components属性定义局部子组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8flag%E6%A0%87%E8%AF%86%E7%AC%A6%E7%BB%93%E5%90%88v-if%E5%92%8Cv-else%E5%88%87%E6%8D%A2%E7%BB%84%E4%BB%B6"><span class="toc-text">使用flag标识符结合v-if和v-else切换组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-text">子组件向父组件传值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">这是一个大大的H1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">登录组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">注册组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1%E9%AB%98%E4%BA%AE"><span class="toc-text">设置路由高亮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E5%8A%A8%E6%95%88"><span class="toc-text">设置路由切换动效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E8%B7%AF%E7%94%B1%E8%A7%84%E5%88%99%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0"><span class="toc-text">在路由规则中定义参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-children-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E5%B5%8C%E5%A5%97"><span class="toc-text">使用 children 属性实现路由嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E8%A7%86%E5%9B%BE%E5%AE%9E%E7%8E%B0%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80"><span class="toc-text">命名视图实现经典布局</span></a></li></ol></li></ol>
-								</div>
-								<div class="readprocess">
-									<div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%
-									</div>
-									<div class="layui-progress" lay-filter="demo">
-										<div class="layui-progress-bar" lay-percent="10%"></div>
-									</div>
-								</div>
-							</div>
-							
-				</div>
-				<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
-					
-						<div class="article-title">
-							<h1>vue学习笔记</h1>
-							<p>
-								<i class="layui-icon layui-icon-date"></i>发表时间 2020-06-11
-									|
-									<i class="layui-icon layui-icon-form"></i>累计字数 14.5k
-							</p>
-						</div>
-						
-						<!-- 文章内容 -->
-						<div id="article">
-							<h1 id="Vue-js-01"><a href="#Vue-js-01" class="headerlink" title="Vue.js-01"></a>Vue.js-01</h1><h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><p>前5天： 都在学习Vue基本的语法和概念；打包工具 Webpack , Gulp<br>后5天： 以项目驱动教学；</p>
-<h3 id="什么是Vue-js"><a href="#什么是Vue-js" class="headerlink" title="什么是Vue.js"></a>什么是Vue.js</h3><ul>
-<li><p>Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架（React除了开发网站，还可以开发手机App， Vue语法也是可以用于进行手机App开发的，需要借助于Weex）</p>
-</li>
-<li><p>Vue.js 是前端的<strong>主流框架之一</strong>，和Angular.js、React.js 一起，并成为前端三大主流框架！</p>
-</li>
-<li><p>Vue.js 是一套构建用户界面的框架，<strong>只关注视图层</strong>，它不仅易于上手，还便于与第三方库或既有项目整合。（Vue有配套的第三方类库，可以整合起来做大型项目的开发）</p>
-</li>
-<li><p>前端的主要工作？主要负责MVC中的V这一层；主要工作就是和界面打交道，来制作前端页面效果；</p>
-</li>
-</ul>
-<h2 id="为什么要学习流行框架"><a href="#为什么要学习流行框架" class="headerlink" title="为什么要学习流行框架"></a>为什么要学习流行框架</h2><ul>
-<li>企业为了提高开发效率：在企业中，时间就是效率，效率就是金钱；</li>
-</ul>
-<ul>
-<li>企业中，使用框架，能够提高开发的效率；</li>
-</ul>
-<ul>
-<li>提高开发效率的发展历程：原生JS -&gt; Jquery之类的类库 -&gt; 前端模板引擎 -&gt; Angular.js &#x2F; Vue.js（能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不再关心DOM是如何渲染的了】）</li>
-<li>在Vue中，一个核心的概念，就是让用户不再操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；</li>
-</ul>
-<h2 id="框架和库的区别"><a href="#框架和库的区别" class="headerlink" title="框架和库的区别"></a>框架和库的区别</h2><ul>
-<li>框架：是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。</li>
-</ul>
-<ul>
-<li>node 中的 express；</li>
-</ul>
-<ul>
-<li>库（插件）：提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其它库实现需求。</li>
-</ul>
-<ul>
-<li><ol>
-<li>从Jquery 切换到 Zepto</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>从 EJS 切换到 art-template</li>
-</ol>
-</li>
-</ul>
-<h2 id="Node（后端）中的-MVC-与-前端中的-MVVM-之间的区别"><a href="#Node（后端）中的-MVC-与-前端中的-MVVM-之间的区别" class="headerlink" title="Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别"></a>Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别</h2><ul>
-<li>MVC 是后端的分层开发概念；</li>
-<li>MVVM是前端视图层的概念，主要关注于 视图层分离，也就是说：MVVM把前端的视图层，分为了 三部分 Model, View , VM ViewModel</li>
-<li>为什么有了MVC还要有MVVM</li>
-</ul>
-<p><img src="/2020/06/11/1513842918367039488/images/01.MVC%E5%92%8CMVVM%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9B%BE%E8%A7%A3.png" alt="01.MVC和MVVM的关系图解"></p>
-<h2 id="Vue-js-基本代码-和-MVVM-之间的对应关系"><a href="#Vue-js-基本代码-和-MVVM-之间的对应关系" class="headerlink" title="Vue.js 基本代码 和 MVVM 之间的对应关系"></a>Vue.js 基本代码 和 MVVM 之间的对应关系</h2><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../../../../layui/css/layui.css"><link rel="stylesheet" href="../../../../../css/common.css"><link rel="stylesheet" href="../../../../../css/post.css"><link rel="stylesheet" href="../../../../../lib/prism/prism.css"><link rel="shortcut icon" href="../../../../../img/favicon.ico"><link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div class="progress" id="progressNav"></div><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><p class="num">40</p><p class="title" style="color:#ff5722">文章</p></div><div class="item"><p class="num">8</p><p class="title">分类</p></div><div class="item"><p class="num">44</p><p class="title" style="color:#01aaed">标签</p></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li><li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li><li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li><li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li><li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 分类</div><div class="layui-card-body"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-01"><span class="toc-text">Vue.js-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="toc-text">课程介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFVue-js"><span class="toc-text">什么是Vue.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0%E6%B5%81%E8%A1%8C%E6%A1%86%E6%9E%B6"><span class="toc-text">为什么要学习流行框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%92%8C%E5%BA%93%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">框架和库的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Node%EF%BC%88%E5%90%8E%E7%AB%AF%EF%BC%89%E4%B8%AD%E7%9A%84-MVC-%E4%B8%8E-%E5%89%8D%E7%AB%AF%E4%B8%AD%E7%9A%84-MVVM-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-js-%E5%9F%BA%E6%9C%AC%E4%BB%A3%E7%A0%81-%E5%92%8C-MVVM-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-text">Vue.js 基本代码 和 MVVM 之间的对应关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-cloak"><span class="toc-text">v-cloak</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-text%E5%92%8Cv-html"><span class="toc-text">Vue指令之v-text和v-html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-bind%E7%9A%84%E4%B8%89%E7%A7%8D%E7%94%A8%E6%B3%95"><span class="toc-text">Vue指令之v-bind的三种用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-on%E5%92%8C%E8%B7%91%E9%A9%AC%E7%81%AF%E6%95%88%E6%9E%9C"><span class="toc-text">Vue指令之v-on和跑马灯效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-on%E7%9A%84%E7%BC%A9%E5%86%99%E5%92%8C%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">Vue指令之v-on的缩写和事件修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6%EF%BC%9A"><span class="toc-text">事件修饰符：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-model%E5%92%8C%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">Vue指令之v-model和双向数据绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">简易计算器案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%A0%B7%E5%BC%8F"><span class="toc-text">在Vue中使用样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8class%E6%A0%B7%E5%BC%8F"><span class="toc-text">使用class样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%86%85%E8%81%94%E6%A0%B7%E5%BC%8F"><span class="toc-text">使用内联样式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-for%E5%92%8Ckey%E5%B1%9E%E6%80%A7"><span class="toc-text">Vue指令之v-for和key属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4%E4%B9%8Bv-if%E5%92%8Cv-show"><span class="toc-text">Vue指令之v-if和v-show</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7vue-devtools"><span class="toc-text">Vue调试工具vue-devtools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%81%E6%9C%89%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">私有过滤器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">全局过滤器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6%E4%BB%A5%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">键盘修饰符以及自定义键盘修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-x%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6%E3%80%90%E4%BA%86%E8%A7%A3%E5%8D%B3%E5%8F%AF%E3%80%91"><span class="toc-text">1.x中自定义键盘修饰符【了解即可】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-x%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">2.x中自定义键盘修饰符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0"><span class="toc-text">相关文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-02"><span class="toc-text">Vue.js-02</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%81%E7%89%8C%E7%AE%A1%E7%90%86%E6%A1%88%E4%BE%8B"><span class="toc-text">品牌管理案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%93%81%E7%89%8C"><span class="toc-text">添加新品牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%93%81%E7%89%8C"><span class="toc-text">删除品牌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89%E5%93%81%E7%89%8C"><span class="toc-text">根据条件筛选品牌</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-resource-%E5%AE%9E%E7%8E%B0-get-post-jsonp%E8%AF%B7%E6%B1%82"><span class="toc-text">vue-resource 实现 get, post, jsonp请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8A%A8%E7%94%BB%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="toc-text">使用动画钩子函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for-%E7%9A%84%E5%88%97%E8%A1%A8%E8%BF%87%E6%B8%A1"><span class="toc-text">v-for 的列表过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F%E8%BF%87%E6%B8%A1"><span class="toc-text">列表的排序过渡</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E7%AB%A0-1"><span class="toc-text">相关文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js-03"><span class="toc-text">Vue.js-03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89Vue%E7%BB%84%E4%BB%B6"><span class="toc-text">定义Vue组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">全局组件定义的三种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%B1%95%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%92%8C%E5%93%8D%E5%BA%94%E4%BA%8B%E4%BB%B6"><span class="toc-text">组件中展示数据和响应事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91%E4%B8%BA%E4%BB%80%E4%B9%88%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84data%E5%B1%9E%E6%80%A7%E5%BF%85%E9%A1%BB%E5%AE%9A%E4%B9%89%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95%E5%B9%B6%E8%BF%94%E5%9B%9E%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="toc-text">【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8components%E5%B1%9E%E6%80%A7%E5%AE%9A%E4%B9%89%E5%B1%80%E9%83%A8%E5%AD%90%E7%BB%84%E4%BB%B6"><span class="toc-text">使用components属性定义局部子组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8flag%E6%A0%87%E8%AF%86%E7%AC%A6%E7%BB%93%E5%90%88v-if%E5%92%8Cv-else%E5%88%87%E6%8D%A2%E7%BB%84%E4%BB%B6"><span class="toc-text">使用flag标识符结合v-if和v-else切换组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E5%90%91%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC"><span class="toc-text">子组件向父组件传值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">这是一个大大的H1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">登录组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">注册组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1%E9%AB%98%E4%BA%AE"><span class="toc-text">设置路由高亮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%B7%AF%E7%94%B1%E5%88%87%E6%8D%A2%E5%8A%A8%E6%95%88"><span class="toc-text">设置路由切换动效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E8%B7%AF%E7%94%B1%E8%A7%84%E5%88%99%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%8F%82%E6%95%B0"><span class="toc-text">在路由规则中定义参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-children-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E5%B5%8C%E5%A5%97"><span class="toc-text">使用 children 属性实现路由嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E8%A7%86%E5%9B%BE%E5%AE%9E%E7%8E%B0%E7%BB%8F%E5%85%B8%E5%B8%83%E5%B1%80"><span class="toc-text">命名视图实现经典布局</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>vue学习笔记</h1><p><i class="layui-icon layui-icon-date"></i>发表时间 2020-06-11 | <i class="layui-icon layui-icon-form"></i>累计字数 14.5k</p></div><div id="article"><h1 id="Vue-js-01"><a href="#Vue-js-01" class="headerlink" title="Vue.js-01"></a>Vue.js-01</h1><h2 id="课程介绍"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍</h2><p>前5天： 都在学习Vue基本的语法和概念；打包工具 Webpack , Gulp<br>后5天： 以项目驱动教学；</p><h3 id="什么是Vue-js"><a href="#什么是Vue-js" class="headerlink" title="什么是Vue.js"></a>什么是Vue.js</h3><ul><li><p>Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架（React除了开发网站，还可以开发手机App， Vue语法也是可以用于进行手机App开发的，需要借助于Weex）</p></li><li><p>Vue.js 是前端的<strong>主流框架之一</strong>，和Angular.js、React.js 一起，并成为前端三大主流框架！</p></li><li><p>Vue.js 是一套构建用户界面的框架，<strong>只关注视图层</strong>，它不仅易于上手，还便于与第三方库或既有项目整合。（Vue有配套的第三方类库，可以整合起来做大型项目的开发）</p></li><li><p>前端的主要工作？主要负责MVC中的V这一层；主要工作就是和界面打交道，来制作前端页面效果；</p></li></ul><h2 id="为什么要学习流行框架"><a href="#为什么要学习流行框架" class="headerlink" title="为什么要学习流行框架"></a>为什么要学习流行框架</h2><ul><li>企业为了提高开发效率：在企业中，时间就是效率，效率就是金钱；</li></ul><ul><li>企业中，使用框架，能够提高开发的效率；</li></ul><ul><li>提高开发效率的发展历程：原生JS -&gt; Jquery之类的类库 -&gt; 前端模板引擎 -&gt; Angular.js &#x2F; Vue.js（能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不再关心DOM是如何渲染的了】）</li><li>在Vue中，一个核心的概念，就是让用户不再操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；</li></ul><h2 id="框架和库的区别"><a href="#框架和库的区别" class="headerlink" title="框架和库的区别"></a>框架和库的区别</h2><ul><li>框架：是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。</li></ul><ul><li>node 中的 express；</li></ul><ul><li>库（插件）：提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其它库实现需求。</li></ul><ul><li><ol><li>从Jquery 切换到 Zepto</li></ol></li><li><ol start="2"><li>从 EJS 切换到 art-template</li></ol></li></ul><h2 id="Node（后端）中的-MVC-与-前端中的-MVVM-之间的区别"><a href="#Node（后端）中的-MVC-与-前端中的-MVVM-之间的区别" class="headerlink" title="Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别"></a>Node（后端）中的 MVC 与 前端中的 MVVM 之间的区别</h2><ul><li>MVC 是后端的分层开发概念；</li><li>MVVM是前端视图层的概念，主要关注于 视图层分离，也就是说：MVVM把前端的视图层，分为了 三部分 Model, View , VM ViewModel</li><li>为什么有了MVC还要有MVVM</li></ul><p><img src="/2020/06/11/1513842918367039488/images/01.MVC%E5%92%8CMVVM%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9B%BE%E8%A7%A3.png" alt="01.MVC和MVVM的关系图解"></p><h2 id="Vue-js-基本代码-和-MVVM-之间的对应关系"><a href="#Vue-js-基本代码-和-MVVM-之间的对应关系" class="headerlink" title="Vue.js 基本代码 和 MVVM 之间的对应关系"></a>Vue.js 基本代码 和 MVVM 之间的对应关系</h2><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;
         &#123;&#123; msg &#125;&#125;
     &lt;/div&gt;
     &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;
@@ -234,8 +10,7 @@
             &#125;
         &#125;)
     &lt;/script&gt;
-</code></pre>
-<h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a><code>v-cloak</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;
+</code></pre><h2 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a><code>v-cloak</code></h2><pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -262,8 +37,7 @@
     &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="Vue指令之v-text和v-html"><a href="#Vue指令之v-text和v-html" class="headerlink" title="Vue指令之v-text和v-html"></a>Vue指令之<code>v-text</code>和<code>v-html</code></h2><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="Vue指令之v-text和v-html"><a href="#Vue指令之v-text和v-html" class="headerlink" title="Vue指令之v-text和v-html"></a>Vue指令之<code>v-text</code>和<code>v-html</code></h2><pre><code class="html"> &lt;div id=&quot;app&quot;&gt;
        &lt;div v-text=&quot;htmlStr&quot;&gt;&lt;/div&gt;
        &lt;div v-html=&quot;htmlStr&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -276,13 +50,7 @@
             &#125;
         &#125;)
     &lt;/script&gt;
-</code></pre>
-<h2 id="Vue指令之v-bind的三种用法"><a href="#Vue指令之v-bind的三种用法" class="headerlink" title="Vue指令之v-bind的三种用法"></a>Vue指令之<code>v-bind</code>的三种用法</h2><ol>
-<li>直接使用指令<code>v-bind</code></li>
-<li>使用简化指令<code>:</code></li>
-<li>在绑定的时候，拼接绑定内容：<code>:title=&quot;btnTitle + &#39;, 这是追加的内容&#39;&quot;</code></li>
-</ol>
-<pre><code class="html">    &lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="Vue指令之v-bind的三种用法"><a href="#Vue指令之v-bind的三种用法" class="headerlink" title="Vue指令之v-bind的三种用法"></a>Vue指令之<code>v-bind</code>的三种用法</h2><ol><li>直接使用指令<code>v-bind</code></li><li>使用简化指令<code>:</code></li><li>在绑定的时候，拼接绑定内容：<code>:title=&quot;btnTitle + &#39;, 这是追加的内容&#39;&quot;</code></li></ol><pre><code class="html">    &lt;div id=&quot;app&quot;&gt;
       &lt;button v-bind:title=&quot;msg&quot;&gt;登录&lt;/button&gt;
       &lt;button :title=&quot;msg&quot;&gt;登录&lt;/button&gt;
       &lt;button :title=&quot;btnTitle+&#39;hello world&#39;&quot;&gt;登录&lt;/button&gt;
@@ -297,8 +65,7 @@
             &#125;
         &#125;)
     &lt;/script&gt;
-</code></pre>
-<h2 id="Vue指令之v-on和跑马灯效果"><a href="#Vue指令之v-on和跑马灯效果" class="headerlink" title="Vue指令之v-on和跑马灯效果"></a>Vue指令之<code>v-on</code>和<code>跑马灯效果</code></h2><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="Vue指令之v-on和跑马灯效果"><a href="#Vue指令之v-on和跑马灯效果" class="headerlink" title="Vue指令之v-on和跑马灯效果"></a>Vue指令之<code>v-on</code>和<code>跑马灯效果</code></h2><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
       &lt;p&gt;&#123;&#123;info&#125;&#125;&lt;/p&gt;
       &lt;button v-on:click=&quot;go&quot;&gt;开始&lt;/button&gt;
       &lt;button @click=&quot;stop&quot;&gt;停止&lt;/button&gt;
@@ -325,20 +92,7 @@
             &#125;
         &#125;)
     &lt;/script&gt;
-</code></pre>
-<h2 id="Vue指令之v-on的缩写和事件修饰符"><a href="#Vue指令之v-on的缩写和事件修饰符" class="headerlink" title="Vue指令之v-on的缩写和事件修饰符"></a>Vue指令之<code>v-on的缩写</code>和<code>事件修饰符</code></h2><h3 id="事件修饰符："><a href="#事件修饰符：" class="headerlink" title="事件修饰符："></a>事件修饰符：</h3><ul>
-<li><p>.stop       阻止冒泡</p>
-</li>
-<li><p>.prevent    阻止默认事件</p>
-</li>
-<li><p>.capture    添加事件侦听器时使用事件捕获模式</p>
-</li>
-<li><p>.self       只当事件在该元素本身（比如不是子元素）触发时触发回调</p>
-</li>
-<li><p>.once       事件只触发一次</p>
-</li>
-</ul>
-<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="Vue指令之v-on的缩写和事件修饰符"><a href="#Vue指令之v-on的缩写和事件修饰符" class="headerlink" title="Vue指令之v-on的缩写和事件修饰符"></a>Vue指令之<code>v-on的缩写</code>和<code>事件修饰符</code></h2><h3 id="事件修饰符："><a href="#事件修饰符：" class="headerlink" title="事件修饰符："></a>事件修饰符：</h3><ul><li><p>.stop 阻止冒泡</p></li><li><p>.prevent 阻止默认事件</p></li><li><p>.capture 添加事件侦听器时使用事件捕获模式</p></li><li><p>.self 只当事件在该元素本身（比如不是子元素）触发时触发回调</p></li><li><p>.once 事件只触发一次</p></li></ul><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
     &lt;a @click.prevent=&#39;alert(&quot;阻止默认行为&quot;)&#39; href=&quot;https://www.baidu.com&quot;&gt;点我不会跳转&lt;/a&gt;
 &lt;/div&gt;
 &lt;script src=&quot;./js/vue.js&quot;&gt;&lt;/script&gt;
@@ -350,9 +104,7 @@
         &#125;
     &#125;)
 &lt;/script&gt;
-</code></pre>
-<h2 id="Vue指令之v-model和双向数据绑定"><a href="#Vue指令之v-model和双向数据绑定" class="headerlink" title="Vue指令之v-model和双向数据绑定"></a>Vue指令之<code>v-model</code>和<code>双向数据绑定</code></h2><p>使用vue-devtools查看下面表单双向绑定效果：</p>
-<pre><code class="html">    &lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="Vue指令之v-model和双向数据绑定"><a href="#Vue指令之v-model和双向数据绑定" class="headerlink" title="Vue指令之v-model和双向数据绑定"></a>Vue指令之<code>v-model</code>和<code>双向数据绑定</code></h2><p>使用vue-devtools查看下面表单双向绑定效果：</p><pre><code class="html">    &lt;div id=&quot;app&quot;&gt;
       姓名：&lt;input v-model=&quot;name&quot;&gt;&lt;br&gt;
       性别：男：&lt;input type=&quot;radio&quot; v-model=&quot;gender&quot; value=&quot;true&quot;&gt;
             女：&lt;input type=&quot;radio&quot; v-model=&quot;gender&quot; value=&quot;false&quot;&gt;&lt;br&gt;
@@ -380,11 +132,7 @@
             &#125;
         &#125;)
     &lt;/script&gt;
-</code></pre>
-<h2 id="简易计算器案例"><a href="#简易计算器案例" class="headerlink" title="简易计算器案例"></a>简易计算器案例</h2><ol>
-<li>HTML 代码结构</li>
-</ol>
-<pre><code>
+</code></pre><h2 id="简易计算器案例"><a href="#简易计算器案例" class="headerlink" title="简易计算器案例"></a>简易计算器案例</h2><ol><li>HTML 代码结构</li></ol><pre><code>
   &lt;div id=&quot;app&quot;&gt;
 
     &lt;input type=&quot;text&quot; v-model=&quot;n1&quot;&gt;
@@ -408,11 +156,7 @@
     &lt;input type=&quot;text&quot; v-model=&quot;result&quot;&gt;
 
   &lt;/div&gt;
-</code></pre>
-<ol start="2">
-<li>Vue实例代码：</li>
-</ol>
-<pre><code>
+</code></pre><ol start="2"><li>Vue实例代码：</li></ol><pre><code>
     // 创建 Vue 实例，得到 ViewModel
 
     var vm = new Vue(&#123;
@@ -468,27 +212,11 @@
       &#125;
 
     &#125;);
-</code></pre>
-<h2 id="在Vue中使用样式"><a href="#在Vue中使用样式" class="headerlink" title="在Vue中使用样式"></a>在Vue中使用样式</h2><h3 id="使用class样式"><a href="#使用class样式" class="headerlink" title="使用class样式"></a>使用class样式</h3><ol>
-<li><p>数组</p>
-<pre><code>&lt;h1 :class=&quot;[&#39;red&#39;, &#39;thin&#39;]&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
-</code></pre>
-</li>
-<li><p>数组中使用三元表达式</p>
-<pre><code>&lt;h1 :class=&quot;[&#39;red&#39;, &#39;thin&#39;, isactive?&#39;active&#39;:&#39;&#39;]&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
-</code></pre>
-</li>
-<li><p>数组中嵌套对象</p>
-<pre><code>&lt;h1 :class=&quot;[&#39;red&#39;, &#39;thin&#39;, &#123;&#39;active&#39;: isactive&#125;]&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
-</code></pre>
-</li>
-<li><p>直接使用对象</p>
-<pre><code>&lt;h1 :class=&quot;&#123;red:true, italic:true, active:true, thin:true&#125;&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
-</code></pre>
-</li>
-</ol>
-<p>案例：</p>
-<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="在Vue中使用样式"><a href="#在Vue中使用样式" class="headerlink" title="在Vue中使用样式"></a>在Vue中使用样式</h2><h3 id="使用class样式"><a href="#使用class样式" class="headerlink" title="使用class样式"></a>使用class样式</h3><ol><li><p>数组</p><pre><code>&lt;h1 :class=&quot;[&#39;red&#39;, &#39;thin&#39;]&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
+</code></pre></li><li><p>数组中使用三元表达式</p><pre><code>&lt;h1 :class=&quot;[&#39;red&#39;, &#39;thin&#39;, isactive?&#39;active&#39;:&#39;&#39;]&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
+</code></pre></li><li><p>数组中嵌套对象</p><pre><code>&lt;h1 :class=&quot;[&#39;red&#39;, &#39;thin&#39;, &#123;&#39;active&#39;: isactive&#125;]&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
+</code></pre></li><li><p>直接使用对象</p><pre><code>&lt;h1 :class=&quot;&#123;red:true, italic:true, active:true, thin:true&#125;&quot;&gt;这是一个邪恶的H1&lt;/h1&gt;
+</code></pre></li></ol><p>案例：</p><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
         &lt;h1 :class=&quot;[&#39;red&#39;,&#39;thin&#39;]&quot;&gt;使用数组添加样式&lt;/h1&gt;
         &lt;h1 :class=&quot;[&#39;red&#39;,&#39;thin&#39;,isactive?&#39;active&#39;:&#39;&#39;]&quot;&gt;使用三元表达式添加样式&lt;/h1&gt;
         &lt;h1 :class=&quot;[&#39;red&#39;,&#39;thin&#39;,&#123;&#39;active&#39;:isactive&#125;]&quot;&gt;数组中嵌套对象添加样式&lt;/h1&gt;
@@ -503,73 +231,29 @@
             &#125;
         &#125;)
     &lt;/script&gt;
-</code></pre>
-<h3 id="使用内联样式"><a href="#使用内联样式" class="headerlink" title="使用内联样式"></a>使用内联样式</h3><ol>
-<li><p>直接在元素上通过 <code>:style</code> 的形式，书写样式对象</p>
-<pre><code>&lt;h1 :style=&quot;&#123;color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;&#125;&quot;&gt;这是一个善良的H1&lt;/h1&gt;
-</code></pre>
-</li>
-<li><p>将样式对象，定义到 <code>data</code> 中，并直接引用到 <code>:style</code> 中</p>
-</li>
-</ol>
-<ul>
-<li>在data上定义样式：<pre><code>data: &#123;
+</code></pre><h3 id="使用内联样式"><a href="#使用内联样式" class="headerlink" title="使用内联样式"></a>使用内联样式</h3><ol><li><p>直接在元素上通过 <code>:style</code> 的形式，书写样式对象</p><pre><code>&lt;h1 :style=&quot;&#123;color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;&#125;&quot;&gt;这是一个善良的H1&lt;/h1&gt;
+</code></pre></li><li><p>将样式对象，定义到 <code>data</code> 中，并直接引用到 <code>:style</code> 中</p></li></ol><ul><li>在data上定义样式：<pre><code>data: &#123;
      h1StyleObj: &#123; color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;, &#39;font-weight&#39;: &#39;200&#39; &#125;
 &#125;
-</code></pre>
-</li>
-<li>在元素中，通过属性绑定的形式，将样式对象应用到元素中：<pre><code>&lt;h1 :style=&quot;h1StyleObj&quot;&gt;这是一个善良的H1&lt;/h1&gt;
-</code></pre>
-</li>
-</ul>
-<ol start="3">
-<li>在 <code>:style</code> 中通过数组，引用多个 <code>data</code> 上的样式对象</li>
-</ol>
-<ul>
-<li>在data上定义样式：<pre><code>data: &#123;
+</code></pre></li><li>在元素中，通过属性绑定的形式，将样式对象应用到元素中：<pre><code>&lt;h1 :style=&quot;h1StyleObj&quot;&gt;这是一个善良的H1&lt;/h1&gt;
+</code></pre></li></ul><ol start="3"><li>在 <code>:style</code> 中通过数组，引用多个 <code>data</code> 上的样式对象</li></ol><ul><li>在data上定义样式：<pre><code>data: &#123;
      h1StyleObj: &#123; color: &#39;red&#39;, &#39;font-size&#39;: &#39;40px&#39;, &#39;font-weight&#39;: &#39;200&#39; &#125;,
      h1StyleObj2: &#123; fontStyle: &#39;italic&#39; &#125;
 &#125;
-</code></pre>
-</li>
-<li>在元素中，通过属性绑定的形式，将样式对象应用到元素中：<pre><code>&lt;h1 :style=&quot;[h1StyleObj, h1StyleObj2]&quot;&gt;这是一个善良的H1&lt;/h1&gt;
-</code></pre>
-</li>
-</ul>
-<h2 id="Vue指令之v-for和key属性"><a href="#Vue指令之v-for和key属性" class="headerlink" title="Vue指令之v-for和key属性"></a>Vue指令之<code>v-for</code>和<code>key</code>属性</h2><ol>
-<li>迭代数组(注意加上：key)</li>
-</ol>
-<pre><code>&lt;ul&gt;
+</code></pre></li><li>在元素中，通过属性绑定的形式，将样式对象应用到元素中：<pre><code>&lt;h1 :style=&quot;[h1StyleObj, h1StyleObj2]&quot;&gt;这是一个善良的H1&lt;/h1&gt;
+</code></pre></li></ul><h2 id="Vue指令之v-for和key属性"><a href="#Vue指令之v-for和key属性" class="headerlink" title="Vue指令之v-for和key属性"></a>Vue指令之<code>v-for</code>和<code>key</code>属性</h2><ol><li>迭代数组(注意加上：key)</li></ol><pre><code>&lt;ul&gt;
   &lt;li v-for=&quot;(item, i) in list&quot; :key=&quot;item.id&quot;&gt;索引：&#123;&#123;i&#125;&#125; --- 姓名：&#123;&#123;item.name&#125;&#125; --- 年龄：&#123;&#123;item.age&#125;&#125;&lt;/li&gt;
 &lt;/ul&gt;
-</code></pre>
-<ol start="2">
-<li>迭代对象中的属性</li>
-</ol>
-<pre><code>
+</code></pre><ol start="2"><li>迭代对象中的属性</li></ol><pre><code>
     &lt;!-- 循环遍历对象身上的属性 --&gt;
 
     &lt;div v-for=&quot;(val, key, i) in userInfo&quot;&gt;&#123;&#123;val&#125;&#125; --- &#123;&#123;key&#125;&#125; --- &#123;&#123;i&#125;&#125;&lt;/div&gt;
-</code></pre>
-<ol start="3">
-<li>迭代数字</li>
-</ol>
-<pre><code>
+</code></pre><ol start="3"><li>迭代数字</li></ol><pre><code>
 &lt;p v-for=&quot;i in 10&quot;&gt;这是第 &#123;&#123;i&#125;&#125; 个P标签&lt;/p&gt;
-</code></pre>
-<blockquote>
-<p>2.2.0+ 的版本里，<strong>当在组件中使用</strong> v-for 时，key 现在是必须的。</p>
-</blockquote>
-<p>当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用 “<strong>就地复用</strong>” 策略。如果数据项的顺序被改变，Vue将<strong>不是移动 DOM 元素来匹配数据项的顺序</strong>， 而是<strong>简单复用此处每个元素</strong>，并且确保它在特定索引下显示已被渲染过的每个元素。</p>
-<p>为了给 Vue 一个提示，<strong>以便它能跟踪每个节点的身份，从而重用和重新排序现有元素</strong>，你需要为每项提供一个唯一 key 属性。</p>
-<pre><code class="html">&lt;div v-for=&quot;item in items&quot; v-bind:key=&quot;item.id&quot;&gt;
+</code></pre><blockquote><p>2.2.0+ 的版本里，<strong>当在组件中使用</strong> v-for 时，key 现在是必须的。</p></blockquote><p>当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用 “<strong>就地复用</strong>” 策略。如果数据项的顺序被改变，Vue将<strong>不是移动 DOM 元素来匹配数据项的顺序</strong>， 而是<strong>简单复用此处每个元素</strong>，并且确保它在特定索引下显示已被渲染过的每个元素。</p><p>为了给 Vue 一个提示，<strong>以便它能跟踪每个节点的身份，从而重用和重新排序现有元素</strong>，你需要为每项提供一个唯一 key 属性。</p><pre><code class="html">&lt;div v-for=&quot;item in items&quot; v-bind:key=&quot;item.id&quot;&gt;
   &lt;!-- 内容 --&gt;
 &lt;/div&gt;
-</code></pre>
-<h2 id="Vue指令之v-if和v-show"><a href="#Vue指令之v-if和v-show" class="headerlink" title="Vue指令之v-if和v-show"></a>Vue指令之<code>v-if</code>和<code>v-show</code></h2><blockquote>
-<p>一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。</p>
-</blockquote>
-<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="Vue指令之v-if和v-show"><a href="#Vue指令之v-if和v-show" class="headerlink" title="Vue指令之v-if和v-show"></a>Vue指令之<code>v-if</code>和<code>v-show</code></h2><blockquote><p>一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。</p></blockquote><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
         &lt;p v-if=&quot;sceen&quot;&gt;我是v-if&lt;/p&gt;
         &lt;p v-show=&quot;sceen&quot;&gt;我是v-show&lt;/p&gt;
         &lt;button @click=&quot;toggle&quot;&gt;切换&lt;/button&gt;
@@ -587,22 +271,11 @@
                 &#125;
             &#125;
         &#125;)
-</code></pre>
-<ol start="2">
-<li>在2.x版本中<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/list.html#%E6%98%BE%E7%A4%BA%E8%BF%87%E6%BB%A4-%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C">手动实现筛选的方式</a>：</li>
-</ol>
-<ul>
-<li>筛选框绑定到 VM 实例中的 <code>searchName</code> 属性：</li>
-</ul>
-<pre><code>
+</code></pre><ol start="2"><li>在2.x版本中<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/list.html#%E6%98%BE%E7%A4%BA%E8%BF%87%E6%BB%A4-%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C">手动实现筛选的方式</a>：</li></ol><ul><li>筛选框绑定到 VM 实例中的 <code>searchName</code> 属性：</li></ul><pre><code>
 &lt;hr&gt; 输入筛选名称：
 
 &lt;input type=&quot;text&quot; v-model=&quot;searchName&quot;&gt;
-</code></pre>
-<ul>
-<li>在使用 <code>v-for</code> 指令循环每一行数据的时候，不再直接 <code>item in list</code>，而是 <code>in</code> 一个 过滤的methods 方法，同时，把过滤条件<code>searchName</code>传递进去：</li>
-</ul>
-<pre><code>
+</code></pre><ul><li>在使用 <code>v-for</code> 指令循环每一行数据的时候，不再直接 <code>item in list</code>，而是 <code>in</code> 一个 过滤的methods 方法，同时，把过滤条件<code>searchName</code>传递进去：</li></ul><pre><code>
 &lt;tbody&gt;
 
       &lt;tr v-for=&quot;item in search(searchName)&quot;&gt;
@@ -622,11 +295,7 @@
       &lt;/tr&gt;
 
     &lt;/tbody&gt;
-</code></pre>
-<ul>
-<li><code>search</code> 过滤方法中，使用 数组的 <code>filter</code> 方法进行过滤：</li>
-</ul>
-<pre><code>
+</code></pre><ul><li><code>search</code> 过滤方法中，使用 数组的 <code>filter</code> 方法进行过滤：</li></ul><pre><code>
 search(name) &#123;
 
   return this.list.filter(x =&gt; &#123;
@@ -636,18 +305,9 @@ search(name) &#123;
   &#125;);
 
 &#125;
-</code></pre>
-<h2 id="Vue调试工具vue-devtools"><a href="#Vue调试工具vue-devtools" class="headerlink" title="Vue调试工具vue-devtools"></a>Vue调试工具<code>vue-devtools</code></h2><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>概念：Vue.js 允许你自定义过滤器，<strong>可被用作一些常见的文本格式化</strong>。过滤器可以用在两个地方：<strong>mustache 插值和 v-bind 表达式</strong>。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示；</p>
-<h3 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h3><ol>
-<li>HTML元素：</li>
-</ol>
-<pre><code>
+</code></pre><h2 id="Vue调试工具vue-devtools"><a href="#Vue调试工具vue-devtools" class="headerlink" title="Vue调试工具vue-devtools"></a>Vue调试工具<code>vue-devtools</code></h2><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>概念：Vue.js 允许你自定义过滤器，<strong>可被用作一些常见的文本格式化</strong>。过滤器可以用在两个地方：<strong>mustache 插值和 v-bind 表达式</strong>。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示；</p><h3 id="私有过滤器"><a href="#私有过滤器" class="headerlink" title="私有过滤器"></a>私有过滤器</h3><ol><li>HTML元素：</li></ol><pre><code>
 &lt;td&gt;&#123;&#123;item.ctime | dataFormat('yyyy-mm-dd')&#125;&#125;&lt;/td&gt;
-</code></pre>
-<ol start="2">
-<li>私有 <code>filters</code> 定义方式：</li>
-</ol>
-<pre><code>
+</code></pre><ol start="2"><li>私有 <code>filters</code> 定义方式：</li></ol><pre><code>
 filters: &#123; // 私有局部过滤器，只能在 当前 VM 对象所控制的 View 区域进行使用
 
     dataFormat(input, pattern = &quot;&quot;) &#123; // 在参数列表中 通过 pattern=&quot;&quot; 来指定形参默认值，防止报错
@@ -691,11 +351,7 @@ filters: &#123; // 私有局部过滤器，只能在 当前 VM 对象所控制�
     &#125;
 
   &#125;
-</code></pre>
-<blockquote>
-<p>使用ES6中的字符串新方法 String.prototype.padStart(maxLength, fillString&#x3D;’’) 或 String.prototype.padEnd(maxLength, fillString&#x3D;’’)来填充字符串；</p>
-</blockquote>
-<h3 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h3><pre><code>
+</code></pre><blockquote><p>使用ES6中的字符串新方法 String.prototype.padStart(maxLength, fillString&#x3D;’’) 或 String.prototype.padEnd(maxLength, fillString&#x3D;’’)来填充字符串；</p></blockquote><h3 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h3><pre><code>
 // 定义一个全局过滤器,注意全局过滤器要写在new Vue()之前,否则会报错
 
 Vue.filter(&#39;dataFormat&#39;, function (input, pattern = &#39;&#39;) &#123;
@@ -737,29 +393,13 @@ Vue.filter(&#39;dataFormat&#39;, function (input, pattern = &#39;&#39;) &#123;
   &#125;
 
 &#125;);
-</code></pre>
-<blockquote>
-<p>注意：当有局部和全局两个名称相同的过滤器时候，会以就近原则进行调用，即：局部过滤器优先于全局过滤器被调用！</p>
-</blockquote>
-<h2 id="键盘修饰符以及自定义键盘修饰符"><a href="#键盘修饰符以及自定义键盘修饰符" class="headerlink" title="键盘修饰符以及自定义键盘修饰符"></a>键盘修饰符以及自定义键盘修饰符</h2><h3 id="1-x中自定义键盘修饰符【了解即可】"><a href="#1-x中自定义键盘修饰符【了解即可】" class="headerlink" title="1.x中自定义键盘修饰符【了解即可】"></a>1.x中自定义键盘修饰符【了解即可】</h3><pre><code>
+</code></pre><blockquote><p>注意：当有局部和全局两个名称相同的过滤器时候，会以就近原则进行调用，即：局部过滤器优先于全局过滤器被调用！</p></blockquote><h2 id="键盘修饰符以及自定义键盘修饰符"><a href="#键盘修饰符以及自定义键盘修饰符" class="headerlink" title="键盘修饰符以及自定义键盘修饰符"></a>键盘修饰符以及自定义键盘修饰符</h2><h3 id="1-x中自定义键盘修饰符【了解即可】"><a href="#1-x中自定义键盘修饰符【了解即可】" class="headerlink" title="1.x中自定义键盘修饰符【了解即可】"></a>1.x中自定义键盘修饰符【了解即可】</h3><pre><code>
 Vue.directive(&#39;on&#39;).keyCodes.f2 = 113;
-</code></pre>
-<h3 id="2-x中自定义键盘修饰符"><a href="#2-x中自定义键盘修饰符" class="headerlink" title="2.x中自定义键盘修饰符"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/events.html#%E9%94%AE%E5%80%BC%E4%BF%AE%E9%A5%B0%E7%AC%A6">2.x中自定义键盘修饰符</a></h3><ol>
-<li>通过<code>Vue.config.keyCodes.名称 = 按键值</code>来自定义案件修饰符的别名：</li>
-</ol>
-<pre><code>
+</code></pre><h3 id="2-x中自定义键盘修饰符"><a href="#2-x中自定义键盘修饰符" class="headerlink" title="2.x中自定义键盘修饰符"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/events.html#%E9%94%AE%E5%80%BC%E4%BF%AE%E9%A5%B0%E7%AC%A6">2.x中自定义键盘修饰符</a></h3><ol><li>通过<code>Vue.config.keyCodes.名称 = 按键值</code>来自定义案件修饰符的别名：</li></ol><pre><code>
 Vue.config.keyCodes.f2 = 113;
-</code></pre>
-<ol start="2">
-<li>使用自定义的按键修饰符：</li>
-</ol>
-<pre><code>
+</code></pre><ol start="2"><li>使用自定义的按键修饰符：</li></ol><pre><code>
 &lt;input type=&quot;text&quot; v-model=&quot;name&quot; @keyup.f2=&quot;add&quot;&gt;
-</code></pre>
-<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/custom-directive.html">自定义指令</a></h2><ol>
-<li>自定义全局和局部的 自定义指令：</li>
-</ol>
-<pre><code>
+</code></pre><h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/custom-directive.html">自定义指令</a></h2><ol><li>自定义全局和局部的 自定义指令：</li></ol><pre><code>
     // 自定义全局指令 v-focus，为绑定的元素自动获取焦点：
 
     Vue.directive(&#39;focus&#39;, &#123;
@@ -795,25 +435,9 @@ Vue.config.keyCodes.f2 = 113;
         &#125;
 
       &#125;
-</code></pre>
-<ol start="2">
-<li>自定义指令的使用方式：</li>
-</ol>
-<pre><code>
+</code></pre><ol start="2"><li>自定义指令的使用方式：</li></ol><pre><code>
 &lt;input type=&quot;text&quot; v-model=&quot;searchName&quot; v-focus v-color=&quot;&#39;red&#39;&quot; v-font-weight=&quot;900&quot;&gt;
-</code></pre>
-<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://v1-cn.vuejs.org/">vue.js 1.x 文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/">vue.js 2.x 文档</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.css88.com/archives/7715">String.prototype.padStart(maxLength, fillString)</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/wuhua1/p/6686237.html">js 里面的键盘事件对应的键码</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/kidney/p/6052935.html">Vue.js双向绑定的实现原理</a></li>
-</ol>
-<h1 id="Vue-js-02"><a href="#Vue-js-02" class="headerlink" title="Vue.js-02"></a>Vue.js-02</h1><h2 id="品牌管理案例"><a href="#品牌管理案例" class="headerlink" title="品牌管理案例"></a>品牌管理案例</h2><h3 id="添加新品牌"><a href="#添加新品牌" class="headerlink" title="添加新品牌"></a>添加新品牌</h3><h3 id="删除品牌"><a href="#删除品牌" class="headerlink" title="删除品牌"></a>删除品牌</h3><h3 id="根据条件筛选品牌"><a href="#根据条件筛选品牌" class="headerlink" title="根据条件筛选品牌"></a>根据条件筛选品牌</h3><ol>
-<li>1.x 版本中的filterBy指令，在2.x中已经被废除：</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://v1-cn.vuejs.org/api/#filterBy">filterBy - 指令</a></p>
-<pre><code>
+</code></pre><h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><ol><li><a target="_blank" rel="noopener" href="https://v1-cn.vuejs.org/">vue.js 1.x 文档</a></li><li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/">vue.js 2.x 文档</a></li><li><a target="_blank" rel="noopener" href="http://www.css88.com/archives/7715">String.prototype.padStart(maxLength, fillString)</a></li><li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/wuhua1/p/6686237.html">js 里面的键盘事件对应的键码</a></li><li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/kidney/p/6052935.html">Vue.js双向绑定的实现原理</a></li></ol><h1 id="Vue-js-02"><a href="#Vue-js-02" class="headerlink" title="Vue.js-02"></a>Vue.js-02</h1><h2 id="品牌管理案例"><a href="#品牌管理案例" class="headerlink" title="品牌管理案例"></a>品牌管理案例</h2><h3 id="添加新品牌"><a href="#添加新品牌" class="headerlink" title="添加新品牌"></a>添加新品牌</h3><h3 id="删除品牌"><a href="#删除品牌" class="headerlink" title="删除品牌"></a>删除品牌</h3><h3 id="根据条件筛选品牌"><a href="#根据条件筛选品牌" class="headerlink" title="根据条件筛选品牌"></a>根据条件筛选品牌</h3><ol><li>1.x 版本中的filterBy指令，在2.x中已经被废除：</li></ol><p><a target="_blank" rel="noopener" href="https://v1-cn.vuejs.org/api/#filterBy">filterBy - 指令</a></p><pre><code>
 &lt;tr v-for=&quot;item in list | filterBy searchName in &#39;name&#39;&quot;&gt;
 
   &lt;td&gt;&#123;&#123;item.id&#125;&#125;&lt;/td&gt;
@@ -829,22 +453,11 @@ Vue.config.keyCodes.f2 = 113;
   &lt;/td&gt;
 
 &lt;/tr&gt;
-</code></pre>
-<ol start="2">
-<li>在2.x版本中<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/list.html#%E6%98%BE%E7%A4%BA%E8%BF%87%E6%BB%A4-%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C">手动实现筛选的方式</a>：</li>
-</ol>
-<ul>
-<li>筛选框绑定到 VM 实例中的 <code>searchName</code> 属性：</li>
-</ul>
-<pre><code>
+</code></pre><ol start="2"><li>在2.x版本中<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/list.html#%E6%98%BE%E7%A4%BA%E8%BF%87%E6%BB%A4-%E6%8E%92%E5%BA%8F%E7%BB%93%E6%9E%9C">手动实现筛选的方式</a>：</li></ol><ul><li>筛选框绑定到 VM 实例中的 <code>searchName</code> 属性：</li></ul><pre><code>
 &lt;hr&gt; 输入筛选名称：
 
 &lt;input type=&quot;text&quot; v-model=&quot;searchName&quot;&gt;
-</code></pre>
-<ul>
-<li>在使用 <code>v-for</code> 指令循环每一行数据的时候，不再直接 <code>item in list</code>，而是 <code>in</code> 一个 过滤的methods 方法，同时，把过滤条件<code>searchName</code>传递进去：</li>
-</ul>
-<pre><code>
+</code></pre><ul><li>在使用 <code>v-for</code> 指令循环每一行数据的时候，不再直接 <code>item in list</code>，而是 <code>in</code> 一个 过滤的methods 方法，同时，把过滤条件<code>searchName</code>传递进去：</li></ul><pre><code>
 &lt;tbody&gt;
 
       &lt;tr v-for=&quot;item in search(searchName)&quot;&gt;
@@ -864,11 +477,7 @@ Vue.config.keyCodes.f2 = 113;
       &lt;/tr&gt;
 
     &lt;/tbody&gt;
-</code></pre>
-<ul>
-<li><code>search</code> 过滤方法中，使用 数组的 <code>filter</code> 方法进行过滤：</li>
-</ul>
-<pre><code>
+</code></pre><ul><li><code>search</code> 过滤方法中，使用 数组的 <code>filter</code> 方法进行过滤：</li></ul><pre><code>
 search(name) &#123;
 
   return this.list.filter(x =&gt; &#123;
@@ -878,39 +487,7 @@ search(name) &#123;
   &#125;);
 
 &#125;
-</code></pre>
-<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">vue实例的生命周期</a></p>
-<ul>
-<li>什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！</li>
-<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90">生命周期钩子</a>：就是生命周期事件的别名而已；</li>
-<li>生命周期钩子 &#x3D; 生命周期函数 &#x3D; 生命周期事件</li>
-<li>主要的生命周期函数分类：</li>
-</ul>
-<ul>
-<li><p>创建期间的生命周期函数：</p>
-<ul>
-<li>beforeCreate：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性</li>
-<li>created：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板</li>
-<li>beforeMount：此时已经完成了模板的编译，但是还没有挂载到页面中</li>
-<li>mounted：此时，已经将编译好的模板，挂载到了页面指定的容器中显示</li>
-</ul>
-</li>
-<li><p>运行期间的生命周期函数：</p>
-<ul>
-<li>beforeUpdate：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点</li>
-<li>updated：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！</li>
-</ul>
-</li>
-<li><p>销毁期间的生命周期函数：</p>
-<ul>
-<li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。</li>
-<li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li>
-</ul>
-</li>
-</ul>
-<p><img src="/2020/06/11/1513842918367039488/images/lifecycle.png" alt="lifecycle"></p>
-<p>【生命周期案例】</p>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
+</code></pre><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">vue实例的生命周期</a></p><ul><li>什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！</li><li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90">生命周期钩子</a>：就是生命周期事件的别名而已；</li><li>生命周期钩子 &#x3D; 生命周期函数 &#x3D; 生命周期事件</li><li>主要的生命周期函数分类：</li></ul><ul><li><p>创建期间的生命周期函数：</p><ul><li>beforeCreate：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性</li><li>created：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板</li><li>beforeMount：此时已经完成了模板的编译，但是还没有挂载到页面中</li><li>mounted：此时，已经将编译好的模板，挂载到了页面指定的容器中显示</li></ul></li><li><p>运行期间的生命周期函数：</p><ul><li>beforeUpdate：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点</li><li>updated：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！</li></ul></li><li><p>销毁期间的生命周期函数：</p><ul><li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。</li><li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li></ul></li></ul><p><img src="/2020/06/11/1513842918367039488/images/lifecycle.png" alt="lifecycle"></p><p>【生命周期案例】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -968,54 +545,13 @@ search(name) &#123;
    &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h2 id="vue-resource-实现-get-post-jsonp请求"><a href="#vue-resource-实现-get-post-jsonp请求" class="headerlink" title="vue-resource 实现 get, post, jsonp请求"></a><a target="_blank" rel="noopener" href="https://github.com/pagekit/vue-resource">vue-resource 实现 get, post, jsonp请求</a></h2><p>除了 vue-resource 之外，还可以使用 <code>axios</code> 的第三方包实现实现数据的请求</p>
-<ol>
-<li>之前的学习中，如何发起数据请求？</li>
-<li>常见的数据请求类型？  get  post jsonp</li>
-<li>测试的URL请求资源地址：</li>
-</ol>
-<ul>
-<li>get请求地址： <a target="_blank" rel="noopener" href="http://vue.studyit.io/api/getlunbo">http://vue.studyit.io/api/getlunbo</a></li>
-<li>post请求地址：<a target="_blank" rel="noopener" href="http://vue.studyit.io/api/post">http://vue.studyit.io/api/post</a></li>
-<li>jsonp请求地址：<a target="_blank" rel="noopener" href="http://vue.studyit.io/api/jsonp">http://vue.studyit.io/api/jsonp</a></li>
-</ul>
-<ol start="4">
-<li>JSONP的实现原理</li>
-</ol>
-<ul>
-<li><p>由于浏览器的安全性限制，不允许AJAX访问 协议不同、域名不同、端口号不同的 数据接口，浏览器认为这种访问不安全；</p>
-</li>
-<li><p>可以通过动态创建script标签的形式，把script标签的src属性，指向数据接口的地址，因为script标签不存在跨域限制，这种数据获取方式，称作JSONP（注意：根据JSONP的实现原理，知晓，JSONP只支持Get请求）；</p>
-</li>
-<li><p>具体实现过程：</p>
-<ul>
-<li>先在客户端定义一个回调方法，预定义对数据的操作；</li>
-<li>再把这个回调方法的名称，通过URL传参的形式，提交到服务器的数据接口；</li>
-<li>服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；</li>
-<li>客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了；</li>
-</ul>
-</li>
-<li><p>带大家通过 Node.js ，来手动实现一个JSONP的请求例子；<br> &#96;&#96;&#96;<br> const http &#x3D; require(‘http’);<br> &#x2F;&#x2F; 导入解析 URL 地址的核心模块<br> const urlModule &#x3D; require(‘url’);</p>
-<p> const server &#x3D; http.createServer();<br> &#x2F;&#x2F; 监听 服务器的 request 请求事件，处理每个请求<br> server.on(‘request’, (req, res) &#x3D;&gt; {<br>   const url &#x3D; req.url;</p>
-<p>   &#x2F;&#x2F; 解析客户端请求的URL地址<br>   var info &#x3D; urlModule.parse(url, true);</p>
-<p>   &#x2F;&#x2F; 如果请求的 URL 地址是 &#x2F;getjsonp ，则表示要获取JSONP类型的数据<br>   if (info.pathname &#x3D;&#x3D;&#x3D; ‘&#x2F;getjsonp’) {<br> &#x2F;&#x2F; 获取客户端指定的回调函数的名称<br> var cbName &#x3D; info.query.callback;<br> &#x2F;&#x2F; 手动拼接要返回给客户端的数据对象<br> var data &#x3D; {<br>   name: ‘zs’,<br>   age: 22,<br>   gender: ‘男’,<br>   hobby: [‘吃饭’, ‘睡觉’, ‘运动’]<br> }<br> &#x2F;&#x2F; 拼接出一个方法的调用，在调用这个方法的时候，把要发送给客户端的数据，序列化为字符串，作为参数传递给这个调用的方法：<br> var result &#x3D; <code>$&#123;cbName&#125;($&#123;JSON.stringify(data)&#125;)</code>;<br> &#x2F;&#x2F; 将拼接好的方法的调用，返回给客户端去解析执行<br> res.end(result);<br>   } else {<br> res.end(‘404’);<br>   }<br> });</p>
-<p> server.listen(3000, () &#x3D;&gt; {<br>   console.log(‘server running at <a href="http://127.0.0.1:3000&#39;">http://127.0.0.1:3000&#39;</a>);<br> });</p>
-</li>
-</ul>
-<pre><code>5. vue-resource 的配置步骤：
+</code></pre><h2 id="vue-resource-实现-get-post-jsonp请求"><a href="#vue-resource-实现-get-post-jsonp请求" class="headerlink" title="vue-resource 实现 get, post, jsonp请求"></a><a target="_blank" rel="noopener" href="https://github.com/pagekit/vue-resource">vue-resource 实现 get, post, jsonp请求</a></h2><p>除了 vue-resource 之外，还可以使用 <code>axios</code> 的第三方包实现实现数据的请求</p><ol><li>之前的学习中，如何发起数据请求？</li><li>常见的数据请求类型？ get post jsonp</li><li>测试的URL请求资源地址：</li></ol><ul><li>get请求地址： <a target="_blank" rel="noopener" href="http://vue.studyit.io/api/getlunbo">http://vue.studyit.io/api/getlunbo</a></li><li>post请求地址：<a target="_blank" rel="noopener" href="http://vue.studyit.io/api/post">http://vue.studyit.io/api/post</a></li><li>jsonp请求地址：<a target="_blank" rel="noopener" href="http://vue.studyit.io/api/jsonp">http://vue.studyit.io/api/jsonp</a></li></ul><ol start="4"><li>JSONP的实现原理</li></ol><ul><li><p>由于浏览器的安全性限制，不允许AJAX访问 协议不同、域名不同、端口号不同的 数据接口，浏览器认为这种访问不安全；</p></li><li><p>可以通过动态创建script标签的形式，把script标签的src属性，指向数据接口的地址，因为script标签不存在跨域限制，这种数据获取方式，称作JSONP（注意：根据JSONP的实现原理，知晓，JSONP只支持Get请求）；</p></li><li><p>具体实现过程：</p><ul><li>先在客户端定义一个回调方法，预定义对数据的操作；</li><li>再把这个回调方法的名称，通过URL传参的形式，提交到服务器的数据接口；</li><li>服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；</li><li>客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了；</li></ul></li><li><p>带大家通过 Node.js ，来手动实现一个JSONP的请求例子；<br>&#96;&#96;&#96;<br>const http &#x3D; require(‘http’);<br>&#x2F;&#x2F; 导入解析 URL 地址的核心模块<br>const urlModule &#x3D; require(‘url’);</p><p>const server &#x3D; http.createServer();<br>&#x2F;&#x2F; 监听 服务器的 request 请求事件，处理每个请求<br>server.on(‘request’, (req, res) &#x3D;&gt; {<br>const url &#x3D; req.url;</p><p>&#x2F;&#x2F; 解析客户端请求的URL地址<br>var info &#x3D; urlModule.parse(url, true);</p><p>&#x2F;&#x2F; 如果请求的 URL 地址是 &#x2F;getjsonp ，则表示要获取JSONP类型的数据<br>if (info.pathname &#x3D;&#x3D;&#x3D; ‘&#x2F;getjsonp’) {<br>&#x2F;&#x2F; 获取客户端指定的回调函数的名称<br>var cbName &#x3D; info.query.callback;<br>&#x2F;&#x2F; 手动拼接要返回给客户端的数据对象<br>var data &#x3D; {<br>name: ‘zs’,<br>age: 22,<br>gender: ‘男’,<br>hobby: [‘吃饭’, ‘睡觉’, ‘运动’]<br>}<br>&#x2F;&#x2F; 拼接出一个方法的调用，在调用这个方法的时候，把要发送给客户端的数据，序列化为字符串，作为参数传递给这个调用的方法：<br>var result &#x3D; <code>$&#123;cbName&#125;($&#123;JSON.stringify(data)&#125;)</code>;<br>&#x2F;&#x2F; 将拼接好的方法的调用，返回给客户端去解析执行<br>res.end(result);<br>} else {<br>res.end(‘404’);<br>}<br>});</p><p>server.listen(3000, () &#x3D;&gt; {<br>console.log(‘server running at <a href="http://127.0.0.1:3000&#39;">http://127.0.0.1:3000&#39;</a>);<br>});</p></li></ul><pre><code>5. vue-resource 的配置步骤：
 + 直接在页面中，通过`script`标签，引入 `vue-resource` 的脚本文件；
 + 注意：引用的先后顺序是：先引用 `Vue` 的脚本文件，再引用 `vue-resource` 的脚本文件；
 6. 发送get请求：
-</code></pre>
-<p>getInfo() { &#x2F;&#x2F; get 方式获取数据<br>  this.$http.get(‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/api/getlunbo&#39;).then">http://127.0.0.1:8899/api/getlunbo&#39;).then</a>(res &#x3D;&gt; {<br>    console.log(res.body);<br>  })<br>}</p>
-<pre><code>7. 发送post请求：
-</code></pre>
-<p>postInfo() {<br>  var url &#x3D; ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/api/post&#39;">http://127.0.0.1:8899/api/post&#39;</a>;<br>  &#x2F;&#x2F; post 方法接收三个参数：<br>  &#x2F;&#x2F; 参数1： 要请求的URL地址<br>  &#x2F;&#x2F; 参数2： 要发送的数据对象<br>  &#x2F;&#x2F; 参数3： 指定post提交的编码类型为 application&#x2F;x-www-form-urlencoded<br>  this.$http.post(url, { name: ‘zs’ }, { emulateJSON: true }).then(res &#x3D;&gt; {<br>    console.log(res.body);<br>  });<br>}</p>
-<pre><code>8. 发送JSONP请求获取数据：
-</code></pre>
-<p>jsonpInfo() { &#x2F;&#x2F; JSONP形式从服务器获取数据<br>  var url &#x3D; ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/api/jsonp&#39;">http://127.0.0.1:8899/api/jsonp&#39;</a>;<br>  this.$http.jsonp(url).then(res &#x3D;&gt; {<br>    console.log(res.body);<br>  });<br>}</p>
-<pre><code>
+</code></pre><p>getInfo() { &#x2F;&#x2F; get 方式获取数据<br>this.$http.get(‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/api/getlunbo&#39;).then">http://127.0.0.1:8899/api/getlunbo&#39;).then</a>(res &#x3D;&gt; {<br>console.log(res.body);<br>})<br>}</p><pre><code>7. 发送post请求：
+</code></pre><p>postInfo() {<br>var url &#x3D; ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/api/post&#39;">http://127.0.0.1:8899/api/post&#39;</a>;<br>&#x2F;&#x2F; post 方法接收三个参数：<br>&#x2F;&#x2F; 参数1： 要请求的URL地址<br>&#x2F;&#x2F; 参数2： 要发送的数据对象<br>&#x2F;&#x2F; 参数3： 指定post提交的编码类型为 application&#x2F;x-www-form-urlencoded<br>this.$http.post(url, { name: ‘zs’ }, { emulateJSON: true }).then(res &#x3D;&gt; {<br>console.log(res.body);<br>});<br>}</p><pre><code>8. 发送JSONP请求获取数据：
+</code></pre><p>jsonpInfo() { &#x2F;&#x2F; JSONP形式从服务器获取数据<br>var url &#x3D; ‘<a target="_blank" rel="noopener" href="http://127.0.0.1:8899/api/jsonp&#39;">http://127.0.0.1:8899/api/jsonp&#39;</a>;<br>this.$http.jsonp(url).then(res &#x3D;&gt; {<br>console.log(res.body);<br>});<br>}</p><pre><code>
 ## 配置本地数据库和数据接口API
 1. 先解压安装 `PHPStudy`;
 2. 解压安装 `Navicat` 这个数据库可视化工具，并激活；
@@ -1037,61 +573,16 @@ search(name) &#123;
 
 ### 使用过渡类名
 1. HTML结构：
-</code></pre>
-<div id="app">
-    <input type="button" value="动起来" @click="myAnimate">
-    <!-- 使用 transition 将需要过渡的元素包裹起来 -->
-    <transition name="fade">
-      <div v-show="isshow">动画哦</div>
-    </transition>
-  </div>
-```
-2. VM 实例：
-```
-// 创建 Vue 实例，得到 ViewModel
-var vm = new Vue({
-  el: '#app',
-  data: {
-    isshow: false
-  },
-  methods: {
-    myAnimate() {
-      this.isshow = !this.isshow;
-    }
-  }
-});
-```
-3. 定义两组类样式：
-```
-/* 定义进入和离开时候的过渡状态 */
-    .fade-enter-active,
-    .fade-leave-active {
-      transition: all 0.2s ease;
-      position: absolute;
-    }
-
-<pre><code>/* 定义进入过渡的开始状态 和 离开过渡的结束状态 */
+</code></pre><div id="app"><input type="button" value="动起来" @click="myAnimate"><transition name="fade"><div v-show="isshow">动画哦</div></transition></div>``` 2. VM 实例： ``` // 创建 Vue 实例，得到 ViewModel var vm = new Vue({ el: '#app', data: { isshow: false }, methods: { myAnimate() { this.isshow = !this.isshow; } } }); ``` 3. 定义两组类样式： ``` /* 定义进入和离开时候的过渡状态 */ .fade-enter-active, .fade-leave-active { transition: all 0.2s ease; position: absolute; }<pre><code>/* 定义进入过渡的开始状态 和 离开过渡的结束状态 */
 .fade-enter,
 .fade-leave-to &#123;
   opacity: 0;
   transform: translateX(100px);
 &#125;
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 ### [使用第三方 CSS 动画库](https://cn.vuejs.org/v2/guide/transitions.html#自定义过渡类名)
 1. 导入动画类库：
-</code></pre>
-<link rel="stylesheet" type="text/css" href="./lib/animate.css">
-```
-2. 定义 transition 及属性：
-```
-<transition enter-active-class="fadeInRight" leave-active-class="fadeOutRight" :duration="{ enter: 500, leave: 800 }">
-      <div class="animated" v-show="isshow">动画哦</div>
-</transition>
-```
-
-<h3 id="使用动画钩子函数"><a href="#使用动画钩子函数" class="headerlink" title="使用动画钩子函数"></a>使用动画钩子函数</h3><ol>
-<li>定义 transition 组件以及三个钩子函数：<pre><code>&lt;div id=&quot;app&quot;&gt;
+</code></pre><link rel="stylesheet" type="text/css" href="./lib/animate.css">``` 2. 定义 transition 及属性： ```<transition enter-active-class="fadeInRight" leave-active-class="fadeOutRight" :duration="{ enter: 500, leave: 800 }"><div class="animated" v-show="isshow">动画哦</div></transition>```<h3 id="使用动画钩子函数"><a href="#使用动画钩子函数" class="headerlink" title="使用动画钩子函数"></a>使用动画钩子函数</h3><ol><li>定义 transition 组件以及三个钩子函数：<pre><code>&lt;div id=&quot;app&quot;&gt;
  &lt;input type=&quot;button&quot; value=&quot;切换动画&quot; @click=&quot;isshow = !isshow&quot;&gt;
  &lt;transition
  @before-enter=&quot;beforeEnter&quot;
@@ -1100,9 +591,7 @@ var vm = new Vue({
    &lt;div v-if=&quot;isshow&quot; class=&quot;show&quot;&gt;OK&lt;/div&gt;
  &lt;/transition&gt;
   &lt;/div&gt;
-</code></pre>
-</li>
-<li>定义三个 methods 钩子方法：<pre><code>methods: &#123;
+</code></pre></li><li>定义三个 methods 钩子方法：<pre><code>methods: &#123;
      beforeEnter(el) &#123; // 动画进入之前的回调
        el.style.transform = &#39;translateX(500px)&#39;;
      &#125;,
@@ -1115,110 +604,33 @@ var vm = new Vue({
        this.isshow = !this.isshow;
      &#125;
    &#125;
-</code></pre>
-</li>
-<li>定义动画过渡时长和样式：<pre><code>.show&#123;
+</code></pre></li><li>定义动画过渡时长和样式：<pre><code>.show&#123;
    transition: all 0.4s ease;
  &#125;
-</code></pre>
-</li>
-</ol>
-<h3 id="v-for-的列表过渡"><a href="#v-for-的列表过渡" class="headerlink" title="v-for 的列表过渡"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/transitions.html#%E5%88%97%E8%A1%A8%E7%9A%84%E8%BF%9B%E5%85%A5%E5%92%8C%E7%A6%BB%E5%BC%80%E8%BF%87%E6%B8%A1">v-for 的列表过渡</a></h3><ol>
-<li>定义过渡样式：<br>&#96;&#96;&#96;<style>
- .list-enter,
- .list-leave-to {
-   opacity: 0;
-   transform: translateY(10px);
- }
-
- .list-enter-active,
- .list-leave-active {
-   transition: all 0.3s ease;
- }</li>
-</ol>
-<p></style><p></p>
-<pre><code>2. 定义DOM结构，其中，需要使用 transition-group 组件把v-for循环的列表包裹起来：
-</code></pre>
-  <div id="app">
-    <input type="text" v-model="txt" @keyup.enter="add">
-
-<pre><code>&lt;transition-group tag=&quot;ul&quot; name=&quot;list&quot;&gt;
+</code></pre></li></ol><h3 id="v-for-的列表过渡"><a href="#v-for-的列表过渡" class="headerlink" title="v-for 的列表过渡"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/transitions.html#%E5%88%97%E8%A1%A8%E7%9A%84%E8%BF%9B%E5%85%A5%E5%92%8C%E7%A6%BB%E5%BC%80%E8%BF%87%E6%B8%A1">v-for 的列表过渡</a></h3><ol><li>定义过渡样式：<br>&#96;&#96;&#96;<style>.list-enter,.list-leave-to{opacity:0;transform:translateY(10px)}.list-enter-active,.list-leave-active{transition:all .3s ease}</style><p></p><pre><code>2. 定义DOM结构，其中，需要使用 transition-group 组件把v-for循环的列表包裹起来：
+</code></pre><div id="app"><input type="text" v-model="txt" @keyup.enter="add"><pre><code>&lt;transition-group tag=&quot;ul&quot; name=&quot;list&quot;&gt;
   &lt;li v-for=&quot;(item, i) in list&quot; :key=&quot;i&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;
 &lt;/transition-group&gt;
-</code></pre>
-  </div>
-```
-3. 定义 VM中的结构：
-```
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        txt: '',
-        list: [1, 2, 3, 4]
-      },
-      methods: {
-        add() {
-          this.list.push(this.txt);
-          this.txt = '';
-        }
-      }
-    });
-```
-
-
-<h3 id="列表的排序过渡"><a href="#列表的排序过渡" class="headerlink" title="列表的排序过渡"></a>列表的排序过渡</h3><p><code>&lt;transition-group&gt;</code> 组件还有一个特殊之处。不仅可以进入和离开动画，<strong>还可以改变定位</strong>。要使用这个新功能只需了解新增的 <code>v-move</code> 特性，<strong>它会在元素的改变定位的过程中应用</strong>。</p>
-<ul>
-<li><code>v-move</code> 和 <code>v-leave-active</code> 结合使用，能够让列表的过渡更加平缓柔和：<pre><code>.v-move&#123;
+</code></pre></div>``` 3. 定义 VM中的结构： ``` // 创建 Vue 实例，得到 ViewModel var vm = new Vue({ el: '#app', data: { txt: '', list: [1, 2, 3, 4] }, methods: { add() { this.list.push(this.txt); this.txt = ''; } } }); ```<h3 id="列表的排序过渡"><a href="#列表的排序过渡" class="headerlink" title="列表的排序过渡"></a>列表的排序过渡</h3><p><code>&lt;transition-group&gt;</code> 组件还有一个特殊之处。不仅可以进入和离开动画，<strong>还可以改变定位</strong>。要使用这个新功能只需了解新增的 <code>v-move</code> 特性，<strong>它会在元素的改变定位的过程中应用</strong>。</p><ul><li><code>v-move</code> 和 <code>v-leave-active</code> 结合使用，能够让列表的过渡更加平缓柔和：<pre><code>.v-move&#123;
 transition: all 0.8s ease;
 &#125;
 .v-leave-active&#123;
 position: absolute;
 &#125;
-</code></pre>
-</li>
-</ul>
-<h2 id="相关文章-1"><a href="#相关文章-1" class="headerlink" title="相关文章"></a>相关文章</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://v1-cn.vuejs.org/">vue.js 1.x 文档</a></li>
-<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/">vue.js 2.x 文档</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.css88.com/archives/7715">String.prototype.padStart(maxLength, fillString)</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/wuhua1/p/6686237.html">js 里面的键盘事件对应的键码</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/pagekit/vue-resource">pagekit&#x2F;vue-resource</a></li>
-<li><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/a65957f4976aad24e67f9b9b.html">navicat如何导入sql文件和导出sql文件</a></li>
-<li><a target="_blank" rel="noopener" href="http://cubic-bezier.com/#.4,-0.3,1,.33">贝塞尔在线生成器</a></li>
-</ol>
-<h1 id="Vue-js-03"><a href="#Vue-js-03" class="headerlink" title="Vue.js-03"></a>Vue.js-03</h1><h2 id="定义Vue组件"><a href="#定义Vue组件" class="headerlink" title="定义Vue组件"></a>定义Vue组件</h2><p>什么是组件： 组件的出现，就是为了拆分Vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可；<br>组件化和模块化的不同：</p>
-<ul>
-<li>模块化： 是从代码逻辑的角度进行划分的；方便代码分层开发，保证每个功能模块的职能单一；</li>
-<li>组件化： 是从UI界面的角度进行划分的；前端的组件化，方便UI组件的重用；<h3 id="全局组件定义的三种方式"><a href="#全局组件定义的三种方式" class="headerlink" title="全局组件定义的三种方式"></a>全局组件定义的三种方式</h3></li>
-</ul>
-<ol>
-<li>使用 Vue.extend 配合 Vue.component 方法：<pre><code>var login = Vue.extend(&#123;
+</code></pre></li></ul><h2 id="相关文章-1"><a href="#相关文章-1" class="headerlink" title="相关文章"></a>相关文章</h2><ol><li><a target="_blank" rel="noopener" href="https://v1-cn.vuejs.org/">vue.js 1.x 文档</a></li><li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/">vue.js 2.x 文档</a></li><li><a target="_blank" rel="noopener" href="http://www.css88.com/archives/7715">String.prototype.padStart(maxLength, fillString)</a></li><li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/wuhua1/p/6686237.html">js 里面的键盘事件对应的键码</a></li><li><a target="_blank" rel="noopener" href="https://github.com/pagekit/vue-resource">pagekit&#x2F;vue-resource</a></li><li><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/a65957f4976aad24e67f9b9b.html">navicat如何导入sql文件和导出sql文件</a></li><li><a target="_blank" rel="noopener" href="http://cubic-bezier.com/#.4,-0.3,1,.33">贝塞尔在线生成器</a></li></ol><h1 id="Vue-js-03"><a href="#Vue-js-03" class="headerlink" title="Vue.js-03"></a>Vue.js-03</h1><h2 id="定义Vue组件"><a href="#定义Vue组件" class="headerlink" title="定义Vue组件"></a>定义Vue组件</h2><p>什么是组件： 组件的出现，就是为了拆分Vue实例的代码量的，能够让我们以不同的组件，来划分不同的功能模块，将来我们需要什么样的功能，就可以去调用对应的组件即可；<br>组件化和模块化的不同：</p><ul><li>模块化： 是从代码逻辑的角度进行划分的；方便代码分层开发，保证每个功能模块的职能单一；</li><li>组件化： 是从UI界面的角度进行划分的；前端的组件化，方便UI组件的重用；<h3 id="全局组件定义的三种方式"><a href="#全局组件定义的三种方式" class="headerlink" title="全局组件定义的三种方式"></a>全局组件定义的三种方式</h3></li></ul><ol><li>使用 Vue.extend 配合 Vue.component 方法：<pre><code>var login = Vue.extend(&#123;
    template: &#39;&lt;h1&gt;登录&lt;/h1&gt;&#39;
  &#125;);
  Vue.component(&#39;login&#39;, login);
-</code></pre>
-</li>
-<li>直接使用 Vue.component 方法：<pre><code>Vue.component(&#39;register&#39;, &#123;
+</code></pre></li><li>直接使用 Vue.component 方法：<pre><code>Vue.component(&#39;register&#39;, &#123;
    template: &#39;&lt;h1&gt;注册&lt;/h1&gt;&#39;
  &#125;);
-</code></pre>
-</li>
-<li>将模板字符串，定义到script标签种：<pre><code>&lt;script id=&quot;tmpl&quot; type=&quot;x-template&quot;&gt;
+</code></pre></li><li>将模板字符串，定义到script标签种：<pre><code>&lt;script id=&quot;tmpl&quot; type=&quot;x-template&quot;&gt;
    &lt;div&gt;&lt;a href=&quot;#&quot;&gt;登录&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;注册&lt;/a&gt;&lt;/div&gt;
  &lt;/script&gt;
-</code></pre>
-同时，需要使用 Vue.component 来定义组件：<pre><code>Vue.component(&#39;account&#39;, &#123;
+</code></pre>同时，需要使用 Vue.component 来定义组件：<pre><code>Vue.component(&#39;account&#39;, &#123;
    template: &#39;#tmpl&#39;
  &#125;);
-</code></pre>
-</li>
-</ol>
-<blockquote>
-<p>注意： 组件中的DOM结构，有且只能有唯一的根元素（Root Element）来进行包裹！</p>
-</blockquote>
-<h3 id="组件中展示数据和响应事件"><a href="#组件中展示数据和响应事件" class="headerlink" title="组件中展示数据和响应事件"></a>组件中展示数据和响应事件</h3><ol>
-<li>在组件中，<code>data</code>需要被定义为一个方法，例如：<pre><code>Vue.component(&#39;account&#39;, &#123;
+</code></pre></li></ol><blockquote><p>注意： 组件中的DOM结构，有且只能有唯一的根元素（Root Element）来进行包裹！</p></blockquote><h3 id="组件中展示数据和响应事件"><a href="#组件中展示数据和响应事件" class="headerlink" title="组件中展示数据和响应事件"></a>组件中展示数据和响应事件</h3><ol><li>在组件中，<code>data</code>需要被定义为一个方法，例如：<pre><code>Vue.component(&#39;account&#39;, &#123;
    template: &#39;#tmpl&#39;,
    data() &#123;
      return &#123;
@@ -1231,14 +643,7 @@ position: absolute;
      &#125;
    &#125;
  &#125;);
-</code></pre>
-</li>
-<li>在子组件中，如果将模板字符串，定义到了script标签中，那么，要访问子组件身上的<code>data</code>属性中的值，需要使用<code>this</code>来访问；</li>
-</ol>
-<h3 id="【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象"><a href="#【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象" class="headerlink" title="【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象"></a>【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象</h3><ol>
-<li>通过计数器案例演示</li>
-</ol>
-<pre><code class="html">&lt;!DOCTYPE html&gt;
+</code></pre></li><li>在子组件中，如果将模板字符串，定义到了script标签中，那么，要访问子组件身上的<code>data</code>属性中的值，需要使用<code>this</code>来访问；</li></ol><h3 id="【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象"><a href="#【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象" class="headerlink" title="【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象"></a>【重点】为什么组件中的data属性必须定义为一个方法并返回一个对象</h3><ol><li>通过计数器案例演示</li></ol><pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot; /&gt;
@@ -1284,9 +689,7 @@ position: absolute;
     &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h3 id="使用components属性定义局部子组件"><a href="#使用components属性定义局部子组件" class="headerlink" title="使用components属性定义局部子组件"></a>使用<code>components</code>属性定义局部子组件</h3><ol>
-<li>组件实例定义方式：<pre><code>&lt;script&gt;
+</code></pre><h3 id="使用components属性定义局部子组件"><a href="#使用components属性定义局部子组件" class="headerlink" title="使用components属性定义局部子组件"></a>使用<code>components</code>属性定义局部子组件</h3><ol><li>组件实例定义方式：<pre><code>&lt;script&gt;
  // 创建 Vue 实例，得到 ViewModel
  var vm = new Vue(&#123;
    el: &#39;#app&#39;,
@@ -1304,25 +707,16 @@ position: absolute;
    &#125;
  &#125;);
   &lt;/script&gt;
-</code></pre>
-</li>
-<li>引用组件：<pre><code>&lt;div id=&quot;app&quot;&gt;
+</code></pre></li><li>引用组件：<pre><code>&lt;div id=&quot;app&quot;&gt;
  &lt;account&gt;&lt;/account&gt;
   &lt;/div&gt;
-</code></pre>
-</li>
-</ol>
-<h2 id="使用flag标识符结合v-if和v-else切换组件"><a href="#使用flag标识符结合v-if和v-else切换组件" class="headerlink" title="使用flag标识符结合v-if和v-else切换组件"></a>使用<code>flag</code>标识符结合<code>v-if</code>和<code>v-else</code>切换组件</h2><ol>
-<li>页面结构：<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+</code></pre></li></ol><h2 id="使用flag标识符结合v-if和v-else切换组件"><a href="#使用flag标识符结合v-if和v-else切换组件" class="headerlink" title="使用flag标识符结合v-if和v-else切换组件"></a>使用<code>flag</code>标识符结合<code>v-if</code>和<code>v-else</code>切换组件</h2><ol><li>页面结构：<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
  &lt;input type=&quot;button&quot; value=&quot;toggle&quot; @click=&quot;flag=!flag&quot;&gt;
  &lt;!-- 组件名称定义为驼峰时,标签要用-分开 --&gt;
  &lt;my-com1 v-if=&quot;flag&quot;&gt;&lt;/my-com1&gt;
  &lt;my-com2 v-else=&quot;flag&quot;&gt;&lt;/my-com2&gt;
   &lt;/div&gt;
-</code></pre>
-</li>
-<li>Vue实例定义：<br>&#96;&#96;&#96;js<script>
- Vue.component('myCom1', {
+</code></pre></li><li>Vue实例定义：<br>&#96;&#96;&#96;js<script>Vue.component('myCom1', {
    template: '<h3>奔波霸</h3>'
  })
 
@@ -1339,13 +733,10 @@ position: absolute;
    methods: {}
  });</li>
 </ol>
-<p>  </script><p></p>
-<pre><code>
+<p></script><p></p><pre><code>
 ## 使用`:is`属性来切换不同的子组件,并添加切换动画
 1. 组件实例定义方式：
-</code></pre>
-<p>  &#x2F;&#x2F; 登录组件<br>    const login &#x3D; Vue.extend({<br>      template: <code>&lt;div&gt;         &lt;h3&gt;登录组件&lt;/h3&gt;       &lt;/div&gt;</code><br>    });<br>    Vue.component(‘login’, login);</p>
-<pre><code>// 注册组件
+</code></pre><p>&#x2F;&#x2F; 登录组件<br>const login &#x3D; Vue.extend({<br>template: <code>&lt;div&gt; &lt;h3&gt;登录组件&lt;/h3&gt; &lt;/div&gt;</code><br>});<br>Vue.component(‘login’, login);</p><pre><code>// 注册组件
 const register = Vue.extend(&#123;
   template: `&lt;div&gt;
     &lt;h3&gt;注册组件&lt;/h3&gt;
@@ -1359,148 +750,24 @@ var vm = new Vue(&#123;
   data: &#123; comName: &#39;login&#39; &#125;,
   methods: &#123;&#125;
 &#125;);
-</code></pre>
-<pre><code>2. 使用`component`标签，来引用组件，并通过`:is`属性来指定要加载的组件：
-</code></pre>
-  <div id="app">
-    <a href="#" @click.prevent="comName='login'">登录</a>
-    <a href="#" @click.prevent="comName='register'">注册</a>
-    <hr>
-    <transition mode="out-in">
-      <component :is="comName"></component>
-    </transition>
-  </div>
-```
-3. 添加切换样式：
-```
-  <style>
-    .v-enter,
-    .v-leave-to {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-
-<pre><code>.v-enter-active,
-.v-leave-active &#123;
-  position: absolute;
-  transition: all 0.3s ease;
-&#125;
-
-h3&#123;
-  margin: 0;
-&#125;
-</code></pre>
-<p>  </style><p></p>
-<pre><code>
+</code></pre><pre><code>2. 使用`component`标签，来引用组件，并通过`:is`属性来指定要加载的组件：
+</code></pre><div id="app"><a href="#" @click.prevent="comName='login'">登录</a> <a href="#" @click.prevent="comName='register'">注册</a><hr><transition mode="out-in"><component :is="comName"></component></transition></div>``` 3. 添加切换样式： ```<style>.v-enter,.v-leave-to{opacity:0;transform:translateX(30px)}</style><p></p><pre><code>
 ## 父组件向子组件传值
 1. 组件实例定义方式，注意：一定要使用`props`属性来定义父组件传递过来的数据
-</code></pre>
-<script>
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        msg: '这是父组件中的消息'
-      },
-      components: {
-        son: {
-          template: '<h1>这是子组件 --- </h1>',
-          props: ['finfo']
-        }
-      }
-    });
-  </script>
-<pre><code>2. 使用`v-bind`或简化指令，将数据传递到子组件中：
-</code></pre>
-<div id="app">
-    <son :finfo="msg"></son>
-  </div>
-```
-
-<h2 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h2><ol>
-<li>原理：父组件将方法的引用，传递到子组件内部，子组件在内部调用父组件传递过来的方法，同时把要发送给父组件的数据，在调用方法的时候当作参数传递进去；</li>
-<li>父组件将方法的引用传递给子组件，其中，<code>getMsg</code>是父组件中<code>methods</code>中定义的方法名称，<code>func</code>是子组件调用传递过来方法时候的方法名称<pre><code>&lt;son @func=&quot;getMsg&quot;&gt;&lt;/son&gt;
-</code></pre>
-</li>
-<li>子组件内部通过<code>this.$emit(&#39;方法名&#39;, 要传递的数据)</code>方式，来调用父组件中的方法，同时把数据传递给父组件使用<br>&#96;&#96;&#96;<div id="app">
- <!-- 引用子组件 -->
- <son @func="getMsg"></son>
-
- <!-- 组件模板定义 -->
- <script type="x-template" id="son">
-   <div>
+</code></pre><script>var vm=new Vue({el:"#app",data:{msg:"这是父组件中的消息"},components:{son:{template:"<h1>这是子组件 --- </h1>",props:["finfo"]}}})</script><pre><code>2. 使用`v-bind`或简化指令，将数据传递到子组件中：
+</code></pre><div id="app"><son :finfo="msg"></son></div>```<h2 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h2><ol><li>原理：父组件将方法的引用，传递到子组件内部，子组件在内部调用父组件传递过来的方法，同时把要发送给父组件的数据，在调用方法的时候当作参数传递进去；</li><li>父组件将方法的引用传递给子组件，其中，<code>getMsg</code>是父组件中<code>methods</code>中定义的方法名称，<code>func</code>是子组件调用传递过来方法时候的方法名称<pre><code>&lt;son @func=&quot;getMsg&quot;&gt;&lt;/son&gt;
+</code></pre></li><li>子组件内部通过<code>this.$emit(&#39;方法名&#39;, 要传递的数据)</code>方式，来调用父组件中的方法，同时把数据传递给父组件使用<br>&#96;&#96;&#96;<div id="app"><son @func="getMsg"></son><script type="x-template" id="son"><div>
      <input type="button" value="向父组件传值" @click="sendMsg" />
-   </div>
- </script></div></li>
-</ol>
-  
-
-  <script>
-    // 子组件的定义方式
-    Vue.component('son', {
-      template: '#son', // 组件模板Id
-      methods: {
-        sendMsg() { // 按钮的点击事件
-          this.$emit('func', 'OK'); // 调用父组件传递过来的方法，同时把数据传递出去
-        }
-      }
-    });
-
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {},
-      methods: {
-        getMsg(val){ // 子组件中，通过 this.$emit() 实际调用的方法，在此进行定义
-          alert(val);
-        }
-      }
-    });
-  </script>
-<pre><code>
+   </div></script></div></li></ol><script>Vue.component("son",{template:"#son",methods:{sendMsg(){this.$emit("func","OK")}}});var vm=new Vue({el:"#app",data:{},methods:{getMsg(e){alert(e)}}})</script><pre><code>
 ## 评论列表案例
 目标：主要练习父子组件之间传值
 
 ## 使用 `this.$refs` 来获取元素和组件
-</code></pre>
-  <div id="app">
-    <div>
-      <input type="button" value="获取元素内容" @click="getElement">
-      <!-- 使用 ref 获取元素 -->
-      <h1 ref="myh1">这是一个大大的H1</h1>
-
-<pre><code>  &lt;hr&gt;
+</code></pre><div id="app"><div><input type="button" value="获取元素内容" @click="getElement"><h1 ref="myh1">这是一个大大的H1</h1><pre><code>  &lt;hr&gt;
   &lt;!-- 使用 ref 获取子组件 --&gt;
   &lt;my-com ref=&quot;mycom&quot;&gt;&lt;/my-com&gt;
 &lt;/div&gt;
-</code></pre>
-  </div>
-
-  <script>
-    Vue.component('my-com', {
-      template: '<h5>这是一个子组件</h5>',
-      data() {
-        return {
-          name: '子组件'
-        }
-      }
-    });
-
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {},
-      methods: {
-        getElement() {
-          // 通过 this.$refs 来获取元素
-          console.log(this.$refs.myh1.innerText);
-          // 通过 this.$refs 来获取组件
-          console.log(this.$refs.mycom.name);
-        }
-      }
-    });
-  </script>
-<pre><code>
+</code></pre></div><script>Vue.component("my-com",{template:"<h5>这是一个子组件</h5>",data(){return{name:"子组件"}}});var vm=new Vue({el:"#app",data:{},methods:{getElement(){console.log(this.$refs.myh1.innerText),console.log(this.$refs.mycom.name)}}})</script><pre><code>
 ## 什么是路由
 1. 对于普通的网站，所有的超链接都是URL地址，所有的URL地址都对应服务器上对应的资源；
 
@@ -1513,24 +780,12 @@ h3&#123;
 ```html
 &lt;!-- 1. 导入 vue-router 组件类库 --&gt;
   &lt;script src=&quot;./lib/vue-router-2.7.0.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<ol start="2">
-<li><p>使用 router-link 组件来导航</p>
-<pre><code class="html">&lt;!-- 2. 使用 router-link 组件来导航 --&gt;
+</code></pre><ol start="2"><li><p>使用 router-link 组件来导航</p><pre><code class="html">&lt;!-- 2. 使用 router-link 组件来导航 --&gt;
 &lt;router-link to=&quot;/login&quot;&gt;登录&lt;/router-link&gt;
 &lt;router-link to=&quot;/register&quot;&gt;注册&lt;/router-link&gt;
-</code></pre>
-</li>
-<li><p>使用 router-view 组件来显示匹配到的组件</p>
-<pre><code class="html">&lt;!-- 3. 使用 router-view 组件来显示匹配到的组件 --&gt;
+</code></pre></li><li><p>使用 router-view 组件来显示匹配到的组件</p><pre><code class="html">&lt;!-- 3. 使用 router-view 组件来显示匹配到的组件 --&gt;
 &lt;router-view&gt;&lt;/router-view&gt;
-</code></pre>
-</li>
-<li><p>创建使用<code>Vue.extend</code>创建组件<br>&#96;&#96;&#96;js<br> &#x2F;&#x2F; 4.1 使用 Vue.extend 来创建登录组件<br> var login &#x3D; Vue.extend({<br>   template: ‘</p><h1>登录组件</h1>‘<br> });<p></p>
-<p> &#x2F;&#x2F; 4.2 使用 Vue.extend 来创建注册组件<br> var register &#x3D; Vue.extend({<br>   template: ‘</p><h1>注册组件</h1>‘<br> });<p></p>
-</li>
-</ol>
-<pre><code>5. 创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则
+</code></pre></li><li><p>创建使用<code>Vue.extend</code>创建组件<br>&#96;&#96;&#96;js<br>&#x2F;&#x2F; 4.1 使用 Vue.extend 来创建登录组件<br>var login &#x3D; Vue.extend({<br>template: ‘</p><h1>登录组件</h1>‘<br>});<p></p><p>&#x2F;&#x2F; 4.2 使用 Vue.extend 来创建注册组件<br>var register &#x3D; Vue.extend({<br>template: ‘</p><h1>注册组件</h1>‘<br>});<p></p></li></ol><pre><code>5. 创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则
 ```js
 // 5. 创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则
     var router = new VueRouter(&#123;
@@ -1540,30 +795,16 @@ h3&#123;
         &#123; path: &#39;/register&#39;, component: register &#125;
       ]
     &#125;);
-</code></pre>
-<ol start="6">
-<li>使用 router 属性来使用路由规则<pre><code class="js">// 6. 创建 Vue 实例，得到 ViewModel
+</code></pre><ol start="6"><li>使用 router 属性来使用路由规则<pre><code class="js">// 6. 创建 Vue 实例，得到 ViewModel
  var vm = new Vue(&#123;
    el: &#39;#app&#39;,
    router: router // 使用 router 属性来使用路由规则
  &#125;);
-</code></pre>
-</li>
-</ol>
-<h2 id="设置路由高亮"><a href="#设置路由高亮" class="headerlink" title="设置路由高亮"></a>设置路由高亮</h2><h2 id="设置路由切换动效"><a href="#设置路由切换动效" class="headerlink" title="设置路由切换动效"></a>设置路由切换动效</h2><h2 id="在路由规则中定义参数"><a href="#在路由规则中定义参数" class="headerlink" title="在路由规则中定义参数"></a>在路由规则中定义参数</h2><blockquote>
-<p>比如访问路径：<a target="_blank" rel="noopener" href="http://localhost:8080/register/123123123123">http://localhost:8080/register/123123123123</a></p>
-</blockquote>
-<ol>
-<li>在规则中定义参数：<pre><code>&#123; path: &#39;/register/:id&#39;, component: register &#125;
-</code></pre>
-</li>
-<li>通过 <code>this.$route.params</code>来获取路由中的参数：<pre><code>var register = Vue.extend(&#123;
+</code></pre></li></ol><h2 id="设置路由高亮"><a href="#设置路由高亮" class="headerlink" title="设置路由高亮"></a>设置路由高亮</h2><h2 id="设置路由切换动效"><a href="#设置路由切换动效" class="headerlink" title="设置路由切换动效"></a>设置路由切换动效</h2><h2 id="在路由规则中定义参数"><a href="#在路由规则中定义参数" class="headerlink" title="在路由规则中定义参数"></a>在路由规则中定义参数</h2><blockquote><p>比如访问路径：<a target="_blank" rel="noopener" href="http://localhost:8080/register/123123123123">http://localhost:8080/register/123123123123</a></p></blockquote><ol><li>在规则中定义参数：<pre><code>&#123; path: &#39;/register/:id&#39;, component: register &#125;
+</code></pre></li><li>通过 <code>this.$route.params</code>来获取路由中的参数：<pre><code>var register = Vue.extend(&#123;
    template: &#39;&lt;h1&gt;注册组件 --- &#123;&#123;this.$route.params.id&#125;&#125;&lt;/h1&gt;&#39;
  &#125;);
-</code></pre>
-</li>
-</ol>
-<h2 id="使用-children-属性实现路由嵌套"><a href="#使用-children-属性实现路由嵌套" class="headerlink" title="使用 children 属性实现路由嵌套"></a>使用 <code>children</code> 属性实现路由嵌套</h2><pre><code class="html">  &lt;div id=&quot;app&quot;&gt;
+</code></pre></li></ol><h2 id="使用-children-属性实现路由嵌套"><a href="#使用-children-属性实现路由嵌套" class="headerlink" title="使用 children 属性实现路由嵌套"></a>使用 <code>children</code> 属性实现路由嵌套</h2><pre><code class="html">  &lt;div id=&quot;app&quot;&gt;
     &lt;router-link to=&quot;/account&quot;&gt;Account&lt;/router-link&gt;
 
     &lt;router-view&gt;&lt;/router-view&gt;
@@ -1617,19 +858,14 @@ h3&#123;
       router: router
     &#125;);
   &lt;/script&gt;
-</code></pre>
-<h2 id="命名视图实现经典布局"><a href="#命名视图实现经典布局" class="headerlink" title="命名视图实现经典布局"></a>命名视图实现经典布局</h2><ol>
-<li>标签代码结构：<pre><code>&lt;div id=&quot;app&quot;&gt;
+</code></pre><h2 id="命名视图实现经典布局"><a href="#命名视图实现经典布局" class="headerlink" title="命名视图实现经典布局"></a>命名视图实现经典布局</h2><ol><li>标签代码结构：<pre><code>&lt;div id=&quot;app&quot;&gt;
  &lt;router-view&gt;&lt;/router-view&gt;
  &lt;div class=&quot;content&quot;&gt;
    &lt;router-view name=&quot;a&quot;&gt;&lt;/router-view&gt;
    &lt;router-view name=&quot;b&quot;&gt;&lt;/router-view&gt;
  &lt;/div&gt;
   &lt;/div&gt;
-</code></pre>
-</li>
-<li>JS代码：<br>&#96;&#96;&#96;<script>
- var header = Vue.component('header', {
+</code></pre></li><li>JS代码：<br>&#96;&#96;&#96;<script>var header = Vue.component('header', {
    template: '<div class="header">header</div>'
  });
 
@@ -1662,167 +898,20 @@ h3&#123;
    router
  });</li>
 </ol>
-<p>  </script><p></p>
-<pre><code>3. CSS 样式：
-</code></pre>
-  <style>
-    .header {
-      border: 1px solid red;
-    }
-
-    .content{
-      display: flex;
-    }
-    .sidebar {
-      flex: 2;
-      border: 1px solid green;
-      height: 500px;
-    }
-    .mainbox{
-      flex: 8;
-      border: 1px solid blue;
-      height: 500px;
-    }
-  </style>
-<pre><code>
+<p></script><p></p><pre><code>3. CSS 样式：
+</code></pre><style>.header{border:1px solid red}.content{display:flex}.sidebar{flex:2;border:1px solid green;height:500px}.mainbox{flex:8;border:1px solid #00f;height:500px}</style><pre><code>
 ## `watch`属性的使用
 考虑一个问题：想要实现 `名` 和 `姓` 两个文本框的内容改变，则全名的文本框中的值也跟着改变；（用以前的知识如何实现？？？）
 
 1. 监听`data`中属性的改变：
-</code></pre>
-<div id="app">
-    <input type="text" v-model="firstName"> +
-    <input type="text" v-model="lastName"> =
-    <span></span>
-  </div>
-
-  <script>
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        firstName: 'jack',
-        lastName: 'chen',
-        fullName: 'jack - chen'
-      },
-      methods: {},
-      watch: {
-        'firstName': function (newVal, oldVal) { // 第一个参数是新数据，第二个参数是旧数据
-          this.fullName = newVal + ' - ' + this.lastName;
-        },
-        'lastName': function (newVal, oldVal) {
-          this.fullName = this.firstName + ' - ' + newVal;
-        }
-      }
-    });
-  </script>
-<pre><code>2. 监听路由对象的改变：
-</code></pre>
-<div id="app">
-    <router-link to="/login">登录</router-link>
-    <router-link to="/register">注册</router-link>
-
-<pre><code>&lt;router-view&gt;&lt;/router-view&gt;
-</code></pre>
-  </div>
-
-  <script>
-    var login = Vue.extend({
-      template: '<h1>登录组件</h1>'
-    });
-
-    var register = Vue.extend({
-      template: '<h1>注册组件</h1>'
-    });
-
-    var router = new VueRouter({
-      routes: [
-        { path: "/login", component: login },
-        { path: "/register", component: register }
-      ]
-    });
-
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {},
-      methods: {},
-      router: router,
-      watch: {
-        '$route': function (newVal, oldVal) {
-          if (newVal.path === '/login') {
-            console.log('这是登录组件');
-          }
-        }
-      }
-    });
-  </script>
-<pre><code>
+</code></pre><div id="app"><input type="text" v-model="firstName"> + <input type="text" v-model="lastName"> = <span></span></div><script>var vm=new Vue({el:"#app",data:{firstName:"jack",lastName:"chen",fullName:"jack - chen"},methods:{},watch:{firstName:function(a,e){this.fullName=a+" - "+this.lastName},lastName:function(a,e){this.fullName=this.firstName+" - "+a}}})</script><pre><code>2. 监听路由对象的改变：
+</code></pre><div id="app"><router-link to="/login">登录</router-link><router-link to="/register">注册</router-link><pre><code>&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre></div><script>var login=Vue.extend({template:"<h1>登录组件</h1>"}),register=Vue.extend({template:"<h1>注册组件</h1>"}),router=new VueRouter({routes:[{path:"/login",component:login},{path:"/register",component:register}]}),vm=new Vue({el:"#app",data:{},methods:{},router:router,watch:{$route:function(e,t){"/login"===e.path&&console.log("这是登录组件")}}})</script><pre><code>
 ## `computed`计算属性的使用
 1. 默认只有`getter`的计算属性：
-</code></pre>
-<div id="app">
-    <input type="text" v-model="firstName"> +
-    <input type="text" v-model="lastName"> =
-    <span></span>
-  </div>
-
-  <script>
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        firstName: 'jack',
-        lastName: 'chen'
-      },
-      methods: {},
-      computed: { // 计算属性； 特点：当计算属性中所以来的任何一个 data 属性改变之后，都会重新触发 本计算属性 的重新计算，从而更新 fullName 的值
-        fullName() {
-          return this.firstName + ' - ' + this.lastName;
-        }
-      }
-    });
-  </script>
-<pre><code>2. 定义有`getter`和`setter`的计算属性：
-</code></pre>
-<div id="app">
-    <input type="text" v-model="firstName">
-    <input type="text" v-model="lastName">
-    <!-- 点击按钮重新为 计算属性 fullName 赋值 -->
-    <input type="button" value="修改fullName" @click="changeName">
-
-<pre><code>&lt;span&gt;&#123;&#123;fullName&#125;&#125;&lt;/span&gt;
-</code></pre>
-  </div>
-
-  <script>
-    // 创建 Vue 实例，得到 ViewModel
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        firstName: 'jack',
-        lastName: 'chen'
-      },
-      methods: {
-        changeName() {
-          this.fullName = 'TOM - chen2';
-        }
-      },
-      computed: {
-        fullName: {
-          get: function () {
-            return this.firstName + ' - ' + this.lastName;
-          },
-          set: function (newVal) {
-            var parts = newVal.split(' - ');
-            this.firstName = parts[0];
-            this.lastName = parts[1];
-          }
-        }
-      }
-    });
-  </script>
-<pre><code>
+</code></pre><div id="app"><input type="text" v-model="firstName"> + <input type="text" v-model="lastName"> = <span></span></div><script>var vm=new Vue({el:"#app",data:{firstName:"jack",lastName:"chen"},methods:{},computed:{fullName(){return this.firstName+" - "+this.lastName}}})</script><pre><code>2. 定义有`getter`和`setter`的计算属性：
+</code></pre><div id="app"><input type="text" v-model="firstName"> <input type="text" v-model="lastName"> <input type="button" value="修改fullName" @click="changeName"><pre><code>&lt;span&gt;&#123;&#123;fullName&#125;&#125;&lt;/span&gt;
+</code></pre></div><script>var vm=new Vue({el:"#app",data:{firstName:"jack",lastName:"chen"},methods:{changeName(){this.fullName="TOM - chen2"}},computed:{fullName:{get:function(){return this.firstName+" - "+this.lastName},set:function(e){e=e.split(" - ");this.firstName=e[0],this.lastName=e[1]}}}})</script><pre><code>
 ## `watch`、`computed`和`methods`之间的对比
 1. `computed`属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。主要当作属性来使用；
 2. `methods`方法表示一个具体的操作，主要书写业务逻辑；
@@ -1885,28 +974,23 @@ webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来
 2. 创建项目基本的目录结构
 3. 使用`cnpm i jquery --save`安装jquery类库
 4. 创建`main.js`并书写各行变色的代码逻辑：
-</code></pre>
-<pre><code>// 导入jquery类库
+</code></pre><pre><code>// 导入jquery类库
 import $ from &#39;jquery&#39;
 
 // 设置偶数行背景色，索引从0开始，0是偶数
 $(&#39;#list li:even&#39;).css(&#39;backgroundColor&#39;,&#39;lightblue&#39;);
 // 设置奇数行背景色
 $(&#39;#list li:odd&#39;).css(&#39;backgroundColor&#39;,&#39;pink&#39;);
-</code></pre>
-<pre><code>5. 直接在页面上引用`main.js`会报错，因为浏览器不认识`import`这种高级的JS语法，需要使用webpack进行处理，webpack默认会把这种高级的语法转换为低级的浏览器能识别的语法；
+</code></pre><pre><code>5. 直接在页面上引用`main.js`会报错，因为浏览器不认识`import`这种高级的JS语法，需要使用webpack进行处理，webpack默认会把这种高级的语法转换为低级的浏览器能识别的语法；
 6. 运行`webpack 入口文件路径 输出文件路径`对`main.js`进行处理：
 
 **注意**：webpack4.x需要加上`-o`参数才行,不然会报错！！
-</code></pre>
-<p>webpack src&#x2F;js&#x2F;main.js -o dist&#x2F;bundle.js</p>
-<pre><code>
+</code></pre><p>webpack src&#x2F;js&#x2F;main.js -o dist&#x2F;bundle.js</p><pre><code>
 ## 使用webpack的配置文件简化打包时候的命令
 
 1. 在项目根目录中创建`webpack.config.js`
 2. 由于运行webpack命令的时候，webpack需要指定入口文件和输出文件的路径，所以，我们需要在`webpack.config.js`中配置这两个路径：
-</code></pre>
-<pre><code>// 导入处理路径的模块
+</code></pre><pre><code>// 导入处理路径的模块
 var path = require(&#39;path&#39;);
 
 // 导出一个配置对象，将来webpack在启动的时候，会默认来查找webpack.config.js，并读取这个文件中导出的配置对象，来进行打包处理
@@ -1917,8 +1001,7 @@ module.exports = &#123;
         filename: &#39;bundle.js&#39; // 配置输出的文件名
     &#125;
 &#125;
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 ## 实现webpack的实时打包构建
 1. 由于每次重新修改代码之后，都需要手动运行webpack打包的命令，比较麻烦，所以使用`webpack-dev-server`来实现代码实时打包编译，当修改代码之后，会自动进行打包构建。
 2. 先在项目本地安装`npm i webpack@3.0.0`,然后`cnpm i webpack-dev-server@2.9.3 --save -dev`安装到开发依赖
@@ -1926,22 +1009,17 @@ module.exports = &#123;
  + 把`bundle.js`放在内存中的好处是：由于需要实时打包编译，所以放在内存中速度会非常快
  + 这个时候访问webpack-dev-server启动的`http://localhost:8080/`网站，发现是一个文件夹的面板，需要点击到src目录下，才能打开我们的index首页，此时引用不到bundle.js文件，需要修改index.html中script的src属性为:`&lt;script src=&quot;../bundle.js&quot;&gt;&lt;/script&gt;`
  + 为了能在访问`http://localhost:8080/`的时候直接访问到index首页，可以使用`--contentBase src`指令来修改dev指令，指定启动的根目录：
-</code></pre>
-<p> “dev”: “webpack-dev-server –contentBase src”</p>
-<pre><code>同时修改index页面中script的src属性为`&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;`
+</code></pre><p>“dev”: “webpack-dev-server –contentBase src”</p><pre><code>同时修改index页面中script的src属性为`&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;`
 
 **注意**：webpack4.x版本要安装这个：`npm i webpack-cli` 否则会报错
 
 * 启动项目：经过上一步的配置，在终端输入下面命令即可启动项目访问默认页面。
-</code></pre>
-<p>npm run dev</p>
-<pre><code>
+</code></pre><p>npm run dev</p><pre><code>
 ## 使用`html-webpack-plugin`插件配置启动页面
 由于使用`--contentBase`指令的过程比较繁琐，需要指定启动的目录，同时还需要修改index.html中script标签的src属性，所以推荐大家使用`html-webpack-plugin`插件配置启动页面.
 1. 运行`cnpm i html-webpack-plugin@3 --save-dev`安装到开发依赖
 2. 修改`webpack.config.js`配置文件如下：
-</code></pre>
-<pre><code>// 导入处理路径的模块
+</code></pre><pre><code>// 导入处理路径的模块
 var path = require(&#39;path&#39;);
 // 导入自动生成HTMl文件的插件
 var htmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;);
@@ -1959,69 +1037,44 @@ module.exports = &#123;
         &#125;)
     ]
 &#125;
-</code></pre>
-<pre><code>3. 修改`package.json`中`script`节点中的dev指令如下：
-</code></pre>
-<p>“dev”: “webpack-dev-server”</p>
-<pre><code>4. 将index.html中script标签注释掉，因为`html-webpack-plugin`插件会自动把bundle.js注入到index.html页面中！
+</code></pre><pre><code>3. 修改`package.json`中`script`节点中的dev指令如下：
+</code></pre><p>“dev”: “webpack-dev-server”</p><pre><code>4. 将index.html中script标签注释掉，因为`html-webpack-plugin`插件会自动把bundle.js注入到index.html页面中！
 
 ## 实现自动打开浏览器、热更新和配置浏览器的默认端口号
 **注意：热更新在JS中表现的不明显，可以从一会儿要讲到的CSS身上进行介绍说明！**
 
 ### 方式1：
 + 修改`package.json`的script节点如下，其中`--open`表示自动打开浏览器，`--port 4321`表示打开的端口号为4321，`--hot`表示启用浏览器热更新：
-</code></pre>
-<p>“dev”: “webpack-dev-server –hot –port 4321 –open”</p>
-<pre><code>
+</code></pre><p>“dev”: “webpack-dev-server –hot –port 4321 –open”</p><pre><code>
 ### 方式2：
 
 0. 修改`package.json`的script节点
-</code></pre>
-<p>“dev”: “webpack-dev-server”</p>
-<pre><code>
+</code></pre><p>“dev”: “webpack-dev-server”</p><pre><code>
 1. 修改`webpack.config.js`文件，新增`devServer`节点如下：
-</code></pre>
-<p>devServer:{<br>        hot:true,<br>        open:true,<br>        port:4321<br>    }</p>
-<pre><code>2. 在头部引入`webpack`模块：
-</code></pre>
-<p>var webpack &#x3D; require(‘webpack’);</p>
-<pre><code>3. 在新增`plugins`节点,并在节点下新增：
-</code></pre>
-<p>new webpack.HotModuleReplacementPlugin()</p>
-<pre><code>
+</code></pre><p>devServer:{<br>hot:true,<br>open:true,<br>port:4321<br>}</p><pre><code>2. 在头部引入`webpack`模块：
+</code></pre><p>var webpack &#x3D; require(‘webpack’);</p><pre><code>3. 在新增`plugins`节点,并在节点下新增：
+</code></pre><p>new webpack.HotModuleReplacementPlugin()</p><pre><code>
 ## 使用webpack打包css文件
 
 0. ==在main.js中导入css文件==
-</code></pre>
-<p>import ‘.&#x2F;css&#x2F;index.css’</p>
-<pre><code>
+</code></pre><p>import ‘.&#x2F;css&#x2F;index.css’</p><pre><code>
 1. 默认只能导入js文件,所以需要安装`loader`,运行`cnpm i style-loader@2 css-loader@3 --save-dev`
 2. 修改`webpack.config.js`这个配置文件：
-</code></pre>
-<p>module: { &#x2F;&#x2F; 用来配置第三方loader模块的<br>        rules: [ &#x2F;&#x2F; 文件的匹配规则<br>            { test: &#x2F;.css$&#x2F;, use: [‘style-loader’, ‘css-loader’] }&#x2F;&#x2F;处理css文件的规则<br>        ]<br>    }</p>
-<pre><code>3. 注意：`use`表示使用哪些模块来处理`test`所匹配到的文件；`use`中相关loader模块的调用顺序是从后向前调用的；
+</code></pre><p>module: { &#x2F;&#x2F; 用来配置第三方loader模块的<br>rules: [ &#x2F;&#x2F; 文件的匹配规则<br>{ test: &#x2F;.css$&#x2F;, use: [‘style-loader’, ‘css-loader’] }&#x2F;&#x2F;处理css文件的规则<br>]<br>}</p><pre><code>3. 注意：`use`表示使用哪些模块来处理`test`所匹配到的文件；`use`中相关loader模块的调用顺序是从后向前调用的；
 
 ## 使用webpack打包less文件
 1. 运行`cnpm i less-loader@3 less@2 -D`
 2. 修改`webpack.config.js`这个配置文件：
-</code></pre>
-<p>{ test: &#x2F;.less$&#x2F;, use: [‘style-loader’, ‘css-loader’, ‘less-loader’] },</p>
-<pre><code>
+</code></pre><p>{ test: &#x2F;.less$&#x2F;, use: [‘style-loader’, ‘css-loader’, ‘less-loader’] },</p><pre><code>
 ## 使用webpack打包sass文件
 1. 运行`cnpm i sass-loader@6 node-sass@4 --save-dev`
 2. 在`webpack.config.js`中添加处理sass文件的loader模块：
-</code></pre>
-<p>{ test: &#x2F;.scss$&#x2F;, use: [‘style-loader’, ‘css-loader’, ‘sass-loader’] }</p>
-<pre><code>
+</code></pre><p>{ test: &#x2F;.scss$&#x2F;, use: [‘style-loader’, ‘css-loader’, ‘sass-loader’] }</p><pre><code>
 ## 使用webpack处理css中的路径
 1. 运行`cnpm i url-loader@0 file-loader@1 --save-dev`
 2. 在`webpack.config.js`中添加处理url路径的loader模块：
-</code></pre>
-<p>{ test: &#x2F;.(png|jpg|gif)$&#x2F;, use: ‘url-loader’ }</p>
-<pre><code>3. 可以通过`limit`指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：
-</code></pre>
-<p>{ test: &#x2F;.(png|jpg|gif)$&#x2F;, use: ‘url-loader?limit&#x3D;43960’ },</p>
-<pre><code>
+</code></pre><p>{ test: &#x2F;.(png|jpg|gif)$&#x2F;, use: ‘url-loader’ }</p><pre><code>3. 可以通过`limit`指定进行base64编码的图片大小；只有小于指定字节（byte）的图片才会进行base64编码：
+</code></pre><p>{ test: &#x2F;.(png|jpg|gif)$&#x2F;, use: ‘url-loader?limit&#x3D;43960’ },</p><pre><code>
 **注意**：也可以来处理字体文件。
 
 ## 使用babel处理高级JS语法
@@ -2035,12 +1088,8 @@ module.exports = &#123;
 2. 运行`cnpm i babel-preset-env babel-preset-stage-0 --save-dev`安装babel转换的语法
 
 3. 在`webpack.config.js`中添加相关loader模块，其中需要注意的是，一定要把`node_modules`文件夹添加到排除项：
-</code></pre>
-<p>{ test: &#x2F;.js$&#x2F;, use: ‘babel-loader’, exclude: &#x2F;node_modules&#x2F; }</p>
-<pre><code>4. 在项目根目录中添加`.babelrc`文件，并修改这个配置文件如下：
-</code></pre>
-<p>{<br>    “presets”:[“env”, “stage-0”],<br>    “plugins”:[“transform-runtime”]<br>}</p>
-<pre><code>5. **注意：语法插件`babel-preset-es2015`可以更新为`babel-preset-env`，它包含了所有的ES相关的语法；**
+</code></pre><p>{ test: &#x2F;.js$&#x2F;, use: ‘babel-loader’, exclude: &#x2F;node_modules&#x2F; }</p><pre><code>4. 在项目根目录中添加`.babelrc`文件，并修改这个配置文件如下：
+</code></pre><p>{<br>“presets”:[“env”, “stage-0”],<br>“plugins”:[“transform-runtime”]<br>}</p><pre><code>5. **注意：语法插件`babel-preset-es2015`可以更新为`babel-preset-env`，它包含了所有的ES相关的语法；**
 
 ## 相关文章
 [babel-preset-env：你需要的唯一Babel插件](https://segmentfault.com/p/1210000008466178)
@@ -2065,21 +1114,16 @@ module.exports = &#123;
 3. 运行`cnpm i style-loader css-loader -D`将解析转换CSS的包安装为开发依赖，因为.vue文件中会写CSS样式；
 
 4. 在`webpack.config.js`中，添加如下`module`规则：
-</code></pre>
-<p>module: {</p>
-<pre><code>rules: [
+</code></pre><p>module: {</p><pre><code>rules: [
 
   &#123; test: /\.css$/, use: [&#39;style-loader&#39;, &#39;css-loader&#39;] &#125;,
 
   &#123; test: /\.vue$/, use: &#39;vue-loader&#39; &#125;
 
 ]
-</code></pre>
-<p>  }</p>
-<pre><code>
+</code></pre><p>}</p><pre><code>
 5. 创建`App.vue`组件页面：
-</code></pre>
-<pre><code>&lt;template&gt;
+</code></pre><pre><code>&lt;template&gt;
 
   &lt;!-- 注意：在 .vue 的组件中，template 中必须有且只有唯一的根元素进行包裹，一般都用 div 当作唯一的根元素 --&gt;
 
@@ -2126,11 +1170,9 @@ h1 &#123;
 &#125;
 
 &lt;/style&gt;
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 6. 创建`main.js`入口文件：
-</code></pre>
-<pre><code>// 导入 Vue 组件
+</code></pre><pre><code>// 导入 Vue 组件
 
 import Vue from &#39;vue&#39;
 
@@ -2151,13 +1193,10 @@ var vm = new Vue(&#123;
   render: c =&gt; c(App)
 
 &#125;);
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 ## 在使用webpack构建的Vue项目中使用模板对象？
 1. 在`webpack.config.js`中添加`resolve`属性：
-</code></pre>
-<p>resolve: {<br>    alias: {<br>      ‘vue$’: ‘vue&#x2F;dist&#x2F;vue.esm.js’<br>    }<br>  }</p>
-<pre><code>
+</code></pre><p>resolve: {<br>alias: {<br>‘vue$’: ‘vue&#x2F;dist&#x2F;vue.esm.js’<br>}<br>}</p><pre><code>
 
 
 ## ES6中语法使用总结
@@ -2175,54 +1214,30 @@ var vm = new Vue(&#123;
 [vue-router官网](https://router.vuejs.org/)
 
 1. 导入路由模块：
-</code></pre>
-<p>import VueRouter from ‘vue-router’</p>
-<pre><code>
+</code></pre><p>import VueRouter from ‘vue-router’</p><pre><code>
 2. 安装路由模块：
-</code></pre>
-<p>Vue.use(VueRouter);</p>
-<pre><code>
+</code></pre><p>Vue.use(VueRouter);</p><pre><code>
 3. 导入需要展示的组件:
-</code></pre>
-<p>import login from ‘.&#x2F;components&#x2F;account&#x2F;login.vue’</p>
-<p>import register from ‘.&#x2F;components&#x2F;account&#x2F;register.vue’</p>
-<pre><code>
+</code></pre><p>import login from ‘.&#x2F;components&#x2F;account&#x2F;login.vue’</p><p>import register from ‘.&#x2F;components&#x2F;account&#x2F;register.vue’</p><pre><code>
 4. 创建路由对象:
-</code></pre>
-<p>var router &#x3D; new VueRouter({</p>
-<p>  routes: [</p>
-<pre><code>&#123; path: &#39;/&#39;, redirect: &#39;/login&#39; &#125;,
+</code></pre><p>var router &#x3D; new VueRouter({</p><p>routes: [</p><pre><code>&#123; path: &#39;/&#39;, redirect: &#39;/login&#39; &#125;,
 
 &#123; path: &#39;/login&#39;, component: login &#125;,
 
 &#123; path: &#39;/register&#39;, component: register &#125;
-</code></pre>
-<p>  ]</p>
-<p>});</p>
-<pre><code>
+</code></pre><p>]</p><p>});</p><pre><code>
 5. 将路由对象，挂载到 Vue 实例上:
-</code></pre>
-<p>var vm &#x3D; new Vue({</p>
-<p>  el: ‘#app’,</p>
-<p>  &#x2F;&#x2F; render: c &#x3D;&gt; { return c(App) }</p>
-<p>  render(c) {</p>
-<pre><code>return c(App);
-</code></pre>
-<p>  },</p>
-<p>  router &#x2F;&#x2F; 将路由对象，挂载到 Vue 实例上</p>
-<p>});</p>
-<pre><code>
+</code></pre><p>var vm &#x3D; new Vue({</p><p>el: ‘#app’,</p><p>&#x2F;&#x2F; render: c &#x3D;&gt; { return c(App) }</p><p>render(c) {</p><pre><code>return c(App);
+</code></pre><p>},</p><p>router &#x2F;&#x2F; 将路由对象，挂载到 Vue 实例上</p><p>});</p><pre><code>
 6. 改造App.vue组件，在 template 中，添加`router-link`和`router-view`：
-</code></pre>
-<pre><code>&lt;router-link to=&quot;/login&quot;&gt;登录&lt;/router-link&gt;
+</code></pre><pre><code>&lt;router-link to=&quot;/login&quot;&gt;登录&lt;/router-link&gt;
 
 &lt;router-link to=&quot;/register&quot;&gt;注册&lt;/router-link&gt;
 
 
 
 &lt;router-view&gt;&lt;/router-view&gt;
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 
 
 ## 组件中的css作用域问题
@@ -2240,21 +1255,13 @@ var vm = new Vue(&#123;
 [Mint-UI官方文档](http://mint-ui.github.io/#!/zh-cn)
 
 1. 导入所有MintUI组件：
-</code></pre>
-<p>import MintUI from ‘mint-ui’</p>
-<pre><code>
+</code></pre><p>import MintUI from ‘mint-ui’</p><pre><code>
 2. 导入样式表：
-</code></pre>
-<p>import ‘mint-ui&#x2F;lib&#x2F;style.css’</p>
-<pre><code>
+</code></pre><p>import ‘mint-ui&#x2F;lib&#x2F;style.css’</p><pre><code>
 3. 在 vue 中使用 MintUI：
-</code></pre>
-<p>Vue.use(MintUI)</p>
-<pre><code>
+</code></pre><p>Vue.use(MintUI)</p><pre><code>
 4. 使用的例子：
-</code></pre>
-<p><mt-button type="primary" size="large">primary</mt-button></p>
-<pre><code>
+</code></pre><p><mt-button type="primary" size="large">primary</mt-button></p><pre><code>
 
 
 ## 使用 MUI 组件
@@ -2264,13 +1271,9 @@ var vm = new Vue(&#123;
 [文档地址](http://dev.dcloud.net.cn/mui/ui/)
 
 1. 导入 MUI 的样式表：
-</code></pre>
-<p>import ‘..&#x2F;lib&#x2F;mui&#x2F;css&#x2F;mui.min.css’</p>
-<pre><code>
+</code></pre><p>import ‘..&#x2F;lib&#x2F;mui&#x2F;css&#x2F;mui.min.css’</p><pre><code>
 2. 在`webpack.config.js`中添加新的loader规则：
-</code></pre>
-<p>{ test: &#x2F;.(png|jpg|gif|ttf)$&#x2F;, use: ‘url-loader’ }</p>
-<pre><code>
+</code></pre><p>{ test: &#x2F;.(png|jpg|gif|ttf)$&#x2F;, use: ‘url-loader’ }</p><pre><code>
 3. 根据官方提供的文档和example，尝试使用相关的组件
 
 
@@ -2308,17 +1311,14 @@ var vm = new Vue(&#123;
 5. Tab Bar 路由激活时候设置高亮的两种方式：
 
  + 全局设置样式如下：
-</code></pre>
-<pre><code> .router-link-active&#123;
+</code></pre><pre><code> .router-link-active&#123;
 
       color:#007aff !important;
 
 &#125;
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 + 或者在 `new VueRouter` 的时候，通过 `linkActiveClass` 来指定高亮的类：
-</code></pre>
-<pre><code> // 创建路由对象
+</code></pre><pre><code> // 创建路由对象
 
 var router = new VueRouter(&#123;
 
@@ -2331,8 +1331,7 @@ var router = new VueRouter(&#123;
   linkActiveClass: &#39;mui-active&#39;
 
 &#125;);
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 
 
 ## 实现 tabbar 页签不同组件页面的切换
@@ -2340,8 +1339,7 @@ var router = new VueRouter(&#123;
 1. 将 tabbar 改造成 `router-link` 形式，并指定每个连接的 `to` 属性；
 
 2. 在入口文件中导入需要展示的组件，并创建路由对象：
-</code></pre>
-<pre><code>// 导入需要展示的组件
+</code></pre><pre><code>// 导入需要展示的组件
 
 import Home from &#39;./components/home/home.vue&#39;
 
@@ -2374,29 +1372,22 @@ var router = new VueRouter(&#123;
   linkActiveClass: &#39;mui-active&#39;
 
 &#125;);
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 
 
 ## 使用 mt-swipe 轮播图组件
 
 1. 假数据：
-</code></pre>
-<p>lunbo: [</p>
-<pre><code>    &#39;http://www.itcast.cn/images/slidead/BEIJING/2017440109442800.jpg&#39;,
+</code></pre><p>lunbo: [</p><pre><code>    &#39;http://www.itcast.cn/images/slidead/BEIJING/2017440109442800.jpg&#39;,
 
     &#39;http://www.itcast.cn/images/slidead/BEIJING/2017511009514700.jpg&#39;,
 
     &#39;http://www.itcast.cn/images/slidead/BEIJING/2017421414422600.jpg&#39;
 
   ]
-</code></pre>
-<pre><code>
+</code></pre><pre><code>
 2. 引入轮播图组件：
-</code></pre>
-<!-- Mint-UI 轮播图组件 -->
-
-<pre><code>&lt;div class=&quot;home-swipe&quot;&gt;
+</code></pre><pre><code>&lt;div class=&quot;home-swipe&quot;&gt;
 
   &lt;mt-swipe :auto=&quot;4000&quot;&gt;
 
@@ -2409,10 +1400,7 @@ var router = new VueRouter(&#123;
   &lt;/mt-swipe&gt;
 
 &lt;/div&gt;
-</code></pre>
-  </li></ol></div>
-
-<pre><code>
+</code></pre></li></ol></div><pre><code>
 
 
 ## 在`.vue`组件中使用`vue-resource`获取数据
@@ -2420,256 +1408,9 @@ var router = new VueRouter(&#123;
 1. 运行`cnpm i vue-resource -S`安装模块
 
 2. 导入 vue-resource 组件
-</code></pre>
-<p>import VueResource from ‘vue-resource’</p>
-<pre><code>
+</code></pre><p>import VueResource from ‘vue-resource’</p><pre><code>
 3. 在vue中使用 vue-resource 组件
-</code></pre>
-<p>Vue.use(VueResource);</p>
-<pre><code>
+</code></pre><p>Vue.use(VueResource);</p><pre><code>
 
 
-</code></pre>
-</li></ol></li></ol>
-						</div>
-						
-						
-
-				</div>
-			</div>
-		</div>
-		<!-- 置顶按钮 -->
-		<!-- 置顶 -->
-<ul id="toTopBtn" class="layui-fixbar" style="right: -70px;">
-    <a href="javascript:void(0)">
-        <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;">&#xe604;</li>
-    </a>
-</ul>
-		<!-- 底部版权 -->
-		<div class="qy-footer">
-    <div class="font-Area">
-        Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved 
-    </div>
-</div>
-</body>
-<script src="../../../../../js/jquery.min.js"></script>
-<script src="../../../../../layui/layui.js"></script>
-<!-- 鼠标点击特效 -->
-<script src="../../../../../js/mouse.js"></script>
-<!-- 代码高亮 -->
-<script src="../../../../../lib/prism/prism.js"></script>
-<!-- 公共js -->
-<script>
-    //点击搜索
-    $("#searchBtn").click(function () {
-        $("#searchShade").show()
-        $("#searchLayer").addClass('layui-anim layui-anim-scaleSpring')
-    })
-    //关闭搜索弹框
-    $("#closeBtn").click(function () {
-        $("#searchShade").hide() 
-    })
-    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
-    var searchFunc = function (path, search_id, content_id) {
-        $.ajax({
-            url: path,
-            dataType: "json",
-            success: function (datas) {
-                //console.log('datas :>> ', datas);
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var first_occur = -1;
-                        if (data_title != '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                if (index_title < 0) {
-                                    isMatch = false;
-                                } else {
-                                    data_title = data_title.replace(new RegExp(keyword, 'g'), '<span style="color:red">' + keyword + '</span>')
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    }
-    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
-
-
-    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
-    function DynamicLine() {
-        function n(n, e, t) {
-            return n.getAttribute(e) || t
-        }
-
-        function e(n) {
-            return document.getElementsByTagName(n)
-        }
-
-        function t() {
-            var t = e("script"),
-                o = t.length,
-                i = t[o - 1];
-            return {
-                l: o,
-                z: n(i, "zIndex", -1),
-                o: n(i, "opacity", .5),
-                c: n(i, "color", "0,0,50"), //颜色rgb
-                n: n(i, "count", 99)
-            }
-        }
-
-        function o() {
-            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-        }
-
-        function i() {
-            r.clearRect(0, 0, a, c);
-            var n, e, t, o, m, l;
-            s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
-                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
-                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
-                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-            }),
-                x(i)
-        }
-        var a, c, u, m = document.createElement("canvas"),
-            d = t(),
-            l = "c_n" + d.l,
-            r = m.getContext("2d"),
-            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
-                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-                    window.setTimeout(n, 1e3 / 45)
-                },
-            w = Math.random,
-            y = {
-                x: null,
-                y: null,
-                max: 2e4
-            };
-        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
-            m), o(), window.onresize = o,
-            window.onmousemove = function (n) {
-                n = n || window.event, y.x = n.clientX, y.y = n.clientY
-            },
-            window.onmouseout = function () {
-                y.x = null, y.y = null
-            };
-        for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a,
-                g = w() * c,
-                v = 2 * w() - 1,
-                p = 2 * w() - 1;
-            s.push({
-                x: h,
-                y: g,
-                xa: v,
-                ya: p,
-                max: 6e3
-            })
-        }
-        u = s.concat([y]),
-            setTimeout(function () {
-                i()
-            }, 100)
-    }
-    //随机背景线条
-    DynamicLine()
-    //更新页脚年份
-    document.querySelector("#currentYear").innerText = new Date().getFullYear()
-
-
-    //置顶  增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
-    $("#toTopBtn").click(function () {
-        var oTop = $(window).scrollTop()
-        var t = parseInt(oTop / 60) //每次六十分之一
-        var time = setInterval(function () {
-            console.log('toTopBtn...setInterval',$(window).scrollTop())
-            $(window).scrollTop($(window).scrollTop() - t)
-            if ($(window).scrollTop() === 0) {
-                clearInterval(time);
-            }
-        }, 1);
-    })
-    $.event.add(window, "scroll", function () {
-        //显示与隐藏置顶按钮   transition: all 0.5s;
-        $("#toTopBtn").css('transform', $(window).scrollTop() > 0 ? 'translateX(-85px)' : 'translateX(85px)');
-        $("#toTopBtn").css('transition', "all 0.5s");
-    })
-    //隐藏loading
-    $("#loadingBox").hide(); 
-</script>
-<script>
-	//注意：导航和进度条 依赖 element 模块，否则无法进行功能性操作
-	var element = null
-	layui.use(['element'], function () {
-		element = layui.element;
-	});
-	
-		$(function () {
-			var elm = $('#toc-area');
-			var startPos = $(elm).offset().top;
-			//var totalTop = $(document).height();
-			$.event.add(window, "scroll", function () {
-				var totalTop = $(".markdown-body").height();
-				// var p = $(window).scrollTop()+$("#toc-area").height();
-				var p = $(window).scrollTop()+startPos;
-				//文章阅读进度条
-				var percent = ((p / totalTop) * 100).toFixed(2)
-				if (percent > 99) {
-					percent = 100
-				}
-				if (percent == 0) {
-					percent = 0
-				}
-				element.progress('demo', percent + "%");
-				$("#progressTxt").text(percent)
-				console.log('percent', percent)
-				$("#progressNav").css("width", $(window).scrollTop() == 0? 0 : percent + "%")
-				//固定文章目录
-				console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
-				$(elm).css('position', ($(window).scrollTop() > startPos) ? 'fixed' : 'static');
-				$(elm).css('top', ($(window).scrollTop() > startPos) ? '60px' : '');
-				//文章目录随页面滚动
-				$('#tocMain').scrollTop($('#tocMain .toc').height() * percent * 0.01);
-			});
-			//代码高亮
-			$('pre code').each(function () {
-				var codeType = $(this).attr("class")
-				codeType = codeType == undefined || codeType == "" || codeType == null ? "plaintext" : codeType
-				codeType = "language-" + codeType
-				$(this).attr("class", codeType)
-			})
-			//代码复制以及显示代码语言
-			$("pre").prepend('<div class="copy-to-clipboard-button"></div>');
-		});
-	
-</script>
-
-</html>
+</code></pre></li></ol></li></ol></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px"><a href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display:list-item">&#xe604;</li></a></ul><div class="qy-footer"><div class="font-Area">Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved</div></div></body><script src="../../../../../js/jquery.min.js"></script><script src="../../../../../layui/layui.js"></script><script src="../../../../../js/mouse.js"></script><script src="../../../../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(n,o,i){$.ajax({url:n,dataType:"json",success:function(n){var e=document.getElementById(o),t=document.getElementById(i);e.addEventListener("input",function(){var e='<ul class="search-result-list">',i=this.value.trim().toLowerCase().split(/[\s\-]+/);t.innerHTML="",this.value.trim().length<=0||(n.forEach(function(n){var t=!0,o=n.title.trim().toLowerCase(),n=n.url;""!=o&&i.forEach(function(n,e){o.indexOf(n)<0?t=!1:o=o.replace(new RegExp(n,"g"),'<span style="color:red">'+n+"</span>")}),t&&(e=e+"<li><a href='"+n+"' class='search-result-title'>"+o+"</a></li>")}),e+="</ul>",t.innerHTML=e)})}})};function DynamicLine(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){r=i.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,s=i.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function l(){var t,o,i,a,c;m.clearRect(0,0,r,s),x.forEach(function(n,e){for(n.x+=n.xa,n.y+=n.ya,n.xa*=n.x>r||n.x<0?-1:1,n.ya*=n.y>s||n.y<0?-1:1,m.fillRect(n.x-.5,n.y-.5,1,1),o=e+1;o<u.length;o++)null!==(t=u[o]).x&&null!==t.y&&(i=n.x-t.x,a=n.y-t.y,(c=i*i+a*a)<t.max)&&(t===h&&c>=t.max/2&&(n.x-=.03*i,n.y-=.03*a),i=(t.max-c)/t.max,m.beginPath(),m.lineWidth=i/2,m.strokeStyle="rgba("+d.c+","+(.2+i)+")",m.moveTo(n.x,n.y),m.lineTo(t.x,t.y),m.stroke())}),w(l)}var r,s,u,o,i=document.createElement("canvas"),d=(a=(o=e("script")).length,o=o[a-1],{l:a,z:n(o,"zIndex",-1),o:n(o,"opacity",.5),c:n(o,"color","0,0,50"),n:n(o,"count",99)}),a="c_n"+d.l,m=i.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},c=Math.random,h={x:null,y:null,max:2e4};i.id=a,i.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(i),t(),window.onresize=t,window.onmousemove=function(n){n=n||window.event,h.x=n.clientX,h.y=n.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var x=[],y=0;y<d.n;y++){var f=c()*r,p=c()*s,g=2*c()-1,T=2*c()-1;x.push({x:f,y:p,xa:g,ya:T,max:6e3})}u=x.concat([h]),setTimeout(function(){l()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear(),$("#toTopBtn").click(function(){var n=$(window).scrollTop(),e=parseInt(n/60),t=setInterval(function(){console.log("toTopBtn...setInterval",$(window).scrollTop()),$(window).scrollTop($(window).scrollTop()-e),0===$(window).scrollTop()&&clearInterval(t)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide()</script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var l=$("#toc-area"),s=$(l).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),t=$(window).scrollTop()+s,e=(t/o*100).toFixed(2);element.progress("demo",(e=0==(e=99<e?100:e)?0:e)+"%"),$("#progressTxt").text(e),console.log("percent",e),$("#progressNav").css("width",0==$(window).scrollTop()?0:e+"%"),console.log("p",t+$("#toc-area").height(),"startPos",s+$("#toc-area").height(),"totalTop",o),$(l).css("position",$(window).scrollTop()>s?"fixed":"static"),$(l).css("top",$(window).scrollTop()>s?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>

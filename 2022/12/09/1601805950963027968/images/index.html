@@ -1,196 +1,8 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-	<title>贺刘芳的搬砖日记</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../../../../../layui/css/layui.css" />
-	<link rel="stylesheet" href="../../../../../css/common.css" />
-	<link rel="stylesheet" href="../../../../../css/post.css" />
-	<!-- 代码高亮 -->
-	<link rel="stylesheet" href="../../../../../lib/prism/prism.css" />
-	<link rel="shortcut icon" href="../../../../../img/favicon.ico">
-	
-	<link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css">
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
-</head>
-
-<body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!">
-	<!-- 导航模板 -->
-	<!-- 导航 -->
-<div class="qy-nav">
-  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li>
-    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
-    </li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
-   
-    <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
-      <a href="javascript:;">菜单</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/">首页</a></dd>
-        <dd><a href="/archives">归档</a></dd>
-        <dd><a href="/tags">标签</a></dd>
-        <dd><a href="/categories">分类</a></dd>
-        <dd><a href="/about">关于</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd>
-        <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
-        </dd>
-      </dl>
-    </li>
-  </ul>
-  <!-- 进度条 -->
-  <div class="progress" id="progressNav"></div>
-  <!-- loading -->
-  <div id="loadingBox" class="loadingBox">
-    <img src="/img/loading.gif">
-  </div>
-</div>
-<!-- 搜索弹框 -->
-<div id="searchShade" class="searchShade">
-  <div id="searchLayer">
-    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
-    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)"  autofocus  />
-    <div id="searchResult">
-      <!-- <ul>
-        <li>java笔记
-        <li>
-      </ul> -->
-    </div>
-
-  </div>
-</div>
-
-		<!-- 中间内容区域 -->
-		<div class="layui-container  center" id="top">
-			<div class="layui-row layui-col-space20">
-				<div class="layui-col-md3 hide-xs hide-sm">
-					<!-- 左侧的公告、分类、归档、标签 -->
-					<!-- 左侧的公告、分类、归档、标签 -->
-
-<!-- 个人信息 -->
-<div class="layui-card">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-speaker"></i> 公告</div>
-    <div class="layui-card-body">
-        <div class="userinfo">
-            <img src="/head.png">
-            <div class="name">淡泊明志，宁静致远</div>
-            <div class="icons">
-                <a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a>
-                <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a>
-                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a>
-            </div>
-            <div class="other">
-                <div class="item">
-                    <p class="num">
-                        40
-                    </p>
-                    <p class="title" style="color: #FF5722">文章</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        8
-                    </p>
-                    <p class="title">分类</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        44
-                    </p>
-                    <p class="title" style="color: #01AAED">标签</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<!-- 最新文章 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
-    <div class="layui-card-body">
-        
-        <ul>
-            
-                <li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li>
-            
-                <li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li>
-            
-                <li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li>
-            
-                <li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li>
-            
-                <li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li>
-            
-        </ul>
-    </div>
-</div>
-
-<!-- 分类 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-template-1"></i> 分类</div>
-    <div class="layui-card-body">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
-    </div>
-</div>
-
-
-						<!-- 文章目录 -->
-						
-							<div style="height: calc(100% - 60px - 60px);width: 267px;" id="toc-area" class="layui-card ahover">
-								<div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div>
-								<div id="tocMain" class="layui-card-body"
-									style="overflow:auto;height: calc(100% - 60px - 60px);">
-									<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#script-setup%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">script setup基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#script-setup%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-text">script setup新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%BB%84%E4%BB%B6%E5%90%8D%E6%8E%A8%E6%96%AD"><span class="toc-text">自动组件名推断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%BB%84%E4%BB%B6"><span class="toc-text">普通组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6"><span class="toc-text">动态组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6"><span class="toc-text">递归组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%BB%84%E4%BB%B6"><span class="toc-text">命名空间组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#props%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">props的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#definedProps"><span class="toc-text">definedProps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#widthDefaults"><span class="toc-text">widthDefaults</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-defineEmits"><span class="toc-text">自定义事件-defineEmits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E7%9A%84%E6%9A%B4%E9%9C%B2-defineExpose"><span class="toc-text">显示的暴露-defineExpose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useSlots-%E5%92%8C-useAttrs"><span class="toc-text">useSlots 和 useAttrs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%99%AE%E9%80%9A%E7%9A%84script%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8"><span class="toc-text">与普通的script一起使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B6%E5%B1%82await-%E4%BA%86%E8%A7%A3"><span class="toc-text">顶层await(了解)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E4%BD%BF%E7%94%A8src-%E5%AF%BC%E5%85%A5-%E4%BA%86%E8%A7%A3"><span class="toc-text">限制使用src 导入(了解)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style-v-bind-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-text">style  v-bind 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#style-module-%E4%BA%86%E8%A7%A3"><span class="toc-text">style module(了解)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81css"><span class="toc-text">动态css</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volar%E6%8F%92%E4%BB%B6"><span class="toc-text">volar插件</span></a></li></ol>
-								</div>
-								<div class="readprocess">
-									<div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%
-									</div>
-									<div class="layui-progress" lay-filter="demo">
-										<div class="layui-progress-bar" lay-percent="10%"></div>
-									</div>
-								</div>
-							</div>
-							
-				</div>
-				<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
-					
-						<div class="article-title">
-							<h1>vue3.2新特性笔记</h1>
-							<p>
-								<i class="layui-icon layui-icon-date"></i>发表时间 2022-12-09
-									|
-									<i class="layui-icon layui-icon-form"></i>累计字数 2.8k
-							</p>
-						</div>
-						
-						<!-- 文章内容 -->
-						<div id="article">
-							<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hh411p79n/">vue3.2视频教程</a></p>
-<h2 id="script-setup基本语法"><a href="#script-setup基本语法" class="headerlink" title="script setup基本语法"></a>script setup基本语法</h2><p>要使用这个语法，需要将 <code>setup</code> 属性添加到 <code>&lt;script&gt;</code> 代码块上：</p>
-<p>里面的代码会被编译成组件<code> setup()</code> 函数的内容。</p>
-<p>这也就意味着与普通的 <code>&lt;script&gt;</code> 只在组件被首次引入的时候<strong style="color:red">仅执行一次不同</strong>，<code>&lt;script setup&gt;</code> 中的代码会在<strong style="color:red">每次组件实例被创建的时候执行</strong>。这一点非常的重要，也就是写在<code> &lt;script setup&gt;</code> 中的代码，例如初始化的赋值等在组件每次实例创建时都重新执行一次。</p>
-<pre><code class="html">&lt;script setup&gt;
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../../../../layui/css/layui.css"><link rel="stylesheet" href="../../../../../css/common.css"><link rel="stylesheet" href="../../../../../css/post.css"><link rel="stylesheet" href="../../../../../lib/prism/prism.css"><link rel="shortcut icon" href="../../../../../img/favicon.ico"><link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div class="progress" id="progressNav"></div><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><p class="num">40</p><p class="title" style="color:#ff5722">文章</p></div><div class="item"><p class="num">8</p><p class="title">分类</p></div><div class="item"><p class="num">44</p><p class="title" style="color:#01aaed">标签</p></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li><li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li><li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li><li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li><li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 分类</div><div class="layui-card-body"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#script-setup%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">script setup基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#script-setup%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-text">script setup新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E7%BB%84%E4%BB%B6%E5%90%8D%E6%8E%A8%E6%96%AD"><span class="toc-text">自动组件名推断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E7%BB%84%E4%BB%B6"><span class="toc-text">普通组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6"><span class="toc-text">动态组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6"><span class="toc-text">递归组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%BB%84%E4%BB%B6"><span class="toc-text">命名空间组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#props%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">props的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#definedProps"><span class="toc-text">definedProps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#widthDefaults"><span class="toc-text">widthDefaults</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-defineEmits"><span class="toc-text">自定义事件-defineEmits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E7%9A%84%E6%9A%B4%E9%9C%B2-defineExpose"><span class="toc-text">显示的暴露-defineExpose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useSlots-%E5%92%8C-useAttrs"><span class="toc-text">useSlots 和 useAttrs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%99%AE%E9%80%9A%E7%9A%84script%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8"><span class="toc-text">与普通的script一起使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B6%E5%B1%82await-%E4%BA%86%E8%A7%A3"><span class="toc-text">顶层await(了解)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E4%BD%BF%E7%94%A8src-%E5%AF%BC%E5%85%A5-%E4%BA%86%E8%A7%A3"><span class="toc-text">限制使用src 导入(了解)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style-v-bind-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-text">style v-bind 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#style-module-%E4%BA%86%E8%A7%A3"><span class="toc-text">style module(了解)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81css"><span class="toc-text">动态css</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volar%E6%8F%92%E4%BB%B6"><span class="toc-text">volar插件</span></a></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>vue3.2新特性笔记</h1><p><i class="layui-icon layui-icon-date"></i>发表时间 2022-12-09 | <i class="layui-icon layui-icon-form"></i>累计字数 2.8k</p></div><div id="article"><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hh411p79n/">vue3.2视频教程</a></p><h2 id="script-setup基本语法"><a href="#script-setup基本语法" class="headerlink" title="script setup基本语法"></a>script setup基本语法</h2><p>要使用这个语法，需要将 <code>setup</code> 属性添加到 <code>&lt;script&gt;</code> 代码块上：</p><p>里面的代码会被编译成组件<code>setup()</code> 函数的内容。</p><p>这也就意味着与普通的 <code>&lt;script&gt;</code> 只在组件被首次引入的时候<strong style="color:red">仅执行一次不同</strong>，<code>&lt;script setup&gt;</code> 中的代码会在<strong style="color:red">每次组件实例被创建的时候执行</strong>。这一点非常的重要，也就是写在<code>&lt;script setup&gt;</code> 中的代码，例如初始化的赋值等在组件每次实例创建时都重新执行一次。</p><pre><code class="html">&lt;script setup&gt;
 const a = ref(1);
 console.log(&#39;hello script setup&#39;)
 &lt;/script&gt;
-</code></pre>
-<p>当使用 <code>&lt;script setup&gt;</code> 的时候，任何在<code> &lt;script setup&gt;</code> 声明的顶层的绑定 (包括声明的<code>变量</code>，<code>函数声明</code>，以及 <code>import 引入的内容</code>) 都能<strong style="color:red">在模板中直接使用，不再需要使用 return 导出。</strong></p>
-<h2 id="script-setup新特性"><a href="#script-setup新特性" class="headerlink" title="script setup新特性"></a>script setup新特性</h2><h3 id="自动组件名推断"><a href="#自动组件名推断" class="headerlink" title="自动组件名推断"></a>自动组件名推断</h3><p>在 vue2.x options API 和使用普通的 <code>&lt;script&gt;</code> 的情况下，都可以为组件进行命名</p>
-<p>但是在 <code>&lt;script setup&gt;</code> 下，却并没有提供直接的方式来设置的组件的名称，因此，vue 在上述情况下会依据它的<strong style="color:red">文件名</strong>来自动推断组件名称。</p>
-<p>例如：名为 <code>Foo.vue</code> 的文件可以在模板中用 <code>&lt;Foo/&gt;</code> 引用它自己，在 devtools 中看到的组件名称也是 <code>Foo</code>。</p>
-<p>使用 <code>&lt;script setup&gt;</code> 的情况下如何修改注册组件名呢？？&#x3D;&#x3D;&#x3D;&gt;使用script</p>
-<pre><code class="html">&lt;script lang=&quot;ts&quot;&gt;
+</code></pre><p>当使用 <code>&lt;script setup&gt;</code> 的时候，任何在<code>&lt;script setup&gt;</code> 声明的顶层的绑定 (包括声明的<code>变量</code>，<code>函数声明</code>，以及 <code>import 引入的内容</code>) 都能<strong style="color:red">在模板中直接使用，不再需要使用 return 导出。</strong></p><h2 id="script-setup新特性"><a href="#script-setup新特性" class="headerlink" title="script setup新特性"></a>script setup新特性</h2><h3 id="自动组件名推断"><a href="#自动组件名推断" class="headerlink" title="自动组件名推断"></a>自动组件名推断</h3><p>在 vue2.x options API 和使用普通的 <code>&lt;script&gt;</code> 的情况下，都可以为组件进行命名</p><p>但是在 <code>&lt;script setup&gt;</code> 下，却并没有提供直接的方式来设置的组件的名称，因此，vue 在上述情况下会依据它的<strong style="color:red">文件名</strong>来自动推断组件名称。</p><p>例如：名为 <code>Foo.vue</code> 的文件可以在模板中用 <code>&lt;Foo/&gt;</code> 引用它自己，在 devtools 中看到的组件名称也是 <code>Foo</code>。</p><p>使用 <code>&lt;script setup&gt;</code> 的情况下如何修改注册组件名呢？？&#x3D;&#x3D;&#x3D;&gt;使用script</p><pre><code class="html">&lt;script lang=&quot;ts&quot;&gt;
 export default &#123; name: &#39;CustomComponentsName&#39; &#125;
 &lt;/script&gt;
 
@@ -201,18 +13,14 @@ export default &#123; name: &#39;CustomComponentsName&#39; &#125;
 &lt;template&gt;
     &lt;p&gt;利用 script 自定义组件名称&lt;/p&gt;
 &lt;/template&gt;
-</code></pre>
-<h3 id="普通组件"><a href="#普通组件" class="headerlink" title="普通组件"></a>普通组件</h3><p><code>&lt;script setup&gt;</code> 中引入组件后可直接在模板使用，不再需要注册了。</p>
-<pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
+</code></pre><h3 id="普通组件"><a href="#普通组件" class="headerlink" title="普通组件"></a>普通组件</h3><p><code>&lt;script setup&gt;</code> 中引入组件后可直接在模板使用，不再需要注册了。</p><pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
 import SaySomething from &quot;./Components/SaySomething.vue&quot;;
 &lt;/script&gt;
 
 &lt;template&gt;
   &lt;SaySomething /&gt;
 &lt;/template&gt;
-</code></pre>
-<h3 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h3><p>动态组件仍然是使用 <code>is</code>，相对于 vue2.x 没有变化</p>
-<pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
+</code></pre><h3 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h3><p>动态组件仍然是使用 <code>is</code>，相对于 vue2.x 没有变化</p><pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
 import &#123; ref &#125; from &quot;vue&quot;;
 import Bar from &quot;./Components/Bar.vue&quot;;
 import Foo from &quot;./Components/Foo.vue&quot;;
@@ -224,20 +32,12 @@ setTimeout(() =&gt; condition.value = true, 2000);
 &lt;template&gt;
   &lt;component :is=&quot;condition ? Bar : Foo&quot;/&gt;
 &lt;/template&gt;
-</code></pre>
-<h3 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h3><p>因为自动组件名推断的缘故，一个单文件组件可以通过它的文件名被其自己所引用。例如：名为 Foo.vue 的组件可以在其模板中用 <code>&lt;Foo/&gt;</code> 引用它自己。</p>
-<p>请注意这种方式相比于 import 导入的组件和自主注册的组件<strong style="color:red">优先级更低</strong>。所有如果有命名的 import 导入和组件的推断名冲突了，可以使用 import 别名导入：</p>
-<pre><code class="js">import &#123; Foo as FooChild &#125; from &#39;./components&#39;
-</code></pre>
-<h3 id="命名空间组件"><a href="#命名空间组件" class="headerlink" title="命名空间组件"></a>命名空间组件</h3><p>可以使用带点的组件标记，例如 <code>&lt;Foo.Bar&gt;</code> 来引用嵌套在对象属性中的组件。这在需要从单个文件中导入多个组件的时候非常有用：</p>
-<p><code>Components/index.ts</code> 用于导出组件</p>
-<pre><code class="js">import Foo from &#39;./Foo.vue&#39;;
+</code></pre><h3 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h3><p>因为自动组件名推断的缘故，一个单文件组件可以通过它的文件名被其自己所引用。例如：名为 Foo.vue 的组件可以在其模板中用 <code>&lt;Foo/&gt;</code> 引用它自己。</p><p>请注意这种方式相比于 import 导入的组件和自主注册的组件<strong style="color:red">优先级更低</strong>。所有如果有命名的 import 导入和组件的推断名冲突了，可以使用 import 别名导入：</p><pre><code class="js">import &#123; Foo as FooChild &#125; from &#39;./components&#39;
+</code></pre><h3 id="命名空间组件"><a href="#命名空间组件" class="headerlink" title="命名空间组件"></a>命名空间组件</h3><p>可以使用带点的组件标记，例如 <code>&lt;Foo.Bar&gt;</code> 来引用嵌套在对象属性中的组件。这在需要从单个文件中导入多个组件的时候非常有用：</p><p><code>Components/index.ts</code> 用于导出组件</p><pre><code class="js">import Foo from &#39;./Foo.vue&#39;;
 import Bar from &#39;./Bar.vue&#39;;
 
 export &#123; Foo, Bar &#125;;
-</code></pre>
-<p><code>index.vue</code> 基于命名空间使用组件</p>
-<pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
+</code></pre><p><code>index.vue</code> 基于命名空间使用组件</p><pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
 import * as Form from &quot;../Components&quot;;
 &lt;/script&gt;
 
@@ -245,14 +45,7 @@ import * as Form from &quot;../Components&quot;;
   &lt;Form.Foo /&gt;
   &lt;Form.Bar /&gt;
 &lt;/template&gt;
-</code></pre>
-<h3 id="props的使用"><a href="#props的使用" class="headerlink" title="props的使用"></a>props的使用</h3><p>接受父组件传递过来的属性</p>
-<h4 id="definedProps"><a href="#definedProps" class="headerlink" title="definedProps"></a>definedProps</h4><p>为了在<code> &lt;script setup&gt;</code> 中 声明 props ，必须使用 <code>defineProps</code> API，这是一个宏命令，不需要导入，直接可在<code> &lt;script setup&gt;</code> 使用且只能在 <code>&lt;script setup&gt;</code> 中使用，有两种方式可以使用这个宏命令类声明 props，<code>运行时声明</code>和<code>类型声明式</code>，不同的方式下使用这个宏命令后 props 将具备不同的类型推断。</p>
-<ul>
-<li>使用运行时声明（runtime declaration）</li>
-</ul>
-<p>defineProps 运行时声明的基本用法如下，<code>仅支持运行时的校验</code>。<em>和vue2类似</em></p>
-<pre><code class="java">&lt;script setup lang=&#39;ts&#39;&gt;
+</code></pre><h3 id="props的使用"><a href="#props的使用" class="headerlink" title="props的使用"></a>props的使用</h3><p>接受父组件传递过来的属性</p><h4 id="definedProps"><a href="#definedProps" class="headerlink" title="definedProps"></a>definedProps</h4><p>为了在<code>&lt;script setup&gt;</code> 中 声明 props ，必须使用 <code>defineProps</code> API，这是一个宏命令，不需要导入，直接可在<code>&lt;script setup&gt;</code> 使用且只能在 <code>&lt;script setup&gt;</code> 中使用，有两种方式可以使用这个宏命令类声明 props，<code>运行时声明</code>和<code>类型声明式</code>，不同的方式下使用这个宏命令后 props 将具备不同的类型推断。</p><ul><li>使用运行时声明（runtime declaration）</li></ul><p>defineProps 运行时声明的基本用法如下，<code>仅支持运行时的校验</code>。<em>和vue2类似</em></p><pre><code class="java">&lt;script setup lang=&#39;ts&#39;&gt;
 const props = defineProps(&#123;
     foo: String,
     bar: &#123;
@@ -261,40 +54,13 @@ const props = defineProps(&#123;
     &#125;
 &#125;)
 &lt;/script&gt;
-</code></pre>
-<ul>
-<li>类型声明（type declaration）</li>
-</ul>
-<p><code>defineProps</code> 类型声明的基本用法如下，完美的支持 IDE 的类型推断和检查。<strong style="color:red">推荐这种方式</strong></p>
-<pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
+</code></pre><ul><li>类型声明（type declaration）</li></ul><p><code>defineProps</code> 类型声明的基本用法如下，完美的支持 IDE 的类型推断和检查。<strong style="color:red">推荐这种方式</strong></p><pre><code class="html">&lt;script setup lang=&#39;ts&#39;&gt;
 const props = defineProps&lt;&#123;
   foo?: string  //?表示可选,不带?表示必传
   bar: number
 &#125;&gt;()
 &lt;/script&gt;
-</code></pre>
-<p>运行时声明和类型声明的比较</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>优势</th>
-<th>劣势</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>运行时声明</td>
-<td>不使用 ts 的情况下能够对 props 进行一定的、运行时的类型校验</td>
-<td>1. 运行时校验2. 只能进行基本类型的校验3. 编码时无任何提示</td>
-</tr>
-<tr>
-<td>类型声明</td>
-<td>完美的支持类型的校验，包括props 的完美类型约束、父组件在传 props 时的提示以及子组件在使用 props 的提示</td>
-<td>目前 ts 的<strong style="color:red">接口暂时只支持写在本组件的文件内</strong>，未来应该会实现可从外部导入的，但目前可通过ts自动扫描types来解决</td>
-</tr>
-</tbody></table>
-<h4 id="widthDefaults"><a href="#widthDefaults" class="headerlink" title="widthDefaults"></a>widthDefaults</h4><p><code>defineProps</code> 使用类型声明时的不足之处在于，它没有可以给 props 提供默认值的方式。为了解决这个问题，提供了 <code>withDefaults</code> 宏命令。</p>
-<pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
+</code></pre><p>运行时声明和类型声明的比较</p><table><thead><tr><th>类型</th><th>优势</th><th>劣势</th></tr></thead><tbody><tr><td>运行时声明</td><td>不使用 ts 的情况下能够对 props 进行一定的、运行时的类型校验</td><td>1. 运行时校验2. 只能进行基本类型的校验3. 编码时无任何提示</td></tr><tr><td>类型声明</td><td>完美的支持类型的校验，包括props 的完美类型约束、父组件在传 props 时的提示以及子组件在使用 props 的提示</td><td>目前 ts 的<strong style="color:red">接口暂时只支持写在本组件的文件内</strong>，未来应该会实现可从外部导入的，但目前可通过ts自动扫描types来解决</td></tr></tbody></table><h4 id="widthDefaults"><a href="#widthDefaults" class="headerlink" title="widthDefaults"></a>widthDefaults</h4><p><code>defineProps</code> 使用类型声明时的不足之处在于，它没有可以给 props 提供默认值的方式。为了解决这个问题，提供了 <code>withDefaults</code> 宏命令。</p><pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
 const props = withDefaults(defineProps&lt;&#123;
   title?: string,
   list?: List.Basic[],
@@ -303,24 +69,14 @@ const props = withDefaults(defineProps&lt;&#123;
   list: () =&gt; [&#123; id: 3, content: &#39;3&#39;, isDone: false &#125;],
 &#125;);
 &lt;/script&gt;
-</code></pre>
-<p>注意：<code>widthDefaults</code> 是为了给 <code>defineProps</code> 使用类型声明时提供添加默认值的的方法，因此，需要注意这仅仅适用于 <code>&lt;script setup lang=&#39;ts&#39;&gt;</code> 且 <code>defineProps</code> 使用类型声明。</p>
-<h3 id="自定义事件-defineEmits"><a href="#自定义事件-defineEmits" class="headerlink" title="自定义事件-defineEmits"></a>自定义事件-defineEmits</h3><p>在 <code>&lt;script setup&gt;</code> 中 声明 <code>emit</code> ，必须使用 <code>defineEmits</code> API，这也是一个宏命令。同样可采用运行时声明和类型声明式两种方式，在类型声明下 <code>emit</code> 将具备完美的类型推断。</p>
-<ul>
-<li>运行时声明</li>
-</ul>
-<pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
+</code></pre><p>注意：<code>widthDefaults</code> 是为了给 <code>defineProps</code> 使用类型声明时提供添加默认值的的方法，因此，需要注意这仅仅适用于 <code>&lt;script setup lang=&#39;ts&#39;&gt;</code> 且 <code>defineProps</code> 使用类型声明。</p><h3 id="自定义事件-defineEmits"><a href="#自定义事件-defineEmits" class="headerlink" title="自定义事件-defineEmits"></a>自定义事件-defineEmits</h3><p>在 <code>&lt;script setup&gt;</code> 中 声明 <code>emit</code> ，必须使用 <code>defineEmits</code> API，这也是一个宏命令。同样可采用运行时声明和类型声明式两种方式，在类型声明下 <code>emit</code> 将具备完美的类型推断。</p><ul><li>运行时声明</li></ul><pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
 // 这样是没有任何的类型检查的
 const emit = defineEmits([&#39;handleClick&#39;, &#39;handleChange&#39;]);
 
 const handleClick = () =&gt; emit(&#39;handleClick&#39;, Date.now()+&#39;&#39;);
 const handleChange = () =&gt; emit(&#39;handleChange&#39;, Date.now());
 &lt;/script&gt;
-</code></pre>
-<ul>
-<li>类型声明</li>
-</ul>
-<pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
+</code></pre><ul><li>类型声明</li></ul><pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
 interface Click &#123;
   id: string,
   val: number,
@@ -339,11 +95,7 @@ const handleChangeWithTypeDeclaration = () =&gt; emit(&#39;handleChangeWithTypeD
   isDone: false,
 &#125;);
 &lt;/script&gt;
-</code></pre>
-<p>跟 <code>defineProps</code> 一样，运行时声明和类型声明式同样不可同时使用，且类型声明只能用于在 ts 环境下。</p>
-<h3 id="显示的暴露-defineExpose"><a href="#显示的暴露-defineExpose" class="headerlink" title="显示的暴露-defineExpose"></a>显示的暴露-defineExpose</h3><p>官方文档指出默认情况下使用 <code>&lt;script setup&gt;</code> 的组件是默认关闭的，也就是说通过<code>模板 ref</code> 或者 <code>$parent</code> 链获取到的子组件的实例，并不会暴露任何在<code> &lt;script setup&gt;</code> 中声明的绑定（变量，函数）。</p>
-<p>为了在<code> &lt;script setup&gt;</code> 组件中明确要暴露出去的属性，那么就需要使用 <code>defineExpose</code> 这个宏命令。</p>
-<pre><code class="html">&lt;script setup&gt;
+</code></pre><p>跟 <code>defineProps</code> 一样，运行时声明和类型声明式同样不可同时使用，且类型声明只能用于在 ts 环境下。</p><h3 id="显示的暴露-defineExpose"><a href="#显示的暴露-defineExpose" class="headerlink" title="显示的暴露-defineExpose"></a>显示的暴露-defineExpose</h3><p>官方文档指出默认情况下使用 <code>&lt;script setup&gt;</code> 的组件是默认关闭的，也就是说通过<code>模板 ref</code> 或者 <code>$parent</code> 链获取到的子组件的实例，并不会暴露任何在<code>&lt;script setup&gt;</code> 中声明的绑定（变量，函数）。</p><p>为了在<code>&lt;script setup&gt;</code> 组件中明确要暴露出去的属性，那么就需要使用 <code>defineExpose</code> 这个宏命令。</p><pre><code class="html">&lt;script setup&gt;
 import &#123; ref &#125; from &#39;vue&#39;
 
 const a = 1
@@ -354,10 +106,7 @@ defineExpose(&#123;
   b
 &#125;)
 &lt;/script&gt;
-</code></pre>
-<p>当父组件通过模板 ref 的方式获取到当前子组件的实例，获取到的实例会像这样 <code>&#123; a: number, b: number &#125;</code> (ref 会和在普通实例中一样被自动解包)</p>
-<h3 id="useSlots-和-useAttrs"><a href="#useSlots-和-useAttrs" class="headerlink" title="useSlots 和 useAttrs"></a>useSlots 和 useAttrs</h3><p>在 <code>&lt;script setup&gt;</code> 使用 <code>slots</code> 和 <code>attrs</code> 获取插槽和兜底属性，可以用 <code>useSlots</code> 和 <code>useAttrs</code> 两个函数</p>
-<pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
+</code></pre><p>当父组件通过模板 ref 的方式获取到当前子组件的实例，获取到的实例会像这样 <code>&#123; a: number, b: number &#125;</code> (ref 会和在普通实例中一样被自动解包)</p><h3 id="useSlots-和-useAttrs"><a href="#useSlots-和-useAttrs" class="headerlink" title="useSlots 和 useAttrs"></a>useSlots 和 useAttrs</h3><p>在 <code>&lt;script setup&gt;</code> 使用 <code>slots</code> 和 <code>attrs</code> 获取插槽和兜底属性，可以用 <code>useSlots</code> 和 <code>useAttrs</code> 两个函数</p><pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
 import &#123; useSlots, useAttrs &#125; from &quot;vue&quot;;
 
 const slot = useSlots();
@@ -371,15 +120,7 @@ console.log(&#39;TestUseAttrs&#39;, attrs);        // 获取到使用组件时�
   &lt;h1&gt; Here is slots test!!&lt;/h1&gt;
   &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;
 &lt;/template&gt;
-</code></pre>
-<p><code>useSlots</code> 和 <code>useAttrs</code> 是真实的运行时函数，它会返回与 <code>setupContext.slots</code> 和 <code>setupContext.attrs</code> 等价的值，同样也能在普通的 <code>composition API</code> 中使用。</p>
-<h3 id="与普通的script一起使用"><a href="#与普通的script一起使用" class="headerlink" title="与普通的script一起使用"></a>与普通的script一起使用</h3><p><code>&lt;script setup&gt;</code> 可以和普通的 <code>&lt;script&gt;</code> 一起使用。普通的 <code>&lt;script&gt; </code>在有这些需要的情况下或许会被使用到：</p>
-<ul>
-<li>无法在<code>&lt;script setup&gt;</code>声明的选项，例如 inheritAttrs 或通过插件启用的自定义的选项。</li>
-<li>显示定义组件的名称。</li>
-<li>运行副作用或者创建只需要执行一次的对象。</li>
-</ul>
-<pre><code class="html">&lt;script&gt;
+</code></pre><p><code>useSlots</code> 和 <code>useAttrs</code> 是真实的运行时函数，它会返回与 <code>setupContext.slots</code> 和 <code>setupContext.attrs</code> 等价的值，同样也能在普通的 <code>composition API</code> 中使用。</p><h3 id="与普通的script一起使用"><a href="#与普通的script一起使用" class="headerlink" title="与普通的script一起使用"></a>与普通的script一起使用</h3><p><code>&lt;script setup&gt;</code> 可以和普通的 <code>&lt;script&gt;</code> 一起使用。普通的 <code>&lt;script&gt;</code>在有这些需要的情况下或许会被使用到：</p><ul><li>无法在<code>&lt;script setup&gt;</code>声明的选项，例如 inheritAttrs 或通过插件启用的自定义的选项。</li><li>显示定义组件的名称。</li><li>运行副作用或者创建只需要执行一次的对象。</li></ul><pre><code class="html">&lt;script&gt;
 // 普通 &lt;script&gt;, 在模块范围下执行(只执行一次)
 runSideEffectOnce()
 
@@ -393,22 +134,13 @@ export default &#123;
 &lt;script setup&gt;
 // 在 setup() 作用域中执行 (对每个实例皆如此)
 &lt;/script&gt;
-</code></pre>
-<p>注意：如果同时使用 <code>&lt;script setup&gt;</code> 和 <code>&lt;script&gt;</code> ，那么将打破 <code>&lt;script setup&gt;</code> 的默认关闭（即外部无法获取组件内部的属性和方法），此时，子组件内部的属性和方法都将在外部可获取到，如 <code>ref.xxx</code></p>
-<h3 id="顶层await-了解"><a href="#顶层await-了解" class="headerlink" title="顶层await(了解)"></a>顶层await(了解)</h3><p><code>await</code> 的使用必须是要在<code>async</code> 语法糖的包裹下，否者将无法执行，为了更简化代码， <code>&lt;script setup&gt;</code> 中可以使用顶层 <code>await</code>。</p>
-<pre><code class="html">&lt;script setup&gt;
+</code></pre><p>注意：如果同时使用 <code>&lt;script setup&gt;</code> 和 <code>&lt;script&gt;</code> ，那么将打破 <code>&lt;script setup&gt;</code> 的默认关闭（即外部无法获取组件内部的属性和方法），此时，子组件内部的属性和方法都将在外部可获取到，如 <code>ref.xxx</code></p><h3 id="顶层await-了解"><a href="#顶层await-了解" class="headerlink" title="顶层await(了解)"></a>顶层await(了解)</h3><p><code>await</code> 的使用必须是要在<code>async</code> 语法糖的包裹下，否者将无法执行，为了更简化代码， <code>&lt;script setup&gt;</code> 中可以使用顶层 <code>await</code>。</p><pre><code class="html">&lt;script setup&gt;
 const post = await fetch(`/api/post/1`).then(r =&gt; r.json())
 &lt;/script&gt;
-</code></pre>
-<h2 id="限制使用src-导入-了解"><a href="#限制使用src-导入-了解" class="headerlink" title="限制使用src 导入(了解)"></a>限制使用src 导入(了解)</h2><p>SFC 的三个模块都可以通过 <code>src</code> 的方式进行导入，如下所示：</p>
-<pre><code class="html">&lt;template src=&quot;./template.html&quot;&gt;&lt;/template&gt;
+</code></pre><h2 id="限制使用src-导入-了解"><a href="#限制使用src-导入-了解" class="headerlink" title="限制使用src 导入(了解)"></a>限制使用src 导入(了解)</h2><p>SFC 的三个模块都可以通过 <code>src</code> 的方式进行导入，如下所示：</p><pre><code class="html">&lt;template src=&quot;./template.html&quot;&gt;&lt;/template&gt;
 &lt;style src=&quot;./style.css&quot;&gt;&lt;/style&gt;
 &lt;script src=&quot;./script.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<p>但是在<code> &lt;script setup&gt;</code>下强烈建议不使用 Src 导入。</p>
-<p>由于模块执行语义的差异，<code>&lt;script setup&gt;</code> 中的代码依赖单文件组件的上下文。当将其移动到外部的 .js 或者 .ts 文件中的时候，对于开发者和工具来说都会感到混乱。因而<code> &lt;script setup&gt;</code> 不能和<code> src attribute</code> 一起使用。</p>
-<h2 id="style-v-bind-新特性"><a href="#style-v-bind-新特性" class="headerlink" title="style  v-bind 新特性"></a>style  v-bind 新特性</h2><h3 id="style-module-了解"><a href="#style-module-了解" class="headerlink" title="style module(了解)"></a>style module(了解)</h3><p>设计和使用上跟 Vue2.x 是一致的，因此也不多赘述。<br>唯一新的点是使用 <code>&lt;script setup&gt;</code> 时，可以使用 <code>useCssModule</code> API 获取到 css module 对象。</p>
-<pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
+</code></pre><p>但是在<code>&lt;script setup&gt;</code>下强烈建议不使用 Src 导入。</p><p>由于模块执行语义的差异，<code>&lt;script setup&gt;</code> 中的代码依赖单文件组件的上下文。当将其移动到外部的 .js 或者 .ts 文件中的时候，对于开发者和工具来说都会感到混乱。因而<code>&lt;script setup&gt;</code> 不能和<code>src attribute</code> 一起使用。</p><h2 id="style-v-bind-新特性"><a href="#style-v-bind-新特性" class="headerlink" title="style  v-bind 新特性"></a>style v-bind 新特性</h2><h3 id="style-module-了解"><a href="#style-module-了解" class="headerlink" title="style module(了解)"></a>style module(了解)</h3><p>设计和使用上跟 Vue2.x 是一致的，因此也不多赘述。<br>唯一新的点是使用 <code>&lt;script setup&gt;</code> 时，可以使用 <code>useCssModule</code> API 获取到 css module 对象。</p><pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
 import &#123; useCssModule &#125; from &quot;vue&quot;;
 const css = useCssModule();
 console.log(css);        // &#123; blue: &quot;_blue_13cse_5&quot;, red: &quot;_red_13cse_2&quot;&#125;
@@ -422,9 +154,7 @@ console.log(css);        // &#123; blue: &quot;_blue_13cse_5&quot;, red: &quot;_
   color: blue;
 &#125;
 &lt;/style&gt;
-</code></pre>
-<h3 id="动态css"><a href="#动态css" class="headerlink" title="动态css"></a>动态css</h3><p>单文件组件的 <code>&lt;style&gt;</code> 标签可以通过 <code>v-bind</code> 这一 CSS 函数将 CSS 的值关联到动态的组件状态上，<strong>有了这一特性，可以将大量的动态样式通过状态来驱动了，而不是写动态的 calss 类名或者获取 dom 来动态设置了</strong>。</p>
-<pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
+</code></pre><h3 id="动态css"><a href="#动态css" class="headerlink" title="动态css"></a>动态css</h3><p>单文件组件的 <code>&lt;style&gt;</code> 标签可以通过 <code>v-bind</code> 这一 CSS 函数将 CSS 的值关联到动态的组件状态上，<strong>有了这一特性，可以将大量的动态样式通过状态来驱动了，而不是写动态的 calss 类名或者获取 dom 来动态设置了</strong>。</p><pre><code class="html">&lt;script setup lang=&quot;ts&quot;&gt;
 import &#123; ref &#125; from &quot;vue&quot;;
 const color = ref(&#39;red&#39;);
 
@@ -440,248 +170,4 @@ p &#123;
   color: v-bind(color);
 &#125;
 &lt;/style&gt;
-</code></pre>
-<h2 id="volar插件"><a href="#volar插件" class="headerlink" title="volar插件"></a>volar插件</h2><p>vue3必备vscode的插件，安装后有代码提示、点击css类&#x2F;组件跳转、自动补全等等功能！</p>
-
-						</div>
-						
-						
-
-				</div>
-			</div>
-		</div>
-		<!-- 置顶按钮 -->
-		<!-- 置顶 -->
-<ul id="toTopBtn" class="layui-fixbar" style="right: -70px;">
-    <a href="javascript:void(0)">
-        <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;">&#xe604;</li>
-    </a>
-</ul>
-		<!-- 底部版权 -->
-		<div class="qy-footer">
-    <div class="font-Area">
-        Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved 
-    </div>
-</div>
-</body>
-<script src="../../../../../js/jquery.min.js"></script>
-<script src="../../../../../layui/layui.js"></script>
-<!-- 鼠标点击特效 -->
-<script src="../../../../../js/mouse.js"></script>
-<!-- 代码高亮 -->
-<script src="../../../../../lib/prism/prism.js"></script>
-<!-- 公共js -->
-<script>
-    //点击搜索
-    $("#searchBtn").click(function () {
-        $("#searchShade").show()
-        $("#searchLayer").addClass('layui-anim layui-anim-scaleSpring')
-    })
-    //关闭搜索弹框
-    $("#closeBtn").click(function () {
-        $("#searchShade").hide() 
-    })
-    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
-    var searchFunc = function (path, search_id, content_id) {
-        $.ajax({
-            url: path,
-            dataType: "json",
-            success: function (datas) {
-                //console.log('datas :>> ', datas);
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var first_occur = -1;
-                        if (data_title != '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                if (index_title < 0) {
-                                    isMatch = false;
-                                } else {
-                                    data_title = data_title.replace(new RegExp(keyword, 'g'), '<span style="color:red">' + keyword + '</span>')
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    }
-    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
-
-
-    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
-    function DynamicLine() {
-        function n(n, e, t) {
-            return n.getAttribute(e) || t
-        }
-
-        function e(n) {
-            return document.getElementsByTagName(n)
-        }
-
-        function t() {
-            var t = e("script"),
-                o = t.length,
-                i = t[o - 1];
-            return {
-                l: o,
-                z: n(i, "zIndex", -1),
-                o: n(i, "opacity", .5),
-                c: n(i, "color", "0,0,50"), //颜色rgb
-                n: n(i, "count", 99)
-            }
-        }
-
-        function o() {
-            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-        }
-
-        function i() {
-            r.clearRect(0, 0, a, c);
-            var n, e, t, o, m, l;
-            s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
-                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
-                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
-                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-            }),
-                x(i)
-        }
-        var a, c, u, m = document.createElement("canvas"),
-            d = t(),
-            l = "c_n" + d.l,
-            r = m.getContext("2d"),
-            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
-                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-                    window.setTimeout(n, 1e3 / 45)
-                },
-            w = Math.random,
-            y = {
-                x: null,
-                y: null,
-                max: 2e4
-            };
-        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
-            m), o(), window.onresize = o,
-            window.onmousemove = function (n) {
-                n = n || window.event, y.x = n.clientX, y.y = n.clientY
-            },
-            window.onmouseout = function () {
-                y.x = null, y.y = null
-            };
-        for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a,
-                g = w() * c,
-                v = 2 * w() - 1,
-                p = 2 * w() - 1;
-            s.push({
-                x: h,
-                y: g,
-                xa: v,
-                ya: p,
-                max: 6e3
-            })
-        }
-        u = s.concat([y]),
-            setTimeout(function () {
-                i()
-            }, 100)
-    }
-    //随机背景线条
-    DynamicLine()
-    //更新页脚年份
-    document.querySelector("#currentYear").innerText = new Date().getFullYear()
-
-
-    //置顶  增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
-    $("#toTopBtn").click(function () {
-        var oTop = $(window).scrollTop()
-        var t = parseInt(oTop / 60) //每次六十分之一
-        var time = setInterval(function () {
-            console.log('toTopBtn...setInterval',$(window).scrollTop())
-            $(window).scrollTop($(window).scrollTop() - t)
-            if ($(window).scrollTop() === 0) {
-                clearInterval(time);
-            }
-        }, 1);
-    })
-    $.event.add(window, "scroll", function () {
-        //显示与隐藏置顶按钮   transition: all 0.5s;
-        $("#toTopBtn").css('transform', $(window).scrollTop() > 0 ? 'translateX(-85px)' : 'translateX(85px)');
-        $("#toTopBtn").css('transition', "all 0.5s");
-    })
-    //隐藏loading
-    $("#loadingBox").hide(); 
-</script>
-<script>
-	//注意：导航和进度条 依赖 element 模块，否则无法进行功能性操作
-	var element = null
-	layui.use(['element'], function () {
-		element = layui.element;
-	});
-	
-		$(function () {
-			var elm = $('#toc-area');
-			var startPos = $(elm).offset().top;
-			//var totalTop = $(document).height();
-			$.event.add(window, "scroll", function () {
-				var totalTop = $(".markdown-body").height();
-				// var p = $(window).scrollTop()+$("#toc-area").height();
-				var p = $(window).scrollTop()+startPos;
-				//文章阅读进度条
-				var percent = ((p / totalTop) * 100).toFixed(2)
-				if (percent > 99) {
-					percent = 100
-				}
-				if (percent == 0) {
-					percent = 0
-				}
-				element.progress('demo', percent + "%");
-				$("#progressTxt").text(percent)
-				console.log('percent', percent)
-				$("#progressNav").css("width", $(window).scrollTop() == 0? 0 : percent + "%")
-				//固定文章目录
-				console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
-				$(elm).css('position', ($(window).scrollTop() > startPos) ? 'fixed' : 'static');
-				$(elm).css('top', ($(window).scrollTop() > startPos) ? '60px' : '');
-				//文章目录随页面滚动
-				$('#tocMain').scrollTop($('#tocMain .toc').height() * percent * 0.01);
-			});
-			//代码高亮
-			$('pre code').each(function () {
-				var codeType = $(this).attr("class")
-				codeType = codeType == undefined || codeType == "" || codeType == null ? "plaintext" : codeType
-				codeType = "language-" + codeType
-				$(this).attr("class", codeType)
-			})
-			//代码复制以及显示代码语言
-			$("pre").prepend('<div class="copy-to-clipboard-button"></div>');
-		});
-	
-</script>
-
-</html>
+</code></pre><h2 id="volar插件"><a href="#volar插件" class="headerlink" title="volar插件"></a>volar插件</h2><p>vue3必备vscode的插件，安装后有代码提示、点击css类&#x2F;组件跳转、自动补全等等功能！</p></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px"><a href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display:list-item">&#xe604;</li></a></ul><div class="qy-footer"><div class="font-Area">Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved</div></div></body><script src="../../../../../js/jquery.min.js"></script><script src="../../../../../layui/layui.js"></script><script src="../../../../../js/mouse.js"></script><script src="../../../../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(n,o,i){$.ajax({url:n,dataType:"json",success:function(n){var e=document.getElementById(o),t=document.getElementById(i);e.addEventListener("input",function(){var e='<ul class="search-result-list">',i=this.value.trim().toLowerCase().split(/[\s\-]+/);t.innerHTML="",this.value.trim().length<=0||(n.forEach(function(n){var t=!0,o=n.title.trim().toLowerCase(),n=n.url;""!=o&&i.forEach(function(n,e){o.indexOf(n)<0?t=!1:o=o.replace(new RegExp(n,"g"),'<span style="color:red">'+n+"</span>")}),t&&(e=e+"<li><a href='"+n+"' class='search-result-title'>"+o+"</a></li>")}),e+="</ul>",t.innerHTML=e)})}})};function DynamicLine(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){r=i.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,s=i.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function l(){var t,o,i,a,c;m.clearRect(0,0,r,s),x.forEach(function(n,e){for(n.x+=n.xa,n.y+=n.ya,n.xa*=n.x>r||n.x<0?-1:1,n.ya*=n.y>s||n.y<0?-1:1,m.fillRect(n.x-.5,n.y-.5,1,1),o=e+1;o<u.length;o++)null!==(t=u[o]).x&&null!==t.y&&(i=n.x-t.x,a=n.y-t.y,(c=i*i+a*a)<t.max)&&(t===h&&c>=t.max/2&&(n.x-=.03*i,n.y-=.03*a),i=(t.max-c)/t.max,m.beginPath(),m.lineWidth=i/2,m.strokeStyle="rgba("+d.c+","+(.2+i)+")",m.moveTo(n.x,n.y),m.lineTo(t.x,t.y),m.stroke())}),w(l)}var r,s,u,o,i=document.createElement("canvas"),d=(a=(o=e("script")).length,o=o[a-1],{l:a,z:n(o,"zIndex",-1),o:n(o,"opacity",.5),c:n(o,"color","0,0,50"),n:n(o,"count",99)}),a="c_n"+d.l,m=i.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},c=Math.random,h={x:null,y:null,max:2e4};i.id=a,i.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(i),t(),window.onresize=t,window.onmousemove=function(n){n=n||window.event,h.x=n.clientX,h.y=n.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var x=[],y=0;y<d.n;y++){var f=c()*r,p=c()*s,g=2*c()-1,T=2*c()-1;x.push({x:f,y:p,xa:g,ya:T,max:6e3})}u=x.concat([h]),setTimeout(function(){l()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear(),$("#toTopBtn").click(function(){var n=$(window).scrollTop(),e=parseInt(n/60),t=setInterval(function(){console.log("toTopBtn...setInterval",$(window).scrollTop()),$(window).scrollTop($(window).scrollTop()-e),0===$(window).scrollTop()&&clearInterval(t)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide()</script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var l=$("#toc-area"),s=$(l).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),t=$(window).scrollTop()+s,e=(t/o*100).toFixed(2);element.progress("demo",(e=0==(e=99<e?100:e)?0:e)+"%"),$("#progressTxt").text(e),console.log("percent",e),$("#progressNav").css("width",0==$(window).scrollTop()?0:e+"%"),console.log("p",t+$("#toc-area").height(),"startPos",s+$("#toc-area").height(),"totalTop",o),$(l).css("position",$(window).scrollTop()>s?"fixed":"static"),$(l).css("top",$(window).scrollTop()>s?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>

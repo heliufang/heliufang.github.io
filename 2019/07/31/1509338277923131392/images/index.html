@@ -1,388 +1,62 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-	<title>贺刘芳的搬砖日记</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="../../../../../layui/css/layui.css" />
-	<link rel="stylesheet" href="../../../../../css/common.css" />
-	<link rel="stylesheet" href="../../../../../css/post.css" />
-	<!-- 代码高亮 -->
-	<link rel="stylesheet" href="../../../../../lib/prism/prism.css" />
-	<link rel="shortcut icon" href="../../../../../img/favicon.ico">
-	
-	<link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css">
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
-</head>
-
-<body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!">
-	<!-- 导航模板 -->
-	<!-- 导航 -->
-<div class="qy-nav">
-  <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li>
-    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
-    </li>
-    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
-   
-    <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
-      <a href="javascript:;">菜单</a>
-      <dl class="layui-nav-child"> <!-- 二级菜单 -->
-        <dd><a href="/">首页</a></dd>
-        <dd><a href="/archives">归档</a></dd>
-        <dd><a href="/tags">标签</a></dd>
-        <dd><a href="/categories">分类</a></dd>
-        <dd><a href="/about">关于</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd>
-        <dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd>
-        <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
-        </dd>
-      </dl>
-    </li>
-  </ul>
-  <!-- 进度条 -->
-  <div class="progress" id="progressNav"></div>
-  <!-- loading -->
-  <div id="loadingBox" class="loadingBox">
-    <img src="/img/loading.gif">
-  </div>
-</div>
-<!-- 搜索弹框 -->
-<div id="searchShade" class="searchShade">
-  <div id="searchLayer">
-    <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
-    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)"  autofocus  />
-    <div id="searchResult">
-      <!-- <ul>
-        <li>java笔记
-        <li>
-      </ul> -->
-    </div>
-
-  </div>
-</div>
-
-		<!-- 中间内容区域 -->
-		<div class="layui-container  center" id="top">
-			<div class="layui-row layui-col-space20">
-				<div class="layui-col-md3 hide-xs hide-sm">
-					<!-- 左侧的公告、分类、归档、标签 -->
-					<!-- 左侧的公告、分类、归档、标签 -->
-
-<!-- 个人信息 -->
-<div class="layui-card">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-speaker"></i> 公告</div>
-    <div class="layui-card-body">
-        <div class="userinfo">
-            <img src="/head.png">
-            <div class="name">淡泊明志，宁静致远</div>
-            <div class="icons">
-                <a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a>
-                <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a>
-                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a>
-            </div>
-            <div class="other">
-                <div class="item">
-                    <p class="num">
-                        40
-                    </p>
-                    <p class="title" style="color: #FF5722">文章</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        8
-                    </p>
-                    <p class="title">分类</p>
-                </div>
-                <div class="item">
-                    <p class="num">
-                        44
-                    </p>
-                    <p class="title" style="color: #01AAED">标签</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<!-- 最新文章 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
-    <div class="layui-card-body">
-        
-        <ul>
-            
-                <li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li>
-            
-                <li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li>
-            
-                <li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li>
-            
-                <li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li>
-            
-                <li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li>
-            
-        </ul>
-    </div>
-</div>
-
-<!-- 分类 -->
-<div class="layui-card ahover">
-    <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-template-1"></i> 分类</div>
-    <div class="layui-card-body">
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
-    </div>
-</div>
-
-
-						<!-- 文章目录 -->
-						
-							<div style="height: calc(100% - 60px - 60px);width: 267px;" id="toc-area" class="layui-card ahover">
-								<div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div>
-								<div id="tocMain" class="layui-card-body"
-									style="overflow:auto;height: calc(100% - 60px - 60px);">
-									<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81linux%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-text">一、linux的用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">二、linux的目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4"><span class="toc-text">三、操作目录的一些命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0-x2F-x2F"><span class="toc-text">3.0  &#x2F;   .&#x2F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9All-%E5%92%8C-pwd"><span class="toc-text">3.1 查看目录的命令：ll  和 pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Acd"><span class="toc-text">3.2 切换目录的命令：cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Amkdir"><span class="toc-text">3.3 创建目录的命令：mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E5%90%8D%EF%BC%9Arm"><span class="toc-text">3.4 删除目录的命名：rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E7%A7%BB%E5%8A%A8%E7%9B%AE%E5%BD%95%E5%92%8C%E9%87%8D%E5%91%BD%E5%90%8D%E7%9A%84%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Amv"><span class="toc-text">3.5 移动目录和重命名的目录的命令：mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E5%A4%8D%E5%88%B6%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Acp"><span class="toc-text">3.6 复制目录的命令：cp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4"><span class="toc-text">四、操作文件的一些命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Atouch"><span class="toc-text">4.1 创建一个文件的命令：touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Arm"><span class="toc-text">4.2 删除一个文件的命令：rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%E5%92%8C%E5%89%AA%E5%88%87%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Amv"><span class="toc-text">4.3 重命名文件和剪切文件的命令：mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Acp"><span class="toc-text">4.4 复制文件的命令：cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95%E6%90%9C%E7%B4%A2%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Afind"><span class="toc-text">4.5文件或者目录搜索的命令：find</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-text">五、系统命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-ip%E7%9B%B8%E5%85%B3"><span class="toc-text">5.1 ip相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="toc-text">5.2 进程相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E9%98%B2%E7%81%AB%E5%A2%99%E5%92%8C%E7%AB%AF%E5%8F%A3%E7%9B%B8%E5%85%B3"><span class="toc-text">5.3 防火墙和端口相关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81vim%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">六、vim文本编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%85%B6%E4%BB%96"><span class="toc-text">七、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-zip%E5%92%8Cunzip"><span class="toc-text">7.1 zip和unzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-zmodem%E6%8B%96%E6%8B%BD%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-text">7.2 zmodem拖拽上传文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-linux%E6%9F%A5%E8%AF%A2%E7%A3%81%E7%9B%98%E5%92%8C%E5%88%86%E5%8C%BA%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">7.3 linux查询磁盘和分区的指令</span></a></li></ol></li></ol>
-								</div>
-								<div class="readprocess">
-									<div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%
-									</div>
-									<div class="layui-progress" lay-filter="demo">
-										<div class="layui-progress-bar" lay-percent="10%"></div>
-									</div>
-								</div>
-							</div>
-							
-				</div>
-				<div class="layui-col-md9 markdown-body" style="background:#fff;margin-top: 10px;">
-					
-						<div class="article-title">
-							<h1>centos-linux入门笔记</h1>
-							<p>
-								<i class="layui-icon layui-icon-date"></i>发表时间 2019-07-31
-									|
-									<i class="layui-icon layui-icon-form"></i>累计字数 2.2k
-							</p>
-						</div>
-						
-						<!-- 文章内容 -->
-						<div id="article">
-							<h2 id="一、linux的用户"><a href="#一、linux的用户" class="headerlink" title="一、linux的用户"></a>一、linux的用户</h2><p>linux的用户和windwos差不多，分为管理员用户和普通用户。</p>
-<ul>
-<li><p>普通用户：权限没那么高而已。</p>
-</li>
-<li><p>管理员用户：在linux中就是<strong>root</strong>用户，所拥有的权限是最高的。</p>
-</li>
-</ul>
-<h2 id="二、linux的目录结构"><a href="#二、linux的目录结构" class="headerlink" title="二、linux的目录结构"></a>二、linux的目录结构</h2><p><img src="/2019/07/31/1509338277923131392/images/20181120124105624.png" alt="在这里插入图片描述"></p>
-<blockquote>
-<p>注意：Linux中没有像windows那样分c盘、d盘…最底层就是 &#x2F; 也就是根目录。</p>
-</blockquote>
-<ul>
-<li>&#x2F;<br>根目录，经常用。</li>
-<li>&#x2F;root<br>根目录下面的root目录，使用root账号登录linux后，默认进入的就是root目录。</li>
-<li>&#x2F;bin<br>根目录下面的bin目录，存放二进制文件的。</li>
-<li>&#x2F;etc<br>根目录下面的etc目录，存放系统的一些配置文件。</li>
-<li>&#x2F;home<br>根目录下面的home目录，每个用户都有自己的目录，除了root用户外，其它用户的目录都在这里面。</li>
-<li>&#x2F;usr<br>根目录下面的usr 目录,相当于windows下的program files目录。</li>
-</ul>
-<h2 id="三、操作目录的一些命令"><a href="#三、操作目录的一些命令" class="headerlink" title="三、操作目录的一些命令"></a>三、操作目录的一些命令</h2><h3 id="3-0-x2F-x2F"><a href="#3-0-x2F-x2F" class="headerlink" title="3.0  &#x2F;   .&#x2F;"></a>3.0  &#x2F;   .&#x2F;</h3><pre><code>    / 代表的是根目录
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../../../../layui/css/layui.css"><link rel="stylesheet" href="../../../../../css/common.css"><link rel="stylesheet" href="../../../../../css/post.css"><link rel="stylesheet" href="../../../../../lib/prism/prism.css"><link rel="shortcut icon" href="../../../../../img/favicon.ico"><link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div class="progress" id="progressNav"></div><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><p class="num">40</p><p class="title" style="color:#ff5722">文章</p></div><div class="item"><p class="num">8</p><p class="title">分类</p></div><div class="item"><p class="num">44</p><p class="title" style="color:#01aaed">标签</p></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/2022/12/30/1608754051799977984/images/">1.react笔记</a></li><li><a href="/2022/12/09/1601805950963027968/images/">2.vue3.2新特性笔记</a></li><li><a href="/2022/10/30/1593064784100724736/images/">3.node笔记</a></li><li><a href="/2022/07/09/1545789245413789696/images/">4.vue3笔记</a></li><li><a href="/2022/07/09/1551862167303753728/images/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 分类</div><div class="layui-card-body"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81linux%E7%9A%84%E7%94%A8%E6%88%B7"><span class="toc-text">一、linux的用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81linux%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">二、linux的目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4"><span class="toc-text">三、操作目录的一些命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-0-x2F-x2F"><span class="toc-text">3.0 &#x2F; .&#x2F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9All-%E5%92%8C-pwd"><span class="toc-text">3.1 查看目录的命令：ll 和 pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Acd"><span class="toc-text">3.2 切换目录的命令：cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Amkdir"><span class="toc-text">3.3 创建目录的命令：mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E5%90%8D%EF%BC%9Arm"><span class="toc-text">3.4 删除目录的命名：rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E7%A7%BB%E5%8A%A8%E7%9B%AE%E5%BD%95%E5%92%8C%E9%87%8D%E5%91%BD%E5%90%8D%E7%9A%84%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Amv"><span class="toc-text">3.5 移动目录和重命名的目录的命令：mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-%E5%A4%8D%E5%88%B6%E7%9B%AE%E5%BD%95%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Acp"><span class="toc-text">3.6 复制目录的命令：cp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4"><span class="toc-text">四、操作文件的一些命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Atouch"><span class="toc-text">4.1 创建一个文件的命令：touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Arm"><span class="toc-text">4.2 删除一个文件的命令：rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6%E5%92%8C%E5%89%AA%E5%88%87%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Amv"><span class="toc-text">4.3 重命名文件和剪切文件的命令：mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Acp"><span class="toc-text">4.4 复制文件的命令：cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5%E6%96%87%E4%BB%B6%E6%88%96%E8%80%85%E7%9B%AE%E5%BD%95%E6%90%9C%E7%B4%A2%E7%9A%84%E5%91%BD%E4%BB%A4%EF%BC%9Afind"><span class="toc-text">4.5文件或者目录搜索的命令：find</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-text">五、系统命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-ip%E7%9B%B8%E5%85%B3"><span class="toc-text">5.1 ip相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="toc-text">5.2 进程相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E9%98%B2%E7%81%AB%E5%A2%99%E5%92%8C%E7%AB%AF%E5%8F%A3%E7%9B%B8%E5%85%B3"><span class="toc-text">5.3 防火墙和端口相关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81vim%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">六、vim文本编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%85%B6%E4%BB%96"><span class="toc-text">七、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-zip%E5%92%8Cunzip"><span class="toc-text">7.1 zip和unzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-zmodem%E6%8B%96%E6%8B%BD%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6"><span class="toc-text">7.2 zmodem拖拽上传文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-linux%E6%9F%A5%E8%AF%A2%E7%A3%81%E7%9B%98%E5%92%8C%E5%88%86%E5%8C%BA%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-text">7.3 linux查询磁盘和分区的指令</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>centos-linux入门笔记</h1><p><i class="layui-icon layui-icon-date"></i>发表时间 2019-07-31 | <i class="layui-icon layui-icon-form"></i>累计字数 2.2k</p></div><div id="article"><h2 id="一、linux的用户"><a href="#一、linux的用户" class="headerlink" title="一、linux的用户"></a>一、linux的用户</h2><p>linux的用户和windwos差不多，分为管理员用户和普通用户。</p><ul><li><p>普通用户：权限没那么高而已。</p></li><li><p>管理员用户：在linux中就是<strong>root</strong>用户，所拥有的权限是最高的。</p></li></ul><h2 id="二、linux的目录结构"><a href="#二、linux的目录结构" class="headerlink" title="二、linux的目录结构"></a>二、linux的目录结构</h2><p><img src="/2019/07/31/1509338277923131392/images/20181120124105624.png" alt="在这里插入图片描述"></p><blockquote><p>注意：Linux中没有像windows那样分c盘、d盘…最底层就是 &#x2F; 也就是根目录。</p></blockquote><ul><li>&#x2F;<br>根目录，经常用。</li><li>&#x2F;root<br>根目录下面的root目录，使用root账号登录linux后，默认进入的就是root目录。</li><li>&#x2F;bin<br>根目录下面的bin目录，存放二进制文件的。</li><li>&#x2F;etc<br>根目录下面的etc目录，存放系统的一些配置文件。</li><li>&#x2F;home<br>根目录下面的home目录，每个用户都有自己的目录，除了root用户外，其它用户的目录都在这里面。</li><li>&#x2F;usr<br>根目录下面的usr 目录,相当于windows下的program files目录。</li></ul><h2 id="三、操作目录的一些命令"><a href="#三、操作目录的一些命令" class="headerlink" title="三、操作目录的一些命令"></a>三、操作目录的一些命令</h2><h3 id="3-0-x2F-x2F"><a href="#3-0-x2F-x2F" class="headerlink" title="3.0  &#x2F;   .&#x2F;"></a>3.0 &#x2F; .&#x2F;</h3><pre><code>    / 代表的是根目录
     ./ 代表的是当前目录，不写./时，默认就是当前目录
     ../ 代表的是当前目录的上一级目录
-</code></pre>
-<h3 id="3-1-查看目录的命令：ll-和-pwd"><a href="#3-1-查看目录的命令：ll-和-pwd" class="headerlink" title="3.1 查看目录的命令：ll  和 pwd"></a>3.1 查看目录的命令：ll  和 pwd</h3><pre><code>ll语法：ll 目录      
+</code></pre><h3 id="3-1-查看目录的命令：ll-和-pwd"><a href="#3-1-查看目录的命令：ll-和-pwd" class="headerlink" title="3.1 查看目录的命令：ll  和 pwd"></a>3.1 查看目录的命令：ll 和 pwd</h3><pre><code>ll语法：ll 目录      
 注意：ll后面不接目录时，默认是当前目录
 
 pwd语法：pwd
-</code></pre>
-<ul>
-<li><p>列出当前目录下的所有内容。</p>
-<pre><code>  [root@helf ~]# ll
-</code></pre>
-</li>
-<li><p>列出根目录下的bin目录下的所有内容。</p>
-<pre><code>  [root@helf /]# ll /bin
-</code></pre>
-</li>
-<li><p>列出当前目录下的所有文件，包含隐藏文件。</p>
-<pre><code> [root@helf /]# ls -al
-</code></pre>
-</li>
-<li><p>显示当前在那个目录下。</p>
-<pre><code>  [root@helf src]# pwd
-</code></pre>
-<p>  ​</p>
-</li>
-</ul>
-<h3 id="3-2-切换目录的命令：cd"><a href="#3-2-切换目录的命令：cd" class="headerlink" title="3.2 切换目录的命令：cd"></a>3.2 切换目录的命令：cd</h3><ul>
-<li><p>切换到根目录。</p>
-<pre><code>  [root@helf ~]# cd /
-</code></pre>
-</li>
-<li><p>切换到当前用户的目录，下面两个都是。</p>
-<pre><code>  [root@helf /]# cd ~
+</code></pre><ul><li><p>列出当前目录下的所有内容。</p><pre><code>  [root@helf ~]# ll
+</code></pre></li><li><p>列出根目录下的bin目录下的所有内容。</p><pre><code>  [root@helf /]# ll /bin
+</code></pre></li><li><p>列出当前目录下的所有文件，包含隐藏文件。</p><pre><code> [root@helf /]# ls -al
+</code></pre></li><li><p>显示当前在那个目录下。</p><pre><code>  [root@helf src]# pwd
+</code></pre><p>​</p></li></ul><h3 id="3-2-切换目录的命令：cd"><a href="#3-2-切换目录的命令：cd" class="headerlink" title="3.2 切换目录的命令：cd"></a>3.2 切换目录的命令：cd</h3><ul><li><p>切换到根目录。</p><pre><code>  [root@helf ~]# cd /
+</code></pre></li><li><p>切换到当前用户的目录，下面两个都是。</p><pre><code>  [root@helf /]# cd ~
   [root@helf /]# cd 
-</code></pre>
-</li>
-<li><p>切换到上一级目录</p>
-<pre><code>  [root@helf ~]# cd ..
-</code></pre>
-</li>
-<li><p>切换到上一次访问的目录</p>
-<pre><code>  [root@helf bin]# cd -
-</code></pre>
-</li>
-</ul>
-<h3 id="3-3-创建目录的命令：mkdir"><a href="#3-3-创建目录的命令：mkdir" class="headerlink" title="3.3 创建目录的命令：mkdir"></a>3.3 创建目录的命令：mkdir</h3><ul>
-<li><p>在当前目录下创建文件夹a。</p>
-<pre><code>  [root@helf ~]# mkdir a
-</code></pre>
-</li>
-<li><p>在根目录下的root下创建一个文件夹b。</p>
-<pre><code>  [root@helf ~]# mkdir /root/b
-</code></pre>
-</li>
-<li><p>在当前目录下创建b文件夹，在b文件夹下创建c文件夹，在c文件夹下创建d文件夹，假设当前目录b文件夹不存在。</p>
-<pre><code>  语法：mkdir -pv 新目录
+</code></pre></li><li><p>切换到上一级目录</p><pre><code>  [root@helf ~]# cd ..
+</code></pre></li><li><p>切换到上一次访问的目录</p><pre><code>  [root@helf bin]# cd -
+</code></pre></li></ul><h3 id="3-3-创建目录的命令：mkdir"><a href="#3-3-创建目录的命令：mkdir" class="headerlink" title="3.3 创建目录的命令：mkdir"></a>3.3 创建目录的命令：mkdir</h3><ul><li><p>在当前目录下创建文件夹a。</p><pre><code>  [root@helf ~]# mkdir a
+</code></pre></li><li><p>在根目录下的root下创建一个文件夹b。</p><pre><code>  [root@helf ~]# mkdir /root/b
+</code></pre></li><li><p>在当前目录下创建b文件夹，在b文件夹下创建c文件夹，在c文件夹下创建d文件夹，假设当前目录b文件夹不存在。</p><pre><code>  语法：mkdir -pv 新目录
   注意：创建多级目录时一定要加上【-pv】，mkdir b/c/d 这个一次只能创建一级目录。
   [root@helf ~]# mkdir -pv b/c/d
-</code></pre>
-</li>
-</ul>
-<h3 id="3-4-删除目录的命名：rm"><a href="#3-4-删除目录的命名：rm" class="headerlink" title="3.4 删除目录的命名：rm"></a>3.4 删除目录的命名：rm</h3><pre><code>  语法：  rm -rf 目录
-</code></pre>
-<ul>
-<li><p>删除当前目录下的a目录，以及这个目录下的文件</p>
-<pre><code>  [root@helf ~]# rm -rf a
-</code></pre>
-</li>
-<li><p>删除根目录下的a目录下的b目录及其子目录</p>
-<pre><code>  [root@helf ~]# rm -rf /a/b
-</code></pre>
-</li>
-</ul>
-<h3 id="3-5-移动目录和重命名的目录的命令：mv"><a href="#3-5-移动目录和重命名的目录的命令：mv" class="headerlink" title="3.5 移动目录和重命名的目录的命令：mv"></a>3.5 移动目录和重命名的目录的命令：mv</h3><p>  mv命令有两个作用：一个是重命名文件夹，一个相当于windows中的剪切命令</p>
-<ul>
-<li><p>修改当前目录下的a目录名称为b</p>
-<pre><code>  [root@helf ~]# mv a b
-</code></pre>
-</li>
-<li><p>修改根目录下的a目录名称为b</p>
-<pre><code>  [root@helf ~]# mv /a /b
-</code></pre>
-</li>
-<li><p>移动当前目录下的a到根目录</p>
-<pre><code>  [root@helf ~]# mv a /
-</code></pre>
-</li>
-</ul>
-<h3 id="3-6-复制目录的命令：cp"><a href="#3-6-复制目录的命令：cp" class="headerlink" title="3.6 复制目录的命令：cp"></a>3.6 复制目录的命令：cp</h3><ul>
-<li><p>复制当前目录下的b目录到当前目录下的c目录</p>
-<pre><code>  语法：cp -r 源文件 目录文件
+</code></pre></li></ul><h3 id="3-4-删除目录的命名：rm"><a href="#3-4-删除目录的命名：rm" class="headerlink" title="3.4 删除目录的命名：rm"></a>3.4 删除目录的命名：rm</h3><pre><code>  语法：  rm -rf 目录
+</code></pre><ul><li><p>删除当前目录下的a目录，以及这个目录下的文件</p><pre><code>  [root@helf ~]# rm -rf a
+</code></pre></li><li><p>删除根目录下的a目录下的b目录及其子目录</p><pre><code>  [root@helf ~]# rm -rf /a/b
+</code></pre></li></ul><h3 id="3-5-移动目录和重命名的目录的命令：mv"><a href="#3-5-移动目录和重命名的目录的命令：mv" class="headerlink" title="3.5 移动目录和重命名的目录的命令：mv"></a>3.5 移动目录和重命名的目录的命令：mv</h3><p>mv命令有两个作用：一个是重命名文件夹，一个相当于windows中的剪切命令</p><ul><li><p>修改当前目录下的a目录名称为b</p><pre><code>  [root@helf ~]# mv a b
+</code></pre></li><li><p>修改根目录下的a目录名称为b</p><pre><code>  [root@helf ~]# mv /a /b
+</code></pre></li><li><p>移动当前目录下的a到根目录</p><pre><code>  [root@helf ~]# mv a /
+</code></pre></li></ul><h3 id="3-6-复制目录的命令：cp"><a href="#3-6-复制目录的命令：cp" class="headerlink" title="3.6 复制目录的命令：cp"></a>3.6 复制目录的命令：cp</h3><ul><li><p>复制当前目录下的b目录到当前目录下的c目录</p><pre><code>  语法：cp -r 源文件 目录文件
   [root@helf ~]# cp -r b c
-</code></pre>
-</li>
-</ul>
-<blockquote>
-<p>注意：cp -r 可以复制多级目录，记得加上 -r 不加就是复制文件的。</p>
-</blockquote>
-<h2 id="四、操作文件的一些命令"><a href="#四、操作文件的一些命令" class="headerlink" title="四、操作文件的一些命令"></a>四、操作文件的一些命令</h2><h3 id="4-1-创建一个文件的命令：touch"><a href="#4-1-创建一个文件的命令：touch" class="headerlink" title="4.1 创建一个文件的命令：touch"></a>4.1 创建一个文件的命令：touch</h3><pre><code>语法：touch 源文件
-</code></pre>
-<ul>
-<li><p>在当前目录下创建一个1.txt</p>
-<pre><code>  [root@helf ~]# touch 1.txt
-</code></pre>
-</li>
-<li><p>在根目录下创建一个1.txt</p>
-<pre><code>  [root@helf ~]# touch /1.txt
-</code></pre>
-</li>
-</ul>
-<h3 id="4-2-删除一个文件的命令：rm"><a href="#4-2-删除一个文件的命令：rm" class="headerlink" title="4.2 删除一个文件的命令：rm"></a>4.2 删除一个文件的命令：rm</h3><ul>
-<li><p>删除当前目录下的 1.txt，删除别的目录下的与此类似，把 1.txt 改成别的路径文件即可。</p>
-<pre><code>  语法：rm -rf 源文件
+</code></pre></li></ul><blockquote><p>注意：cp -r 可以复制多级目录，记得加上 -r 不加就是复制文件的。</p></blockquote><h2 id="四、操作文件的一些命令"><a href="#四、操作文件的一些命令" class="headerlink" title="四、操作文件的一些命令"></a>四、操作文件的一些命令</h2><h3 id="4-1-创建一个文件的命令：touch"><a href="#4-1-创建一个文件的命令：touch" class="headerlink" title="4.1 创建一个文件的命令：touch"></a>4.1 创建一个文件的命令：touch</h3><pre><code>语法：touch 源文件
+</code></pre><ul><li><p>在当前目录下创建一个1.txt</p><pre><code>  [root@helf ~]# touch 1.txt
+</code></pre></li><li><p>在根目录下创建一个1.txt</p><pre><code>  [root@helf ~]# touch /1.txt
+</code></pre></li></ul><h3 id="4-2-删除一个文件的命令：rm"><a href="#4-2-删除一个文件的命令：rm" class="headerlink" title="4.2 删除一个文件的命令：rm"></a>4.2 删除一个文件的命令：rm</h3><ul><li><p>删除当前目录下的 1.txt，删除别的目录下的与此类似，把 1.txt 改成别的路径文件即可。</p><pre><code>  语法：rm -rf 源文件
   [root@helf ~]# rm -rf 1.txt
-</code></pre>
-</li>
-</ul>
-<h3 id="4-3-重命名文件和剪切文件的命令：mv"><a href="#4-3-重命名文件和剪切文件的命令：mv" class="headerlink" title="4.3 重命名文件和剪切文件的命令：mv"></a>4.3 重命名文件和剪切文件的命令：mv</h3><ul>
-<li><p>修改当前目录下的 1.txt 为 2.txt</p>
-<pre><code>  mv 源文件 新文件
+</code></pre></li></ul><h3 id="4-3-重命名文件和剪切文件的命令：mv"><a href="#4-3-重命名文件和剪切文件的命令：mv" class="headerlink" title="4.3 重命名文件和剪切文件的命令：mv"></a>4.3 重命名文件和剪切文件的命令：mv</h3><ul><li><p>修改当前目录下的 1.txt 为 2.txt</p><pre><code>  mv 源文件 新文件
   注意：重命名要求源文件和新文件在同一个路径下
   [root@helf ~]# mv 1.txt 2.txt
-</code></pre>
-</li>
-<li><p>剪切当前目录下的 2.txt 到 根目录下</p>
-<pre><code>  语法：mv 源文件 新文件
+</code></pre></li><li><p>剪切当前目录下的 2.txt 到 根目录下</p><pre><code>  语法：mv 源文件 新文件
   [root@helf ~]# mv 2.txt /2.txt
-</code></pre>
-</li>
-</ul>
-<h3 id="4-4-复制文件的命令：cp"><a href="#4-4-复制文件的命令：cp" class="headerlink" title="4.4 复制文件的命令：cp"></a>4.4 复制文件的命令：cp</h3><ul>
-<li><p>复制当前目录下的 a.txt 到 根目录下的 a.txt</p>
-<pre><code>  语法：cp 源文件  新文件
+</code></pre></li></ul><h3 id="4-4-复制文件的命令：cp"><a href="#4-4-复制文件的命令：cp" class="headerlink" title="4.4 复制文件的命令：cp"></a>4.4 复制文件的命令：cp</h3><ul><li><p>复制当前目录下的 a.txt 到 根目录下的 a.txt</p><pre><code>  语法：cp 源文件  新文件
   [root@helf ~]# cp a.txt /a.txt
-</code></pre>
-</li>
-</ul>
-<h3 id="4-5文件或者目录搜索的命令：find"><a href="#4-5文件或者目录搜索的命令：find" class="headerlink" title="4.5文件或者目录搜索的命令：find"></a>4.5文件或者目录搜索的命令：find</h3><ul>
-<li><p>查找当前目录中以a开头的文件：</p>
-<pre><code>  语法：find 路径  -name 正则表达式
+</code></pre></li></ul><h3 id="4-5文件或者目录搜索的命令：find"><a href="#4-5文件或者目录搜索的命令：find" class="headerlink" title="4.5文件或者目录搜索的命令：find"></a>4.5文件或者目录搜索的命令：find</h3><ul><li><p>查找当前目录中以a开头的文件：</p><pre><code>  语法：find 路径  -name 正则表达式
   [root@helf ~]# find ./ -name &#39;a*&#39;
-</code></pre>
-</li>
-</ul>
-<h2 id="五、系统命令"><a href="#五、系统命令" class="headerlink" title="五、系统命令"></a>五、系统命令</h2><h3 id="5-1-ip相关"><a href="#5-1-ip相关" class="headerlink" title="5.1 ip相关"></a>5.1 ip相关</h3><ul>
-<li><p>查看ip的命令：ifconfig</p>
-<pre><code>  [root@helf ~]# ifconfig
-</code></pre>
-</li>
-<li><p>测试两台机器是否连通(这个和windos一个)：ping</p>
-<pre><code>  [root@helf ~]# ping 192.168.89.128
-</code></pre>
-</li>
-</ul>
-<h3 id="5-2-进程相关"><a href="#5-2-进程相关" class="headerlink" title="5.2 进程相关"></a>5.2 进程相关</h3><ul>
-<li><p>模糊查看某个进程：ps -ef | grep -i 进程名</p>
-<pre><code>  [root@izwz9avfmnk50odoq5rldpz ~]# ps -ef | grep -i mysql
-</code></pre>
-</li>
-<li><p>杀死进程：kill -9 进程id</p>
-</li>
-</ul>
-<h3 id="5-3-防火墙和端口相关"><a href="#5-3-防火墙和端口相关" class="headerlink" title="5.3 防火墙和端口相关"></a>5.3 防火墙和端口相关</h3><ul>
-<li><p>查看防火墙已经开放的端口</p>
-<pre><code>  centos7以下版本
+</code></pre></li></ul><h2 id="五、系统命令"><a href="#五、系统命令" class="headerlink" title="五、系统命令"></a>五、系统命令</h2><h3 id="5-1-ip相关"><a href="#5-1-ip相关" class="headerlink" title="5.1 ip相关"></a>5.1 ip相关</h3><ul><li><p>查看ip的命令：ifconfig</p><pre><code>  [root@helf ~]# ifconfig
+</code></pre></li><li><p>测试两台机器是否连通(这个和windos一个)：ping</p><pre><code>  [root@helf ~]# ping 192.168.89.128
+</code></pre></li></ul><h3 id="5-2-进程相关"><a href="#5-2-进程相关" class="headerlink" title="5.2 进程相关"></a>5.2 进程相关</h3><ul><li><p>模糊查看某个进程：ps -ef | grep -i 进程名</p><pre><code>  [root@izwz9avfmnk50odoq5rldpz ~]# ps -ef | grep -i mysql
+</code></pre></li><li><p>杀死进程：kill -9 进程id</p></li></ul><h3 id="5-3-防火墙和端口相关"><a href="#5-3-防火墙和端口相关" class="headerlink" title="5.3 防火墙和端口相关"></a>5.3 防火墙和端口相关</h3><ul><li><p>查看防火墙已经开放的端口</p><pre><code>  centos7以下版本
   [root@helf ~]# /etc/init.d/iptables status
   
   centos7以上版本
   [root@helf~]# firewall-cmd --zone=public --list-ports
-</code></pre>
-</li>
-<li><p>防火墙开放某个端口</p>
-<pre><code>  centos7以下版本
+</code></pre></li><li><p>防火墙开放某个端口</p><pre><code>  centos7以下版本
       [root@helf ~]# /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
       [root@helf ~]# /etc/rc.d/init.d/iptables save
       
 centos7以上版本
       [root@helf~]# firewall-cmd --zone=public --add-port=80/tcp --permanent
       [root@helf~]# firewall-cmd --reload
-</code></pre>
-</li>
-</ul>
-<ul>
-<li>Centos7防火墙</li>
-</ul>
-<pre><code>##Centos7 防火墙打开端口号
+</code></pre></li></ul><ul><li>Centos7防火墙</li></ul><pre><code>##Centos7 防火墙打开端口号
 firewall-cmd --zone=public --add-port=3306/tcp --permanent
  
 #下面3行是参数说明
@@ -421,71 +95,27 @@ firewall-cmd --reload
 1、firwall-cmd：是Linux提供的操作firewall的一个工具；
 2、--permanent：表示设置为持久；
 3、--add-port：标识添加的端口；
-</code></pre>
-<p>参考： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhunong/p/12668992.html">linux centos7配置防火墙</a></p>
-<h2 id="六、vim文本编辑器"><a href="#六、vim文本编辑器" class="headerlink" title="六、vim文本编辑器"></a>六、vim文本编辑器</h2><ul>
-<li><p>vim一般的操作流程</p>
-<pre><code> 1.vim 文件 进入【一般模式】。
+</code></pre><p>参考： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhunong/p/12668992.html">linux centos7配置防火墙</a></p><h2 id="六、vim文本编辑器"><a href="#六、vim文本编辑器" class="headerlink" title="六、vim文本编辑器"></a>六、vim文本编辑器</h2><ul><li><p>vim一般的操作流程</p><pre><code> 1.vim 文件 进入【一般模式】。
  2.按下i，从【一般模式】进入【插入模式】，该模式下可以编辑文本信息。
  3.按下esc，从【插入模式】进入【一般模式】
  4.在【一般模式】下输入:wq,也就是保存并退出
-</code></pre>
-</li>
-<li><p>通过关键字模糊查询文本中的内容</p>
-<pre><code>  a.在一般模式下，输入  / 关键字  ，并回车
+</code></pre></li><li><p>通过关键字模糊查询文本中的内容</p><pre><code>  a.在一般模式下，输入  / 关键字  ，并回车
   b.按n可以向下查找，按N可以向上查找
-</code></pre>
-</li>
-<li><p>复制一行内容</p>
-<pre><code>     a.在一般模式下，在需要复制的行上面 按下 yy
+</code></pre></li><li><p>复制一行内容</p><pre><code>     a.在一般模式下，在需要复制的行上面 按下 yy
      b.在需要粘贴的地方输入 p 即可粘贴，按下一次就是复制一行
-</code></pre>
-</li>
-<li><p>复制多行内容</p>
-<pre><code>  a.在一般模式下，在需要复制的行上面 按下 nyy，n为数字，如 3yy，就是复制从当前行开始的3行。
+</code></pre></li><li><p>复制多行内容</p><pre><code>  a.在一般模式下，在需要复制的行上面 按下 nyy，n为数字，如 3yy，就是复制从当前行开始的3行。
   b.按下p，进行粘贴
-</code></pre>
-</li>
-</ul>
-<h2 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h2><h3 id="7-1-zip和unzip"><a href="#7-1-zip和unzip" class="headerlink" title="7.1 zip和unzip"></a>7.1 zip和unzip</h3><p>安装后可以用来压缩和解压</p>
-<pre><code>yum install zip
+</code></pre></li></ul><h2 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h2><h3 id="7-1-zip和unzip"><a href="#7-1-zip和unzip" class="headerlink" title="7.1 zip和unzip"></a>7.1 zip和unzip</h3><p>安装后可以用来压缩和解压</p><pre><code>yum install zip
 yum install unzip
-</code></pre>
-<p>语法如下：</p>
-<ul>
-<li>压缩一个目录下的所有文件</li>
-</ul>
-<pre><code>zip 1.zip /test/*
-</code></pre>
-<ul>
-<li>查看压缩文件目录，但不解压。</li>
-</ul>
-<pre><code>unzip -v test.zip
-</code></pre>
-<ul>
-<li>将压缩文件test.zip在指定目录tmp下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件。</li>
-</ul>
-<pre><code>unzip -o test.zip -d tmp/
-</code></pre>
-<p>参考： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/luosongchao/p/3205192.html">Linux命令zip和unzip</a></p>
-<h3 id="7-2-zmodem拖拽上传文件"><a href="#7-2-zmodem拖拽上传文件" class="headerlink" title="7.2 zmodem拖拽上传文件"></a>7.2 zmodem拖拽上传文件</h3><p>xshell或crt连接linux后默认是不可以拖拽上传。需要安装<code>lrzsz</code></p>
-<pre><code>yum install lrzsz
-</code></pre>
-<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35928732/article/details/79920749">xshell使用zmodem拖拽上传文件（安装lrzsz（zmodem））</a></p>
-<h3 id="7-3-linux查询磁盘和分区的指令"><a href="#7-3-linux查询磁盘和分区的指令" class="headerlink" title="7.3 linux查询磁盘和分区的指令"></a>7.3 linux查询磁盘和分区的指令</h3><p><strong>1.查看磁盘情况</strong></p>
-<ul>
-<li><strong>lsblk</strong> -f   (不加-f还可以看到磁盘的大小)</li>
-</ul>
-<pre><code>[root@izwz9avfmnk50odoq5rldpz ~]# lsblk -f
+</code></pre><p>语法如下：</p><ul><li>压缩一个目录下的所有文件</li></ul><pre><code>zip 1.zip /test/*
+</code></pre><ul><li>查看压缩文件目录，但不解压。</li></ul><pre><code>unzip -v test.zip
+</code></pre><ul><li>将压缩文件test.zip在指定目录tmp下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件。</li></ul><pre><code>unzip -o test.zip -d tmp/
+</code></pre><p>参考： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/luosongchao/p/3205192.html">Linux命令zip和unzip</a></p><h3 id="7-2-zmodem拖拽上传文件"><a href="#7-2-zmodem拖拽上传文件" class="headerlink" title="7.2 zmodem拖拽上传文件"></a>7.2 zmodem拖拽上传文件</h3><p>xshell或crt连接linux后默认是不可以拖拽上传。需要安装<code>lrzsz</code></p><pre><code>yum install lrzsz
+</code></pre><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35928732/article/details/79920749">xshell使用zmodem拖拽上传文件（安装lrzsz（zmodem））</a></p><h3 id="7-3-linux查询磁盘和分区的指令"><a href="#7-3-linux查询磁盘和分区的指令" class="headerlink" title="7.3 linux查询磁盘和分区的指令"></a>7.3 linux查询磁盘和分区的指令</h3><p><strong>1.查看磁盘情况</strong></p><ul><li><strong>lsblk</strong> -f (不加-f还可以看到磁盘的大小)</li></ul><pre><code>[root@izwz9avfmnk50odoq5rldpz ~]# lsblk -f
 NAME   FSTYPE LABEL UUID                                 MOUNTPOINT
 vda                                                      
 └─vda1 ext4         59d9ca7b-4f39-4c0c-9334-c56c182076b5 /
-</code></pre>
-<p><img src="/2019/07/31/1509338277923131392/images/image-20220331095124618.png" alt="image-20220331095124618"></p>
-<ul>
-<li>df -h   (推荐这个)</li>
-</ul>
-<pre><code>[root@izwz9avfmnk50odoq5rldpz ~]# df -lh
+</code></pre><p><img src="/2019/07/31/1509338277923131392/images/image-20220331095124618.png" alt="image-20220331095124618"></p><ul><li>df -h (推荐这个)</li></ul><pre><code>[root@izwz9avfmnk50odoq5rldpz ~]# df -lh
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/vda1        40G  7.2G   31G  20% /
 devtmpfs        910M     0  910M   0% /dev
@@ -493,251 +123,4 @@ tmpfs           920M     0  920M   0% /dev/shm
 tmpfs           920M   73M  848M   8% /run
 tmpfs           920M     0  920M   0% /sys/fs/cgroup
 tmpfs           184M     0  184M   0% /run/user/0
-</code></pre>
-<p><strong>2.查看目录的磁盘使用情况</strong></p>
-<ul>
-<li>du -h .&#x2F;</li>
-</ul>
-
-						</div>
-						
-						
-
-				</div>
-			</div>
-		</div>
-		<!-- 置顶按钮 -->
-		<!-- 置顶 -->
-<ul id="toTopBtn" class="layui-fixbar" style="right: -70px;">
-    <a href="javascript:void(0)">
-        <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;">&#xe604;</li>
-    </a>
-</ul>
-		<!-- 底部版权 -->
-		<div class="qy-footer">
-    <div class="font-Area">
-        Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved 
-    </div>
-</div>
-</body>
-<script src="../../../../../js/jquery.min.js"></script>
-<script src="../../../../../layui/layui.js"></script>
-<!-- 鼠标点击特效 -->
-<script src="../../../../../js/mouse.js"></script>
-<!-- 代码高亮 -->
-<script src="../../../../../lib/prism/prism.js"></script>
-<!-- 公共js -->
-<script>
-    //点击搜索
-    $("#searchBtn").click(function () {
-        $("#searchShade").show()
-        $("#searchLayer").addClass('layui-anim layui-anim-scaleSpring')
-    })
-    //关闭搜索弹框
-    $("#closeBtn").click(function () {
-        $("#searchShade").hide() 
-    })
-    //搜索本地文章标题 https://cloud.tencent.com/developer/article/1624646
-    var searchFunc = function (path, search_id, content_id) {
-        $.ajax({
-            url: path,
-            dataType: "json",
-            success: function (datas) {
-                //console.log('datas :>> ', datas);
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_url = data.url;
-                        var index_title = -1;
-                        var first_occur = -1;
-                        if (data_title != '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                if (index_title < 0) {
-                                    isMatch = false;
-                                } else {
-                                    data_title = data_title.replace(new RegExp(keyword, 'g'), '<span style="color:red">' + keyword + '</span>')
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    }
-    searchFunc("/" + "search.json", 'searchTxt', 'searchResult');
-
-
-    //随机背景线条 https://blog.csdn.net/qq526362801/article/details/108863458
-    function DynamicLine() {
-        function n(n, e, t) {
-            return n.getAttribute(e) || t
-        }
-
-        function e(n) {
-            return document.getElementsByTagName(n)
-        }
-
-        function t() {
-            var t = e("script"),
-                o = t.length,
-                i = t[o - 1];
-            return {
-                l: o,
-                z: n(i, "zIndex", -1),
-                o: n(i, "opacity", .5),
-                c: n(i, "color", "0,0,50"), //颜色rgb
-                n: n(i, "count", 99)
-            }
-        }
-
-        function o() {
-            a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-                c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-        }
-
-        function i() {
-            r.clearRect(0, 0, a, c);
-            var n, e, t, o, m, l;
-            s.forEach(function (i, x) {
-                for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(
-                    i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
-                        null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y,
-                            l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m),
-                                t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) +
-                                ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-            }),
-                x(i)
-        }
-        var a, c, u, m = document.createElement("canvas"),
-            d = t(),
-            l = "c_n" + d.l,
-            r = m.getContext("2d"),
-            x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window
-                .oRequestAnimationFrame || window.msRequestAnimationFrame ||
-                function (n) {
-                    window.setTimeout(n, 1e3 / 45)
-                },
-            w = Math.random,
-            y = {
-                x: null,
-                y: null,
-                max: 2e4
-            };
-        m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(
-            m), o(), window.onresize = o,
-            window.onmousemove = function (n) {
-                n = n || window.event, y.x = n.clientX, y.y = n.clientY
-            },
-            window.onmouseout = function () {
-                y.x = null, y.y = null
-            };
-        for (var s = [], f = 0; d.n > f; f++) {
-            var h = w() * a,
-                g = w() * c,
-                v = 2 * w() - 1,
-                p = 2 * w() - 1;
-            s.push({
-                x: h,
-                y: g,
-                xa: v,
-                ya: p,
-                max: 6e3
-            })
-        }
-        u = s.concat([y]),
-            setTimeout(function () {
-                i()
-            }, 100)
-    }
-    //随机背景线条
-    DynamicLine()
-    //更新页脚年份
-    document.querySelector("#currentYear").innerText = new Date().getFullYear()
-
-
-    //置顶  增加scrollTop的动画效果,使用定时器，将scrollTop的值每次减少50(减少六十分之一)，直到减少到0，则动画完毕
-    $("#toTopBtn").click(function () {
-        var oTop = $(window).scrollTop()
-        var t = parseInt(oTop / 60) //每次六十分之一
-        var time = setInterval(function () {
-            console.log('toTopBtn...setInterval',$(window).scrollTop())
-            $(window).scrollTop($(window).scrollTop() - t)
-            if ($(window).scrollTop() === 0) {
-                clearInterval(time);
-            }
-        }, 1);
-    })
-    $.event.add(window, "scroll", function () {
-        //显示与隐藏置顶按钮   transition: all 0.5s;
-        $("#toTopBtn").css('transform', $(window).scrollTop() > 0 ? 'translateX(-85px)' : 'translateX(85px)');
-        $("#toTopBtn").css('transition', "all 0.5s");
-    })
-    //隐藏loading
-    $("#loadingBox").hide(); 
-</script>
-<script>
-	//注意：导航和进度条 依赖 element 模块，否则无法进行功能性操作
-	var element = null
-	layui.use(['element'], function () {
-		element = layui.element;
-	});
-	
-		$(function () {
-			var elm = $('#toc-area');
-			var startPos = $(elm).offset().top;
-			//var totalTop = $(document).height();
-			$.event.add(window, "scroll", function () {
-				var totalTop = $(".markdown-body").height();
-				// var p = $(window).scrollTop()+$("#toc-area").height();
-				var p = $(window).scrollTop()+startPos;
-				//文章阅读进度条
-				var percent = ((p / totalTop) * 100).toFixed(2)
-				if (percent > 99) {
-					percent = 100
-				}
-				if (percent == 0) {
-					percent = 0
-				}
-				element.progress('demo', percent + "%");
-				$("#progressTxt").text(percent)
-				console.log('percent', percent)
-				$("#progressNav").css("width", $(window).scrollTop() == 0? 0 : percent + "%")
-				//固定文章目录
-				console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
-				$(elm).css('position', ($(window).scrollTop() > startPos) ? 'fixed' : 'static');
-				$(elm).css('top', ($(window).scrollTop() > startPos) ? '60px' : '');
-				//文章目录随页面滚动
-				$('#tocMain').scrollTop($('#tocMain .toc').height() * percent * 0.01);
-			});
-			//代码高亮
-			$('pre code').each(function () {
-				var codeType = $(this).attr("class")
-				codeType = codeType == undefined || codeType == "" || codeType == null ? "plaintext" : codeType
-				codeType = "language-" + codeType
-				$(this).attr("class", codeType)
-			})
-			//代码复制以及显示代码语言
-			$("pre").prepend('<div class="copy-to-clipboard-button"></div>');
-		});
-	
-</script>
-
-</html>
+</code></pre><p><strong>2.查看目录的磁盘使用情况</strong></p><ul><li>du -h .&#x2F;</li></ul></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px"><a href="javascript:void(0)"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display:list-item">&#xe604;</li></a></ul><div class="qy-footer"><div class="font-Area">Copyright © 2018~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang All Rights Reserved</div></div></body><script src="../../../../../js/jquery.min.js"></script><script src="../../../../../layui/layui.js"></script><script src="../../../../../js/mouse.js"></script><script src="../../../../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(n,o,i){$.ajax({url:n,dataType:"json",success:function(n){var e=document.getElementById(o),t=document.getElementById(i);e.addEventListener("input",function(){var e='<ul class="search-result-list">',i=this.value.trim().toLowerCase().split(/[\s\-]+/);t.innerHTML="",this.value.trim().length<=0||(n.forEach(function(n){var t=!0,o=n.title.trim().toLowerCase(),n=n.url;""!=o&&i.forEach(function(n,e){o.indexOf(n)<0?t=!1:o=o.replace(new RegExp(n,"g"),'<span style="color:red">'+n+"</span>")}),t&&(e=e+"<li><a href='"+n+"' class='search-result-title'>"+o+"</a></li>")}),e+="</ul>",t.innerHTML=e)})}})};function DynamicLine(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){r=i.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,s=i.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function l(){var t,o,i,a,c;m.clearRect(0,0,r,s),x.forEach(function(n,e){for(n.x+=n.xa,n.y+=n.ya,n.xa*=n.x>r||n.x<0?-1:1,n.ya*=n.y>s||n.y<0?-1:1,m.fillRect(n.x-.5,n.y-.5,1,1),o=e+1;o<u.length;o++)null!==(t=u[o]).x&&null!==t.y&&(i=n.x-t.x,a=n.y-t.y,(c=i*i+a*a)<t.max)&&(t===h&&c>=t.max/2&&(n.x-=.03*i,n.y-=.03*a),i=(t.max-c)/t.max,m.beginPath(),m.lineWidth=i/2,m.strokeStyle="rgba("+d.c+","+(.2+i)+")",m.moveTo(n.x,n.y),m.lineTo(t.x,t.y),m.stroke())}),w(l)}var r,s,u,o,i=document.createElement("canvas"),d=(a=(o=e("script")).length,o=o[a-1],{l:a,z:n(o,"zIndex",-1),o:n(o,"opacity",.5),c:n(o,"color","0,0,50"),n:n(o,"count",99)}),a="c_n"+d.l,m=i.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},c=Math.random,h={x:null,y:null,max:2e4};i.id=a,i.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(i),t(),window.onresize=t,window.onmousemove=function(n){n=n||window.event,h.x=n.clientX,h.y=n.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var x=[],y=0;y<d.n;y++){var f=c()*r,p=c()*s,g=2*c()-1,T=2*c()-1;x.push({x:f,y:p,xa:g,ya:T,max:6e3})}u=x.concat([h]),setTimeout(function(){l()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear(),$("#toTopBtn").click(function(){var n=$(window).scrollTop(),e=parseInt(n/60),t=setInterval(function(){console.log("toTopBtn...setInterval",$(window).scrollTop()),$(window).scrollTop($(window).scrollTop()-e),0===$(window).scrollTop()&&clearInterval(t)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide()</script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var l=$("#toc-area"),s=$(l).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),t=$(window).scrollTop()+s,e=(t/o*100).toFixed(2);element.progress("demo",(e=0==(e=99<e?100:e)?0:e)+"%"),$("#progressTxt").text(e),console.log("percent",e),$("#progressNav").css("width",0==$(window).scrollTop()?0:e+"%"),console.log("p",t+$("#toc-area").height(),"startPos",s+$("#toc-area").height(),"totalTop",o),$(l).css("position",$(window).scrollTop()>s?"fixed":"static"),$(l).css("top",$(window).scrollTop()>s?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>
