@@ -20,6 +20,10 @@
   #searchLayer {
     width: 100% !important;
     margin: 0 auto !important;
+    height: 100%;
+  }
+  #searchLayer #searchResult {
+    max-height: 90vh !important;
   }
 }
 body {
@@ -55,10 +59,19 @@ a {
 .searchShade #searchLayer {
   width: 40%;
   margin: 10% auto;
-  background: #fff;
+  background: #efefef;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 6px;
+}
+.searchShade #searchLayer #searchResult {
+  max-height: 40vh;
+  overflow: auto;
+  font-size: 14px;
+  padding-left: 16px;
+}
+.searchShade #searchLayer #searchResult li {
+  list-style: initial !important;
 }
 .searchShade #searchLayer .close {
   position: absolute;
@@ -69,14 +82,27 @@ a {
 .searchShade #searchLayer input {
   width: 100%;
   height: 30px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid rgba(73, 177, 245, 0.5);
+  border-radius: 10px;
   padding-left: 10px;
   margin-top: 10px;
   box-sizing: border-box;
+  background-color: #f5f6f7;
+  font-size: 12px;
+}
+.searchShade #searchLayer input:focus {
+  border: 2px solid #49b1f5;
 }
 .searchShade #searchLayer ul {
   margin-top: 10px;
+}
+.ahover a {
+  font-size: 14px;
+}
+.ahover a:hover {
+  color: #FF5722 !important;
+  margin-left: 5px;
+  transition: all 0.5s;
 }
 .qy-nav {
   position: fixed;
@@ -114,6 +140,9 @@ a {
   position: fixed;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
   transform: translate(-50%);
 }
 .center {
@@ -128,6 +157,10 @@ a {
   width: 120px;
   border-radius: 50%;
 }
+.center .userinfo img:hover {
+  transform: scale(1.2) rotate(-360deg);
+  transition: all 0.5s;
+}
 .center .userinfo .name {
   font-weight: bold;
   font-size: 16px;
@@ -135,15 +168,38 @@ a {
 }
 .center .userinfo .other {
   display: flex;
+  margin: 10px 0;
 }
 .center .userinfo .other .item {
   flex: 1;
   height: 50px;
   border: 1px dashed #ccd0d5;
-}
-.center .userinfo .other .item .title,
-.center .userinfo .other .item .num {
   font-size: 16px;
+}
+.center .userinfo .other .item .num {
+  font-weight: bold;
+}
+.center .userinfo .icons {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 0 auto;
+}
+.center .userinfo .icons a:hover {
+  transform: scale(1.2) rotate(360deg);
+  transition: all 0.5s;
+}
+.center .userinfo .icons i {
+  font-size: 20px;
+}
+.center .userinfo .icons i.icon-github {
+  color: #393D49;
+}
+.center .userinfo .icons i.icon-gitee {
+  color: #FF5722;
+}
+.center .userinfo .icons i.icon-cnblogs {
+  color: #1E9FFF;
 }
 .qy-footer {
   min-height: 60px;

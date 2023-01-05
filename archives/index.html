@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
     <title>贺刘芳的搬砖日记</title>
@@ -11,6 +12,7 @@
     <!-- 代码高亮 -->
     <link rel="stylesheet" href="../lib/prism/prism.css" />
     <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../lib/iconfont/iconfont.css">
 <meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
 </head>
 
@@ -19,15 +21,18 @@
     <!-- 导航 -->
 <div class="qy-nav">
   <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;">贺刘芳的搬砖日记</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
+    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li>
+    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
     </li>
-    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i
-          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
+   
     <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
       <a href="javascript:;">菜单</a>
       <dl class="layui-nav-child"> <!-- 二级菜单 -->
@@ -36,6 +41,9 @@
         <dd><a href="/tags">标签</a></dd>
         <dd><a href="/categories">分类</a></dd>
         <dd><a href="/about">关于</a></dd>
+        <dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd>
+        <dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd>
+        <dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd>
         <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
         </dd>
       </dl>
@@ -52,7 +60,7 @@
 <div id="searchShade" class="searchShade">
   <div id="searchLayer">
     <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
-    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)"  autofocus  />
     <div id="searchResult">
       <!-- <ul>
         <li>java笔记
@@ -77,12 +85,17 @@
         <div class="userinfo">
             <img src="/head.png">
             <div class="name">淡泊明志，宁静致远</div>
+            <div class="icons">
+                <a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a>
+                <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a>
+                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a>
+            </div>
             <div class="other">
                 <div class="item">
                     <p class="num">
                         40
                     </p>
-                    <p class="title">文章</p>
+                    <p class="title" style="color: #FF5722">文章</p>
                 </div>
                 <div class="item">
                     <p class="num">
@@ -94,15 +107,16 @@
                     <p class="num">
                         44
                     </p>
-                    <p class="title">标签</p>
+                    <p class="title" style="color: #01AAED">标签</p>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
 
 <!-- 最新文章 -->
-<div class="layui-card">
+<div class="layui-card ahover">
     <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
     <div class="layui-card-body">
         
@@ -123,7 +137,7 @@
 </div>
 
 <!-- 分类 -->
-<div class="layui-card">
+<div class="layui-card ahover">
     <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-template-1"></i> 分类</div>
     <div class="layui-card-body">
         <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
@@ -150,7 +164,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-12-30 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/12/30/1608754051799977984/images/">react笔记</a></li>
                                                 
@@ -163,7 +177,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-12-09 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/12/09/1601805950963027968/images/">vue3.2新特性笔记</a></li>
                                                 
@@ -176,7 +190,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-10-30 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/10/30/1593064784100724736/images/">node笔记</a></li>
                                                 
@@ -189,7 +203,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-07-09 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/07/09/1551862167303753728/images/">TypeScript笔记</a></li>
                                                 
@@ -204,7 +218,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-07-06 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/07/06/1544666675947900928/images/">vuex笔记</a></li>
                                                 
@@ -219,7 +233,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-06-30 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/06/30/1542451686885429248/images/">黑马头条-vue移动端项目笔记整理</a></li>
                                                 
@@ -232,7 +246,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-06-23 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/06/23/1540182212652175360/images/">es6笔记</a></li>
                                                 
@@ -245,7 +259,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-06-21 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/06/21/1543080309820624896/images/">js高级-笔记</a></li>
                                                 
@@ -258,7 +272,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-06-17 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/06/17/1543080309728350208/images/">js基础-笔记</a></li>
                                                 
@@ -271,7 +285,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-06-12 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/06/12/1535896316616511488/images/">uniapp学习笔记</a></li>
                                                 
@@ -284,7 +298,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2022-03-27 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2022/03/27/1513842928408203264/images/">SpringCloud学习笔记</a></li>
                                                 
@@ -297,7 +311,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-08-27 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/08/27/1431195103640293376/images/">java实现播放音乐-JLayer</a></li>
                                                 
@@ -310,7 +324,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-08-14 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/08/14/1426556608602836992/images/">微信公众号开发-Java版学习笔记</a></li>
                                                 
@@ -323,7 +337,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-08-03 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/08/03/1426392656254210048/images/">java生成pdf并加水印(通过wkhtmltopdf实现)</a></li>
                                                 
@@ -336,7 +350,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-08-01 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/08/01/1426392655180468224/images/">bootstrap-table插件笔记</a></li>
                                                 
@@ -349,7 +363,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-07-31 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/07/31/1426392654899449856/images/">art-template笔记</a></li>
                                                 
@@ -362,7 +376,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-07-25 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/07/25/1426392656442953728/images/">swing的JTable表格列中插入图片</a></li>
                                                 
@@ -375,7 +389,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-05-08 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/05/08/1541065649298739200/images/">css笔记</a></li>
                                                 
@@ -390,7 +404,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-05-07 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/05/07/1527885932076863488/images/">MySQL数据库SQL语句练习</a></li>
                                                 
@@ -403,7 +417,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2021-01-02 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2021/01/02/1426392654446465024/images/">响应式、媒体查询</a></li>
                                                 
@@ -416,7 +430,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-12-31 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/12/31/1426392654698123264/images/">浏览器原理、重绘、回流、性能优化-学习总结</a></li>
                                                 
@@ -429,7 +443,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-12-30 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/12/30/1426392654031228928/images/">swiper插件基本使用</a></li>
                                                 
@@ -442,7 +456,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-12-29 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/12/29/1426392654312247296/images/">rem布局</a></li>
                                                 
@@ -455,7 +469,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-12-24 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/12/24/1426392655495041024/images/">利用Hexo+gitee搭建个人博客</a></li>
                                                 
@@ -468,7 +482,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-12-23 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/12/23/1543080309870956544/images/">less笔记</a></li>
                                                 
@@ -481,7 +495,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-11-17 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/11/17/1541065650984849408/images/">html笔记</a></li>
                                                 
@@ -494,7 +508,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-08-26 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/08/26/1509541484897112064/images/">RabbitMQ笔记</a></li>
                                                 
@@ -507,7 +521,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-06-30 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/06/30/1426392653800542208/images/">MongoDB笔记</a></li>
                                                 
@@ -520,7 +534,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-06-11 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/06/11/1513842918367039488/images/">vue学习笔记</a></li>
                                                 
@@ -533,7 +547,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-06-03 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/06/03/1426392654161252352/images/">vscode使用记录</a></li>
                                                 
@@ -546,7 +560,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-06-02 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/06/02/1509345974101872640/images/">apache FTPserver安装</a></li>
                                                 
@@ -559,7 +573,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2020-06-01 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2020/06/01/1509351214318489600/images/">使用bat文件启动jar包(自带jre)</a></li>
                                                 
@@ -572,7 +586,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2019-10-20 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2019/10/20/1509355289143545856/images/">windows端口占用解决</a></li>
                                                 
@@ -585,7 +599,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2019-07-31 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2019/07/31/1509338277923131392/images/">centos-linux入门笔记</a></li>
                                                 
@@ -598,7 +612,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2018-12-27 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2018/12/27/1509433894255071232/images/">sublime快捷键</a></li>
                                                 
@@ -611,7 +625,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2018-12-05 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2018/12/05/1599603365711581184/images/">eclipse杂记</a></li>
                                                 
@@ -624,7 +638,7 @@
                                     <i class="layui-icon layui-timeline-axis" style="font-size: 12px;">&#xe63f;</i>
                                     <div class="layui-timeline-content layui-text">
                                         <h3 class="layui-timeline-title"> 2018-10-03 </h3>
-                                        <ul>
+                                        <ul class="ahover">
                                             
                                                 <li><a href="/2018/10/03/1426392655306297344/images/">markdown笔记</a></li>
                                                 

@@ -23,6 +23,10 @@
     #searchLayer {
         width: 100% !important;
         margin: 0 auto !important;
+        height: 100%;
+        #searchResult{
+            max-height: 90vh !important;
+        }
     }
 }
 
@@ -68,10 +72,19 @@ a{
         // transform: translateX(-50%);
         width: 40%;
         margin: 10% auto;
-        background: #fff;
+        background: #efefef;
         padding: 20px;
         box-sizing: border-box;
         border-radius: 6px;
+        #searchResult{
+            max-height: 40vh;
+            overflow: auto;
+            font-size: 14px;
+            padding-left: 16px;
+            li{
+                list-style: initial !important;
+            }
+        }
         .close {
             position: absolute;
             right: 6px;
@@ -82,15 +95,32 @@ a{
         input {
             width: 100%;
             height: 30px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: 2px solid rgba(73,177,245,0.5);
+            border-radius: 10px;
             padding-left: 10px;
             margin-top: 10px;
             box-sizing: border-box;
+            background-color: #f5f6f7;
+            font-size: 12px;
+            &:focus{
+                border: 2px solid #49b1f5;
+            }
         }
 
         ul {
             margin-top: 10px;
+        }
+    }
+}
+
+//a 标签 悬浮样式
+.ahover{
+    a{
+        font-size: 14px;
+        &:hover{
+            color: #FF5722!important;
+            margin-left: 5px;
+            transition: all 0.5s;
         }
     }
 }
@@ -133,8 +163,9 @@ a{
         position: fixed;
         top: 50%;
         left: 50%;
-        // width: 100px;
-        // height: 100px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
         transform: translate(-50%);
         // background: red;
     }
@@ -151,6 +182,10 @@ a{
         img {
             width: 120px;
             border-radius: 50%;
+            &:hover{
+                transform: scale(1.2) rotate(-360deg);
+                transition: all 0.5s;
+            }
         }
 
         .name {
@@ -161,17 +196,39 @@ a{
 
         .other {
             display: flex;
-
+            margin: 10px 0;
             .item {
                 flex: 1;
                 // width: 33.33%;
                 height: 50px;
                 border: 1px dashed #ccd0d5;
-
-                .title,
-                .num {
-                    font-size: 16px;
+                font-size: 16px;
+                .num{
+                    font-weight: bold;
                 }
+            }
+        }
+
+        .icons{
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            margin: 0 auto;
+            a:hover{
+                transform: scale(1.2) rotate(360deg);
+                transition: all 0.5s;
+            }
+            i{
+                font-size: 20px;
+            }
+            i.icon-github{
+                color: #393D49;
+            }
+            i.icon-gitee{
+                color: #FF5722;
+            }
+            i.icon-cnblogs{
+                color: #1E9FFF;
             }
         }
     }

@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 
 <head>
 	<title>贺刘芳的搬砖日记</title>
@@ -10,6 +11,8 @@
 	<!-- 代码高亮 -->
 	<link rel="stylesheet" href="../../../../../lib/prism/prism.css" />
 	<link rel="shortcut icon" href="../../../../../img/favicon.ico">
+	
+	<link rel="stylesheet" href="../../../../../lib/iconfont/iconfont.css">
 <meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml">
 </head>
 
@@ -18,15 +21,18 @@
 	<!-- 导航 -->
 <div class="qy-nav">
   <ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect>
-    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;">贺刘芳的搬砖日记</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
-    <li class="hide-xs layui-nav-item "><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
+    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li>
+    <li class="layui-nav-item"><a class="title" href="/" style="padding: 0;"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的搬砖日记</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a>
     </li>
-    <li class="hide-xs layui-nav-item "><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li>
-    <li class="hide-xs layui-nav-item " id="searchBtn" style="float: right;"><a class="searchBtn" href="javascript:void(0);"><i
-          class="layui-icon layui-icon-search"></i> 搜索</a></li>
+    <li class="hide-xs layui-nav-item " style="float: right;"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li>
+   
     <li class="layui-nav-item hide-sm hide-md hide-lg" style="float: right">
       <a href="javascript:;">菜单</a>
       <dl class="layui-nav-child"> <!-- 二级菜单 -->
@@ -35,6 +41,9 @@
         <dd><a href="/tags">标签</a></dd>
         <dd><a href="/categories">分类</a></dd>
         <dd><a href="/about">关于</a></dd>
+        <dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd>
+        <dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd>
+        <dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd>
         <dd><a href="javascript:void(0)" onclick="document.querySelector('#searchShade').style.display = 'block'">搜索</a>
         </dd>
       </dl>
@@ -51,7 +60,7 @@
 <div id="searchShade" class="searchShade">
   <div id="searchLayer">
     <div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div>
-    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" />
+    <input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)"  autofocus  />
     <div id="searchResult">
       <!-- <ul>
         <li>java笔记
@@ -76,12 +85,17 @@
         <div class="userinfo">
             <img src="/head.png">
             <div class="name">淡泊明志，宁静致远</div>
+            <div class="icons">
+                <a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a>
+                <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a>
+                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a>
+            </div>
             <div class="other">
                 <div class="item">
                     <p class="num">
                         40
                     </p>
-                    <p class="title">文章</p>
+                    <p class="title" style="color: #FF5722">文章</p>
                 </div>
                 <div class="item">
                     <p class="num">
@@ -93,15 +107,16 @@
                     <p class="num">
                         44
                     </p>
-                    <p class="title">标签</p>
+                    <p class="title" style="color: #01AAED">标签</p>
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
 
 <!-- 最新文章 -->
-<div class="layui-card">
+<div class="layui-card ahover">
     <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-time"></i> 最新文章</div>
     <div class="layui-card-body">
         
@@ -122,7 +137,7 @@
 </div>
 
 <!-- 分类 -->
-<div class="layui-card">
+<div class="layui-card ahover">
     <div class="layui-card-header"><i style="font-weight: bold;" class="layui-icon layui-icon-template-1"></i> 分类</div>
     <div class="layui-card-body">
         <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">16</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../../../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul>
@@ -132,8 +147,8 @@
 
 						<!-- 文章目录 -->
 						
-							<div style="height: calc(100% - 60px - 60px - 10px);width: 267px;" id="toc-area" class="layui-card">
-								<div class="layui-card-header"><i class="layui-icon layui-icon-form"></i> 本文目录</div>
+							<div style="height: calc(100% - 60px - 60px);width: 267px;" id="toc-area" class="layui-card ahover">
+								<div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div>
 								<div id="tocMain" class="layui-card-body"
 									style="overflow:auto;height: calc(100% - 60px - 60px);">
 									<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#p46-p50-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">p46-p50 对象的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">js的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-text">对象的简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">对象的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">对象的属性的基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D%E5%92%8C%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">属性名和属性值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D"><span class="toc-text">属性名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#in%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">in运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本数据类型和引用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-text">对象字面量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p51-p65-%E5%87%BD%E6%95%B0"><span class="toc-text">p51-p65 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">创建和调用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">函数的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E5%8F%82"><span class="toc-text">函数的实参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E5%B5%8C%E5%A5%97%E5%87%BD%E6%95%B0"><span class="toc-text">函数内部嵌套函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="toc-text">立即执行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">枚举对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%8F%90%E5%89%8D"><span class="toc-text">声明提前</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#debug"><span class="toc-text">debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">使用工厂函数创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p66-p67%E5%8E%9F%E5%9E%8B"><span class="toc-text">p66-p67原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p68-toString"><span class="toc-text">p68 toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p69-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="toc-text">p69 垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p70-78-%E6%95%B0%E7%BB%84"><span class="toc-text">p70-78 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E3%80%81%E5%8F%96%E5%80%BC%E3%80%81%E8%B5%8B%E5%80%BC"><span class="toc-text">数组的创建、取值、赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">数组的长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#push"><span class="toc-text">push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pop"><span class="toc-text">pop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#unshift"><span class="toc-text">unshift</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shift"><span class="toc-text">shift</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slice"><span class="toc-text">slice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#splice"><span class="toc-text">splice</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#concat"><span class="toc-text">concat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#join"><span class="toc-text">join</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse"><span class="toc-text">reverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sort"><span class="toc-text">sort</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-text">数组的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p79-call%E5%92%8Capply"><span class="toc-text">p79 call和apply</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p80-arguments"><span class="toc-text">p80 arguments</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p81-Date%E5%AF%B9%E8%B1%A1"><span class="toc-text">p81 Date对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p82-Math"><span class="toc-text">p82 Math</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p83-%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="toc-text">p83 包装类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p84-String%E7%B1%BB"><span class="toc-text">p84 String类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p85-p90-%E6%AD%A3%E5%88%99"><span class="toc-text">p85-p90 正则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#p91-140"><span class="toc-text">p91-140</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dom"><span class="toc-text">dom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dom%E6%9F%A5%E8%AF%A2"><span class="toc-text">dom查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bom"><span class="toc-text">bom</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator"><span class="toc-text">navigator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history"><span class="toc-text">history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-text">json</span></a></li></ol></li></ol>
@@ -1812,10 +1827,11 @@ location.replace(&quot;01.BOM.html&quot;);
 			//var totalTop = $(document).height();
 			$.event.add(window, "scroll", function () {
 				var totalTop = $(".markdown-body").height();
-				var p = $(window).scrollTop()+$("#toc-area").height();
+				// var p = $(window).scrollTop()+$("#toc-area").height();
+				var p = $(window).scrollTop()+startPos;
 				//文章阅读进度条
 				var percent = ((p / totalTop) * 100).toFixed(2)
-				if (percent > 95) {
+				if (percent > 99) {
 					percent = 100
 				}
 				if (percent == 0) {
@@ -1826,7 +1842,7 @@ location.replace(&quot;01.BOM.html&quot;);
 				console.log('percent', percent)
 				$("#progressNav").css("width", $(window).scrollTop() == 0? 0 : percent + "%")
 				//固定文章目录
-				//console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
+				console.log('p', p+$("#toc-area").height(), "startPos", startPos+$("#toc-area").height(),"totalTop",totalTop)
 				$(elm).css('position', ($(window).scrollTop() > startPos) ? 'fixed' : 'static');
 				$(elm).css('top', ($(window).scrollTop() > startPos) ? '60px' : '');
 				//文章目录随页面滚动
