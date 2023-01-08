@@ -1,0 +1,1100 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">40</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">7</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">44</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">200.8k</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2023-01-08 12:54:42"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/27fcdfc0/">1.react笔记</a></li><li><a href="/posts/304cd95d/">2.vue3.2新特性笔记</a></li><li><a href="/posts/f2f1536e/">3.node笔记</a></li><li><a href="/posts/73c9868e/">4.vue3笔记</a></li><li><a href="/posts/9d362be7/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 微信公众号介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B3%A8%E5%86%8C%E8%AE%A2%E9%98%85%E5%8F%B7"><span class="toc-text">2 注册订阅号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B3%A8%E5%86%8C%E6%B5%8B%E8%AF%95%E5%8F%B7"><span class="toc-text">3 注册测试号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="toc-text">4 程序运行流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">5 搭建开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%86%85%E5%A4%96%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-text">6 内外网穿透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%BC%80%E5%8F%91%E6%8E%A5%E5%85%A5"><span class="toc-text">7 开发接入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%8E%A5%E6%94%B6%E7%94%A8%E6%88%B7%E6%B6%88%E6%81%AF"><span class="toc-text">8 接收用户消息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%9B%9E%E5%A4%8D%E7%94%A8%E6%88%B7%E6%B6%88%E6%81%AF%E5%B0%81%E8%A3%85"><span class="toc-text">9 回复用户消息封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E5%9B%9E%E5%A4%8D%E6%B6%88%E6%81%AF%E5%85%A5%E9%97%A8demo"><span class="toc-text">9.1 回复消息入门demo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E5%9F%BA%E7%A1%80%E6%B6%88%E6%81%AF%E7%B1%BB%E7%9A%84%E5%B0%81%E8%A3%85"><span class="toc-text">9.2 基础消息类的封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF%E7%B1%BB%E5%B0%81%E8%A3%85"><span class="toc-text">9.3 文本消息类封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-4-%E5%9B%BE%E6%96%87%E6%B6%88%E6%81%AF%E5%B0%81%E8%A3%85"><span class="toc-text">9.4 图文消息封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-5-%E6%B5%8B%E8%AF%95"><span class="toc-text">9.5 测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-6-%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-text">9.6 自动回复机器人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E2%98%85access-token%E7%9A%84%E8%8E%B7%E5%8F%96"><span class="toc-text">10 ★access token的获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E2%98%85%E5%B0%81%E8%A3%85%E8%AF%B7%E6%B1%82%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">10.1 ★封装请求工具类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E5%88%9B%E5%BB%BAAccessToken%E7%B1%BB"><span class="toc-text">10.2 创建AccessToken类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-WxService%E4%B8%AD%E6%B7%BB%E5%8A%A0%E8%8E%B7%E5%8F%96AccessToken%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">10.3 WxService中添加获取AccessToken的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95"><span class="toc-text">11 自定义菜单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-%E5%B0%81%E8%A3%85%E8%8F%9C%E5%8D%95%E7%B1%BB"><span class="toc-text">11.1 封装菜单类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-%E6%B5%8B%E8%AF%95"><span class="toc-text">11.2 测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E8%AE%BE%E7%BD%AE%E5%92%8C%E8%8E%B7%E5%8F%96%E8%A1%8C%E4%B8%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">12 设置和获取行业信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-%E8%AE%BE%E7%BD%AE%E8%A1%8C%E4%B8%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">12.1 设置行业信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-%E8%8E%B7%E5%8F%96%E8%A1%8C%E4%B8%9A%E4%BF%A1%E6%81%AF"><span class="toc-text">12.2 获取行业信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%8F%91%E9%80%81%E6%A8%A1%E6%9D%BF%E6%B6%88%E6%81%AF"><span class="toc-text">13 发送模板消息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%96%B0%E5%A2%9E%E5%92%8C%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90"><span class="toc-text">14 新增和获取临时素材</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14-1-%E6%96%B0%E5%A2%9E%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90"><span class="toc-text">14.1 新增临时素材</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-2-%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6%E7%B4%A0%E6%9D%90"><span class="toc-text">14.2 获取临时素材</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%92%8C%E6%89%AB%E6%8F%8F"><span class="toc-text">15 二维码生成和扫描</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#15-1-%E7%94%9F%E6%88%90%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="toc-text">15.1 生成带参数的临时二维码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-2-%E6%89%AB%E6%8F%8F%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="toc-text">15.2 扫描二维码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-text">16 获取用户信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-%E8%8E%B7%E5%8F%96%E5%B7%B2%E5%85%B3%E6%B3%A8%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-text">16.1 获取已关注的用户信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-%E7%BD%91%E9%A1%B5%E6%8E%88%E6%9D%83"><span class="toc-text">16.2 网页授权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6"><span class="toc-text">17 微信公众号开发框架</span></a></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>微信公众号开发-Java版学习笔记</h1><p><i class="layui-icon layui-icon-survey"></i>发表于:2021-08-14 | <i class="layui-icon layui-icon-app"></i>字数:13k</p></div><div id="article"><p>本文基于罗召勇老师的教程加上自己的理解整理</p><p>本文源码已上传至我的码云: <a target="_blank" rel="noopener" href="https://gitee.com/heliufang/wx">https://gitee.com/heliufang/wx</a></p><p>微信公众号开发整体不难,主要是熟悉微信公众号常用的一些接口文档,然后会一门后端语言(比如java)即可。</p><p>罗召勇老师教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nb411P76t?from=search&seid=14211630633615797421">微信公众号开发-Java版（蓝桥罗召勇）</a></p><p>微信公众号文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html">微信公众号官方文档</a></p><h2 id="1-微信公众号介绍"><a href="#1-微信公众号介绍" class="headerlink" title="1 微信公众号介绍"></a>1 微信公众号介绍</h2><p>账号分为<code>服务号</code>、<code>订阅号</code>、小程序</p><p><img src="/posts/ff671706/image-20210808110213141.png" alt="image-20210808110213141"></p><p>服务号和订阅号开发类似,但是申请服务号必须是企业,所以学习的话申请一个订阅号+测试账号即可。为啥要申请测试账号呢？因为订阅号的接口功能有限,为了学习开发以及熟悉更多的接口,所以还需要申请一个测试号。</p><h2 id="2-注册订阅号"><a href="#2-注册订阅号" class="headerlink" title="2 注册订阅号"></a>2 注册订阅号</h2><p>第一步：访问：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/">https://mp.weixin.qq.com/</a> 点击<code>立即注册</code>按钮</p><p><img src="/posts/ff671706/image-20210808110839008.png" alt="image-20210808110839008"></p><p>第二步：注册类型页面选择<code>订阅号</code></p><p><img src="/posts/ff671706/image-20210808110933591.png" alt="image-20210808110933591"></p><p>第三步：填写相关信息，点击注册即可</p><p><img src="/posts/ff671706/image-20210808111031011.png" alt="image-20210808111031011"></p><h2 id="3-注册测试号"><a href="#3-注册测试号" class="headerlink" title="3 注册测试号"></a>3 注册测试号</h2><p>因为订阅号的接口权限是有限的,为了熟悉更多的微信公众号接口,所以需要申请一个测试号。</p><p>第一步：用注册的订阅号登录</p><p>第二步：在目录中【设置与开发】—&gt;【开发者工具】下选择公众平台测试账号,点击进入后申请即可。</p><p><img src="/posts/ff671706/image-20210808112917414.png" alt="image-20210808112917414"></p><p>申请成功之后,就可以配置相关信息进行开发了,具体怎么配置后面再解释</p><p><img src="/posts/ff671706/image-20210808113103181.png" alt="image-20210808113103181"></p><h2 id="4-程序运行流程"><a href="#4-程序运行流程" class="headerlink" title="4 程序运行流程"></a>4 程序运行流程</h2><p>用户在公众号发送请求到<code>微信服务器</code></p><p><code>微信服务器</code>将请求转发到<code>我们自己的服务器</code></p><p><code>我们自己的服务器</code>处理完之后再把结果发送到<code>微信服务器</code></p><p>最后<code>微信服务器</code>再把结果响应给客户</p><p><img src="/posts/ff671706/image-20210808114624893.png" alt="image-20210808114624893"></p><h2 id="5-搭建开发环境"><a href="#5-搭建开发环境" class="headerlink" title="5 搭建开发环境"></a>5 搭建开发环境</h2><p>罗老师用的是eclipse并且没有用maven环境,我用的是eclipse+maven+jdk7+tomcat8.0。maven的话可以兼容idea，而且下载依赖方便。</p><p>新建一个名为<code>wx</code>的maven项目(这个项目名字任意都行),<code>pom.xml</code>的依赖如下：</p><pre><code class="xml">&lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;junit&lt;/groupId&gt;
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;
+            &lt;version&gt;4.12&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;!-- 阿里云小蜜-自动回复机器人 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.aliyun&lt;/groupId&gt;
+            &lt;artifactId&gt;aliyun-java-sdk-chatbot&lt;/artifactId&gt;
+            &lt;version&gt;1.0.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.aliyun&lt;/groupId&gt;
+            &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;
+            &lt;version&gt;4.5.2&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- xml操作相关依赖 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.thoughtworks.xstream&lt;/groupId&gt;
+            &lt;artifactId&gt;xstream&lt;/artifactId&gt;
+            &lt;version&gt;1.4.11.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.dom4j&lt;/groupId&gt;
+            &lt;artifactId&gt;dom4j&lt;/artifactId&gt;
+            &lt;version&gt;2.0.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- 阿里json解析 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+            &lt;version&gt;1.2.28&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- 这个是编码解码的 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;commons-codec&lt;/groupId&gt;
+            &lt;artifactId&gt;commons-codec&lt;/artifactId&gt;
+            &lt;version&gt;1.10&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+</code></pre><p>编写一个测试的servlet</p><pre><code class="java">import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(&quot;/test&quot;) 
+public class TestServlet extends HttpServlet&#123;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        System.out.println(&quot;请求到达了&quot;);
+        resp.getWriter().write(&quot;hello weixin&quot;);
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        
+    &#125;
+
+&#125;
+</code></pre><p>启动项目访问：<a target="_blank" rel="noopener" href="http://localhost:8080/wx/test">http://localhost:8080/wx/test</a></p><p>浏览器看到如下效果说明搭建成功</p><p><img src="/posts/ff671706/image-20210808120644851.png" alt="image-20210808120644851"></p><h2 id="6-内外网穿透"><a href="#6-内外网穿透" class="headerlink" title="6 内外网穿透"></a>6 内外网穿透</h2><p>外网默认是访问不到自己电脑上的项目的,为了让外网能够访问,所以需要做内外网穿透.这个不需要自己实现,可以借助一些工具,如花生壳、ngrok.这里用的是ngrok.</p><p><a target="_blank" rel="noopener" href="https://www.ngrok.cc/_book/start/ngrok_linux.html">ngrok文档</a></p><p>第一步：访问<a target="_blank" rel="noopener" href="https://www.ngrok.cc/">ngrok官网</a>,注册ngrok账号。</p><p>第二步：使用注册的账号登录</p><p>第三步：【隧道管理—&gt;开通隧道】立即购买,可以购买最后那个免费的，也可以花10块钱买一个。免费的有时候不稳定,可以买一个10块。</p><p><img src="/posts/ff671706/image-20210808195028874.png" alt="image-20210808195028874"></p><p><img src="/posts/ff671706/image-20210808195438170.png" alt="image-20210808195438170"></p><p>开通之后在隧道管理下就可以看到刚刚开通的隧道</p><p><img src="/posts/ff671706/image-20210808195618721.png" alt="image-20210808195618721"></p><p>第四步：下载客户端工具,我电脑是windows的所以下载windows版</p><p>各版本工具下载地址：<a target="_blank" rel="noopener" href="https://www.ngrok.cc/download.html">https://www.ngrok.cc/download.html</a></p><p>第五步：启动ngrok客户端工具,运行bat,输入隧道id，回车</p><p><img src="/posts/ff671706/image-20210808195948516.png" alt="image-20210808195948516"></p><p><img src="/posts/ff671706/image-20210808200101402.png" alt="image-20210808200101402"></p><p>看到下面这个状态为【online】表示启动成功<br><img src="/posts/ff671706/image-20210808200116096.png" alt="image-20210808200116096"></p><p>然后就可以通过<a target="_blank" rel="noopener" href="http://heliufang.vipgz4.idcfengye.com这个域名访问本地8080端口上的项目了,比如访问之前搭建的wx项目/">http://heliufang.vipgz4.idcfengye.com这个域名访问本地8080端口上的项目了,比如访问之前搭建的wx项目</a></p><p><img src="/posts/ff671706/image-20210808200322739.png" alt="image-20210808200322739"></p><h2 id="7-开发接入"><a href="#7-开发接入" class="headerlink" title="7 开发接入"></a>7 开发接入</h2><p>接入之后微信服务器和我们自己的项目就接通了。那么如何接入呢?</p><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html">接入的官方文档</a></p><ul><li>第一步：登录<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login">微信公众测试号</a>的管理界面,填写好相关信息</li></ul><p><img src="/posts/ff671706/image-20210808213637686.png" alt="image-20210808213637686"></p><p>上图中的url就是自己电脑的项目</p><p>点击上图的提交按钮之后,微信会向上图中的url发送一个get请求,请求参数如下：</p><table><thead><tr><th align="left">参数</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">signature</td><td align="left">微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。</td></tr><tr><td align="left">timestamp</td><td align="left">时间戳</td></tr><tr><td align="left">nonce</td><td align="left">随机数</td></tr><tr><td align="left">echostr</td><td align="left">随机字符串</td></tr></tbody></table><ul><li>第二步：编写代码校验,用代码实现下面的逻辑</li></ul><p>1）将token、timestamp、nonce三个参数进行字典序排序</p><p>2）将三个参数字符串拼接成一个字符串进行sha1加密</p><p>3）开发者获得加密后的字符串可与signature对比，标识该请求来源于微信,如果比对成功,请原样返回echostr参数内容</p><p>在之前搭建的名为<code>wx</code>的项目中新建一个【WxServlet.java】</p><pre><code class="java">import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.qy.service.WxService;
+
+@WebServlet(&quot;/api&quot;)
+public class WxServlet extends HttpServlet&#123;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        System.out.println(&quot;请求到达了&quot;);
+        //取出微信服务器传过来的参数
+        String signature = req.getParameter(&quot;signature&quot;);
+        String timestamp = req.getParameter(&quot;timestamp&quot;);
+        String nonce = req.getParameter(&quot;nonce&quot;);
+        String echostr = req.getParameter(&quot;echostr&quot;);
+        //自定义一个check方法用来校验接入
+        boolean success = WxService.check(timestamp, nonce, signature);
+        if(success)&#123;
+            System.out.println(&quot;接入成功&quot;);
+            PrintWriter writer = resp.getWriter();
+            writer.write(echostr);//接入成功需要原样返回echostr
+        &#125;else&#123;
+            System.out.println(&quot;接入失败&quot;);
+        &#125;
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        
+    &#125;
+&#125;
+</code></pre><p>新建一个【WxService.java】并添加一个check工具方法</p><pre><code class="java">import java.util.Arrays;
+import org.apache.commons.codec.digest.DigestUtils;
+
+public class WxService &#123;
+    
+    public static final String TOKEN = &quot;hlf&quot;;//在微信配置界面自定义的token
+    
+    /**
+     * 接入校验
+     * @param timestamp
+     * @param nonce
+     * @param signature
+     * @return
+     */
+    public static boolean check(String timestamp, String nonce, String signature) &#123;
+        //1.将token、timestamp、nonce三个参数进行字典序排序
+        String[] arr = new String[]&#123;TOKEN,timestamp,nonce&#125;;
+        Arrays.sort(arr);
+        //2.将三个参数字符串拼接成一个字符串进行sha1加密  https://www.cnblogs.com/2333/p/6405386.html
+        String str = arr[0]+arr[1]+arr[2];
+        str = DigestUtils.sha1Hex(str);//sha1加密,这里没有像罗老师那样手写,直接用的commons-codec包的工具类
+        System.out.println(&quot;str:&quot;+str);
+        //3.将加密后的字符串和signature比较
+        System.out.println(signature);
+        return str.equalsIgnoreCase(signature);
+    &#125;
+&#125;
+</code></pre><p>启动项目,点击提交按钮,出现下面这个代表接入成功。</p><p><img src="/posts/ff671706/image-20210808220055857.png" alt="image-20210808220055857"></p><h2 id="8-接收用户消息"><a href="#8-接收用户消息" class="headerlink" title="8 接收用户消息"></a>8 接收用户消息</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html">接受普通消息</a></p><blockquote><p>当普通微信用户向公众账号发消息时，微信服务器将POST消息的XML数据包到开发者填写的URL上。</p></blockquote><p>也就是说用户发消息给微信服务器,微信服务器会发送<code>post请求</code>到我们自己的服务器,并且传送一个xml的数据给我们自己的服务器。</p><p>例如文本消息是这样的</p><pre><code class="xml">&lt;xml&gt;
+  &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+  &lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;
+  &lt;CreateTime&gt;1348831860&lt;/CreateTime&gt;
+  &lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;
+  &lt;Content&gt;&lt;![CDATA[this is a test]]&gt;&lt;/Content&gt;
+  &lt;MsgId&gt;1234567890123456&lt;/MsgId&gt;
+&lt;/xml&gt;
+</code></pre><table><thead><tr><th align="left">参数</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">ToUserName</td><td align="left">开发者微信号</td></tr><tr><td align="left">FromUserName</td><td align="left">发送方帐号（一个OpenID）</td></tr><tr><td align="left">CreateTime</td><td align="left">消息创建时间 （整型）</td></tr><tr><td align="left">MsgType</td><td align="left">消息类型，文本为text</td></tr><tr><td align="left">Content</td><td align="left">文本消息内容</td></tr><tr><td align="left">MsgId</td><td align="left">消息id，64位整型</td></tr></tbody></table><p>java中这样的数据读取并不方便。可以转换一下,先通过dom4j这个包转成dom对象,再把标签名和对应的标签的值保存到HashMap集合中,这样后面处理数据就很方便了,具体代码实现如下：</p><p>在【WxServlet】中编写<code>doPost</code>方法,在<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index">测试号管理界面</a>,扫码关注测试公众号</p><pre><code class="java">@Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        Map&lt;String,String&gt; map = WxService.parseRequest(req.getInputStream());
+        System.out.println(map);//关注测试号,给测试公众号发消息,就可以看到打印结果了
+    &#125;
+</code></pre><p>在【WxService】中添加<code>parseRequest</code>方法</p><pre><code class="java">/**
+     * 将接受到的消息转化成map
+     * @param req
+     * @return
+     */
+    public static  Map&lt;String, String&gt; parseRequest(InputStream is) &#123;
+        Map&lt;String,String&gt; map = new HashMap&lt;String,String&gt;();
+        //1.通过io流得到文档对象
+        SAXReader saxReader = new SAXReader();
+        Document document = null;
+        try &#123;
+            document = saxReader.read(is);
+        &#125; catch (DocumentException e) &#123;
+            e.printStackTrace();
+        &#125;
+        //2.通过文档对象得到根节点对象
+        Element root = document.getRootElement();
+        //3.通过根节点对象获取所有子节点对象
+        List&lt;Element&gt; elements = root.elements();
+        //4.将所有节点放入map
+        for (Element element : elements) &#123;
+            map.put(element.getName(), element.getStringValue());
+        &#125;
+        return map;
+    &#125;
+</code></pre><h2 id="9-回复用户消息封装"><a href="#9-回复用户消息封装" class="headerlink" title="9 回复用户消息封装"></a>9 回复用户消息封装</h2><p>官方文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html">被动回复用户消息</a></p><blockquote><p>当用户发送消息给公众号时（或某些特定的用户操作引发的事件推送时），会产生一个POST请求，开发者可以在响应包（Get）中返回特定XML结构，来对该消息进行响应（现支持回复文本、图片、图文、语音、视频、音乐）。严格来说，发送被动响应消息其实并不是一种接口，而是对微信服务器发过来消息的一次回复。</p><p><strong>一旦遇到以下情况，微信都会在公众号会话中，向用户下发系统提示“该公众号暂时无法提供服务，请稍后再试”：</strong></p><p>1、开发者在5秒内未回复任何内容 2、开发者回复了异常数据，比如JSON数据等</p></blockquote><p>上面这段文字来自官方,可以看出</p><ul><li><p>回复必须是xml的类型</p></li><li><p>可以回复多种类型的xml(文本、图片、图文、语音、视频、音乐)</p></li><li><p>接收到消息没有做出响应就会抛出：<code>该公众号暂时无法提供服务，请稍后再试</code></p></li></ul><h3 id="9-1-回复消息入门demo"><a href="#9-1-回复消息入门demo" class="headerlink" title="9.1  回复消息入门demo"></a>9.1 回复消息入门demo</h3><p>这个demo就是给用户回复一个文本消息</p><p>回复的xml格式如下：</p><pre><code class="xml">&lt;xml&gt;
+  &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+  &lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;
+  &lt;CreateTime&gt;12345678&lt;/CreateTime&gt;
+  &lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;
+  &lt;Content&gt;&lt;![CDATA[你好]]&gt;&lt;/Content&gt;
+&lt;/xml&gt;
+</code></pre><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">ToUserName</td><td align="left">是</td><td align="left">接收方帐号（收到的OpenID）</td></tr><tr><td align="left">FromUserName</td><td align="left">是</td><td align="left">开发者微信号</td></tr><tr><td align="left">CreateTime</td><td align="left">是</td><td align="left">消息创建时间 （整型）</td></tr><tr><td align="left">MsgType</td><td align="left">是</td><td align="left">消息类型，文本为text</td></tr><tr><td align="left">Content</td><td align="left">是</td><td align="left">回复的消息内容（换行：在content中能够换行，微信客户端就支持换行显示）</td></tr></tbody></table><p>在wxservlet中doPost编写如下代码</p><pre><code class="java">@Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        //设置编码格式,不然中文会乱码
+        req.setCharacterEncoding(&quot;UTF-8&quot;);
+        resp.setCharacterEncoding(&quot;UTF-8&quot;);
+        //将请求中的xml参数转成map
+        Map&lt;String,String&gt; map = WxService.parseRequest(req.getInputStream());
+        System.out.println(map);
+        //回复消息
+        String textMsg = &quot;&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[&quot;+map.get(&quot;FromUserName&quot;)+&quot;]]&gt;&lt;/ToUserName&gt;&lt;FromUserName&gt;&lt;![CDATA[&quot;+map.get(&quot;ToUserName&quot;)+&quot;]]&gt;&lt;/FromUserName&gt;&lt;CreateTime&gt;12345678&lt;/CreateTime&gt;&lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;&lt;Content&gt;&lt;![CDATA[你好]]&gt;&lt;/Content&gt;&lt;/xml&gt;&quot;;
+        resp.getWriter().print(textMsg);
+    &#125;
+</code></pre><p>然后用测试号发消息,公众号都会回复一个 【你好】</p><p><img src="/posts/ff671706/image-20210810221633028.png" alt="image-20210810221633028"></p><p>这样写代码功能是可以实现,但是这样拼接字符串,再回复消息很不方便.然后自然就想到可以用java类来封装消息,响应的时候将java类转成xml(通过<code>xstream</code>这个工具包实现)。下面就以文本消息和图文消息为例进行封装,其它消息类似。</p><h3 id="9-2-基础消息类的封装"><a href="#9-2-基础消息类的封装" class="headerlink" title="9.2 基础消息类的封装"></a>9.2 基础消息类的封装</h3><p>把公共的属性放到基础消息类中,然后其它消息类继承即可。</p><p><code>@XStreamAlias</code> 这个注解配置的就是转成xml时对应的节点名字</p><pre><code class="java">public class BaseMsg &#123;
+    @XStreamAlias(&quot;ToUserName&quot;)
+    private String toUserName;//接收方的账号(收到的openid)
+    @XStreamAlias(&quot;FromUserName&quot;)
+    private String fromUserName;//开发者的微信号
+    @XStreamAlias(&quot;CreateTime&quot;)
+    private String createTime;//消息创建时间
+    @XStreamAlias(&quot;MsgType&quot;)
+    private String msgType;//消息类型
+
+    public BaseMsg(Map&lt;String,String&gt; requestMap) &#123;
+        super();
+        this.toUserName = requestMap.get(&quot;FromUserName&quot;);
+        this.fromUserName = requestMap.get(&quot;ToUserName&quot;);
+        this.createTime = requestMap.get(&quot;CreateTime&quot;);
+    &#125;
+    
+    //get and set ...
+&#125;
+</code></pre><h3 id="9-3-文本消息类封装"><a href="#9-3-文本消息类封装" class="headerlink" title="9.3 文本消息类封装"></a>9.3 文本消息类封装</h3><p>回复的xml的格式说明可以参考9.1入门demo.回复文本的封装类如下：</p><pre><code class="java">@XStreamAlias(&quot;xml&quot;) //xml指的就是xml这个根节点名称
+public class TextMsg extends BaseMsg &#123;
+    @XStreamAlias(&quot;Content&quot;)
+    private String content;//回复的文本内容
+    
+    public TextMsg(Map&lt;String,String&gt; requestMap,String content) &#123;
+        super(requestMap);
+        this.setMsgType(&quot;text&quot;);
+        this.content = content;
+    &#125;
+    
+    //get and set ...
+&#125;
+</code></pre><h3 id="9-4-图文消息封装"><a href="#9-4-图文消息封装" class="headerlink" title="9.4 图文消息封装"></a>9.4 图文消息封装</h3><p>图文消息格式说明</p><pre><code class="xml">&lt;xml&gt;
+  &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+  &lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;
+  &lt;CreateTime&gt;12345678&lt;/CreateTime&gt;
+  &lt;MsgType&gt;&lt;![CDATA[news]]&gt;&lt;/MsgType&gt;
+  &lt;ArticleCount&gt;1&lt;/ArticleCount&gt;
+  &lt;Articles&gt;
+    &lt;item&gt;
+      &lt;Title&gt;&lt;![CDATA[title1]]&gt;&lt;/Title&gt;
+      &lt;Description&gt;&lt;![CDATA[description1]]&gt;&lt;/Description&gt;
+      &lt;PicUrl&gt;&lt;![CDATA[picurl]]&gt;&lt;/PicUrl&gt;
+      &lt;Url&gt;&lt;![CDATA[url]]&gt;&lt;/Url&gt;
+    &lt;/item&gt;
+  &lt;/Articles&gt;
+&lt;/xml&gt;
+</code></pre><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">ToUserName</td><td align="left">是</td><td align="left">接收方帐号（收到的OpenID）</td></tr><tr><td align="left">FromUserName</td><td align="left">是</td><td align="left">开发者微信号</td></tr><tr><td align="left">CreateTime</td><td align="left">是</td><td align="left">消息创建时间 （整型）</td></tr><tr><td align="left">MsgType</td><td align="left">是</td><td align="left">消息类型，图文为news</td></tr><tr><td align="left">ArticleCount</td><td align="left">是</td><td align="left">图文消息个数；当用户发送文本、图片、语音、视频、图文、地理位置这六种消息时，开发者只能回复1条图文消息；其余场景最多可回复8条图文消息</td></tr><tr><td align="left">Articles</td><td align="left">是</td><td align="left">图文消息信息，注意，如果图文数超过限制，则将只发限制内的条数</td></tr><tr><td align="left">Title</td><td align="left">是</td><td align="left">图文消息标题</td></tr><tr><td align="left">Description</td><td align="left">是</td><td align="left">图文消息描述</td></tr><tr><td align="left">PicUrl</td><td align="left">是</td><td align="left">图片链接，支持JPG、PNG格式，较好的效果为大图360<em>200，小图200</em>200</td></tr><tr><td align="left">Url</td><td align="left">是</td><td align="left">点击图文消息跳转链接</td></tr></tbody></table><p>首先封装一个article类,对应就是xml中的item这个节点</p><pre><code class="java">@XStreamAlias(&quot;item&quot;)//映射到xml中的item这个节点
+public class Article &#123;
+    @XStreamAlias(&quot;Title&quot;)
+    private String title;//图文消息标题
+    @XStreamAlias(&quot;Description&quot;)
+    private String description;//图文消息描述
+    @XStreamAlias(&quot;PicUrl&quot;)
+    private String picUrl;//图片链接
+    @XStreamAlias(&quot;Url&quot;)
+    private String url;//点击图文消息跳转链接
+    
+    //get and set ...
+&#125;
+</code></pre><p>然后再封装一个图文消息类</p><pre><code class="java">@XStreamAlias(&quot;xml&quot;)
+public class NewsMsg extends BaseMsg &#123;
+    
+    @XStreamAlias(&quot;ArticleCount&quot;)
+    private String articleCount;//图文消息个数
+    @XStreamAlias(&quot;Articles&quot;)
+    private List&lt;Article&gt; articles;
+
+    public NewsMsg(Map&lt;String, String&gt; requestMap,List&lt;Article&gt; articles) &#123;
+        super(requestMap);
+        this.setMsgType(&quot;news&quot;);
+        this.articles = articles;
+        this.setArticleCount(this.articles.size()+&quot;&quot;);
+    &#125;
+    //get and set ...
+&#125;
+</code></pre><h3 id="9-5-测试"><a href="#9-5-测试" class="headerlink" title="9.5 测试"></a>9.5 测试</h3><p>前面已经将基础消息和图文消息封装好了,现在用封装好的消息类来回复</p><p>第一步：将<code>wxservlet</code>的<code>doPost</code>方法改成如下</p><pre><code class="java">@Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        //设置编码格式,不然中文会乱码
+        req.setCharacterEncoding(&quot;UTF-8&quot;);
+        resp.setCharacterEncoding(&quot;UTF-8&quot;);
+        //将请求中的xml参数转成map
+        Map&lt;String,String&gt; map = WxService.parseRequest(req.getInputStream());
+        System.out.println(map);
+        //处理完将响应一个xml给微信
+        String respXml = WxService.getRespose(map);
+        System.out.println(respXml);
+        resp.getWriter().print(respXml);
+    &#125;
+</code></pre><p>第二步：WxService添加如下方法：</p><pre><code class="java">/**
+     * 事件消息回复
+     */
+    public static String getRespose(Map&lt;String, String&gt; requestMap) &#123;
+        BaseMsg msg = null;
+        // 根据用户发送消息的类型,做不同的处理
+        String msgType = requestMap.get(&quot;MsgType&quot;);
+        switch (msgType) &#123;
+        case &quot;text&quot;:
+            msg = dealTextMsg(requestMap);
+            break;
+        case &quot;news&quot;:
+            break;
+        default:
+            break;
+        &#125;
+        // System.out.println(msg);
+        // 将处理结果转化成xml的字符串返回
+        if (null != msg) &#123;
+            return beanToXml(msg);
+        &#125;
+        return null;
+    &#125;
+
+    /**
+     * 将回复的消息类转成xml字符串
+     * 
+     * @param msg
+     * @return
+     */
+    public static String beanToXml(BaseMsg msg) &#123;
+        XStream stream = new XStream();
+        stream.processAnnotations(TextMsg.class);
+        stream.processAnnotations(NewsMsg.class);
+        String xml = stream.toXML(msg);
+        return xml;
+    &#125;
+
+    /**
+     * 当用户发送是文本消息的处理逻辑
+     * 
+     * @param map
+     * @return
+     */
+    private static BaseMsg dealTextMsg(Map&lt;String, String&gt; requestMap) &#123;
+        // 获取用户发送的消息内容
+        String msg = requestMap.get(&quot;Content&quot;);
+        // 如果是图文回复一个图文消息
+        if (msg.equals(&quot;图文&quot;)) &#123;
+            List&lt;Article&gt; articles = new ArrayList&lt;Article&gt;();
+            articles.add(new Article(&quot;码云博客&quot;, &quot;这个是我个人的码云博客,基于hexo搭建,里面的文章都是使用markdown编写&quot;,
+                    &quot;https://heliufang.gitee.io/uploads/banner.jpg&quot;, &quot;https://heliufang.gitee.io/&quot;));
+            return new NewsMsg(requestMap, articles);
+        &#125;
+        //否则回复一个文本消息,文本内容为&#39;当前时间+你好&#39;
+        //当然这个内容可以自定义,在这里也可以接入自动回复机器人
+        TextMsg textMsg = new TextMsg(requestMap, new Date(System.currentTimeMillis()).toLocaleString() + &quot;你好&quot;);
+        return textMsg;
+    &#125;
+</code></pre><p>然后分别给公众号发一个1和图文</p><p><img src="/posts/ff671706/image-20210810231459572.png" alt="image-20210810231459572"></p><h3 id="9-6-自动回复机器人"><a href="#9-6-自动回复机器人" class="headerlink" title="9.6 自动回复机器人"></a>9.6 自动回复机器人</h3><p>罗老师教程中的图灵机器人已经要收费.我使用的是阿里云的<code>阿里云小蜜</code>这个机器人来做的回复.</p><p>阿里云小蜜机器人可以免费体验三个月。</p><p>具体代码可以查看阿里云小蜜的文档：<a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/60221.html">阿里云产品服务协议(云小蜜)</a></p><h2 id="10-★access-token的获取"><a href="#10-★access-token的获取" class="headerlink" title="10 ★access token的获取"></a>10 ★access token的获取</h2><p>access_token是公众号的全局唯一接口调用凭据，<strong>公众号调用各接口时都需使用access_token</strong>。开发者需要进行妥善保存.access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效</p><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html">access token文档</a></p><p>目前access_token的有效期通过返回的<code>expire_in</code>来传达，目前是7200秒之内的值。中控服务器需要根据这个有效时间提前去刷新新access_token</p><p>总结：调用很多接口需要access_token，获取access_token之后需要保存起来,过期了再重新获取,而不是每次都重新获取。</p><p><strong>接口调用请求说明</strong></p><blockquote><p>https请求方式: GET <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET">https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET</a></p></blockquote><p><strong>参数说明</strong></p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">grant_type</td><td align="left">是</td><td align="left">获取access_token填写client_credential</td></tr><tr><td align="left">appid</td><td align="left">是</td><td align="left">第三方用户唯一凭证</td></tr><tr><td align="left">secret</td><td align="left">是</td><td align="left">第三方用户唯一凭证密钥，即appsecret</td></tr></tbody></table><p><strong>返回说明</strong></p><p>正常情况下，微信会返回下述JSON数据包给公众号：</p><pre><code class="json">&#123;&quot;access_token&quot;:&quot;ACCESS_TOKEN&quot;,&quot;expires_in&quot;:7200&#125;
+</code></pre><p><strong>参数说明</strong></p><table><thead><tr><th align="left">参数</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">获取到的凭证</td></tr><tr><td align="left">expires_in</td><td align="left">凭证有效时间，单位：秒</td></tr></tbody></table><h3 id="10-1-★封装请求工具类"><a href="#10-1-★封装请求工具类" class="headerlink" title="10.1 ★封装请求工具类"></a>10.1 ★封装请求工具类</h3><p>因为需要发送请求给微信服务器,所以需要有请求的工具类。罗老师用的是java自带的请求类，相对来说比较繁琐。所以我这里采用的是Apache HttpClient,这个用起来更加的简单。</p><p>第一步：pom.xml中导入依赖</p><pre><code class="xml">&lt;!--httpClient需要的依赖--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;
+    &lt;artifactId&gt;httpclient&lt;/artifactId&gt;
+    &lt;version&gt;4.5.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!--//httpclient缓存--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;
+    &lt;artifactId&gt;httpclient-cache&lt;/artifactId&gt;
+    &lt;version&gt;4.5&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!--//http的mime类型都在这里面--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.httpcomponents&lt;/groupId&gt;
+    &lt;artifactId&gt;httpmime&lt;/artifactId&gt;
+    &lt;version&gt;4.3.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>第二步：基于<code>Apache HttpClient</code>封装<code>HttpUtils</code>工具类,我封装了4个方法,可以支持get请求和post请求。后面很多需要用的地方直接调用即可。</p><p>可以参考这个博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shan-kylin/p/9453514.html">HttpClient发送get&#x2F;post请求</a></p><pre><code class="java">public class HttpUtils &#123;
+
+    public static void main(String[] args) &#123;
+        // 1.测试get请求
+        /*
+         String getUrl = &quot;http://localhost:8080/user/searchPage?pageNum=1&amp;pageSize=2&quot;;
+         System.out.println(sendGet(getUrl));
+         */
+        
+        // 2.测试post请求 携带x-www-form-urlencoded数据格式
+        /*String postUrlForm = &quot;http://localhost:8080/user&quot;;
+        Map paramMap = new HashMap();
+        paramMap.put(&quot;name&quot;, &quot;杰克&quot;);
+        paramMap.put(&quot;age&quot;, &quot;20&quot;);
+        paramMap.put(&quot;gender&quot;, &quot;1&quot;);
+        System.out.println(sendPost(postUrlForm, paramMap));*/
+        
+        //3.测试post请求 携带json数据格式
+        /*String postUrlJson = &quot;http://localhost:8080/user&quot;;
+        String jsonParam = &quot;&#123;\&quot;name\&quot;:\&quot;jack\&quot;,\&quot;age\&quot;:\&quot;18\&quot;,\&quot;gender\&quot;:\&quot;2\&quot;&#125;&quot;;
+        System.out.println(sendPost(postUrlJson,jsonParam));*/
+        
+        //4 测试post 携带文件
+        String postUrlFile = &quot;http://localhost:8080/user/upload&quot;;
+        Map paramMap = new HashMap();
+        paramMap.put(&quot;name&quot;, &quot;tom&quot;);
+        String localFile = &quot;d:\\logo.png&quot;;
+        String fileParamName = &quot;file&quot;;
+        System.out.println(sendPost(postUrlFile, paramMap,localFile,fileParamName));
+    &#125;
+
+    // 1.httpClient发送get请求
+    public static String sendGet(String url) &#123;
+        String result = &quot;&quot;;
+        CloseableHttpResponse response = null;
+        try &#123;
+            // 根据地址获取请求
+            HttpGet request = new HttpGet(url);// 这里发送get请求
+            // 获取当前客户端对象
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            // 通过请求对象获取响应对象
+            response = httpClient.execute(request);
+            // 判断网络连接状态码是否正常(0--200都数正常)
+            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) &#123;
+                result = EntityUtils.toString(response.getEntity(), &quot;utf-8&quot;);
+            &#125;
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            if (null != response) &#123;
+                try &#123;
+                    response.close();
+                &#125; catch (IOException e) &#123;
+                    e.printStackTrace();
+                &#125;
+            &#125;
+        &#125;
+        return result;
+    &#125;
+
+    // 2.httpClient发送post请求 携带x-www-form-urlencoded数据格式
+    public static String sendPost(String url, Map&lt;String, String&gt; map) &#123;
+        CloseableHttpResponse httpResponse = null;
+        String result = &quot;&quot;;
+        try &#123;
+            // 1、创建一个httpClient客户端对象
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            // 2、创建一个HttpPost请求
+            HttpPost httpPost = new HttpPost(url);
+            // 设置请求头
+            httpPost.setHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;); // 设置传输的数据格式
+            // 携带普通的参数params的方式
+            List&lt;BasicNameValuePair&gt; params = new ArrayList&lt;BasicNameValuePair&gt;();
+            Set&lt;String&gt; keys = map.keySet();
+            for (String key : keys) &#123;
+                params.add(new BasicNameValuePair(key, map.get(key)));
+            &#125;
+            String str = EntityUtils.toString(new UrlEncodedFormEntity(params, Consts.UTF_8));
+            // 这里就是：username=kylin&amp;password=123456
+            System.out.println(str);
+
+            // 放参数进post请求里面 从名字可以知道 这个类是专门处理x-www-form-urlencoded 添加参数的
+            httpPost.setEntity(new UrlEncodedFormEntity(params, &quot;UTF-8&quot;));
+
+            // 7、执行post请求操作，并拿到结果
+            httpResponse = httpClient.execute(httpPost);
+            // 获取结果实体
+            HttpEntity entity = httpResponse.getEntity();
+            if (entity != null) &#123;
+                result = EntityUtils.toString(entity, &quot;UTF-8&quot;);
+            &#125; else &#123;
+                EntityUtils.consume(entity);//// 如果entity为空，那么直接消化掉即可
+            &#125;
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            if (null != httpResponse) &#123;
+                try &#123;
+                    httpResponse.close();
+                &#125; catch (IOException e) &#123;
+                    e.printStackTrace();
+                &#125;
+            &#125;
+        &#125;
+        return result;
+    &#125;
+
+    // 3.httpClient发送post请求 携带json数据格式
+    public static String sendPost(String url, String jsonStr) &#123;
+        CloseableHttpResponse httpResponse = null;
+        String result = &quot;&quot;;
+        try &#123;
+            // 1.创建httpClient
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            // 2.创建post请求方式实例
+            HttpPost httpPost = new HttpPost(url);
+
+            // 2.1设置请求头 发送的是json数据格式
+            httpPost.setHeader(&quot;Content-type&quot;, &quot;application/json;charset=utf-8&quot;);
+            httpPost.setHeader(&quot;Connection&quot;, &quot;Close&quot;);
+
+            // 3.设置参数---设置消息实体 也就是携带的数据
+            /*
+             * 比如传递： &#123; &quot;username&quot;: &quot;aries&quot;, &quot;password&quot;: &quot;666666&quot; &#125;
+             */
+            //String jsonStr = &quot; &#123;\&quot;username\&quot;:\&quot;aries\&quot;,\&quot;password\&quot;:\&quot;666666\&quot;&#125;&quot;;
+            StringEntity entity = new StringEntity(jsonStr.toString(), Charset.forName(&quot;UTF-8&quot;));
+            entity.setContentEncoding(&quot;UTF-8&quot;); // 设置编码格式
+            // 发送Json格式的数据请求
+            entity.setContentType(&quot;application/json&quot;);
+            // 把请求消息实体塞进去
+            httpPost.setEntity(entity);
+
+            // 4.执行http的post请求
+            // 4.执行post请求操作，并拿到结果
+            httpResponse = httpClient.execute(httpPost);
+            // 获取结果实体
+            HttpEntity httpEntity = httpResponse.getEntity();
+            if (httpEntity != null) &#123;
+                result = EntityUtils.toString(httpEntity, &quot;UTF-8&quot;);
+            &#125; else &#123;
+                EntityUtils.consume(httpEntity);//// 如果httpEntity为空，那么直接消化掉即可
+            &#125;
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            if (null != httpResponse) &#123;
+                try &#123;
+                    httpResponse.close();
+                &#125; catch (IOException e) &#123;
+                    e.printStackTrace();
+                &#125;
+            &#125;
+        &#125;
+        return result;
+    &#125;
+
+    // 4.httpClient发送post请求 携带文件
+    public static String sendPost(String url, Map&lt;String, String&gt; map,String localFile, String fileParamName) &#123;
+        HttpPost httpPost = new HttpPost(url);
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        String resultString = &quot;&quot;;
+        CloseableHttpResponse response = null;
+        try &#123;
+            // 把文件转换成流对象FileBody
+            FileBody bin = new FileBody(new File(localFile));
+
+            MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+
+            // 相当于&lt;input type=&quot;file&quot; name=&quot;fileParamName&quot;/&gt; 其中fileParamName以传进来的为准
+            builder.addPart(fileParamName, bin);
+            // 相当于&lt;input type=&quot;text&quot; name=&quot;userName&quot; value=userName&gt;
+            /*builder.addPart(&quot;filesFileName&quot;,
+                    new StringBody(fileParamName, ContentType.create(&quot;text/plain&quot;, Consts.UTF_8)));*/
+            if (map != null) &#123;
+                for (String key : map.keySet()) &#123;
+                    builder.addPart(key,
+                            new StringBody(map.get(key), ContentType.create(&quot;text/plain&quot;, Consts.UTF_8)));
+                &#125;
+            &#125;
+            HttpEntity reqEntity = builder.build();
+            httpPost.setEntity(reqEntity);
+            // 发起请求 并返回请求的响应
+            response = httpClient.execute(httpPost, HttpClientContext.create());
+            resultString = EntityUtils.toString(response.getEntity(), &quot;utf-8&quot;);
+        &#125;  catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125; finally &#123;
+            try &#123;
+                if (response != null)
+                    response.close();
+            &#125; catch (IOException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+        return resultString;
+    &#125;
+&#125;
+</code></pre><h3 id="10-2-创建AccessToken类"><a href="#10-2-创建AccessToken类" class="headerlink" title="10.2 创建AccessToken类"></a>10.2 创建AccessToken类</h3><pre><code class="java">public class AccessToken &#123;
+    private String token;
+    private long expiresTime;//过期时间
+    
+    public AccessToken(String token, String expiresIn) &#123;
+        super();
+        this.token = token;
+        //当前时间+有效期 = 过期时间
+        this.expiresTime = System.currentTimeMillis()+Integer.parseInt(expiresIn);
+    &#125;
+    
+    /**
+     * 判断token是否过期
+     * @return
+     */
+    public boolean isExpire() &#123;
+        return System.currentTimeMillis() &gt; expiresTime;
+    &#125;
+    //get and set ...
+&#125;
+</code></pre><h3 id="10-3-WxService中添加获取AccessToken的方法"><a href="#10-3-WxService中添加获取AccessToken的方法" class="headerlink" title="10.3 WxService中添加获取AccessToken的方法"></a>10.3 WxService中添加获取AccessToken的方法</h3><pre><code class="java">private static AccessToken at;//token获取的次数有限,有效期也有限,所以需要保存起来
+private static String GET_TOKEN_URL = &quot;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET&quot;;
+    
+    //登录测试号管理界面-测试号信息下面可以得到你的APPID和APPSECRET
+    private static String APPID = &quot;wx7bf783afc5150a5a&quot;;
+    private static String APPSECRET = &quot;8d9930d60717c7aaa0620ad993d984d8&quot;;
+/**
+     * 发送get请求获取AccessToken
+     */
+    private static void getToken() &#123;
+        String url = GET_TOKEN_URL.replace(&quot;APPID&quot;, APPID).replace(&quot;APPSECRET&quot;, APPSECRET);
+        String tokenStr = HttpUtils.sendGet(url);//调用工具类发get请求
+        System.out.println(tokenStr);
+        JSONObject jsonObject = JSONObject.parseObject(tokenStr);
+        String token = jsonObject.getString(&quot;access_token&quot;);
+        String expiresIn = jsonObject.getString(&quot;expires_in&quot;);
+        at = new AccessToken(token, expiresIn);
+    &#125;
+    
+    /**
+     * 获取AccessToken  向外提供
+     */
+    public static String getAccessToken() &#123;
+        //过期了或者没有值再去发送请求获取
+        if(at == null || at.isExpire()) &#123;
+            getToken();
+        &#125;
+        return at.getToken();
+    &#125;
+</code></pre><p>编写一个测试类获取AccessToken</p><pre><code class="java">import org.junit.Test;
+
+import com.qy.service.WxService;
+
+public class TestToken &#123;
+
+    @Test
+    public void getAccessToken() &#123;
+        //可以看到下面两次获取的值一致
+        System.out.println(WxService.getAccessToken());
+        System.out.println(WxService.getAccessToken());
+    &#125;
+&#125;
+</code></pre><h2 id="11-自定义菜单"><a href="#11-自定义菜单" class="headerlink" title="11 自定义菜单"></a>11 自定义菜单</h2><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Creating_Custom-Defined_Menu.html">自定义菜单文档</a></p><p>请注意：</p><ol><li>自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。</li><li>一级菜单最多4个汉字，二级菜单最多8个汉字，多出来的部分将会以“…”代替。</li><li>创建自定义菜单后，菜单的刷新策略是，在用户进入公众号会话页或公众号profile页时，如果发现上一次拉取菜单的请求在5分钟以前，就会拉取一下菜单，如果菜单有更新，就会刷新客户端的菜单。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。</li></ol><p>自定义菜单接口可实现多种类型按钮，如下：</p><ol><li>click：点击推事件用户点击click类型按钮后，微信服务器会通过消息接口推送消息类型为event的结构给开发者（参考消息接口指南），并且带上按钮中开发者填写的key值，开发者可以通过自定义的key值与用户进行交互；</li><li>view：跳转URL用户点击view类型按钮后，微信客户端将会打开开发者在按钮中填写的网页URL，可与网页授权获取用户基本信息接口结合，获得用户基本信息。</li><li>scancode_push：扫码推事件用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后显示扫描结果（如果是URL，将进入URL），且会将扫码的结果传给开发者，开发者可以下发消息。</li><li>scancode_waitmsg：扫码推事件且弹出“消息接收中”提示框用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后，将扫码的结果传给开发者，同时收起扫一扫工具，然后弹出“消息接收中”提示框，随后可能会收到开发者下发的消息。</li><li>pic_sysphoto：弹出系统拍照发图用户点击按钮后，微信客户端将调起系统相机，完成拍照操作后，会将拍摄的相片发送给开发者，并推送事件给开发者，同时收起系统相机，随后可能会收到开发者下发的消息。</li><li>pic_photo_or_album：弹出拍照或者相册发图用户点击按钮后，微信客户端将弹出选择器供用户选择“拍照”或者“从手机相册选择”。用户选择后即走其他两种流程。</li><li>pic_weixin：弹出微信相册发图器用户点击按钮后，微信客户端将调起微信相册，完成选择操作后，将选择的相片发送给开发者的服务器，并推送事件给开发者，同时收起相册，随后可能会收到开发者下发的消息。</li><li>location_select：弹出地理位置选择器用户点击按钮后，微信客户端将调起地理位置选择工具，完成选择操作后，将选择的地理位置发送给开发者的服务器，同时收起位置选择工具，随后可能会收到开发者下发的消息。</li><li>media_id：下发消息（除文本消息）用户点击media_id类型按钮后，微信服务器会将开发者填写的永久素材id对应的素材下发给用户，永久素材类型可以是图片、音频、视频、图文消息。请注意：永久素材id必须是在“素材管理&#x2F;新增永久素材”接口上传后获得的合法id。</li><li>view_limited：跳转图文消息URL用户点击view_limited类型按钮后，微信客户端将打开开发者在按钮中填写的永久素材id对应的图文消息URL，永久素材类型只支持图文消息。请注意：永久素材id必须是在“素材管理&#x2F;新增永久素材”接口上传后获得的合法id。</li></ol><p><strong>接口调用请求说明</strong></p><p>http请求方式：POST（请使用https协议） <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN</a></p><p>url中的ACCESS_TOKEN就是之前获取的,调用这个接口需要带上</p><p>请求需携带json参数</p><pre><code class="json">&#123;
+ &quot;button&quot;:[
+     &#123;
+           &quot;type&quot;:&quot;click&quot;,
+          &quot;name&quot;:&quot;一级点击&quot;,
+          &quot;key&quot;:&quot;1&quot;
+     &#125;,
+     &#123;
+           &quot;type&quot;:&quot;view&quot;,
+          &quot;name&quot;:&quot;个人博客&quot;,
+          &quot;url&quot;:&quot;https://heliufang.gitee.io/&quot;
+     &#125;,
+     &#123;
+          &quot;name&quot;:&quot;有子菜单&quot;,
+          &quot;sub_button&quot;:[
+              &#123;
+                  &quot;type&quot;:&quot;click&quot;,
+                  &quot;name&quot;:&quot;三一点击&quot;,
+                  &quot;key&quot;:&quot;31&quot;
+            &#125;,
+            &#123;
+                  &quot;type&quot;:&quot;view&quot;,
+                  &quot;name&quot;:&quot;码云博客&quot;,
+                  &quot;url&quot;:&quot;https://heliufang.gitee.io/&quot;
+            &#125;,
+            &#123;
+                &quot;type&quot;:&quot;pic_photo_or_album&quot;,
+                &quot;name&quot;:&quot;拍照或发图&quot;,
+                &quot;key&quot;:&quot;33&quot;
+            &#125;
+          ]
+     &#125;
+ ]
+&#125;
+</code></pre><p><strong>参数说明</strong></p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">button</td><td align="left">是</td><td align="left">一级菜单数组，个数应为1~3个</td></tr><tr><td align="left">sub_button</td><td align="left">否</td><td align="left">二级菜单数组，个数应为1~5个</td></tr><tr><td align="left">type</td><td align="left">是</td><td align="left">菜单的响应动作类型，view表示网页类型，click表示点击类型，miniprogram表示小程序类型</td></tr><tr><td align="left">name</td><td align="left">是</td><td align="left">菜单标题，不超过16个字节，子菜单不超过60个字节</td></tr><tr><td align="left">key</td><td align="left">click等点击类型必须</td><td align="left">菜单KEY值，用于消息接口推送，不超过128字节</td></tr><tr><td align="left">url</td><td align="left">view、miniprogram类型必须</td><td align="left">网页 链接，用户点击菜单可打开链接，不超过1024字节。 type为miniprogram时，不支持小程序的老版本客户端将打开本url。</td></tr><tr><td align="left">media_id</td><td align="left">media_id类型和view_limited类型必须</td><td align="left">调用新增永久素材接口返回的合法media_id</td></tr><tr><td align="left">appid</td><td align="left">miniprogram类型必须</td><td align="left">小程序的appid（仅认证公众号可配置）</td></tr><tr><td align="left">pagepath</td><td align="left">miniprogram类型必须</td><td align="left">小程序的页面路径</td></tr></tbody></table><p><strong>返回结果</strong></p><p>正确时的返回JSON数据包如下：</p><pre><code class="json">&#123;&quot;errcode&quot;:0,&quot;errmsg&quot;:&quot;ok&quot;&#125;
+</code></pre><p>错误时的返回JSON数据包如下（示例为无效菜单名长度）：</p><pre><code class="json">&#123;&quot;errcode&quot;:40018,&quot;errmsg&quot;:&quot;invalid button name size&quot;&#125;
+</code></pre><p>和前面xml的类似,我们需要对着请求的json数据封装按钮类,这样后面操作起来就比较方便,而且也方便维护。</p><h3 id="11-1-封装菜单类"><a href="#11-1-封装菜单类" class="headerlink" title="11.1 封装菜单类"></a>11.1 封装菜单类</h3><p>&lt;1&gt;AbstractButton类</p><pre><code class="java">//所有菜单(按钮)的父类
+public abstract class AbstractButton &#123;
+    private String name;//按钮标题
+
+    public String getName() &#123;
+        return this.name;
+    &#125;
+
+    public void setName(final String name) &#123;
+        this.name = name;
+    &#125;
+
+    public AbstractButton(final String name) &#123;
+        this.name = name;
+    &#125;
+&#125;
+</code></pre><p>&lt;2&gt;Button类</p><pre><code class="java">//一级菜单对象
+public class Button &#123;
+    private List&lt;AbstractButton&gt; button;
+
+    public Button() &#123;
+        this.button = new ArrayList&lt;AbstractButton&gt;();
+    &#125;
+
+    public List&lt;AbstractButton&gt; getButton() &#123;
+        return this.button;
+    &#125;
+
+    public void setButton(final List&lt;AbstractButton&gt; button) &#123;
+        this.button = button;
+    &#125;
+&#125;
+</code></pre><p>&lt;3&gt;ClickButton类</p><pre><code class="java">//点击类型的菜单
+public class ClickButton extends AbstractButton &#123;
+    private String type;
+    private String key;
+
+    public String getType() &#123;
+        return this.type;
+    &#125;
+
+    public void setType(final String type) &#123;
+        this.type = type;
+    &#125;
+
+    public String getKey() &#123;
+        return this.key;
+    &#125;
+
+    public void setKey(final String key) &#123;
+        this.key = key;
+    &#125;
+
+    public ClickButton(final String name, final String key) &#123;
+        super(name);
+        this.type = &quot;click&quot;;//点击类型
+        this.key = key;
+    &#125;
+&#125;
+</code></pre><p>&lt;4&gt;ViewButton类</p><pre><code class="java">//网页类型的菜单
+public class ViewButton extends AbstractButton &#123;
+    private String type;
+    private String url;
+
+    public String getType() &#123;
+        return this.type;
+    &#125;
+
+    public void setType(final String type) &#123;
+        this.type = type;
+    &#125;
+
+    public String getUrl() &#123;
+        return this.url;
+    &#125;
+
+    public void setUrl(final String url) &#123;
+        this.url = url;
+    &#125;
+
+    public ViewButton(final String name, final String url) &#123;
+        super(name);
+        this.type = &quot;view&quot;;//网页类型
+        this.url = url;
+    &#125;
+&#125;
+</code></pre><p>&lt;5&gt; PhotoOrAlbumButton</p><pre><code class="java">//拍照或传图菜单
+public class PhotoOrAlbumButton extends AbstractButton&#123;
+    private String type;
+    private String key;
+
+    public PhotoOrAlbumButton(String name,String key) &#123;
+        super(name);
+        this.type = &quot;pic_photo_or_album&quot;;//拍照获取传图
+        this.key = key;
+    &#125;
+
+    public String getType() &#123;
+        return type;
+    &#125;
+
+    public void setType(String type) &#123;
+        this.type = type;
+    &#125;
+
+    public String getKey() &#123;
+        return key;
+    &#125;
+
+    public void setKey(String key) &#123;
+        this.key = key;
+    &#125;
+&#125;
+</code></pre><p>&lt;6&gt;SubButton</p><pre><code class="java">import java.util.ArrayList;
+import java.util.List;
+
+//二级菜单对象
+public class SubButton extends AbstractButton &#123;
+    private List&lt;AbstractButton&gt; sub_button;
+
+    public List&lt;AbstractButton&gt; getSub_button() &#123;
+        return this.sub_button;
+    &#125;
+
+    public void setSub_button(final List&lt;AbstractButton&gt; sub_button) &#123;
+        this.sub_button = sub_button;
+    &#125;
+
+    public SubButton(final String name) &#123;
+        super(name);
+        this.sub_button = new ArrayList&lt;AbstractButton&gt;();
+    &#125;
+&#125;
+</code></pre><h3 id="11-2-测试"><a href="#11-2-测试" class="headerlink" title="11.2 测试"></a>11.2 测试</h3><p>新增一个Test方法</p><pre><code class="java">package com.qy.test;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Test;
+import com.alibaba.fastjson.JSONObject;
+import com.qy.entity.button.AbstractButton;
+import com.qy.entity.button.Button;
+import com.qy.entity.button.ClickButton;
+import com.qy.entity.button.PhotoOrAlbumButton;
+import com.qy.entity.button.SubButton;
+import com.qy.entity.button.ViewButton;
+import com.qy.service.WxService;
+import com.qy.utils.HttpUtils;
+
+public class TestButton &#123;
+
+    @Test
+    public void setButton() &#123;
+        //创建一级菜单
+        Button button = new Button();
+        //在第三个菜单中创建二级菜单
+        SubButton subButton = new SubButton(&quot;有子菜单&quot;);
+        List&lt;AbstractButton&gt; list2 = new ArrayList();
+        list2.add(new ClickButton(&quot;三一点击&quot;, &quot;31&quot;));
+        list2.add(new ViewButton(&quot;码云博客&quot;, &quot;https://heliufang.gitee.io/&quot;));
+        list2.add(new PhotoOrAlbumButton(&quot;拍照或发图&quot;,&quot;33&quot;));
+        subButton.setSub_button(list2);
+        //在一级菜单中添加三个按钮,
+        List&lt;AbstractButton&gt; list = new ArrayList();
+        list.add(new ClickButton(&quot;一级点击&quot;, &quot;1&quot;));
+        list.add(new ViewButton(&quot;个人博客&quot;, &quot;https://heliufang.gitee.io/&quot;));
+        list.add(subButton);
+        button.setButton(list);
+        //转成json格式字符串
+        String jsonString = JSONObject.toJSONString(button);
+        //System.out.println(jsonString);
+        //发送请求
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN&quot;;
+        url = url.replace(&quot;ACCESS_TOKEN&quot;, WxService.getAccessToken());//把token带上
+        String result = HttpUtils.sendPost(url, jsonString);
+        System.out.println(result);
+    &#125;
+&#125;
+</code></pre><p>运行效果如下：</p><p><img src="/posts/ff671706/image-20210813000312449.png" alt="image-20210813000312449"></p><h2 id="12-设置和获取行业信息"><a href="#12-设置和获取行业信息" class="headerlink" title="12 设置和获取行业信息"></a>12 设置和获取行业信息</h2><h3 id="12-1-设置行业信息"><a href="#12-1-设置行业信息" class="headerlink" title="12.1 设置行业信息"></a>12.1 设置行业信息</h3><p>如果要发送模板消息,那么首先就得设置行业信息,如何设置和获取可以看下面接口。</p><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html">模板消息文档</a></p><p>设置行业可在微信公众平台后台完成，每月可修改行业1次，帐号仅可使用所属行业中相关的模板，为方便第三方开发者，提供通过接口调用的方式来修改账号所属行业，具体如下：</p><p><strong>接口调用请求说明</strong></p><blockquote><p>http请求方式: POST <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN</a></p></blockquote><p><strong>POST数据说明</strong></p><p>POST数据示例如下：</p><pre><code class="json">&#123;
+    &quot;industry_id1&quot;:&quot;1&quot;,
+    &quot;industry_id2&quot;:&quot;4&quot;
+&#125;
+</code></pre><p>参数说明</p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">是</td><td align="left">接口调用凭证</td></tr><tr><td align="left">industry_id1</td><td align="left">是</td><td align="left">公众号模板消息所属行业编号-主行业</td></tr><tr><td align="left">industry_id2</td><td align="left">是</td><td align="left">公众号模板消息所属行业编号-副行业</td></tr></tbody></table><p><strong>行业代码查询</strong>,更多代码可以查询文档</p><table><thead><tr><th align="left">主行业</th><th align="left">副行业</th><th align="left">代码</th></tr></thead><tbody><tr><td align="left">IT科技</td><td align="left">互联网&#x2F;电子商务</td><td align="left">1</td></tr><tr><td align="left">IT科技</td><td align="left">IT软件与服务</td><td align="left">2</td></tr><tr><td align="left">IT科技</td><td align="left">IT硬件与设备</td><td align="left">3</td></tr><tr><td align="left">…</td><td align="left">…</td><td align="left">…</td></tr></tbody></table><p>编写测试代码</p><pre><code class="java">@Test
+    public void setIndustry() &#123;
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN&quot;;
+        url = url.replace(&quot;ACCESS_TOKEN&quot;, WxService.getAccessToken());
+        String jsonStr = &quot;&#123;\&quot;industry_id1\&quot;:\&quot;1\&quot;,\&quot;industry_id2\&quot;:\&quot;4\&quot;&#125;&quot;;
+        String rString = HttpUtils.sendPost(url, jsonStr);
+        System.out.println(rString);
+    &#125;
+</code></pre><h3 id="12-2-获取行业信息"><a href="#12-2-获取行业信息" class="headerlink" title="12.2 获取行业信息"></a>12.2 获取行业信息</h3><p>获取帐号设置的行业信息。可登录微信公众平台，在公众号后台中查看行业信息。为方便第三方开发者，提供通过接口调用的方式来获取帐号所设置的行业信息，具体如下:</p><p><strong>接口调用请求说明</strong></p><blockquote><p>http请求方式：GET <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN</a></p></blockquote><p><strong>参数说明</strong></p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">是</td><td align="left">接口调用凭证</td></tr></tbody></table><p><strong>返回说明</strong></p><p>正确调用后的返回示例：</p><pre><code class="json">&#123;
+    &quot;primary_industry&quot;:&#123;&quot;first_class&quot;:&quot;运输与仓储&quot;,&quot;second_class&quot;:&quot;快递&quot;&#125;,
+    &quot;secondary_industry&quot;:&#123;&quot;first_class&quot;:&quot;IT科技&quot;,&quot;second_class&quot;:&quot;互联网|电子商务&quot;&#125;
+&#125;
+</code></pre><p>返回参数说明</p><table><thead><tr><th align="left">参数</th><th align="left">是否必填</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">是</td><td align="left">接口调用凭证</td></tr><tr><td align="left">primary_industry</td><td align="left">是</td><td align="left">帐号设置的主营行业</td></tr><tr><td align="left">secondary_industry</td><td align="left">是</td><td align="left">帐号设置的副营行业</td></tr></tbody></table><p>编写测试代码</p><pre><code class="java">@Test
+    public void getIndustry() &#123;
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN&quot;;
+        url = url.replace(&quot;ACCESS_TOKEN&quot;, WxService.getAccessToken());
+        String string = HttpUtils.sendGet(url);
+        System.out.println(string);
+    &#125;
+</code></pre><h2 id="13-发送模板消息"><a href="#13-发送模板消息" class="headerlink" title="13 发送模板消息"></a>13 发送模板消息</h2><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html">模板消息接口</a></p><p>就是微信主动给用户推送消息,不需要像之前那样被动(用户发送之后再回复).</p><p><strong>接口调用请求说明</strong></p><blockquote><p>http请求方式: POST <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN">https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN</a></p></blockquote><p>POST数据如下：</p><pre><code class="json">&#123;
+    &quot;touser&quot;: &quot;oQxvI51GI5t9wBaBjmBXgJZZVM3A&quot;,
+    &quot;template_id&quot;: &quot;tQ0G9Pmd_n_ylmplYsEnexgabkJXH1S3J7BXahK454g&quot;,
+    &quot;url&quot;: &quot;https://heliufang.gitee.io/&quot;,
+    &quot;data&quot;: &#123;
+        &quot;first&quot;: &#123;
+            &quot;value&quot;: &quot;您好!您投递的简历有新的反馈&quot;,
+            &quot;color&quot;: &quot;#173177&quot;
+        &#125;,
+        &quot;company&quot;: &#123;
+            &quot;value&quot;: &quot;广州壹新网络科技有限公司&quot;,
+            &quot;color&quot;: &quot;#173177&quot;
+        &#125;,
+        &quot;time&quot;: &#123;
+            &quot;value&quot;: &quot;2021-8-5 23:31:23&quot;,
+            &quot;color&quot;: &quot;#173177&quot;
+        &#125;,
+        &quot;result&quot;: &#123;
+            &quot;value&quot;: &quot;已通过&quot;,
+            &quot;color&quot;: &quot;#ff0000&quot;
+        &#125;,
+        &quot;remark&quot;: &#123;
+            &quot;value&quot;: &quot;带身份证&quot;,
+            &quot;color&quot;: &quot;#173177&quot;
+        &#125;
+    &#125;
+&#125;
+</code></pre><p>参数说明</p><table><thead><tr><th align="left">参数</th><th align="left">是否必填</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">touser</td><td align="left">是</td><td align="left">接收者openid</td></tr><tr><td align="left">template_id</td><td align="left">是</td><td align="left">模板ID,这个需要在管理界面配置</td></tr><tr><td align="left">url</td><td align="left">否</td><td align="left">模板跳转链接（海外帐号没有跳转能力）</td></tr><tr><td align="left">data</td><td align="left">是</td><td align="left">模板数据</td></tr><tr><td align="left">color</td><td align="left">否</td><td align="left">模板内容字体颜色，不填默认为黑色</td></tr></tbody></table><p><strong>返回码说明</strong></p><p>在调用模板消息接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p><pre><code class="json">&#123;&quot;errcode&quot;:0,&quot;errmsg&quot;:&quot;ok&quot;,&quot;msgid&quot;:200228332&#125;
+</code></pre><p>★第一步：在微信测试号管理后台配置模板：</p><ul><li><p>模板标题: 简历反馈提醒</p></li><li><p>模板内容：</p></li></ul><pre><code>&#123;&#123;first.DATA&#125;&#125; 
+公司名：&#123;&#123;company.DATA&#125;&#125; 
+投递时间：&#123;&#123;time.DATA&#125;&#125; 
+反馈结果：&#123;&#123;result.DATA&#125;&#125; &#123;&#123;remark.DATA&#125;&#125;
+</code></pre><p>创建好之后是下面这个样子</p><p><img src="/posts/ff671706/image-20210814170124702.png" alt="image-20210814170124702"></p><p>第二步：编写代码</p><pre><code class="java">@Test
+    public void sendTemplateMsg() &#123;
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN&quot;;
+        url = url.replace(&quot;ACCESS_TOKEN&quot;, WxService.getAccessToken());
+        //实际开发中应封装成java类,再把java对象转成类似下面的jsonstr
+        String jsonStr = &quot;&#123;\r\n&quot; + 
+                &quot;    \&quot;touser\&quot;: \&quot;oQxvI51GI5t9wBaBjmBXgJZZVM3A\&quot;,\r\n&quot; + 
+                &quot;    \&quot;template_id\&quot;: \&quot;tQ0G9Pmd_n_ylmplYsEnexgabkJXH1S3J7BXahK454g\&quot;,\r\n&quot; + 
+                &quot;    \&quot;url\&quot;: \&quot;https://heliufang.gitee.io/\&quot;,\r\n&quot; + 
+                &quot;    \&quot;data\&quot;: &#123;\r\n&quot; + 
+                &quot;        \&quot;first\&quot;: &#123;\r\n&quot; + 
+                &quot;            \&quot;value\&quot;: \&quot;您好!您投递的简历有新的反馈\&quot;,\r\n&quot; + 
+                &quot;            \&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot; + 
+                &quot;        &#125;,\r\n&quot; + 
+                &quot;        \&quot;company\&quot;: &#123;\r\n&quot; + 
+                &quot;            \&quot;value\&quot;: \&quot;广州壹新网络科技有限公司\&quot;,\r\n&quot; + 
+                &quot;            \&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot; + 
+                &quot;        &#125;,\r\n&quot; + 
+                &quot;        \&quot;time\&quot;: &#123;\r\n&quot; + 
+                &quot;            \&quot;value\&quot;: \&quot;2021-8-5 23:31:23\&quot;,\r\n&quot; + 
+                &quot;            \&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot; + 
+                &quot;        &#125;,\r\n&quot; + 
+                &quot;        \&quot;result\&quot;: &#123;\r\n&quot; + 
+                &quot;            \&quot;value\&quot;: \&quot;已通过\&quot;,\r\n&quot; + 
+                &quot;            \&quot;color\&quot;: \&quot;#ff0000\&quot;\r\n&quot; + 
+                &quot;        &#125;,\r\n&quot; + 
+                &quot;        \&quot;remark\&quot;: &#123;\r\n&quot; + 
+                &quot;            \&quot;value\&quot;: \&quot;带身份证\&quot;,\r\n&quot; + 
+                &quot;            \&quot;color\&quot;: \&quot;#173177\&quot;\r\n&quot; + 
+                &quot;        &#125;\r\n&quot; + 
+                &quot;    &#125;\r\n&quot; + 
+                &quot;&#125;&quot;;
+        String rString = HttpUtils.sendPost(url, jsonStr);
+        System.out.println(rString);
+    &#125;
+</code></pre><p>测试结果如下</p><p><img src="/posts/ff671706/image-20210814171316722.png" alt="image-20210814171316722"></p><h2 id="14-新增和获取临时素材"><a href="#14-新增和获取临时素材" class="headerlink" title="14 新增和获取临时素材"></a>14 新增和获取临时素材</h2><p>公众号经常有需要用到一些临时性的多媒体素材的场景，例如在使用接口特别是发送消息时，对多媒体文件、多媒体消息的获取和调用等操作，是通过media_id来进行的。素材管理接口对所有认证的订阅号和服务号开放。</p><p>注意点：</p><p>1、临时素材media_id是可复用的。</p><p>2、<strong>媒体文件在微信后台保存时间为3天，即3天后media_id失效。</strong></p><p>3、上传临时素材的格式、大小限制与公众平台官网一致。</p><p>图片（image）: 10M，支持PNG\JPEG\JPG\GIF格式</p><p>语音（voice）：2M，播放长度不超过60s，支持AMR\MP3格式</p><p>视频（video）：10MB，支持MP4格式</p><p>缩略图（thumb）：64KB，支持JPG格式</p><h3 id="14-1-新增临时素材"><a href="#14-1-新增临时素材" class="headerlink" title="14.1 新增临时素材"></a>14.1 新增临时素材</h3><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/New_temporary_materials.html">新增临时素材文档</a></p><p>罗老师用的是java自带的文件类上传,代码比较繁琐。而我使用HttpClient封装的HttpUtils上传就很简单了。</p><p><strong>接口调用请求说明</strong></p><blockquote><p>http请求方式: POST <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&amp;type=TYPE">https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&amp;type=TYPE</a></p></blockquote><p><strong>参数说明</strong></p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">是</td><td align="left">调用接口凭证</td></tr><tr><td align="left">type</td><td align="left">是</td><td align="left">媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb）</td></tr><tr><td align="left">media</td><td align="left">是</td><td align="left">form-data中媒体文件标识，有filename、filelength、content-type等信息</td></tr></tbody></table><p><strong>返回说明</strong></p><p>正确情况下的返回JSON数据包结果如下：</p><pre><code class="json">&#123;&quot;type&quot;:&quot;image&quot;,&quot;media_id&quot;:&quot;atL80WWRNpMWhivoIGf9KTUUUO5pm6RxML8OPEUd7cbfb1Rs0kl2Yv0319KMQI-0&quot;,&quot;created_at&quot;:1628933345,&quot;item&quot;:[]&#125;
+</code></pre><table><thead><tr><th align="left">参数</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">type</td><td align="left">媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb，主要用于视频与音乐格式的缩略图）</td></tr><tr><td align="left">media_id</td><td align="left">媒体文件上传后，获取标识</td></tr><tr><td align="left">created_at</td><td align="left">媒体文件上传时间戳</td></tr></tbody></table><p>编写测试代码</p><pre><code class="java">//上传图片
+    @Test
+    public void uploadMedia() &#123;
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&amp;type=TYPE&quot;;
+        url = url.replace(&quot;ACCESS_TOKEN&quot;, WxService.getAccessToken());
+        url = url.replace(&quot;TYPE&quot;, &quot;image&quot;);
+        String string = HttpUtils.sendPost(url, null, &quot;C:\\Users\\Administrator\\Desktop\\2.jpg&quot;, &quot;&quot;);
+        System.out.println(string);
+    &#125;
+</code></pre><h3 id="14-2-获取临时素材"><a href="#14-2-获取临时素材" class="headerlink" title="14.2 获取临时素材"></a>14.2 获取临时素材</h3><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Asset_Management/Get_temporary_materials.html">获取临时素材文档</a></p><p><strong>接口调用请求说明</strong></p><blockquote><p>http请求方式: GET,https调用 <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID">https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID</a> 请求示例（示例为通过curl命令获取多媒体文件） curl -I -G “<a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID&quot;">https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID&quot;</a></p></blockquote><p>把ACCESS_TOKEN和MEDIA_ID替换到url的位置,然后浏览器打开就可以下载了</p><p><strong>参数说明</strong></p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">是</td><td align="left">调用接口凭证</td></tr><tr><td align="left">media_id</td><td align="left">是</td><td align="left">媒体文件ID</td></tr></tbody></table><p><strong>返回说明</strong></p><p>正确情况下的返回HTTP头如下：</p><pre><code class="text">HTTP/1.1 200 OK
+Connection: close
+Content-Type: image/jpeg
+Content-disposition: attachment; filename=&quot;MEDIA_ID.jpg&quot;
+Date: Sun, 06 Jan 2013 10:20:18 GMT
+Cache-Control: no-cache, must-revalidate
+Content-Length: 339721
+curl -G &quot;https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID&quot;
+</code></pre><h2 id="15-二维码生成和扫描"><a href="#15-二维码生成和扫描" class="headerlink" title="15 二维码生成和扫描"></a>15 二维码生成和扫描</h2><h3 id="15-1-生成带参数的临时二维码"><a href="#15-1-生成带参数的临时二维码" class="headerlink" title="15.1 生成带参数的临时二维码"></a>15.1 生成带参数的临时二维码</h3><p>为了满足用户渠道推广分析和用户帐号绑定等场景的需要，公众平台提供了生成带参数二维码的接口。使用该接口可以获得多个带不同场景值的二维码，用户扫描后，公众号可以接收到事件推送。</p><p>目前有2种类型的二维码：</p><p>1、<code>临时二维码</code>，是有过期时间的，最长可以设置为在二维码生成后的30天（即2592000秒）后过期，但能够生成较多数量。临时二维码主要用于帐号绑定等不要求二维码永久保存的业务场景 2、<code>永久二维码</code>，是无过期时间的，但数量较少（目前为最多10万个）。永久二维码主要用于适用于帐号绑定、用户来源统计等场景。</p><p><strong>获取带参数的二维码的过程包括两步，首先创建二维码ticket，然后凭借ticket到指定URL换取二维码。</strong></p><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Generating_a_Parametric_QR_Code.html">生成带参数的二维码文档</a></p><p>测试代码将实现下面这样一个功能,点击页面上的生成按钮,在页面展示生成好的二维码</p><p>【index.jsp】</p><pre><code class="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;二维码测试页面&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;button type=&quot;button&quot;&gt;生成二维码&lt;/button&gt;&lt;br&gt;
+   &lt;img alt=&quot;暂无图片&quot; src=&quot;&quot;&gt;
+&lt;/body&gt;
+&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+   $(&quot;button&quot;).click(function()&#123;
+       $.ajax(&#123;
+           url: &quot;/wx/getQrCode&quot;,
+           type: &quot;get&quot;,
+           dataType: &quot;json&quot;,
+           success: function(resp)&#123;
+               console.log(resp);
+               //通过ticket获取图片
+               var src = &quot;https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=&quot;+resp.ticket;
+               $(&quot;img&quot;).attr(&quot;src&quot;,src)
+           &#125;
+       &#125;)
+   &#125;)
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>【后端servlet】</p><pre><code class="java">@WebServlet(&quot;/getQrCode&quot;)
+public class QrCodeServlet extends HttpServlet &#123;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+        //设置编码格式,不然中文会乱码
+        req.setCharacterEncoding(&quot;UTF-8&quot;);
+        resp.setCharacterEncoding(&quot;UTF-8&quot;);
+        //发送post请求获取ticket,页面通过ticket就可以展示二维码图片了
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN&quot;;
+        url = url.replace(&quot;TOKEN&quot;, WxService.getAccessToken());
+        /*600表示10分钟有效  scene_str是一个唯一标识,类似点击事件的key, QR_STR_SCENE表示临时二维码
+         * &#123;
+                &quot;expire_seconds&quot;: 600, 
+                &quot;action_name&quot;: &quot;QR_STR_SCENE&quot;, 
+                &quot;action_info&quot;: &#123;
+                    &quot;scene&quot;: &#123;
+                        &quot;scene_str&quot;: &quot;test&quot;
+                        
+                    &#125;
+                &#125;
+            &#125;
+         */
+        String jsonStr = &quot;&#123;\r\n&quot; + 
+                &quot;    \&quot;expire_seconds\&quot;: 600, \r\n&quot; + 
+                &quot;    \&quot;action_name\&quot;: \&quot;QR_STR_SCENE\&quot;, \r\n&quot; + 
+                &quot;    \&quot;action_info\&quot;: &#123;\r\n&quot; + 
+                &quot;        \&quot;scene\&quot;: &#123;\r\n&quot; + 
+                &quot;            \&quot;scene_str\&quot;: \&quot;test\&quot;\r\n&quot; + 
+                &quot;            \r\n&quot; + 
+                &quot;        &#125;\r\n&quot; + 
+                &quot;    &#125;\r\n&quot; + 
+                &quot;&#125;&quot;;
+        String string = HttpUtils.sendPost(url, jsonStr);
+        JSONObject object = JSONObject.parseObject(string);
+        //将响应结果返回页面,用于显示二维码
+        resp.getWriter().write(string);
+    &#125;
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;
+    &#125;
+&#125;
+</code></pre><p>访问页面,点击按钮就可以看到如下效果</p><p><img src="/posts/ff671706/image-20210814182247464.png" alt="image-20210814182247464"></p><h3 id="15-2-扫描二维码"><a href="#15-2-扫描二维码" class="headerlink" title="15.2 扫描二维码"></a>15.2 扫描二维码</h3><p>用户扫描带场景值二维码时，可能推送以下两种事件：</p><p>如果用户还未关注公众号，则用户可以关注公众号，关注后微信会将带场景值关注事件推送给开发者。</p><p>如果用户已经关注公众号，在用户扫描后会自动进入会话，微信也会将带场景值扫描事件推送给开发者</p><p>扫描临时二维码之后,会向服务器推送一个xml数据包,解析之后打印效果如下：</p><pre><code>&#123;
+Ticket=gQFr8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAya1JKeDQ2M3JmOEQxOGlybk54Y08AAgS6mBdhAwRYAgAA, 
+FromUserName=oQxvI51GI5t9wBaBjmBXgJZZVM3A,
+EventKey=test, 
+Event=SCAN, 
+CreateTime=1628936703, 
+ToUserName=gh_c8af0521f09a, 
+MsgType=event
+&#125;
+</code></pre><p>实现扫码之后给用户回复一个[你扫码了]</p><p>修改【WxService】的代码，修改getRespose方法,新增dealEvent和dealScanEvent方法</p><pre><code class="java">/**
+     * 事件消息回复
+     */
+    public static String getRespose(Map&lt;String, String&gt; requestMap) &#123;
+        BaseMsg msg = null;
+        // 根据用户发送消息的类型,做不同的处理
+        String msgType = requestMap.get(&quot;MsgType&quot;);
+        switch (msgType) &#123;
+        case &quot;text&quot;:
+            msg = dealTextMsg(requestMap);
+            break;
+        case &quot;news&quot;:
+            break;
+        case &quot;event&quot;:
+            //新增处理事件的方法
+            msg = dealEvent(requestMap);
+            break;
+        default:
+            break;
+        &#125;
+        // System.out.println(msg);
+        // 将处理结果转化成xml的字符串返回
+        if (null != msg) &#123;
+            return beanToXml(msg);
+        &#125;
+        return null;
+    &#125;
+
+    //处理事件
+    private static BaseMsg dealEvent(Map&lt;String, String&gt; requestMap) &#123;
+        String event = requestMap.get(&quot;Event&quot;);
+        BaseMsg msg = null;
+        //switch分发到具体事件
+        switch (event) &#123;
+            case &quot;SCAN&quot;:
+                msg = dealScanEvent(requestMap);
+                break;
+            default:
+                break;
+        &#125;
+        return msg;
+    &#125;
+
+    //处理SCAN事件
+    private static BaseMsg dealScanEvent(Map&lt;String, String&gt; requestMap) &#123;
+        String eventKey = requestMap.get(&quot;EventKey&quot;);
+        if(&quot;test&quot;.equals(eventKey)) &#123;
+            return new TextMsg(requestMap, &quot;你扫码了&quot;);
+        &#125;
+        return new TextMsg(requestMap, requestMap.toString());
+    &#125;
+</code></pre><p>扫码之后效果如下：</p><p><img src="/posts/ff671706/image-20210814184046627.png" alt="image-20210814184046627"></p><h2 id="16-获取用户信息"><a href="#16-获取用户信息" class="headerlink" title="16 获取用户信息"></a>16 获取用户信息</h2><p>一般在做网页授权的时候,会用到这个功能。</p><h3 id="16-1-获取已关注的用户信息"><a href="#16-1-获取已关注的用户信息" class="headerlink" title="16.1 获取已关注的用户信息"></a>16.1 获取已关注的用户信息</h3><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/User_Management/Get_users_basic_information_UnionID.html#UinonId">获取用户基本信息(UnionID机制)</a></p><p>在关注者与公众号产生消息交互后，公众号可获得关注者的OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的。对于不同公众号，同一用户的openid不同）。公众号可通过本接口来根据OpenID获取用户基本信息，包括昵称、头像、性别、所在城市、语言和关注时间。</p><p><strong>获取用户基本信息（包括UnionID机制）</strong></p><p>开发者可通过OpenID来获取用户基本信息。请使用https协议。</p><blockquote><p>接口调用请求说明 http请求方式: GET <a target="_blank" rel="noopener" href="https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN">https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN</a></p></blockquote><p>参数说明</p><table><thead><tr><th align="left">参数</th><th align="left">是否必须</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">access_token</td><td align="left">是</td><td align="left">调用接口凭证</td></tr><tr><td align="left">openid</td><td align="left">是</td><td align="left">普通用户的标识，对当前公众号唯一</td></tr><tr><td align="left">lang</td><td align="left">否</td><td align="left">返回国家地区语言版本，zh_CN 简体，zh_TW 繁体，en 英语</td></tr></tbody></table><p>openid可以登录测试号管理界面获取,对应关注者的微信号</p><p><img src="/posts/ff671706/image-20210814185850181.png" alt="image-20210814185850181"></p><p>测试代码</p><pre><code class="java">@Test
+    public void getUserInfo() &#123;
+        String url = &quot;https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN&quot;;
+        url = url.replace(&quot;ACCESS_TOKEN&quot;, WxService.getAccessToken());
+        url = url.replace(&quot;OPENID&quot;, &quot;oQxvI51GI5t9wBaBjmBXgJZZVM3A&quot;);
+        String string = HttpUtils.sendGet(url);
+        System.out.println(string);//这里就可以看到打印的用户信息了
+    &#125;
+</code></pre><h3 id="16-2-网页授权"><a href="#16-2-网页授权" class="headerlink" title="16.2 网页授权"></a>16.2 网页授权</h3><p>可以获取未关注的用户信息,这部分需要有域名才能测试。</p><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html">网页授权</a></p><p>因为ngrok默认域名已经被微信封了,所以需要申请一个域名来测试</p><p>第一步：在ngrok中使用自定义域名。</p><p><img src="/posts/ff671706/image-20210815145833067.png" alt="image-20210815145833067"></p><p>第二步：微信测试号管理界面修改成自定义的域名</p><p><img src="/posts/ff671706/image-20210815145936625.png" alt="image-20210815145936625"></p><p>第三步：测试号接口权限中配置网页授权的域名</p><p><img src="/posts/ff671706/image-20210815150238632.png" alt="image-20210815150238632"></p><p>第四步：阿里云域名解析到ngrok的域名</p><p><img src="/posts/ff671706/image-20210815150319450.png" alt="image-20210815150319450"></p><p>测试代码：</p><p>【WxService】修改dealTextMsg方法</p><p><img src="/posts/ff671706/image-20210815150631184.png" alt="image-20210815150631184"></p><p>新增一个【getUserInfo】的servlet,这个就是用户点击之后重定向的servlet</p><pre><code class="java">@WebServlet(&quot;/getUserInfo&quot;)
+public class GetUserInfoServlet extends HttpServlet &#123;
+    private static final long serialVersionUID = 1L;
+       
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;
+        //1.用户同意授权，获取code
+        String code = request.getParameter(&quot;code&quot;);
+        //2.通过code获取网页授权的access_token
+        String url = &quot; https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code&quot;;
+        url = url.replace(&quot;APPID&quot;, WxService.APPID).replace(&quot;CODE&quot;, code).replace(&quot;SECRET&quot;, WxService.APPSECRET);
+        String string = HttpUtils.sendGet(url);
+        JSONObject jsonObject = JSONObject.parseObject(string);
+        String accessToken = jsonObject.getString(&quot;access_token&quot;);
+        String openid = jsonObject.getString(&quot;openid&quot;);
+        //3.刷新access_token（如果需要）
+        //4.通过token获取用户信息
+        String getUserInfoUrl = &quot;https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN&quot;;
+        getUserInfoUrl = getUserInfoUrl.replace(&quot;ACCESS_TOKEN&quot;, accessToken).replace(&quot;OPENID&quot;, openid);
+        String userInfoJsonStr = HttpUtils.sendGet(getUserInfoUrl);
+        System.out.println(userInfoJsonStr);
+    &#125;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;
+        doGet(request, response);
+    &#125;
+
+&#125;
+</code></pre><h2 id="17-微信公众号开发框架"><a href="#17-微信公众号开发框架" class="headerlink" title="17 微信公众号开发框架"></a>17 微信公众号开发框架</h2><p>前面的开发都是原生的写法,github上有很多现成的公众号开发框架。</p><p>比如这个基于springboot的公众号开发框架：</p><p>仓库：<a target="_blank" rel="noopener" href="https://github.com/binarywang/weixin-java-mp-demo">https://github.com/binarywang/weixin-java-mp-demo</a></p><p>文档：<a target="_blank" rel="noopener" href="https://github.com/Wechat-Group/WxJava/wiki/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3">https://github.com/Wechat-Group/WxJava/wiki/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3</a></p><p>最后多说一句只有把原生的基础打好了,才能更好的理解和使用框架,所以建议先学原生的公众号开发,再上手框架。</p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/ff671706/">https://heliufang.github.io/posts/ff671706/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动</p><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">200.8k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,s,t){$.ajax({url:e,dataType:"json",success:function(e){var a=document.getElementById(s),n=document.getElementById(t);a.addEventListener("input",function(){var a='<ul class="search-result-list">',t=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,s=e.title.trim().toLowerCase(),e=e.url;""!=s&&t.forEach(function(e,a){s.indexOf(e)<0?n=!1:s=s.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(a=a+"<li><a href='"+e+"' class='search-result-title'>"+s+"</a></li>")}),a+="</ul>",n.innerHTML=a)})}})};searchFunc("/search.json","searchTxt","searchResult")</script><script src="../js/common.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>

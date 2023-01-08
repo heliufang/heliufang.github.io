@@ -1,0 +1,852 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">40</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">7</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">44</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">200.8k</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2023-01-08 12:54:42"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/27fcdfc0/">1.react笔记</a></li><li><a href="/posts/304cd95d/">2.vue3.2新特性笔记</a></li><li><a href="/posts/f2f1536e/">3.node笔记</a></li><li><a href="/posts/73c9868e/">4.vue3笔记</a></li><li><a href="/posts/9d362be7/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this"><span class="toc-text">this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B"><span class="toc-text">原型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">原型的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E5%8E%9F%E5%9E%8B%E5%92%8C%E9%9A%90%E5%BC%8F%E5%8E%9F%E5%9E%8B"><span class="toc-text">显式原型和隐式原型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E5%B1%9E%E6%80%A7%E9%97%AE%E9%A2%98"><span class="toc-text">原型链的属性问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-text">instanceof与原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-text">面试题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-text">执行上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E4%B8%8E%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87"><span class="toc-text">变量提升与函数提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87-1"><span class="toc-text">执行上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88"><span class="toc-text">执行上下文栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98-1"><span class="toc-text">面试题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="toc-text">作用域和作用域链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">全局作用域和函数作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-text">作用域与执行上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="toc-text">作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%981"><span class="toc-text">面试题1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%982"><span class="toc-text">面试题2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%8A%A0%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E9%97%AE%E9%A2%98"><span class="toc-text">循环加事件监听问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">闭包的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%97%AD%E5%8C%85"><span class="toc-text">常见的闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">闭包的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">闭包的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">闭包的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">闭包的优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%981-1"><span class="toc-text">面试题1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%982-1"><span class="toc-text">面试题2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="toc-text">对象的创建方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E5%BC%8F"><span class="toc-text">Object构造函数模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-text">对象字面量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E5%BC%8F"><span class="toc-text">自定义构造函数模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%E5%8E%9F%E5%9E%8B%E7%9A%84%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="toc-text">构造函数+原型的组合模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F"><span class="toc-text">继承方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF"><span class="toc-text">原型链继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%9F%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%BB%A7%E6%89%BF"><span class="toc-text">借用构造函数继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E7%BB%A7%E6%89%BF"><span class="toc-text">组合继承</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%BD%AE%E8%AF%A2%E6%9C%BA%E5%88%B6"><span class="toc-text">事件的轮询机制</span></a></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>js高级-笔记</h1><p><i class="layui-icon layui-icon-survey"></i>发表于:2022-06-21 | <i class="layui-icon layui-icon-app"></i>字数:5.9k</p></div><div id="article"><p>b站视频教程 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14s411E7qf">尚硅谷JavaScript高级教程</a></p><p>部分知识和<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YW411T7GX">尚硅谷js基础篇</a>重复了，这里只摘选一些重要的不重复的知识整理笔记： this、原型与原型链、执行上下文、作用域和作用域链、闭包、对象的创建、继承</p><h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><pre><code>1. this是什么?
+  * 任何函数本质上都是通过某个对象来调用的,如果没有直接指定就是window
+  * 所有函数内部都有一个变量this
+  * 它的值是调用函数的当前对象
+2. 如何确定this的值?
+  * test(): window
+  * p.test(): p
+  * new test(): 新创建的对象
+  * p.call(obj): obj
+</code></pre><p>【案例】</p><pre><code class="js">function Person(color) &#123;
+     // console.log(this)
+     this.color = color;
+     this.getColor = function () &#123;
+         // console.log(this)
+         return this.color;
+     &#125;;
+     this.setColor = function (color) &#123;
+         // console.log(this)
+         this.color = color;
+     &#125;;
+ &#125;
+
+Person(&quot;red&quot;); //this是谁?  window
+
+var p = new Person(&quot;yello&quot;); //this是谁?  新创建的对象
+
+p.getColor(); //this是谁? p
+
+var obj = &#123;&#125;;
+p.setColor.call(obj, &quot;black&quot;); //this是谁? obj
+
+var test = p.setColor;
+test(); //this是谁? window
+
+function fun1() &#123;
+    function fun2() &#123;
+        console.log(this);
+    &#125;
+
+    fun2(); //this是谁? window
+&#125;
+fun1();
+</code></pre><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="原型的概念"><a href="#原型的概念" class="headerlink" title="原型的概念"></a>原型的概念</h3><pre><code>1. 函数的prototype属性
+  * 每个函数都有一个prototype属性, 它默认指向一个Object空对象(即称为: 原型对象)
+  * 原型对象中有一个属性constructor, 它指向函数对象
+2. 给原型对象添加属性(一般都是方法)
+  * 作用: 函数的所有实例对象自动拥有原型中的属性(方法)
+</code></pre><p>【案例】</p><pre><code class="js">// 每个函数都有一个prototype属性, 它默认指向一个Object空对象(即称为: 原型对象)
+console.log(Date.prototype, typeof Date.prototype)
+function Fun () &#123;
+
+&#125;
+console.log(Fun.prototype)  // 默认指向一个Object空对象(没有我们的属性)
+
+// 原型对象中有一个属性constructor, 它指向函数对象
+console.log(Date.prototype.constructor===Date)
+console.log(Fun.prototype.constructor===Fun)
+
+//给原型对象添加属性(一般是方法) ===&gt;实例对象可以访问
+Fun.prototype.test = function () &#123;
+    console.log(&#39;test()&#39;)
+&#125;
+var fun = new Fun()
+fun.test()
+</code></pre><h3 id="显式原型和隐式原型"><a href="#显式原型和隐式原型" class="headerlink" title="显式原型和隐式原型"></a>显式原型和隐式原型</h3><pre><code>1. 每个函数function都有一个prototype，即显式原型(属性)
+2. 每个实例对象都有一个__proto__，可称为隐式原型(属性)
+3. 对象的隐式原型的值为其对应构造函数的显式原型的值
+4. 内存结构(图)
+5. 总结:
+  * 函数的prototype属性: 在定义函数时自动添加的, 默认值是一个空Object对象
+  * 对象的__proto__属性: 创建对象时自动添加的, 默认值为构造函数的prototype属性值
+  * 程序员能直接操作显式原型, 但不能直接操作隐式原型(ES6之前)
+</code></pre><p>【案例】</p><pre><code class="js">//定义构造函数
+function Fn() &#123;   // 内部语句: this.prototype = &#123;&#125;
+
+&#125;
+// 1. 每个函数function都有一个prototype，即显式原型属性, 默认指向一个空的Object对象
+console.log(Fn.prototype)
+// 2. 每个实例对象都有一个__proto__，可称为隐式原型
+//创建实例对象
+var fn = new Fn()  // 内部语句: this.__proto__ = Fn.prototype
+console.log(fn.__proto__)
+// 3. 对象的隐式原型的值为其对应构造函数的显式原型的值
+console.log(Fn.prototype===fn.__proto__) // true
+//给原型添加方法
+Fn.prototype.test = function () &#123;
+    console.log(&#39;test()&#39;)
+&#125;
+//通过实例调用原型的方法
+fn.test()
+</code></pre><p>【内存图】</p><p><img src="/posts/f1663e45/image-20220620173026278.png" alt="image-20220620173026278"></p><h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><pre><code>1. 原型链(图解)
+  * 访问一个对象的属性时，
+    * 先在自身属性中查找，找到返回
+    * 如果没有, 再沿着__proto__这条链向上查找, 找到返回
+    * 如果最终没找到, 返回undefined
+  * 别名: 隐式原型链
+  * 作用: 查找对象的属性(方法)
+2. 构造函数/原型/实体对象的关系(图解)
+3. 构造函数/原型/实体对象的关系2(图解)
+4.注意
+a)函数的显示原型(prototype)指向的对象默认是空Object实例对象(但Object不满足)
+b)所有函数都是Function的实例(包含Function)
+c)Object的原型对象是原型链尽头(因为 Object.prototype.__proto__ === null )
+</code></pre><p>【案例】</p><pre><code class="js">// console.log(Object)
+//console.log(Object.prototype)
+console.log(Object.prototype.__proto__)
+function Fn() &#123;
+    this.test1 = function () &#123;
+        console.log(&#39;test1()&#39;)
+    &#125;
+&#125;
+console.log(Fn.prototype)
+Fn.prototype.test2 = function () &#123;
+    console.log(&#39;test2()&#39;)
+&#125;
+
+var fn = new Fn()
+
+fn.test1()
+fn.test2()
+console.log(fn.toString())
+console.log(fn.test3)
+// fn.test3()
+
+
+/*
+  1. 函数的显示原型指向的对象默认是空Object实例对象(但Object不满足)
+   */
+console.log(Fn.prototype instanceof Object) // true
+console.log(Object.prototype instanceof Object) // false
+console.log(Function.prototype instanceof Object) // true
+/*
+  2. 所有函数都是Function的实例(包含Function)
+  */
+console.log(Function.__proto__===Function.prototype)
+/*
+  3. Object的原型对象是原型链尽头
+   */
+console.log(Object.prototype.__proto__) // null
+</code></pre><h3 id="原型链的属性问题"><a href="#原型链的属性问题" class="headerlink" title="原型链的属性问题"></a>原型链的属性问题</h3><pre><code>1. 读取对象的属性值时: 会自动到原型链中查找
+2. 【设置对象的属性值时: 不会查找原型链, 如果当前对象中没有此属性, 直接添加此属性并设置其值】
+3. 方法一般定义在原型中, 属性一般通过构造函数定义在对象本身上
+</code></pre><p>【案例】</p><pre><code class="js">function Fn() &#123;
+
+&#125;
+Fn.prototype.a = &#39;xxx&#39;
+var fn1 = new Fn()
+console.log(fn1.a, fn1) //xxx
+
+var fn2 = new Fn()
+fn2.a = &#39;yyy&#39;
+console.log(fn1.a, fn2.a, fn2)  //xxx yyy
+
+function Person(name, age) &#123;
+    this.name = name
+    this.age = age
+&#125;
+Person.prototype.setName = function (name) &#123;
+    this.name = name
+&#125;
+var p1 = new Person(&#39;Tom&#39;, 12)
+p1.setName(&#39;Bob&#39;)
+console.log(p1)
+
+var p2 = new Person(&#39;Jack&#39;, 12)
+p2.setName(&#39;Cat&#39;)
+console.log(p2)
+console.log(p1.__proto__===p2.__proto__) // true
+</code></pre><h3 id="instanceof与原型链"><a href="#instanceof与原型链" class="headerlink" title="instanceof与原型链"></a>instanceof与原型链</h3><pre><code>1. instanceof是如何判断的?
+  * 表达式: A instanceof B
+  * 如果B函数的显式原型对象在A对象的原型链上, 返回true, 否则返回false
+2. Function是通过new自己产生的实例
+</code></pre><p>【案例】</p><pre><code class="js">/*
+  案例1
+   */
+function Foo() &#123;  &#125;
+var f1 = new Foo()
+console.log(f1 instanceof Foo) // true
+console.log(f1 instanceof Object) // true
+
+/*
+  案例2
+   */
+console.log(Object instanceof Function) // true
+console.log(Object instanceof Object) // true
+console.log(Function instanceof Function) // true
+console.log(Function instanceof Object) // true
+
+function Foo() &#123;&#125;
+console.log(Object instanceof  Foo) // false
+</code></pre><p>【下面这个图务必搞懂】</p><p><img src="/posts/f1663e45/image-20220620182306573.png" alt="image-20220620182306573"></p><h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><p>理解上面的图很快就能做出来</p><pre><code class="js">/*
+    测试题1
+    */
+function A() &#123;
+
+&#125;
+A.prototype.n = 1
+
+var b = new A()
+
+A.prototype = &#123;
+    n: 2,
+    m: 3
+&#125;
+
+var c = new A()
+console.log(b.n, b.m, c.n, c.m) //1 undefined 2 3
+
+
+/*
+        测试题2
+        */
+function F() &#123; &#125;
+Object.prototype.a = function () &#123;
+    console.log(&#39;a()&#39;)
+&#125;
+Function.prototype.b = function () &#123;
+    console.log(&#39;b()&#39;)
+&#125;
+
+var f = new F()
+f.a() //ok
+// f.b() //error
+F.a() //ok
+F.b() //ok
+// console.log(f)
+// console.log(Object.prototype)
+// console.log(Function.prototype)
+</code></pre><h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><h3 id="变量提升与函数提升"><a href="#变量提升与函数提升" class="headerlink" title="变量提升与函数提升"></a>变量提升与函数提升</h3><pre><code>1. 变量声明提升
+  * 通过var定义(声明)的变量, 在定义语句之前就可以访问到
+  * 值: undefined
+2. 函数声明提升
+  * 通过function声明的函数, 在之前就可以直接调用
+  * 值: 函数定义(对象)
+3. 问题: 变量提升和函数提升是如何产生的?
+</code></pre><p>【案例】</p><pre><code class="js">/*
+  面试题 : 输出 undefined
+   */
+var a = 3
+function fn () &#123;
+    console.log(a)
+    var a = 4
+    &#125;
+fn()
+
+console.log(b) //undefined  变量提升
+fn2() //可调用  函数提升
+// fn3() //不能  变量提升
+
+var b = 3
+function fn2() &#123;
+    console.log(&#39;fn2()&#39;)
+&#125;
+
+var fn3 = function () &#123;
+    console.log(&#39;fn3()&#39;)
+&#125;
+</code></pre><h3 id="执行上下文-1"><a href="#执行上下文-1" class="headerlink" title="执行上下文"></a>执行上下文</h3><pre><code>1. 代码分类(位置)
+  * 全局代码
+  * 函数(局部)代码
+2. 全局执行上下文
+  * 在执行全局代码前将window确定为全局执行上下文
+  * 对全局数据进行预处理
+    * var定义的全局变量==&gt;undefined, 添加为window的属性
+    * function声明的全局函数==&gt;赋值(fun), 添加为window的方法
+    * this==&gt;赋值(window)
+  * 开始执行全局代码
+3. 函数执行上下文
+  * 在【调用函数】, 准备执行函数体之前, 创建对应的函数执行上下文对象(虚拟的, 存在于栈中)
+  * 对局部数据进行预处理
+    * 形参变量==&gt;赋值(实参)==&gt;添加为执行上下文的属性
+    * arguments==&gt;赋值(实参列表), 添加为执行上下文的属性
+    * var定义的局部变量==&gt;undefined, 添加为执行上下文的属性
+    * function声明的函数 ==&gt;赋值(fun), 添加为执行上下文的方法
+    * this==&gt;赋值(调用函数的对象)
+  * 开始执行函数体代码
+</code></pre><p>【案例】</p><pre><code class="js">console.log(a1, window.a1)
+window.a2()
+console.log(this)
+
+var a1 = 3
+function a2() &#123;
+console.log(&#39;a2()&#39;)
+&#125;
+console.log(a1)
+</code></pre><h3 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h3><pre><code>1. 在全局代码执行前, JS引擎就会创建一个栈来存储管理所有的执行上下文对象
+2. 在全局执行上下文(window)确定后, 将其添加到栈中(压栈)
+3. 在函数执行上下文创建后, 将其添加到栈中(压栈)
+4. 在当前函数执行完后,将栈顶的对象移除(出栈)
+5. 当所有的代码执行完后, 栈中只剩下window
+</code></pre><p>【案例】</p><pre><code class="js">var a = 10
+var bar = function (x) &#123;
+    var b = 5
+    foo(x + b)
+&#125;
+var foo = function (y) &#123;
+    var c = 5
+    console.log(a + c + y)
+&#125;
+bar(10)
+// bar(10)
+</code></pre><p>【流程分析图】</p><p><img src="/posts/f1663e45/image-20220620221429648.png" alt="image-20220620221429648"></p><h3 id="面试题-1"><a href="#面试题-1" class="headerlink" title="面试题"></a>面试题</h3><pre><code class="js">/*
+   测试题1:  先执行变量提升, 再执行函数提升
+   */
+function a() &#123; &#125;
+var a
+console.log(typeof a) // &#39;function&#39;
+
+/*
+  测试题2:
+*/
+if (!(b in window)) &#123;
+    var b = 1
+&#125;
+console.log(b) // undefined
+
+/*
+测试题3:
+*/
+var c = 1
+function c(c) &#123;
+    console.log(c)
+&#125;
+console.log(c)
+//c(2) // 报错
+
+//测试3的是因为先c变量提升，再c函数提升，最后给c赋值1   所以c已经变为一个数字了
+</code></pre><h2 id="作用域和作用域链"><a href="#作用域和作用域链" class="headerlink" title="作用域和作用域链"></a>作用域和作用域链</h2><h3 id="全局作用域和函数作用域"><a href="#全局作用域和函数作用域" class="headerlink" title="全局作用域和函数作用域"></a>全局作用域和函数作用域</h3><pre><code>1. 理解
+  * 就是一块&quot;地盘&quot;, 一个代码段所在的区域
+  * 它是静态的(相对于上下文对象), 在编写代码时就确定了
+2. 分类
+  * 全局作用域
+  * 函数作用域
+  * 没有块作用域(ES6有了)
+3. 作用
+  * 隔离变量，不同作用域下同名变量不会有冲突
+</code></pre><p>【案例】</p><pre><code class="js">//没块作用域
+if (false) &#123;
+    var c = 3 //这里会变量提升到全局,如果注释这行,打印c则报错
+&#125;
+console.log(c) //undefined
+
+var a = 10,b = 20
+function fn(x) &#123;
+    var a = 100,c = 300;
+    console.log(&#39;fn()&#39;, a, b, c, x)
+    function bar(x) &#123;
+        var a = 1000,
+            d = 400
+        console.log(&#39;bar()&#39;, a, b, c, d, x) 
+    &#125;
+
+    bar(100) //1000 20 300 400 100
+    bar(200) //1000 20 300 400 200
+&#125;
+fn(10)
+</code></pre><p>【图解】</p><p><img src="/posts/f1663e45/image-20220621091643046.png" alt="image-20220621091643046"></p><h3 id="作用域与执行上下文"><a href="#作用域与执行上下文" class="headerlink" title="作用域与执行上下文"></a>作用域与执行上下文</h3><pre><code>1. 区别1
+  * 全局作用域之外，每个函数都会创建自己的作用域，作用域在函数定义时就已经确定了。而不是在函数调用时
+  * 全局执行上下文环境是在全局作用域确定之后, js代码马上执行之前创建
+  * 函数执行上下文是在调用函数时, 函数体代码执行之前创建
+2. 区别2
+  * 【作用域是静态的, 只要函数定义好了就一直存在, 且不会再变化】
+  * 执行上下文是动态的, 调用函数时创建, 函数调用结束时就会自动释放
+3. 联系
+  * 执行上下文(对象)是从属于所在的作用域
+  * 全局上下文环境==&gt;全局作用域
+  * 函数上下文环境==&gt;对应的函数使用域
+</code></pre><p>【案例】</p><pre><code class="js">var a = 10,b = 20
+function fn(x) &#123;
+    var a = 100,c = 300;
+    console.log(&#39;fn()&#39;, a, b, c, x)
+    function bar(x) &#123;
+        var a = 1000,d = 400
+        console.log(&#39;bar()&#39;, a, b, c, d, x)
+    &#125;
+
+    bar(100)
+    bar(200)
+&#125;
+fn(10)
+</code></pre><p>【图解】</p><p><img src="/posts/f1663e45/image-20220621091942968.png" alt="image-20220621091942968"></p><h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><pre><code>1. 理解
+  * 多个上下级关系的作用域形成的链, 它的方向是从下向上的(【从内到外】)
+  * 查找变量时就是沿着作用域链来查找的
+2. 查找一个变量的查找规则
+  * &lt;1&gt;在当前作用域下的执行上下文中查找对应的属性, 如果有直接返回, 否则进入&lt;2&gt;
+  * &lt;2&gt;在上一级作用域的执行上下文中查找对应的属性, 如果有直接返回, 否则进入&lt;3&gt;
+  * &lt;3&gt;再次执行2&gt;的相同操作, 直到全局作用域, 如果还找不到就抛出找不到的异常
+</code></pre><p>【案例】</p><pre><code class="js"> var a = 1
+  function fn1() &#123;
+    var b = 2
+    function fn2() &#123;
+      var c = 3
+      console.log(c) //3
+      console.log(b) //2
+      console.log(a) //1
+      //console.log(d) //error
+    &#125;
+    fn2()
+  &#125;
+  fn1()
+</code></pre><p>【图解】</p><p><img src="/posts/f1663e45/image-20220621092803164.png" alt="image-20220621092803164"></p><h3 id="面试题1"><a href="#面试题1" class="headerlink" title="面试题1"></a>面试题1</h3><pre><code class="js">var x = 10
+function fn() &#123;
+    console.log(x) //函数定义的时候作用域已经确定,且不会变化
+&#125;
+function show(f) &#123;
+    var x = 20
+    f()
+&#125;
+show(fn) //10
+</code></pre><h3 id="面试题2"><a href="#面试题2" class="headerlink" title="面试题2"></a>面试题2</h3><pre><code class="js">var fn = function() &#123;
+    console.log(fn)
+&#125;
+fn() //打印fn函数
+var obj = &#123;
+    fn2: function() &#123;
+        console.log(fn2) //全局中找不到fn2这个函数
+    &#125;
+&#125;
+//obj.fn2() //报错
+</code></pre><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="循环加事件监听问题"><a href="#循环加事件监听问题" class="headerlink" title="循环加事件监听问题"></a>循环加事件监听问题</h3><pre><code class="html">&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;00_引入&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;button&gt;测试1&lt;/button&gt;
+&lt;button&gt;测试2&lt;/button&gt;
+&lt;button&gt;测试3&lt;/button&gt;
+&lt;!--
+需求: 点击某个按钮, 提示&quot;点击的是第n个按钮&quot;
+--&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var btns = document.getElementsByTagName(&#39;button&#39;)
+  //遍历加监听
+  /*
+   * var i 是全局的,for先执行完后,再调用点击事件的时候已经是最后一个i了 
+   * btns.length是伪数组,每次都要计算,为了提高性能,可以按下面这样写
+   */
+  // for (var i = 0,length=btns.length; i &lt; length; i++) &#123;
+  //   var btn = btns[i]
+  //   btn.onclick = function () &#123;
+  //     alert(&#39;第&#39;+(i+1)+&#39;个&#39;)
+  //   &#125;
+  // &#125;
+  // console.log(i) //3
+  
+  //循环执行时,把索引加到btn上,这样就不会出现都是4了
+  // for (var i = 0,length=btns.length; i &lt; length; i++) &#123;
+  //   var btn = btns[i]
+  //   //将btn所对应的下标保存在btn上
+  //   btn.index = i
+  //   btn.onclick = function () &#123;
+  //     alert(&#39;第&#39;+(this.index+1)+&#39;个&#39;)
+  //   &#125;
+  // &#125;
+
+  //利用闭包
+  for (var i = 0,length=btns.length; i &lt; length; i++) &#123;
+    (function (j) &#123;
+      var btn = btns[j]
+      btn.onclick = function () &#123;
+        alert(&#39;第&#39;+(j+1)+&#39;个&#39;)
+      &#125;
+    &#125;)(i)
+  &#125;
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="闭包的理解"><a href="#闭包的理解" class="headerlink" title="闭包的理解"></a>闭包的理解</h3><pre><code>1. 如何产生闭包?
+  * 【当一个嵌套的内部(子)函数引用了嵌套的外部(父)函数的变量(函数)时, 就产生了闭包】
+2. 闭包到底是什么?
+  * 使用chrome调试查看
+  * 理解一: 闭包是嵌套的内部函数(绝大部分人)
+  * 理解二: 包含被引用变量(函数)的对象(极少数人)
+  * 注意: 闭包存在于嵌套的内部函数中
+3. 产生闭包的条件?
+  * 函数嵌套
+  * 内部函数引用了外部函数的数据(变量/函数)
+</code></pre><p>【案例】</p><pre><code class="js">function fun1()&#123;
+    var a = 1
+    //执行函数定义就会产生闭包(不用调用内部函数)
+    function fun2()&#123; 
+        console.log(a)
+    &#125;
+    return fun2 //新版的google要return不然看不到闭包(fun2)
+&#125;
+fun1()
+</code></pre><p><img src="/posts/f1663e45/image-20220621141020209.png" alt="image-20220621141020209"></p><h3 id="常见的闭包"><a href="#常见的闭包" class="headerlink" title="常见的闭包"></a>常见的闭包</h3><pre><code>1. 将函数作为另一个函数的返回值
+2. 将函数作为实参传递给另一个函数调用
+</code></pre><p>【案例】</p><pre><code class="js">// 1. 将函数作为另一个函数的返回值
+function fn1() &#123;
+    var a = 2
+    function fn2() &#123;
+        a++
+        console.log(a)
+    &#125;
+    return fn2
+&#125;
+var f = fn1()
+f() // 3
+f() // 4
+
+// 2. 将函数作为实参传递给另一个函数调用
+function showDelay(msg, time) &#123;
+    setTimeout(function () &#123;
+        alert(msg)
+    &#125;, time)
+&#125;
+showDelay(&#39;atguigu&#39;, 2000)
+
+//总结起来还是那句话：一个嵌套的内部(子)函数引用了嵌套的外部(父)函数的变量(函数)
+</code></pre><h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><pre><code>1. 使用函数内部的变量在函数执行完后, 仍然存活在内存中(延长了局部变量的生命周期)
+2. 让函数外部可以操作(读写)到函数内部的数据(变量/函数)
+
+问题:
+  1. 函数执行完后, 函数内部声明的局部变量是否还存在?  一般是不存在, 存在于闭包中的变量才可能存在
+  2. 在函数外部能直接访问函数内部的局部变量吗? 不能, 但我们可以通过闭包让外部操作它
+</code></pre><p>【案例】</p><pre><code class="js">function fn1() &#123;
+    var a = 2
+    function fn2() &#123;
+        a++
+        console.log(a)
+        // return a
+    &#125;
+    function fn3() &#123;
+        a--
+        console.log(a)
+    &#125;
+    return fn3
+&#125;
+var f = fn1()
+f() // 1
+f() // 0
+</code></pre><h3 id="闭包的生命周期"><a href="#闭包的生命周期" class="headerlink" title="闭包的生命周期"></a>闭包的生命周期</h3><pre><code>1. 产生: 在嵌套内部函数定义执行完时就产生了(不是在调用)
+2. 死亡: 在嵌套的内部函数成为垃圾对象时
+</code></pre><p>【案例】</p><pre><code class="js">function fn1() &#123;
+    //此时闭包就已经产生了(函数提升, 内部函数对象已经创建了)
+    var a = 2
+    function fn2 () &#123;
+        a++
+        console.log(a)
+    &#125;
+    return fn2
+&#125;
+var f = fn1()
+f() // 3
+f() // 4
+f = null //闭包死亡(包含闭包的函数对象成为垃圾对象)
+</code></pre><h3 id="闭包的应用"><a href="#闭包的应用" class="headerlink" title="闭包的应用"></a>闭包的应用</h3><p>自定义js模块</p><p>第一种定义：【myModule.js】</p><pre><code class="js">function myModule() &#123;
+  //私有数据
+  var msg = &#39;My atguigu&#39;
+  //操作数据的函数
+  function doSomething() &#123;
+    console.log(&#39;doSomething() &#39;+msg.toUpperCase())
+  &#125;
+  function doOtherthing () &#123;
+    console.log(&#39;doOtherthing() &#39;+msg.toLowerCase())
+  &#125;
+
+  //向外暴露对象(给外部使用的方法)
+  return &#123;
+    doSomething: doSomething,
+    doOtherthing: doOtherthing
+  &#125;
+&#125;
+</code></pre><p>第二种定义：【myModule2.js】 jquery就是这么写的！！！</p><pre><code class="js">//利用立即执行函数+window全局,通过myModule2.xxx 来直接调用，比第一种更方便
+(function () &#123;
+  //私有数据
+  var msg = &#39;My atguigu&#39;
+  //操作数据的函数
+  function doSomething() &#123;
+    console.log(&#39;doSomething() &#39;+msg.toUpperCase())
+  &#125;
+  function doOtherthing () &#123;
+    console.log(&#39;doOtherthing() &#39;+msg.toLowerCase())
+  &#125;
+
+  //向外暴露对象(给外部使用的方法)
+  window.myModule2 = &#123;
+    doSomething: doSomething,
+    doOtherthing: doOtherthing
+  &#125;
+&#125;)()
+</code></pre><h3 id="闭包的优缺点"><a href="#闭包的优缺点" class="headerlink" title="闭包的优缺点"></a>闭包的优缺点</h3><pre><code>1. 缺点
+  * 函数执行完后, 函数内的局部变量没有释放, 占用内存时间会变长
+  * 容易造成内存泄露
+2. 解决
+  * 能不用闭包就不用
+  * 及时释放
+</code></pre><p>【案例】</p><pre><code class="js">function fn1() &#123;
+    var arr = new Array[100000]
+    function fn2() &#123;
+        console.log(arr.length)
+    &#125;
+    return fn2
+&#125;
+var f = fn1()
+f()
+
+f = null //让内部函数成为垃圾对象--&gt;回收闭包
+</code></pre><h3 id="面试题1-1"><a href="#面试题1-1" class="headerlink" title="面试题1"></a>面试题1</h3><pre><code class="js">//代码片段一
+var name = &quot;The Window&quot;;
+var object = &#123;
+    name : &quot;My Object&quot;,
+    getNameFunc : function()&#123;
+        return function()&#123;
+            return this.name;
+        &#125;;
+    &#125;
+&#125;;
+alert(object.getNameFunc()());  //? The Window
+
+//代码片段二
+var name2 = &quot;The Window&quot;;
+var object2 = &#123;
+    name2 : &quot;My Object&quot;,
+    getNameFunc : function()&#123;
+        var that = this;
+        return function()&#123;
+            return that.name2;
+        &#125;;
+    &#125;
+&#125;;
+alert(object2.getNameFunc()()); //?  My Object
+</code></pre><h3 id="面试题2-1"><a href="#面试题2-1" class="headerlink" title="面试题2"></a>面试题2</h3><p>有难度,先了解一些</p><pre><code class="js">function fun(n,o) &#123;
+    console.log(o)
+    return &#123;
+        fun:function(m)&#123;
+            return fun(m,n)
+        &#125;
+    &#125;
+&#125;
+var a = fun(0)
+a.fun(1)
+a.fun(2)
+a.fun(3)//undefined,0,0,0
+
+var b = fun(0).fun(1).fun(2).fun(3)//undefined,0,1,2
+
+var c = fun(0).fun(1)
+c.fun(2)
+c.fun(3)//undefined,0,1,1
+</code></pre><h2 id="对象的创建方式"><a href="#对象的创建方式" class="headerlink" title="对象的创建方式"></a>对象的创建方式</h2><p>这部分内容和js基础部分重复了</p><h3 id="Object构造函数模式"><a href="#Object构造函数模式" class="headerlink" title="Object构造函数模式"></a>Object构造函数模式</h3><pre><code>方式一: Object构造函数模式
+  * 套路: 先创建空Object对象, 再动态添加属性/方法
+  * 适用场景: 起始时不确定对象内部数据
+  * 问题: 语句太多
+</code></pre><p>【案例】</p><pre><code class="js">/*
+  一个人: name:&quot;Tom&quot;, age: 12
+   */
+// 先创建空Object对象
+var p = new Object()
+p = &#123;&#125; //此时内部数据是不确定的
+// 再动态添加属性/方法
+p.name = &#39;Tom&#39;
+p.age = 12
+p.setName = function (name) &#123;
+    this.name = name
+&#125;
+
+//测试
+console.log(p.name, p.age)
+p.setName(&#39;Bob&#39;)
+console.log(p.name, p.age)
+</code></pre><h3 id="对象字面量"><a href="#对象字面量" class="headerlink" title="对象字面量"></a>对象字面量</h3><pre><code>方式二: 对象字面量模式
+  * 套路: 使用&#123;&#125;创建对象, 同时指定属性/方法
+  * 适用场景: 起始时对象内部数据是确定的
+  * 问题: 如果创建多个对象, 有重复代码
+</code></pre><p>【案例】</p><pre><code class="js">var p = &#123;
+    name: &#39;Tom&#39;,
+    age: 12,
+    setName: function (name) &#123;
+        this.name = name
+    &#125;
+&#125;
+
+//测试
+console.log(p.name, p.age)
+p.setName(&#39;JACK&#39;)
+console.log(p.name, p.age)
+
+var p2 = &#123;  //如果创建多个对象代码很重复
+    name: &#39;Bob&#39;,
+    age: 13,
+    setName: function (name) &#123;
+        this.name = name
+    &#125;
+&#125;
+</code></pre><h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><pre><code>方式三: 工厂模式
+  * 套路: 通过工厂函数动态创建对象并返回
+  * 适用场景: 需要创建多个对象
+  * 问题: 对象没有一个具体的类型, 都是Object类型
+</code></pre><p>【案例】</p><pre><code class="js">function createPerson(name, age) &#123; //返回一个对象的函数===&gt;工厂函数
+    var obj = &#123;
+        name: name,
+        age: age,
+        setName: function (name) &#123;
+            this.name = name
+        &#125;
+    &#125;
+
+    return obj
+&#125;
+
+// 创建2个人
+var p1 = createPerson(&#39;Tom&#39;, 12)
+var p2 = createPerson(&#39;Bob&#39;, 13)
+
+// p1/p2是Object类型
+
+function createStudent(name, price) &#123;
+    var obj = &#123;
+        name: name,
+        price: price
+    &#125;
+    return obj
+&#125;
+var s = createStudent(&#39;张三&#39;, 12000)
+// s也是Object
+</code></pre><h3 id="自定义构造函数模式"><a href="#自定义构造函数模式" class="headerlink" title="自定义构造函数模式"></a>自定义构造函数模式</h3><pre><code>方式四: 自定义构造函数模式
+  * 套路: 自定义构造函数, 通过new创建对象
+  * 适用场景: 需要创建多个类型确定的对象
+  * 问题: 每个对象都有相同的数据, 浪费内存
+</code></pre><p>【案例】</p><pre><code class="js">//定义类型
+function Person(name, age) &#123;
+    this.name = name
+    this.age = age
+    this.setName = function (name) &#123;
+        this.name = name
+    &#125;
+&#125;
+var p1 = new Person(&#39;Tom&#39;, 12)
+p1.setName(&#39;Jack&#39;)
+console.log(p1.name, p1.age)
+console.log(p1 instanceof Person)
+
+function Student (name, price) &#123;
+    this.name = name
+    this.price = price
+&#125;
+var s = new Student(&#39;Bob&#39;, 13000)
+console.log(s instanceof Student)
+
+var p2 = new Person(&#39;JACK&#39;, 23)
+console.log(p1, p2)
+</code></pre><h3 id="构造函数-原型的组合模式"><a href="#构造函数-原型的组合模式" class="headerlink" title="构造函数+原型的组合模式"></a>构造函数+原型的组合模式</h3><pre><code>方式六: 构造函数+原型的组合模式
+  * 套路: 自定义构造函数, 属性在函数中初始化, 方法添加到原型上
+  * 适用场景: 需要创建多个类型确定的对象
+</code></pre><p>【案例】</p><pre><code class="js">function Person(name, age) &#123; //在构造函数中只初始化一般函数
+    this.name = name
+    this.age = age
+&#125;
+Person.prototype.setName = function (name) &#123;
+    this.name = name
+&#125;
+
+var p1 = new Person(&#39;Tom&#39;, 23)
+var p2 = new Person(&#39;Jack&#39;, 24)
+console.log(p1, p2)
+</code></pre><h2 id="继承方式"><a href="#继承方式" class="headerlink" title="继承方式"></a>继承方式</h2><h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><pre><code>方式1: 原型链继承
+  1. 套路
+    1. 定义父类型构造函数
+    2. 给父类型的原型添加方法
+    3. 定义子类型的构造函数
+    4. 【创建父类型的对象赋值给子类型的原型】
+    5. 【将子类型原型的构造属性设置为子类型】
+    6. 给子类型原型添加方法
+    7. 创建子类型的对象: 可以调用父类型的方法
+  2. 关键
+    1. 子类型的原型为父类型的一个实例对象
+    
+  这种方式只实现了方法的继承
+</code></pre><p>【案例】</p><pre><code class="js">//父类型
+function Supper() &#123;
+    this.supProp = &#39;Supper property&#39;
+&#125;
+Supper.prototype.showSupperProp = function () &#123;
+    console.log(this.supProp)
+&#125;
+
+//子类型
+function Sub() &#123;
+    this.subProp = &#39;Sub property&#39;
+&#125;
+
+// 子类型的原型为父类型的一个实例对象
+Sub.prototype = new Supper() //关键1
+// 让子类型的原型的constructor指向子类型
+Sub.prototype.constructor = Sub//关键2
+Sub.prototype.showSubProp = function () &#123;
+    console.log(this.subProp)
+&#125;
+
+var sub = new Sub()
+sub.showSupperProp()
+// sub.toString()
+sub.showSubProp()
+
+console.log(sub)  // Sub
+</code></pre><p>【图解】</p><p><img src="/posts/f1663e45/image-20220621165514090.png" alt="image-20220621165514090"></p><h3 id="借用构造函数继承"><a href="#借用构造函数继承" class="headerlink" title="借用构造函数继承"></a>借用构造函数继承</h3><pre><code>方式2: 借用构造函数继承(假的)
+1. 套路:
+  1. 定义父类型构造函数
+  2. 定义子类型构造函数
+  3. 在子类型构造函数中调用父类型构造
+2. 关键:
+  1. 在子类型构造函数中通用call()调用父类型构造函数
+  
+这种方式只实现了属性的继承
+</code></pre><p>【案例】</p><pre><code class="js">function Person(name, age) &#123;
+    this.name = name
+    this.age = age
+&#125;
+function Student(name, age, price) &#123;
+    Person.call(this, name, age)  // 相当于: this.Person(name, age)
+    /*this.name = name
+    this.age = age*/
+    this.price = price
+&#125;
+
+var s = new Student(&#39;Tom&#39;, 20, 14000)
+console.log(s.name, s.age, s.price)
+</code></pre><h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><pre><code>方式3: 原型链+借用构造函数的组合继承
+1. 利用原型链实现对父类型对象的方法继承【继承方法】
+2. 利用super()借用父类型构建函数初始化相同属性【继承属性】
+</code></pre><p>【案例】</p><pre><code class="js">function Person(name, age) &#123;
+    this.name = name
+    this.age = age
+&#125;
+Person.prototype.setName = function (name) &#123;
+    this.name = name
+&#125;
+
+function Student(name, age, price) &#123;
+    //核心代码1
+    Person.call(this, name, age)  // 为了得到属性
+    
+    this.price = price
+&#125;
+//核心代码2
+Student.prototype = new Person() // 为了能看到父类型的方法
+//核心代码3
+Student.prototype.constructor = Student //修正constructor属性
+
+Student.prototype.setPrice = function (price) &#123;
+    this.price = price
+&#125;
+
+var s = new Student(&#39;Tom&#39;, 24, 15000)
+s.setName(&#39;Bob&#39;)
+s.setPrice(16000)
+console.log(s.name, s.age, s.price)
+</code></pre><h2 id="事件的轮询机制"><a href="#事件的轮询机制" class="headerlink" title="事件的轮询机制"></a>事件的轮询机制</h2><p><img src="/posts/f1663e45/image-20220725165906639.png" alt="image-20220725165906639"></p><p><img src="/posts/f1663e45/image-20220725165924721.png" alt="image-20220725165924721"></p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/f1663e45/">https://heliufang.github.io/posts/f1663e45/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动</p><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">200.8k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,s,t){$.ajax({url:e,dataType:"json",success:function(e){var a=document.getElementById(s),n=document.getElementById(t);a.addEventListener("input",function(){var a='<ul class="search-result-list">',t=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,s=e.title.trim().toLowerCase(),e=e.url;""!=s&&t.forEach(function(e,a){s.indexOf(e)<0?n=!1:s=s.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(a=a+"<li><a href='"+e+"' class='search-result-title'>"+s+"</a></li>")}),a+="</ul>",n.innerHTML=a)})}})};searchFunc("/search.json","searchTxt","searchResult")</script><script src="../js/common.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>

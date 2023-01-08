@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">40</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">7</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">44</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">200.8k</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2023-01-08 12:54:43"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/27fcdfc0/">1.react笔记</a></li><li><a href="/posts/304cd95d/">2.vue3.2新特性笔记</a></li><li><a href="/posts/f2f1536e/">3.node笔记</a></li><li><a href="/posts/73c9868e/">4.vue3笔记</a></li><li><a href="/posts/9d362be7/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E6%95%B0%E6%8D%AE%E5%BA%93SQL%E8%AF%AD%E5%8F%A5%E7%BB%83%E4%B9%A0"><span class="toc-text">MySQL数据库SQL语句练习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BB%BA%E8%A1%A8%E5%B9%B6%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">1.建表并插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%83%E4%B9%A0%E9%A2%98"><span class="toc-text">2.练习题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BB%83%E4%B9%A0%E9%A2%98%EF%BC%88%E7%AD%94%E6%A1%88%EF%BC%89"><span class="toc-text">3.练习题（答案）</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>MySQL数据库SQL语句练习</h1><p><i class="layui-icon layui-icon-survey"></i>发表于:2021-05-07 | <i class="layui-icon layui-icon-app"></i>字数:2.8k</p></div><div id="article"><h1 id="MySQL数据库SQL语句练习"><a href="#MySQL数据库SQL语句练习" class="headerlink" title="MySQL数据库SQL语句练习"></a>MySQL数据库SQL语句练习</h1><p>参考csdn博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Fenggms/article/details/83034175">MySQL（06）——SQL练习题目（部门员工表）</a></p><h2 id="1-建表并插入数据"><a href="#1-建表并插入数据" class="headerlink" title="1.建表并插入数据"></a>1.建表并插入数据</h2><p>emp（员工表）</p><pre><code class="sql">create table emp(
+    empno int primary key auto_increment,-- 员工编号
+    ename varchar(10), -- 员工姓名                                        -
+    job varchar(9),    -- 岗位
+    mgr int,     -- 直接领导编号
+    hiredate date, -- 雇佣日期，入职日期
+    sal int, -- 薪水
+    comm int,  -- 提成
+    deptno int not null, -- 部门编号
+    foreign key (deptno) references dept(deptno)
+);
+</code></pre><p>dept（部门表）</p><pre><code class="sql">create table dept(
+    deptno int primary key auto_increment, -- 部门编号
+    dname varchar(14) ,      -- 部门名字
+    loc varchar(13)   -- 地址
+) ;
+</code></pre><p>插入数据</p><pre><code>insert into dept values(10,&#39;财务部&#39;,&#39;北京&#39;);
+insert into dept values(20,&#39;研发部&#39;,&#39;上海&#39;);
+insert into dept values(30,&#39;销售部&#39;,&#39;广州&#39;);
+insert into dept values(40,&#39;行政部&#39;,&#39;深圳&#39;);
+
+insert into emp values(7369,&#39;刘一&#39;,&#39;职员&#39;,7902,&#39;1980-12-17&#39;,800,null,20);
+insert into emp values(7499,&#39;陈二&#39;,&#39;推销员&#39;,7698,&#39;1981-02-20&#39;,1600,300,30);
+insert into emp values(7521,&#39;张三&#39;,&#39;推销员&#39;,7698,&#39;1981-02-22&#39;,1250,500,30);
+insert into emp values(7566,&#39;李四&#39;,&#39;经理&#39;,7839,&#39;1981-04-02&#39;,2975,null,20);
+insert into emp values(7654,&#39;王五&#39;,&#39;推销员&#39;,7698,&#39;1981-09-28&#39;,1250,1400,30);
+insert into emp values(7698,&#39;赵六&#39;,&#39;经理&#39;,7839,&#39;1981-05-01&#39;,2850,null,30);
+insert into emp values(7782,&#39;孙七&#39;,&#39;经理&#39;,7839,&#39;1981-06-09&#39;,2450,null,10);
+insert into emp values(7788,&#39;周八&#39;,&#39;分析师&#39;,7566,&#39;1987-06-13&#39;,3000,null,20);
+insert into emp values(7839,&#39;吴九&#39;,&#39;总裁&#39;,null,&#39;1981-11-17&#39;,5000,null,10);
+insert into emp values(7844,&#39;郑十&#39;,&#39;推销员&#39;,7698,&#39;1981-09-08&#39;,1500,0,30);
+insert into emp values(7876,&#39;郭十一&#39;,&#39;职员&#39;,7788,&#39;1987-06-13&#39;,1100,null,20);
+insert into emp values(7900,&#39;钱多多&#39;,&#39;职员&#39;,7698,&#39;1981-12-03&#39;,950,null,30);
+insert into emp values(7902,&#39;大锦鲤&#39;,&#39;分析师&#39;,7566,&#39;1981-12-03&#39;,3000,null,20);
+insert into emp values(7934,&#39;木有钱&#39;,&#39;职员&#39;,7782,&#39;1983-01-23&#39;,1300,null,10);
+</code></pre><h2 id="2-练习题"><a href="#2-练习题" class="headerlink" title="2.练习题"></a>2.练习题</h2><pre><code>-- 1．列出至少有一个员工的所有部门。
+
+-- 2．列出薪金比&quot;刘一&quot;多的所有员工。
+
+-- 3．***** 列出所有员工的姓名及其直接上级的姓名。
+
+-- 4．列出受雇日期早于其直接上级的所有员工。
+
+-- 5．列出部门名称和这些部门的员工信息，同时列出那些没有员工的部门。
+
+-- 6．列出所有job为“职员”的姓名及其部门名称。
+
+-- 7．列出最低薪金大于1500的各种工作。
+
+-- 8．列出在部门 &quot;销售部&quot; 工作的员工的姓名，假定不知道销售部的部门编号。
+
+-- 9．列出薪金高于公司平均薪金的所有员工。
+
+-- 10．列出与&quot;周八&quot;从事相同工作的所有员工。
+
+-- 11．列出薪金等于部门30中员工的薪金的所有员工的姓名和薪金。
+
+-- 12．列出薪金高于在部门30工作的所有员工的薪金的员工姓名和薪金。
+
+-- 13．列出在每个部门工作的员工数量、平均工资。
+
+-- 14．列出所有员工的姓名、部门名称和工资。
+
+-- 15．列出所有部门的详细信息和部门人数。
+
+-- 16．列出各种工作的最低工资。
+
+-- 17．列出各个部门的 经理 的最低薪金。
+
+-- 18．列出所有员工的年工资,按年薪从低到高排序。 
+
+-- 19.查出emp表中薪水在3000以上（包括3000）的所有员工的员工号、姓名、薪水。
+
+-- 20.查询出所有薪水在&#39;陈二&#39;之上的所有人员信息。
+
+-- 21.查询出emp表中部门编号为20，薪水在2000以上（不包括2000）的所有员工，显示他们的员工号，姓名以及薪水，以如下列名显示：员工编号 员工名字 薪水
+
+-- 22.查询出emp表中所有的工作种类（无重复）
+
+-- 23.查询出所有奖金（comm）字段不为空的人员的所有信息。
+
+-- 24.查询出薪水在800到2500之间（闭区间）所有员工的信息。（注：使用两种方式实现and以及between and）
+
+-- 25.查询出员工号为7521，7900，7782的所有员工的信息。（注：使用两种方式实现，or以及in）
+
+-- 26.查询出名字中有“张”字符，并且薪水在1000以上（不包括1000）的所有员工信息。
+
+-- 27.查询出名字第三个汉字是“多”的所有员工信息。
+
+-- 28.将所有员工按薪水升序排序，薪水相同的按照入职时间降序排序。
+
+-- 29.将所有员工按照名字首字母升序排序，首字母相同的按照薪水降序排序。 order by convert(name using gbk) asc; 
+
+-- 30.查询出最早工作的那个人的名字、入职时间和薪水。
+
+-- 31.显示所有员工的名字、薪水、奖金，如果没有奖金，暂时显示100.
+
+-- 32.显示出薪水最高人的职位。
+
+-- 33.查出emp表中所有部门的最高薪水和最低薪水，部门编号为10的部门不显示。
+
+-- 34.删除10号部门薪水最高的员工。
+
+-- 35.将薪水最高的员工的薪水降30%。
+
+-- 36.查询员工姓名，工资和 工资级别(工资&gt;=3000 为3级，工资&gt;2000 为2级，工资&lt;=2000 为1级)
+-- 语法：case when ... then ... when ... then ... else ... end
+</code></pre><h2 id="3-练习题（答案）"><a href="#3-练习题（答案）" class="headerlink" title="3.练习题（答案）"></a>3.练习题（答案）</h2><p>答案仅供参考</p><pre><code class="sql">-- 1．列出至少有一个员工的所有部门。
+select deptno from emp group by deptno having count(*) &gt;= 1
+-- 2．列出薪金比&quot;SMITH&quot;多的所有员工。
+select * from emp where sal &gt; (select sal from emp where ename = &#39;SMITH&#39;)
+-- 3．***** 列出所有员工的姓名及其直接上级的姓名。
+select e1.*,e2.ename mgrname from emp e1 ,emp e2 where e1.mgr = e2.empno
+-- 4．列出受雇日期早于其直接上级的所有员工。
+select e1.*,e2.ename mgrname from emp e1 ,emp e2 where e1.mgr = e2.empno 
+and e1.hiredate &lt; e2.hiredate
+-- 5．列出部门名称和这些部门的员工信息，同时列出那些没有员工的部门。
+select e.*,d.dname,d.loc from emp e right join dept d on d.deptno = e.deptno
+-- 6．列出所有job为“CLERK”的姓名及其部门名称。
+select e.ename,d.dname from emp e,dept d where e.deptno = d.deptno and e.job = &#39;CLERK&#39;
+-- 7．列出最低薪金大于1500的各种工作。
+select  distinct job from emp where sal &gt; 1500
+-- 8．列出在部门 &quot;SALES&quot; 的员工的姓名，假定不知道SALES的部门编号。
+select ename from emp where deptno = (select deptno from dept where dname = &#39;SALES&#39;)
+-- 9．列出薪金高于公司平均薪金的所有员工。
+select * from emp where sal &gt; (select avg(sal) from emp)
+-- 10．列出与&quot;SCOTT&quot;从事相同工作的所有员工。
+select * from emp where job = (select job from emp where ename = &#39;SCOTT&#39;)
+-- 11．列出薪金等于部门30中员工的薪金的所有员工的姓名和薪金。（没看明白）
+
+-- 12．列出薪金高于在部门30工作的所有员工的薪金的员工姓名和薪金。
+select * from emp where sal &gt; (select max(sal) from emp where deptno = 30 ) 
+and deptno != 30
+-- 13．列出在每个部门工作的员工数量、平均工资。
+select count(*),avg(sal)
+from emp e,dept d where e.deptno = d.deptno group by d.deptno
+-- 14．列出所有员工的姓名、部门名称和工资。
+select e.ename,d.dname,e.sal from emp e join dept d on(e.deptno = d.deptno)
+-- 15．列出所有部门的详细信息和部门人数。
+select t2.deptno,t2.dname,t2.loc,ifnull(t1.empsize,0) empsize 
+from 
+(
+select d.deptno,d.dname,d.loc,count(*) empsize
+from emp e , dept d where e.deptno = d.deptno group by d.deptno
+) t1 right join dept t2 on t1.deptno = t2.deptno
+-- 16．列出各种工作的最低工资。
+select job,min(sal) from emp group by job
+-- 17．列出各个部门的 经理 的最低薪金。
+select d.deptno,min(e.sal) from emp e , dept d 
+where e.deptno = d.deptno and e.job = &#39;MANAGER&#39; group by d.deptno
+-- 18．列出所有员工的年工资,按年薪从低到高排序。 
+select ename,sal*12 year_sal from emp order by year_sal
+-- 19.查出emp表中薪水在3000以上（包括3000）的所有员工的员工号、姓名、薪水。
+select empno,ename,sal from emp where  sal &gt;= 3000
+-- 20.查询出所有薪水在&#39;ALLEN&#39;之上的所有人员信息。
+select * from emp where sal &gt; (select sal from emp where ename = &#39;ALLEN&#39;)
+-- 21.查询出emp表中部门编号为20，薪水在2000以上（不包括2000）的所有员工，显示他们的员工号，姓名以及薪水，以如下列名显示：员工编号 员工名字 薪水
+select empno,ename,sal from emp where deptno = 20 and sal &gt; 2000
+-- 22.查询出emp表中所有的工作种类（无重复）
+select distinct job from emp
+-- 23.查询出所有奖金（comm）字段不为空的人员的所有信息。
+select * from emp where comm is not null
+-- 24.查询出薪水在800到2500之间（闭区间）所有员工的信息。（注：使用两种方式实现and以及between and）
+第一种：select * from emp where sal &gt;=800 and sal&lt;=2500
+第二种：select * from emp where sal between 800 and 2500
+-- 25.查询出员工号为7521，7900，7782的所有员工的信息。（注：使用两种方式实现，or以及in）
+第一种：select * from emp where empno in (7521,7900,7782)
+第二种：select * from emp where empno = 7521 or empno = 7900 or empno = 7782
+-- 26.查询出名字中有“S”字符，并且薪水在1000以上（不包括1000）的所有员工信息。
+select * from emp where ename like &#39;%S%&#39; and sal &gt; 2000
+-- 27.查询出名字第三个字是“A”的所有员工信息。
+select * from emp where ename like &#39;__A%&#39; 
+-- 28.将所有员工按薪水升序排序，薪水相同的按照入职时间降序排序。
+select * from emp order by sal,hiredate desc
+-- 29.将所有员工按照名字首字母升序排序，首字母相同的按照薪水降序排序。 order by convert(name using gbk) asc; 
+
+-- 30.查询出最早工作的那个人的名字、入职时间和薪水。
+select * from emp where hiredate = (select min(hiredate) from emp)
+-- 31.显示所有员工的名字、薪水、奖金，如果没有奖金，暂时显示100.
+select ename,sal,ifnull(comm,100) from emp
+-- 32.显示出薪水最高人的职位。
+select job from emp where sal = (select max(sal) from emp)
+-- 33.查出emp表中所有部门的最高薪水和最低薪水，部门编号为10的部门不显示。
+select deptno,max(sal),min(sal) from emp where deptno != 10 group by deptno
+-- 34.删除10号部门薪水最高的员工。
+注意：如果子查询的语句和更新，删除在同一张表上，MY SQL会出现错误，因此要双重子查询！！！)
+delete from emp where sal = (select t.maxsal from  (select max(sal) maxsal from emp where deptno = 10) t)
+-- 35.将薪水最高的员工的薪水降30%。
+update emp set sal = (select t1.maxsal from (select max(sal) maxsal from emp) t1)*0.7
+where sal = (select t2.maxsal from (select max(sal) maxsal from emp) t2)
+-- 36.查询员工姓名，工资和 工资级别(工资&gt;=3000 为3级，工资&gt;2000 为2级，工资&lt;=2000 为1级)
+-- 语法：case when ... then ... when ... then ... else ... end
+select ename,sal,
+case 
+    when sal &lt;=2000 then &#39;1级&#39;
+    when sal &gt;2000 and sal &lt; 3000 then &#39;2级&#39;
+    when sal &gt;=3000 then &#39;3级&#39;
+    else &#39;无&#39;
+end &#39;工资级别&#39;
+from emp
+</code></pre></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/456b5050/">https://heliufang.github.io/posts/456b5050/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动</p><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">200.8k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,s,t){$.ajax({url:e,dataType:"json",success:function(e){var a=document.getElementById(s),n=document.getElementById(t);a.addEventListener("input",function(){var a='<ul class="search-result-list">',t=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,s=e.title.trim().toLowerCase(),e=e.url;""!=s&&t.forEach(function(e,a){s.indexOf(e)<0?n=!1:s=s.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(a=a+"<li><a href='"+e+"' class='search-result-title'>"+s+"</a></li>")}),a+="</ul>",n.innerHTML=a)})}})};searchFunc("/search.json","searchTxt","searchResult")</script><script src="../js/common.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>

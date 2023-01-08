@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的搬砖日记</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">40</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">7</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">44</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">200.8k</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2023-01-08 12:54:42"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/27fcdfc0/">1.react笔记</a></li><li><a href="/posts/304cd95d/">2.vue3.2新特性笔记</a></li><li><a href="/posts/f2f1536e/">3.node笔记</a></li><li><a href="/posts/73c9868e/">4.vue3笔记</a></li><li><a href="/posts/9d362be7/">5.TypeScript笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-bootstrap-table%E6%8F%92%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="toc-text">1 bootstrap-table插件介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8B%E8%BD%BD"><span class="toc-text">2 下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">3 入门案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%90%AD%E5%BB%BA%E5%B7%A5%E7%A8%8B"><span class="toc-text">3.1 搭建工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">3.2 编写测试代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%89%8D%E7%AB%AF%E5%88%86%E9%A1%B5%E5%AE%9E%E7%8E%B0"><span class="toc-text">4 前端分页实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="toc-text">5 工具栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%90%8E%E7%AB%AF%E5%88%86%E9%A1%B5"><span class="toc-text">6 后端分页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><h1>bootstrap-table插件笔记</h1><p><i class="layui-icon layui-icon-survey"></i>发表于:2021-08-01 | <i class="layui-icon layui-icon-app"></i>字数:3.3k</p></div><div id="article"><h2 id="1-bootstrap-table插件介绍"><a href="#1-bootstrap-table插件介绍" class="headerlink" title="1 bootstrap-table插件介绍"></a>1 bootstrap-table插件介绍</h2><p>一个基于bootstrap的表格渲染插件,可以极大的简化表格的渲染操作</p><h2 id="2-下载"><a href="#2-下载" class="headerlink" title="2 下载"></a>2 下载</h2><p>github：<a target="_blank" rel="noopener" href="https://github.com/wenzhixin/bootstrap-table">https://github.com/wenzhixin/bootstrap-table</a></p><p>中文官网：<a target="_blank" rel="noopener" href="https://www.bootstrap-table.com.cn/">https://www.bootstrap-table.com.cn/</a></p><p>英文官网：<a target="_blank" rel="noopener" href="https://bootstrap-table.com/">https://bootstrap-table.com/</a></p><p>下载后相关的依赖都在dist文件夹下</p><p><img src="/posts/89f146b6/image-20210801161820257.png" alt="image-20210801161820257"></p><h2 id="3-入门案例"><a href="#3-入门案例" class="headerlink" title="3 入门案例"></a>3 入门案例</h2><p>请求json数据渲染表格</p><h3 id="3-1-搭建工程"><a href="#3-1-搭建工程" class="headerlink" title="3.1 搭建工程"></a>3.1 搭建工程</h3><p><img src="/posts/89f146b6/image-20210801002706695.png" alt="image-20210801002706695"></p><p>其中<code>data.json</code>的数据文件内容如下：</p><pre><code class="json">[
+    &#123;&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;tom&quot;,&quot;sal&quot;:&quot;4000&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;18&quot;&#125;,
+    &#123;&quot;id&quot;:&quot;2&quot;,&quot;name&quot;:&quot;jerry&quot;,&quot;sal&quot;:&quot;2000&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;age&quot;:&quot;26&quot;&#125;,
+    &#123;&quot;id&quot;:&quot;3&quot;,&quot;name&quot;:&quot;heliufang&quot;,&quot;sal&quot;:&quot;8000&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;25&quot;&#125;,
+    &#123;&quot;id&quot;:&quot;4&quot;,&quot;name&quot;:&quot;lucy&quot;,&quot;sal&quot;:&quot;2500&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;age&quot;:&quot;28&quot;&#125;,
+    &#123;&quot;id&quot;:&quot;5&quot;,&quot;name&quot;:&quot;linda&quot;,&quot;sal&quot;:&quot;1000&quot;,&quot;sex&quot;:&quot;女&quot;,&quot;age&quot;:&quot;16&quot;&#125;,
+    &#123;&quot;id&quot;:&quot;6&quot;,&quot;name&quot;:&quot;jack&quot;,&quot;sal&quot;:&quot;2500&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;28&quot;&#125;
+]
+</code></pre><p>这个data.json只是在做前端分页的时候使用</p><h3 id="3-2-编写测试代码"><a href="#3-2-编写测试代码" class="headerlink" title="3.2 编写测试代码"></a>3.2 编写测试代码</h3><p>【1.入门案例.html】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;!-- 引入相关样式表 --&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap3/css/bootstrap.min.css&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap3/css/bootstrap-theme.min.css&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap-table/bootstrap-table.min.css&quot;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- 创建表格容器 --&gt;
+        &lt;table id=&quot;table&quot;&gt;&lt;/table&gt;
+        &lt;!-- 引入相关js --&gt;
+        &lt;script src=&quot;js/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap3/js/bootstrap.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap-table/bootstrap-table.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap-table/bootstrap-table-zh-CN.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //通过bootrap-table插件渲染表格
+            $(&#39;#table&#39;).bootstrapTable(&#123;
+                url: &#39;json/data.json&#39;,//请求的url
+                columns: [&#123;
+                    field: &#39;id&#39;,
+                    title: &#39;序号&#39;
+                &#125;, &#123;
+                    field: &#39;name&#39;,
+                    title: &#39;姓名&#39;
+                &#125;, &#123;
+                    field: &#39;sal&#39;,
+                    title: &#39;薪水&#39;
+                &#125;, &#123;
+                    field: &#39;sex&#39;,
+                    title: &#39;性别&#39;
+                &#125;,&#123;
+                    field: &#39;age&#39;,
+                    title: &#39;年龄&#39;
+                &#125;]
+            &#125;);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>测试结果如下：</p><p><img src="/posts/89f146b6/image-20210801004401622.png" alt="image-20210801004401622"></p><p>可以看到插件自动帮我们把数据渲染好了,是不是很方便！！！</p><h2 id="4-前端分页实现"><a href="#4-前端分页实现" class="headerlink" title="4 前端分页实现"></a>4 前端分页实现</h2><p>【2.前端分页.html】将【1.入门案例.html】中的渲染的js代码改成如下：</p><pre><code class="js">//通过bootrap-table插件渲染表格
+$(&#39;#table&#39;).bootstrapTable(&#123;
+    url: &#39;json/data.json&#39;,
+    columns: [&#123;
+        field: &#39;id&#39;,
+        title: &#39;序号&#39;
+    &#125;, &#123;
+        field: &#39;name&#39;,
+        title: &#39;姓名&#39;
+    &#125;, &#123;
+        field: &#39;sal&#39;,
+        title: &#39;薪水&#39;
+    &#125;, &#123;
+        field: &#39;sex&#39;,
+        title: &#39;性别&#39;
+    &#125;,&#123;
+        field: &#39;age&#39;,
+        title: &#39;年龄&#39;
+    &#125;],
+    striped: false,    //是否显示行间隔色
+    cache: false,     //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+    pagination: true, //是否显示分页（*）
+    sortable: true,   //是否启用排序
+    sortOrder: &quot;asc&quot;, //排序方式
+    sidePagination: &quot;client&quot;,//分页方式：client客户端分页，server服务端分页（*）
+    pageNumber: 1,//初始化加载第一页，默认第一页,并记录
+    pageSize: 2,//每页的记录行数（*）
+    pageList: [2, 5, 10, 20], //可供选择的每页的行数（*）
+    search: true,//是否显示表格搜索
+    strictSearch: false,//是否使用严格搜索模式
+    showColumns: true, //是否显示所有的列（选择显示的列）
+    showRefresh: true,//是否显示刷新按钮
+    minimumCountColumns: 2,//最少允许的列数
+    clickToSelect: true,//是否启用点击选中行
+    //height: 500,//行高，如果没有设置height属性，表格自动根据记录条数设置表格高度
+    uniqueId: &quot;id&quot;,//每一行的唯一标识，一般为主键列
+    showToggle: true,//是否显示详细视图和列表视图的切换按钮
+    cardView: false,//是否显示详细视图
+    detailView: false,//是否显示父子表
+&#125;);
+</code></pre><p>效果如下：</p><p><img src="/posts/89f146b6/image-20210801010453656.png" alt="image-20210801010453656"></p><h2 id="5-工具栏"><a href="#5-工具栏" class="headerlink" title="5 工具栏"></a>5 工具栏</h2><p>工具栏实现分为两步</p><ul><li><p>准备工具按钮容器</p></li><li><p>bootstrap-table中引用插件</p></li></ul><p>​ 加上这个配置即可：toolbar: ‘#toolbar’, &#x2F;&#x2F;工具按钮用哪个容器</p><p>案例【3.工具栏.html】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;!-- 引入相关样式表 --&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap3/css/bootstrap.min.css&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap3/css/bootstrap-theme.min.css&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap-table/bootstrap-table.min.css&quot;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- 工具栏容器 --&gt;
+        &lt;div id=&quot;toolbar&quot; class=&quot;row&quot; style=&quot;margin-left: 5px;&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-default col-md-4&quot;&gt;新增&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-info col-md-4&quot;&gt;修改&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-danger col-md-4&quot;&gt;删除&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;!-- 创建表格容器 --&gt;
+        &lt;table id=&quot;table&quot;&gt;&lt;/table&gt;
+        &lt;!-- 引入相关js --&gt;
+        &lt;script src=&quot;js/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap3/js/bootstrap.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap-table/bootstrap-table.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap-table/bootstrap-table-zh-CN.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //通过bootrap-table插件渲染表格
+            $(&#39;#table&#39;).bootstrapTable(&#123;
+                url: &#39;json/data.json&#39;,
+                columns: [&#123;
+                    field: &#39;id&#39;,
+                    title: &#39;序号&#39;
+                &#125;, &#123;
+                    field: &#39;name&#39;,
+                    title: &#39;姓名&#39;
+                &#125;, &#123;
+                    field: &#39;sal&#39;,
+                    title: &#39;薪水&#39;
+                &#125;, &#123;
+                    field: &#39;sex&#39;,
+                    title: &#39;性别&#39;
+                &#125;,&#123;
+                    field: &#39;age&#39;,
+                    title: &#39;年龄&#39;
+                &#125;],
+                toolbar: &#39;#toolbar&#39;,              //工具按钮用哪个容器
+                striped: true,                      //是否显示行间隔色
+                cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                pagination: true,                   //是否显示分页（*）
+                sortable: true,                     //是否启用排序
+                sortOrder: &quot;asc&quot;,                   //排序方式
+                sidePagination: &quot;client&quot;,           //分页方式：client客户端分页，server服务端分页（*）
+                pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录
+                pageSize: 2,                     //每页的记录行数（*）
+                pageList: [2, 5, 10, 20],        //可供选择的每页的行数（*）
+                search: true,                      //是否显示表格搜索
+                strictSearch: false,
+                showColumns: true,                  //是否显示所有的列（选择显示的列）
+                showRefresh: true,                  //是否显示刷新按钮
+                minimumCountColumns: 2,             //最少允许的列数
+                clickToSelect: true,                //是否启用点击选中行
+                //height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数设置表格高度
+                uniqueId: &quot;id&quot;,                     //每一行的唯一标识，一般为主键列
+                showToggle: false,                   //是否显示详细视图和列表视图的切换按钮
+                cardView: false,                    //是否显示详细视图
+                detailView: false,                  //是否显示父子表
+            &#125;);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>效果如下：</p><p><img src="/posts/89f146b6/image-20210801102854453.png" alt="image-20210801102854453"></p><h2 id="6-后端分页"><a href="#6-后端分页" class="headerlink" title="6 后端分页"></a>6 后端分页</h2><p>后端接口,我后端是java写的具体分页代码就不上了,这里把接口文档写出来</p><ul><li><p>请求方式：GET</p></li><li><p>URL: <a target="_blank" rel="noopener" href="http://localhost:8080/user/searchPage">http://localhost:8080/user/searchPage</a></p></li><li><p>请求参数</p></li></ul><pre><code>pageNum:查询的是哪一页
+pageSize：每页显示的条数
+name：姓名
+age：年龄
+比如：http://localhost:8080/user/searchPage?name=tom&amp;age=&amp;pageSize=2&amp;pageNum=1
+</code></pre><ul><li>响应(json)</li></ul><p>注意：这里必须是返回{“total”:””,”rows”,[]}这种格式的数据</p><p><code>total</code>是总共的记录数量</p><p><code>rows</code>是当前页查出来的记录对象数组</p><pre><code class="json">&#123;
+  &quot;total&quot;: 1,
+  &quot;rows&quot;: [
+    &#123;
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;tom&quot;,
+      &quot;age&quot;: 18,
+      &quot;gender&quot;: &quot;1&quot;,
+      &quot;createTime&quot;: &quot;2021-02-22 09:53:24&quot;
+    &#125;
+  ]
+&#125;
+</code></pre><p>【4.后端分页.html】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;!-- 引入相关样式表 --&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap3/css/bootstrap.min.css&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap3/css/bootstrap-theme.min.css&quot;/&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap-table/bootstrap-table.min.css&quot;/&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;!-- 工具栏 --&gt;
+            &lt;div id=&quot;toolbar&quot; class=&quot;row&quot; style=&quot;margin-left: 5px;&quot;&gt;
+                &lt;form class=&quot;form-inline&quot;&gt;
+                    &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;新增&lt;/button&gt;
+                     &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;姓名&lt;/label&gt;&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;nameTxt&quot;/&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label&gt;年龄&lt;/label&gt;&lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;ageTxt&quot;/&gt;
+                    &lt;/div&gt;
+                    &lt;button onclick=&quot;search()&quot; type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;查询&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;!-- 创建表格容器 --&gt;
+            &lt;table id=&quot;myTable&quot;&gt;&lt;/table&gt;
+        &lt;/div&gt;
+        &lt;!-- 引入相关js --&gt;
+        &lt;script src=&quot;js/jquery-1.11.0.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap3/js/bootstrap.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap-table/bootstrap-table.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;bootstrap-table/bootstrap-table-zh-CN.min.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+             //封装一个初始化表格的方法
+            function initTable(tableId,url,columns,query)&#123;
+                //将原有的表格销毁
+                $(&quot;#&quot;+tableId).bootstrapTable(&#39;destroy&#39;);
+                //通过bootrap-table插件渲染表格
+                var myTable = $(&#39;#&#39;+tableId).bootstrapTable(&#123;
+                    method: &#39;GET&#39;,  //请求方式（*）
+                    url: url,
+                    columns: columns,
+                    toolbar: &#39;#toolbar&#39;, //工具按钮用哪个容器
+                    striped: true, //是否显示行间隔色
+                    cache: false,//是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                    pagination: true,//是否显示分页（*）
+                    sortable: false,//是否启用排序
+                    sortOrder: &quot;asc&quot;, //排序方式
+                    sidePagination: &quot;server&quot;, //分页方式：client客户端分页，server服务端分页
+                    pageNumber: 1, //初始化加载第一页，默认第一页,并记录
+                    pageSize: 2, //每页的记录行数（*）
+                    pageList: [2, 5, 10, 20],//可供选择的每页的行数（*）
+                    search: false,//是否显示表格搜索
+                    strictSearch: false,
+                    showColumns: true,//是否显示所有的列（选择显示的列）
+                    showRefresh: true,//是否显示刷新按钮
+                    minimumCountColumns: 2,//最少允许的列数
+                    clickToSelect: true,//是否启用点击选中行
+                    //height: 500,//行高，如果没有设置height属性，表格自动根据记录条数设置表格高度
+                    uniqueId: &quot;id&quot;,//每一行的唯一标识，一般为主键列
+                    showToggle: false,//是否显示详细视图和列表视图的切换按钮
+                    cardView: false,//是否显示详细视图
+                    detailView: false,//是否显示父子表
+                    //得到查询的参数
+                    queryParams : function (params) &#123;
+                        //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
+                        /* var temp = &#123;
+                            pageSize: params.limit,                         //页面大小
+                            pageNum: (params.offset / params.limit) + 1,   //页码
+                            //sort: params.sort,      //排序列名
+                            //sortOrder: params.order //排位命令（desc，asc）
+                            //自定义的参数
+                            name:params.name, //姓名
+                            age:params.age //年龄
+                        &#125;; */
+                        if(null == query || undefined == query)&#123;
+                            query = &#123;&#125;;
+                        &#125;
+                        query.pageSize = params.limit; //页面大小
+                        query.pageNum = (params.offset / params.limit) + 1;  //页码
+                        console.log(query);
+                        return query;
+                    &#125;
+                &#125;);
+            &#125;
+            //初始化列信息
+            var columns =  [
+                &#123;
+                    field: &#39;id&#39;,
+                    title: &#39;序号&#39;
+                &#125;, 
+                &#123;
+                    field: &#39;name&#39;,
+                    title: &#39;姓名&#39;
+                &#125;, 
+                &#123;
+                    field: &#39;gender&#39;,
+                    title: &#39;性别&#39;,
+                    //formatter 为格式化函数,后端返回的性别类型: 1男2女 所以这里要处理一下再显示
+                    formatter: function(value, row, index)&#123;
+                        //console.log(value);//当前列数据
+                        //console.log(row);//当前行json数据
+                        if(value == 1)&#123;
+                            return &quot;男&quot;;
+                        &#125;
+                        return &quot;女&quot;;
+                    &#125;
+                &#125;,
+                &#123;
+                    field: &#39;age&#39;,
+                    title: &#39;年龄&#39;
+                &#125;,
+                &#123;
+                        field: &#39;&#39;,
+                        title: &#39;操作&#39;,
+                        //如果需要对列处理可以写在formatter函数中
+                        formatter: function(value,row,index)&#123;
+                            return &#39;&lt;button onclick=&quot;updateFun(&#39;+row.id+&#39;)&quot; type=&quot;button&quot; class=&quot;btn btn-warning btn-xs&quot;&gt;修改&lt;/button&gt;&amp;nbsp;&#39;
+                                   + &#39;&lt;button onclick=&quot;deleteFun(&#39;+row.id+&#39;)&quot; type=&quot;button&quot; class=&quot;btn btn-danger btn-xs&quot;&gt;删除&lt;/button&gt;&#39;
+                        &#125;
+                &#125;
+             ];
+            //点击修改按钮
+            function updateFun(data)&#123;
+                alert(&quot;修改：&quot;+data)
+                console.log(data)
+            &#125;
+            //点击删除按钮
+            function deleteFun(data)&#123;
+                alert(&quot;删除：&quot;+data)
+                console.log(data)
+            &#125;
+            
+            //点击查询按钮
+            function search()&#123;
+                var name = $(&quot;#nameTxt&quot;).val();
+                var age = $(&quot;#ageTxt&quot;).val();
+                var queryParams = &#123;name,age&#125;;
+initTable(&quot;myTable&quot;,&#39;http://localhost:8080/user/searchPage&#39;,columns,queryParams);
+            &#125;
+            //第一次进入页面加载表格
+            initTable(&quot;myTable&quot;,&#39;http://localhost:8080/user/searchPage&#39;,columns,null);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>运行效果如下：</p><p><img src="/posts/89f146b6/image-20210801160235625.png" alt="image-20210801160235625"></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/laowangc/p/8875526.html">Bootstrap-table 使用总结</a></p><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/web-panpan/p/7278367.html">BOOTSTRAP TABLE表格前台分页，点击TAB选项，重新刷新表格</a></p><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/benmumu/p/9594019.html">Bootstrap Table 中文文档（完整翻译版）</a></p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/89f146b6/">https://heliufang.github.io/posts/89f146b6/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动</p><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">200.8k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,s,t){$.ajax({url:e,dataType:"json",success:function(e){var a=document.getElementById(s),n=document.getElementById(t);a.addEventListener("input",function(){var a='<ul class="search-result-list">',t=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,s=e.title.trim().toLowerCase(),e=e.url;""!=s&&t.forEach(function(e,a){s.indexOf(e)<0?n=!1:s=s.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(a=a+"<li><a href='"+e+"' class='search-result-title'>"+s+"</a></li>")}),a+="</ul>",n.innerHTML=a)})}})};searchFunc("/search.json","searchTxt","searchResult")</script><script src="../js/common.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>
