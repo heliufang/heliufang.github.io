@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的笔记本</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">43</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">7</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">48</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">209.2k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">16.14.0</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2023-02-16 20:27:39"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/3c6138e1/">1.js的防抖和节流</a></li><li><a href="/posts/1e33e6ff/">2.pinia笔记</a></li><li><a href="/posts/27fcdfc0/">3.react笔记</a></li><li><a href="/posts/304cd95d/">4.vue3.2新特性笔记</a></li><li><a href="/posts/f2f1536e/">5.node笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%B0%E7%8A%B6"><span class="toc-text">移动端开发现状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%B8%8Epc%E7%AB%AF-web%E5%BC%80%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">移动端与pc端 web开发的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8D%E5%90%8C"><span class="toc-text">1、浏览器不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8"><span class="toc-text">2、屏幕尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F"><span class="toc-text">3、布局方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%8F%A3viewport%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-text">视口viewport（重要）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E4%B8%8E%E5%88%86%E8%BE%A8%E7%8E%87%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-text">屏幕与分辨率（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8"><span class="toc-text">屏幕尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%8F%E5%B9%95%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-text">屏幕分辨率</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%83%8F%E7%B4%A0-%E5%92%8C-css%E5%83%8F%E7%B4%A0"><span class="toc-text">物理像素 和 css像素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%80%8D%E5%9B%BE%E4%B8%8E3%E5%80%8D%E5%9B%BE%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-text">2倍图与3倍图（重要）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98"><span class="toc-text">移动端调试问题</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#JDM"><span class="toc-text">JDM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E6%90%AD%E5%BB%BA"><span class="toc-text">项目结构搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">样式初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E7%89%88%E5%BF%83"><span class="toc-text">自适应版心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E5%A4%B4%E9%83%A8"><span class="toc-text">京东头部</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E8%BD%AE%E6%92%AD%E5%9B%BE"><span class="toc-text">京东轮播图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E5%AF%BC%E8%88%AA"><span class="toc-text">京东导航</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E5%BF%AB%E6%8A%A5"><span class="toc-text">京东快报</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E7%A7%92%E6%9D%80"><span class="toc-text">京东秒杀</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%92%E6%9D%80%E5%A4%B4%E9%83%A8"><span class="toc-text">秒杀头部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%92%E6%9D%80%E4%B8%BB%E4%BD%93"><span class="toc-text">秒杀主体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E4%B8%BB%E4%BC%9A%E5%9C%BA"><span class="toc-text">京东主会场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%95%86%E5%93%81%E6%A8%A1%E5%9D%97"><span class="toc-text">商品模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB%E9%A1%B5"><span class="toc-text">商品分类页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E9%A1%B5%E5%A4%B4%E9%83%A8"><span class="toc-text">分类页头部</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E9%A1%B5%E4%B8%BB%E4%BD%93%E9%83%A8%E5%88%86"><span class="toc-text">分类页主体部分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#touch%E4%BA%8B%E4%BB%B6"><span class="toc-text">touch事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87touch%E6%BB%91%E5%8A%A8%E8%BD%AE%E6%92%AD%E5%9B%BE"><span class="toc-text">通过touch滑动轮播图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Etap%E4%BA%8B%E4%BB%B6%E4%B8%8Eclick%E4%BA%8B%E4%BB%B6"><span class="toc-text">关于tap事件与click事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#zepto%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-text">zepto框架介绍（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#zepto%E4%B8%8Ejquery%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">zepto与jquery的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zepto%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">zepto的基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zepto%E6%89%8B%E5%8A%BF%E4%BA%8B%E4%BB%B6"><span class="toc-text">zepto手势事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BFC%E7%9B%92%E5%AD%90"><span class="toc-text">BFC盒子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-text">BFC 块级格式化上下文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A6%E5%8F%91-BFC"><span class="toc-text">如何触发 BFC</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80"><span class="toc-text">圣杯布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0"><span class="toc-text">圣杯布局实现</span></a></li></ol></li></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">web前端</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">移动web</span></span></p><h1>移动web开发</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2020-12-11 10:25:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 5.7k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 28分钟</span></p></div><div id="article"><h2 id="移动端开发现状"><a href="#移动端开发现状" class="headerlink" title="移动端开发现状"></a>移动端开发现状</h2><ul><li>移动web 开发指的是需要适配移动设备的网页开发</li><li>移动web开发与pc端web开发没有本质的区别，使用的还是HTML&#x2F;CSS&#x2F;JavaScript的技术</li></ul><h2 id="移动端与pc端-web开发的区别"><a href="#移动端与pc端-web开发的区别" class="headerlink" title="移动端与pc端 web开发的区别"></a>移动端与pc端 web开发的区别</h2><h3 id="1、浏览器不同"><a href="#1、浏览器不同" class="headerlink" title="1、浏览器不同"></a>1、浏览器不同</h3><p>移动端的浏览器与pc端不同</p><pre><code class="javascript">谷歌浏览器 苹果浏览器、 UC浏览器 QQ浏览器  百度手机浏览器  360安全浏览器  搜狗浏览器  猎豹浏览器等
+国内的手机浏览器都是根据webkit内核修改过来的，国内没有自主研发的内核，国内的操作系统也是基于Android系统修改的。
+
+因此在移动端，css3属性只需要加webkit前缀即可。
+</code></pre><h3 id="2、屏幕尺寸"><a href="#2、屏幕尺寸" class="headerlink" title="2、屏幕尺寸"></a>2、屏幕尺寸</h3><p>移动端设备尺寸不一样(尺寸非常多，碎片化很严重)</p><pre><code class="javascript">Android： 320*480 480*800  540*960 720*1280 1080*1920 2k屏 4k屏
+iphpne：  640*960 640*1136 750*1334 1242*2208
+</code></pre><p>让页面在不同手机屏幕中进行适配，宽度自适应， 基于手机全屏进行布局；</p><p>PC: 要适配所有pc端页面用版心， pc基于版心进行布局的</p><h3 id="3、布局方式"><a href="#3、布局方式" class="headerlink" title="3、布局方式"></a>3、布局方式</h3><p>移动端的特点</p><ul><li>手机端的兼容性问题比PC端小很多，因为手机端的浏览器版本比较新（对H5的支持比较好）</li><li>手机端屏幕比较小，能够放的内容比较少。</li></ul><p>问题：布局的时候怎么解决屏幕大小不一致的问题？</p><ul><li>PC端，固定版心(980px,1200px)，让所有分辨率的电脑的版心都是一样的，比如京东</li><li>移动端：移动端无法设置版心，因为移动端的设备屏幕本身就小，设置版心不合适。因此移动端大多会采用流式布局（百分比布局）</li></ul><p><strong>流式布局，也叫百分比布局，是移动端开发中经常使用的布局方式之一。</strong></p><p>流式布局的特征：</p><ul><li><strong>宽度自适应，高度固定</strong>，并不是百分百还原设计图</li></ul><p>流式布局无法做到所有设备都非常逼真的还原设计图，有些设备显示效果不是特别的好看。但是流式布局是移动端非常常用的一种布局方式，比较简单，需要掌握（携程、京东)</p><p>【百分比布局】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .box &#123;
+            width: 80%;
+            height: 200px;
+            border: 1px solid #000;
+            margin:100px auto;
+        &#125;
+
+        .box div &#123;
+            float: left;    
+            width: 33.33%;
+            height: 200px;
+            background-color: #f99;
+        &#125;
+
+        .box div:nth-child(2) &#123;
+            background-color: deepskyblue;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+      &lt;!--  百分比布局  流式布局  ：用于宽度自适应(在区间变换不大情况) 高度固定 一种布局方式 
+            百分比布局不适合用于高度自适应的布局  
+            宽高都自适应： rem单位  
+    --&gt;
+      &lt;div class=&quot;box&quot;&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="视口viewport（重要）"><a href="#视口viewport（重要）" class="headerlink" title="视口viewport（重要）"></a>视口viewport（重要）</h2><pre><code class="javascript">问题：一个电脑上的网站，在手机端访问，效果是什么样的？
+
+1. 在手机端，html的大小都是980px，为什么？
+这主要是历史原因导致的，因为在移动设备刚流行的时候，网站大多都是pc端的，pc端的页面宽度一般都比较大，
+移动设备的宽度比较小，如果pc端页面直接在移动端显示的话，页面就会错乱。
+为了解决这个问题，移动端html的大小直接就定死成了980px（因为早起的pc端网站版心就是980px居多）。
+
+
+2. 视口
+在pc端，html的大小默认是继承了浏览器的宽度，即浏览器多宽，html的大小就是多宽，
+但是在移动端，多出来了一个视口的概念（乔布斯）,视口是移动端一个虚拟的布局区域，
+视口的宽度默认定死了980px，因此html的宽度默认就是980px，视口的特点是能够根据设备的宽度进行缩放。
+
+
+3. 视口设置。
+对于现在的移动端页面来说，视口默认为980px肯定不合适，因为设备宽度不够的话，视口会进行缩放，导致页面展示效果不好看。
+</code></pre><p><strong>视口参数设置</strong></p><pre><code class="javascript">//width 设置视口的宽度
+//width=device-width   设置视口宽度为设备的宽度（常用）。
+
+//initial-scale 设置初始缩放比例
+//initial-scale=1.0  表示不缩放
+
+//user-scalable 设置是否允许用户缩放
+//user-scalable=no  不允许用户缩放
+
+//maximum-scale  设置允许的最大缩放比例
+//maximum-scale=1.0  可以不设置，因为都禁止用户缩放了。
+
+//minimum-scale 设置允许最小缩放比
+//minimum-scale=1.0  不设置，因为都禁用用户缩放了。
+
+
+//标准写法：
+//快捷键：  meta:vp + tab键
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0&quot;&gt;
+</code></pre><h2 id="屏幕与分辨率（了解）"><a href="#屏幕与分辨率（了解）" class="headerlink" title="屏幕与分辨率（了解）"></a>屏幕与分辨率（了解）</h2><blockquote><p>移动设备与PC设备最大的差异在于屏幕，这主要体现在屏幕尺寸和屏幕分辨率两个方面。</p></blockquote><h3 id="屏幕尺寸"><a href="#屏幕尺寸" class="headerlink" title="屏幕尺寸"></a>屏幕尺寸</h3><p>通常我们所指的屏幕<code>尺寸</code>，实际上指的是屏幕对角线的长度（一般用英寸来度量）如下图所示：</p><p><code>1英寸 = 2.54厘米</code></p><p><img src="/posts/2ea1110f/%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8.png"></p><h3 id="屏幕分辨率"><a href="#屏幕分辨率" class="headerlink" title="屏幕分辨率"></a>屏幕分辨率</h3><p>分辨率则一般用像素来度量，表示屏幕水平和垂直方向的像素数，例如1920*1080指的是屏幕垂直方向和水平方向分别有1920和1080个像素点而构成，如下图所示,相同尺寸下分辨率越高，越清晰。</p><p><img src="/posts/2ea1110f/%E5%B1%8F%E5%B9%95%E5%88%86%E8%BE%A8%E7%8E%87.jpg"></p><p><code>像素</code>：指计算机显示设备中的最小单位，即一个像素点的大小。</p><p>像素是相对长度单位，在屏幕分辨率越高的设备，像素点越小，屏幕分辨率越低，像素点越大。</p><p><img src="/posts/2ea1110f/ppi%E5%AF%B9%E6%AF%94.png"></p><h2 id="物理像素-和-css像素"><a href="#物理像素-和-css像素" class="headerlink" title="物理像素 和 css像素"></a>物理像素 和 css像素</h2><blockquote><p>物理像素</p></blockquote><p>设备像素，在同一个设备上，它的物理像素是固定的，这是厂商在出厂时就设置好了的，即一个设备的分辨率是固定的。</p><blockquote><p>css像素</p></blockquote><p>逻辑像素，viewport中的一个小方格，CSS样式代码中使用的是逻辑像素。如果在一个设备中，物理像素与逻辑像素相等，将不会产生任何问题。但是，在iphone 4中，物理像素是640px<em>960px，而逻辑像素数为320</em>px*480px。因此，需要使用大约4个物理像素来显示一个CSS像素。</p><blockquote><p>像素比</p></blockquote><p>物理像素与逻辑像素之间的比例。当像素比为1:1时，使用1个物理像素显示1个逻辑像素；当像素比为2:1时，使用4个物理像素显示1个逻辑像素。</p><p>获取设备的像素比</p><pre><code class="javascript">window.devicePixelRatio  //物理像素与CSS像素的比值
+</code></pre><h2 id="2倍图与3倍图（重要）"><a href="#2倍图与3倍图（重要）" class="headerlink" title="2倍图与3倍图（重要）"></a>2倍图与3倍图（重要）</h2><blockquote><p>以后同学在工作的过程中，从UI那拿到的设计图通常都是640的设计图或者是750的设计图.</p></blockquote><p>把更多的像素点压缩至一块屏幕里，从而达到更高的分辨率并提高屏幕显示的细腻程度。</p><p><img src="/posts/2ea1110f/2x.png"></p><p>设备像素比devicePixelRatio：即像素的压缩比例</p><p><strong>结论 ：在移动端为了在高清屏手机上显示得更加细腻，通常会使用更大的图片，比如2倍图或者3倍图。</strong></p><p>【演示：2倍图】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div&#123;
+            width: 180px;
+            height: 180px;
+            /* background-color: pink; */
+            background: url(./img/180x180.jpg) no-repeat;
+        &#125;
+        /*设计师一般会给2倍图或者三倍图,所以下面这个需要压缩*/
+        div:nth-child(2)&#123;
+            background: url(./img/360x360.jpg) no-repeat;
+            background-size: 180px 180px;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="移动端调试问题"><a href="#移动端调试问题" class="headerlink" title="移动端调试问题"></a>移动端调试问题</h2><ol><li>模拟器调试</li><li>真机调试：使用手机进行访问。</li></ol><p>手机设备五花八门，屏幕尺寸都大不一样，尤其是安卓端，给我们的页面预览带来了一些麻烦。在实际工作中，作为开发者不可能有足够的设备让我们去测试（<strong>除了测试部门</strong> ），即便有，效率也特别的低，因此开发者一般都是通过浏览器的手机模拟器来模拟不同的设备。</p><h1 id="JDM"><a href="#JDM" class="headerlink" title="JDM"></a>JDM</h1><h2 id="项目结构搭建"><a href="#项目结构搭建" class="headerlink" title="项目结构搭建"></a>项目结构搭建</h2><h2 id="样式初始化"><a href="#样式初始化" class="headerlink" title="样式初始化"></a>样式初始化</h2><pre><code class="css">@charset &quot;utf-8&quot;;
+
+/* css reset 样式重置*/
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, menu, nav, section span&#123;
+  margin: 0;
+  padding: 0;
+  /*所有盒子布局采用内减模式*/
+  -webkit-box-sizing: border-box;
+  /* 兼容-webkit-内核浏览器 */
+  box-sizing: border-box;
+  /*去除移动端点击高亮颜色*/
+  -webkit-tap-highlight-color: transparent;
+&#125;
+
+body &#123;
+  font-size: 14px;
+  color: #333;
+  font-family: &#39;Microsoft YaHei&#39;, Arial, sans-serif;
+  /*后面的都是 备胎*/
+&#125;
+ol,
+ul &#123;
+  list-style: none;
+&#125;
+a,
+a:hover &#123;
+  text-decoration: none;
+  color: #333;
+&#125;
+input &#123;
+  border: none;
+  outline: none;
+  /* 在 移动端浏览器 表单可能会出现 阴影 高亮 3d效果,需要清除*/
+  -webkit-appearance: none;
+&#125;
+
+
+/*commom css 公共样式*/
+.pull-left &#123;
+  float: left;
+&#125;
+.pull-right &#123;
+  float: right;
+&#125;
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after &#123;
+  content: &quot;&quot;;
+  display: block;
+  clear: both;
+  line-height: 0;
+  visibility: hidden;
+  height: 0;
+&#125;
+</code></pre><h2 id="自适应版心"><a href="#自适应版心" class="headerlink" title="自适应版心"></a>自适应版心</h2><p>.index.less</p><pre><code class="less"> .layout&#123;
+     width: 100%;
+     height: 1000px;
+     min-width: 320px;
+     max-width: 640px;
+     background-color: pink;
+     margin:0 auto;
+ &#125;
+</code></pre><h2 id="京东头部"><a href="#京东头部" class="headerlink" title="京东头部"></a>京东头部</h2><ul><li>两端固定中间自适应：使用padding+定位实现（最佳方案兼容性比较好）</li><li>定位后元素没有宽度需要内容撑开，所以需要设置宽度</li><li>display:fixed相对浏览器的宽度，所以需要设置最小宽度</li><li>精灵图设置：</li></ul><pre><code class="css">width: 56px;/*75px高度和宽度为图片缩小后的高度和宽度*/
+height: 21px;/*40px*/
+left:10px;
+top:10px;
+background: url(../images/jd-sprites.png) no-repeat;
+background-size: 200px 200px;/*2倍图，图片大小先缩小一半*/
+background-position: 0 -109px;/*写图片坐标的时候这里为负数*/
+</code></pre><ul><li>滚动变色</li></ul><pre><code>1.滚动事件：window.onscroll= function()&#123;&#125;
+2.获取滚动的长度：window.pageYOffset
+</code></pre><p>代码：</p><pre><code class="js">// 2-头部滚动变色 
+// 头部盒子颜色透明度 和页面滚动高度成正比 
+// 用页面卷曲高度 和 指定的值做对比， 比值设置为头部透明度  400
+function setHeader() &#123;
+    var header = document.querySelector(&#39;.jd-header&#39;);
+    //指定目标高度
+    var target = 360;
+    //监听页面滚动事件
+    window.onscroll = function () &#123;
+        //获取页面卷曲的高度 
+        var top = window.pageYOffset;
+        // console.log(top);       
+        var value = top / target;
+        //透明度最大为0.8
+        if (value &gt; 0.8) &#123;
+            value = 0.8;
+        &#125;
+        console.log(value);
+        // 设置颜色
+        header.style.background = &#39;rgba(222, 24, 27, &#39; + value + &#39;)&#39;;
+    &#125;
+
+&#125;
+</code></pre><p>各种高:</p><ul><li>clientHeight：元素客户区的大小，指的是元素内容及其边框所占据的空间大小（经过实践取出来的大多是视口大小）</li><li>scrollHeight: 滚动大小，指的是包含滚动内容的元素大小（元素内容的总高度）</li><li>offsetHeight: 偏移量，包含元素在屏幕上所用的所有可见空间（包括所有的内边距滚动条和边框大小，不包括外边距</li></ul><h2 id="京东轮播图"><a href="#京东轮播图" class="headerlink" title="京东轮播图"></a>京东轮播图</h2><p><img src="/posts/2ea1110f/1607503954234.png" alt="1607503954234"></p><p>轮播图：ul&gt;li&gt;a&gt;img</p><p>ul的宽度设置大一点：width：1000%</p><p>li宽度设置为十分之一：width：10%</p><p>img宽度：100% 这样可以是响应式了</p><p>小圆点：ol&gt;li 利用子绝父相实现。</p><p>dom类操作：</p><p>​ dom.classList.add(“类名”)</p><p>​ dom.classList.remove(“类名”)</p><p>获取元素的宽度：var w &#x3D; dom.offsetWidth;</p><p>思路：</p><p>​ 让ul每次移动一个li宽度即可,正好是banner这个大div的宽度</p><p>​ 小圆点同步的下标要比index小1；</p><pre><code class="js">function banner() &#123;
+   var banner = document.querySelector(&quot;.jd-banner&quot;);
+   var ul = banner.querySelector(&quot;ul&quot;);
+   var points = banner.querySelectorAll(&quot;ol li&quot;);
+   var w = banner.offsetWidth;//父盒子的宽度就是ul每次移动的距离,dom.offsetWidth获取dom的宽度
+   var index = 1;
+   var timer = setInterval(function()&#123;
+       index ++;
+       var x = -index * w;
+       ul.style.transform = &#39;translateX(&#39;+x+&#39;px)&#39;;
+       ul.style.transition = &#39;transform 0.4s&#39;;
+   &#125;,1000)
+   //每次过渡结束判断index
+   ul.addEventListener(&quot;transitionend&quot;,function()&#123;
+        if(index &gt;= 9)&#123;
+            index = 1;
+            //移除过渡
+            ul.style.transition = &#39;none&#39;;
+            var x = -index * w;
+            ul.style.transform = &#39;translateX(&#39;+x+&#39;px)&#39;;
+        &#125;
+        console.log(index);
+        //小圆点同步
+        points.forEach(function(v,i)&#123;
+            //移除所有样式
+            v.classList.remove(&quot;current&quot;);
+        &#125;);
+        points[index - 1].classList.add(&quot;current&quot;);
+   &#125;);
+   
+&#125;
+</code></pre><h2 id="京东导航"><a href="#京东导航" class="headerlink" title="京东导航"></a>京东导航</h2><ul><li>ul &gt; li &gt; a &gt;(img和p)</li><li>图片是2倍图,所以可以给img标签设置宽度</li><li>每行显示5个,自适应，所以可以设置每个li的宽度为20%</li><li>利用浮动让li在一行显示。</li><li>利用text-align：center让li中的a标签居中</li></ul><h2 id="京东快报"><a href="#京东快报" class="headerlink" title="京东快报"></a>京东快报</h2><ul><li>两端用padding撑开，再通过定位去设置两端的元素样式</li><li>中间是ul li，并用大div把ul包裹起来，大div的的高度固定，ul不设高度由内容撑开，此时用overflow隐藏</li><li>js定时器:var timer &#x3D; setInterval(function(){},1000); 清除clearInterval(timer )</li><li>监听过渡结束(<strong>transitionend</strong>)：ul.addEventListener(‘transitionend’, function(){});</li></ul><p>实现思路：让ul每隔一段时间向上滚动,并加上动画实现过渡。每次记录index的值</p><pre><code class="js">function news() &#123;
+    var ul = document.querySelector(&quot;.jd-news .list ul&quot;);
+    var li = ul.querySelectorAll(&quot;li&quot;);
+    var index = 0;
+    setInterval(function()&#123;
+        index ++;
+        var y = -index * 30;
+        ul.style.transform = &#39;translateY(&#39;+y+&#39;px)&#39;;
+        ul.style.transition = &#39;transform 0.5s&#39;;
+    &#125;,2000);
+    //过渡结束监听
+    ul.addEventListener(&quot;transitionend&quot;,function()&#123;
+        if(index &gt;= li.length-1)&#123;
+            index = 0;
+             //ul瞬间调回第一个进行重合 
+            ul.style.transform = &#39;translateY(0)&#39;;
+             //移除过渡效果
+            ul.style.transition = &#39;none&#39;;
+        &#125;
+    &#125;)
+&#125;
+</code></pre><h2 id="京东秒杀"><a href="#京东秒杀" class="headerlink" title="京东秒杀"></a>京东秒杀</h2><h3 id="秒杀头部"><a href="#秒杀头部" class="headerlink" title="秒杀头部"></a>秒杀头部</h3><ul><li>整体使用浮动布局</li><li>倒计时样式使用5个span标签实现</li></ul><h3 id="秒杀主体"><a href="#秒杀主体" class="headerlink" title="秒杀主体"></a>秒杀主体</h3><ul><li>ul&gt;li&gt;a&gt;(img p p)</li><li>宽度设置为880px，这样利用overflow就可以有滚动条效果</li></ul><h2 id="京东主会场"><a href="#京东主会场" class="headerlink" title="京东主会场"></a>京东主会场</h2><p>a&gt;img 三个图片宽度设置为33.33% 左浮动即可。</p><h2 id="商品模块"><a href="#商品模块" class="headerlink" title="商品模块"></a>商品模块</h2><p>第一排图片：宽度33.33%,第二排和第三排都为50%</p><h2 id="商品分类页"><a href="#商品分类页" class="headerlink" title="商品分类页"></a>商品分类页</h2><p><img src="/posts/2ea1110f/1608519832257.png" alt="1608519832257"></p><h3 id="分类页头部"><a href="#分类页头部" class="headerlink" title="分类页头部"></a>分类页头部</h3><p>中间自适应两端固定，使用bfc实现</p><p>两端的按钮使用精灵图+背景图片原点、背景图片定位、背景图片裁切实现</p><h3 id="分类页主体部分"><a href="#分类页主体部分" class="headerlink" title="分类页主体部分"></a>分类页主体部分</h3><p>主体部分的布局使用bfc实现</p><p>滑动使用IScroll插件实现，原理是大盒子很小，大盒子里面的小盒子很长。</p><h1 id="touch事件"><a href="#touch事件" class="headerlink" title="touch事件"></a>touch事件</h1><p>移动端新增了4个与手指触摸相关的事件。</p><pre><code class="javascript">//touchstart:手指放到屏幕上时触发
+//touchmove:手指在屏幕上滑动式触发（会触发多次）
+//touchend:手指离开屏幕时触发
+//touchcancel(了解):系统取消touch事件的时候触发,比如电话
+</code></pre><p>每个触摸事件被触发后，会生成一个event对象，event对象中<code>changedTouches</code>会记录手指滑动的信息。</p><pre><code class="javascript">e.touches;//当前屏幕上的手指
+e.targetTouches;//当前dom元素上的手指。(重要)
+e.changedTouches;//触摸时发生改变的手指。(重要) 触摸结束后只有此对象可以获取相关信息
+</code></pre><p>这些列表里的每次触摸由touch对象组成，touch对象里包含着触摸信息，主要属性如下</p><pre><code class="javascript">clientX / clientY: //触摸点相对浏览器窗口的位置
+pageX / pageY:     //触摸点相对于页面的位置
+</code></pre><p>【touch小例子】</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        *&#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+        div&#123;
+            width: 100%;
+            height: 200px;
+            background-color: pink;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    var div = document.querySelector(&quot;div&quot;);
+    var distance = 0;
+    var startX = 0;
+    var endX = 0;
+    div.addEventListener(&quot;touchstart&quot;,function(e)&#123;//开始触摸
+        console.log(&quot;start:&quot;+e.changedTouches[0].clientX);
+        startX = e.changedTouches[0].clientX;
+    &#125;); 
+    div.addEventListener(&quot;touchmove&quot;,function(e)&#123;//滑动
+        //console.log(&quot;move:&quot;+e.changedTouches[0].clientX);
+    &#125;);
+    div.addEventListener(&quot;touchend&quot;,function(e)&#123;//触摸结束
+        console.log(&quot;end:&quot;+e.changedTouches[0].clientX);
+        endX = e.changedTouches[0].clientX;
+        distance = endX - startX;
+        if(distance &gt; 0)&#123;
+            console.log(&quot;右滑&quot;);
+        &#125;
+        //distance == 0 说明没有滑动
+        if(distance &lt; 0)&#123;
+            console.log(&quot;左滑&quot;);
+        &#125;
+    &#125;);
+    
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><h2 id="通过touch滑动轮播图"><a href="#通过touch滑动轮播图" class="headerlink" title="通过touch滑动轮播图"></a>通过touch滑动轮播图</h2><pre><code class="javascript">//1. 给ul注册touch相关的三个事件（注意清除浮动，不然触发不到touchmove事件）
+//2. 在touchstart中
+    //1. 记录开始的位置
+    //2. 清除定时器
+//2. 在touchmove中
+    //1. 记录移动的距离
+    //2. 清除过渡
+    //3. 让ul跟着移动
+//3. 在touchend中
+    //1. 记录移动的距离
+    //2. 判断移动距离是否超过1/3屏，判断上一屏还是下一屏，或者是吸附
+    //3. 添加过渡
+    //4. 执行动画
+    //5. 开启定时器
+
+//4. 优化：快速滑动的实现逻辑
+
+//5. 优化：重置大小时轮播图错位。
+</code></pre><h1 id="关于tap事件与click事件"><a href="#关于tap事件与click事件" class="headerlink" title="关于tap事件与click事件"></a>关于tap事件与click事件</h1><ol><li>click事件在pc端非常用，但是在移动端会有300ms左右的延迟，比较影响用户的体验，300ms用于判断双击还是长按事件，只有当没有后续的的动作发生时，才会触发click事件</li><li>tap事件只要轻触了，就会触发，体验更好。</li></ol><pre><code class="javascript">/*
+ * 由于移动端的点击事件click 有300左右的延迟， 用户体验有待提升
+ *  希望 能用touch事件封装一个相应速度更快的 点击事件 tap
+ *
+ *   touch判断为点击事件的条件：
+ *
+ *   1、触屏开始 到触屏结束  手指没有移动
+ *   2、接触屏幕的时间 小于指定的值 150ms *
+ *
+ *   满足以上两个条件 可以认为是点击事件触发了
+ * */
+
+
+/*
+*  插件功能：
+*   给指定的元素 绑定优化后的移动的点击事件--- tap事件
+*   参数：
+*   obj:要绑定优化后点击事件的元素
+*   callback: 当点击事件触发 执行什么操作
+* */
+
+var itcast=&#123;
+    tap:function(obj,callback)&#123;
+        if(typeof obj==&#39;object&#39;)&#123; //判断传入的obj是否为对象
+
+            var startTime=0;//记录起始事件
+            var isMove=false; //记录是否移动
+
+            obj.addEventListener(&#39;touchstart&#39;,function()&#123;
+                startTime=Date.now(); //获取当前时间戳
+            &#125;);
+
+            obj.addEventListener(&#39;touchmove&#39;,function()&#123;
+               isMove=true; //记录移动
+
+            &#125;);
+
+            obj.addEventListener(&#39;touchend&#39;,function(e)&#123;
+                //判断是否满足点击的条件
+                if(!isMove&amp;&amp;Date.now()-startTime&lt;150)&#123;
+                    //tap点击事件触发
+                    //if(callback)&#123;
+                    //    callback();
+                    //&#125;
+                    callback&amp;&amp;callback(e);
+                &#125;
+
+                //数据重置
+                isMove=false;
+                startTime=0;
+            &#125;);
+        &#125;
+    &#125;
+&#125;
+</code></pre><h1 id="zepto框架介绍（了解）"><a href="#zepto框架介绍（了解）" class="headerlink" title="zepto框架介绍（了解）"></a>zepto框架介绍（了解）</h1><blockquote><p><strong>Zepto</strong>是一个轻量级的<strong>针对现代高级浏览器的JavaScript库， <strong>它与jquery</strong>有着类似的api</strong>。 如果你会用jquery，那么你也会用zepto。</p></blockquote><p><a target="_blank" rel="noopener" href="https://github.com/madrobby/zepto">github地址</a></p><p><a target="_blank" rel="noopener" href="http://www.css88.com/doc/zeptojs_api/">中文文档</a></p><h2 id="zepto与jquery的区别"><a href="#zepto与jquery的区别" class="headerlink" title="zepto与jquery的区别"></a>zepto与jquery的区别</h2><ul><li>jquery针对pc端，主要用于解决浏览器兼容性问题，zepto主要针对移动端。</li><li>zepto比jquery轻量，文件体积更小</li><li>zepto封装了一些移动端的手势事件</li></ul><h2 id="zepto的基本使用"><a href="#zepto的基本使用" class="headerlink" title="zepto的基本使用"></a>zepto的基本使用</h2><p>zepto的使用与jquery基本一致，zepto是分模块的，需要某个功能，就需要引入某个zepto的文件。</p><pre><code class="javascript">&lt;script src=&quot;zepto/zepto.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;zepto/event.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;zepto/fx.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+
+  $(function () &#123;
+    $(&quot;.box&quot;).addClass(&quot;demo&quot;);
+
+    $(&quot;button&quot;).on(&quot;click&quot;, function () &#123;
+      $(&quot;.box&quot;).animate(&#123;width:500&#125;, 1000);
+    &#125;);
+  &#125;);
+
+
+&lt;/script&gt;
+</code></pre><h2 id="zepto手势事件"><a href="#zepto手势事件" class="headerlink" title="zepto手势事件"></a>zepto手势事件</h2><p>zepto中根据<code>touchstart touchmove touchend</code>封装了一些常用的手势事件</p><pre><code class="javascript">tap   // 轻触事件,用于替代移动端的click事件，因为click事件在老版本中会有300ms的延迟
+    //穿透的问题    fastclick:
+swipe //手指滑动时触发
+swipeLeft  //左滑
+swipeRight  //右滑
+swipeUp    //上滑
+swipeDown   //下滑
+</code></pre><h1 id="BFC盒子"><a href="#BFC盒子" class="headerlink" title="BFC盒子"></a>BFC盒子</h1><h2 id="BFC-块级格式化上下文"><a href="#BFC-块级格式化上下文" class="headerlink" title="BFC 块级格式化上下文"></a>BFC 块级格式化上下文</h2><p>Block Formatting Context: 页面上一个隔离的独立渲染区域</p><p>触发成为 BFC 盒子的特点:</p><ol><li><p>触发了 BFC 的盒子, 就成为了页面上的一个隔离的独立容器, 容器里面的<strong>子元素不会在布局上影响到外面的元素</strong></p><p>应用: 解决塌陷问题, 清除浮动</p></li><li><p>触发了BFC的普通盒子, 不会与浮动元素重叠</p><p>应用: 圣杯布局, 左侧固定右侧自适应</p></li></ol><h3 id="如何触发-BFC"><a href="#如何触发-BFC" class="headerlink" title="如何触发 BFC"></a>如何触发 BFC</h3><ul><li>float: left; float: right;</li><li>overflow的值不为visible。</li><li>position的值absolute, fixed</li><li>display的值为table, table-cell</li></ul><h1 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h1><h2 id="圣杯布局实现"><a href="#圣杯布局实现" class="headerlink" title="圣杯布局实现"></a>圣杯布局实现</h2><p>1-定位+padding</p><p><img src="/posts/2ea1110f/1607666099556.png" alt="1607666099556"></p><p>注意：padding会撑大盒子</p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;圣杯布局&lt;/title&gt;
+    &lt;style&gt;
+        *&#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+        .box&#123;
+            width: 100%;
+            height: 200px;
+            background-color: skyblue;
+            padding: 0 50px;
+            box-sizing: border-box;
+        &#125;
+        .box .left,.box .right&#123;
+            width:50px;
+            height: 200px;
+        &#125;
+        .left&#123; 
+            position:absolute;
+            background-color: blue;
+            top:0;
+            left:0;
+        &#125;
+        .right&#123;
+            position:absolute;
+            background-color:green;
+            top:0;
+            right:0;
+        &#125;
+        .center&#123;
+            width: 100%;
+            height: 200px;
+            background-color: yellow;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;center&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>2-浮动+BFC</p><p><img src="/posts/2ea1110f/1607666120365.png" alt="1607666120365"></p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;圣杯布局1&lt;/title&gt;
+    &lt;style&gt;
+        *&#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+        .box&#123;
+            width: 100%;
+            height: 200px;
+            background-color: skyblue;
+            box-sizing: border-box;
+        &#125;
+        .box .left,.box .right&#123;
+            width:50px;
+            height: 200px;
+        &#125;
+        .left&#123; 
+            background-color: blue;
+            float: left;
+        &#125;
+        .right&#123;
+            background-color:green;
+            float:right;
+        &#125;
+        .center&#123;
+            /* width: 100%; */ /*不能设置100%,设置了就会被挤下去*/
+            height: 200px;
+            background-color: yellow;
+            overflow: auto;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;center&quot;&gt;&lt;/div&gt;
+        
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>3-伸缩布局</p><p><img src="/posts/2ea1110f/1607666142664.png" alt="1607666142664"></p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;圣杯布局1&lt;/title&gt;
+    &lt;style&gt;
+        *&#123;
+            margin: 0;
+            padding: 0;
+        &#125;
+        .box&#123;
+            width: 100%;
+            height: 200px;
+            background-color: skyblue;
+            display:flex;
+        &#125;
+        .box .left,.box .right&#123;
+            width:50px;
+            height: 200px;
+        &#125;
+        .left&#123; 
+            background-color: blue;
+        &#125;
+        .right&#123;
+            background-color:green;
+        &#125;
+        .center&#123;
+            height: 200px;
+            background-color: yellow;
+            flex:1;
+        &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;center&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>bootcdn</p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.gitee.io/posts/2ea1110f/">https://heliufang.gitee.io/posts/2ea1110f/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">209.2k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>
