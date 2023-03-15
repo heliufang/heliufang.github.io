@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的笔记本</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">45</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">7</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">49</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">218.2k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">16.14.0</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2023-03-15 23:20:10"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/2ea11abc/">1.angular笔记</a></li><li><a href="/posts/b3a0e706/">2.angularjs笔记</a></li><li><a href="/posts/3c6138e1/">3.js的防抖和节流</a></li><li><a href="/posts/1e33e6ff/">4.pinia笔记</a></li><li><a href="/posts/27fcdfc0/">5.react笔记</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#angular-cli-%E5%AE%89%E8%A3%85"><span class="toc-text">angular cli 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="toc-text">项目结构说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#app-component-ts"><span class="toc-text">app.component.ts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#app-module-ts"><span class="toc-text">app.module.ts</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="toc-text">创建组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE"><span class="toc-text">定义数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E6%95%B0%E6%8D%AE"><span class="toc-text">绑定数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E8%AF%AD%E6%B3%95"><span class="toc-text">插值语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%91%E5%AE%9Ahtml"><span class="toc-text">绑定html</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E5%B1%9E%E6%80%A7"><span class="toc-text">绑定属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BE%AA%E7%8E%AF-ngFor"><span class="toc-text">数据循环 *ngFor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD-ngIf"><span class="toc-text">条件判断 *ngIf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngSwitch"><span class="toc-text">*ngSwitch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%91%E5%AE%9Aclick%E4%BA%8B%E4%BB%B6"><span class="toc-text">绑定click事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#input%E4%BA%8B%E4%BB%B6"><span class="toc-text">input事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-text">双向绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngStyle"><span class="toc-text">[ngStyle]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ngClass"><span class="toc-text">[ngClass]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E9%81%93"><span class="toc-text">管道</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1"><span class="toc-text">服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1"><span class="toc-text">创建服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E6%9C%8D%E5%8A%A1"><span class="toc-text">编写服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1"><span class="toc-text">注册服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">使用服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom"><span class="toc-text">dom</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-text">组件通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E6%95%B0%E6%8D%AE"><span class="toc-text">父组件给子组件传数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%BB%99%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E6%95%B0%E6%8D%AE"><span class="toc-text">子组件给父组件传数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1"><span class="toc-text">配置路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E5%8F%B7%E4%BC%A0%E5%8F%82%E8%B7%B3%E8%BD%AC"><span class="toc-text">问号传参跳转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-text">编程式导航</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E5%8F%B7%E4%BC%A0%E5%8F%82%E7%9A%84%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-text">问号传参的编程式导航</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E7%9A%84%E7%BC%96%E7%A8%8B%E5%BC%8F%E5%AF%BC%E8%88%AA"><span class="toc-text">动态路由的编程式导航</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1"><span class="toc-text">嵌套路由</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97"><span class="toc-text">模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#angular%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97"><span class="toc-text">angular内置模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97"><span class="toc-text">自定义模块</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">web前端</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">angular</span></span></p><h1>angular笔记</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2023-03-15 17:20:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 5.2k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 26分钟</span></p></div><div id="article"><p><a target="_blank" rel="noopener" href="https://angular.cn/docs">angluar中文文档</a></p><p>简书上写的很好的angular教程 — <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/018c0bedcdf2">学习angular可以看看，看完会掌握大部分！！！</a></p><h2 id="angular-cli-安装"><a href="#angular-cli-安装" class="headerlink" title="angular cli 安装"></a>angular cli 安装</h2><p>执行下面的命令</p><pre><code class="shell">npm install -g @angular/cli
+</code></pre><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>执行下面的命令, <code>angular-study</code>可以任意,表示的是项目名称</p><pre><code class="shell">ng new angular-study
+</code></pre><p>输入n，再输入n。(不共享数据,先不安装路由模块)</p><p>css编写这里选择less</p><pre><code class="shell">? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google&#39;s Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. No
+Global setting: disabled
+Local setting: No local workspace configuration file.
+Effective status: disabled
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? Less   [ http://lesscss.org
+ ]
+</code></pre><p>启动项目</p><pre><code class="shell">ng serve 
+</code></pre><p>访问项目</p><pre><code>http://localhost:4200/
+</code></pre><h2 id="项目结构说明"><a href="#项目结构说明" class="headerlink" title="项目结构说明"></a>项目结构说明</h2><pre><code>src
+ - app 根组件
+   - app.component.html  html模板
+   - app.component.less  css样式
+   - app.component.ts    ts写数据处理逻辑
+   - app.module.ts  app模块文件
+ - assets 静态资源目录
+ - index.html 主页
+ - main.ts 项目的入口文件
+ - styles.less 全局样式文件
+ - .editorconfig 环境配置(开发/测试/上线)
+ - .gitignore git忽略文件
+ - angular.json  angular cli的配置相关
+ - tsconfig  ts编译器相关配置
+</code></pre><p>更多介绍可参考官网：<a target="_blank" rel="noopener" href="https://angular.cn/guide/file-structure">工作区和项目文件结构</a></p><h3 id="app-component-ts"><a href="#app-component-ts" class="headerlink" title="app.component.ts"></a>app.component.ts</h3><p>主要用来定义根组件</p><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+
+@Component(&#123;
+  selector: &#39;app-root&#39;, //组件的唯一标识，当前是根组件
+  templateUrl: &#39;./app.component.html&#39;, //当前组件的html模板文件
+  styleUrls: [&#39;./app.component.less&#39;] //当前组件的样式文件
+&#125;)
+export class AppComponent &#123;
+  title = &#39;angular-study&#39;; //定义一个双向绑定的数据
+&#125;
+</code></pre><h3 id="app-module-ts"><a href="#app-module-ts" class="headerlink" title="app.module.ts"></a>app.module.ts</h3><p>Angular 应用是模块化的，它拥有自己的模块化系统，称作 NgModule。 一个 NgModule 就是一个容器，用于存放一些内聚的代码块，这些代码块专注于某个应用领域、某个工作流或一组紧密相关的功能。 它可以包含一些组件、服务提供商或其它代码文件，其作用域由包含它们的 NgModule 定义。 它还可以导入一些由其它模块中导出的功能，并导出一些指定的功能供其它 NgModule 使用。</p><pre><code class="js">/*这个文件是Angular 根模块，告诉Angular如何组装应用*/
+
+//Angular核心模块
+import &#123; NgModule &#125; from &#39;@angular/core&#39;;
+//BrowserModule，浏览器解析的模块
+import &#123; BrowserModule &#125; from &#39;@angular/platform-browser&#39;;
+//根组件
+import &#123; AppComponent &#125; from &#39;./app.component&#39;;
+
+//NgModule装饰器, @NgModule接受一个元数据对象，告诉 Angular 如何编译和启动应用
+@NgModule(&#123;
+  declarations: [//配置当前项目运行的的组件
+    AppComponent
+  ],
+  imports: [//配置当前模块运行依赖的其他模块
+    BrowserModule
+  ],
+  providers: [],//项目所需要的服务
+  //指定应用的主视图（称为根组件） 通过引导根AppModule来启动应用  ，这里一般写的是根组件
+  bootstrap: [AppComponent] 
+&#125;)
+export class AppModule &#123; &#125;
+</code></pre><h2 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h2><ul><li>在src&#x2F;view下面创建一个Hello组件(先创建view文件夹并且切换到这个文件夹)</li></ul><pre><code class="shell">D:\webcode\angular-study\src\view&gt; ng g component Hello --skip-import
+</code></pre><ul><li>修改src&#x2F;app&#x2F;app.module.ts</li></ul><pre><code class="js">import &#123; NgModule &#125; from &#39;@angular/core&#39;;
+import &#123; BrowserModule &#125; from &#39;@angular/platform-browser&#39;;
+//导入Hello组件
+import &#123; HelloComponent &#125; from &#39;../view/hello/hello.component&#39;;
+import &#123; AppComponent &#125; from &#39;./app.component&#39;;
+
+@NgModule(&#123;
+  declarations: [ 
+    AppComponent,
+    HelloComponent //注册Hello组件
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#123; &#125;
+</code></pre><ul><li>将src&#x2F;app&#x2F;app.component.html内容清空,并引入hello组件</li></ul><pre><code class="html">&lt;app-hello&gt;&lt;/app-hello&gt;
+</code></pre><p>然后就可以看到hello组件的内容展示了</p><h2 id="定义数据"><a href="#定义数据" class="headerlink" title="定义数据"></a>定义数据</h2><p>只需要定义类中的属性即可</p><pre><code class="js">export class HelloComponent &#123;
+  title = &#39;hello angular&#39; //定义双向绑定的数据变量
+&#125;
+</code></pre><h2 id="绑定数据"><a href="#绑定数据" class="headerlink" title="绑定数据"></a>绑定数据</h2><h3 id="插值语法"><a href="#插值语法" class="headerlink" title="插值语法"></a>插值语法</h3><pre><code class="html">&lt;h2&gt;&#123;&#123;title&#125;&#125;&lt;/h2&gt;
+</code></pre><h3 id="绑定html"><a href="#绑定html" class="headerlink" title="绑定html"></a>绑定html</h3><ul><li>定义数据</li></ul><pre><code class="js">export class HelloComponent &#123;
+  htmlStr = &#39;&lt;h2&gt;hello angular&lt;/h2&gt;&#39;
+&#125;
+</code></pre><ul><li>绑定</li></ul><pre><code class="html">&lt;div [innerHTML]=&quot;htmlStr&quot;&gt;&lt;/div&gt;
+</code></pre><h3 id="绑定属性"><a href="#绑定属性" class="headerlink" title="绑定属性"></a>绑定属性</h3><pre><code class="html">&lt;div [title]=&quot;title&quot; [id]=&quot;id&quot;&gt;绑定属性&lt;/div&gt;
+</code></pre><h3 id="数据循环-ngFor"><a href="#数据循环-ngFor" class="headerlink" title="数据循环 *ngFor"></a>数据循环 *ngFor</h3><ul><li>定义数据</li></ul><pre><code class="js">export class HelloComponent &#123;
+  userlist = [&#123;
+    username: &#39;张三&#39;,
+    age: 20
+  &#125;, &#123;
+    username: &#39;李四&#39;,
+    age: 21
+  &#125;,
+  &#123;
+    username: &#39;王五&#39;,
+    age: 40
+  &#125;]
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;ul&gt;
+    &lt;li *ngFor=&quot;let user of userlist&quot;&gt;&#123;&#123;user.username + '-' + user.age&#125;&#125;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 带下标/绑定key --&gt;
+&lt;ul&gt;
+    &lt;li *ngFor=&quot;let user of userlist;let i = index&quot;&gt;&#123;&#123;i+":"+user.username + '-' + user.age&#125;&#125;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h3 id="条件判断-ngIf"><a href="#条件判断-ngIf" class="headerlink" title="条件判断 *ngIf"></a>条件判断 *ngIf</h3><pre><code class="html">&lt;div *ngIf=&quot;gender == &#39;male&#39;&quot;&gt;男的&lt;/div&gt;
+&lt;div *ngIf=&quot;gender == &#39;famale&#39;&quot;&gt;女的&lt;/div&gt;
+</code></pre><h3 id="ngSwitch"><a href="#ngSwitch" class="headerlink" title="*ngSwitch"></a>*ngSwitch</h3><ul><li>定义数据</li></ul><pre><code class="js">export class HelloComponent &#123;
+  status = 2
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;ul [ngSwitch]=&quot;status&quot;&gt;
+    &lt;li *ngSwitchCase=&quot;1&quot;&gt;未开始&lt;/li&gt;
+    &lt;li *ngSwitchCase=&quot;2&quot;&gt;进行中&lt;/li&gt;
+    &lt;li *ngSwitchCase=&quot;3&quot;&gt;已完成&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h3 id="绑定click事件"><a href="#绑定click事件" class="headerlink" title="绑定click事件"></a>绑定click事件</h3><ul><li>定义方法</li></ul><pre><code class="js">export class HelloComponent &#123;
+  age = 18
+  setAge()&#123;
+    this.age = this.age + 1
+  &#125;
+  getAge()&#123;
+    return this.age
+  &#125;
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;h2&gt;当前age：&#123;&#123;getAge()&#125;&#125;&lt;/h2&gt;
+&lt;button (click)=&quot;setAge()&quot;&gt;age+1&lt;/button&gt;
+</code></pre><h3 id="input事件"><a href="#input事件" class="headerlink" title="input事件"></a>input事件</h3><ul><li>定义</li></ul><pre><code class="js">export class HelloComponent &#123;
+  msg = &#39;&#39;
+  keyUpFn(event:any)&#123;
+    // console.log(event.target.value)
+    this.msg = event.target.value
+  &#125;
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;&quot; id=&quot;&quot; (keyup)=&quot;keyUpFn($event)&quot;&gt;
+&lt;div&gt;输入的值为：&#123;&#123;msg&#125;&#125;&lt;/div&gt;
+</code></pre><h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><ul><li>定义</li></ul><pre><code class="js">export class HelloComponent &#123;
+  text = &#39;&#39;
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;&quot; [(ngModel)]=&quot;text&quot;&gt;
+&lt;div&gt;双向绑定：&#123;&#123;text&#125;&#125;&lt;/div&gt;
+</code></pre><h3 id="ngStyle"><a href="#ngStyle" class="headerlink" title="[ngStyle]"></a>[ngStyle]</h3><ul><li>定义</li></ul><pre><code class="js">export class HelloComponent &#123;
+  textRed = &#39;red&#39;
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;div [style]=&quot;&#123;&#39;color&#39;:&#39;blue&#39;&#125;&quot;&gt;蓝色字体&lt;/div&gt;
+&lt;div [style]=&quot;&#123;&#39;color&#39;:textRed&#125;&quot;&gt;红色字体-变量&lt;/div&gt;
+</code></pre><h3 id="ngClass"><a href="#ngClass" class="headerlink" title="[ngClass]"></a>[ngClass]</h3><ul><li>定义样式</li></ul><pre><code class="css">.blueText&#123;
+    color: blue;
+&#125;
+.redText&#123;
+    color: red;
+&#125;
+</code></pre><ul><li>定义数据</li></ul><pre><code class="js">export class HelloComponent &#123;
+  isRed = true
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;div [ngClass]=&quot;&#123;blueText: true&#125;&quot;&gt;蓝色字体&lt;/div&gt;
+&lt;div [ngClass]=&quot;&#123;redText: isRed&#125;&quot;&gt;红色字体-变量&lt;/div&gt;
+</code></pre><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>类似vue中的过滤器</p><p><a target="_blank" rel="noopener" href="https://angular.cn/guide/pipes">官方文档：Angular - 用管道转换数据</a></p><ul><li>定义</li></ul><pre><code class="js">export class HelloComponent &#123;
+  today = new Date()
+&#125;
+</code></pre><ul><li>使用</li></ul><pre><code class="html">&lt;div&gt;&#123;&#123;today |  date:'yyyy-MM-dd HH:mm:ss'&#125;&#125;&lt;/div&gt;
+</code></pre><h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><p>服务是一个广义的概念，它包括应用所需的任何值、函数或特性。狭义的服务是一个明确定义了用途的类。它应该做一些具体的事，并做好。<br>Angular 把组件和服务区分开，以提高模块性和复用性。 通过把组件中和视图有关的功能与其他类型的处理分离开，你可以让组件类更加精简、高效。</p><blockquote><p>一个服务可以为多个组件使用</p></blockquote><blockquote><p>个人理解：类似Java中一个工具类</p></blockquote><h3 id="创建服务"><a href="#创建服务" class="headerlink" title="创建服务"></a>创建服务</h3><pre><code class="shell">ng g service services/storage
+</code></pre><h3 id="编写服务"><a href="#编写服务" class="headerlink" title="编写服务"></a>编写服务</h3><p>src&#x2F;services&#x2F;storage.service.ts</p><pre><code class="js">import &#123; Injectable &#125; from &#39;@angular/core&#39;;
+
+@Injectable(&#123;
+  providedIn: &#39;root&#39;
+&#125;)
+export class StorageService &#123;
+
+  constructor() &#123; &#125;
+
+  private tlist = [
+    &#123; name: &#39;tom&#39;, age: 18&#125;,
+    &#123; name: &#39;jerry&#39;, age: 16&#125;
+  ]
+
+  getTlist()&#123;
+    return this.tlist;
+  &#125;
+  setTlist(tlist: [])&#123;
+    this.tlist = tlist
+  &#125;
+&#125;
+</code></pre><h3 id="注册服务"><a href="#注册服务" class="headerlink" title="注册服务"></a>注册服务</h3><p>src&#x2F;app&#x2F;app.module.ts</p><pre><code class="js">import &#123; NgModule &#125; from &#39;@angular/core&#39;;
+import &#123; BrowserModule &#125; from &#39;@angular/platform-browser&#39;;
+import &#123; HelloComponent &#125; from &#39;../view/hello/hello.component&#39;;
+import &#123; AppComponent &#125; from &#39;./app.component&#39;;
+import &#123; FormsModule &#125; from &#39;@angular/forms&#39;;  
+//导入自己写的服务
+import &#123;StorageService&#125; from &#39;../services/storage.service&#39;;
+@NgModule(&#123;
+  declarations: [ 
+    AppComponent,HelloComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [StorageService],//注册服务
+  bootstrap: [AppComponent]
+&#125;)
+export class AppModule &#123; &#125;
+</code></pre><h3 id="使用服务"><a href="#使用服务" class="headerlink" title="使用服务"></a>使用服务</h3><p>src&#x2F;view&#x2F;hello&#x2F;hello.component.ts</p><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+//导入服务
+import &#123;StorageService&#125; from &#39;../../services/storage.service&#39;
+@Component(&#123;
+  selector: &#39;app-hello&#39;,
+  templateUrl: &#39;./hello.component.html&#39;,
+  styleUrls: [&#39;./hello.component.less&#39;]
+&#125;)
+export class HelloComponent &#123;
+    //注入服务给构造函数参数
+  constructor(private storage : StorageService) &#123;
+    console.log(&#39;tlist&#39;, storage.getTlist()) //使用服务
+  &#125;
+&#125;
+</code></pre><h2 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h2><p>ngAfterViewInit() ： angular 中操作dom要在这个生命周期钩子函数中。有原生的获取和ViewChild注入方式来获取</p><ul><li>页面</li></ul><pre><code class="html">&lt;!-- 原生dom --&gt;
+&lt;div id=&quot;dom1&quot;&gt;dom1111&lt;/div&gt;
+&lt;!-- ViewChild方式获取dom --&gt;
+&lt;div #dom2&gt;dom2222&lt;/div&gt;
+</code></pre><ul><li>ts</li></ul><pre><code class="js">import &#123; Component,ViewChild &#125; from &#39;@angular/core&#39;;
+@Component(&#123;
+  selector: &#39;app-hello&#39;,
+  templateUrl: &#39;./hello.component.html&#39;,
+  styleUrls: [&#39;./hello.component.less&#39;]
+&#125;)
+export class HelloComponent &#123;
+   //注入dom2
+  @ViewChild(&#39;dom2&#39;) dom2:any 
+
+  //页面 初始化之后，可以在这个钩子中操作dom
+  ngAfterViewInit() &#123;
+    //1.原生方式操作dom
+    let dom1:any = document.getElementById(&#39;dom1&#39;)
+    dom1.style.color = &#39;red&#39;
+
+    //2.ViewChild注入的方式，获取dom通过nativeElement属性
+    this.dom2.nativeElement.style.color = &#39;green&#39;
+  &#125;
+&#125;
+</code></pre><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="父组件给子组件传数据"><a href="#父组件给子组件传数据" class="headerlink" title="父组件给子组件传数据"></a>父组件给子组件传数据</h3><ul><li>父组件将变量传给子组件—&gt;通过<code>标签属性</code>的方式传递</li></ul><pre><code class="html">&lt;!-- 给子组件传递数据 --&gt;
+&lt;app-child [msg]=&quot;msg&quot;&gt;&lt;/app-child&gt;
+</code></pre><ul><li>子组件接收数据—&gt;通过<code>Input</code>注入</li></ul><pre><code class="js">import &#123; Component,Input &#125; from &#39;@angular/core&#39;;
+
+@Component(&#123;
+  selector: &#39;app-child&#39;,
+  templateUrl: &#39;./child.component.html&#39;,
+  styleUrls: [&#39;./child.component.less&#39;]
+&#125;)
+export class ChildComponent &#123;
+
+  //接受父组件传过来的数据,通过Input注入fatherMsg变量
+  @Input(&#39;msg&#39;) fatherMsg: string = &#39;&#39;
+
+  ngOnInit()&#123;
+    console.log(&#39;fatherMsg&#39;, this.fatherMsg)
+  &#125;
+&#125;
+</code></pre><h3 id="子组件给父组件传数据"><a href="#子组件给父组件传数据" class="headerlink" title="子组件给父组件传数据"></a>子组件给父组件传数据</h3><ul><li>子组件html</li></ul><pre><code class="html">&lt;button (click)=&quot;sendMsgToFather()&quot;&gt;给父组件传数据&lt;/button&gt;
+</code></pre><ul><li>子组件ts</li></ul><pre><code class="js">import &#123; Component,Output,EventEmitter &#125; from &#39;@angular/core&#39;;
+
+@Component(&#123;
+  selector: &#39;app-child&#39;,
+  templateUrl: &#39;./child.component.html&#39;,
+  styleUrls: [&#39;./child.component.less&#39;]
+&#125;)
+export class ChildComponent &#123;
+
+  //通过这个对象来触发父组件的方法(如果父组件有多个方法要传递，那么需要创建多个outer)
+  @Output() private outer = new EventEmitter&lt;string&gt;();
+  //点击后向父组件传数据
+  sendMsgToFather()&#123;
+    //通过emit触发父组件方法给父组件传递数据
+    this.outer.emit(&#39;我是 child 组件&#39;)
+  &#125;
+&#125;
+</code></pre><ul><li>父组件html</li></ul><pre><code class="html">&lt;app-child (outer)=&quot;reciveChild($event)&quot;&gt;&lt;/app-child&gt;
+</code></pre><ul><li>父组件ts</li></ul><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+
+@Component(&#123;
+  selector: &#39;app-father&#39;,
+  templateUrl: &#39;./father.component.html&#39;,
+  styleUrls: [&#39;./father.component.less&#39;]
+&#125;)
+export class FatherComponent &#123;
+  childMsg = &#39;&#39;
+  //接收子组件发送来的数据
+  reciveChild(childMsg:string)&#123;
+    console.log(&#39;childMsg&#39;, childMsg)
+    this.childMsg = childMsg
+  &#125;
+&#125;
+</code></pre><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>1、<strong>ngOnChanges()</strong><br>当 Angular（重新）设置数据绑定输入属性时响应。 该方法接受当前和上一属性值的 SimpleChanges 对象当被绑定的输入属性的值发生变化时调用，首次调用一定会发生在 ngOnInit() 之前。<br>2、<strong>ngOnInit()</strong><br>在 Angular 第一次显示数据绑定和设置指令&#x2F;组件的输入属性之后，初始化指令&#x2F;组件。<br>在第一轮 ngOnChanges() 完成之后调用，只调用一次。<br>使用 ngOnInit() 有两个原因：</p><pre><code> &lt;1&gt;在构造函数之后马上执行复杂的初始化逻辑
+ &lt;2&gt;在 Angular 设置完输入属性之后，对该组件进行准备。
+ 有经验的开发者会认同组件的构建应该很便宜和安全。
+</code></pre><p>3、<strong>ngDoCheck()</strong><br>检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。在每个 Angular 变更检测周期中调用，ngOnChanges() 和 ngOnInit() 之后<br>4、<strong>ngAfterContentInit()</strong><br>当把内容投影进组件之后调用。第一次 ngDoCheck() 之后调用，只调用一次。<br>5、<strong>ngAfterContentChecked()</strong><br>每次完成被投影组件内容的变更检测之后调用。ngAfterContentInit() 和每次 ngDoCheck() 之后调用。<br>6、<strong>ngAfterViewInit()</strong><br>初始化完组件视图及其子视图之后调用。第 一次 ngAfterContentChecked() 之后调用，只调用一次。<br>7、<strong>ngAfterViewChecked()</strong><br>每次做完组件视图和子视图的变更检测之后调用。ngAfterViewInit()和每次 ngAfterContentChecked() 之后调用<br>8、<strong>ngOnDestroy()</strong><br>当 Angular 每次销毁指令&#x2F;组件之前调用并清扫。在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。在 Angular 销毁指令&#x2F;组件之前调用</p><pre><code class="js">import &#123; Component,Input&#125; from &#39;@angular/core&#39;;
+@Component(&#123;
+  selector: &#39;app-lifecycle&#39;,
+  templateUrl: &#39;./lifecycle.component.html&#39;,
+  styleUrls: [&#39;./lifecycle.component.scss&#39;]
+&#125;)
+export class LifecycleComponent&#123;
+    @Input(&#39;title&#39;) title:string;
+    public msg:string=&#39;生命周期演示&#39;;
+    public userinfo:string=&#39;&#39;;
+    public oldUserinfo:string=&#39;&#39;;
+
+    constructor() &#123; 
+      console.log(&#39;00构造函数执行了---除了使用简单的值对局部变量进行初始化之外，什么都不应该做&#39;)
+    &#125;
+
+    ngOnChanges() &#123;
+      console.log(&#39;01ngOnChages执行了---当被绑定的输入属性的值发生变化时调用(父子组件传值的时候会触发)&#39;); 
+    &#125;
+
+    ngOnInit() &#123;
+        console.log(&#39;02ngOnInit执行了--- 请求数据一般放在这个里面&#39;);     
+    &#125;
+
+    ngDoCheck() &#123;
+        //写一些自定义的操作
+        console.log(&#39;03ngDoCheck执行了---检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应&#39;);
+        if(this.userinfo!==this.oldUserinfo)&#123;
+            console.log(`你从$&#123;this.oldUserinfo&#125;改成$&#123;this.userinfo&#125;`);
+            this.oldUserinfo = this.userinfo;
+        &#125;else&#123;
+            
+            console.log(&quot;数据没有变化&quot;);          
+        &#125;
+    &#125;
+
+    ngAfterContentInit() &#123;
+        console.log(&#39;04ngAfterContentInit执行了---当把内容投影进组件之后调用&#39;);
+    &#125;
+    ngAfterContentChecked() &#123;
+        console.log(&#39;05ngAfterContentChecked执行了---每次完成被投影组件内容的变更检测之后调用&#39;);
+    &#125;
+    ngAfterViewInit(): void &#123;     
+        console.log(&#39;06 ngAfterViewInit执行了----初始化完组件视图及其子视图之后调用（dom操作放在这个里面）&#39;);
+    &#125;
+    ngAfterViewChecked() &#123;
+        console.log(&#39;07ngAfterViewChecked执行了----每次做完组件视图和子视图的变更检测之后调用&#39;);
+    &#125;
+
+    ngOnDestroy() &#123;
+        console.log(&#39;08ngOnDestroy执行了····&#39;);
+    &#125;
+
+    //自定义方法
+    changeMsg()&#123;
+      this.msg=&quot;数据改变了&quot;;
+    &#125;
+
+&#125;
+</code></pre><h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>创建一个带路由的项目 angular-routing-study 为项目名称</p><pre><code class="shell">ng new angular-routing-study --routing --defaults
+</code></pre><p>创建四个组件</p><pre><code>ng g component home --skip-import
+ng g component news --skip-import
+ng g component newsdetails --skip-import
+ng g component pagenotfind --skip-import
+</code></pre><h3 id="配置路由"><a href="#配置路由" class="headerlink" title="配置路由"></a>配置路由</h3><ul><li>app-routing.module.ts</li></ul><pre><code class="js">import &#123; NgModule &#125; from &#39;@angular/core&#39;;
+import &#123; RouterModule, Routes &#125; from &#39;@angular/router&#39;;
+//导入自定义的组件
+import &#123; HomeComponent &#125; from &#39;../views/home/home.component&#39; 
+import &#123; NewsComponent &#125; from &#39;../views/news/news.component&#39; 
+import &#123; PagenotfindComponent &#125; from &#39;../views/pagenotfind/pagenotfind.component&#39; 
+//配置路由
+const routes: Routes = [
+  &#123;path: &#39;home&#39; , component: HomeComponent&#125;,
+  &#123;path: &#39;news&#39; , component: NewsComponent&#125;,
+  &#123;path: &#39;&#39; , redirectTo: &#39;/home&#39;,pathMatch: &#39;full&#39;&#125;, //&#39;&#39;表示默认重定向到home页面
+  &#123;path: &#39;**&#39;,component: PagenotfindComponent&#125; //通配符匹配,404
+]
+@NgModule(&#123;
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+&#125;)
+export class AppRoutingModule &#123; &#125;
+</code></pre><ul><li>app.component.html</li></ul><pre><code class="html">&lt;!-- 路由跳转链接-routerLink属性  routerLinkActive设置路由激活后的按钮链接样式 --&gt;
+&lt;a class=&quot;menu-btn&quot; routerLink=&quot;/home&quot; routerLinkActive=&quot;active&quot;&gt;首页&lt;/a&gt;
+&lt;a class=&quot;menu-btn&quot; routerLink=&quot;/news&quot; routerLinkActive=&quot;active&quot;&gt;新闻&lt;/a&gt;
+&lt;!-- 路由匹配后展示的区域-router-outlet标签 --&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+</code></pre><ul><li>app.component.css</li></ul><pre><code class="css">.active&#123;
+    color: deeppink;
+&#125;
+.menu-btn&#123;
+    width: 200px;
+    height: 60px;
+    padding: 10px;
+    margin-left: 6px;
+&#125;
+</code></pre><p>然后点击页面上的<code>首页</code>和<code>新闻</code>按钮就可以在<code>router-outlet</code>的区域进行的切换了</p><h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>和vue中的类似,也就是传递和接收params参数</p><ul><li>app-routing.module.ts 在Routes数组中新增一条路由规则</li></ul><pre><code class="js">const routes: Routes = [
+    //新增下面这条路由规则  :id表示传递的参数名为id,也可以是其它的
+  &#123;path: &#39;newDetails/:id&#39; , component: NewsdetailsComponent&#125;
+]
+</code></pre><ul><li>app.component.html 新增一个跳转的按钮</li></ul><pre><code class="html">&lt;a class=&quot;menu-btn&quot; routerLink=&quot;/newDetails/1&quot;&gt;新闻详情1，传递的参数为1&lt;/a&gt;
+&lt;a class=&quot;menu-btn&quot; [routerLink]=&quot;[&#39;/newDetails&#39;,2]&quot; &gt;新闻详情2，传递的参数为2&lt;/a&gt;
+</code></pre><ul><li>newsdetails.component.ts</li></ul><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+//1.导入ActivatedRoute
+import &#123; ActivatedRoute &#125; from &#39;@angular/router&#39;;
+
+@Component(&#123;
+  selector: &#39;app-newsdetails&#39;,
+  templateUrl: &#39;./newsdetails.component.html&#39;,
+  styleUrls: [&#39;./newsdetails.component.css&#39;]
+&#125;)
+export class NewsdetailsComponent &#123;
+  newsId = &#39;&#39;
+  //2.将ActivatedRoute注入给route
+  constructor(private route:ActivatedRoute)&#123; &#125;
+
+  ngOnInit()&#123; 
+    console.log(this.route.params);
+     //3.获取params参数,并赋值给newsId
+    this.route.params.subscribe((data:any) =&gt; this.newsId = data.id)
+  &#125;
+&#125;
+</code></pre><ul><li>newsdetails.component.html 新闻详情页就可以接收到传递过来的params参数了</li></ul><pre><code class="html">&lt;p&gt;newsdetails works!,接受到参数新闻id：&#123;&#123;newsId&#125;&#125;&lt;/p&gt;
+</code></pre><h3 id="问号传参跳转"><a href="#问号传参跳转" class="headerlink" title="问号传参跳转"></a>问号传参跳转</h3><p>也就是在链接后面用问号的形式传递参数,跳转页面</p><ul><li>app.component.html修改新闻按钮，这样点击按钮就会以问号传参的形式跳转到新闻页面</li></ul><pre><code class="html">&lt;a class=&quot;menu-btn&quot; href=&quot;/news?name=tom&amp;age=18&quot;&gt;新闻(？传参)&lt;/a&gt;
+</code></pre><ul><li>news.component.ts - 接收参数</li></ul><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+import &#123; ActivatedRoute &#125; from &#39;@angular/router&#39;;
+@Component(&#123;
+  selector: &#39;app-news&#39;,
+  templateUrl: &#39;./news.component.html&#39;,
+  styleUrls: [&#39;./news.component.css&#39;]
+&#125;)
+export class NewsComponent &#123;
+  name = &#39;&#39;
+  age = &#39;&#39;
+  constructor(private router:ActivatedRoute)&#123;
+    //通过 this.router.queryParams 获取问号传递过来的参数
+    this.router.queryParams.subscribe(params =&gt; &#123;
+      console.log(&#39;?参数&#39;, params)
+      this.age = params[&#39;age&#39;]
+      this.name = params[&#39;name&#39;]
+    &#125;);
+  &#125;
+&#125;
+</code></pre><ul><li>news.component.html - 展示接收到的参数</li></ul><pre><code class="html">&lt;p&gt;news works! 接受到的queryParams参数:&#123;&#123;name+'-'+age&#125;&#125;&lt;/p&gt;
+</code></pre><h3 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h3><p>其实就是通过js的形式跳转页面</p><h4 id="问号传参的编程式导航"><a href="#问号传参的编程式导航" class="headerlink" title="问号传参的编程式导航"></a>问号传参的编程式导航</h4><ul><li>app.component.html 新增一个新闻详情按钮</li></ul><pre><code class="html">&lt;button class=&quot;menu-btn&quot; (click)=&quot;goNews()&quot;&gt;新闻(？传参)&lt;/button&gt;
+</code></pre><ul><li>app.component.ts 通过js事件的形式跳转路由</li></ul><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+//1.导入Router,NavigationExtras
+import &#123; Router,NavigationExtras &#125; from &#39;@angular/router&#39;;
+@Component(&#123;
+  selector: &#39;app-root&#39;,
+  templateUrl: &#39;./app.component.html&#39;,
+  styleUrls: [&#39;./app.component.css&#39;]
+&#125;)
+export class AppComponent &#123;
+  title = &#39;angular-routing-study&#39;;
+  //2.注入Router到router
+  constructor(private router:Router)&#123;&#125;
+  goNews()&#123;
+    //3.定义需要传递的问号参数
+    let navigationExtras:NavigationExtras = &#123;
+      queryParams: &#123; name: &#39;jerry&#39;,age: 19 &#125;
+    &#125;
+    //4.调用navigate跳转页面并传递参数
+    this.router.navigate([&#39;/news&#39;],navigationExtras)
+  &#125;
+&#125;
+</code></pre><ul><li>获取参数的方式和前面a标签跳转的方式一致</li></ul><h4 id="动态路由的编程式导航"><a href="#动态路由的编程式导航" class="headerlink" title="动态路由的编程式导航"></a>动态路由的编程式导航</h4><ul><li>app.component.html 新增一个新闻详情按钮</li></ul><pre><code class="html">&lt;button class=&quot;menu-btn&quot; (click)=&quot;goNewsDetails()&quot;&gt;新闻详情1&lt;/button&gt;
+</code></pre><ul><li>app.component.ts 通过js事件的形式跳转路由</li></ul><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+//1.导入Router
+import &#123; Router &#125; from &#39;@angular/router&#39;;
+
+@Component(&#123;
+  selector: &#39;app-root&#39;,
+  templateUrl: &#39;./app.component.html&#39;,
+  styleUrls: [&#39;./app.component.css&#39;]
+&#125;)
+export class AppComponent &#123;
+  title = &#39;angular-routing-study&#39;;
+  //2.注入Router到router
+  constructor(private router:Router)&#123;&#125;
+  goNewsDetails()&#123;
+    //3.调用navigate方法携带参数跳转
+    this.router.navigate([&#39;/newDetails&#39;,1])
+  &#125;
+&#125;
+</code></pre><ul><li>获取参数的方式和前面a标签跳转的方式一致</li></ul><h3 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h3><p>假设newsdetails是news的子页面</p><ul><li>app-routing.module.ts 修改news为嵌套路由</li></ul><pre><code class="js">const routes: Routes = [
+  &#123; 
+      path: &#39;news&#39;, 
+      component: NewsComponent, 
+      //添加一个children节点,并配置
+      children: [
+          &#123; path: &#39;newDetails/:id&#39;, component: NewsdetailsComponent &#125;
+      ] 
+  &#125;
+]
+</code></pre><ul><li>news.component.html 页面修改为如下</li></ul><pre><code class="html">&lt;p&gt;news works!&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a routerLink=&quot;/news/newDetails/1&quot;&gt;新闻1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a routerLink=&quot;/news/newDetails/2&quot;&gt;新闻2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a routerLink=&quot;/news/newDetails/3&quot;&gt;新闻3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- 新闻详情展示的区域 --&gt;
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+</code></pre><ul><li>newsdetails.component.ts 接收传递过来的路由参数</li></ul><pre><code class="js">import &#123; Component &#125; from &#39;@angular/core&#39;;
+import &#123; ActivatedRoute &#125; from &#39;@angular/router&#39;;
+
+@Component(&#123;
+  selector: &#39;app-newsdetails&#39;,
+  templateUrl: &#39;./newsdetails.component.html&#39;,
+  styleUrls: [&#39;./newsdetails.component.css&#39;]
+&#125;)
+export class NewsdetailsComponent &#123;
+  newsId = &#39;&#39;
+  constructor(private route:ActivatedRoute)&#123;&#125;
+  ngOnInit()&#123; 
+    //获取传递来的新闻id并赋值给newsId
+    this.route.params.subscribe((data:any) =&gt; this.newsId = data.id)
+  &#125;
+&#125;
+</code></pre><ul><li>newsdetails.component.html 渲染传递来的参数</li></ul><pre><code class="html">&lt;p&gt;newsdetails works!,接受到参数新闻id：&#123;&#123;newsId&#125;&#125;&lt;/p&gt;
+</code></pre><ul><li>新增一个news.module.ts 文件</li></ul><pre><code class="js">import &#123; NgModule &#125; from &#39;@angular/core&#39;;
+import &#123; RouterModule &#125; from &#39;@angular/router&#39;
+import &#123; NewsComponent &#125; from &#39;./news.component&#39;;
+@NgModule(&#123;
+  declarations: [
+      //一定要声明这个，否则父组件中使用&lt;router-outlet&gt;标签将报错 ！！！
+      //https://stackoverflow.com/questions/44517737/router-outlet-is-not-a-known-element
+    NewsComponent 
+  ],
+  imports: [
+   RouterModule
+  ],
+  exports: [RouterModule],
+&#125;)
+export class NewsModule &#123; &#125;
+</code></pre><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>模块是组织应用和使用外部库扩展应用的最佳途径。</p><h3 id="angular内置模块"><a href="#angular内置模块" class="headerlink" title="angular内置模块"></a>angular内置模块</h3><p>Angular 自己的库都是 NgModule，比如 <code>FormsModule</code>、<code>HttpClientModule</code> 和 <code>RouterModule</code>。很多第三方库也是 NgModule，比如 <a target="_blank" rel="noopener" href="https://material.angular.cn/">Material Design</a>、 <a target="_blank" rel="noopener" href="http://ionicframework.com/">Ionic</a> 和 <a target="_blank" rel="noopener" href="https://github.com/angular/angularfire2">AngularFire2</a>。</p><h3 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h3><p>当项目非常庞大的时候把所有的组件都挂载到根模块里面不是特别合适。所以这个时候就可以自定义模块来组织的项目。并且通过 Angular 自定义模块可以实现路由的懒加载。</p><ul><li>在组件中创建模块</li></ul><pre><code class="shell">D:\webcode\angular-routing-study\src\views&gt;ng g module home    # home组件的模块
+D:\webcode\angular-routing-study\src\views&gt;ng g module newsdetails # newsdetails组件的模块
+D:\webcode\angular-routing-study\src\views&gt;ng g module pagenotfind # pagenotfind组件的模块
+</code></pre><ul><li>修改app-routing.module.ts中路由的配置如下</li></ul><pre><code class="js">const routes: Routes = [
+  //主要通过loadChildren回调函数的形式导入模块,实现懒加载
+  &#123; path: &#39;**&#39;, loadChildren: () =&gt; import(&#39;../views/pagenotfind/pagenotfind.module&#39;).then(m =&gt; m.PagenotfindModule) &#125; //通配符匹配,404
+]
+</code></pre></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/2ea11abc/">https://heliufang.github.io/posts/2ea11abc/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">218.2k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>
