@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>老C的笔记本</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="老C的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 老C的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">59</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">9</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">58</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">230.6k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">13.14.0</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2024-01-12 22:00:37"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/8088d2b5/">1.nuxt2笔记整理</a></li><li><a href="/posts/31559881/">2.js格式化时间间隔</a></li><li><a href="/posts/b1adc31a/">3.vue和react封装echart组件</a></li><li><a href="/posts/b4b4770b/">4.Nextjs入门笔记</a></li><li><a href="/posts/a35b4e10/">5.vue中window.open父子窗口通信</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E"><span class="toc-text">目录说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E8%B7%AF%E7%94%B1"><span class="toc-text">定义路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#layout%E5%B8%83%E5%B1%80"><span class="toc-text">layout布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Link%E5%AF%BC%E8%88%AA%E7%BB%84%E4%BB%B6"><span class="toc-text">Link导航组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usePathname"><span class="toc-text">usePathname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#useRouter"><span class="toc-text">useRouter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E7%BB%84"><span class="toc-text">路由组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loading%E7%BB%84%E4%BB%B6"><span class="toc-text">loading组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#error%E7%BB%84%E4%BB%B6"><span class="toc-text">error组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#404%E7%BB%84%E4%BB%B6"><span class="toc-text">404组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%B7%AF%E7%94%B1"><span class="toc-text">并行路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">中间件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BB%84%E4%BB%B6"><span class="toc-text">服务端组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BB%84%E4%BB%B6"><span class="toc-text">客户端组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E7%BB%84%E4%BB%B6"><span class="toc-text">内置组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Image%E7%BB%84%E4%BB%B6"><span class="toc-text">Image组件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96"><span class="toc-text">数据获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metadata%E9%85%8D%E7%BD%AE"><span class="toc-text">Metadata配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-text">@相对路径的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sass%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">sass的安装和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86"><span class="toc-text">全局状态管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-text">国际化</span></a></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">web前端</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">Nextjs</span></span></p><h1>Nextjs入门笔记</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2023-12-11 16:20:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 3.7k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 18分钟</span></p></div><div id="article"><p><a target="_blank" rel="noopener" href="https://nextjs.org/docs/getting-started/installation">Nextjs英文官网</a></p><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>nextjs是基于react语法来实现SSR(服务器渲染)的框架，解决单页应用不利于SEO的问题</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>环境说明</p><ul><li>node v18</li><li>next v14</li></ul><p>执行下面的命令</p><pre><code class="shell">npx create-next-app@latest
+</code></pre><p>然后依次选择</p><pre><code>H:\study\next-study&gt;npx create-next-app@latest
+Need to install the following packages:
+  create-next-app@latest
+Ok to proceed? (y) y
+npm WARN EBADENGINE Unsupported engine &#123;
+npm WARN EBADENGINE   package: &#39;create-next-app@14.0.3&#39;,
+npm WARN EBADENGINE   required: &#123; node: &#39;&gt;=18.17.0&#39; &#125;,
+npm WARN EBADENGINE   current: &#123; node: &#39;v16.15.0&#39;, npm: &#39;8.5.5&#39; &#125;
+npm WARN EBADENGINE &#125;
+√ What is your project named? ... my-app
+√ Would you like to use TypeScript? ... No / Yes #使用ts
+√ Would you like to use ESLint? ... No / Yes  #使用eslint校验
+√ Would you like to use Tailwind CSS? ... No / Yes #使用Tailwind CSS样式库
+√ Would you like to use `src/` directory? ... No / Yes #使用src目录
+√ Would you like to use App Router? (recommended) ... No / Yes #使用app路由
+√ Would you like to customize the default import alias (@/*)? ... No / Yes  #使用@相对路径
+√ What import alias would you like configured? ... @/*
+</code></pre><p>启动</p><pre><code class="shell">npm run dev
+</code></pre><p>访问：<a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000/</a></p><h2 id="目录说明"><a href="#目录说明" class="headerlink" title="目录说明"></a>目录说明</h2><pre><code>- public 静态资源目录
+- src 
+  - app 页面目录（重点）
+    - favicon.ico 网站favicon.ico图标
+    - globals.css 全局css文件
+    - layout.tsx 根布局组件（重点）
+    - page.tsx 默认页面（重点）
+- next.config.js 核心配置文件
+- postcss.config.js postcss配置文件
+- tailwind.config.ts tailwindcss配置文件
+- tsconfig.json ts配置文件
+</code></pre><h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="定义路由"><a href="#定义路由" class="headerlink" title="定义路由"></a>定义路由</h3><p>Next.js使用基于文件系统的路由器，其中文件夹用于定义路由。 文件夹中的page.jsx&#x2F;page.tsx&#x2F;page.js文件代表的就是页面。</p><p>【案例：定义路由】</p><p>创建a页面：src&#x2F;app&#x2F;a&#x2F;page.tsx 访问a页面：<a target="_blank" rel="noopener" href="http://localhost:3000/a">http://localhost:3000/a</a></p><pre><code class="jsx">import React from &#39;react&#39;
+const page = () =&gt; &#123;
+  return (
+    &lt;div&gt;a页面&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><p>创建b页面：src&#x2F;app&#x2F;a&#x2F;b&#x2F;page.tsx 访问b页面：<a target="_blank" rel="noopener" href="http://localhost:3000/a/b">http://localhost:3000/a/b</a></p><pre><code class="jsx">import React from &#39;react&#39;
+const page = () =&gt; &#123;
+  return (
+    &lt;div&gt;b页面&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><p>可以看到创建了两个嵌套的文件夹,文件夹可以无限嵌套。</p><p>页面使用page.tsx导出一个react组件，其中<a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000</a> 访问的就是src&#x2F;app&#x2F;page.tsx</p><h3 id="layout布局"><a href="#layout布局" class="headerlink" title="layout布局"></a>layout布局</h3><p>布局是在多个页面之间共享的用户界面。在导航中，布局保留状态，保持交互，并且不重新呈现。布局也可以嵌套。</p><p>【案例：定义布局】</p><p>创建根布局：src&#x2F;app&#x2F;layout.tsx</p><blockquote><p>1.根布局是所有页面共享的布局,并且是必须的</p><p>2.只有根布局可以包含&lt; html &gt;和&lt; body &gt;标记。</p></blockquote><pre><code class="jsx">import type &#123; Metadata &#125; from &#39;next&#39;
+import &#39;./globals.css&#39;
+
+export const metadata: Metadata = &#123; //定义网站的seo
+  title: &#39;Create Next App&#39;,
+  description: &#39;Generated by create next app&#39;,
+&#125;
+
+export default function RootLayout(&#123;children&#125;: &#123;children: React.ReactNode&#125;) &#123;
+  return (
+    &lt;html lang=&quot;en&quot;&gt;
+      &lt;body className=&quot;bg-slate-400&quot;&gt;根布局：&#123;children&#125;&lt;/body&gt;
+    &lt;/html&gt;
+  )
+&#125;
+</code></pre><p>创建a页面的布局：src&#x2F;app&#x2F;a&#x2F;layout.tsx</p><pre><code class="jsx">import React from &#39;react&#39;
+const layout = (&#123;children&#125;:&#123;children:React.ReactNode&#125;) =&gt; &#123;
+  return (
+    &lt;div&gt;layoutA:&#123;children&#125;&lt;/div&gt;
+  )
+&#125;
+export default layout
+</code></pre><p>访问<a target="_blank" rel="noopener" href="http://localhost:3000/a">http://localhost:3000/a</a></p><p><img src="/posts/b4b4770b/1701851198502.png" alt="1701851198502"></p><h3 id="Link导航组件"><a href="#Link导航组件" class="headerlink" title="Link导航组件"></a>Link导航组件</h3><p>Link组件可以使用页面跳转c</p><p>创建c页面：src&#x2F;app&#x2F;c&#x2F;page.tsx</p><pre><code class="jsx">import React from &#39;react&#39;
+import Link from &#39;next/link&#39;
+const page = () =&gt; &#123;
+  return (
+    &lt;div&gt;
+      c组件&lt;br /&gt;
+      &lt;Link className=&#39;text-blue-600&#39; href=&quot;/a&quot;&gt;去a组件&lt;/Link&gt;
+      &lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><h3 id="usePathname"><a href="#usePathname" class="headerlink" title="usePathname"></a>usePathname</h3><p>这个hook可以获取路由地址</p><p>创建d页面：src&#x2F;app&#x2F;d&#x2F;page.tsx</p><pre><code class="jsx">&#39;use client&#39; //表示这个是一个客户端组件
+import React from &#39;react&#39;
+import &#123; usePathname &#125; from &#39;next/navigation&#39;
+const page = () =&gt; &#123;
+    const pathname = usePathname()
+    return (
+        &lt;div&gt;pathname: &#123;pathname&#125;&lt;/div&gt;
+    )
+&#125;
+export default page
+</code></pre><h3 id="useRouter"><a href="#useRouter" class="headerlink" title="useRouter"></a>useRouter</h3><p>这个hook可以实现编程式导航</p><p>创建e页面：src&#x2F;app&#x2F;d&#x2F;page.tsx</p><pre><code class="jsx">&#39;use client&#39;
+import React from &#39;react&#39;
+import &#123; useRouter &#125; from &#39;next/navigation&#39;
+const page = () =&gt; &#123;
+  const router = useRouter()
+  return (
+    &lt;div&gt;编程式导航：&lt;br /&gt;
+        &lt;button onClick=&#123;() =&gt; router.push(&#39;/d&#39;)&#125;&gt;跳转到d页面&lt;/button&gt;
+    &lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><h3 id="路由组"><a href="#路由组" class="headerlink" title="路由组"></a>路由组</h3><p>路由组的命名除了对组织而言没有特殊意义。它们不影响URL路径。</p><p>如下用括号进行分组，不会影响URL路径。</p><p><img src="/posts/b4b4770b/1701852815965.png" alt="1701852815965"></p><pre><code>http://localhost:3000/book
+http://localhost:3000/user
+http://localhost:3000/admin
+http://localhost:3000/shop
+</code></pre><h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>一般用于一些详情页面，比如商品详情、新闻详情等</p><p>创建product页面：src&#x2F;app&#x2F;product&#x2F;[id]&#x2F;page.tsx</p><pre><code class="jsx">import React from &#39;react&#39;
+const page = (&#123;params&#125;: &#123;params: &#123;id: number&#125;&#125;) =&gt; &#123;
+  return (
+    &lt;div&gt;product: &#123;params.id&#125;&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><p>访问：<a target="_blank" rel="noopener" href="http://localhost:3000/product/123">http://localhost:3000/product/123</a></p><h3 id="loading组件"><a href="#loading组件" class="headerlink" title="loading组件"></a>loading组件</h3><p>用户展示loading效果</p><p>新增loading.tsx组件</p><pre><code class="jsx">import React from &#39;react&#39;
+import &#39;./style.css&#39;
+const loading = () =&gt; &#123;
+  return (
+    &lt;div className=&#39;text-red-500&#39;&gt;loading...&lt;/div&gt;
+  )
+&#125;
+export default loading
+</code></pre><p>新增layout.tsx布局</p><pre><code class="jsx">import &#123; Suspense &#125; from &#39;react&#39;
+import Loading from &#39;./loading&#39;
+export default function Layout(&#123; children &#125;: &#123; children: React.ReactNode &#125;) &#123;
+    return (
+    &lt;Suspense fallback=&#123;&lt;Loading /&gt;&#125;&gt;
+        &lt;div&gt;layoutE:&#123;children&#125;&lt;/div&gt;
+    &lt;/Suspense&gt;
+    )
+&#125;
+</code></pre><p>新增page.tsx布局</p><pre><code class="jsx">&#39;use client&#39;
+import React from &#39;react&#39;
+const page = async () =&gt; &#123;
+  const router = useRouter()
+  //模拟服务器请求数据渲染
+  await new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+      resolve(&#39;服务器渲染ok&#39;)
+    &#125;, 2000);
+  &#125;)
+  return (
+    &lt;div&gt;我来了&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/azoux/p/17289923.html">Next.js 13 如何使用loading.js</a></p><h3 id="error组件"><a href="#error组件" class="headerlink" title="error组件"></a>error组件</h3><p>创建一个和page.tsx同级的error.tsx</p><pre><code class="jsx">&#39;use client&#39; // Error components must be Client Components
+ 
+import &#123; useEffect &#125; from &#39;react&#39;
+ 
+export default function Error(&#123; error,reset&#125;: &#123;error: Error &amp; &#123; digest?: string &#125;,reset: () =&gt; void&#125;) &#123;
+    
+  useEffect(() =&gt; &#123;
+    console.error(error)
+  &#125;, [error])
+ 
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Something went wrong!&lt;/h2&gt;
+      &lt;button
+        onClick=&#123;() =&gt; reset()&#125;
+      &gt;
+        Try again
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+&#125;
+</code></pre><p>page.tsx中抛出错误</p><pre><code class="jsx">&#39;use client&#39;
+import React from &#39;react&#39;
+const page = async () =&gt; &#123;
+  const router = useRouter()
+  //模拟服务器请求数据渲染
+  await new Promise((resolve, reject) =&gt; &#123;
+    setTimeout(() =&gt; &#123;
+      reject(&#39;服务器渲染error&#39;)
+    &#125;, 2000);
+  &#125;)
+  return (
+    &lt;div&gt;我来了&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><h3 id="404组件"><a href="#404组件" class="headerlink" title="404组件"></a>404组件</h3><p>app&#x2F;not-found.tsx ,当页面找不到的时候就会展示这个组件。(<strong>名字固定</strong>)</p><pre><code class="jsx">export default function NotFound() &#123;
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Not Found&lt;/h2&gt;
+      &lt;p&gt;Could not find requested resource&lt;/p&gt;
+    &lt;/div&gt;
+  )
+&#125;
+</code></pre><p>特殊情况：当有动态路由时，那么上面的not-found组件无效，需要使用[…not_found]</p><p>app&#x2F;[lang]&#x2F;[…not_found]&#x2F;page.tsx</p><pre><code class="jsx">export default function NotFound(props) &#123;
+    return (
+    &lt;div&gt;
+      &lt;h2&gt;Not Found&lt;/h2&gt;
+      &lt;p&gt;Could not find requested resource&lt;/p&gt;
+    &lt;/div&gt;
+  )
+&#125;
+</code></pre><p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/75302340/not-found-page-does-not-work-in-next-js-13">https://stackoverflow.com/questions/75302340/not-found-page-does-not-work-in-next-js-13</a></p><h3 id="并行路由"><a href="#并行路由" class="headerlink" title="并行路由"></a>并行路由</h3><p>并行路由允许在同一布局中同时或有条件地呈现一个或多个页面。对于应用程序的高度动态部分，并行路由可用于实现复杂的路由模式。</p><blockquote><p>1.并行路由是使用命名文件夹创建的。文件夹名是用 <strong>@文件名</strong> 约定定义的，并作为<code>props</code>传递给<strong>同一级别</strong>的布局。</p><p>2.并行路由文件夹中也支持error.tsx和loading.tsx</p></blockquote><p>创建src&#x2F;app&#x2F;@analytics&#x2F;page.tsx页面</p><pre><code class="jsx">import React from &#39;react&#39;
+const page = () =&gt; &#123;
+  return (
+    &lt;&gt;analytics page&lt;/&gt;
+  )
+&#125;
+export default page
+</code></pre><p>创建src&#x2F;app&#x2F;@team&#x2F;page.tsx页面</p><pre><code class="jsx">import React from &#39;react&#39;
+const page = () =&gt; &#123;
+  return (
+    &lt;&gt;team page&lt;/&gt;
+  )
+&#125;
+export default page
+</code></pre><p>修改src&#x2F;app&#x2F;layout.tsx</p><pre><code class="jsx">import type &#123; Metadata &#125; from &#39;next&#39;
+import &#39;./globals.css&#39;
+import React from &#39;react&#39;
+
+export const metadata: Metadata = &#123;
+  title: &#39;Create Next App&#39;,
+  description: &#39;Generated by create next app&#39;,
+&#125;
+
+// export default function RootLayout(&#123;children&#125;: &#123;children: React.ReactNode&#125;) &#123;
+export default function RootLayout(props: &#123;
+  children: React.ReactNode,
+  team: React.ReactNode, //接受并行路由
+  analytics: React.ReactNode,//接受并行路由
+&#125;) &#123;
+  return (
+    &lt;html lang=&quot;en&quot;&gt;
+      &lt;body className=&quot;bg-slate-400&quot;&gt;
+        根布局：&#123;props.children&#125;
+        &lt;div className=&#39;text-blue-500&#39;&gt;team: &#123;props.team&#125;&lt;/div&gt;
+        &lt;div className=&#39;text-green-400&#39;&gt;analytics: &#123;props.analytics&#125;&lt;/div&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+  )
+&#125;
+</code></pre><p>此时访问<a target="_blank" rel="noopener" href="http://localhost:3000/%E5%8F%AF%E4%BB%A5%E5%B9%B6%E8%A1%8C%E8%B7%AF%E7%94%B1%E5%8F%AF%E4%BB%A5%E6%AD%A3%E5%B8%B8%E5%B1%95%E7%A4%BA%EF%BC%8C%E8%80%8C%E8%AE%BF%E9%97%AE%E5%85%B6%E5%AE%83%E7%BA%A7%E5%88%AB%E6%AF%94%E5%A6%82http://localhost:3000/a%EF%BC%8C%E9%82%A3%E4%B9%88%E5%B9%B6%E8%A1%8C%E8%B7%AF%E7%94%B1%E6%97%A0%E6%B3%95%E5%B1%95%E7%A4%BA%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%B9%B6%E8%A1%8C%E8%B7%AF%E7%94%B1%E4%BD%9C%E4%B8%BA%60props%60%E5%8F%AA%E4%BC%A0%E9%80%92%E7%BB%99**%E5%90%8C%E4%B8%80%E7%BA%A7%E5%88%AB**%E7%9A%84%E5%B8%83%E5%B1%80">http://localhost:3000/可以并行路由可以正常展示，而访问其它级别比如http://localhost:3000/a，那么并行路由无法展示，因为并行路由作为`props`只传递给**同一级别**的布局</a></p><h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>中间件允许在请求完成之前运行代码。然后，根据传入的请求，可以通过重写、重定向、修改请求或响应头或直接响应来修改响应。 （类似拦截器）</p><blockquote><p>新建文件middleware.ts(或js,文件名固定)来定义中间件。与pages或app处于同一级别，或者在src内部。</p></blockquote><p>比如下面定义的一个用于国际化的中间件</p><pre><code class="jsx">import &#123; NextResponse &#125; from &#39;next/server&#39;
+ 
+let locales = [&#39;en&#39;, &#39;zh&#39;]
+ 
+// Get the preferred locale, similar to above or using a library
+function getLocale(request) &#123;  //设置默认语言
+    return &#39;zh&#39;
+&#125;
+ 
+export function middleware(request) &#123;
+  const pathname = request.nextUrl.pathname
+  //判断不是/en 或者/zh开头
+  const pathnameIsMissingLocale = locales.every(
+    (locale) =&gt; !pathname.startsWith(`/$&#123;locale&#125;/`) &amp;&amp; pathname !== `/$&#123;locale&#125;`
+  )
+ 
+  // 如果不是/en 或者/zh开头 那么重定向到/zh或者/en
+  if (pathnameIsMissingLocale) &#123;
+    const locale = getLocale(request)
+    return NextResponse.redirect(
+      new URL(`/$&#123;locale&#125;/$&#123;pathname&#125;`, request.url)
+    )
+  &#125;
+&#125;
+//不需要拦截的路径
+export const config = &#123;
+  matcher: [
+    // Skip all internal paths (_next)
+    //&#39;/((?!_next).*)&#39;,
+    // Optional: only run on root (/) URL
+    // &#39;/&#39;
+    &#39;/((?!api|_next/static|_next/image|favicon.ico|resources).*)&#39;
+  ],
+&#125;
+</code></pre><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>组件有客户端组件(由浏览器渲染的组件)、服务端组件(由服务器渲染的组件)、内置组件</p><p>客户端组件和服务端组件需要自己编写，默认是服务端组件，内置组件由next提供。</p><h3 id="服务端组件"><a href="#服务端组件" class="headerlink" title="服务端组件"></a>服务端组件</h3><p>默认就是服务器组件，按照react组件的写法即可</p><h3 id="客户端组件"><a href="#客户端组件" class="headerlink" title="客户端组件"></a>客户端组件</h3><p>需要在组件的第一行加上<code>use client</code></p><h3 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h3><h4 id="Image组件"><a href="#Image组件" class="headerlink" title="Image组件"></a>Image组件</h4><p>用法和img标签类似，只不过做了性能优化</p><pre><code class="jsx">import Image from &#39;next/image&#39;
+ 
+export default function Page() &#123;
+  return (
+    &lt;Image
+      src=&quot;/profile.png&quot;
+      width=&#123;500&#125;
+      height=&#123;500&#125;
+      alt=&quot;Picture of the author&quot;
+    /&gt;
+  )
+&#125;
+</code></pre><p>Image组件可配置的属性如下：</p><table><thead><tr><th>Prop</th><th>Example</th><th>Type</th><th>Status</th></tr></thead><tbody><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#src"><code>src</code></a></td><td><code>src=&quot;/profile.png&quot;</code></td><td>String</td><td>Required</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#width"><code>width</code></a></td><td><code>width=&#123;500&#125;</code></td><td>Integer (px)</td><td>Required</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#height"><code>height</code></a></td><td><code>height=&#123;500&#125;</code></td><td>Integer (px)</td><td>Required</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#alt"><code>alt</code></a></td><td><code>alt=&quot;Picture of the author&quot;</code></td><td>String</td><td>Required</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#loader"><code>loader</code></a></td><td><code>loader=&#123;imageLoader&#125;</code></td><td>Function</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#fill"><code>fill</code></a></td><td><code>fill=&#123;true&#125;</code></td><td>Boolean</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#sizes"><code>sizes</code></a></td><td><code>sizes=&quot;(max-width: 768px) 100vw, 33vw&quot;</code></td><td>String</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#quality"><code>quality</code></a></td><td><code>quality=&#123;80&#125;</code></td><td>Integer (1-100)</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#priority"><code>priority</code></a></td><td><code>priority=&#123;true&#125;</code></td><td>Boolean</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#placeholder"><code>placeholder</code></a></td><td><code>placeholder=&quot;blur&quot;</code></td><td>String</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#style"><code>style</code></a></td><td><code>style=&#123;&#123;objectFit: "contain"&#125;&#125;</code></td><td>Object</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#onloadingcomplete"><code>onLoadingComplete</code></a></td><td><code>onLoadingComplete=&#123;img =&gt; done())&#125;</code></td><td>Function</td><td>Deprecated</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#onload"><code>onLoad</code></a></td><td><code>onLoad=&#123;event =&gt; done())&#125;</code></td><td>Function</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#onerror"><code>onError</code></a></td><td><code>onError(event =&gt; fail()&#125;</code></td><td>Function</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#loading"><code>loading</code></a></td><td><code>loading=&quot;lazy&quot;</code></td><td>String</td><td>-</td></tr><tr><td><a target="_blank" rel="noopener" href="https://nextjs.org/docs/app/api-reference/components/image#blurdataurl"><code>blurDataURL</code></a></td><td><code>blurDataURL=&quot;data:image/jpeg...&quot;</code></td><td>String</td><td>-</td></tr></tbody></table><h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h2><p>服务器渲染：在服务器上请求数据并渲染好组件</p><pre><code class="jsx">import React from &#39;react&#39;
+
+interface IUser &#123;
+    name: string,
+    age: number
+&#125;
+
+//1.请求数据的方法
+const getData = async () =&gt; &#123;
+    //模拟后端请求，这里也可以换成第三方的请求库，比如axios
+    const res: IUser = await new Promise((resolve, reject) =&gt; &#123;
+        setTimeout(() =&gt; &#123;
+            resolve(&#123; name: &#39;tom&#39;, age: 18 &#125;)
+        &#125;, 1000);
+    &#125;)
+    console.log(&#39;getData res&#39;, res)
+    return res
+&#125;
+
+//2.使用async关键字标记组件
+export default async function page() &#123;
+    //3.请求数据并渲染组件
+    const data = await getData()
+    return (
+        &lt;div&gt;
+            &lt;div&gt;name: &#123;data.name&#125;&lt;/div&gt;
+            &lt;div&gt;age: &#123;data.age&#125;&lt;/div&gt;
+        &lt;/div&gt;
+    )
+&#125;
+</code></pre><p>客户端渲染：和react的写法一直，在useEffect中发送请求，渲染数组即可</p><h2 id="Metadata配置"><a href="#Metadata配置" class="headerlink" title="Metadata配置"></a>Metadata配置</h2><p>静态配置：直接写死</p><pre><code class="jsx">import type &#123; Metadata &#125; from &#39;next&#39;
+ 
+export const metadata: Metadata = &#123;
+  title: &#39;...&#39;,
+  description: &#39;...&#39;,
+&#125;
+ 
+export default function Page() &#123;&#125;
+</code></pre><p>动态配置：获取数据之后在配置</p><p>app&#x2F;[lang]&#x2F;news&#x2F;[id]&#x2F;page.tsx</p><pre><code class="jsx">import &#123;getData&#125; from &#39;@/api/news&#39;
+export async function generateMetadata(&#123; params &#125;) &#123;
+  const &#123; lang, id &#125; = params;
+  const res = await getData(id); //获取数据
+  let title = lang == &quot;zh&quot; ? &#39;中文标题&#39; : &#39;英文标题&#39;;
+  let description = lang == &quot;zh&quot; ? &#39;中文描述&#39; : &#39;英文描述&#39;;
+  return &#123;
+    title,
+    description,
+    keywords: title
+  &#125;;
+&#125;
+export default function Page() &#123;&#125;
+</code></pre><h2 id="相对路径的配置"><a href="#相对路径的配置" class="headerlink" title="@相对路径的配置"></a>@相对路径的配置</h2><p>tsconfig.json文件中paths对象中配置</p><pre><code class="json">&#123;
+  &quot;compilerOptions&quot;: &#123;
+    &quot;baseUrl&quot;: &quot;.&quot;,
+    &quot;paths&quot;: &#123;
+      &quot;@/api/*&quot;: [&quot;api/*&quot;],
+      &quot;@/components/*&quot;: [&quot;components/*&quot;],
+      &quot;@/lang/*&quot;: [&quot;lang/*&quot;],
+      &quot;@/lib/*&quot;: [&quot;lib/*&quot;],
+      &quot;@/styles/*&quot;: [&quot;styles/*&quot;],
+      &quot;@/utils/*&quot;: [&quot;utils/*&quot;]
+    &#125;
+  &#125;
+&#125;
+</code></pre><h2 id="sass的安装和使用"><a href="#sass的安装和使用" class="headerlink" title="sass的安装和使用"></a>sass的安装和使用</h2><p>安装</p><pre><code class="shell">npm install --save-dev sass
+</code></pre><p>style.scss</p><pre><code class="css">.g-container&#123;
+    background-color: deeppink;
+&#125;
+</code></pre><p>page.tsx</p><pre><code class="jsx">import React from &#39;react&#39;
+import &#39;./style.scss&#39;
+const page = () =&gt; &#123;
+  return (
+    &lt;div className=&#39;g-container&#39;&gt;page&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>第一步：安装cross-env</p><pre><code class="shell">npm install --save-dev cross-env
+</code></pre><p>第二步：新建三个环境文件</p><p>.env.development</p><pre><code>NODE_ENV = development
+NEXT_PUBLIC_API = https://dev.api.com
+</code></pre><p>.env.test</p><pre><code>NODE_ENV = test
+NEXT_PUBLIC_API = https://test.api.com
+</code></pre><p>.env.production</p><pre><code>NODE_ENV = production
+NEXT_PUBLIC_API = https://production.api.com
+</code></pre><p>第三步：修改package.json文件中的script</p><pre><code class="json">&quot;scripts&quot;: &#123;
+    &quot;dev&quot;: &quot;cross-env NODE_ENV=development next dev -p 3000&quot;,
+    &quot;build:stage&quot;: &quot;cross-env NODE_ENV=test next build&quot;,
+    &quot;build:prod&quot;: &quot;cross-env NODE_ENV=production next build &quot;,
+    &quot;start:stage&quot;: &quot;cross-env NODE_ENV=test next start -p 3000&quot;,
+    &quot;start:prod&quot;: &quot;cross-env NODE_ENV=production next start -p 3000&quot;
+  &#125;
+</code></pre><p>第四步：页面组件中使用</p><pre><code class="jsx">import React from &#39;react&#39;
+import &#39;./style.scss&#39;
+const page = () =&gt; &#123;
+  const api = process.env.NEXT_PUBLIC_API
+  return (
+    &lt;div className=&#39;g-container&#39;&gt;BASE——API: &#123;api&#125;&lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre><p>参考：<a target="_blank" rel="noopener" href="https://www.yii666.com/blog/422369.html">NextJS 创建项目和环境变量配置</a></p><h2 id="全局状态管理"><a href="#全局状态管理" class="headerlink" title="全局状态管理"></a>全局状态管理</h2><p>在Next.js中，跨不同组件管理状态可能是一项具有挑战性的任务。因此，像ContextApi这样的全局状态管理工具可以帮助简化该过程。核心技术点：react的createContext和useContext<br>参考：<a target="_blank" rel="noopener" href="http://news.sangniao.com/p/2516936941">用ContextApi在Next.js中进行全局状态管理</a></p><h2 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h2><p>利用动态路由和路由中间件来实现</p><pre><code>中文：localhost:3000/zh/a
+英文：localhost:3000/en/a
+</code></pre><p>第一步：在src&#x2F;app目录中新建一个[lang]文件夹，以后所有的页面都放到[lang]文件夹中</p><p>第二步：新建两个国际化文件</p><p>src&#x2F;lang&#x2F;zh.json</p><pre><code class="json">&#123;
+    &quot;name&quot;: &quot;姓名&quot;,
+    &quot;age&quot;: &quot;年龄&quot;
+&#125;
+</code></pre><p>src&#x2F;lang&#x2F;en.json</p><pre><code class="json">&#123;
+    &quot;name&quot;: &quot;name&quot;,
+    &quot;age&quot;: &quot;age&quot;
+&#125;
+</code></pre><p>第三步：编写一个国际化方法</p><p>src&#x2F;utils&#x2F;locale.js</p><pre><code class="js">const en = require(&quot;@/lang/en.json&quot;);
+const zh = require(&quot;@/lang/zh.json&quot;);
+
+export const getDictionaryByStr = (locale) =&gt; &#123;
+  return (key) =&gt; getDeepDict(key, locale === &quot;zh&quot; ? zh : en);
+&#125;;
+
+function getDeepDict(str, value) &#123;
+  let keys = str?.split(&quot;.&quot;);
+  for (let key of keys) &#123;
+    if (value) &#123;
+      value = value[key];
+    &#125;
+  &#125;
+  return value;
+&#125;
+</code></pre><p>第四步：组件中使用</p><p>src&#x2F;[lang]&#x2F;a&#x2F;page.tsx</p><pre><code class="tsx">import React from &#39;react&#39;
+import &#123;getDictionaryByStr&#125; from &#39;@/utils/locale&#39;
+const page = (props: &#123;params:&#123;lang:string&#125;&#125;) =&gt; &#123;
+  const $t = getDictionaryByStr(props.params.lang)
+  return (
+    &lt;div&gt;
+        lang:&#123;props.params.lang&#125;
+        &lt;div&gt;name: &#123;$t(&#39;name&#39;)&#125;&lt;/div&gt;
+        &lt;div&gt;age: &#123;$t(&#39;age&#39;)&#125;&lt;/div&gt;
+    &lt;/div&gt;
+  )
+&#125;
+export default page
+</code></pre></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/b4b4770b/">https://heliufang.github.io/posts/b4b4770b/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">230.6k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>
