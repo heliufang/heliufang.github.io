@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>贺刘芳的笔记本</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="贺刘芳的搬砖日记" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://github.com/heliufang"><i class="icon iconfont icon-github"></i> github</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://gitee.com/heliufang"><i class="icon iconfont icon-gitee"></i> gitee</a></li><li class="hide-xs layui-nav-item" style="float:right"><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf"><i class="icon iconfont icon-cnblogs"></i> 博客园</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 贺刘芳的笔记本</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head.png"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">60</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">9</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">59</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">237.7k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.3.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">16.15.0</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2024-02-02 17:46:07"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/8088d2b5/">1.nuxt2笔记整理</a></li><li><a href="/posts/31559881/">2.js格式化时间间隔</a></li><li><a href="/posts/b1adc31a/">3.vue和react封装echart组件</a></li><li><a href="/posts/b4b4770b/">4.Nextjs笔记</a></li><li><a href="/posts/a35b4e10/">5.vue中window.open父子窗口通信</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">30</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8-%E6%8E%8C%E6%8F%A1"><span class="toc-text">基本选择器(掌握)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E7%BA%A7-%E6%8E%8C%E6%8F%A1"><span class="toc-text">层级(掌握)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%87%E6%BB%A4"><span class="toc-text">基本过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4"><span class="toc-text">内容过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7%E8%BF%87%E6%BB%A4"><span class="toc-text">可见性过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-text">属性（掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E5%85%83%E7%B4%A0%E8%BF%87%E6%BB%A4"><span class="toc-text">子元素过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E8%BF%87%E6%BB%A4"><span class="toc-text">表单过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E8%BF%87%E6%BB%A4%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">表单对象属性过滤【掌握】</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%92%8CCSS"><span class="toc-text">属性和CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">属性【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E7%B1%BB%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">css类【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E4%BB%A3%E7%A0%81-x2F-%E6%96%87%E6%9C%AC-x2F-%E5%80%BC%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">HTML代码&#x2F;文本&#x2F;值【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">css【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE"><span class="toc-text">位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BA%E5%AF%B8"><span class="toc-text">尺寸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86"><span class="toc-text">文档处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E6%8F%92%E5%85%A5%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">内部插入【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E6%8F%92%E5%85%A5%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">外部插入【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">删除【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E6%95%B0%E6%8D%AE"><span class="toc-text">绑定数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2"><span class="toc-text">替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%85%E8%A3%B9"><span class="toc-text">包裹</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%9B%E9%80%89"><span class="toc-text">筛选</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4"><span class="toc-text">过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-text">查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B2%E8%81%94"><span class="toc-text">串联</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6%E6%80%BB%E7%BB%93"><span class="toc-text">常见事件总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD"><span class="toc-text">页面加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-text">事件绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%84%E7%90%86"><span class="toc-text">处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A7%94%E6%B4%BE"><span class="toc-text">委派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2"><span class="toc-text">切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C-%E5%8A%A8%E7%94%BB"><span class="toc-text">效果|动画</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC"><span class="toc-text">基本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8"><span class="toc-text">滑动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA"><span class="toc-text">淡入淡出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#load"><span class="toc-text">load</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get"><span class="toc-text">$.get</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#post"><span class="toc-text">$.post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax-1"><span class="toc-text">$.ajax</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-text">阻止事件冒泡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-text">阻止默认行为</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">web前端</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">jQuery</span></span></p><h1>jQuery笔记</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2019-06-29 09:48:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 4k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 20分钟</span></p></div><div id="article"><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>jquery是一个js库，用来简化js。</p><p>jquery1.x可以兼容IE，jquery2.x以上不兼容ie，所以笔记基于jquery1.x</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>语法：$(“选择器”) &#x3D;&#x3D; jQuery(“选择器”)</p><pre><code class="js">var username = $(&quot;#username&quot;);
+// * val()函数 用于获得 value属性的值
+alert(username.val());
+</code></pre><p>jQuery对象和dom对象转换</p><pre><code class="js">//1 使用javascript获得value值
+var username = document.getElementById(&quot;username&quot;);
+//alert(username.value);
+
+//2 将 dom对象 转换 jQuery对象
+// * 语法：$(dom对象)
+// * 建议：jQuery对象变量名，建议为$开头
+var $username = $(username);
+//alert($username.val());
+
+//3 将 jQuery对象 转换 dom对象
+//3.1 jQuery对象内部使用【数组】存放所有的数据，可以数组的下标获取（索引）
+var username2 = $username[0];
+alert(username2.value);
+//3.2 jQuery提供函数 get() 转换成dom对象
+var username3 = $username.get(0);
+alert(username3.value);
+</code></pre><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="基本选择器-掌握"><a href="#基本选择器-掌握" class="headerlink" title="基本选择器(掌握)"></a>基本选择器(掌握)</h3><pre><code>#id ， id选择器，&lt;xxx id=&quot;&quot;&gt; 通过id值获得元素  
+element，标签选择器，&lt;xxx&gt; 通过标签名获得元素   
+.class ，类选择器，&lt;xxx class=&quot;&quot;&gt; 通过class值获得元素。注意：使用点开头
+s1,s2,...  多选择器，将多个选择器的结果添加一个数组中。例如：$(&quot;span,#two&quot;)
+--------------------------------------------
+*	所有
+</code></pre><h3 id="层级-掌握"><a href="#层级-掌握" class="headerlink" title="层级(掌握)"></a>层级(掌握)</h3><pre><code>A  B ，获得A元素内部所有的B后代元素。（爷孙）例如：$(&quot;body div&quot;).css(&quot;background-color&quot;,&quot;#ff0&quot;);
+A &gt; B ，获得A元素内部所有的B子元素。（父子）
+
+A + B ，获得A元素后面的第一个兄弟B。（兄弟）
+A ~ B ，获得A元素后面的所有的兄弟B。（兄弟）
+</code></pre><h3 id="基本过滤"><a href="#基本过滤" class="headerlink" title="基本过滤"></a>基本过滤</h3><p>过滤选择器格式 “：关键字”</p><pre><code>:first		, 第一个
+:last		,最后一个
+:eq(index) ，获得指定索引
+:gt(index) 大于
+:lt(index) 小于
+:even 偶数，从 0 开始计数。例如：查找表格的1、3、5...行（即索引值0、2、4...）
+:odd 奇数
+:not(selector) 去除所有与给定选择器匹配的元素  例如：$(&quot;div:not(&#39;.one&#39;)&quot;).css(&quot;background-color&quot;,&quot;#ff0&quot;);
+------------------------------
+:header  获得所有标题元素。例如：&lt;h1&gt;...&lt;h6&gt;
+:animated  获得所有动画
+:focus	获得焦点  例如：$(this).is(&quot;:focus&quot;)
+</code></pre><h3 id="内容过滤"><a href="#内容过滤" class="headerlink" title="内容过滤"></a>内容过滤</h3><pre><code>:empty  当前元素是否为空（是否有标签体--子元素、文本）
+:has(...)  当前元素，是否含有指定的子元素 例如： $(&quot;div:has(&#39;.mini&#39;)&quot;)
+:parent	当前元素是否是父元素
+:contains( text ) 标签体是否含有指定的文本 例如：$(&quot;div:contains(&#39;di&#39;)&quot;).css(&quot;background-color&quot;,&quot;#ff0&quot;);
+</code></pre><h3 id="可见性过滤"><a href="#可见性过滤" class="headerlink" title="可见性过滤"></a>可见性过滤</h3><pre><code>:hidden	隐藏。特指 &lt;xxx style=&quot;display:none;&quot;&gt;  ，获得 &lt;input type=&quot;hidden&quot;&gt;
+:visible	可见（默认）
+</code></pre><h3 id="属性（掌握）"><a href="#属性（掌握）" class="headerlink" title="属性（掌握）"></a>属性（掌握）</h3><pre><code>[属性名]				获得含有指定的属性名的元素   例如：$(&quot;div[title]&quot;)
+[属性名=值]			获得属性名 等于 指定值的 的元素【1】例如： $(&quot;div[title=&#39;test&#39;]&quot;)
+[属性名!=值]			获得属性名 不等于 指定值的 的元素
+[as1][as2][as3]....		复合选择器，多个条件同时成立。类似 where ...and...and【2】
+                    例如：$(&quot;div[id][title*=&#39;es&#39;]&quot;)
+---------------------------------------
+[属性名^=值]			获得以属性值 开头 的元素
+[属性名$=值]			获得以属性值 结尾 的元素
+[属性名*=值]			获得 含有属性值  的元素
+</code></pre><h3 id="子元素过滤"><a href="#子元素过滤" class="headerlink" title="子元素过滤"></a>子元素过滤</h3><pre><code>:nth-child(index)  ，获得第几个孩子，从1开始。 例如：$(&quot;div.one :nth-child(2)&quot;)
+:first-child ， 获得第一个孩子
+:last-child ， 获得最后孩子
+:only-child ， 获得独生子
+</code></pre><h3 id="表单过滤"><a href="#表单过滤" class="headerlink" title="表单过滤"></a>表单过滤</h3><pre><code>:input  所有的表单元素。（&lt;input&gt; / &lt;select&gt; / &lt;textarea&gt; / &lt;button&gt;）
+:text				文本框&lt;input type=&quot;text&quot;&gt;  例如：var $alltext = $(&quot;#form1 :text&quot;);
+:password		密码框&lt;input type=&quot; password &quot;&gt;
+:radio			单选&lt;input type=&quot;radio&quot;&gt;
+:checkbox		复选框&lt;input type=&quot;checkbox&quot;&gt;
+:submit			提交按钮&lt;input type=&quot;submit&quot;&gt;
+:image			图片按钮&lt;input type=&quot;image&quot; src=&quot;&quot;&gt;
+:reset			重置按钮&lt;input type=&quot;reset&quot;&gt;
+:file				文件上传&lt;input type=&quot;file&quot;&gt;
+:hidden			隐藏域&lt;input type=&quot;hidden&quot;&gt;  ,还可以获得&lt;xxx style=&quot;display:none&quot;&gt; 
+                    其他值：&lt;br&gt; &lt;option&gt;  ,存在浏览器兼容问题
+:button			所有普通按钮。 &lt;button &gt;  或 &lt;input type=&quot;button&quot;&gt;
+</code></pre><h3 id="表单对象属性过滤【掌握】"><a href="#表单对象属性过滤【掌握】" class="headerlink" title="表单对象属性过滤【掌握】"></a>表单对象属性过滤【掌握】</h3><pre><code>:enabled		可用  例如：$(&quot;input:enabled&quot;)
+:disabled		不可用。&lt;xxx disabled=&quot;disabled&quot;&gt; 或&lt;xxx disabled=&quot;&quot;&gt;  或  &lt;xxx disabled&gt;
+:checked		选中（单选框radio、复选框 checkbox）
+:selected		选择（下拉列表 select option）例如： $(&quot;:selected&quot;)
+</code></pre><h2 id="属性和CSS"><a href="#属性和CSS" class="headerlink" title="属性和CSS"></a>属性和CSS</h2><h3 id="属性【掌握】"><a href="#属性【掌握】" class="headerlink" title="属性【掌握】"></a>属性【掌握】</h3><pre><code>attr(name)   获得指定属性名的值 例如：$(&#39;#username&#39;).attr(&#39;id&#39;)
+attr(key ,val ) 给一个指定属性名设置值 $(&#39;#username&#39;).attr(&#39;name&#39;,&#39;username&#39;)
+attr(prop ) 给多个属性名设置值。参数：prop  json数据
+    &#123;k : v , k : v , .....&#125;
+removeAttr(name)  移除指定属性
+</code></pre><h3 id="css类【掌握】"><a href="#css类【掌握】" class="headerlink" title="css类【掌握】"></a>css类【掌握】</h3><pre><code>addClass(&quot;my&quot;)  追加一个类
+removeClass(&quot;my&quot;)  将指定类移除
+toggleClass(&quot;my&quot;)  如果有my将移除，如果没有将添加。
+</code></pre><h3 id="HTML代码-x2F-文本-x2F-值【掌握】"><a href="#HTML代码-x2F-文本-x2F-值【掌握】" class="headerlink" title="HTML代码&#x2F;文本&#x2F;值【掌握】"></a>HTML代码&#x2F;文本&#x2F;值【掌握】</h3><pre><code>val()		获得value的值
+val(text)    设置value的值
+
+html()  获得html代码，含有标签
+html(...) 设置html代码，如果有标签，将进行解析。
+
+text() 获得文本值，将标签进行过滤
+text(...) 设置文本值，如果有标签，将被转义  --&gt;   &lt;  &amp;lt;   &amp;  &amp;amp;  &gt;  &amp;lt;    &amp;nbsp;
+</code></pre><h3 id="css【掌握】"><a href="#css【掌握】" class="headerlink" title="css【掌握】"></a>css【掌握】</h3><pre><code>css(name)  获得指定名称的css值
+css(name ,value) 设置一对值
+css(prop) 设置一组值
+</code></pre><h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p><img src="/posts/4131456d/wps1.jpg" alt="img"></p><pre><code>offset()  获得坐标 ， 返回JSON对象，&#123;&quot;top&quot;:200, &quot;left&quot; : 100&#125;
+offset(...) 设置坐标。例如：$(this).offset(&#123;&quot;top&quot;:0 , &quot;left&quot; : 0&#125;)
+
+scrollTop()  垂直滚动条 滚过的距离
+scrollLeft()  水平滚动条 滚过的距离
+</code></pre><h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><pre><code>height([...]) 获得 或 设置 高度
+width([...])获得 或 设置 宽度
+</code></pre><h2 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h2><h3 id="内部插入【掌握】"><a href="#内部插入【掌握】" class="headerlink" title="内部插入【掌握】"></a>内部插入【掌握】</h3><pre><code>A.append(B)  将B插入到A的内部后面（之后的串联操作，操作A）
+    &lt;A&gt;
+        ....
+        &lt;B&gt;&lt;/B&gt;
+    &lt;A&gt;
+A.prepend(B) 将B插入到A的内部前面
+    &lt;A&gt;
+        &lt;B&gt;&lt;/B&gt;
+        ....
+    &lt;A&gt;
+--------------------------------------------
+A.appendTo(B) 将A插入到B的内部后面 （之后的串联操作，操作A）
+A.prependTo(B) 将A插入到B的内部前面
+</code></pre><h3 id="外部插入【掌握】"><a href="#外部插入【掌握】" class="headerlink" title="外部插入【掌握】"></a>外部插入【掌握】</h3><pre><code>A.after(B)  , 将B插入到A后面（同级）
+    &lt;A&gt;&lt;/A&gt;
+    &lt;B&gt;&lt;/B&gt;
+A.before(B) ，将B插入到A前面
+    &lt;B&gt;&lt;/B&gt;
+    &lt;A&gt;&lt;/A&gt;
+-----------------------------------
+A.insertAfter(B) , 将A插入到B后面（同级）
+    &lt;B&gt;&lt;/B&gt;
+    &lt;A&gt;&lt;/A&gt;
+A.insertBefore(B) 将A插入到B前面
+    &lt;A&gt;&lt;/A&gt;
+    &lt;B&gt;&lt;/B&gt;
+</code></pre><h3 id="删除【掌握】"><a href="#删除【掌握】" class="headerlink" title="删除【掌握】"></a>删除【掌握】</h3><pre><code>empty()  清空标签体
+remove() 删除当前对象。如果之后再使用，元素本身保留，绑定事件 或 绑定数据 都会被移除
+detach() 删除当前对象。如果之后再使用，元素本身保留，绑定事件 或 绑定数据 都保留
+</code></pre><h3 id="绑定数据"><a href="#绑定数据" class="headerlink" title="绑定数据"></a>绑定数据</h3><pre><code>data(name) 获得
+data(name,value) 设置
+</code></pre><h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><pre><code>A.replaceWith(B) ，使用A将B替换掉
+A.replaceAll(B) ，使用B将A替换掉
+</code></pre><h3 id="包裹"><a href="#包裹" class="headerlink" title="包裹"></a>包裹</h3><pre><code>A.wrap(B) ，使用B将每一个A进行包裹（多个B）
+    &lt;B&gt;&lt;A&gt;&lt;/A&gt;&lt;/B&gt;
+    &lt;B&gt;&lt;A&gt;&lt;/A&gt;&lt;/B&gt;
+    
+A.wrapAll(B) ，使用B将所有A进行包裹（一个B）
+    &lt;B&gt;
+        &lt;A&gt;&lt;/A&gt;
+        &lt;A&gt;&lt;/A&gt;
+    &lt;/B&gt;
+
+A.wrapInner(B) ,使用B将每一个A的标签体包裹。
+    &lt;A&gt;&lt;B&gt;。。。&lt;/B&gt;&lt;/A&gt;
+    &lt;A&gt;&lt;B&gt;。。。&lt;/B&gt;&lt;/A&gt;
+
+A.unwrap() ，将A的父元素删除，自己留着
+</code></pre><h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><p>l 选择器可以完成功能，筛选提供相同<font color="red">函数</font>。</p><p>​	选择器	:first</p><p>​	筛选	first()</p><p>l 对比：</p><p>​	$(“div:first”)	直接获得第一个div （永远只能操作第一个）</p><p>​	$(“div”).first()	先获得所有的div，从所有的中筛选出第一个。 （可以操作第一个，也可以操作所有）</p><h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><pre><code>eq(index | -index)  类型 :eq()  例如： $(&quot;div&quot;).eq(3)
+    index：正数，从头开始获得指定索引的元素。这个元素的位置是从0算起。0表示第一个
+    -index：负数，从尾开始获得指定索引的元素。1算起。 -1表示最后一个
+first()	第一个  :first
+last()	最后一个  :last
+is()		判断
+hasClass()	判断是否是指定class 。&lt;xxx class=&quot;my&quot;&gt;
+    这其实就是 is(&quot;.&quot; + class)。
+filter()  筛选出与指定表达式匹配的元素集合
+not()	将指定内容删除
+--------------------------------
+has()  子元素是否有
+slice(start , end)  截取元素 ，[2,4)  --&gt; 2,3
+map()  jQuery对象 拆分成  jQuery对象数组
+</code></pre><h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><pre><code>&lt;A&gt;
+    &lt;B&gt;
+        &lt;C&gt;&lt;/C&gt;
+        &lt;D&gt;&lt;/D&gt;
+        &lt;E&gt;&lt;/E&gt;
+        &lt;F&gt;&lt;/F&gt;
+    &lt;/B&gt;
+&lt;/A&gt;
+------------------------------
+B.children([...])   获得所有的子元素。CDEF
+A.find(D)  从指定的区域查询指定元素。D
+D.next()	下一个兄弟。E
+D.nextAll() 后面的所有兄弟。EF
+E.prev()	上一个兄弟。D  （previous）
+E.prevAll()  前面的所有兄弟。CD
+E.siblings()	所有兄弟。CDF
+E.parent()  父元素。B
+E.closest(A)  向上获得指定的父元素（含自己），如果获得返回一个对象，如果没有没有对象。
+------------------------------
+
+C.nextUntil(E)  获得后面所有兄弟，直到指定条件位置。DE
+F.prevUntil(D)  获得前面所有兄弟，直到指定条件位置。DE
+
+E.parents()   获得所有的父元素。AB
+
+closest和parents的主要区别是：
+1，前者从当前元素开始匹配寻找，后者从父元素开始匹配寻找；
+2，前者逐级向上查找，直到发现匹配的元素后就停止了，后者一直向上查找直到根元素，然后把这些元素放进一个临时集合中，再用给定的选择器表达式去过滤；
+3，前者返回0或1个元素，后者可能包含0个，1个，或者多个元素。 
+</code></pre><h3 id="串联"><a href="#串联" class="headerlink" title="串联"></a>串联</h3><ul><li>将多条语句，改成一条。（得瑟代码）</li></ul><pre><code>A.add(B)  将A和B组合一个对象 。类型 $(&quot;A,B&quot;)
+andSelf() ： 将之前对象添加到操作集合中
+    A.children().andSelf()  
+       A	孩子    孩子和A
+end() ：回到最近的一个&quot;破坏性&quot;操作之前
+    A.children().children().end() .end()  
+    A   孩子   孙子		孩子  A
+--------------------
+contents()  获得所有的子节点（子元素 和 文本）
+</code></pre><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="常见事件总结"><a href="#常见事件总结" class="headerlink" title="常见事件总结"></a>常见事件总结</h3><p><img src="/posts/4131456d/wps2.jpg" alt="img"></p><pre><code>1&gt; jQuery 提供额外的事件，用于完善javascript缺失的
+2&gt; focusin 和 focusout
+    focusin 获得焦点。js focus。
+        focusin事件跟focus事件区别在于，他可以在父元素上检测子元素获取焦点的情况。
+    focusout 失去焦点。js blur。
+        focusout事件跟blur事件区别在于，他可以在父元素上检测子元素失去焦点的情况。
+
+3&gt; mouseenter 和 mouseleave
+    mouseenter 鼠标移入。js mouseover
+        与 mouseover 事件不同，只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。如果鼠标指针穿过任何子元素，同样会触发 mouseover 事件。
+
+    mouseleave 鼠标移出。js mouseout
+        与 mouseout 事件不同，只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件。如果鼠标指针离开任何子元素，同样会触发 mouseout 事件。
+</code></pre><h3 id="页面加载"><a href="#页面加载" class="headerlink" title="页面加载"></a>页面加载</h3><ul><li>标准api</li></ul><pre><code class="js">$(document).ready(function()&#123;
+
+&#125;);
+//等效
+jQuery(document).ready( fn );
+</code></pre><ul><li>简化版</li></ul><pre><code class="js">$(function()&#123;
+&#125;);
+//登录
+jQuery(function()&#123;
+&#125;);
+</code></pre><h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><h4 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h4><pre><code>bind(type ,fn)  给当前对象绑定一个事件。例如：A.bind(&quot;click&quot;, fn );  类型：A.click( fn );
+unbind(type ) 解绑bind绑定事件
+
+one(type ,fn ) 给当前对象绑定一次事件。
+-----------------------------------------
+on(events , fn) 提供绑定事件处理程序所需的所有功能。完成3个方法功能.bind(), .delegate(), 和 .live().
+off(events) 解绑
+
+trigger(type) 在每一个匹配的元素上触发某类事件。例如：A.trigger(&quot;submit&quot;)  ,类似 A.submit();
+triggerHandler(type) 在每一个匹配的元素上触发某类事件。但不会执行浏览器默认动作，也不会产生事件冒泡。
+</code></pre><h3 id="委派"><a href="#委派" class="headerlink" title="委派"></a>委派</h3><pre><code>live(type , fn) 绑定事件，之后动态添加同样的成员，也具有相同的事件。
+die(type) 解绑事件
+</code></pre><h3 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h3><pre><code>hover(over , out)
+    简化版，鼠标移入和移出  ，A.mouseover( fn ).mouseout( fn)  简化 A.hover( fn , fn )
+toggle( fn , fn , fn ,...) 执行click事件，每点击一次执行一个fn
+</code></pre><h2 id="效果-动画"><a href="#效果-动画" class="headerlink" title="效果|动画"></a>效果|动画</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><p>通过改变元素 高度和宽度 进行显示或隐藏</p><pre><code>show(speed,fn) 显示
+    参数1：speed速度。显示的时间，单位：毫秒。固定字符串：(&quot;slow&quot;,&quot;normal&quot;, or &quot;fast&quot;)
+    参数2：fn 回调函数。动画效果完成之后回调函数。
+hide() 隐藏
+toggle() 切换
+</code></pre><h3 id="滑动"><a href="#滑动" class="headerlink" title="滑动"></a>滑动</h3><p>通过改变元素 高度 进行显示或隐藏</p><pre><code>slideDown()  显示
+slideUp() 隐藏
+slideToggle() 切换
+</code></pre><h3 id="淡入淡出"><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3><p>通过改变元素 透明度 进行显示或隐藏</p><pre><code>fadeIn() 显示
+fadeOut() 隐藏
+fadeToggle() 切换
+fadeTo(speed,opacity,fn) 指定透明度
+    参数2：opacity 透明度，一个0至1之间表示透明度的数字
+</code></pre><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><pre><code>第一层：$.ajax(...) 最底层ajax请求，编写最复杂，完成功能最全的。
+
+第二层：load() 、$.get() 、$.post()  开发中常用3个
+
+第三层：$.getJSON()  、$.getScript() 高级开发
+
+$.getJSON() 可以完成js“跨域”请求
+
+域名：域名+端口+项目，js默认不能跨域请求。
+
+$.getScript()  动态加载js文件。之前使用&lt;script src=&quot;&quot;&gt;加载页面时，一并加载js文件
+</code></pre><h3 id="load"><a href="#load" class="headerlink" title="load"></a>load</h3><pre><code class="js">//0.2 请求参数，采用json
+var params = &#123;&quot;username&quot;:&quot;杰克&quot;, &quot;password&quot;:&quot;1234&quot;&#125;;
+
+/* 1 load()函数 ，必须使用jquery对象
+* * 格式：load(url, [data], [callback])
+* 		参数1：url ，请求路径
+* 		参数2：data，请求参数
+* 		参数3：callback，回调函数
+* * 如果没有请求参数，发送的GET请求
+* * 如果有请求参数，发送的POST请求。请求没有中文乱码
+* * 回调函数的参数
+* 		参数1：data，响应数据。load()永远获得字符串，如果需要使用，必须手动转换json对象。
+*/
+$(this).load(url,params,function(data)&#123;
+    //转换json对象
+    var jsonData = eval(&quot;(&quot;+data+&quot;)&quot;);
+    alert(jsonData.message);
+&#125;);
+</code></pre><h3 id="get"><a href="#get" class="headerlink" title="$.get"></a>$.get</h3><pre><code class="js">/* 2 $.get() 全局函数，发送get请求
+* * 格式：jQuery.get(url, [data], [callback], [type])
+* 		* 参数4：type ，返回内容格式，xml, html, script, json, text, _default。
+* * GET请求不适合发送中文数据，存放请求的中文乱码。
+* 		必须手动解码   new String(username.getBytes(&quot;ISO-8859-1&quot;) ,&quot;UTF-8&quot;)
+* * 响应数据，如果使用  application/json;charset=UTF-8 ，jQuery自动将数据转换json对象。
+* * 响应数据，如果使用  text/html;charset=UTF-8 ，回调函数获得字符串数据，需要手动转换。
+* 		使用“参数4”，设置&quot;json&quot;，jQuery将字符串 转换成 json对象
+*/
+$.get(url,params,function(data)&#123;
+    alert(data);
+&#125;,&quot;json&quot;);
+</code></pre><h3 id="post"><a href="#post" class="headerlink" title="$.post"></a>$.post</h3><pre><code class="js">/* 3 $.post() 全局函数，发送post请求
+* * 格式：jQuery.post(url, [data], [callback], [type])*/
+$.post(url,params,function(data)&#123;
+    alert(data);
+&#125;,&quot;json&quot;)		 
+</code></pre><h3 id="ajax-1"><a href="#ajax-1" class="headerlink" title="$.ajax"></a>$.ajax</h3><pre><code class="js">/* 4 $.ajax() 底层功能最强大的
+* * 格式：jQuery.ajax([settings])
+* 		参数settings：设置所有的参数
+* 			url:发送请求的地址
+* 			data:发送到服务器的数据,请求参数
+* 			type:请求方式 (&quot;POST&quot; 或 &quot;GET&quot;)， 
+* 			success:成功的回调函数，success(data, textStatus, jqXHR)
+* 			error:请求失败时调用此函数
+* 			dataType:预期服务器返回的数据类型
+* 				&quot;xml&quot;: 返回 XML 文档，可用 jQuery 处理。
+* 				&quot;html&quot;: 返回纯文本 HTML 信息；包含的script标签会在插入dom时执行。
+* 				&quot;script&quot;: 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了&quot;cache&quot;参数。&#39;&#39;&#39;注意：&#39;&#39;&#39;在远程请求时(不在同一个域下)，所有POST请求都将转为GET请求。(因为将使用DOM的script标签来加载)
+* 				&quot;json&quot;: 返回 JSON 数据 。
+* 				&quot;jsonp&quot;: JSONP 格式。使用 JSONP 形式调用函数时，如 &quot;myurl?callback=?&quot; jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。
+* 				&quot;text&quot;: 返回纯文本字符串
+ */
+
+$.ajax(&#123;
+    &quot;url&quot;:url,
+    &quot;data&quot;:params,
+    &quot;type&quot;:&quot;POST&quot;,
+    &quot;success&quot;:function(data)&#123;
+        alert(data);
+    &#125;,
+    &quot;error&quot;:function()&#123;
+        alert(&quot;服务器繁忙，请稍后重试&quot;);
+    &#125;,
+    &quot;dataType&quot;:&quot;json&quot;
+&#125;);
+</code></pre><h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h3 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h3><p>event.stopPropagation()</p><h3 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h3><p>event.preventDefault()</p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>贺刘芳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/4131456d/">https://heliufang.github.io/posts/4131456d/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>访客数 <span style="color:red" id="busuanzi_value_site_uv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 人次 | 访问量 <span style="color:red" id="busuanzi_value_site_pv"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 次 | 本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">237.7k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.3.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var a='<ul class="search-result-list">',i=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),t=e.url;""!=o&&i.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(a+="<li><a href='"+t+"' class='search-result-title'>"+o+"</a>",a+="</li>")}),a+="</ul>",n.innerHTML=a)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){r=l.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,d=l.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function s(){var n,o,a,i,l,c;w.clearRect(0,0,r,d),f.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>r||e.x<0?-1:1,e.ya*=e.y>d||e.y<0?-1:1,w.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<u.length;o++)null!==(n=u[o]).x&&null!==n.y&&(i=e.x-n.x,l=e.y-n.y,(c=i*i+l*l)<n.max&&(n===x&&c>=n.max/2&&(e.x-=.03*i,e.y-=.03*l),a=(n.max-c)/n.max,w.beginPath(),w.lineWidth=a/2,w.strokeStyle="rgba("+m.c+","+(.2+a)+")",w.moveTo(e.x,e.y),w.lineTo(n.x,n.y),w.stroke()))}),h(s)}var r,d,u,o,a,i,l=document.createElement("canvas"),m=(o=t("script"),a=o.length,i=o[a-1],{l:a,z:e(i,"zIndex",-1),o:e(i,"opacity",.5),c:e(i,"color","0,0,50"),n:e(i,"count",99)}),c="c_n"+m.l,w=l.getContext("2d"),h=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},y=Math.random,x={x:null,y:null,max:2e4};l.id=c,l.style.cssText="position:fixed;top:0;left:0;z-index:"+m.z+";opacity:"+m.o,t("body")[0].appendChild(l),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,x.x=e.clientX,x.y=e.clientY},window.onmouseout=function(){x.x=null,x.y=null};for(var f=[],p=0;m.n>p;p++){var $=y()*r,v=y()*d,g=2*y()-1,T=2*y()-1;f.push({x:$,y:v,xa:g,ya:T,max:6e3})}u=f.concat([x]),setTimeout(function(){s()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days");$("#runDays").html(days),$("#runDaysFooter").html(days);var lastUpdate=moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow();$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var t=$("#toc-area"),l=$(t).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),e=(($(window).scrollTop()+l)/o*100).toFixed(2);99<e&&(e=100),0==e&&(e=0),element.progress("demo",e+"%"),$("#progressTxt").text(e),console.log("percent",e),$(t).css("position",$(window).scrollTop()>l?"fixed":"static"),$(t).css("top",$(window).scrollTop()>l?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(o=null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>')})</script></html>
