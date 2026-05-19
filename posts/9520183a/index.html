@@ -1,0 +1,2030 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>程序员青阳</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="程序员青阳" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 程序员青阳</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="mobile-toc-toggle hide-md hide-lg" id="mobileTocToggle"><i class="layui-icon layui-icon-list"></i></div><div class="mobile-toc-panel hide-md" id="mobileTocPanel"><div class="mobile-toc-header"><span><i class="layui-icon layui-icon-align-center"></i> 本文目录</span> <i class="layui-icon layui-icon-close" id="mobileTocClose"></i></div><div class="mobile-toc-body" id="mobileTocBody"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%85%A5%E9%97%A8"><span class="toc-text">MySQL入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">数据库概述【了解】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E8%A7%84%E8%8C%83%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">SQL规范【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E7%AE%80%E4%BB%8B"><span class="toc-text">SQL简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E5%88%86%E7%B1%BB"><span class="toc-text">SQL分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">SQL通用语法【掌握】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%93%8D%E4%BD%9C%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">数据库增删改查操作【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">常用数据类型【掌握】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%93%8D%E4%BD%9C%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">表增删改查操作【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-1"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8%E4%B8%AD%E5%AD%97%E6%AE%B5%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">修改表中字段【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-2"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E4%B8%AD%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9CDML%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">表中记录操作DML【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-3"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="toc-text">示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-text">MySQL单表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL%E8%A1%A8%E4%B8%AD%E7%BA%A6%E6%9D%9F"><span class="toc-text">DDL表中约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">主键约束【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-4"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-4"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3"><span class="toc-text">图解:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E"><span class="toc-text">主键自增</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-5"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-5"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-1"><span class="toc-text">图解:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete%E5%92%8Ctruncate%E5%8C%BA%E5%88%AB"><span class="toc-text">delete和truncate区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-6"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-6"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E7%BA%A6%E6%9D%9F"><span class="toc-text">非空约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-7"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-7"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-2"><span class="toc-text">图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F"><span class="toc-text">唯一约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-8"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-8"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-3"><span class="toc-text">图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%BA%A6%E6%9D%9F"><span class="toc-text">默认约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-9"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-9"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-4"><span class="toc-text">图解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">单表查询操作【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2"><span class="toc-text">基础查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-10"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-10"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9F%A5%E8%AF%A2"><span class="toc-text">比较查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%9F%A5%E8%AF%A2"><span class="toc-text">逻辑查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2"><span class="toc-text">范围查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-text">模糊查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E5%88%A4%E6%96%AD"><span class="toc-text">非空判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-text">排序查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-text">聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limit%E6%9F%A5%E8%AF%A2"><span class="toc-text">limit查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E9%A1%BA%E5%BA%8F"><span class="toc-text">SQL顺序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-text">MySQL多表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">外键【了解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">外键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-text">存储引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">外键约束添加和删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BE%9D%E8%B5%96%E5%9B%BE"><span class="toc-text">查看依赖图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F%E7%89%B9%E7%82%B9"><span class="toc-text">外键约束特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-11"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">多表查询【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-text">连接查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%BF%9E%E6%8E%A5%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">交叉连接【了解】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="toc-text">内连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-text">左外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-text">右外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-text">全外连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">自连接查询【熟悉】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">子查询【熟悉】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BB%BA%E8%A1%A8%E5%A4%8D%E5%88%B6%E6%95%B0%E6%8D%AE%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">快速建表复制数据【了解】</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%87%BD%E6%95%B0%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">MySQL函数【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B"><span class="toc-text">内置函数简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">数值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">时间日期函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E6%93%8D%E4%BD%9C"><span class="toc-text">条件判断操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%AA%97%E5%87%BD%E6%95%B0"><span class="toc-text">开窗函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E4%B8%8EMySQL%E4%BA%A4%E4%BA%92%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">python与MySQL交互【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0PyMySQL"><span class="toc-text">为什么要学习PyMySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87-1"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85pymysql%E5%BA%93"><span class="toc-text">安装pymysql库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-text">方式二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pymysql%E4%BD%BF%E7%94%A8"><span class="toc-text">pymysql使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-11"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="toc-text">查询操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-12"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-12"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-text">增删改操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-13"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-text">增:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9"><span class="toc-text">改:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0"><span class="toc-text">删:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rollback%E4%BA%8B%E7%89%A9%E5%9B%9E%E6%BB%9A%E6%BC%94%E7%A4%BA%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">rollback事物回滚演示【了解】</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">优化后的代码【掌握】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%A1%88%E4%BE%8B%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="toc-text">登录案例【理解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%94%E7%A4%BAsql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">演示sql注入问题和解决办法</span></a></li></ol></li></ol></li></ol></div></div><div class="mobile-toc-mask hide-md" id="mobileTocMask"></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head2.jpg"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">72</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">12</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">67</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">299.5k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">20.19.6</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2026-05-19 15:35:55"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/9520183a/">1.mysql</a></li><li><a href="/posts/53d0684b/">2.Linux</a></li><li><a href="/posts/a4d633c6/">3.python高级</a></li><li><a href="/posts/315dec50/">4.python基础笔记</a></li><li><a href="/posts/5430d244/">5.AI编程智能体提示词</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%85%A5%E9%97%A8"><span class="toc-text">MySQL入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">数据库概述【了解】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E8%A7%84%E8%8C%83%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">SQL规范【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E7%AE%80%E4%BB%8B"><span class="toc-text">SQL简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E5%88%86%E7%B1%BB"><span class="toc-text">SQL分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E9%80%9A%E7%94%A8%E8%AF%AD%E6%B3%95%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">SQL通用语法【掌握】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%93%8D%E4%BD%9C%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">数据库增删改查操作【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">常用数据类型【掌握】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%93%8D%E4%BD%9C%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">表增删改查操作【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-1"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8%E4%B8%AD%E5%AD%97%E6%AE%B5%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">修改表中字段【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-2"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-2"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E4%B8%AD%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9CDML%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">表中记录操作DML【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-3"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-3"><span class="toc-text">示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-text">MySQL单表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DDL%E8%A1%A8%E4%B8%AD%E7%BA%A6%E6%9D%9F"><span class="toc-text">DDL表中约束</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">主键约束【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-4"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-4"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3"><span class="toc-text">图解:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E"><span class="toc-text">主键自增</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-5"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-5"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-1"><span class="toc-text">图解:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete%E5%92%8Ctruncate%E5%8C%BA%E5%88%AB"><span class="toc-text">delete和truncate区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-6"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-6"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E7%BA%A6%E6%9D%9F"><span class="toc-text">非空约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-7"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-7"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-2"><span class="toc-text">图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F"><span class="toc-text">唯一约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-8"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-8"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-3"><span class="toc-text">图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E7%BA%A6%E6%9D%9F"><span class="toc-text">默认约束</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-9"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-9"><span class="toc-text">示例:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E8%A7%A3-4"><span class="toc-text">图解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">单表查询操作【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"><span class="toc-text">准备数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2"><span class="toc-text">基础查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-10"><span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-10"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-text">条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9F%A5%E8%AF%A2"><span class="toc-text">比较查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%9F%A5%E8%AF%A2"><span class="toc-text">逻辑查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8C%83%E5%9B%B4%E6%9F%A5%E8%AF%A2"><span class="toc-text">范围查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-text">模糊查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E7%A9%BA%E5%88%A4%E6%96%AD"><span class="toc-text">非空判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-text">排序查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-text">聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limit%E6%9F%A5%E8%AF%A2"><span class="toc-text">limit查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E9%A1%BA%E5%BA%8F"><span class="toc-text">SQL顺序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-text">MySQL多表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">外键【了解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">外键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-text">存储引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4"><span class="toc-text">外键约束添加和删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BE%9D%E8%B5%96%E5%9B%BE"><span class="toc-text">查看依赖图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F%E7%89%B9%E7%82%B9"><span class="toc-text">外键约束特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-11"><span class="toc-text">示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">多表查询【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2"><span class="toc-text">连接查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%BF%9E%E6%8E%A5%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">交叉连接【了解】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="toc-text">内连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-text">左外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%B3%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-text">右外连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="toc-text">全外连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">自连接查询【熟悉】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E6%9F%A5%E8%AF%A2%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">子查询【熟悉】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BB%BA%E8%A1%A8%E5%A4%8D%E5%88%B6%E6%95%B0%E6%8D%AE%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">快速建表复制数据【了解】</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%87%BD%E6%95%B0%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">MySQL函数【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0%E7%AE%80%E4%BB%8B"><span class="toc-text">内置函数简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%87%BD%E6%95%B0"><span class="toc-text">数值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-text">时间日期函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD%E6%93%8D%E4%BD%9C"><span class="toc-text">条件判断操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E7%AA%97%E5%87%BD%E6%95%B0"><span class="toc-text">开窗函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python%E4%B8%8EMySQL%E4%BA%A4%E4%BA%92%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">python与MySQL交互【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0PyMySQL"><span class="toc-text">为什么要学习PyMySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87-1"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85pymysql%E5%BA%93"><span class="toc-text">安装pymysql库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-text">方式二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pymysql%E4%BD%BF%E7%94%A8"><span class="toc-text">pymysql使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-11"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="toc-text">查询操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-12"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B-12"><span class="toc-text">示例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%88%A0%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="toc-text">增删改操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-13"><span class="toc-text">知识点:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E"><span class="toc-text">增:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B9"><span class="toc-text">改:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0"><span class="toc-text">删:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rollback%E4%BA%8B%E7%89%A9%E5%9B%9E%E6%BB%9A%E6%BC%94%E7%A4%BA%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">rollback事物回滚演示【了解】</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">优化后的代码【掌握】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%A1%88%E4%BE%8B%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="toc-text">登录案例【理解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%94%E7%A4%BAsql%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">演示sql注入问题和解决办法</span></a></li></ol></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">mysql</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">mysql</span></span></p><h1>mysql</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2026-05-19 15:08:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 16.7k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 83分钟</span></p></div><div id="article"><h1 id="MySQL入门"><a href="#MySQL入门" class="headerlink" title="MySQL入门"></a>MySQL入门</h1><h2 id="数据库概述【了解】"><a href="#数据库概述【了解】" class="headerlink" title="数据库概述【了解】"></a>数据库概述【了解】</h2><pre><code class="properties">数据库概念: 存储数据的仓库,本质是一个文件系统
+
+数据库分类: 关系型数据和非关系型数据库
+
+关系型数据库: 必须遵循SQL规范,强调以二维表格的形式存储数据
+        举例: MySQL  ORACLE  DB2  SqlServer SQLite
+
+非关系型数据: NoSQL不仅仅是SQL,强调以key-value形式存储数据
+        举例: HBase Redis  MongoDB
+</code></pre><p>MySQL是最好的 RDMS (Relational Database Management System，关系数据库管理系统) 应用软件，目前属于 Oracle 旗下产品，MySQL 是最流行的关系型数据库管理系统中的一个</p><p>本次使用MySQL8.0版本进行学习</p><h2 id="SQL规范【熟悉】"><a href="#SQL规范【熟悉】" class="headerlink" title="SQL规范【熟悉】"></a>SQL规范【熟悉】</h2><h3 id="SQL简介"><a href="#SQL简介" class="headerlink" title="SQL简介"></a>SQL简介</h3><pre><code class="properties">SQL: 结构化查询语言, 是所有关系型数据库都要遵循的规范
+
+大白话解释: 可以理解成sql是普通话,mysql,oracle等是方言
+</code></pre><h3 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h3><pre><code class="properties">DDL: 数据定义语言:简称DDL(Data Definition Language)
+        作用: 用来定义数据库对象：数据库，表，列/字段等。
+        关键字: create，drop，alter等
+        
+DML: 数据操作语言:简称DML(Data Manipulation Language)
+        作用:用来对数据库中表的记录进行更新。
+        关键字: insert，delete，update等
+        
+DQL: 数据查询语言:简称DQL(Data Query Language)
+        作用:用来查询数据库中表的记录。
+        关键字: select，from，where等
+        
+DCL: 数据控制语言：简称DCL(Data Control Language)
+        用来定义数据库的访问权限和安全级别，及创建用户。
+</code></pre><h2 id="SQL通用语法【掌握】"><a href="#SQL通用语法【掌握】" class="headerlink" title="SQL通用语法【掌握】"></a>SQL通用语法【掌握】</h2><pre><code class="properties">1、SQL语句可以单行或多行书写，以分号结尾。  
+        举例: select *  from 表名 where 条件;
+2、可使用空格和缩进来增强语句的可读性
+        select *  
+        from 表名 
+        where 条件;
+3、MySQL数据库的SQL语句不区分大小写，关键字建议使用大写
+         例如:select *  from 表名 where 条件; SELECT * FROM 表名 WHERE 条件;
+         大小写切换快捷键: ctrl+shift+u
+4、可以使用 /**/，--，# 的方式完成注释
+        /**/：多行注释，在注释区域内可以随意换行
+        -- 和# ：单行注释，写在语句开头，换行后注释截止。
+        注意: -- 后面必须有一个空格
+        单行注释快捷键: ctrl+/         
+        多行注释快捷键: ctrl+shift+/
+</code></pre><h2 id="数据库增删改查操作【掌握】"><a href="#数据库增删改查操作【掌握】" class="headerlink" title="数据库增删改查操作【掌握】"></a>数据库增删改查操作【掌握】</h2><blockquote><p>&#x3D;&#x3D;数据库英文单词: database&#x3D;&#x3D;</p></blockquote><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><pre><code class="properties">创建数据库: create database [if not exists] 数据库名;  注意: 默认字符集就是utf8
+
+删除数据库: drop database [if exists] 数据库名;
+
+使用/切换数据库: use 数据库名;
+
+查看所有的数据库名: show databases;
+查看当前使用的数据库: select database();
+查看指定库的建库语句: show create database 数据库名;
+</code></pre><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><pre><code class="mysql"># 创建数据库语法一
+create database db1;
+
+# 创建数据库语法二：如果不存在才创建；如果存在不会做任何的操作
+create database if not exists db1;
+create database if not exists db2;
+
+# 创建数据库语法三：指定数据库的编码方法，推荐utf8，为了防止中文乱码
+create database db3 charset=&quot;utf8&quot;;
+# 注意：数据库中编码方式叫utf8，没有UTF-8的写法
+create database db4 charset=&quot;UTF-8&quot;;
+
+# 【推荐的写法】：同时有if not exists和编码器的设置
+create database if not exists db5 charset=&quot;utf8&quot;;
+
+# 列出MySQL服务器中有哪些数据库
+show databases;
+
+# 使用某个具体的数据库
+use db1;
+use db2;
+
+# 查看目前使用的数据库是哪一个
+select database();
+
+# 【慎重】删除数据库
+drop database db1;
+
+# if exists如果数据库存在，我们才删除
+drop database if exists db2;
+drop database if exists db3;
+drop database if exists db5;
+</code></pre><h2 id="常用数据类型【掌握】"><a href="#常用数据类型【掌握】" class="headerlink" title="常用数据类型【掌握】"></a>常用数据类型【掌握】</h2><pre><code class="properties">可变（只能变小）长度的字符串类型: varchar(字符长度)。字符长度表示最大能存储多少个字符
+
+整数类型: int    注意: 默认长度是11,如果int不够用就用bigint
+
+浮点类型: float(python默认) 或者 double(java默认)   decimal(默认是有效位数是10,小数后位数是0)
+例如: decimal(5,2)  234.99  1.99。一般用在金额方面，因为float、double是有损精度。
+https://blog.csdn.net/2301_79835671/article/details/137939219
+
+日期时间: date  datetime  year
+
+参考: https://cloud.tencent.com/developer/article/1023546
+注意:
+    1- 针对数字类型的字段值，可以有引号也可以没有。推荐不带引号
+    2- 这对字符串类型的字段值，必须要有引号。单引号和双引号都行
+    
+总结：针对字段选择数据类型的时候，不需要非常的精细，合理选择即可。推荐数据范围选的大一点，千万不要过小。
+</code></pre><pre><code class="sql">create table db1.stu3(
+    id int,
+    age int,
+    high float,
+    name varchar(100),
+    birthday date,
+    money decimal(6,2)
+);
+</code></pre><h2 id="表增删改查操作【掌握】"><a href="#表增删改查操作【掌握】" class="headerlink" title="表增删改查操作【掌握】"></a>表增删改查操作【掌握】</h2><blockquote><p>&#x3D;&#x3D;表的英文单词: table&#x3D;&#x3D;</p></blockquote><h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><pre><code class="properties">创建表: create table [if not exists] 表名(字段1名 字段1类型 [字段1约束] , 字段2名 字段2类型 [字段2约束] ...);
+
+删除表: drop table [if exists] 表名;
+
+修改表名: rename table 旧表名 to 新表名;  
+    注意: 修改表中字段本质都是修改表,咱们后面演示此处略
+
+查看所有表: show tables;
+查看指定表的建表语句: show create table 表名;
+</code></pre><h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><pre><code class="mysql"># 创建一个演示的数据库
+create database if not exists db1 charset=&quot;utf8&quot;;
+
+# MySQL服务器 -&gt; 多个数据库
+# 每个数据库 -&gt; 多张表
+# 每张表 -&gt; 多个字段、多条数据
+use db1;
+create table stu(
+    id int,
+    age int,
+    name varchar(100)
+);
+
+# 工作中的推荐写法：数据表名称的前面加上数据库的前缀
+create table db1.stu2(
+    id int,
+    age int,
+    name varchar(100)   # 最后一行的最后面不能加逗号
+);
+
+# 查看当前数据库中有哪些表
+use db1;
+show tables;
+
+# 查看表结构
+# 这里的desc是describe单词的缩写
+desc db1.stu2;
+
+# 下面的desc是descending 降序单词的缩写
+# select * from db1.stu order by id desc ;
+
+# 对表名进行重命名操作
+# 语法 rename table 旧名称 to 新名称;
+rename table db1.stu2 to db1.stu_2;
+
+# 谨慎操作：删除表
+drop table if exists db1.stu_2;
+</code></pre><h2 id="修改表中字段【掌握】"><a href="#修改表中字段【掌握】" class="headerlink" title="修改表中字段【掌握】"></a>修改表中字段【掌握】</h2><blockquote><p>&#x3D;&#x3D;列&#x2F;纵队的英文单词:column&#x3D;&#x3D;</p></blockquote><h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><pre><code class="properties">注意: 操作字段本质就是在修改表
+
+添加字段:  alter table 表名 add [column] 字段名 字段类型 [字段约束];
+
+删除字段:  alter table 表名 drop [column] 字段名;
+
+修改字段名和字段类型:  alter table 表名 change [column] 旧字段名 新字段名 字段类型 [字段约束];
+modify只修改字段类型: alter table 表名 modify [column]  字段名 字段类型 [字段约束];
+
+查看字段信息: desc 表名;
+</code></pre><h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><pre><code class="mysql">use db1;
+
+# 准备数据表
+create table if not exists db1.stu3(
+    id int,
+    age int,
+    high float,
+    name varchar(100),
+    birthday date,
+    money decimal(6,2)
+);
+
+# 1- 添加表字段
+alter table db1.stu3 add addr varchar(200);
+
+# 如果新字段的名称是关键词，需要加上反引号`
+alter table db1.stu3 add `table` varchar(200);
+# 后续使用也需要加反引号
+select `table` from db1.stu3;
+
+# 2- 修改表字段
+# 2.1- 只改名称：原始字段的数据类型要写上
+alter table db1.stu3 change addr address varchar(200);
+
+# 2.2- 只改数据类型：原始字段的名称要写上
+alter table db1.stu3 change high high double;
+
+# 2.3- 同时改名称和数据类型
+alter table db1.stu3 change `table` tb varchar(300);
+
+# modify：只能修改字段数据类型，不能改名称
+alter table db1.stu3 modify tb varchar(10);
+# modify：不能改名称
+# alter table db1.stu3 modify tb new_tb varchar(10);
+
+# 3- 删除字段：一个个删
+alter table db1.stu3 drop tb;
+alter table db1.stu3 drop address;
+</code></pre><h2 id="表中记录操作DML【掌握】"><a href="#表中记录操作DML【掌握】" class="headerlink" title="表中记录操作DML【掌握】"></a>表中记录操作DML【掌握】</h2><h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h3><pre><code class="properties">插入数据记录: insert into 表名 (字段名...) values (具体值...) , (具体值...);   
+            注意1: 具体值要和前面的字段名以及顺序一一对应上
+            注意2: 如果要插入的是所有字段,那么字段名可以省略(默认代表所有列都要插入数据)
+            注意3: 如果要插入多条记录,values后多条数据使用 逗号 分隔
+            
+修改数据记录: update 表名 set 字段名=值 [where 条件];
+            注意: 如果没有加条件就是修改对应字段的所有数据
+
+删除数据记录: delete from 表名 [where 条件];
+            注意: 如果没有加条件就是删除所有数据
+            
+清空所有数据:
+    方式1: delete from 表名;   注意:此方式有警告
+    方式2: truncate [table] 表名;  注意: 此方式没有警告 
+    
+注意: delete与truncate的区别
+        delete删除数据，会保留之前的自增的信息，继续往后增加
+        truncate删除数据，不会保留之前的自增的信息，重新从1开始自增。另外不支持带where过滤语句
+</code></pre><h3 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h3><pre><code class="mysql"># 准备环境
+create database if not exists db2 charset=&quot;utf8&quot;;
+create table db2.student(
+    id int,
+    age int,
+    high float,
+    addr varchar(200)
+);
+
+# 1- 添加数据
+# 写法一：一次给所有的字段添加一条数据
+insert into db2.student values(1,18,1.78,&quot;吉山村1024号&quot;);   # 写双引号没有问题，只是pycharm识别不了
+insert into db2.student values(2,28,2.78,&#39;吉山村2024号&#39;);
+select * from db2.student;
+# 注意：目前的写法必须给所有的字段传递值。因此下面的写法是错误的
+insert into db2.student values(38,3.78,&#39;吉山村3024号&#39;);
+
+# 写法二：一次给指定的字段添加一条数据
+insert into db2.student (age,high,addr) values(38,3.78,&#39;吉山村3024号&#39;);
+
+# 空字符串和null不是一个东西
+insert into db2.student (id,addr) values(66,&#39;&#39;);
+
+# 写法三：一次给所有的字段添加多条数据
+insert into db2.student
+values
+(4,44,4.12,&#39;吉山村412号&#39;),
+(5,55,5.12,&#39;吉山村512号&#39;),
+(6,66,6.12,&#39;吉山村612号&#39;);
+
+# 写法四：一次给指定的字段添加多条数据
+insert into db2.student
+(age,addr)
+values
+(34,&#39;吉山村3012号&#39;),
+(35,&#39;吉山村3012号&#39;),
+(36,&#39;吉山村3012号&#39;);
+
+
+# 2- 修改数据
+# 对所有数据行的某些字段进行更新
+update db2.student set high=1.99, addr=&#39;珠江新城珠江帝景&#39;;
+
+# 对指定数据行的某些字段进行更新
+update db2.student set age=200 where id&lt;=5;
+
+
+# 3- 删除数据
+# 删除满足条件的数据
+delete from db2.student where id&lt;=5;
+delete from db2.student where id is null;
+
+# 清空表：写法一，一次删除整张表的所有数据
+delete from db2.student;
+
+# 清空表：写法二
+/*
+ 1- delete from 表名：只会删除表数据，但是表的元信息还会保留
+ 2- truncate table 表名：是先彻底删除整张表，然后再重建。数据、元信息都会被删除。
+ 如果确定要删除整张表的所有数据，推荐使用truncate table，效率很高。
+ */
+truncate table db2.student;
+</code></pre><h1 id="MySQL单表查询"><a href="#MySQL单表查询" class="headerlink" title="MySQL单表查询"></a>MySQL单表查询</h1><h2 id="DDL表中约束"><a href="#DDL表中约束" class="headerlink" title="DDL表中约束"></a>DDL表中约束</h2><blockquote><p>&#x3D;&#x3D;约束作用: 限制数据的插入和删除&#x3D;&#x3D;</p></blockquote><h3 id="主键约束【掌握】"><a href="#主键约束【掌握】" class="headerlink" title="主键约束【掌握】"></a>主键约束【掌握】</h3><h4 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">主键约束关键字: primary key = 非空约束 + 唯一约束 + 索引(index)
+
+主键约束特点: 限制主键插入的数据不能为空,不能重复
+
+建表的时候添加主键约束:  create table 表名(主键名 主键类型 primary key , 其他字段...);
+
+注意: 一个表中最多有一个主键
+</code></pre><h4 id="示例-4"><a href="#示例-4" class="headerlink" title="示例:"></a>示例:</h4><pre><code class="mysql"># 演示各类约束
+# 注意: 所有的约束都建议建表的时候添加
+# 比如: 如果stu表中已经有重复数据,再去添加主键限制不能重复,添加失败!!!
+insert into stu(id,name,age) values (1,&#39;李四&#39;,18),(1,&#39;王五&#39;,28),(1,&#39;赵六&#39;,38);
+alter table stu add PRIMARY KEY (id); # 报错
+desc stu;
+# 主键约束: 关键字: primary key  特点: 限制值非空唯一
+# 添加主键约束方式1: 建表时候添加
+create table stu1(
+    id varchar(100) PRIMARY KEY,
+    name varchar(100),
+    age int,
+    cls varchar(100)
+);
+# 查看表结构
+desc stu1;
+# 添加主键约束方式2: 建表后添加
+create table stu2(
+    id varchar(100),
+    name varchar(100),
+    age int,
+    cls varchar(100)
+);
+# 添加主键约束
+alter table stu2 add PRIMARY KEY (id);
+# 查看表结构
+desc stu2;
+
+
+# 了解删除主键约束
+# 删除非空约束
+# 注意: 使用change直接删除主键,非空和唯一约束都没有删除
+alter table stu1 change id id VARCHAR(100);
+# 查看表结构
+desc stu1;
+
+# 注意: 使用drop直接删除主键,只是把唯一键删除,不能为空的约束保留
+alter table stu2 drop PRIMARY KEY;
+# 查看表结构
+desc stu2;
+# 再使用change删除非空约束
+alter table stu2 change id id VARCHAR(100);
+# 查看表结构
+desc stu2;
+
+# 了解主键约束的特点: 限制值不能为空,不能重复
+insert into stu1(id,name) values (null,&#39;张三&#39;); # 报错Column &#39;id&#39; cannot be null
+insert into stu1(id,name) values (1,&#39;张三&#39;); # 成功
+insert into stu1(id,name) values (1,&#39;李四&#39;); # 报错 Duplicate entry &#39;1&#39; for key &#39;PRIMARY&#39;
+</code></pre><h4 id="图解"><a href="#图解" class="headerlink" title="图解:"></a>图解:</h4><p><img src="/posts/9520183a/image-20231022165610897-1749257623555-1751883897326.png" alt="image-20231022165610897"></p><h3 id="主键自增"><a href="#主键自增" class="headerlink" title="主键自增"></a>主键自增</h3><h4 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">自增关键字: auto_increment
+
+自增特点: 默认从1开始,每次自动加1  
+注意: 如果插入数据的时候指定了id字段,可以使用null或者0占位表示自动使用自增
+
+建表的时候添加主键自增约束:  create table 表名(主键名 主键类型 primary key auto_increment , 其他字段...);
+</code></pre><h4 id="示例-5"><a href="#示例-5" class="headerlink" title="示例:"></a>示例:</h4><pre><code class="mysql"># 主键自增
+# 添加主键自增方式1: 建表后添加
+# 注意: 如果要设置主键自增,字段类型需要是整数类型
+# 可以同时添加主键和自增,但是前提是表中没有主键
+alter table stu2 change id id int PRIMARY KEY auto_increment;
+# 注意: 可以单独添加自增,但是前提是表中已经有主键
+alter table stu1 change id id int auto_increment;
+
+# 添加主键方式2: 建表时候添加
+create table stu3(
+    id int PRIMARY KEY auto_increment,
+    name varchar(100),
+    age int,
+    cls varchar(100)
+);
+# 查看表结构
+desc stu3;
+
+# 了解主键自增的特点: 每次自增1
+# 如果设置了主键后,null或者0代表使用主键自增
+insert into stu3(id,name) values (null,&#39;张三&#39;); # 成功 默认第一次编号自动生成了1
+insert into stu3(id,name) values (0,&#39;张三&#39;); # 成功
+insert into stu3(id,name) values (1,&#39;李四&#39;); # 报错 Duplicate entry &#39;1&#39; for key &#39;PRIMARY&#39;
+insert into stu3(name) values (&#39;王五&#39;);
+
+
+# 了解自增的删除
+# 删除stu2表的自增,主键保留
+alter table stu2 change id id int ;
+# 删除stu1表的自增,主键保留
+alter table stu1 change id id int ;
+
+/*
+结论: 如果想要删除主键和自增
+1.先用change删除自增
+2.再用drop删除主键中的唯一约束
+3.最后用change删除非空约束
+*/
+# 删除stu3的主键和自增
+alter table stu3 change id id int ;
+alter table stu3 drop PRIMARY KEY ;
+alter table stu3 change id id int ;
+</code></pre><h4 id="图解-1"><a href="#图解-1" class="headerlink" title="图解:"></a>图解:</h4><p><img src="/posts/9520183a/image-20230716113657117-1749257623557-1751883897326.png" alt="image-20230716113657117"></p><h3 id="delete和truncate区别"><a href="#delete和truncate区别" class="headerlink" title="delete和truncate区别"></a>delete和truncate区别</h3><h4 id="知识点-6"><a href="#知识点-6" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">delete和truncate的区别?
+    共同点: 都能删除表中所有数据
+    不同点:
+        delete删除所有数据: 自增顺序保留,下次再插入的时候继续自增
+        truncate删除所有数据: 自增顺序重置,下次再插入数据的时候从1重新开始自增
+</code></pre><h4 id="示例-6"><a href="#示例-6" class="headerlink" title="示例:"></a>示例:</h4><pre><code class="mysql"># delete删除所有数据: 自增顺序保留,下次再插入的时候继续自增
+delete from stu3; -- 警告2次(慎用)
+# 如果再次插入数据,自增顺序按照删除前最后值继续
+insert into stu3(name, age) VALUES (&#39;王五&#39;,38);
+insert into stu3(name, age) VALUES (&#39;王五&#39;,38);
+insert into stu3(name, age) VALUES (&#39;王五&#39;,38);
+
+# truncate删除所有数据: 自增顺序重置,下次再插入数据的时候从1重新开始自增
+truncate stu3; -- 没有警告(慎用)如果真要清空所有数据建议用truncate
+# 如果再次插入数据,自增重新从1开始自增
+insert into stu3(name, age) VALUES (&#39;王五&#39;,38);
+insert into stu3(name, age) VALUES (&#39;王五&#39;,38);
+insert into stu3(name, age) VALUES (&#39;王五&#39;,38);
+</code></pre><h3 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h3><h4 id="知识点-7"><a href="#知识点-7" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">非空约束关键字: not null
+
+非空约束特点: 限制对应数据不能为空null
+
+建表的时候添加非空约束:  create table 表名(主键名 主键类型 primary key ,字段名 字段类型 not null , 其他字段...);
+
+注意: 一个表中可以有多个非空约束
+</code></pre><h4 id="示例-7"><a href="#示例-7" class="headerlink" title="示例:"></a>示例:</h4><pre><code class="mysql"># 3.非空约束
+# 创建表
+create table stu4(
+    id int not null,
+    name varchar(100) not null,
+    age int
+);
+
+# 查看表结构
+desc stu4;
+
+# 演示非空约束特点: 限制数据不能为空null
+insert into stu4 (id, name, age) VALUES (1,&#39;张三&#39;,18); # 成功
+insert into stu4 (id, name, age) VALUES (null,null,null); # 报错,因为id和name不能为空
+
+
+# 了解建表后添加和删除非空约束
+# 添加非空约束
+alter table stu4 change age age int not null;
+# 删除非空约束
+alter table stu4 change age age int;
+</code></pre><h4 id="图解-2"><a href="#图解-2" class="headerlink" title="图解"></a>图解</h4><p><img src="/posts/9520183a/image-20230716145915417-1749257623557-1751883897326.png" alt="image-20230716145915417"></p><h3 id="唯一约束"><a href="#唯一约束" class="headerlink" title="唯一约束"></a>唯一约束</h3><h4 id="知识点-8"><a href="#知识点-8" class="headerlink" title="知识点"></a>知识点</h4><pre><code class="properties">唯一约束关键字: unique
+
+唯一约束特点: 限制对应的数据不能重复
+
+建表的时候添加唯一约束:  create table 表名(主键名 主键类型 primary key ,字段名 字段类型 unique, 其他字段...);
+
+注意: 一个表中可以有多个唯一约束
+</code></pre><h4 id="示例-8"><a href="#示例-8" class="headerlink" title="示例"></a>示例</h4><pre><code class="mysql"># 4.唯一约束
+# 创建表
+create table stu5(
+    id int not null unique ,
+    name varchar(100) unique ,
+    age int
+);
+# 查看表结构
+desc stu5;
+# 演示唯一约束特点: 限制数据不能重复
+insert into stu5 (id, name, age) VALUES (1,&#39;张三&#39;,18); # 成功
+insert into stu5 (id, name, age) VALUES (1,&#39;李四&#39;,28); # 报错,因为id不能重复
+insert into stu5 (id, name, age) VALUES (null,&#39;王五&#39;,null); # 报错,因为id设置唯一约束同时也设置了非空约束
+</code></pre><h4 id="图解-3"><a href="#图解-3" class="headerlink" title="图解"></a>图解</h4><p><img src="/posts/9520183a/image-20230716151001150-1749257623557-1751883897326.png" alt="image-20230716151001150"></p><h3 id="默认约束"><a href="#默认约束" class="headerlink" title="默认约束"></a>默认约束</h3><h4 id="知识点-9"><a href="#知识点-9" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">默认约束关键字: default
+
+默认约束特点: 可以提前给字段设置默认值
+
+建表的时候添加默认约束:  create table 表名(主键名 主键类型 primary key ,字段名 字段类型 default 默认值, 其他字段...);
+
+注意: 一个表中可以有多个默认约束
+</code></pre><h4 id="示例-9"><a href="#示例-9" class="headerlink" title="示例:"></a>示例:</h4><pre><code class="mysql"># 5.默认约束
+# 创建表
+create table stu6(
+    id int primary key auto_increment,
+    name varchar(100) default &#39;admin&#39;,
+    pwd varchar(100) default &#39;123456&#39;
+);
+# 查看表结构
+desc stu6;
+
+# 演示默认约束特点: 如果用户没有指定字段值,可以使用提前设置好的默认值
+insert into stu6(id) values (1);
+insert into stu6(name) values (&#39;张三&#39;);
+insert into stu6(name,pwd) values (&#39;李四&#39;,&#39;abcde&#39;);
+
+
+# 了解建表后添加和删除默认约束
+create table stu7(
+    id int primary key auto_increment,
+    name varchar(100) ,
+    pwd varchar(100)
+);
+# 添加默认约束
+alter table stu7 change name name varchar(100) default &#39;admin&#39;;
+alter table stu7 change pwd pwd varchar(100) default &#39;123456&#39;;
+# 删除默认约束
+alter table stu7 change name name varchar(100);
+alter table stu7 change pwd pwd varchar(100);
+</code></pre><h4 id="图解-4"><a href="#图解-4" class="headerlink" title="图解"></a>图解</h4><p><img src="/posts/9520183a/image-20230716152956883-1749257623557-1751883897326.png" alt="image-20230716152956883"></p><h2 id="单表查询操作【掌握】"><a href="#单表查询操作【掌握】" class="headerlink" title="单表查询操作【掌握】"></a>单表查询操作【掌握】</h2><h3 id="准备数据"><a href="#准备数据" class="headerlink" title="准备数据"></a>准备数据</h3><pre><code class="mysql"># 创建数据库: create database 库名;
+CREATE DATABASE IF NOT EXISTS db2 CHARSET=utf8;
+
+# 使用数据库: use 库名;
+USE db2;
+
+# 创建表: create table 表名(字段名 字段类型 [约束],...);
+# 建测试表
+CREATE TABLE IF NOT EXISTS products
+(
+    id          INT PRIMARY KEY AUTO_INCREMENT, -- 商品ID
+    name        VARCHAR(24)    NOT NULL,        -- 商品名称
+    price       DECIMAL(10, 2) NOT NULL,        -- 商品价格
+    score       DECIMAL(5, 2),                  -- 商品评分，可以为空
+    is_self     VARCHAR(8),                     -- 是否自营
+    category_id INT                            -- 商品类别ID
+);
+
+CREATE TABLE IF NOT EXISTS category
+(
+    id   INT PRIMARY KEY AUTO_INCREMENT, -- 商品类别ID
+    name VARCHAR(24) NOT NULL            -- 类别名称
+);
+
+# 插入数据: insert into 表名 (字段名,字段名) values(字段值,字段值),(字段值,字段值);
+# 添加测试数据
+INSERT INTO category
+VALUES (1, &#39;手机&#39;),
+       (2, &#39;电脑&#39;),
+       (3, &#39;美妆&#39;),
+       (4, &#39;家居&#39;);
+
+INSERT INTO products
+VALUES (1, &#39;华为Mate50&#39;, 5499.00, 9.70, &#39;自营&#39;, 1),
+       (2, &#39;荣耀80&#39;, 2399.00, 9.50, &#39;自营&#39;, 1),
+       (3, &#39;荣耀80&#39;, 2199.00, 9.30, &#39;非自营&#39;, 1),
+       (4, &#39;红米note 11&#39;, 999.00, 9.00, &#39;非自营&#39;, 1),
+       (5, &#39;联想小新14&#39;, 4199.00, 9.20, &#39;自营&#39;, 2),
+       (6, &#39;惠普战66&#39;, 4499.90, 9.30, &#39;自营&#39;, 2),
+       (7, &#39;苹果Air13&#39;, 6198.00, 9.10, &#39;非自营&#39;, 2),
+       (8, &#39;华为MateBook14&#39;, 5599.00, 9.30, &#39;非自营&#39;, 2),
+       (9, &#39;兰蔻小黑瓶&#39;, 1100.00, 9.60, &#39;自营&#39;, 3),
+       (10, &#39;雅诗兰黛粉底液&#39;, 920.00, 9.40, &#39;自营&#39;, 3),
+       (11, &#39;阿玛尼红管405&#39;, 350.00, NULL, &#39;非自营&#39;, 3),
+       (12, &#39;迪奥996&#39;, 330.00, 9.70, &#39;非自营&#39;, 3);
+</code></pre><h3 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h3><h4 id="知识点-10"><a href="#知识点-10" class="headerlink" title="知识点"></a>知识点</h4><pre><code class="properties">基础查询关键字: select:查什么    from: 从哪儿查
+
+基础查询格式:  select [distinct] 字段名 | * from 表名;
+             []:可以省略
+              |: 或者
+              *: 对应表的所有字段名
+              distinct: 去除重复内容
+              as  : 可以给表或者字段起别名
+</code></pre><h4 id="示例-10"><a href="#示例-10" class="headerlink" title="示例"></a>示例</h4><pre><code class="mysql">-- 需求1: 查看所有商品
+select * from products;
+select
+    id,
+    name,
+    price,
+    score,
+    is_self,
+    category_id
+from products;
+-- 需求2: 查看所有商品的名称和价格
+select name,price from products;
+-- 需求3: 查看所有商品的名称和价格,要求给字段名起别名展示
+select name as 姓名,price as 价格 from products;
+select name  姓名,price  价格 from products;
+-- 需求4: 查看所有商品的名称和价格,要求给表名起别名并使用
+select products.name,products.price from products;
+-- 如果给表起了表名,必须用别名调用字段
+select p.name,p.price from products as p;
+select name,price from products as p;
+-- 需求5: 查看所有的分类编号,要求去重展示
+select DISTINCT category_id from products;
+</code></pre><h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><p>知识点</p><pre><code class="properties">条件查询关键字:  where 
+
+条件查询基础格式: select 字段名 from 表名 where 条件;
+
+              比较运算符: &gt;  &lt;  &gt;=  &lt;=  !=  &lt;&gt;
+              
+              逻辑运算符: and  or  not
+              
+              范围 查询: 连续范围:between x and y       非连续范围: in(x,y)
+              
+              模糊 查询: 关键字:like   %:0个或者多个字符   _:一个字符
+              
+              非空 判断: 为空: is null    不为空:is not null
+</code></pre><h4 id="比较查询"><a href="#比较查询" class="headerlink" title="比较查询"></a>比较查询</h4><pre><code class="mysql"># 1.比较运算符: &gt;  &lt;  &gt;=  &lt;=  !=  &lt;&gt;
+
+-- 需求1: 查询所有&#39;自营&#39;的商品
+select * from products where is_self = &#39;自营&#39;;
+-- 需求2: 查询评分在&#39;9.50&#39;(不含)以上的商品
+select * from products where score &gt; 9.50;
+-- 需求3: 查询评分在&#39;9.50&#39;(含)以上的商品
+select * from products where score &gt;= 9.50;
+-- 需求4: 查询价格在999(不含)以下的商品
+select * from products where price &lt; 999;
+-- 需求5: 查询价格在999(含)以下的商品
+select * from products where price &lt;= 999;
+-- 需求6: 查询评分不等于9.30的商品
+select * from products where score != 9.3;
+select * from products where score &lt;&gt; 9.3;
+</code></pre><h4 id="逻辑查询"><a href="#逻辑查询" class="headerlink" title="逻辑查询"></a>逻辑查询</h4><pre><code class="mysql">-- and: 并且  or:或者  not:取反
+-- 需求1: 查询自营商品中所有价格大于2000的商品信息
+select * from products where is_self = &#39;自营&#39; and price &gt; 2000;
+-- 需求2: 查询商品评分在9.0(含)-9.5(含)之间的商品信息
+select * from products where score &gt;= 9 and score &lt;= 9.5;
+-- 需求3: 查询商品价格在1000(含)到3000(含)之间的商品信息
+select * from products where price &gt;= 1000 and price &lt;= 3000;
+-- 需求4: 查询价格是999或者2199或者2399的商品
+select * from products where price = 999 or price = 2199 or price = 2399;
+-- 需求5: 查询商品是&#39;华为Mate50&#39;或者&#39;荣耀80&#39;的商品
+select * from products where name = &#39;华为Mate50&#39; or name = &#39;荣耀80&#39;;
+-- 需求6: 查询商品不是自营的商品
+select * from products where not is_self = &#39;自营&#39;;
+select * from products where  is_self = &#39;非自营&#39;;
+-- 需求7: 查询商品不在1000到3000之间的商品
+select * from products where not (price &gt;= 1000 and price &lt;= 3000);
+select * from products where  price &lt; 1000 or price &gt; 3000;
+</code></pre><h4 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h4><pre><code class="mysql">-- 需求1: 查询商品价格在1000(含)到3000(含)之间的商品信息
+select * from products where  price BETWEEN 1000 and 3000;
+-- 注意: 以下语法是错误的
+select * from products where 1000 &lt;= price &lt;= 3000;
+-- 需求2: 查询商品不在1000到3000之间的商品
+select * from products where  price not BETWEEN 1000 and 3000;
+-- 需求3: 查询价格是999或者2199或者2399的商品
+select * from products where price in(999,2199,2399);
+-- 需求4: 查询商品是&#39;华为Mate50&#39;或者&#39;荣耀80&#39;的商品
+select * from products where name in(&#39;华为Mate50&#39;,&#39;荣耀80&#39;);
+</code></pre><h4 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h4><pre><code class="mysql">-- 关键字: like   符号 %:任意多个字符  _:任意1个字符
+-- 需求1: 查询商品名称以&#39;华&#39;开头的商品信息
+select * from products where name like &#39;华%&#39;;
+-- 需求2: 查询商品名称以&#39;华&#39;开头并且8个字符的商品信息
+select * from products where name like &#39;华_______&#39;;
+-- 需求3: 查询商品名称以&#39;66&#39;结尾商品信息
+select * from products where name like &#39;%66&#39;;
+-- 需求4: 查询商品名称中包含&#39;兰&#39;字的商品信息
+select * from products where name like &#39;%兰%&#39;;
+-- 需求5: 查询商品名称中第3个字是&#39;兰&#39;字的商品信息
+select * from products where name like &#39;__兰%&#39;;
+</code></pre><h4 id="非空判断"><a href="#非空判断" class="headerlink" title="非空判断"></a>非空判断</h4><pre><code class="mysql">/*
+null在sql中代表空的,没有任何意义的意思
+如果数据中有空字符串&#39;&#39;,字符串&#39;null&#39;,一定要注意,他们和sql中的null不是一回事!!!
+*/
+-- 需求1:查询未评分的商品信息
+select * from products where score is null;
+-- 注意: 以下方式是错误的
+select * from products where score = null;
+select * from products where score = &#39;&#39;;
+select * from products where score = &#39;null&#39;;
+select * from products where score is &#39;null&#39;;
+
+-- 为了方便演示null和&#39;&#39;,&#39;null&#39;的区别,可以插入部分测试数据
+insert into products(name,price) values(&#39;拯救者Y9000&#39;,&#39;9999&#39;);
+insert into products(name,price) values(&#39;null&#39;,&#39;99&#39;);
+insert into products(name,price) values(&#39;&#39;,0);
+
+-- 需求2:查询商品名称是&#39;null&#39;的商品信息
+select * from products where name = &#39;null&#39;;
+-- 需求3:查询商品名称是&#39;&#39;的商品信息
+select * from products where name = &#39;&#39;;
+</code></pre><h3 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h3><p>知识点</p><pre><code class="properties">排序查询关键字: order by
+
+排序查询基础格式: select 字段名 from 表名 order by 排序字段名 asc|desc;
+            asc : 升序(默认)
+            desc: 降序
+            
+排序查询进阶格式: select 字段名 from 表名 order by 排序字段1名 asc|desc , 排序字段2名 asc|desc;
+            注意: 如果order by后跟多个排序字段,先按照前面的字段排序,如果有相同值的情况再按照后面的排序规则排序
+</code></pre><p>示例</p><pre><code class="mysql">-- 示例1：查询所有商品，并按照评分从高到低进行排序
+SELECT * FROM products ORDER BY score DESC;
+
+-- 示例2：查询所有商品，先按照评分从高到低进行排序，评分相同的再按照价格从低到高排序
+SELECT * FROM products ORDER BY score DESC, price;
+</code></pre><h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>知识点</p><pre><code class="properties">聚合函数: 又叫统计函数,也叫分组函数
+
+常用聚合函数:  sum()  count()  avg()   max()  min()
+
+聚合查询基础格式: select 聚合函数(字段名) from 表名;    注意: 此处没有分组默认整个表就是一个大的分组
+
+注意: 聚合函数(字段名)会自动忽略null值,以后统计个数一般用count(*)统计因为它不会忽略null值
+</code></pre><p>示例</p><pre><code class="mysql"># 注意: 别名不建议用中文,以下仅仅为了演示
+-- 示例1：统计当前商品一共有多少件
+SELECT count(id) FROM products;
+SELECT count(*) FROM products;
+
+-- 示例2：对商品评分列进行计数、求最大、求最小、求和、求平均
+SELECT
+    COUNT(score) AS cnt,
+    MAX(score) AS max_score,
+    MIN(score) AS min_score,
+    SUM(score) AS total_score,
+    AVG(score) AS avg_score
+FROM products;
+
+
+-- 示例3：统计所有非自营商品评分的平均值
+SELECT
+    is_self,
+    AVG(score)
+FROM
+    products
+WHERE
+    is_self = &#39;非自营&#39;;
+</code></pre><pre><code class="sql">-- 注意：count(0)和count(null)的结果不相同
+select
+    count(id) as cnt_id_1,
+    count(*) as cnt_2,
+    count(1) as cnt_3,
+    count(0) as cnt_4,
+    count(null) as cnt_5,
+
+    max(price) as max_price,
+    min(price) as min_price,
+    sum(price) as sum_price,
+    avg(price) as avg_price
+from db2.products;
+
+select
+    count(name) as cnt,
+    max(name) as max_val,
+    min(name) as min_val
+from db2.products;
+</code></pre><h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><p>&#x3D;&#x3D;什么时候需要使用分组？&#x3D;&#x3D;</p><p>&#x3D;&#x3D;遇到每个、每次、每种、各个、各自等，就需要使用分组group by。&#x3D;&#x3D;</p><p>知识点</p><pre><code class="properties">分组查询关键字: group by
+
+分组查询基础格式: select 分组字段名,聚合函数(字段名) from 表名 group by 分组字段名;
+
+注意: select后的字段名要么在group by后面出现过,要么写到聚合函数中,否则报错...sql_mode=only_full_group_by
+
+分组查询进阶格式: select 分组字段名,聚合函数(字段名) from 表名 [where 非聚合条件] group by 分组字段名 [having 聚合条件];
+
+where和having的区别? 
+    书写顺序: where在group by 前,having在group by后
+    执行顺序: where在group by 前,having在group by后
+    分组函数: where后不能跟聚合条件,只能跟非聚合条件,having后可以使用聚合条件,也可以使用非聚合条件(不建议)
+    应用场景: 建议大多数过滤数据都采用where,只有当遇到聚合条件的时候再使用having
+    使用别名: where后不能使用别名,having后可以使用别名
+</code></pre><p>示例</p><pre><code class="mysql">-- 示例1：统计每个分类的商品数量
+SELECT
+    category_id,
+    -- ② 再聚合：对每一组的id进行count计数
+    COUNT(id) AS cnt
+FROM products
+-- ① 先分组：按照category_id进行分组
+GROUP BY category_id;
+
+
+
+-- 示例2：统计每个分类中自营和非自营商品的数量
+
+SELECT
+    category_id,
+    is_self,
+    COUNT(id) AS cnt
+FROM products
+GROUP BY category_id, is_self;
+
+
+
+-- 示例3：统计每个分类商品的平均价格，并筛选出平均价格低于1000的分类
+
+SELECT category_id,
+       -- 再聚合
+       AVG(price)
+FROM products
+-- 先分组
+GROUP BY category_id
+-- 对分组聚合的结果进行筛选
+HAVING AVG(price) &lt; 1000;
+
+-- 示例4：统计自营商品中，每个分类的商品的平均价格，并筛选出平均价格高于2000的分类
+SELECT category_id,
+       AVG(price) AS avg_price
+FROM products
+WHERE is_self = &#39;自营&#39; -- where在分组之前对数据进行过滤
+GROUP BY category_id
+HAVING AVG(price) &gt; 2000; -- having在分组聚合之后对数据进行过滤
+
+SELECT category_id,
+       AVG(price) AS avg_price
+FROM products
+WHERE is_self = &#39;自营&#39;
+GROUP BY category_id
+HAVING avg_price &gt; 2000; -- MySQL在HAVING中可以使用聚合函数结果的别名！
+</code></pre><h3 id="limit查询"><a href="#limit查询" class="headerlink" title="limit查询"></a>limit查询</h3><p>知识点</p><pre><code class="properties">分页查询关键字: limit
+
+分页查询基础格式: select 字段名 from 表名 limit m,n;
+            m: 起始索引,默认从0开始     m = (页数-1)*n
+            n: 本次查询的条数。表示每页展示多少条数据。
+        
+注意: limit能完成topN需求,但是不能考虑到并列情况,此问题可以使用后期学习的开窗函数解决
+</code></pre><p>示例</p><pre><code class="mysql">- 示例1：获取所有商品中，价格最高的商品信息
+SELECT
+    *
+FROM products
+ORDER BY price DESC
+LIMIT 1; -- LIMIT 0, 1;
+
+
+-- 示例2：将商品数据按照价格从低到高排序，然后获取第2页内容（每页3条）
+SELECT
+    *
+FROM products
+ORDER BY price
+LIMIT 3, 3;
+
+-- 示例3：当分页展示的数据不存在时，不报错，只不过查询不到任何数据
+SELECT * FROM products LIMIT 20, 10;
+</code></pre><h3 id="SQL顺序"><a href="#SQL顺序" class="headerlink" title="SQL顺序"></a>SQL顺序</h3><pre><code class="properties">书写顺序: SELECT -&gt; DISTINCT -&gt; 聚合函数 -&gt; FROM -&gt; WHERE -&gt; GROUP BY -&gt; HAVING -&gt; ORDER BY -&gt; LIMIT
+执行顺序: FROM -&gt; WHERE -&gt; GROUP BY -&gt; 聚合函数 -&gt; HAVING -&gt; SELECT -&gt; DISTINCT -&gt; ORDER BY -&gt; LIMIT
+</code></pre><pre><code class="sql">-- 执行顺序：知道不同语法的编写顺序是什么样；理解复杂SQL的执行结果是什么样的
+select
+    category_id,
+    sum(price) as sum_price
+from db2.products
+where price&lt;=6000
+group by category_id
+having sum_price&lt;=12000
+order by sum_price
+limit 1;
+</code></pre><h1 id="MySQL多表查询"><a href="#MySQL多表查询" class="headerlink" title="MySQL多表查询"></a>MySQL多表查询</h1><h2 id="外键【了解】"><a href="#外键【了解】" class="headerlink" title="外键【了解】"></a>外键【了解】</h2><h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><p><img src="/posts/9520183a/image-20230718161645450.png" alt="image-20230718161645450"></p><pre><code class="properties">外键概念: 在从表(多方)创建一个字段，引用主表(一方)的主键,对应的这个字段就是外键。
+
+外键特点：
+    1:从表外键的值是对主表主键的引用。
+    2:从表外键类型，必须与主表主键类型一致。
+</code></pre><h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><p>&#x3D;&#x3D;注意: 只有innodb存储引擎支持外键约束!!!&#x3D;&#x3D;</p><p>如何查看当前的引擎是啥？</p><p>使用<strong>show engines;</strong></p><p><strong>注意1: 关闭mysql服务,再去修改!!!</strong></p><p><strong>注意2: 修改存储引擎后,只对后面新建的表有效!!!</strong></p><pre><code class="properties">默认已经是Innodb了，不用改。可以按照如下步骤操作
+
+1- 停止MySQL服务
+systemctl stop mysqld
+
+
+2- 修改配置文件
+在配置文件/etc/my.cnf中的[mysqld]的最后面，增加如下内容
+default-storage-engine=InnoDB
+
+
+3- 启动MySQL服务
+systemctl start mysqld
+</code></pre><h3 id="外键约束添加和删除"><a href="#外键约束添加和删除" class="headerlink" title="外键约束添加和删除"></a>外键约束添加和删除</h3><p>注意: 修改只对之后建表生效!!!</p><pre><code class="properties">建表时添加外键约束: CONSTRAINT [外键约束名] FOREIGN KEY (外键字段名) REFERENCES 主表名 (主表主键字段名)
+
+建表后添加外键约束:alter table 从表名 add CONSTRAINT [外键约束名] FOREIGN KEY (外键字段名) REFERENCES 主表名 (主表主键字段名)
+
+删除外键约束: alter table 从表名 drop FOREIGN KEY 外键约束名;
+</code></pre><h3 id="查看依赖图"><a href="#查看依赖图" class="headerlink" title="查看依赖图"></a>查看依赖图</h3><p><img src="/posts/9520183a/image-20230718165055227.png" alt="image-20230718165055227"></p><h3 id="外键约束特点"><a href="#外键约束特点" class="headerlink" title="外键约束特点"></a>外键约束特点</h3><pre><code class="properties">外键约束关键字: foreign key
+
+外键约束语法: CONSTRAINT [外键约束名] FOREIGN KEY (外键字段名) REFERENCES 主表名 (主表主键字段名);
+
+外键约束作用: 
+        限制从表插入数据: 从表插入数据的时候如果外键值是主表主键中不存在的,就插入失败
+        限制主表删除数据: 主表删除数据的时候如果主键值已经被从表外键的引用,就删除失败
+        
+外键约束好处: 保证数据的准确性和完整性
+</code></pre><h3 id="示例-11"><a href="#示例-11" class="headerlink" title="示例"></a>示例</h3><pre><code class="sql"># 外键总结：了解，工作中用不到。因为会导致数据的添加、删除、修改的效率会变低
+
+# 1- 查看MySQL支持的存储引擎（数据的存储格式）
+show engines;
+
+# 2- 创建有外键约束的两张表
+create database if not exists db4 charset=&#39;utf8&#39;;
+# 写法一：建表的时候指定外键约束
+# 主表：商品分类表
+create table if not exists db4.category(
+    cid varchar(100) primary key,
+    cname varchar(100)
+);
+
+# 从表：商品信息表
+create table if not exists db4.products(
+    pid varchar(100) primary key,
+    pname varchar(100),
+    price double,
+    category_id varchar(100) comment &#39;外键&#39;,
+    # 外键约束：外键约束的名称自动生成
+    constraint foreign key (category_id) references db4.category(cid)
+);
+
+create table if not exists db4.products2(
+    pid varchar(100) primary key,
+    pname varchar(100),
+    price double,
+    category_id varchar(100) comment &#39;外键&#39;,
+    # 外键约束：外键约束的名称手动设置
+    constraint my_fk_1 foreign key (category_id) references db4.category(cid)
+);
+
+# 写法二：建完表以后再添加外键约束
+# 从表：商品信息表
+create table if not exists db4.products3(
+    pid varchar(100) primary key,
+    pname varchar(100),
+    price double,
+    category_id varchar(100) comment &#39;外键&#39;
+);
+alter table db4.products3 add constraint foreign key (category_id) references db4.category(cid);
+
+# 3- 删除外键约束
+alter table db4.products2 drop foreign key my_fk_1;
+alter table db4.products3 drop foreign key products3_ibfk_1;
+
+# 4- 有外键约束的情况下：添加数据
+# 正确顺序：先主表，再从表
+insert into db4.category values (&#39;1&#39;,&#39;手机&#39;);
+insert into db4.products values (&#39;1001&#39;,&#39;滑为&#39;,99.9,&#39;1&#39;);
+
+# 错误顺序
+insert into db4.products values (&#39;1002&#39;,&#39;大米&#39;,199.9,&#39;2&#39;);
+insert into db4.category values (&#39;2&#39;,&#39;食品&#39;);
+
+# 5- 有外键约束的情况下：删除数据
+# 正确顺序：先从表，再主表
+delete from db4.products where pid=&#39;1001&#39;;
+delete from db4.category where cid=&#39;1&#39;;
+
+# 错误顺序
+delete from db4.category where cid=&#39;2&#39;;
+delete from db4.products where pid=&#39;1002&#39;;
+</code></pre><h2 id="多表查询【掌握】"><a href="#多表查询【掌握】" class="headerlink" title="多表查询【掌握】"></a>多表查询【掌握】</h2><h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><p><img src="/posts/9520183a/image-20230718172653616.png" alt="image-20230718172653616"></p><h3 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h3><pre><code class="sql">-- 创建数据库
+create database if not exists db5 charset=&#39;utf8&#39;;
+
+# 使用库
+use db5;
+
+# 建测试表
+CREATE TABLE products
+(
+    id          INT PRIMARY KEY AUTO_INCREMENT, -- 商品ID
+    name        VARCHAR(24)    NOT NULL,        -- 商品名称
+    price       DECIMAL(10, 2) NOT NULL,        -- 商品价格
+    score       DECIMAL(5, 2),                  -- 商品评分，可以为空
+    is_self     VARCHAR(8),                     -- 是否自营
+    category_id INT                             -- 商品类别ID
+);
+
+CREATE TABLE category
+(
+    id   INT PRIMARY KEY AUTO_INCREMENT, -- 商品类别ID
+    name VARCHAR(24) NOT NULL            -- 类别名称
+);
+
+# 添加测试数据
+INSERT INTO category
+VALUES (1, &#39;手机&#39;),
+       (2, &#39;电脑&#39;),
+       (3, &#39;美妆&#39;),
+       (4, &#39;家居&#39;);
+
+INSERT INTO products
+VALUES (1, &#39;华为Mate50&#39;, 5499.00, 9.70, &#39;自营&#39;, 1),
+       (2, &#39;荣耀80&#39;, 2399.00, 9.50, &#39;自营&#39;, 1),
+       (3, &#39;荣耀80&#39;, 2199.00, 9.30, &#39;非自营&#39;, 1),
+       (4, &#39;红米note 11&#39;, 999.00, 9.00, &#39;非自营&#39;, 1),
+       (5, &#39;联想小新14&#39;, 4199.00, 9.20, &#39;自营&#39;, 2),
+       (6, &#39;惠普战66&#39;, 4499.90, 9.30, &#39;自营&#39;, 2),
+       (7, &#39;苹果Air13&#39;, 6198.00, 9.10, &#39;非自营&#39;, 2),
+       (8, &#39;华为MateBook14&#39;, 5599.00, 9.30, &#39;非自营&#39;, 2),
+       (9, &#39;兰蔻小黑瓶&#39;, 1100.00, 9.60, &#39;自营&#39;, 3),
+       (10, &#39;雅诗兰黛粉底液&#39;, 920.00, 9.40, &#39;自营&#39;, 3),
+       (11, &#39;阿玛尼红管405&#39;, 350.00, NULL, &#39;非自营&#39;, 3),
+       (12, &#39;迪奥996&#39;, 330.00, 9.70, &#39;非自营&#39;, 3),
+       (13, &#39;百草味紫皮腰果&#39;,9,NULL,NULL,NULL);
+</code></pre><h3 id="交叉连接【了解】"><a href="#交叉连接【了解】" class="headerlink" title="交叉连接【了解】"></a>交叉连接【了解】</h3><pre><code class="properties">交叉连接关键字: cross join
+
+显式交叉连接格式: select * from 左表 cross join 右表;
+
+隐式交叉连接格式: select * from 左表,右表;
+
+注意: 交叉连接了解即可,因为它本质就是一个错误,又叫笛卡尔积(两个表记录数的乘积)
+
+注意: 左表和右表没有特殊含义,只是在前面是左表,在后面的是右表
+</code></pre><pre><code class="mysql">-- 1.交叉连接(笛卡尔积): 工作中慎用!!!
+# 关键字: cross join
+# 隐式交叉连接格式: select 字段名 from 左表,右表;
+SELECT *
+FROM
+    products,
+    category;
+# 显式交叉连接格式: select 字段名 from 左表 cross join右表;
+SELECT *
+FROM
+    products
+        CROSS JOIN category;
+</code></pre><h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><pre><code class="properties">各种连接条件放置地方总结，适用于所有的连接方式：
+    什么放在on里面？如果是多张表之间的关联过滤，放在on中
+    什么放在where里面？如果是对某张表进行单独的过滤，放在where中
+</code></pre><pre><code class="properties">内连接关键字: inner join ... on
+
+显式内连接格式: select * from 左表 inner join 右表 on 关联条件;
+
+隐式内连接格式（了解）:  select * from 左表 , 右表 where 关联条件;
+
+注意: 左表和右表没有特殊含义,只是在前面是左表,在后面的是右表
+</code></pre><pre><code class="mysql"># 需求：将类别对应的商品信息查询出来
+# 写法一：【推荐写法】inner join关键词
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c
+inner join
+db5.products p
+on c.id=p.category_id;
+
+# 写法二：省略inner关键词
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c
+join
+db5.products p
+on c.id=p.category_id;
+
+# 写法三：省略inner join关键词。不能写on，需要改成where
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c, db5.products p
+where c.id=p.category_id;
+</code></pre><h3 id="左外连接"><a href="#左外连接" class="headerlink" title="左外连接"></a>左外连接</h3><pre><code class="properties">左右连接总结：
+        1- 核心表（主要表）是商品详情表
+        2- 次要表是分类信息表
+        3- 在左连接的场景下，将核心表放在left join关键词左边；次要表放在右边
+        4- 在右连接的场景下，将核心表放在right join关键词右边；次要表放在左边
+        5- 左连接和右连接实际效果都是一样，实际工作里基本都是在左连接
+</code></pre><pre><code class="properties">内连接关键字: left outer join ... on
+
+左外连接格式: select * from 左表 left outer join 右表 on 关联条件;
+</code></pre><h3 id="右外连接"><a href="#右外连接" class="headerlink" title="右外连接"></a>右外连接</h3><pre><code class="properties">内连接关键字: right outer join ... on
+
+左外连接格式: select * from 左表 right outer join 右表 on 关联条件;
+</code></pre><pre><code class="mysql"># 1- 左连接
+/*
+    左连接查询总结
+        1- 以左边的表为主，也就是左表中的所有数据都查询出来
+        2- 右表中能够与左表关联上的数据，能够查出来
+        3- 右表中不能够与左表关联上的数据，不查出来，字段值以null展示
+ */
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c
+left join
+db5.products p
+on c.id = p.category_id;
+
+
+# 2- 右连接
+# 右连接总结：与左连接相似，核心区别是以右表为主。写的很少
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c
+right join
+db5.products p
+on c.id = p.category_id;
+
+
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.products p
+right join
+db5.category c
+on c.id = p.category_id;
+</code></pre><h3 id="全外连接"><a href="#全外连接" class="headerlink" title="全外连接"></a>全外连接</h3><pre><code class="properties">注意: mysql中没有full outer join on这个关键字,所以不能用它来完成全外连接!
+所以只能先查询左外连接和右外连接的结果,然后用union或者union all来实现!!!
+  union : 默认去重   
+  union all: 不去重
+</code></pre><pre><code class="sql"># 3- union和union all的区别
+# union会去重
+select 10
+union
+select 10;
+
+# union all不会去重
+select 10
+union all
+select 10;
+
+
+# 4- 全连接 full join
+/*
+    MySQL的全连接总结：MySQL中不支持full join；可以通过   左连接  union 右连接 实现
+ */
+/*select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c
+full join
+db5.products p
+on c.id = p.category_id;*/
+
+# 左连接
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c left join db5.products p on c.id=p.category_id
+
+union
+
+# 右连接
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c right join db5.products p on c.id=p.category_id;
+
+
+
+
+# union前后左连接、右连接 都行
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.products p right join db5.category c on c.id=p.category_id
+
+union
+
+select
+    c.id as cid,
+    c.name as cname,
+    p.id as pid,
+    p.name as pname
+from db5.category c right join db5.products p on c.id=p.category_id;
+</code></pre><h2 id="自连接查询【熟悉】"><a href="#自连接查询【熟悉】" class="headerlink" title="自连接查询【熟悉】"></a>自连接查询【熟悉】</h2><pre><code class="properties">解释: 两个表进行关联时，如果左表和右边是同一张表，这就是自关联。
+
+注意: 自连接必须起别名!
+</code></pre><ul><li>代码</li></ul><pre><code class="sql">-- 查询&#39;广东省&#39;下所有城市
+# select * from db4.areas where title=&#39;广东省&#39;;
+# select * from db4.areas where pid=&#39;440000&#39;;
+
+select
+    p.id as pid,
+    p.title as pt,
+    c.title as ct,
+    c.id as cid
+from db4.areas p    # 当 省用
+join db4.areas c    # 当 市用
+on c.pid = p.id and p.title=&#39;广东省&#39;;
+
+-- 查询&#39;广州市&#39;下所有的区县
+select
+    p.id as pid,
+    p.title as pt,
+    c.title as ct,
+    c.id as cid
+from db4.areas p    # 当 市用
+join db4.areas c    # 当 区县用
+on c.pid = p.id and p.title=&#39;广州市&#39;;
+
+-- 查询&#39;广东省&#39;下所有的市,以及市下面的区县信息
+select
+    p.title as `省`,
+    c.title as `市`,
+    r.title as `县`
+from db4.areas p /*当 省用*/
+join db4.areas c /*当 市用*/ on c.pid=p.id and p.title=&#39;广东省&#39;
+join db4.areas r /*当 县用*/ on r.pid=c.id;
+
+
+-- 需求1: 求每个月和上月的差额
+select
+    s1.month,
+    s1.revenue - s2.revenue as diff
+from db4.sales s1   # 当前月
+join db4.sales s2   # 当前月的上个月
+on s1.month - s2.month=1;
+
+-- 需求2: 求截止到当月累计销售额
+select
+    s1.month,
+    sum(s2.revenue) as result
+from db4.sales s1   # 当前月
+join db4.sales s2   # 前面的月份
+on s1.month&gt;=s2.month
+group by s1.month;
+</code></pre><h2 id="子查询【熟悉】"><a href="#子查询【熟悉】" class="headerlink" title="子查询【熟悉】"></a>子查询【熟悉】</h2><pre><code class="properties">子查询:在一个 SELECT 语句中，嵌入了另外一个 SELECT 语句，那么被嵌入的 SELECT 语句称之为子查询语句，外部那个SELECT 语句则称为主查询。
+
+
+作用: 子查询是辅助主查询的。
+    子查询的结果充当主查询的条件
+    子查询的结果充当主查询的数据源(临时表)
+    子查询的结果充当主查询的查询字段
+</code></pre><pre><code class="sql">-- 需求: 求商品价格大于平均价的商品信息
+/*
+    需求分析
+    1- 计算所有商品的平均价
+    2- 所有商品的价格与平均价进行对比，过滤出满足要求的数据
+ */
+select avg(price) as avg_price from db5.products;
+
+select
+    *
+from db5.products where price&gt;2638.530769;
+
+select
+    *
+from db5.products where price&gt;(select avg(price) as avg_price from db5.products);
+
+-- 需求: 求商品价格最高的商品信息(考虑并列情况)
+/*
+    1- 统计所有商品的最高价是多少
+    2- 所有商品的价格与最高价进行对比，过滤出满足要求的数据
+ */
+select
+    *
+from db5.products where price=(select max(price) as max_price from db5.products);
+
+-- 查询&#39;广东省&#39;下所有城市
+select id from db4.areas where title=&#39;广东省&#39;;
+select * from db4.areas where pid=&#39;440000&#39;;
+
+select
+    *
+from db4.areas where pid=(select id from db4.areas where title=&#39;广东省&#39;);
+
+-- 需求: 计算每个学生的分数和整体平均分的差值
+/*
+    1- 计算所有学生的平均分
+    2- 每个学生的分数；与平均分进行减法运算
+ */
+ select avg(score) as avg_score from db4.students;
+
+select
+    name,
+    score - (select avg(score) as avg_score from db4.students) as diff
+from db4.students;
+
+-- 需求: 查询各个分类中商品的平均价格,要求结果中包含分类名称
+/*
+    1- 对 商品表 按照类别ID进行分组统计，得到分类和平均价
+    2- 上面的结果 和 分类表进行关联查询。商品表为主表
+ */
+select
+    category_id,
+    avg(price) as avg_price
+from db5.products
+group by category_id;
+
+# 写法一：子查询的写法
+select
+    t1.avg_price,
+    t1.category_id,
+    c.name
+from (
+    select
+        category_id,
+        avg(price) as avg_price
+    from db5.products
+    group by category_id
+) t1
+left join db5.category c
+on t1.category_id=c.id;
+
+# 写法二：with as语法。如果子查询很多的时候推荐使用该写法
+with t1 as (
+    select
+        category_id,
+        avg(price) as avg_price
+    from db5.products
+    group by category_id
+)
+select
+    t1.avg_price,
+    t1.category_id,
+    c.name
+from t1 left join db5.category c
+on t1.category_id=c.id;
+</code></pre><h2 id="快速建表复制数据【了解】"><a href="#快速建表复制数据【了解】" class="headerlink" title="快速建表复制数据【了解】"></a>快速建表复制数据【了解】</h2><pre><code class="sql"># 只复制表结构
+create table if not exists db4.new_stu_1 like db4.students;
+
+# 只复制数据
+insert into db4.new_stu_1 select * from db4.students;
+
+
+# 复制表结构 + 复制数据：只要是一个DQL就行
+create table if not exists db4.new_stu_2
+as
+select
+    name,score,
+    score - (select avg(score) from db4.students) as diff
+from db4.students;
+
+
+-- 需求: 把db4中的products商品表根据分类拆分成多个表
+# 单张表的数据量很大的时候，需要分库分表
+create table db5.c1 as select * from db5.products where category_id = 1;
+create table db5.c2 as select * from db5.products where category_id = 2;
+create table db5.c3 as select * from db5.products where category_id = 3;
+</code></pre><h1 id="MySQL函数【熟悉】"><a href="#MySQL函数【熟悉】" class="headerlink" title="MySQL函数【熟悉】"></a>MySQL函数【熟悉】</h1><h2 id="内置函数简介"><a href="#内置函数简介" class="headerlink" title="内置函数简介"></a>内置函数简介</h2><blockquote><p>在MySQL中有很多内置函数，除了之前学习的聚合函数之外，还有很多其他内置函数：数值函数、字符串函数、时间日期函数、流程控制函数、加解密函数、开窗函数等。</p><p>问题：内置函数该如何学习？<br>熟悉常用的内置函数，其他用到再查帮助文档<br>官网文档：<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/functions.html">https://dev.mysql.com/doc/refman/8.0/en/functions.html</a><br>在mysql命令行或DataGrip软件中通过 HELP ‘函数名’ 查看指定函数的帮助文档<br>示例: help ‘count’;</p></blockquote><h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><blockquote><p>数值函数分类：<br>小数位数处理<br>ROUND、FORMAT、TRUNCATE、FLOOR、CEIL<br>求余数、求幂、随机数<br>MOD、POW、RAND</p><p><strong>常用：ROUND</strong></p></blockquote><pre><code class="sql">select
+    # round四舍五入
+    round(1.999),
+    round(1.234),
+
+    # 地板。向下取整。取比参数值小的 最大整数
+    floor(1.999),
+    floor(1.234),
+
+    # 天花板。向上取整。取比参数值大的 最小整数
+    ceil(1.999),
+    ceil(1.234),
+
+    # format对数值进行四舍五入的处理成货币的表示形式
+    format(123456.789654, 4),
+    format(123456.789654, 4, &#39;zh_CN&#39;),
+
+    # 截断。不会进行四舍五入，第2个参数表示的是保留的小数位数
+    truncate(123456.789654, 4),
+
+    # 求余数
+    mod(9,4),
+
+    # 幂次方。下面的含义是2³
+    pow(2,3),
+
+    # 生成随机数。rand(seed)seed是随机数种子。如果设置了随机数种子，那么产生的随机数会固定不变。控制变量法
+    rand(),
+    rand(516)
+;
+</code></pre><h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><blockquote><p>字符串函数分类：<br>大小写转换、反转<br>LOWER、UPPER<br>字符串反转、拼接、局部替换<br>REPEAT、CONCAT、CONCAT_WS、REPLACE<br>字符串截取，字符串的字符个数以及存储长度<br>SUBSTR、SUBSTRING、LEFT、RIGHT<br>字符串长度<br>CHAR_LENGTH、LENGTH</p></blockquote><pre><code class="sql">select
+   # 字符串拼接
+   concat(&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;),
+   # 使用指定的分隔符对字符串内容进行拼接。with separator
+   concat_ws(&#39;_&#39;,&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;),
+
+   # 替换。replace(原始内容,要替换的,新内容)
+   replace(&#39;heLLo&#39;,&#39;L&#39;,&#39;Y&#39;),
+
+   # 字符串截取。substr(原始内容,截取的开始位置)，注意位置从1开始数。substring与substr的作用完全相同
+   substr(&#39;abcdefg&#39;,3),
+   substring(&#39;abcdefg&#39;,3),
+
+   # 全部转小写
+   lower(&#39;heLLo&#39;),
+   # 全部转大写
+   upper(&#39;heLLo&#39;),
+
+   # 将前面的字符串内容重复多少次
+   repeat(&#39;heima&#39;,3),
+
+   # 从左边开头开始数，截取指定长度
+   left(&#39;abcdefg&#39;,4),
+   # 从右边尾部开始数，截取指定长度
+   right(&#39;abcdefg&#39;,4),
+
+   # 获得字符的个数
+   char_length(&#39;abc&#39;),
+   # 字符串占用的内存字节大小
+   length(&#39;abc&#39;),
+
+   char_length(&#39;黑马&#39;),
+   length(&#39;黑马&#39;)
+;
+</code></pre><h3 id="时间日期函数"><a href="#时间日期函数" class="headerlink" title="时间日期函数"></a>时间日期函数</h3><blockquote><p>时间日期函数分类：<br>获取当前时间的函数，比如当前的年月日<br>NOW、CURRENT_DATE、CURRENT_TIME<br>计算时间差的函数，比如两个日期之间相差多少天，一个日期90天后是几月几号<br>DATE_ADD、DATE_SUB、DATEDIFF、TIMESTAMPDIFF<br>获取年月日的函数，从一个时间中提取具体的年份、月份等<br>YEAR、MONTH、DAY、HOUR、MINUTE、SECOND、WEEKDAY<br>时间转换的函数，比如将2021-10-05转换为时间戳<br>字符串和时间的转换： DATE_FORMAT、STR_TO_DATE<br>时间戳和时间的转换： UNIX_TIMESTAMP、FROM_UNIXTIME<br>时间戳（数字）：某个时间距离UTC时区的1970-01-01 00:00:00 过去了多久（通常以秒或毫妙为单位）。<br>比如：东八区的2023-06-01 17:20:44距离UTC时区的1970-01-01 00:00:00 已经过去了 1685611244 秒</p></blockquote><pre><code class="sql">select
+    -- 当前的日期时间
+    now(),
+    -- 当前的日期
+    current_date(),
+    -- 当前的时间
+    current_time(),
+    -- 获取当前时间戳
+    unix_timestamp(),
+
+    -- 日期时间加上一部分时间
+    date_add(&#39;2025-09-09 17:03&#39;,interval 9 day),
+    date_add(&#39;2025-09-09 17:03&#39;,interval -9 day),
+    date_sub(&#39;2025-09-09 17:03&#39;,interval 9 day),
+
+    -- 两个时间的天数差值：大的日期在前，小的日期在后
+    datediff(&#39;2025-09-09 17:03&#39;,&#39;2025-09-01 10:03&#39;), # 8
+    datediff(&#39;2025-09-01 10:03&#39;,&#39;2025-09-09 17:03&#39;), # -8
+
+    -- 指定内容的差值：小的在前，大的在后
+    timestampdiff(day,&#39;2025-09-09 17:03&#39;,&#39;2025-09-01 10:03&#39;), # -8
+
+    -- 获取年份
+    year(&#39;2025-09-09 17:03&#39;),
+
+    -- 需求 将日期时间变成 01/09/25 17:03:26
+    date_format(&#39;2025-09-01 17:03:26&#39;,&#39;%d/%m/%y %k:%i:%S&#39;);
+</code></pre><h2 id="条件判断操作"><a href="#条件判断操作" class="headerlink" title="条件判断操作"></a>条件判断操作</h2><blockquote><p><strong>case</strong></p><p>​ <strong>when 条件1 then 值1</strong></p><p>​ <strong>when 条件2 then 值2</strong></p><p>​ <strong>….</strong></p><p>​ <strong>else 值n</strong></p><p><strong>end</strong></p><p><strong>IF(条件, 值1, 值2)：条件成立，IF的结果就是值1，否则结果就是值2</strong></p><p>&#x3D;&#x3D;注意：CASE…END中只有两种条件选择时，可以使用IF函数替代&#x3D;&#x3D;</p><pre><code class="sql">/*
+成绩等级如下：
+优秀：90分及以上
+良好：80-90，包含80
+中等：70-80，包含70
+及格：60-70，包含60
+不及格：60分以下
+*/
+-- 注意：case when中表示等于，不能使用两个=，只能使用一个
+select
+name,score,
+case
+  when score&gt;=90 then &#39;优秀&#39;
+  when score&gt;=80 and score&lt;90 then &#39;良好&#39;
+  when score&gt;=70 and score&lt;80 then &#39;中等&#39;
+  when score&gt;=60 and score&lt;70 then &#39;及格&#39;
+  else &#39;不及格&#39;
+end as level
+from db4.students;
+
+/*
+if(判断条件,True情况下执行的内容,False情况下执行的内容)
+*/
+select
+name,score,
+if(score&gt;=90,&#39;优秀&#39;,&#39;良好&#39;) as level
+from db4.students;
+</code></pre></blockquote><h2 id="开窗函数"><a href="#开窗函数" class="headerlink" title="开窗函数"></a>开窗函数</h2><p><img src="/posts/9520183a/image-20241212223913461-1751884090106.png" alt="image-20241212223913461"></p><blockquote><p>&#x3D;&#x3D;作用：查询每一行数据时，使用指定的窗口函数对每行关联的一组数据进行处理。&#x3D;&#x3D;</p><p>基本语法：<window function>OVER (ORDER BY 列名, …)<br>OVER(…)的作用就是设置每一行数据关联的一组数据范围，OVER()时，每行关联的数据范围都是整张表的数据。<br><window function>表示使用的窗口函数，窗口函数可以使用之前已经学过的聚合函数，比如COUNT、SUM、AVG、MAX、MIN等，也可以ROW_NUMBER、RANK、DENSE_RANK等，后面会依次介绍。</window></window></p><p>常用排序函数:</p><p>**RANK()**：产生的排名序号 ，有并列的情况出现时序号不连续<br><strong>DENSE_RANK()</strong> ：产生的排序序号是连续的，有并列的情况出现时序号会重复<br><strong>ROW_NUMBER()</strong> ：返回连续唯一的行号，排名序号不会重复</p></blockquote><pre><code class="sql"># 需求：计算每个学生的 Score 分数和所有学生整体平均分的差值。
+select
+    name,
+    avg(Score) over() as avg_score,
+    score-avg(Score) over() as diff
+from db4.students;
+
+# 需求：计算每个值占整体之和的占比
+select
+    name,
+    score,
+    sum(Score) over() as sum_score,
+    Score/(sum(Score) over()) as rate
+from db4.students;
+
+# 需求：计算每个学生的 Score 分数和同性别学生平均分的差值
+# partition by对数据进行分组，得到多个独立的窗口
+select
+    name,
+    Score,
+    avg(Score) over(partition by Gender) as avg_score,
+    Gender,
+    score - avg(Score) over(partition by Gender) as diff
+from db4.students;
+
+# 需求：根据学生的成绩进行降序排序，然后取TOP4的成绩（考虑成绩并列的情况）
+select
+    *
+from db4.students
+order by Score desc
+limit 4;
+
+/*
+    row_number：不管元素值是否相同，就是单调的进行编号
+    rank：如果元素值相同，序号相同，而且会占用后面的序号资格
+    dense_rank：如果元素值相同，序号相同，而且不会占用后面的序号资格
+ */
+select * from (
+    select
+        name,
+        score,
+        row_number() over (order by Score desc) as rs1,
+        rank() over (order by Score desc) as rs2,
+        dense_rank() over (order by Score desc) as rs3
+    from db4.students
+) as tmp
+where rs3&lt;=4;
+
+# 需求：获取每种性别中考试成绩排名第二高的学生（不考虑成绩并列的情况）
+/*
+    1- partition by功能与group by的功能是一样的，对整张表的数据进行分组，得到多个窗口
+    2- 窗口里面的order by，只对对应的窗口进行局部的排序。跟在from后面的order by对整张表的所有数据进行排序
+ */
+select * from (
+    select
+        name,
+        Gender,
+        Score,
+        row_number() over (partition by Gender order by Score desc) as rs
+    from db4.students
+)tmp
+where rs=2;
+</code></pre><h1 id="python与MySQL交互【熟悉】"><a href="#python与MySQL交互【熟悉】" class="headerlink" title="python与MySQL交互【熟悉】"></a>python与MySQL交互【熟悉】</h1><blockquote><p>pymysql是一个纯python实现的mysql客户端库,提供了python程序中操作mysql数据库的操作</p></blockquote><h2 id="为什么要学习PyMySQL"><a href="#为什么要学习PyMySQL" class="headerlink" title="为什么要学习PyMySQL"></a>为什么要学习PyMySQL</h2><p>如何实现将100000条数据插入到MySQL数据库?</p><p><strong>答案:</strong></p><p>如果使用之前学习的MySQL客户端来完成这个操作，那么这个工作量无疑是巨大的，我们可以通过使用程序代码的方式去连接MySQL数据库，然后对MySQL数据库进行增删改查的方式，实现100000条数据的插入，像这样使用代码的方式操作数据库就称为数据库编程。</p><h2 id="数据准备-1"><a href="#数据准备-1" class="headerlink" title="数据准备"></a>数据准备</h2><pre><code class="mysql">-- 创建 &quot;京东&quot; 数据库
+create database if not exists jing_dong charset=utf8;
+
+-- 使用 &quot;京东&quot; 数据库
+use jing_dong;
+
+-- 创建一个商品goods数据表
+create table if not exists goods(
+    id int unsigned primary key auto_increment not null,
+    name varchar(150) not null,
+    cate_name varchar(40) not null,
+    brand_name varchar(40) not null,
+    price decimal(10,3) not null default 0,
+    is_show bit not null default 1,
+    is_saleoff bit not null default 0
+);
+
+-- 向goods表中插入数据
+insert into goods values(0,&#39;r510vc 15.6英寸笔记本&#39;,&#39;笔记本&#39;,&#39;华硕&#39;,&#39;3399&#39;,default,default);
+insert into goods values(0,&#39;y400n 14.0英寸笔记本电脑&#39;,&#39;笔记本&#39;,&#39;联想&#39;,&#39;4999&#39;,default,default);
+insert into goods values(0,&#39;g150th 15.6英寸游戏本&#39;,&#39;游戏本&#39;,&#39;雷神&#39;,&#39;8499&#39;,default,default);
+insert into goods values(0,&#39;x550cc 15.6英寸笔记本&#39;,&#39;笔记本&#39;,&#39;华硕&#39;,&#39;2799&#39;,default,default);
+insert into goods values(0,&#39;x240 超极本&#39;,&#39;超级本&#39;,&#39;联想&#39;,&#39;4880&#39;,default,default);
+insert into goods values(0,&#39;u330p 13.3英寸超极本&#39;,&#39;超级本&#39;,&#39;联想&#39;,&#39;4299&#39;,default,default);
+insert into goods values(0,&#39;svp13226scb 触控超极本&#39;,&#39;超级本&#39;,&#39;索尼&#39;,&#39;7999&#39;,default,default);
+insert into goods values(0,&#39;ipad mini 7.9英寸平板电脑&#39;,&#39;平板电脑&#39;,&#39;苹果&#39;,&#39;1998&#39;,default,default);
+insert into goods values(0,&#39;ipad air 9.7英寸平板电脑&#39;,&#39;平板电脑&#39;,&#39;苹果&#39;,&#39;3388&#39;,default,default);
+insert into goods values(0,&#39;ipad mini 配备 retina 显示屏&#39;,&#39;平板电脑&#39;,&#39;苹果&#39;,&#39;2788&#39;,default,default);
+insert into goods values(0,&#39;ideacentre c340 20英寸一体电脑 &#39;,&#39;台式机&#39;,&#39;联想&#39;,&#39;3499&#39;,default,default);
+insert into goods values(0,&#39;vostro 3800-r1206 台式电脑&#39;,&#39;台式机&#39;,&#39;戴尔&#39;,&#39;2899&#39;,default,default);
+insert into goods values(0,&#39;imac me086ch/a 21.5英寸一体电脑&#39;,&#39;台式机&#39;,&#39;苹果&#39;,&#39;9188&#39;,default,default);
+insert into goods values(0,&#39;at7-7414lp 台式电脑 linux ）&#39;,&#39;台式机&#39;,&#39;宏碁&#39;,&#39;3699&#39;,default,default);
+insert into goods values(0,&#39;z220sff f4f06pa工作站&#39;,&#39;服务器/工作站&#39;,&#39;惠普&#39;,&#39;4288&#39;,default,default);
+insert into goods values(0,&#39;poweredge ii服务器&#39;,&#39;服务器/工作站&#39;,&#39;戴尔&#39;,&#39;5388&#39;,default,default);
+insert into goods values(0,&#39;mac pro专业级台式电脑&#39;,&#39;服务器/工作站&#39;,&#39;苹果&#39;,&#39;28888&#39;,default,default);
+insert into goods values(0,&#39;hmz-t3w 头戴显示设备&#39;,&#39;笔记本配件&#39;,&#39;索尼&#39;,&#39;6999&#39;,default,default);
+insert into goods values(0,&#39;商务双肩背包&#39;,&#39;笔记本配件&#39;,&#39;索尼&#39;,&#39;99&#39;,default,default);
+insert into goods values(0,&#39;x3250 m4机架式服务器&#39;,&#39;服务器/工作站&#39;,&#39;ibm&#39;,&#39;6888&#39;,default,default);
+insert into goods values(0,&#39;商务双肩背包&#39;,&#39;笔记本配件&#39;,&#39;索尼&#39;,&#39;99&#39;,default,default);
+
+
+# 创建用户表
+create TABLE if not exists  user(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    user varchar(30),
+    pwd varchar(30)
+);
+insert into user(user,pwd) VALUE (&#39;root&#39;,&#39;123456&#39;);
+
+CREATE TABLE account (
+    id INT PRIMARY KEY,
+    balance DECIMAL(10, 2)
+);
+
+# 插入测试数据
+INSERT INTO account VALUES (1, 1000.00);
+INSERT INTO account VALUES (2, 8000.00);
+INSERT INTO account VALUES (3, 5000.00);
+INSERT INTO account VALUES (4, 3000.00);
+</code></pre><h2 id="安装pymysql库"><a href="#安装pymysql库" class="headerlink" title="安装pymysql库"></a>安装pymysql库</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><pre><code class="properties">在自己电脑上执行
+命令: pip install pymysql==1.1.1 -i https://pypi.tuna.tsinghua.edu.cn/simple/ 
+</code></pre><h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><p><img src="/posts/9520183a/image-20220730120609153.png" alt="image-20220730120609153"></p><h2 id="pymysql使用"><a href="#pymysql使用" class="headerlink" title="pymysql使用"></a>pymysql使用</h2><h3 id="知识点-11"><a href="#知识点-11" class="headerlink" title="知识点:"></a>知识点:</h3><pre><code class="properties">pymysql使用步骤:
+1.导入模块
+2.创建连接
+3.创建游标，理解为session会话，就是一个具体与数据库的交换的对象
+4.执行sql
+5.关闭游标
+6.关闭连接
+</code></pre><h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><h4 id="知识点-12"><a href="#知识点-12" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">总结：
+    1- fetchone、fetchall、fetchmany内部有个指针，指向到你目前取到的数据行
+    2- fetchone：一次只取一条
+    3- fetchall：一次取出所有的数据
+    4- fetchmany(size)：一次最多取size条数据
+</code></pre><h4 id="示例-12"><a href="#示例-12" class="headerlink" title="示例:"></a>示例:</h4><pre><code class="python"># 1- 导包
+import pymysql
+
+if __name__ == &#39;__main__&#39;:
+    # 2- 创建与数据库的连接
+    # 注意：charset可以设置为utf8。没有utf-8
+    conn = pymysql.connect(
+        user=&quot;root&quot;,
+        password=&quot;root&quot;,
+        host=&quot;127.0.0.1&quot;,
+        port=3306,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 3- 通过连接创建游标
+    cur = conn.cursor()
+
+    # 4- 通过游标执行SQL语句
+    sql = &quot;&quot;&quot;
+        select
+            name,cate_name,
+            avg(price) as avg_price
+        from jing_dong.goods
+        where id&lt;=18
+        group by name,cate_name
+        having avg_price&gt;=2999
+        order by name
+        limit 2,3
+    &quot;&quot;&quot;
+    cur_result = cur.execute(sql)
+    # print(cur_result)
+
+    # 5- 取值：通过游标去取数据
+    &quot;&quot;&quot;
+        总结：
+            1- fetchone、fetchall、fetchmany内部有个指针，指向到你目前取到的数据行
+            2- fetchone：一次只取一条
+            3- fetchall：一次取出所有的数据
+            4- fetchmany(size)：一次最多取size条数据
+    &quot;&quot;&quot;
+    # result = cur.fetchone()
+    # print(type(result))
+    # print(result)   # 元组
+    # print(result[0],result[1],result[2])
+
+    # result = cur.fetchone()
+    # print(result)
+    #
+    # print(&quot;-&quot; * 30)
+    # result = cur.fetchall()
+    # print(result)
+    # print(type(result))
+
+    print(&quot;-&quot;*30)
+    result = cur.fetchmany(2)
+    print(result)
+    print(type(result))
+
+    print(&quot;-&quot; * 30)
+    result = cur.fetchmany(2)
+    print(result)
+
+    # 6- 关闭游标
+    cur.close()
+
+    # 7- 关闭连接
+    conn.close()
+</code></pre><h3 id="增删改操作"><a href="#增删改操作" class="headerlink" title="增删改操作"></a>增删改操作</h3><h4 id="知识点-13"><a href="#知识点-13" class="headerlink" title="知识点:"></a>知识点:</h4><pre><code class="properties">拓展: 事务: 多个操作要么都成功,都失败  (特性: ACID原理，原子性 一致性  隔离性  持久性)
+
+存储引擎: innodb支持事务   myisam不支持事务
+
+增删改操作: 如果数据库底层是innodb引擎,必须手动commit提交 
+
+数据提交:commit()
+数据回滚:rollback()
+</code></pre><h4 id="增"><a href="#增" class="headerlink" title="增:"></a>增:</h4><pre><code class="python"># 1- 导入模块
+import pymysql
+import time
+
+def insert():
+    # 2- 创建连接
+    conn = pymysql.connect(
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 3- 创建游标
+    cur = conn.cursor()
+
+    # 4- 通过游标执行具体的SQL语句
+    try:
+        # 4.1- 执行SQL
+        sql = &quot;insert into user(user,pwd) VALUE (&#39;lisi&#39;,&#39;123456&#39;)&quot;
+        result = cur.execute(sql)
+        print(f&quot;sql执行结果：&#123;result&#125;&quot;)
+
+        # time.sleep(6)
+
+        # 模拟发生异常的情况
+        # a = 1/0
+        # print(&quot;上面模拟了异常&quot;)
+    except:
+        # 4.3- 如果无法成功的提交事物，那么需要将前面的SQL操作撤销掉
+        conn.rollback()
+        print(&quot;回滚事物&quot;)
+    else:
+        # 4.2- 提交事物
+        conn.commit()
+    finally:
+        print(&quot;关闭资源&quot;)
+
+        # 5- 关闭游标
+        cur.close()
+
+        # 6- 关闭连接
+        conn.close()
+
+
+if __name__ == &#39;__main__&#39;:
+    insert()
+</code></pre><h4 id="改"><a href="#改" class="headerlink" title="改:"></a>改:</h4><pre><code class="python">import pymysql
+
+# 将分散的代码抽取为独立的函数/方法的快捷键：ctrl+alt+M
+
+def my_insert():
+    # 创建与对应数据库的连接
+    # host如果是本地，可以写localhost或者127.0.0.1
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 创建游标
+    cur = conn.cursor()
+    try:
+        # 执行SQL语句
+        sql = &quot;insert into user values (null,&#39;zhangsan&#39;,&#39;999&#39;)&quot;
+        result_num = cur.execute(sql)
+        print(result_num)
+
+        # 模拟异常的发生
+        # a = 1/0
+    except:
+        # 如果数据操作失败，需要回滚事务
+        print(&quot;数据操作失败，准备回滚事务&quot;)
+        conn.rollback()
+    else:
+        # 注意：增删改中需要手动提交事务
+        print(&quot;数据操作成功，没有异常发生，准备提交事务&quot;)
+        conn.commit()
+    finally:
+        # 关闭连接/释放资源
+        print(&quot;关闭连接&quot;)
+        cur.close()
+        conn.close()
+
+def my_delete():
+    # 建立与数据库的连接
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 获取游标
+    cur = conn.cursor()
+
+    try:
+        sql = &quot;delete from user where id in (3,6,7)&quot;
+        result_num = cur.execute(sql)
+        print(result_num)
+    except:
+        conn.rollback()
+    else:
+        conn.commit()
+    finally:
+        cur.close()
+        conn.close()
+
+def my_update():
+    # 创建与对应数据库的连接
+    # host如果是本地，可以写localhost或者127.0.0.1
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 创建游标
+    cur = conn.cursor()
+    try:
+        # 执行SQL语句
+        sql = &quot;update user set user=&#39;张三&#39; where id=9&quot;
+        result_num = cur.execute(sql)
+        print(result_num)
+
+    except Exception as e:
+        # 如果数据操作失败，需要回滚事务
+        print(e)
+        print(&quot;数据操作失败，准备回滚事务&quot;)
+        conn.rollback()
+    else:
+        # 注意：增删改中需要手动提交事务
+        print(&quot;数据操作成功，没有异常发生，准备提交事务&quot;)
+        conn.commit()
+    finally:
+        # 关闭连接/释放资源
+        print(&quot;关闭连接&quot;)
+        cur.close()
+        conn.close()
+
+if __name__ == &#39;__main__&#39;:
+    # my_insert()
+
+    # my_delete()
+
+    my_update()
+</code></pre><h4 id="删"><a href="#删" class="headerlink" title="删:"></a>删:</h4><pre><code class="python">import pymysql
+
+# 将分散的代码抽取为独立的函数/方法的快捷键：ctrl+alt+M
+
+def my_insert():
+    # 创建与对应数据库的连接
+    # host如果是本地，可以写localhost或者127.0.0.1
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 创建游标
+    cur = conn.cursor()
+    try:
+        # 执行SQL语句
+        sql = &quot;insert into user values (null,&#39;zhangsan&#39;,&#39;999&#39;)&quot;
+        result_num = cur.execute(sql)
+        print(result_num)
+
+        # 模拟异常的发生
+        # a = 1/0
+    except:
+        # 如果数据操作失败，需要回滚事务
+        print(&quot;数据操作失败，准备回滚事务&quot;)
+        conn.rollback()
+    else:
+        # 注意：增删改中需要手动提交事务
+        print(&quot;数据操作成功，没有异常发生，准备提交事务&quot;)
+        conn.commit()
+    finally:
+        # 关闭连接/释放资源
+        print(&quot;关闭连接&quot;)
+        cur.close()
+        conn.close()
+
+def my_delete():
+    # 建立与数据库的连接
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 获取游标
+    cur = conn.cursor()
+
+    try:
+        sql = &quot;delete from user where id in (3,6,7)&quot;
+        result_num = cur.execute(sql)
+        print(result_num)
+    except:
+        conn.rollback()
+    else:
+        conn.commit()
+    finally:
+        cur.close()
+        conn.close()
+
+def my_update():
+    # 创建与对应数据库的连接
+    # host如果是本地，可以写localhost或者127.0.0.1
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 创建游标
+    cur = conn.cursor()
+    try:
+        # 执行SQL语句
+        sql = &quot;update user set user=&#39;张三&#39; where id=9&quot;
+        result_num = cur.execute(sql)
+        print(result_num)
+
+    except Exception as e:
+        # 如果数据操作失败，需要回滚事务
+        print(e)
+        print(&quot;数据操作失败，准备回滚事务&quot;)
+        conn.rollback()
+    else:
+        # 注意：增删改中需要手动提交事务
+        print(&quot;数据操作成功，没有异常发生，准备提交事务&quot;)
+        conn.commit()
+    finally:
+        # 关闭连接/释放资源
+        print(&quot;关闭连接&quot;)
+        cur.close()
+        conn.close()
+
+if __name__ == &#39;__main__&#39;:
+    # my_insert()
+
+    my_delete()
+</code></pre><h4 id="rollback事物回滚演示【了解】"><a href="#rollback事物回滚演示【了解】" class="headerlink" title="rollback事物回滚演示【了解】"></a>rollback事物回滚演示【了解】</h4><p><img src="/posts/9520183a/image-20250711103931133.png" alt="image-20250711103931133"></p><pre><code class="python">import pymysql
+import time
+
+
+def simulate_transaction(conn, amount):
+    cur = conn.cursor()
+    try:
+        # 从账户1扣款
+        cur.execute(&quot;UPDATE account SET balance = balance - %s WHERE id = 1&quot;, (amount,))
+
+        # 模拟失败
+        if amount &gt; 100:
+            raise Exception(&quot;金额过大，交易失败&quot;)
+
+        # 向账户2入账
+        cur.execute(&quot;UPDATE account SET balance = balance + %s WHERE id = 2&quot;, (amount,))
+
+        conn.commit()
+        print(f&quot;✅ 交易成功: &#123;amount&#125; 元&quot;)
+
+    except Exception as e:
+        print(f&quot;❌ 交易失败: &#123;e&#125;&quot;)
+        # conn.rollback()  # &lt;&lt;&lt; 这里非常关键！否则事务残留会影响下一次操作
+        print(&quot;   回滚完成&quot;)
+
+    finally:
+        cur.close()
+
+
+if __name__ == &#39;__main__&#39;:
+    # 长生命周期连接（模拟连接池）
+    conn = pymysql.connect(
+        host=&quot;192.168.88.100&quot;,
+        port=3306,
+        user=&quot;root&quot;,
+        password=&quot;123456&quot;,
+        charset=&quot;utf8&quot;,
+        database=&quot;jing_dong&quot;,
+        autocommit=False
+    )
+
+    try:
+        for i in range(3):
+            print(f&quot;\n--- 第&#123;i + 1&#125;次交易 ---&quot;)
+            if i == 1:
+                simulate_transaction(conn, 150)  # 模拟失败
+            else:
+                simulate_transaction(conn, 100)  # 成功
+            time.sleep(1)
+    finally:
+        conn.close()
+</code></pre><h2 id="优化后的代码【掌握】"><a href="#优化后的代码【掌握】" class="headerlink" title="优化后的代码【掌握】"></a>优化后的代码【掌握】</h2><pre><code class="python">import pymysql
+
+def modify_data(sql):
+    # 1- 创建与数据库的连接
+    conn = pymysql.connect(
+        user=&quot;root&quot;,
+        password=&quot;root&quot;,
+        host=&quot;127.0.0.1&quot;,
+        port=3306,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 2- 创建游标
+    cur = conn.cursor()
+
+    try:
+        # 3- 通过游标执行SQL
+        cur.execute(sql)
+
+        # 演示执行出错
+        # i = 1/0
+    except Exception as e:
+        # 回滚事物
+        conn.rollback()
+        print(f&quot;异常信息是：&#123;e&#125;&quot;)
+    else:
+        # 4- 提交事务
+        conn.commit()
+    finally:
+        # 5- 关闭游标
+        cur.close()
+
+        # 6- 关闭连接
+        conn.close()
+
+def insert():
+    sql = &quot;insert into user (user,pwd) values (&#39;lisi8888&#39;,&#39;123456&#39;)&quot;
+    modify_data(sql)
+
+def update():
+    sql = &quot;update user set pwd=6666888 where user=&#39;lisi8888&#39;&quot;
+    modify_data(sql)
+
+def delete():
+    sql = &quot;delete from user where user=&#39;lisi8888&#39;&quot;
+    modify_data(sql)
+
+if __name__ == &#39;__main__&#39;:
+    # 1- 增加数据
+    insert()
+
+    # 2- 修改数据
+    update()
+
+    # 3- 删除数据
+    delete()
+</code></pre><h2 id="登录案例【理解】"><a href="#登录案例【理解】" class="headerlink" title="登录案例【理解】"></a>登录案例【理解】</h2><blockquote><p>需求: 自己创建一个数据库,里面有user表,用于存储用户名密码(咱们直接写固定 用户名root 密码123456 )</p><p>需要完成的功能是用户键盘录入用户名和密码,使用python代码连接数据库判断是否登录成功</p><p>分析: 现实生活中如果要登录,必须先注册,用户注册完后,对应的信息就存储到对应网站后台数据库中</p><p>用户登录: 用户新输入的用户名密码和数据库中的用户名和密码比较,都相同就登录成功,否则失败</p></blockquote><h3 id="演示sql注入问题和解决办法"><a href="#演示sql注入问题和解决办法" class="headerlink" title="演示sql注入问题和解决办法"></a>演示sql注入问题和解决办法</h3><pre><code class="python">import pymysql
+
+if __name__ == &#39;__main__&#39;:
+    # 0- 获取用户的账号、密码
+    user = input(&quot;账号：&quot;)
+    pwd = input(&quot;密码：&quot;)
+
+    # 1- 创建与数据库的连接
+    conn = pymysql.connect(
+        user=&quot;root&quot;,
+        password=&quot;root&quot;,
+        host=&quot;127.0.0.1&quot;,
+        port=3306,
+        database=&quot;jing_dong&quot;,
+        charset=&quot;utf8&quot;
+    )
+
+    # 2- 创建游标
+    cur = conn.cursor()
+
+    # 3- 执行SQL
+    # SQL注入演示
+    # 如何演示：user随便输入，pwd输入 &#39; or 1=1 or &#39;
+    # sql = f&quot; select * from user where user=&#39;&#123;user&#125;&#39; and pwd=&#39;&#123;pwd&#125;&#39; &quot;
+    # print(f&quot;格式化后的SQL：&#123;sql&#125;&quot;)
+    # result = cur.execute(sql)
+
+    # 解决：SQL注入
+    sql = &quot; select * from user where user=%s and pwd=%s &quot;
+    result = cur.execute(sql,args=(user,pwd))
+    
+    if result&gt;=1:
+        print(&quot;恭喜，登录成功&quot;)
+    else:
+        print(&quot;登录失败&quot;)
+
+    # 4- 关闭
+    cur.close()
+    conn.close()
+</code></pre><p><img src="/posts/9520183a/image-20250910152350515.png" alt="image-20250910152350515"></p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>程序员青阳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/9520183a/">https://heliufang.github.io/posts/9520183a/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">299.5k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),l=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+l)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>l?"fixed":"static"),$(e).css("top",$(window).scrollTop()>l?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>'),$("#mobileTocToggle").on("click",function(){$("#mobileTocPanel").addClass("active"),$("#mobileTocMask").addClass("active"),$("body").css("overflow","hidden")}),$("#mobileTocClose, #mobileTocMask").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")}),$("#mobileTocBody .toc-link").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")})})</script></html>

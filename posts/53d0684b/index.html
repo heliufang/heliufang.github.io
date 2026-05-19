@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>程序员青阳</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="程序员青阳" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 程序员青阳</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="mobile-toc-toggle hide-md hide-lg" id="mobileTocToggle"><i class="layui-icon layui-icon-list"></i></div><div class="mobile-toc-panel hide-md" id="mobileTocPanel"><div class="mobile-toc-header"><span><i class="layui-icon layui-icon-align-center"></i> 本文目录</span> <i class="layui-icon layui-icon-close" id="mobileTocClose"></i></div><div class="mobile-toc-body" id="mobileTocBody"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">Linux基础命令【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">linux目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">linux基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">linux命令格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%9B%9B%E5%A4%A7%E5%91%BD%E4%BB%A4"><span class="toc-text">基础四大命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4"><span class="toc-text">ls命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd%E5%92%8Cpwd%E5%92%8Cclear%E5%91%BD%E4%BB%A4"><span class="toc-text">cd和pwd和clear命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-text">相对路径和绝对路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C"><span class="toc-text">帮助手册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir%E5%91%BD%E4%BB%A4"><span class="toc-text">mkdir命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="toc-text">touch命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cat-more-less%E5%91%BD%E4%BB%A4"><span class="toc-text">cat_more_less命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp%E5%91%BD%E4%BB%A4"><span class="toc-text">cp命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mv%E5%91%BD%E4%BB%A4"><span class="toc-text">mv命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm%E5%91%BD%E4%BB%A4%E3%80%90%E6%85%8E%E9%87%8D%E4%BD%BF%E7%94%A8%E3%80%91"><span class="toc-text">rm命令【慎重使用】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#echo%E5%91%BD%E4%BB%A4"><span class="toc-text">echo命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%E5%8F%B7"><span class="toc-text">重定向符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head%E5%92%8Ctail"><span class="toc-text">head和tail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6"><span class="toc-text">管道符 |</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="toc-text">grep命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#which%E5%92%8Cfind"><span class="toc-text">which和find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E8%BF%9E%E6%8E%A5-x2F-%E7%A1%AC%E8%BF%9E%E6%8E%A5"><span class="toc-text">软连接&#x2F;硬连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="toc-text">压缩和解压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tar%E5%91%BD%E4%BB%A4%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">tar命令【掌握】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zip%E5%92%8Cunzip%E5%91%BD%E4%BB%A4"><span class="toc-text">zip和unzip命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VI%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">VI编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vi%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E4%B8%89%E5%A4%A7%E6%AD%A5"><span class="toc-text">vi操作文件三大步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-text">需求:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vi%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">vi其他命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E9%AB%98%E7%BA%A7%E5%91%BD%E4%BB%A4%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">Linux高级命令【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">用户基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-text">用户授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sudo%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8"><span class="toc-text">sudo命令使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E6%93%8D%E4%BD%9C"><span class="toc-text">用户组操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ll%E5%91%BD%E4%BB%A4%E5%9B%BE%E8%A7%A3%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">ll命令图解【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E8%AF%A6%E8%A7%A3%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">权限详解【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chmod%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">chmod【掌握】</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%BF%AB%E7%85%A7"><span class="toc-text">虚拟机的快照</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%8D%E6%91%84%E5%BF%AB%E7%85%A7"><span class="toc-text">拍摄快照</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E5%BF%AB%E7%85%A7"><span class="toc-text">恢复快照</span></a></li></ol></li></ol></div></div><div class="mobile-toc-mask hide-md" id="mobileTocMask"></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head2.jpg"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">72</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">12</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">67</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">299.5k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">20.19.6</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2026-05-19 15:35:55"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/9520183a/">1.mysql</a></li><li><a href="/posts/53d0684b/">2.Linux</a></li><li><a href="/posts/a4d633c6/">3.python高级</a></li><li><a href="/posts/315dec50/">4.python基础笔记</a></li><li><a href="/posts/5430d244/">5.AI编程智能体提示词</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/mysql/">mysql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">2</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">Linux基础命令【掌握】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">linux目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">linux基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linux%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">linux命令格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%9B%9B%E5%A4%A7%E5%91%BD%E4%BB%A4"><span class="toc-text">基础四大命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ls%E5%91%BD%E4%BB%A4"><span class="toc-text">ls命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cd%E5%92%8Cpwd%E5%92%8Cclear%E5%91%BD%E4%BB%A4"><span class="toc-text">cd和pwd和clear命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="toc-text">相对路径和绝对路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%AE%E5%8A%A9%E6%89%8B%E5%86%8C"><span class="toc-text">帮助手册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mkdir%E5%91%BD%E4%BB%A4"><span class="toc-text">mkdir命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="toc-text">touch命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cat-more-less%E5%91%BD%E4%BB%A4"><span class="toc-text">cat_more_less命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cp%E5%91%BD%E4%BB%A4"><span class="toc-text">cp命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mv%E5%91%BD%E4%BB%A4"><span class="toc-text">mv命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rm%E5%91%BD%E4%BB%A4%E3%80%90%E6%85%8E%E9%87%8D%E4%BD%BF%E7%94%A8%E3%80%91"><span class="toc-text">rm命令【慎重使用】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#echo%E5%91%BD%E4%BB%A4"><span class="toc-text">echo命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%E5%8F%B7"><span class="toc-text">重定向符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#head%E5%92%8Ctail"><span class="toc-text">head和tail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6"><span class="toc-text">管道符 |</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="toc-text">grep命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#which%E5%92%8Cfind"><span class="toc-text">which和find</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E8%BF%9E%E6%8E%A5-x2F-%E7%A1%AC%E8%BF%9E%E6%8E%A5"><span class="toc-text">软连接&#x2F;硬连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="toc-text">压缩和解压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tar%E5%91%BD%E4%BB%A4%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">tar命令【掌握】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zip%E5%92%8Cunzip%E5%91%BD%E4%BB%A4"><span class="toc-text">zip和unzip命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VI%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">VI编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vi%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6%E4%B8%89%E5%A4%A7%E6%AD%A5"><span class="toc-text">vi操作文件三大步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-text">需求:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vi%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">vi其他命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E9%AB%98%E7%BA%A7%E5%91%BD%E4%BB%A4%E3%80%90%E7%86%9F%E6%82%89%E3%80%91"><span class="toc-text">Linux高级命令【熟悉】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">用户基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7"><span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-text">用户授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sudo%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8"><span class="toc-text">sudo命令使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E6%93%8D%E4%BD%9C"><span class="toc-text">用户组操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ll%E5%91%BD%E4%BB%A4%E5%9B%BE%E8%A7%A3%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">ll命令图解【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E8%AF%A6%E8%A7%A3%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">权限详解【掌握】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chmod%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91"><span class="toc-text">chmod【掌握】</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%BF%AB%E7%85%A7"><span class="toc-text">虚拟机的快照</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%8D%E6%91%84%E5%BF%AB%E7%85%A7"><span class="toc-text">拍摄快照</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E5%BF%AB%E7%85%A7"><span class="toc-text">恢复快照</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">linux</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">linux</span></span></p><h1>Linux</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2026-05-16 23:33:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 5.2k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 25分钟</span></p></div><div id="article"><h2 id="Linux基础命令【掌握】"><a href="#Linux基础命令【掌握】" class="headerlink" title="Linux基础命令【掌握】"></a>Linux基础命令【掌握】</h2><h3 id="linux目录结构"><a href="#linux目录结构" class="headerlink" title="linux目录结构"></a>linux目录结构</h3><pre><code class="properties">Linux的目录结构: 是一个树型结构。没有盘符，也就是没有C盘、D盘等
+
+Windows系统根目录:  可以拥有多个根目录, 如 C:/、D:/、E:/   举例: c:/目录1/目录2/文件
+
+Linux系统根目录: 只有一个根目录 /, 所有文件都在它下面       举例: /目录1/目录2/文件
+
+注意: 
+    1- linux【绝对路径】中,第一个/代表根目录,后面其他的/代表两个目录之间的间隔符    举例: /home/zhangsan
+    2- linux【相对路径，开头肯定不是/】
+        2.1- ./ 表示当前目录
+        2.2- ../ 表示上一级目录
+    总结：Linux的【绝对路径一定是以/开头】。
+
+
+常用命令[重要!!!多用!!!]:
+    cd : 切换目录位置
+    pwd: 打印当前所在位置的绝对路径   
+    ls : 展示当前目录下所有文件
+    clear: 清屏   快捷键:ctrl+L
+    
+     ~ : 家目录  普通用户的家目录是:/home/普通用户名   root用户的家目录是: /root
+    快速回家: cd ~  注意: ~可以省略
+    快速回到上一次所在的位置: cd -
+    两个小技巧: tab补全文件名称   history或者↑和↓能够上下翻看历史命令
+</code></pre><p><img src="/posts/53d0684b/1778945760291.png" alt="1778945760291"></p><blockquote><table><thead><tr><th>目录</th><th>作用</th></tr></thead><tbody><tr><td>&#x2F;bin</td><td>Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令</td></tr><tr><td>&#x2F;boot</td><td>系统引导程序所需要的文件目录，存放的是启动 Linux 时使用的一些核心文件</td></tr><tr><td>&#x2F;dev</td><td>Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，磁盘，光驱</td></tr><tr><td><strong>&#x2F;etc</strong></td><td>用来存放所有的系统管理所需要的配置文件和子目录，系统配置，启动程序</td></tr><tr><td><strong>&#x2F;home</strong></td><td>普通用户的家目录，在 Linux 中，每个普通用户都有一个自己的目录，一般该目录名是以用户的账号命名的</td></tr><tr><td>&#x2F;lib</td><td>Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</td></tr><tr><td>&#x2F;mnt</td><td>临时挂载储存设备的挂载点，我们可以将光驱挂载在 &#x2F;mnt&#x2F; 上，然后进入该目录就可以查看光驱里的内容了</td></tr><tr><td>&#x2F;opt</td><td>optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个MySQL数据库则就可以放到这个目录下。默认是空的。</td></tr><tr><td>&#x2F;proc</td><td>存储的是当前内核运行状态的一系列特殊文件。操作系统运行时，进程信息和内核信息存放在这里。</td></tr><tr><td><strong>&#x2F;root</strong></td><td>Linux超级权限用户root的家目录</td></tr><tr><td>&#x2F;sbin</td><td>管理系统相关的命令【超级管理员用】</td></tr><tr><td>&#x2F;tmp</td><td>临时文件目录，这个目录被当作回收站使用</td></tr><tr><td>&#x2F;usr</td><td>用户或系统软件应用程序目录，类似于 windows 下的 program files 目录。</td></tr></tbody></table></blockquote><h3 id="linux基础命令"><a href="#linux基础命令" class="headerlink" title="linux基础命令"></a>linux基础命令</h3><h4 id="linux命令格式"><a href="#linux命令格式" class="headerlink" title="linux命令格式"></a>linux命令格式</h4><pre><code class="properties">command [-options] [parameter]
+
+说明:
+- command : 命令名, 相应功能的英文单词或单词的缩写
+- [-options] : 选项, 可用来对命令进行控制, 也可以省略
+- parameter  : 传给命令的参数, 可以是 零个、一个 或者 多个
+</code></pre><h4 id="基础四大命令"><a href="#基础四大命令" class="headerlink" title="基础四大命令"></a>基础四大命令</h4><pre><code class="properties">ls: 查看当前目录了下所有内容。list
+cd 目录名: 切换目录。change directory
+pwd: 查看当前所在位置。print work directory
+clear: 清屏
+
+补充：
+history 查看历史执行命令
+</code></pre><h4 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h4><pre><code class="properties">ls [-a -l -h] [路径] : 查看指定路径下文件列表  注意: 默认都是当前路径
+
+参数 -a : 展示出隐藏文件/目录          注意: .开头就是隐藏文件
+参数 -l : 以详细信息展示文件           注意: ls -l 可以简化为ll
+参数 -h : 配合-l使用,人性化展示文件大小 
+</code></pre><h4 id="cd和pwd和clear命令"><a href="#cd和pwd和clear命令" class="headerlink" title="cd和pwd和clear命令"></a>cd和pwd和clear命令</h4><pre><code class="properties">cd [你要去的路径] : 切换到指定路径下
+
+家目录: 普通用户的家目录:/home/普通用户名     root用户的家目录:/root    
+
+如何快速回家: cd ~    注意: ~可以省略
+
+如何快速切回到刚才所在的位置: cd -
+
+
+pwd : 查看当前路径 
+
+clear:  清屏       快捷键: ctrl+L
+</code></pre><h4 id="相对路径和绝对路径"><a href="#相对路径和绝对路径" class="headerlink" title="相对路径和绝对路径"></a>相对路径和绝对路径</h4><pre><code class="properties">1. 相对路径和绝对路径
+绝对路径: 以根目录&#39;/&#39;做起点，描述路径的方式，路径以/开头
+相对路径: 以当前目录做起点，描述路径的方式，路径不需以/开头
+你只要能够明确告诉命令你需要去什么地方，就可以了。
+
+2. 特殊路径符有哪些？
+.  表示当前目录，  比如:  cd .    或 cd ./Desktop
+.. 表示上一级目录，比如: cd ..  或 cd ../..
+总结：.或者..后面需要继续跟上其他路径，必须要使用/分隔
+</code></pre><h4 id="帮助手册"><a href="#帮助手册" class="headerlink" title="帮助手册"></a>帮助手册</h4><pre><code class="properties">help查看帮助: 命令 --help       解释:会列出命令的帮助文档   
+    举例: ls --help
+
+man查看手册:  man  命令         解释: man（manual， 手册）命令查看详细手册
+    举例: man ls
+    按空格翻页，q退出帮助手册
+</code></pre><h4 id="mkdir命令"><a href="#mkdir命令" class="headerlink" title="mkdir命令"></a>mkdir命令</h4><pre><code class="properties">mkdir [-p] 目录路径 : 创建指定目录   
+    -p:可选，表示自动创建不存在的父目录，适用于创建连续多层级的目录
+
+创建一级目录: mkdir 目录路径
+创建多个同级目录: mkdir 目录路径1  目录路径2 ...
+创建父子嵌套目录: mkdir -p 目录路径1/目录路径2/...
+
+注意: mkdir只能用来创建文件夹，不能创建文件。
+</code></pre><p>例如</p><pre><code class="shell">mkdir a
+mkdir b c
+mkdir -p e/f
+</code></pre><h4 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h4><pre><code class="properties">touch 文件路径: 创建指定【空内容】的文件
+
+创建一个文件: touch 文件路径
+创建多个文件: touch 文件路径1  文件路径2 ...
+</code></pre><p>例如</p><pre><code class="shell">touch 1.txt
+touch ./b/2.txt ./b/3.txt
+</code></pre><h4 id="cat-more-less命令"><a href="#cat-more-less命令" class="headerlink" title="cat_more_less命令"></a>cat_more_less命令</h4><p>查看文件内容</p><pre><code class="properties">cat [-n] 文件 :  cat查看文件内容,一般建议查看小文件
+          -n :显示行号
+          
+more [-num] 文件:  more查看文件内容,一般建议查看大文件(可以翻页)
+          按回车: 下一行
+          空格: 下一页
+          b  : 上一页
+          q  : 退出。ctrl+C也可以
+          -num: 展示条数  举例: more -10 文件
+          
+less [-N] 文件: less查看文件内容,一般建议查看大文件(可以翻页,可以搜索)
+          -N : 显示行号
+          空格: 下一页
+          b  : 上一页
+          q  : 退出
+          /内容: 搜索指定内容，而且可以使用正则表达式    N: 下一个   shift+N:上一个
+          
+总结: 使用最多的情况
+    1- 大文件，为了保险起见 more 文件路径
+    2- 小文件(&lt;=100MB)直接就  cat 文件路径
+</code></pre><h4 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h4><blockquote><p>复制的英文单词: &#x3D;&#x3D;copy&#x3D;&#x3D;</p></blockquote><pre><code class="properties">cp [-r] 要复制的文件或者文件夹  目标位置    : 复制文件或者文件夹到指定目标位置
+
+注意: 复制文件夹必须要加-r
+
+注意: cp复制文件后,源文件依然存在
+</code></pre><h4 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h4><blockquote><p>移动的英文单词: &#x3D;&#x3D;move&#x3D;&#x3D;</p></blockquote><pre><code class="properties">mv 要移动的文件或者文件夹  目标位置: 移动文件或者文件夹到指定目标位置
+
+注意: 目标位置的文件/文件夹不存在就会直接改名    如果想要把文件移动到目录中,此目录一定要存在,否则当成了普通文件改名
+
+注意: mv移动文件后,源文件不存在。类似Windows的剪切操作
+总结: mv具备两个功能，1- 移动文件或文件夹到新的地方；2- 对文件或文件夹进行重命名的操作
+</code></pre><h4 id="rm命令【慎重使用】"><a href="#rm命令【慎重使用】" class="headerlink" title="rm命令【慎重使用】"></a>rm命令【慎重使用】</h4><blockquote><p>移除的英文单词: &#x3D;&#x3D;remove&#x3D;&#x3D;</p></blockquote><pre><code class="properties">rm [-r -f] 要删除的文件或者文件夹:  删除指定的文件或者文件夹
+
+注意: -r 删除文件夹的时候必须要加该参数        -f: 主要用于强制删除文件或者文件夹
+r：repeat循环；f：force强制
+
+删除文件(有提示): rm 文件路径。不能用来删除文件夹
+删除文件(无提示): rm -f 文件路径
+删除目录(有提示): rm -r 目录路径
+删除目录(无提示): rm -rf 路径
+
+注意: 
+    1- 实际工作一定要特别注意rm -rf的使用。Linux系统没有回收站
+    2- 如果在提示中输入的内容出错，按住CTRL或者Shift键，然后按退格键Backspace去删除内容。y表示确认删除；n表示不删除
+</code></pre><h4 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h4><pre><code class="properties">echo 要打印的内容
+
+注意: 默认打印到控制台,但是经常配合重定向符号使用
+
+注意: echo配合反引号``可以先识别出关键字,然后把对应的内容输出
+</code></pre><h4 id="重定向符号"><a href="#重定向符号" class="headerlink" title="重定向符号"></a>重定向符号</h4><pre><code class="properties">&gt; : 覆盖写入。
+&gt;&gt; : 追加写入。会自动的带上回车换行符
+
+注意: 一般都是配合echo使用
+</code></pre><p>演示案例：</p><pre><code class="shell">echo &quot;hello&quot; &gt; 1.txt
+cat 1.txt
+echo &quot;hello python&quot; &gt;&gt; 2.txt
+echo &quot;hello linux&quot; &gt;&gt; 2.txt
+cat 2.txt
+</code></pre><h4 id="head和tail"><a href="#head和tail" class="headerlink" title="head和tail"></a>head和tail</h4><p>两个命令都是用来查看文件内容。</p><pre><code class="properties">head [-num] 文件路径:  查看文件的头部几行   默认前10行   当然-num可以指定任意行数
+
+tail [-num] 文件路径:  查看文件的尾部几行   默认后10行   当然-num可以指定任意行数
+
+tail -f 文件路径:  持续跟踪查看指定文件内部变化。工作中一般用来查看日志文件的内容变化
+</code></pre><p>案例</p><pre><code class="shell">head -3 linux.md
+tail -3 linux.md
+tail -f 1.txt
+</code></pre><h4 id="管道符"><a href="#管道符" class="headerlink" title="管道符 |"></a>管道符 |</h4><pre><code class="properties">管道使用格式:  命令1 | 命令2 | 命令3 ...
+
+解释: 把命令1的结果传递给命令2,然后再把命令2的结果传递给命令3,依次类推...
+
+注意: 管道一般配合grep命令使用较多
+
+sort: 排序
+</code></pre><h4 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h4><pre><code class="properties">grep [-n] 关键字 文件路径: 在指定文件中搜索指定关键字。用来对内容进行搜索
+
+注意: -n 主要用于显示搜索到结果的行号
+
+注意: 管道|一般配合grep命令使用较多
+
+示例：
+grep linux a.txt | grep ip
+先对a.txt文件内容搜索linux关键词，然后将搜索结果作为输入给到grep ip命令使用，也就是再搜索ip关键词
+
+grep linux a.txt | wc -l
+先对a.txt文件内容搜索linux关键词，然后将搜索结果作为输入给到wc -l命令使用，用来有多少行内容。wc是wordcount
+
+cat a.txt | wc -l
+统计a.txt文件有多少行
+</code></pre><h4 id="which和find"><a href="#which和find" class="headerlink" title="which和find"></a>which和find</h4><p>find不能查找文件内容，grep可以查找文件内容</p><pre><code class="properties">which 命令:  查找命令所在位置
+
+主要: find命令也可以结合通配符*使用,不加路径代表当前路径下查找
+
+find [查找路径] -name 名称: 【掌握】，工作中主要使用它。根据文件名查找
+find [查找路径] -size [+ -]大小: 根据文件大小查找。大小单位可以指定为k、M、G              
+                    +: 大于     
+                    -: 小于
+例子:
+find /a -size +2k
+find /a -size +2M
+                    
+find [查找路径] -type [d f] -name 名称: 根据文件类型查找     
+                    d: 文件夹    
+                    f: 文件 
+</code></pre><p>案例</p><pre><code class="shell"># 查a开头的文件
+find /a -type f -name a*
+# 查a开头的文件夹
+find /a -type d -name a*
+# 查大于2k的文件
+find /a -size +2k
+# 查小于2M的文件
+find /a -size -2M
+</code></pre><h4 id="软连接-x2F-硬连接"><a href="#软连接-x2F-硬连接" class="headerlink" title="软连接&#x2F;硬连接"></a>软连接&#x2F;硬连接</h4><pre><code class="properties">软连接(类似快捷方式): ln -s 要被连接文件或者目录的路径  存放软连接目标路径位置
+作用：简化访问路径
+注意: 
+    如果软连接的被指向的源文件或者目录丢失,软连接就失效了
+    **如果软连接与原始的文件或目录不在同一个地方，那么文件或目录的路径要写【绝对路径】
+
+
+
+硬连接(类似复制备份): ln  要被连接文件或者目录的路径  存放的硬连接目标路径位置。【了解即可】
+注意: 如果硬连接的被指向的源文件或者目录丢失,硬连接不受影响。作用类似cp复制文件/文件夹的命令
+</code></pre><p>案例</p><pre><code class="shell"># 软连接
+ln -s /b/c/d/a.txt /a_link
+# 硬链接
+ln /b/c/d/b.txt /b_link
+</code></pre><h3 id="压缩和解压缩"><a href="#压缩和解压缩" class="headerlink" title="压缩和解压缩"></a>压缩和解压缩</h3><h4 id="tar命令【掌握】"><a href="#tar命令【掌握】" class="headerlink" title="tar命令【掌握】"></a>tar命令【掌握】</h4><blockquote><p>普通打包</p><p>打包并使用gzip压缩</p><p>打包并使用bzip2压缩</p><p>参数</p><p>-c，创建压缩文件，用于压缩模式<br>-v，显示压缩、解压过程，用于查看进度<br>-x，解压模式<br>-f，要创建的文件，或要解压的文件，-f选项必须在所有选项中位置处于最后一个<br>-z，gzip模式，不使用-z就是普通的tarball格式<br>-C，选择解压的目的地，用于解压模式</p></blockquote><pre><code class="properties"># 工作中使用最多
+gzip压缩格式:  tar -zcvf 包名.tar.gz 多个文件或者目录
+gzip解压格式:  tar -zxvf 包名.tar.gz -C 目标位置路径
+
+普通打包格式: tar -cvf 包名.tar 多个文件或者目录
+普通解包格式: tar -xvf 包名.tar -C 目标位置路径
+注意: 上面的命令并不会进行压缩，只是把文件或文件夹归集/收集到一起了
+
+拓展:
+bzip2压缩格式:  tar -cjvf 包名.tar.bz2 多个文件或者目录
+bzip2解压格式:  tar -xjvf 包名.tar.bz2 -C 目标位置路径
+</code></pre><h4 id="zip和unzip命令"><a href="#zip和unzip命令" class="headerlink" title="zip和unzip命令"></a>zip和unzip命令</h4><blockquote><p>打包并使用zip压缩</p><p>参数</p><p>-r: 压缩目录的时候递归进入</p><p>-d: 选择解压的目的地</p></blockquote><pre><code class="properties">zip压缩格式:  zip -r 包名.zip 多个文件或者目录
+zip解压格式:  unzip 包名.zip -d 目标位置路径
+</code></pre><h3 id="VI编辑器"><a href="#VI编辑器" class="headerlink" title="VI编辑器"></a>VI编辑器</h3><pre><code class="properties">vi: 是visual interface的简称, 是Linux中最经典的文本编辑器
+
+vim:  编辑器是从vi发展出来的文本编辑器, 支持代码补全、编译及显示效果等方面编程的功能提别丰富, 在程序员中被广泛使用, 被称为编辑器之神。
+
+查看文件内容:  cat 文件
+修改文件内容:  vi 文件 或者 vim 文件
+</code></pre><p><img src="/posts/53d0684b/1778946895775.png" alt="1778946895775"></p><h4 id="vi操作文件三大步"><a href="#vi操作文件三大步" class="headerlink" title="vi操作文件三大步"></a>vi操作文件三大步</h4><pre><code class="properties">打开文件: vim 文件路径     注意: 如果文件存在就打开,不存在就创建
+
+编辑文件: 输入i进入文件进行编辑
+
+保存文件:
+1.先进入命令模式: 按ESC键  
+2.进入底线命令模式: 输入冒号:   
+3.输入命令: 
+    :q(退出): 只是对文件内容看了一下，没有做任何编辑（删除、修改、新增）操作
+    :q!(强制退出): 我虽然对文件编辑了，但是编辑的内容不想要
+    :wq(保存并退出): 使用最多。正常的保存然后退出
+    :wq!(强制保存并退出): 我需要保存对文件的编辑内容，但是该文件是一个只读的文件。
+</code></pre><h4 id="需求"><a href="#需求" class="headerlink" title="需求:"></a>需求:</h4><blockquote><p>使用vi编辑器,创建一个名称为hello.py文件,然后输入内容为: print(‘hello ai大模型’),最后wq保存</p><p>注意: 如果文件不存在,不会报错,会自动创建,编辑完内容后手动输入:wq保存即可</p><p>要求保存后再次使用vim命令查看内容是否保存成功,然后q退出</p></blockquote><pre><code class="shell">[root@localhost ~]# vi hello.py
+# 输入i进入插入模式: 编写或者粘贴内容
+print(&#39;hello ai大模型&#39;)
+# 内容输入完后,按ESC退出到命令模式
+# 然后在命令模式输入:wq保存并退出
+:wq
+&quot;hello.py&quot; 1L, 23C written
+
+[root@localhost ~]# vim hello.py
+print(&#39;hello bigdata&#39;)
+# 如果仅查看了内容,没有修改,可以使用q直接退出,但是如果不小心修改了内容又不想保存,使用q!强制退出
+:q
+[root@localhost ~]# 
+</code></pre><h4 id="vi其他命令"><a href="#vi其他命令" class="headerlink" title="vi其他命令"></a>vi其他命令</h4><p>VIM扩展教程：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">https://www.runoob.com/linux/linux-vim.html</a></p><pre><code class="properties">复制一整行: yy
+粘贴: p
+删除一整行: dd
+
+
+
+跳到文件的第一行: gg
+跳到文件的最后一行: shift+G
+撤销刚才的操作: u
+</code></pre><pre><code class="properties">如果vim没有正常的退出，也就是出现了隐藏的swap交换文件，如何解决：
+1- 执行ll -a的命令，检查有没有隐藏文件
+2- 执行 rm -rf 隐藏文件名称，手动删除隐藏文件
+3- 重新正常的编辑原始文件即可
+</code></pre><h2 id="Linux高级命令【熟悉】"><a href="#Linux高级命令【熟悉】" class="headerlink" title="Linux高级命令【熟悉】"></a>Linux高级命令【熟悉】</h2><h3 id="用户基本操作"><a href="#用户基本操作" class="headerlink" title="用户基本操作"></a>用户基本操作</h3><pre><code class="properties">需要在超级管理员root用户下操作
+
+添加用户(不指定组): useradd 用户名 [-g 组名]       
+    注意: 默认在/home目录下创建了一个以用户名命名的文件夹,此文件夹就是对应用户的家目录
+    注意: 如果添加用户的时候没有指定所属组,默认自动生成了一个以此用户名命名的组
+
+删除用户: userdel [-r] 用户名       
+    注意: 如果不加-r,用户被删除后,它的家目录依然存在
+    注意: 如果用户所属组是添加用户的时候自动生成的,那么删除用户的对应的组也会自动删除
+    
+查看所有用户普通方式: cat /etc/passwd    用户名:密码(x):用户ID:组ID:描述信息(无用):HOME目录:执行终端(默认bash)
+查看所有用户快捷方式: getent passwd  
+
+拓展_如何在root用户下给普通用户添加密码:  passwd 用户名     
+                             注意: 会提示输入2次密码
+</code></pre><h3 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h3><blockquote><p>在前面，我们接触过su命令切换到root账户。<br>su命令就是用于账户切换的系统命令，其来源英文单词：Switch User</p><p>-符号是可选的，表示是否在切换用户后加载环境变量（后续讲解），建议带上<br>参数：用户名，表示要切换的用户，用户名也可以省略，省略表示切换到root<br>切换用户后，可以通过exit命令退回上一个用户，也可以使用快捷键：ctrl + d</p></blockquote><pre><code class="properties">切换到指定用户语法: su [-] 用户名
+注意: 使用普通用户，切换到其它用户需要输入密码，如切换到root用户
+注意: 使用root用户切换到其它用户，无需密码，可以直接切换
+
+退出当前用户: exit 或者 ctrl+d
+</code></pre><h3 id="用户授权"><a href="#用户授权" class="headerlink" title="用户授权"></a>用户授权</h3><blockquote><p>在我们得知root密码的时候，可以通过su命令切换到root得到最大权限。<br>但是我们实际一般不知道root密码,即使知道也不建议长期使用root用户，避免带来系统损坏。</p><p>实际我们找到用户root权限的管理者,申请root权限后, 使用”sudo 命令”格式</p></blockquote><pre><code class="properties">root用户如何给普通用户授权?
+1.root用户下打开sudoers文件
+    进入/etc/sudoers普通方式: vi /etc/sudoers
+    进入/etc/sudoers快捷方式: visudo
+2.在文件最后添加以下内容并保存
+    格式: 普通用户名    ALL=(ALL)    NOPASSWD:ALL
+    举例: zhangsan     ALL=(ALL)   NOPASSWD:ALL
+3.普通用户下使用root权限
+    格式: sudo 其他命令      注意:即使前面授权了使用的时候,没有添加sudo,依然是权限不够
+</code></pre><p><img src="/posts/53d0684b/1778947000428.png" alt="1778947000428"></p><h3 id="sudo命令使用"><a href="#sudo命令使用" class="headerlink" title="sudo命令使用"></a>sudo命令使用</h3><blockquote><p>普通用户如何已经被root用户赋权,就可以用sudo临时使用root权限<br>格式: sudo 其他命令 注意:即使前面授权了使用的时候,没有添加sudo,依然是权限不够</p></blockquote><h3 id="用户组操作"><a href="#用户组操作" class="headerlink" title="用户组操作"></a>用户组操作</h3><pre><code class="properties">添加用户组: groupadd 组名
+
+删除用户组: groupdel 组名
+
+查看所有用户组快捷方式: getent group  
+查看所有用户组普通方式: cat /etc/group      组名称:组认证(显示为x):组ID
+
+修改文件/目录的所属组: chgrp 组名 指定文件/目录路径
+
+同时修改所属用户和所属组: chown 用户名:组名 要修改的文件
+chown的各种使用：
+    chown 用户名:组名 要修改的文件
+    chown 用户名 要修改的文件
+    chown :组名 要修改的文件
+</code></pre><p><img src="/posts/53d0684b/1778947085133.png" alt="1778947085133"></p><p><img src="/posts/53d0684b/1778947108533.png" alt="1778947108533"></p><h3 id="ll命令图解【掌握】"><a href="#ll命令图解【掌握】" class="headerlink" title="ll命令图解【掌握】"></a>ll命令图解【掌握】</h3><p><img src="/posts/53d0684b/1778947132678.png" alt="1778947132678"></p><h3 id="权限详解【掌握】"><a href="#权限详解【掌握】" class="headerlink" title="权限详解【掌握】"></a>权限详解【掌握】</h3><p><img src="/posts/53d0684b/1778947145621.png" alt="1778947145621"></p><h3 id="chmod【掌握】"><a href="#chmod【掌握】" class="headerlink" title="chmod【掌握】"></a>chmod【掌握】</h3><blockquote><p>修改权限</p></blockquote><pre><code class="properties">修改权限方式1: chmod [-R] u=rwx,g=rwx,o=rwx 文件或者目录    以符号方式给文件设置最高权限   -R: 对文件夹内的全部内容应用同样的操作
+
+修改权限方式2: chmod [-R] +rwx 文件或者目录     注意: w只能给当前用户加上
+
+【掌握】修改权限方式3，推荐: chmod [-R] 777 文件或者目录      以数字方式给文件设置最高权限
+
+注意: 以上多种方式最常用的命令就是给一个文件添加执行权:  chmod +x 文件
+</code></pre><p><img src="/posts/53d0684b/1778947170389.png" alt="1778947170389"></p><h2 id="虚拟机的快照"><a href="#虚拟机的快照" class="headerlink" title="虚拟机的快照"></a>虚拟机的快照</h2><blockquote><p>快照: 能把拍照当时的所有情况定格,方便以后恢复快照,恢复到当时的情况</p><p><strong>建议:</strong> 拍摄快照的时候保持<strong>关机状态</strong>,因为这样会节省很多空间!!!</p></blockquote><h3 id="拍摄快照"><a href="#拍摄快照" class="headerlink" title="拍摄快照"></a>拍摄快照</h3><p><img src="/posts/53d0684b/1778947188447.png" alt="1778947188447"></p><h3 id="恢复快照"><a href="#恢复快照" class="headerlink" title="恢复快照"></a>恢复快照</h3><p><img src="/posts/53d0684b/1778947199637.png" alt="1778947199637"></p></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>程序员青阳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/53d0684b/">https://heliufang.github.io/posts/53d0684b/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">299.5k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script>var element=null;layui.use(["element"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),l=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+l)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>l?"fixed":"static"),$(e).css("top",$(window).scrollTop()>l?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>'),$("#mobileTocToggle").on("click",function(){$("#mobileTocPanel").addClass("active"),$("#mobileTocMask").addClass("active"),$("body").css("overflow","hidden")}),$("#mobileTocClose, #mobileTocMask").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")}),$("#mobileTocBody .toc-link").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")})})</script></html>
