@@ -1,0 +1,960 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>程序员青阳</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="程序员青阳" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 程序员青阳</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="mobile-toc-toggle hide-md hide-lg" id="mobileTocToggle"><i class="layui-icon layui-icon-list"></i></div><div class="mobile-toc-panel hide-md" id="mobileTocPanel"><div class="mobile-toc-header"><span><i class="layui-icon layui-icon-align-center"></i> 本文目录</span> <i class="layui-icon layui-icon-close" id="mobileTocClose"></i></div><div class="mobile-toc-body" id="mobileTocBody"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">Pandas数据分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91Pandas%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0"><span class="toc-text">一、【了解】Pandas框架概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E4%BB%8B%E7%BB%8D"><span class="toc-text">Pandas介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Pandas"><span class="toc-text">安装Pandas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E6%BC%94%E7%A4%BA%E3%80%91Pandas%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-text">【演示】Pandas初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E3%80%90%E7%86%9F%E6%82%89%E3%80%91Pandas%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">二、【熟悉】Pandas数据结构与数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Pandas数据结构和数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Series%E5%AF%B9%E8%B1%A1"><span class="toc-text">Series对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BASeries%E5%AF%B9%E8%B1%A1"><span class="toc-text">创建Series对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">Series对象属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame"><span class="toc-text">DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BADataFrame%E5%AF%B9%E8%B1%A1"><span class="toc-text">创建DataFrame对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">DataFrame对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-text">DataFrame对象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E7%B4%A2%E5%BC%95%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-text">DataFrame索引的设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Pandas的数据类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91Pandas%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">三、【掌握】Pandas基本数据操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-1"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">索引操作【重点】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E8%A1%8C%E5%88%97%E7%B4%A2%E5%BC%95-x3D-x3D-%E5%85%88%E5%88%97%E5%90%8E%E8%A1%8C-x3D-x3D"><span class="toc-text">直接使用行列索引(&#x3D;&#x3D;先列后行&#x3D;&#x3D;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88loc%E6%88%96%E8%80%85iloc%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%EF%BC%88-x3D-x3D-%E5%85%88%E8%A1%8C%E5%90%8E%E5%88%97-x3D-x3D-%EF%BC%89"><span class="toc-text">结合loc或者iloc使用索引（&#x3D;&#x3D;先行后列&#x3D;&#x3D;）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">赋值操作【重点】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">排序操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E6%8E%92%E5%BA%8F"><span class="toc-text">DataFrame排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series%E6%8E%92%E5%BA%8F"><span class="toc-text">Series排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91DataFrame%E8%BF%90%E7%AE%97"><span class="toc-text">四、【理解】DataFrame运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-2"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-text">算术运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7"><span class="toc-text">逻辑运算符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-text">逻辑运算函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E8%BF%90%E7%AE%97%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="toc-text">统计运算【理解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#describe"><span class="toc-text">describe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="toc-text">统计函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%AF%E8%AE%A1%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">累计统计函数【了解】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apply%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%90%E7%AE%97"><span class="toc-text">apply自定义运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><span class="toc-text">五、【掌握】文件读取与存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-3"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSV"><span class="toc-text">CSV</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#read-csv"><span class="toc-text">read_csv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#to-csv"><span class="toc-text">to_csv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-text">JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#read-json"><span class="toc-text">read_json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read-json%E6%A1%88%E4%BE%8B"><span class="toc-text">read_json案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#to-json"><span class="toc-text">to_json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E3%80%90%E7%86%9F%E6%82%89%E3%80%91DataFrame%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%93%8D%E4%BD%9C"><span class="toc-text">六、【熟悉】DataFrame数据的增删改查操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-4"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="toc-text">增加列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%8E%E5%8E%BB%E9%87%8D"><span class="toc-text">删除与去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9DataFrame%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">修改DataFrame中的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2dataFrame%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">查询dataFrame中的数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-text">七、【掌握】高级处理-缺失值处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-5"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86NAN"><span class="toc-text">如何处理NAN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-text">电影数据的缺失值处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-text">判断缺失值是否存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E7%BC%BA%E5%A4%B1%E5%80%BCnan-%E5%B9%B6%E4%B8%94%E6%98%AFnp-nan"><span class="toc-text">存在缺失值nan,并且是np.nan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E6%98%AF%E7%BC%BA%E5%A4%B1%E5%80%BCnan%EF%BC%8C%E6%9C%89%E9%BB%98%E8%AE%A4%E6%A0%87%E8%AE%B0%E7%9A%84"><span class="toc-text">不是缺失值nan，有默认标记的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E3%80%90%E7%86%9F%E6%82%89%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text">八、【熟悉】高级处理-数据合并</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-6"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pd-concat%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text">pd.concat实现数据合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pd-merge"><span class="toc-text">pd.merge</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84"><span class="toc-text">九、【理解】高级处理-数据分组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#groupby%E5%88%86%E7%BB%84%E8%81%9A%E5%90%88"><span class="toc-text">groupby分组聚合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E4%BA%A4%E5%8F%89%E8%A1%A8%E4%B8%8E%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="toc-text">十、【了解】高级处理-交叉表与透视表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%A1%A8%E4%B8%8E%E9%80%8F%E8%A7%86%E8%A1%A8%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">交叉表与透视表有什么作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%A1%A8"><span class="toc-text">交叉表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="toc-text">透视表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87-1"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%88%E6%9E%9C"><span class="toc-text">查看效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8pivot-table-%E9%80%8F%E8%A7%86%E8%A1%A8-%E5%AE%9E%E7%8E%B0"><span class="toc-text">使用pivot_table(透视表)实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="mobile-toc-mask hide-md" id="mobileTocMask"></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head2.jpg"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">75</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">11</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">70</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">322.7k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">20.19.6</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2026-05-25 17:11:23"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/9ebec7b8/">1.matplotlib</a></li><li><a href="/posts/fa288682/">2.numpy</a></li><li><a href="/posts/3f7f6b33/">3.pandas</a></li><li><a href="/posts/9520183a/">4.mysql</a></li><li><a href="/posts/53d0684b/">5.Linux</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">3</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">Pandas数据分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91Pandas%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0"><span class="toc-text">一、【了解】Pandas框架概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E4%BB%8B%E7%BB%8D"><span class="toc-text">Pandas介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Pandas"><span class="toc-text">安装Pandas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E6%BC%94%E7%A4%BA%E3%80%91Pandas%E5%88%9D%E4%BD%93%E9%AA%8C"><span class="toc-text">【演示】Pandas初体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E3%80%90%E7%86%9F%E6%82%89%E3%80%91Pandas%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">二、【熟悉】Pandas数据结构与数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Pandas数据结构和数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Series%E5%AF%B9%E8%B1%A1"><span class="toc-text">Series对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BASeries%E5%AF%B9%E8%B1%A1"><span class="toc-text">创建Series对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">Series对象属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame"><span class="toc-text">DataFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BADataFrame%E5%AF%B9%E8%B1%A1"><span class="toc-text">创建DataFrame对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">DataFrame对象属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-text">DataFrame对象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E7%B4%A2%E5%BC%95%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-text">DataFrame索引的设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">Pandas的数据类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91Pandas%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-text">三、【掌握】Pandas基本数据操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-1"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E6%93%8D%E4%BD%9C%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">索引操作【重点】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E8%A1%8C%E5%88%97%E7%B4%A2%E5%BC%95-x3D-x3D-%E5%85%88%E5%88%97%E5%90%8E%E8%A1%8C-x3D-x3D"><span class="toc-text">直接使用行列索引(&#x3D;&#x3D;先列后行&#x3D;&#x3D;)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88loc%E6%88%96%E8%80%85iloc%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%EF%BC%88-x3D-x3D-%E5%85%88%E8%A1%8C%E5%90%8E%E5%88%97-x3D-x3D-%EF%BC%89"><span class="toc-text">结合loc或者iloc使用索引（&#x3D;&#x3D;先行后列&#x3D;&#x3D;）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E6%93%8D%E4%BD%9C%E3%80%90%E9%87%8D%E7%82%B9%E3%80%91"><span class="toc-text">赋值操作【重点】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">排序操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DataFrame%E6%8E%92%E5%BA%8F"><span class="toc-text">DataFrame排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Series%E6%8E%92%E5%BA%8F"><span class="toc-text">Series排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91DataFrame%E8%BF%90%E7%AE%97"><span class="toc-text">四、【理解】DataFrame运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-2"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-text">算术运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7"><span class="toc-text">逻辑运算符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="toc-text">逻辑运算函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E8%BF%90%E7%AE%97%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91"><span class="toc-text">统计运算【理解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#describe"><span class="toc-text">describe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="toc-text">统计函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%AF%E8%AE%A1%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">累计统计函数【了解】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apply%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%90%E7%AE%97"><span class="toc-text">apply自定义运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><span class="toc-text">五、【掌握】文件读取与存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-3"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSV"><span class="toc-text">CSV</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#read-csv"><span class="toc-text">read_csv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#to-csv"><span class="toc-text">to_csv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON"><span class="toc-text">JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#read-json"><span class="toc-text">read_json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#read-json%E6%A1%88%E4%BE%8B"><span class="toc-text">read_json案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#to-json"><span class="toc-text">to_json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E3%80%90%E7%86%9F%E6%82%89%E3%80%91DataFrame%E6%95%B0%E6%8D%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%93%8D%E4%BD%9C"><span class="toc-text">六、【熟悉】DataFrame数据的增删改查操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-4"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="toc-text">增加列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%8E%E5%8E%BB%E9%87%8D"><span class="toc-text">删除与去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9DataFrame%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">修改DataFrame中的数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2dataFrame%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">查询dataFrame中的数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E3%80%90%E6%8E%8C%E6%8F%A1%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-text">七、【掌握】高级处理-缺失值处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-5"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86NAN"><span class="toc-text">如何处理NAN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E5%BD%B1%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86"><span class="toc-text">电影数据的缺失值处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E7%BC%BA%E5%A4%B1%E5%80%BC%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="toc-text">判断缺失值是否存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E7%BC%BA%E5%A4%B1%E5%80%BCnan-%E5%B9%B6%E4%B8%94%E6%98%AFnp-nan"><span class="toc-text">存在缺失值nan,并且是np.nan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E6%98%AF%E7%BC%BA%E5%A4%B1%E5%80%BCnan%EF%BC%8C%E6%9C%89%E9%BB%98%E8%AE%A4%E6%A0%87%E8%AE%B0%E7%9A%84"><span class="toc-text">不是缺失值nan，有默认标记的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E3%80%90%E7%86%9F%E6%82%89%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text">八、【熟悉】高级处理-数据合并</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-6"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pd-concat%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%90%88%E5%B9%B6"><span class="toc-text">pd.concat实现数据合并</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pd-merge"><span class="toc-text">pd.merge</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E3%80%90%E7%90%86%E8%A7%A3%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84"><span class="toc-text">九、【理解】高级处理-数据分组</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#groupby%E5%88%86%E7%BB%84%E8%81%9A%E5%90%88"><span class="toc-text">groupby分组聚合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91%E9%AB%98%E7%BA%A7%E5%A4%84%E7%90%86-%E4%BA%A4%E5%8F%89%E8%A1%A8%E4%B8%8E%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="toc-text">十、【了解】高级处理-交叉表与透视表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%A1%A8%E4%B8%8E%E9%80%8F%E8%A7%86%E8%A1%A8%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">交叉表与透视表有什么作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E8%A1%A8"><span class="toc-text">交叉表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="toc-text">透视表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-text">案例分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87-1"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%88%E6%9E%9C"><span class="toc-text">查看效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8pivot-table-%E9%80%8F%E8%A7%86%E8%A1%A8-%E5%AE%9E%E7%8E%B0"><span class="toc-text">使用pivot_table(透视表)实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">python</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">pandas</span></span></p><h1>pandas</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2026-05-25 15:58:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 12.9k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 64分钟</span></p></div><div id="article"><h1 id="Pandas数据分析"><a href="#Pandas数据分析" class="headerlink" title="Pandas数据分析"></a>Pandas数据分析</h1><h1 id="一、【了解】Pandas框架概述"><a href="#一、【了解】Pandas框架概述" class="headerlink" title="一、【了解】Pandas框架概述"></a>一、【了解】Pandas框架概述</h1><h2 id="Pandas介绍"><a href="#Pandas介绍" class="headerlink" title="Pandas介绍"></a>Pandas介绍</h2><p>Python在数据处理上独步天下：代码灵活、开发快速；尤其是Python的Pandas包，无论是在数据分析领域、还是大数据开发场景中都具有显著的优势：</p><ul><li>Pandas是Python的一个第三方包，也是商业和工程领域最流行的<strong>结构化数据</strong>工具集，用于数据清洗、处理以及分析</li><li>Pandas在数据处理上具有独特的优势：<ul><li>底层是基于Numpy构建的，所以运行速度特别的快</li><li>有专门的处理缺失数据的API</li><li>强大而灵活的分组、聚合、转换功能</li></ul></li></ul><p><img src="/posts/3f7f6b33/image-20240831102204286.png" alt="image-20240831102204286"></p><p>适用场景:</p><ul><li>数据量大到Excel严重卡顿，且又都是单机数据的时候，我们使用Pandas<ul><li>Pandas用于处理单机数据(小数据集(相对于大数据来说))</li></ul></li><li>在大数据ETL数据仓库中，对数据进行清洗及处理的环节使用Pandas</li></ul><h2 id="安装Pandas"><a href="#安装Pandas" class="headerlink" title="安装Pandas"></a>安装Pandas</h2><blockquote><p><strong>注意：Anaconda默认已经安装了Pandas以及Numpy等内容</strong></p></blockquote><p>打开cmd窗口，输入如下命令：</p><pre><code class="python">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ pandas
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831102459782.png" alt="image-20240831102459782"></p><h2 id="【演示】Pandas初体验"><a href="#【演示】Pandas初体验" class="headerlink" title="【演示】Pandas初体验"></a>【演示】Pandas初体验</h2><ul><li>1- 将资料中提供的数据集导入到data目录中</li></ul><p><img src="/posts/3f7f6b33/image-20240831102838020.png" alt="image-20240831102838020"></p><ul><li>2- 创建python脚本, 导入pandas库</li></ul><pre><code class="python">import pandas as pd
+</code></pre><ul><li>3- 基于pandas加载数据</li></ul><pre><code class="python">df = pd.read_csv(&#39;data/1960-2019全球GDP数据.csv&#39;, encoding=&#39;gbk&#39;)  
+</code></pre><blockquote><p># 设置显示的最大行数和列数为None<br>pd.set_option(‘display.max_rows’, None)<br>pd.set_option(‘display.max_columns’, None)</p><p># 恢复显示的最大行数到默认值<br>pd.reset_option(‘display.max_rows’)</p><p># 恢复显示的最大列数到默认值<br>pd.reset_option(‘display.max_columns’)</p><p># 恢复所有选项到默认值<br>pd.reset_option(‘all’)</p></blockquote><ul><li>4- 基于pandas完成相关查询:</li></ul><pre><code class="python"># 查询中国的GDP
+china_gdp = df[df.country==&#39;中国&#39;] # df.country 选中名为country的列
+china_gdp.head(10) # 显示前10条数据
+</code></pre><p>运行结果：</p><p><img src="/posts/3f7f6b33/image-20240831102944259.png" alt="image-20240831102944259"></p><ul><li>5- 将year年份设置为索引</li></ul><pre><code class="python">china_gdp = china_gdp.set_index(&#39;year&#39;)
+china_gdp.head() # 默认显示前5条
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831103707688-1725071836973-3.png" alt="image-20240831103707688"></p><ul><li>6- 画出GDP逐年变化的曲线图</li></ul><pre><code class="python">china_gdp.GDP.plot()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831103753090.png" alt="image-20240831103753090"></p><p>使用同样的方法画出日本的GDP变化曲线，和中国的GDP变化曲线进行对比</p><pre><code class="python">jp_gdp = df[df.country==&#39;日本&#39;].set_index(&#39;year&#39;) # 按条件选取数据后，重设索引
+jp_gdp.GDP.plot() 
+china_gdp.GDP.plot()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831103842060.png" alt="image-20240831103842060"></p><p>分别查询中国、美国、日本三国的GDP数据，并绘制GDP变化曲线、进行对比</p><pre><code class="python">china_gdp = df[df.country==&#39;中国&#39;].set_index(&#39;year&#39;)
+us_gdp = df[df.country==&#39;美国&#39;].set_index(&#39;year&#39;)
+jp_gdp = df[df.country==&#39;日本&#39;].set_index(&#39;year&#39;)
+jp_gdp.GDP.plot()
+china_gdp.GDP.plot()
+us_gdp.GDP.plot()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831103923889.png" alt="image-20240831103923889"></p><p>设置图例：</p><pre><code class="python"># 按条件选取数据
+china_gdp = df[df.country==&#39;中国&#39;].set_index(&#39;year&#39;)
+us_gdp = df[df.country==&#39;美国&#39;].set_index(&#39;year&#39;)
+jp_gdp = df[df.country==&#39;日本&#39;].set_index(&#39;year&#39;)
+# 出图并添加图例
+jp_gdp.GDP.plot(legend=True)
+china_gdp.GDP.plot(legend=True)
+us_gdp.GDP.plot(legend=True)
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831104008883.png" alt="image-20240831104008883"></p><p>修改列名使图例显示为各国名称</p><pre><code class="python"># 按条件选取数据
+china_gdp = df[df.country==&#39;中国&#39;].set_index(&#39;year&#39;)
+us_gdp = df[df.country==&#39;美国&#39;].set_index(&#39;year&#39;)
+jp_gdp = df[df.country==&#39;日本&#39;].set_index(&#39;year&#39;)
+# 对指定的列修改列名
+jp_gdp.rename(columns=&#123;&#39;GDP&#39;:&#39;japan&#39;&#125;, inplace=True)
+china_gdp.rename(columns=&#123;&#39;GDP&#39;:&#39;china&#39;&#125;, inplace=True)
+us_gdp.rename(columns=&#123;&#39;GDP&#39;:&#39;usa&#39;&#125;, inplace=True)
+# 画图
+jp_gdp.japan.plot(legend=True)
+china_gdp.china.plot(legend=True)
+us_gdp.usa.plot(legend=True)
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831104043579.png" alt="image-20240831104043579"></p><ul><li>7- 解决中文不能在图表中正常显示的问题</li></ul><p>将列名改为中文，使图例显示为各国名称</p><pre><code class="python"># 按条件选取数据
+china_gdp = df[df.country==&#39;中国&#39;].set_index(&#39;year&#39;)
+us_gdp = df[df.country==&#39;美国&#39;].set_index(&#39;year&#39;)
+jp_gdp = df[df.country==&#39;日本&#39;].set_index(&#39;year&#39;)
+# 对指定的列修改列名
+jp_gdp.rename(columns=&#123;&#39;GDP&#39;:&#39;日本&#39;&#125;, inplace=True)
+china_gdp.rename(columns=&#123;&#39;GDP&#39;:&#39;中国&#39;&#125;, inplace=True)
+us_gdp.rename(columns=&#123;&#39;GDP&#39;:&#39;美国&#39;&#125;, inplace=True)
+# 画图
+jp_gdp[&#39;日本&#39;].plot(legend=True)
+china_gdp[&#39;中国&#39;].plot(legend=True)
+us_gdp[&#39;美国&#39;].plot(legend=True)
+
+# 解决中文显示问题，下面的代码只需运行一次即可
+import matplotlib as plt
+plt.rcParams[&#39;font.sans-serif&#39;] = [&#39;SimHei&#39;]
+plt.rcParams[&#39;axes.unicode_minus&#39;] = False
+</code></pre><p>运行结果：</p><p><img src="/posts/3f7f6b33/image-20240831104226246.png" alt="image-20240831104226246"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Python Pandas的作用：（清洗、处理、分析数据）</p><p>Pandas环境搭建：</p><ul><li>安装Anaconda，默认自带Python以及其他相关三方包</li><li>使用默认的base虚拟环境启动<code>JupyterNotebook</code></li></ul><h1 id="二、【熟悉】Pandas数据结构与数据类型"><a href="#二、【熟悉】Pandas数据结构与数据类型" class="headerlink" title="二、【熟悉】Pandas数据结构与数据类型"></a>二、【熟悉】Pandas数据结构与数据类型</h1><h2 id="掌握内容"><a href="#掌握内容" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">1- 创建
+    pd.DataFrame(ndarray)
+    
+2- 方法
+    head()
+    tail()
+
+3- 属性
+    values
+    T
+    
+4- 索引
+    set_index()
+    
+5- 数据类型
+    object、int、float、nan
+    info()
+    dtypes
+</code></pre><h2 id="Pandas数据结构和数据类型"><a href="#Pandas数据结构和数据类型" class="headerlink" title="Pandas数据结构和数据类型"></a>Pandas数据结构和数据类型</h2><p><img src="/posts/3f7f6b33/image-20260417115734942.png" alt="image-20260417115734942"></p><p>上图为上一节中读取并展示出来的数据，以此为例我们来讲解Pandas的核心概念，以及这些概念的层级关系：</p><ul><li>DataFrame<ul><li>Series<ul><li>数据列<ul><li>列名</li><li>列值，具体的数据</li></ul></li></ul></li><li>索引列<ul><li>索引名、索引值</li><li>索引下标、行号</li></ul></li></ul></li></ul><p>其中最核心的就是Pandas中的两个数据结构：DataFrame和Series</p><h2 id="Series对象"><a href="#Series对象" class="headerlink" title="Series对象"></a>Series对象</h2><p>Series也是Pandas中的最基本的数据结构对象，下文中简称s对象，是DataFrame的列对象，series本身也具有索引。</p><p>Series是一种类似于一维数组的对象，由下面两个部分组成：</p><p><img src="/posts/3f7f6b33/image-20240831105304751.png" alt="image-20240831105304751"></p><ul><li>values：一组数据（numpy.ndarray类型）</li><li>index：相关的数据索引标签；如果没有为数据指定索引，于是会自动创建一个0到N-1(N为数据的长度)的整数型索引。</li></ul><h3 id="创建Series对象"><a href="#创建Series对象" class="headerlink" title="创建Series对象"></a>创建Series对象</h3><ul><li>1- 导入pandas</li></ul><pre><code class="python">import pandas as pd
+import numpy as np
+</code></pre><ul><li>2- 通过list列表来创建</li></ul><pre><code class="python"># 使用默认自增索引
+s2 = pd.Series([1, 2, 3])
+print(s2)
+# 使用自己指定的索引
+# 注意：索引个数与值的个数必须完全一致
+s3 = pd.Series(data=[11,22,33], index=[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;])
+# s3 = pd.Series(data=[11,22,33], index=[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;])
+# s3 = pd.Series(data=[11,22,33], index=[&quot;a&quot;,&quot;b&quot;])
+print(s3)
+</code></pre><ul><li>3- 使用字典或元组创建series对象</li></ul><pre><code class="python">#使用元组
+tst = (1,2,3,4,5,6)
+pd.Series(tst)
+
+#使用字典：
+dst = &#123;&#39;A&#39;:1,&#39;B&#39;:2,&#39;C&#39;:3,&#39;D&#39;:4,&#39;E&#39;:5,&#39;F&#39;:6&#125;
+pd.Series(dst)
+</code></pre><ul><li>4- 使用numpy创建series对象</li></ul><pre><code class="python">pd.Series(np.arange(10))
+# 运行结果
+0    0
+1    1
+2    2
+3    3
+4    4
+5    5
+6    6
+7    7
+8    8
+9    9
+dtype: int64
+</code></pre><p>课堂演示完整代码：</p><pre><code class="python">import pandas as pd
+
+# 1----------- Series对象
+# 1.1- 创建
+# 通过list列表来创建 
+# 查看源代码：Ctrl+Q Ctrl+鼠标左键
+s1 = pd.Series(data=[11,22,33])
+s1
+
+# 使用自己指定的索引
+# 注意：索引个数与值的个数必须完全一致
+s2 = pd.Series(data=[11,22,33], index=[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;])
+# s2 = pd.Series(data=[11,22,33], index=[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;])
+# s2 = pd.Series(data=[11,22,33], index=[&quot;a&quot;,&quot;b&quot;])
+s2
+
+# 通过元组或者字典来创建
+s3 = pd.Series((11,22,33))
+s3
+
+my_dict = &#123;&quot;a&quot;:111,&quot;b&quot;:6666,&quot;c&quot;:6666&#125;
+# 字典中的key会作为行索引来使用；value作为字段值使用
+s4 = pd.Series(my_dict)
+s4
+
+# 通过Numpy来创建
+import numpy as np
+arr = np.arange(start=1,stop=10,step=1) # 左闭右开的区间
+print(arr)
+
+s5 = pd.Series(arr)
+s5
+</code></pre><h3 id="Series对象属性"><a href="#Series对象属性" class="headerlink" title="Series对象属性"></a>Series对象属性</h3><p>构造一个series对象</p><pre><code class="python">s6 = pd.Series(data=[i*10 for i in range(5)], index=[i for i in &quot;ABCDE&quot;])
+s6
+# 返回结果如下
+A    0
+B    10
+C    20
+D    30
+E    40
+dtype: int64
+</code></pre><ul><li>1- series对象常用属性</li></ul><pre><code class="python">s6.index
+</code></pre><ul><li>2- values</li></ul><pre><code class="python">s6.values
+</code></pre><ul><li>3- 也可以通过索引来获取数据</li></ul><pre><code class="python">s6[&#39;C&#39;]
+</code></pre><p>课堂演示完整代码：</p><pre><code class="python">import pandas as pd
+
+# Series对象的属性
+s6 = pd.Series(data=[i*10 for i in range(5)], index=[i for i in &quot;ABCDE&quot;])
+
+print(f&quot;Series的全部内容：\n&#123;s6&#125;&quot;)
+print(f&quot;获得索引：&#123;s6.index&#125;&quot;)
+print(f&quot;获得数据值：&#123;s6.values&#125;&quot;)
+print(f&quot;通过index索引获得数据值：&#123;s6[&#39;C&#39;]&#125;&quot;)
+</code></pre><h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="创建DataFrame对象"><a href="#创建DataFrame对象" class="headerlink" title="创建DataFrame对象"></a>创建DataFrame对象</h3><p>DataFrame是一个类似于二维数组或表格(如excel)的对象，既有行索引，又有列索引</p><ul><li>表示沿着行的方向（垂直向下）跨越，<strong>对每一列进行操作</strong>，结果是行数被修改了。&#x3D;&#x3D;0轴，axis&#x3D;0&#x3D;&#x3D;，等价于 <code>axis=&#39;index&#39;</code></li><li>表示沿着列的方向（水平向右）跨越，<strong>对每一行进行操作</strong>，结果是列数被修改了。&#x3D;&#x3D;1轴，axis&#x3D;1&#x3D;&#x3D;，等价于 <code>axis=&#39;columns&#39;</code></li></ul><p><img src="/posts/3f7f6b33/image-20260525165333679.png" alt="image-20260525165333679"></p><p>DataFrame的创建有很多种方式</p><p>读取文件数据返回df：在之前的学习中我们使用了<code>pd.read_csv(&#39;csv格式数据文件路径&#39;)</code>的方式获取了df对象</p><p>使用字典、列表、元组创建df：接下来就展示如何使用字典、列表+元组、numpy创建df对象</p><hr><ul><li>1- 使用字典加列表创建df，使默认自增索引</li></ul><pre><code class="python">df1_data = &#123;
+    &#39;日期&#39;: [&#39;2021-08-21&#39;, &#39;2021-08-22&#39;, &#39;2021-08-23&#39;],
+    &#39;温度&#39;: [25, 26, 50],
+    &#39;湿度&#39;: [81, 50, 56] 
+&#125;
+df1 = pd.DataFrame(data=df1_data)
+df1
+
+# 返回结果如下
+        日期    温度    湿度
+0    2021-08-21    25    81
+1    2021-08-22    26    50
+2    2021-08-23    50    56
+</code></pre><ul><li>2- 使用列表加元组创建df，并自定义索引</li></ul><pre><code class="python">df2_data = [
+    (&#39;2021-08-21&#39;, 25, 81),
+    (&#39;2021-08-22&#39;, 26, 50),
+    (&#39;2021-08-23&#39;, 27, 56)
+]
+
+df2 = pd.DataFrame(
+    data=df2_data, 
+    columns=[&#39;日期&#39;, &#39;温度&#39;, &#39;湿度&#39;],
+    index = [&#39;row_1&#39;,&#39;row_2&#39;,&#39;row_3&#39;] # 手动指定索引
+)
+df2
+
+# 返回结果如下
+            日期    温度    湿度
+row_1    2021-08-21    25    81
+row_2    2021-08-22    26    50
+row_3    2021-08-23    27    56
+</code></pre><ul><li>3- 使用numpy创建df</li></ul><p>通过已有数据创建</p><pre><code class="python">pd.DataFrame(np.random.randint(40, 100, (10, 5)))
+</code></pre><p>创建学生成绩表</p><pre><code class="python"># 生成10名同学，5门功课的数据
+score = np.random.randint(40, 100, (10, 5))
+
+# 结果
+array([[92, 55, 78, 50, 50],
+       [71, 76, 50, 48, 96],
+       [45, 84, 78, 51, 68],
+       [81, 91, 56, 54, 76],
+       [86, 66, 77, 67, 95],
+       [46, 86, 56, 61, 99],
+       [46, 95, 44, 46, 56],
+       [80, 50, 45, 65, 57],
+       [41, 93, 90, 41, 97],
+       [65, 83, 57, 57, 40]])
+</code></pre><p>但是这样的数据形式很难看到存储的是什么的样的数据，可读性比较差!</p><p>问题：如何让数据更有意义的显示？</p><pre><code class="python"># 使用Pandas中的数据结构
+score_df = pd.DataFrame(score)
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831110743788.png" alt="image-20240831110743788"></p><p>给分数数据增加行列索引,显示效果更佳</p><p>效果：</p><p><img src="/posts/3f7f6b33/image-20240831110830968.png" alt="image-20240831110830968"></p><p>增加行、列索引</p><pre><code class="python"># 构造列索引序列
+subjects = [&quot;语文&quot;, &quot;数学&quot;, &quot;英语&quot;, &quot;政治&quot;, &quot;体育&quot;]
+
+# 构造行索引序列
+stu = [&#39;同学&#39; + str(i) for i in range(score_df.shape[0])]
+
+# 添加索引
+data = pd.DataFrame(score, columns=subjects, index=stu)
+</code></pre><h3 id="DataFrame对象属性"><a href="#DataFrame对象属性" class="headerlink" title="DataFrame对象属性"></a>DataFrame对象属性</h3><p>属性</p><ul><li>1- shape属性</li></ul><pre><code class="python">data.shape
+
+# 结果
+(10, 5)
+</code></pre><ul><li>2- index属性</li></ul><p>DataFrame的行索引列表</p><pre><code class="python">data.index
+
+# 结果
+Index([&#39;同学0&#39;, &#39;同学1&#39;, &#39;同学2&#39;, &#39;同学3&#39;, &#39;同学4&#39;, &#39;同学5&#39;, &#39;同学6&#39;, &#39;同学7&#39;, &#39;同学8&#39;, &#39;同学9&#39;], dtype=&#39;object&#39;)
+</code></pre><ul><li>3- columns</li></ul><pre><code class="python">data.columns
+
+# 结果
+Index([&#39;语文&#39;, &#39;数学&#39;, &#39;英语&#39;, &#39;政治&#39;, &#39;体育&#39;], dtype=&#39;object&#39;)
+</code></pre><ul><li>4- values</li></ul><p>直接获取其中array的值</p><pre><code class="python">data.values
+
+array([[92, 55, 78, 50, 50],
+       [71, 76, 50, 48, 96],
+       [45, 84, 78, 51, 68],
+       [81, 91, 56, 54, 76],
+       [86, 66, 77, 67, 95],
+       [46, 86, 56, 61, 99],
+       [46, 95, 44, 46, 56],
+       [80, 50, 45, 65, 57],
+       [41, 93, 90, 41, 97],
+       [65, 83, 57, 57, 40]])
+</code></pre><ul><li>5- T</li></ul><p>转置：行转列</p><pre><code class="python">data.T
+</code></pre><p>结果</p><p><img src="/posts/3f7f6b33/image-20240831111307825.png" alt="image-20240831111307825"></p><h3 id="DataFrame对象方法"><a href="#DataFrame对象方法" class="headerlink" title="DataFrame对象方法"></a>DataFrame对象方法</h3><p>1- head(n)</p><p>显示前n行内容</p><pre><code class="python">data.head(5)
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831111502466.png" alt="image-20240831111502466"></p><p>2- tail(n)</p><p>显示后n行内容</p><p>如果不补充参数，默认5行。填入参数n则显示后n行</p><pre><code class="python">data.tail(5)
+</code></pre><p>….其他的方法自己去测试…</p><h3 id="DataFrame索引的设置"><a href="#DataFrame索引的设置" class="headerlink" title="DataFrame索引的设置"></a>DataFrame索引的设置</h3><p><img src="/posts/3f7f6b33/image-20240831111650351.png" alt="image-20240831111650351"></p><ul><li>1- 修改行列索引</li></ul><pre><code class="python">stu = [&quot;学生_&quot; + str(i) for i in range(score_df.shape[0])]
+
+# 必须整体全部修改
+data.index = stu
+</code></pre><p>注意：以下修改方式是错误的</p><pre><code class="python"># 错误修改方式
+data.index[3] = &#39;学生_3&#39;
+</code></pre><p>可能遇到的错误：</p><p><img src="/posts/3f7f6b33/1745315629151.png" alt="1745315629151"></p><pre><code class="properties">原因: DataFrame的索引修改只能整体进行修改，不能修改部分。但是我们可以通过rename重命名的方式修改部分索引，例如：
+data.rename(index=&#123;&#39;Avatar&#39;:&#39;avatar&#39;&#125;,inplace=True)
+代码表示的意思是将行索引的旧名称Avatar改成新名称avatar
+</code></pre><ul><li>2- 重设索引<ul><li>reset_index(drop&#x3D;False)<ul><li>设置新的下标索引</li><li>drop:默认为False，不删除原来索引，如果为True,删除原来的索引值</li></ul></li></ul></li></ul><pre><code class="python"># 重置索引,drop=False
+data.reset_index()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831111957305.png" alt="image-20240831111957305"></p><pre><code class="python"># 重置索引,drop=True
+data.reset_index(drop=True)
+</code></pre><ul><li>3- 以某列值设置为新的索引<ul><li>set_index(keys, drop&#x3D;True)<ul><li><strong>keys</strong> : 列索引名成或者列索引名称的列表</li><li><strong>drop</strong> : boolean, default True.当做新的索引，删除原来的列</li></ul></li></ul></li></ul><p>设置新索引案例</p><p>第一步：创建</p><pre><code class="python">df = pd.DataFrame(&#123;&#39;month&#39;: [1, 4, 7, 10],
+                    &#39;year&#39;: [2012, 2014, 2013, 2014],
+                    &#39;sale&#39;:[55, 40, 84, 31]&#125;)
+
+   month  sale  year
+0  1      55    2012
+1  4      40    2014
+2  7      84    2013
+3  10     31    2014
+</code></pre><p>第二步：以月份设置新的索引</p><pre><code class="python">df.set_index(&#39;month&#39;)
+       sale  year
+month
+1      55    2012
+4      40    2014
+7      84    2013
+10     31    2014
+</code></pre><p>第三步：设置多个索引，以年和月份</p><pre><code class="python">df = df.set_index([&#39;year&#39;, &#39;month&#39;])
+df
+            sale
+year  month
+2012  1     55
+2014  4     40
+2013  7     84
+2014  10    31
+</code></pre><h2 id="Pandas的数据类型"><a href="#Pandas的数据类型" class="headerlink" title="Pandas的数据类型"></a>Pandas的数据类型</h2><p>df或s对象中具体每一个值的数据类型有很多，如下表所示</p><table><thead><tr><th>Pandas数据类型</th><th>说明</th><th>对应的Python类型</th></tr></thead><tbody><tr><td>object</td><td>&#x3D;&#x3D;字符串类型&#x3D;&#x3D;</td><td>string</td></tr><tr><td>int</td><td>整数类型</td><td>int</td></tr><tr><td>float</td><td>浮点数类型</td><td>float</td></tr><tr><td>datetime</td><td>日期时间类型</td><td>datetime包中的datetime类型</td></tr><tr><td>timedelta</td><td>时间差类型</td><td>datetime包中的timedelta类型</td></tr><tr><td>category</td><td>分类类型</td><td>无原生类型，可以自定义</td></tr><tr><td>bool</td><td>布尔类型</td><td>bool（True,False）</td></tr><tr><td>nan</td><td>空值类型</td><td>None</td></tr></tbody></table><ul><li>可以通过下列API查看s对象或df对象中数据的类型</li></ul><pre><code class="python">s1.dtypes
+df1.dtypes
+df1.info()
+</code></pre><ul><li><p>c</p><ul><li>datetime类型</li></ul><pre><code class="python">import pandas as pd
+
+# 创建一个datetime类型的Series
+dates = pd.to_datetime([&#39;2024-09-01&#39;, &#39;2024-09-02&#39;, &#39;2024-09-03&#39;])
+print(dates)
+</code></pre><ul><li>timedelta类型</li></ul><pre><code class="python">import pandas as pd
+
+# 计算两个日期之间的差值
+start_date = pd.to_datetime(&#39;2024-09-01&#39;)
+end_date = pd.to_datetime(&#39;2024-09-05&#39;)
+delta = end_date - start_date
+print(delta)
+</code></pre><ul><li>category类型</li></ul><p>类型用于表示分类数据，通常用于有限集合中的数据类型，例如性别、颜色、产品类型等。这种类型的优点在于占用更少的内存，并且对分类数据的操作更快。</p><pre><code class="python">import pandas as pd
+
+# 创建一个category类型的Series
+categories = pd.Series([&#39;apple&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;orange&#39;], dtype=&#39;category&#39;)
+print(categories)
+</code></pre></li></ul><h1 id="三、【掌握】Pandas基本数据操作"><a href="#三、【掌握】Pandas基本数据操作" class="headerlink" title="三、【掌握】Pandas基本数据操作"></a>三、【掌握】Pandas基本数据操作</h1><h2 id="掌握内容-1"><a href="#掌握内容-1" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">1- 索引操作
+    loc[行索引名称开始:行索引名称结束, 列索引名称开始:列索引名称结束]，注意左右都是闭区间
+    iloc[行索引下标开始:行索引下标结束, 列索引下标开始:列索引下标结束]，注意左闭右开
+
+2- 赋值操作
+    DataFrame对象[&#39;字段名称&#39;] = 字段值
+
+3- 排序操作
+    sort_index()
+</code></pre><h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p>为了更好的理解这些基本操作，我们将读取一个真实的股票数据。关于文件操作，后面在介绍，这里只先用一下API</p><pre><code class="python"># 读取文件
+data = pd.read_csv(&quot;./data/stock_day.csv&quot;)
+
+# 删除一些列，让数据更简单些，再去做后面的操作
+data = data.drop([&quot;ma5&quot;,&quot;ma10&quot;,&quot;ma20&quot;,&quot;v_ma5&quot;,&quot;v_ma10&quot;,&quot;v_ma20&quot;], axis=1)
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831113957256.png" alt="image-20240831113957256"></p><h2 id="索引操作【重点】"><a href="#索引操作【重点】" class="headerlink" title="索引操作【重点】"></a>索引操作【重点】</h2><h3 id="直接使用行列索引-x3D-x3D-先列后行-x3D-x3D"><a href="#直接使用行列索引-x3D-x3D-先列后行-x3D-x3D" class="headerlink" title="直接使用行列索引(&#x3D;&#x3D;先列后行&#x3D;&#x3D;)"></a>直接使用行列索引(&#x3D;&#x3D;先列后行&#x3D;&#x3D;)</h3><p>获取’2018-02-27’这天的’open’的结果</p><pre><code class="python"># 第1种：通过行列索引值取内容
+# 注意：必须是先写列，再写行
+df2[&quot;volume&quot;][&quot;2018-02-22&quot;]
+
+# 其他错误的写法
+# 行索引放错位置了
+# df2[&quot;2018-02-22&quot;][&quot;volume&quot;]
+
+# 该方式不支持索引下标
+df2[1][1]
+</code></pre><h3 id="结合loc或者iloc使用索引（-x3D-x3D-先行后列-x3D-x3D-）"><a href="#结合loc或者iloc使用索引（-x3D-x3D-先行后列-x3D-x3D-）" class="headerlink" title="结合loc或者iloc使用索引（&#x3D;&#x3D;先行后列&#x3D;&#x3D;）"></a>结合loc或者iloc使用索引（&#x3D;&#x3D;先行后列&#x3D;&#x3D;）</h3><p>获取从’2018-02-27’:’2018-02-22’，’open’的结果</p><pre><code class="python"># 第2种：通过loc和行列索引值取内容
+# 语法总结：[行索引开始名称:行索引结束名称, 列索引开始名称:列索引结束名称]，注意左右都是闭区间
+
+df2.loc[&quot;2018-02-22&quot;,&quot;volume&quot;]
+
+df2.loc[&quot;2018-02-26&quot;:&quot;2018-02-22&quot;,&quot;volume&quot;]
+
+df2.loc[&quot;2018-02-26&quot;:&quot;2018-02-23&quot;,&quot;close&quot;:&quot;low&quot;]
+
+
+
+# 第3种：通过iloc和行列索引下标取内容
+# 语法总结：[行索引开始下标:行索引结束下标, 列索引开始下标:列索引结束下标]，注意左闭右开
+
+df2.iloc[2,1]   # 23.37
+
+df2.iloc[2,1:3] # 23.37  22.82
+
+df2.iloc[1:3, 1:4]
+</code></pre><h2 id="赋值操作【重点】"><a href="#赋值操作【重点】" class="headerlink" title="赋值操作【重点】"></a>赋值操作【重点】</h2><p>对DataFrame当中的close列进行重新赋值为1</p><pre><code class="python"># 推荐。直接修改原来的值
+data[&#39;close&#39;] = 1
+
+# 或者
+data.close = 1
+</code></pre><h2 id="排序操作"><a href="#排序操作" class="headerlink" title="排序操作"></a>排序操作</h2><p>排序有两种形式，一种对于索引进行排序，一种对于内容进行排序</p><h3 id="DataFrame排序"><a href="#DataFrame排序" class="headerlink" title="DataFrame排序"></a>DataFrame排序</h3><ul><li>使用df.sort_values(by&#x3D;, ascending&#x3D;)<ul><li>单个键或者多个键进行排序,</li><li>参数：<ul><li>by：指定排序参考的键</li><li>ascending:默认升序<ul><li>ascending&#x3D;False:降序</li><li>ascending&#x3D;True:升序</li></ul></li></ul></li></ul></li></ul><pre><code class="python"># 按照开盘价大小进行排序 , 使用ascending指定按照大小排序
+data.sort_values(by=&quot;open&quot;, ascending=True).head()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831115123196.png" alt="image-20240831115123196"></p><pre><code class="python"># 按照多个键进行排序
+data.sort_values(by=[&#39;open&#39;, &#39;high&#39;])
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831115137667.png" alt="image-20240831115137667"></p><ul><li>使用df.sort_index给索引进行排序</li></ul><p>这个股票的日期索引原来是从大到小，现在重新排序，从小到大</p><pre><code class="python"># 对索引进行排序
+data.sort_index()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831115237626.png" alt="image-20240831115237626"></p><h3 id="Series排序"><a href="#Series排序" class="headerlink" title="Series排序"></a>Series排序</h3><ul><li>使用series.sort_values(ascending&#x3D;True)进行排序</li></ul><p>series排序时，只有一列，不需要参数</p><pre><code class="python">data[&#39;p_change&#39;].sort_values(ascending=True).head()
+
+2015-09-01   -10.03
+2015-09-14   -10.02
+2016-01-11   -10.02
+2015-07-15   -10.02
+2015-08-26   -10.01
+Name: p_change, dtype: float64
+</code></pre><ul><li>使用series.sort_index()进行排序</li></ul><p>与df一致</p><pre><code class="python"># 对索引进行排序
+data[&#39;p_change&#39;].sort_index().head()
+
+2015-03-02    2.62
+2015-03-03    1.44
+2015-03-04    1.57
+2015-03-05    2.02
+2015-03-06    8.51
+Name: p_change, dtype: float64
+</code></pre><h1 id="四、【理解】DataFrame运算"><a href="#四、【理解】DataFrame运算" class="headerlink" title="四、【理解】DataFrame运算"></a>四、【理解】DataFrame运算</h1><h2 id="掌握内容-2"><a href="#掌握内容-2" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">describe()：对数据的整体情况进行了解
+apply()：数据自定义处理函数
+</code></pre><h2 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h2><ul><li>add(other)</li></ul><p>比如进行数学运算加上具体的一个数字</p><pre><code class="python"># ---------------- 算术运算 ----------------
+df1 = df.add(100)           # DF中所有单元格的数字全部都加上指定的参数值
+df1 = df[&quot;open&quot;].add(1000)  # 从DF中取出一列进行计算
+df1
+</code></pre><ul><li>sub(other)</li></ul><p>比如进行数学运算减去具体的一个数字</p><pre><code class="python">df2 = df[&quot;open&quot;].sub(1000)  # 减法
+df2 = df[&quot;open&quot;].div(100)  # 除法
+df2 = df[&quot;open&quot;].mul(100)  # 乘法
+
+# 同时支持算术运算的符号
+df2 = df[&quot;open&quot;] * 10000  # 乘法
+df2 = df[&quot;open&quot;] + 10000  # 加法
+df2
+</code></pre><h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><pre><code class="properties">总结：
+    1- 逻辑运算中不能使用单词and、or、not，必须使用对应的符号&amp; | ~
+    2- 每个比较运算符表达式必须使用小括号包起来
+</code></pre><h3 id="逻辑运算符号"><a href="#逻辑运算符号" class="headerlink" title="逻辑运算符号"></a>逻辑运算符号</h3><ul><li>例如筛选data[“open”] &gt; 23的日期数据<ul><li>data[“open”] &gt; 23返回逻辑结果</li></ul></li></ul><pre><code class="python"># ---------------- 逻辑运算 ----------------
+# 数据大小判断
+df[&quot;open&quot;]&gt;22
+
+# 将判断语句作为过滤条件，对数据进行过滤。True的保留；False的不要
+# 类似SQL中的写法：select * from df where open&gt;22
+df[df[&quot;open&quot;]&gt;22]
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831115813316.png" alt="image-20240831115813316"></p><ul><li>完成多个逻辑判断</li></ul><pre><code class="python"># 能够写多个逻辑表达式
+# 类似SQL中的写法：select * from df where open&gt;22 and close&lt;=22
+
+# 下面是错误的写法，会报错：The truth value of a Series is ambiguous
+# df[df[&quot;open&quot;]&gt;22 and df[&quot;close&quot;]&lt;=22]
+
+&quot;&quot;&quot;
+    注意事项：如下两个是必须要满足
+        1- 不能使用逻辑运算的单词and、or、not，需要改成对应的符号&amp;、|、~
+        2- 每个比较运算表达式要用小括号包起来
+&quot;&quot;&quot;
+# and
+# 正确写法
+df[(df[&quot;open&quot;]&gt;22) &amp; (df[&quot;close&quot;]&lt;=22)]
+
+# or
+# 错误写法
+# df[(df[&quot;open&quot;]&gt;22) or (df[&quot;close&quot;]&lt;=22)]
+# 正确的写法
+df[(df[&quot;open&quot;]&gt;22) | (df[&quot;close&quot;]&lt;=22)]
+
+# not
+# 错误写法
+# df[not df[&quot;open&quot;]&gt;22]
+# 正确的写法
+df[~(df[&quot;open&quot;]&gt;22)]
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831115819104.png" alt="image-20240831115819104"></p><h3 id="逻辑运算函数"><a href="#逻辑运算函数" class="headerlink" title="逻辑运算函数"></a>逻辑运算函数</h3><ul><li>query(expr)<ul><li>expr:查询字符串</li></ul></li></ul><p>通过query使得刚才的过程更加方便简单</p><pre><code class="python"># 简单的形式，使用query函数
+df.query(&quot;open&gt;22 and close&lt;=22 and low&gt;=21&quot;)
+df.query(&quot;open&gt;22 or close&lt;=22&quot;)
+df.query(&quot;not open&gt;22&quot;)
+df.query(&quot;open in (23.53,22.80)&quot;)
+# 注意：判断是否相等需要使用两个等号
+df.query(&quot;open==23.53&quot;)
+</code></pre><ul><li>isin(values)</li></ul><p>例如判断’open’是否为23.53和23.85</p><pre><code class="python"># 可以指定值进行一个判断，从而进行筛选操作
+data[data[&quot;open&quot;].isin([23.53, 23.85])]
+</code></pre><h2 id="统计运算【理解】"><a href="#统计运算【理解】" class="headerlink" title="统计运算【理解】"></a>统计运算【理解】</h2><h3 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h3><p>综合分析: 能够直接得出很多统计结果,<code>count</code>, <code>mean</code>, <code>std</code>, <code>min</code>, <code>max</code> 等</p><pre><code class="python"># 计算平均值、标准差、最大值、最小值
+data.describe()
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831123336370.png" alt="image-20240831123336370"></p><p><img src="/posts/3f7f6b33/image-20250713112353100.png" alt="image-20250713112353100"></p><h3 id="统计函数"><a href="#统计函数" class="headerlink" title="统计函数"></a>统计函数</h3><p>Numpy当中已经详细介绍，在这里我们演示min(最小值), max(最大值), mean(平均值), median(中位数), var(方差), std(标准差),mode(众数)结果:</p><table><thead><tr><th><code>count</code></th><th>Number of non-NA observations</th></tr></thead><tbody><tr><td><code>sum</code></td><td><strong>Sum of values</strong></td></tr><tr><td><code>mean</code></td><td><strong>Mean of values</strong></td></tr><tr><td><code>median</code></td><td>Arithmetic median of values</td></tr><tr><td><code>min</code></td><td><strong>Minimum</strong></td></tr><tr><td><code>max</code></td><td><strong>Maximum</strong></td></tr><tr><td><code>mode</code></td><td>Mode（众数）</td></tr><tr><td><code>abs</code></td><td>Absolute Value</td></tr><tr><td><code>prod</code></td><td>Product of values（乘积）</td></tr><tr><td><code>std</code></td><td><strong>Bessel-corrected sample standard deviation</strong></td></tr><tr><td><code>var</code></td><td><strong>Unbiased variance</strong></td></tr><tr><td><code>idxmax</code></td><td>compute the index labels with the maximum</td></tr><tr><td><code>idxmin</code></td><td>compute the index labels with the minimum</td></tr></tbody></table><blockquote><p>对于单个函数去进行统计的时候，坐标轴还是按照默认列“columns” (axis&#x3D;0, default)，如果要对行“index” 需要指定(axis&#x3D;1)</p></blockquote><ul><li>max()、min()</li></ul><pre><code class="python"># 使用统计函数
+data.max(0)
+
+open                   34.99
+high                   36.35
+close                  35.21
+low                    34.01
+volume             501915.41
+price_change            3.03
+p_change               10.03
+turnover               12.56
+my_price_change         3.41
+dtype: float64
+</code></pre><ul><li>std()、var()</li></ul><pre><code class="python"># 方差
+data.var(0)
+
+open               1.545255e+01
+high               1.662665e+01
+close              1.554572e+01
+low                1.437902e+01
+volume             5.458124e+09
+price_change       8.072595e-01
+p_change           1.664394e+01
+turnover           4.323800e+00
+my_price_change    6.409037e-01
+dtype: float64
+
+# 标准差
+data.std(0)
+
+open                   3.930973
+high                   4.077578
+close                  3.942806
+low                    3.791968
+volume             73879.119354
+price_change           0.898476
+p_change               4.079698
+turnover               2.079375
+my_price_change        0.800565
+dtype: float64
+</code></pre><ul><li>median()：中位数</li></ul><p>中位数为将数据从小到大排列，在最中间的那个数为中位数。如果没有中间数，取中间两个数的平均值。</p><pre><code class="python">df = pd.DataFrame(&#123;&#39;COL1&#39; : [2,3,4,5,4,2], &#39;COL2&#39; : [0,1,2,3,4,2]&#125;)
+
+df.median()
+
+COL1    3.5
+COL2    2.0
+dtype: float64
+</code></pre><ul><li>idxmax()、idxmin()</li></ul><pre><code class="python"># 求出最大值的位置
+data.idxmax(axis=0)
+
+open               2015-06-15
+high               2015-06-10
+close              2015-06-12
+low                2015-06-12
+volume             2017-10-26
+price_change       2015-06-09
+p_change           2015-08-28
+turnover           2017-10-26
+my_price_change    2015-07-10
+dtype: object
+
+
+# 求出最小值的位置
+data.idxmin(axis=0)
+
+open               2015-03-02
+high               2015-03-02
+close              2015-09-02
+low                2015-03-02
+volume             2016-07-06
+price_change       2015-06-15
+p_change           2015-09-01
+turnover           2016-07-06
+my_price_change    2015-06-15
+dtype: object
+</code></pre><h3 id="累计统计函数【了解】"><a href="#累计统计函数【了解】" class="headerlink" title="累计统计函数【了解】"></a>累计统计函数【了解】</h3><table><thead><tr><th>函数</th><th>作用</th></tr></thead><tbody><tr><td><code>cumsum</code></td><td><strong>计算前1&#x2F;2&#x2F;3&#x2F;…&#x2F;n个数的和</strong></td></tr><tr><td><code>cummax</code></td><td>计算前1&#x2F;2&#x2F;3&#x2F;…&#x2F;n个数的最大值</td></tr><tr><td><code>cummin</code></td><td>计算前1&#x2F;2&#x2F;3&#x2F;…&#x2F;n个数的最小值</td></tr><tr><td><code>cumprod</code></td><td>计算前1&#x2F;2&#x2F;3&#x2F;…&#x2F;n个数的积</td></tr></tbody></table><p>那么这些累计统计函数怎么用？</p><p><img src="/posts/3f7f6b33/image-20240831123744166.png" alt="image-20240831123744166"></p><p>以上这些函数可以对series和dataframe操作</p><p>这里我们按照时间的从前往后来进行累计</p><ul><li>排序</li></ul><pre><code class="python"># 排序之后，进行累计求和
+data = data.sort_index()
+</code></pre><ul><li>对p_change进行求和</li></ul><pre><code class="python">stock_rise = data[&#39;p_change&#39;]
+# plot方法集成了前面直方图、条形图、饼图、折线图
+stock_rise.cumsum()
+</code></pre><p>那么如何让这个连续求和的结果更好的显示呢？</p><p><img src="/posts/3f7f6b33/image-20240831124825773.png" alt="image-20240831124825773"></p><p>如果要使用plot函数，需要导入matplotlib.</p><pre><code class="python">import matplotlib.pyplot as plt
+# plot显示图形
+stock_rise.cumsum().plot()
+# 需要调用show，才能显示出结果
+plt.show()
+</code></pre><h3 id="apply自定义运算"><a href="#apply自定义运算" class="headerlink" title="apply自定义运算"></a>apply自定义运算</h3><ul><li>apply(func, axis&#x3D;0)<ul><li>func:自定义函数</li><li>axis&#x3D;0:默认是列，axis&#x3D;1为行进行运算</li></ul></li><li>定义一个对列，最大值-最小值的函数</li></ul><pre><code class="python">data[[&#39;open&#39;, &#39;close&#39;]].apply(lambda x: x.max() - x.min(), axis=0)
+</code></pre><h1 id="五、【掌握】文件读取与存储"><a href="#五、【掌握】文件读取与存储" class="headerlink" title="五、【掌握】文件读取与存储"></a>五、【掌握】文件读取与存储</h1><h2 id="掌握内容-3"><a href="#掌握内容-3" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">read_csv()
+read_sql()
+read_json()：推荐参数组合orient=&quot;records&quot;，lines=True
+
+to_csv()
+to_sql()
+to_json()：推荐参数组合orient=&quot;records&quot;，lines=True
+</code></pre><p>我们的数据大部分存在于文件当中，所以pandas会支持复杂的IO操作，pandas的API支持众多的文件格式，如CSV、SQL、XLS、JSON、HDF5。</p><blockquote><p>注：最常用的sql和CSV文件</p></blockquote><p><img src="/posts/3f7f6b33/image-20240831125310359.png" alt="image-20240831125310359"></p><h2 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h2><h3 id="read-csv"><a href="#read-csv" class="headerlink" title="read_csv"></a>read_csv</h3><ul><li>pandas.read_csv(filepath_or_buffer, sep &#x3D;’,’, usecols )<ul><li>filepath_or_buffer:文件路径</li><li>sep :分隔符，默认用”,”隔开</li><li>usecols:指定读取的列名，列表形式</li></ul></li><li>举例：读取之前的股票的数据</li></ul><pre><code class="python"># 读取文件,并且指定只获取&#39;open&#39;, &#39;close&#39;指标
+data = pd.read_csv(&quot;./data/stock_day.csv&quot;, usecols=[&#39;open&#39;, &#39;close&#39;])
+</code></pre><h3 id="to-csv"><a href="#to-csv" class="headerlink" title="to_csv"></a>to_csv</h3><ul><li>DataFrame.to_csv(path_or_buf&#x3D;None, sep&#x3D;’, ’, columns&#x3D;None, header&#x3D;True, index&#x3D;True, mode&#x3D;’w’, encoding&#x3D;None)<ul><li>path_or_buf :文件路径</li><li>sep :分隔符，默认用”,”隔开</li><li>columns :选择需要的列索引</li><li>header : 是否要将字段名称输出到文件中作为第一行。推荐使用True</li><li>index:是否写进行索引,是否写进列索引值</li><li>mode:’w’：覆盖写, ‘a’ 追加</li><li>encoding：输出的文件编码方式。推荐使用UTF-8</li></ul></li><li>举例：保存读取出来的股票数据<ul><li>保存’open’列的数据，然后读取查看结果</li></ul></li></ul><pre><code class="python">&quot;&quot;&quot;
+    参数解释：
+        filepath_or_buffer：文件路径
+        sep：字段值之间的分隔符
+        encoding：文件的编码方式
+        usecols：将哪些字段读取出来
+&quot;&quot;&quot;
+# 读取
+df1 = pd.read_csv(filepath_or_buffer=&quot;data/stock_day.csv&quot;,sep=&quot;,&quot;,encoding=&quot;UTF-8&quot;)
+df1
+
+
+# 指定将哪些字段读取出来
+df2 = pd.read_csv(filepath_or_buffer=&quot;data/stock_day.csv&quot;,sep=&quot;,&quot;,encoding=&quot;UTF-8&quot;,usecols=[&quot;open&quot;,&quot;high&quot;])
+df2
+</code></pre><p>会发现将索引存入到文件当中，变成单独的一列数据。如果需要删除，可以指定index参数,删除原来的文件，重新保存一次。</p><pre><code class="python">&quot;&quot;&quot;
+    参数解释
+        path_or_buf：文件的写出路径
+        sep：字段值之间的分隔符
+        mode：写出模式。w覆盖写，a追加写
+        encoding：文件的编码方式
+        columns：要将哪些字段写出到文件中
+        header：是否在文件的第一行记录字段名称。推荐设置为True
+        index：是否将索引列的内容写出到文件
+&quot;&quot;&quot;
+# 将数据写出成csv文件
+df1.to_csv(path_or_buf=&quot;data/stock_to_csv.csv&quot;,sep=&quot;\t&quot;,mode=&quot;w&quot;,encoding=&quot;UTF-8&quot;)
+
+df1.to_csv(
+    path_or_buf=&quot;data/stock_to_csv_2.csv&quot;,
+    sep=&quot;\t&quot;,
+    mode=&quot;w&quot;,
+    encoding=&quot;UTF-8&quot;,
+    columns=[&quot;open&quot;,&quot;close&quot;,&quot;high&quot;],
+    header=False,
+    index=False
+)
+</code></pre><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>以MySQL数据库为例，<strong>此时默认你已经安装好了MySQL数据库</strong>。如果想利用pandas和MySQL数据库进行交互，需要先安装与数据库交互所需要的python包</p><pre><code class="python">pip install pymysql==1.0.2 -i https://pypi.tuna.tsinghua.edu.cn/simple/
+
+
+# 如果后边的代码运行提示找不到sqlalchemy的包，和pymysql一样进行安装即可
+pip install sqlalchemy==2.0.30 -i https://pypi.tuna.tsinghua.edu.cn/simple/
+</code></pre><p><img src="/posts/3f7f6b33/image-20220125205916505.png" alt="image-20220125205916505"></p><ul><li>准备要写入数据库的数据</li></ul><pre><code class="python">import pandas as pd 
+&quot;&quot;&quot;
+    index_col：指定使用文件中哪个索引的字段作为DataFrame的索引
+&quot;&quot;&quot;
+# 准备数据
+df2 = pd.read_csv(&quot;data/csv示例文件.csv&quot;,sep=&quot;,&quot;,encoding=&quot;GBK&quot;,index_col=[0])
+df2
+</code></pre><p><img src="/posts/3f7f6b33/image-20220123165416808.png" alt="image-20220123165416808"></p><ul><li>创建数据库操作引擎对象并指定数据库</li></ul><pre><code class="python"># 创建数据库连接
+from sqlalchemy import create_engine
+# 格式    数据库产品类型+开源库://用户名:密码@ip地址:端口号/数据库名称?其他参数设置
+engine = create_engine(&quot;mysql+pymysql://root:root@127.0.0.1:3306/db4?charset=utf8&quot;)
+</code></pre><ul><li>将数据写入MySQL数据库</li></ul><pre><code class="python"># 写入到数据库
+&quot;&quot;&quot;
+    参数解释：
+        name：要写入的表名。如果不存在，自动创建
+        con：connection，数据库连接
+        if_exists：如果表或者数据已经存在的处理方式
+            append：追加写
+            replace：覆盖写
+            fail：如果表存在，直接报错
+&quot;&quot;&quot;
+# df2.to_sql(name=&quot;sql_test&quot;,con=engine,if_exists=&quot;replace&quot;,index=False)
+
+# df2.to_sql(name=&quot;sql_test&quot;,con=engine,if_exists=&quot;append&quot;,index=False)
+
+df2.to_sql(name=&quot;sql_test&quot;,con=engine,if_exists=&quot;fail&quot;,index=False)
+</code></pre><ul><li><p>此时我们就可以在本地test库的test_pdtosql表中看到写入的数据</p><p><img src="/posts/3f7f6b33/image-20220123165745328.png" alt="image-20220123165745328"></p></li><li><p>从数据库中加载数据:</p><ul><li>读取整张表, 返回dataFrame</li></ul><pre><code class="python"># 读取数据表
+df3 = pd.read_sql(sql=&quot;sql_test&quot;,con=engine)
+</code></pre><ul><li>使用SQL语句获取数据，返回dataframe</li></ul><pre><code class="python"># 传入sql语句，传入数据库连接引擎对象
+df4 = pd.read_sql(sql=&quot;select * from sql_test where name=&#39;赵金龙&#39; &quot;,con=engine)
+</code></pre></li></ul><p>可能出现的问题:</p><p><img src="/posts/3f7f6b33/image-20220125211715019.png" alt="image-20220125211715019"></p><pre><code class="python">说明: 
+    sqlalchemy 库版本过低导致的
+
+解决方案:
+    先删除原有版本: 
+        pip uninstall sqlalchemy
+    
+    重新安装:
+        pip install sqlalchemy==2.0.30
+</code></pre><pre><code class="properties">sqlalchemy官网：https://www.sqlalchemy.org/
+数据库连接如何写：https://docs.sqlalchemy.org/en/20/dialects/mysql.html#module-sqlalchemy.dialects.mysql.pymysql
+</code></pre><h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>JSON在线解析网站：<a target="_blank" rel="noopener" href="https://www.sojson.com/">https://www.sojson.com/</a></p><p>JSON只能使用双引号。而Python中的字典单引号、双引号都行</p><p>JSON是我们常用的一种数据交换格式，前面在前后端的交互经常用到，也会在存储的时候选择这种格式。所以我们需要知道Pandas如何进行读取和存储JSON格式。</p><h3 id="read-json"><a href="#read-json" class="headerlink" title="read_json"></a>read_json</h3><ul><li><p>pandas.read_json(path_or_buf&#x3D;None, orient&#x3D;None, typ&#x3D;’frame’, lines&#x3D;False)</p><ul><li><p>将JSON格式转换成默认的Pandas DataFrame格式</p></li><li><p>orient : string,Indication of expected JSON string format.</p><ul><li><p>split : JSON内容包含索引、值、列名</p></li><li><p>records: &#x3D;&#x3D;推荐使用&#x3D;&#x3D;。每条数据形成一个字典</p></li><li><p>index: 每条数据形成一个字典。并且索引作为key，列和值形成的字典作为value</p></li><li><p>columns: key是列名，value是索引和值形成的字典</p></li><li><p>values: 只输出数据值，不带索引和列名</p></li></ul></li><li><p>lines : &#x3D;&#x3D;推荐使用True&#x3D;&#x3D;如果为 True，则每一行是一个独立的 JSON 对象</p></li><li><p>typ : 指定转换成的对象类型series或者dataframe</p></li></ul></li></ul><h3 id="read-json案例"><a href="#read-json案例" class="headerlink" title="read_json案例"></a>read_json案例</h3><ul><li>数据介绍</li></ul><p>这里使用一个新闻标题数据集，格式为json。存储格式为：</p><pre><code class="jso">&#123;&quot;article_link&quot;: &quot;https://www.huffingtonpost.com/entry/versace-black-code_us_5861fbefe4b0de3a08f600d5&quot;, &quot;headline&quot;: &quot;former versace store clerk sues over secret &#39;black code&#39; for minority shoppers&quot;, &quot;is_sarcastic&quot;: 0&#125;
+&#123;&quot;article_link&quot;: &quot;https://www.huffingtonpost.com/entry/roseanne-revival-review_us_5ab3a497e4b054d118e04365&quot;, &quot;headline&quot;: &quot;the &#39;roseanne&#39; revival catches up to our thorny political mood, for better and worse&quot;, &quot;is_sarcastic&quot;: 0&#125;
+</code></pre><ul><li>读取</li></ul><p>orient指定存储的json格式，lines指定按照行去变成一个样本</p><pre><code class="python">&quot;&quot;&quot;
+    参数解释：
+        path_or_buf：文件路径
+        orient：JSON格式。推荐使用records，那么JSON的格式就是键值对的形式
+        lines：数据中每一行试一个单独的JSON
+&quot;&quot;&quot;
+json_read = pd.read_json(&quot;./data/Sarcasm_Headlines_Dataset.json&quot;, orient=&quot;records&quot;, lines=True)
+</code></pre><p>结果：</p><p><img src="/posts/3f7f6b33/image-20240831130046220.png" alt="image-20240831130046220"></p><h3 id="to-json"><a href="#to-json" class="headerlink" title="to_json"></a>to_json</h3><ul><li>DataFrame.to_json(path_or_buf&#x3D;None,orient&#x3D;None,lines&#x3D;False)<ul><li>将Pandas 对象存储为json格式</li><li><em>path_or_buf&#x3D;None</em>：文件地址</li><li>orient:存储的json形式，{‘split’,’records’,’index’,’columns’,’values’}&#x3D;&#x3D;推荐使用records&#x3D;&#x3D;</li><li>lines:一个对象存储为一行&#x3D;&#x3D;推荐使用True&#x3D;&#x3D;</li></ul></li></ul><h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><ul><li>存储文件</li></ul><pre><code class="python">json_read.to_json(&quot;./data/test.json&quot;, orient=&#39;records&#39;)
+</code></pre><p>结果</p><pre><code>[&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/versace-black-code_us_5861fbefe4b0de3a08f600d5&quot;,&quot;headline&quot;:&quot;former versace store clerk sues over secret &#39;black code&#39; for minority shoppers&quot;,&quot;is_sarcastic&quot;:0&#125;,&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/roseanne-revival-review_us_5ab3a497e4b054d118e04365&quot;,&quot;headline&quot;:&quot;the &#39;roseanne&#39; revival catches up to our thorny political mood, for better and worse&quot;,&quot;is_sarcastic&quot;:0&#125;,&#123;&quot;article_link&quot;:&quot;https:\/\/local.theonion.com\/mom-starting-to-fear-son-s-web-series-closest-thing-she-1819576697&quot;,&quot;headline&quot;:&quot;mom starting to fear son&#39;s web series closest thing she will have to grandchild&quot;,&quot;is_sarcastic&quot;:1&#125;,&#123;&quot;article_link&quot;:&quot;https:\/\/politics.theonion.com\/boehner-just-wants-wife-to-listen-not-come-up-with-alt-1819574302&quot;,&quot;headline&quot;:&quot;boehner just wants wife to listen, not come up with alternative debt-reduction ideas&quot;,&quot;is_sarcastic&quot;:1&#125;,&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/jk-rowling-wishes-snape-happy-birthday_us_569117c4e4b0cad15e64fdcb&quot;,&quot;headline&quot;:&quot;j.k. rowling wishes snape happy birthday in the most magical way&quot;,&quot;is_sarcastic&quot;:0&#125;,&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/advancing-the-worlds-women_b_6810038.html&quot;,&quot;headline&quot;:&quot;advancing the world&#39;s women&quot;,&quot;is_sarcastic&quot;:0&#125;,....]
+</code></pre><ul><li>修改lines参数为True</li></ul><pre><code class="python">json_read.to_json(&quot;./data/test.json&quot;, orient=&#39;records&#39;, lines=True)
+</code></pre><p>结果</p><pre><code>&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/versace-black-code_us_5861fbefe4b0de3a08f600d5&quot;,&quot;headline&quot;:&quot;former versace store clerk sues over secret &#39;black code&#39; for minority shoppers&quot;,&quot;is_sarcastic&quot;:0&#125;
+&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/roseanne-revival-review_us_5ab3a497e4b054d118e04365&quot;,&quot;headline&quot;:&quot;the &#39;roseanne&#39; revival catches up to our thorny political mood, for better and worse&quot;,&quot;is_sarcastic&quot;:0&#125;
+&#123;&quot;article_link&quot;:&quot;https:\/\/local.theonion.com\/mom-starting-to-fear-son-s-web-series-closest-thing-she-1819576697&quot;,&quot;headline&quot;:&quot;mom starting to fear son&#39;s web series closest thing she will have to grandchild&quot;,&quot;is_sarcastic&quot;:1&#125;
+&#123;&quot;article_link&quot;:&quot;https:\/\/politics.theonion.com\/boehner-just-wants-wife-to-listen-not-come-up-with-alt-1819574302&quot;,&quot;headline&quot;:&quot;boehner just wants wife to listen, not come up with alternative debt-reduction ideas&quot;,&quot;is_sarcastic&quot;:1&#125;
+&#123;&quot;article_link&quot;:&quot;https:\/\/www.huffingtonpost.com\/entry\/jk-rowling-wishes-snape-happy-birthday_us_569117c4e4b0cad15e64fdcb&quot;,&quot;headline&quot;:&quot;j.k. rowling wishes snape happy birthday in the most magical way&quot;,&quot;is_sarcastic&quot;:0&#125;...
+</code></pre><ul><li>其他参数值演示</li></ul><pre><code class="python">json_read.to_json(path_or_buf=&quot;data/copy2_json.json&quot;,orient=&quot;records&quot;,lines=False)
+json_read.to_json(path_or_buf=&quot;data/copy3_json.json&quot;,orient=&quot;split&quot;,lines=False)
+json_read.to_json(path_or_buf=&quot;data/copy4_json.json&quot;,orient=&quot;index&quot;,lines=False)
+</code></pre><h1 id="六、【熟悉】DataFrame数据的增删改查操作"><a href="#六、【熟悉】DataFrame数据的增删改查操作" class="headerlink" title="六、【熟悉】DataFrame数据的增删改查操作"></a>六、【熟悉】DataFrame数据的增删改查操作</h1><h2 id="掌握内容-4"><a href="#掌握内容-4" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">1- 增加新字段
+DataFrame对象[&quot;新字段名称&quot;] = 字段值
+
+2- 删除字段
+drop()
+
+3- 去重
+unique()
+
+4- 修改
+DataFrame对象[&quot;字段名称&quot;] = 新的字段值
+</code></pre><ul><li>导包并加载数据:</li></ul><pre><code class="python">import pandas as pd
+
+df = pd.read_csv(&#39;data/1960-2019全球GDP数据.csv&#39;, encoding=&#39;gbk&#39;)  
+df2 = df.head()
+</code></pre><h2 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h2><ul><li>方式一: 通过直接赋值的方式添加新列【掌握】</li></ul><pre><code class="python"># 拷贝一份df
+df3 = df2.copy()
+
+# 一列数据都是固定值
+df3[&#39;new col 1&#39;] = 33
+
+# 新增列数据数量必须和行数相等
+df3[&#39;new col 2&#39;] = [1, 2, 3, 4, 5]
+df3[&#39;new col 3&#39;] = df3.year * 2
+
+# 分别查看增加数据列之后的df和原df
+df3 
+df2
+</code></pre><ul><li>方式二: df.assign函数添加列</li></ul><pre><code class="python"># 1. 新列名=单个数据或一组数据，一组数据的数量必须和df的行数相同
+df2.assign(new0=66)
+# df2.assign(new1=[1, 2, 3, 4]) # 报错
+df2.assign(new1=[1, 2, 3, 4, 5])
+
+# 2.1 新列名=Series对象，该s对象的索引和df索引一致
+s = pd.Series([1, 2, 3, 4, 5]) 
+df2.assign(new2=s)
+
+# 2.2 新列名=Series对象
+df2.assign(new3=df2.year+df2.GDP)
+
+# 3. 新列名=自定义函数名
+# 该自定义函数必须接收df作为参数
+# 该自定义函数可以返回：
+# 3.1.单个数据 
+# 3.2.一组数量和df的行数相同的数据 
+# 3.3.和df索引相同的Series对象
+def foo(df):
+    # 函数必须接收一个参数，该参数就是被传入的df对象
+    print(&#39;=&#39;*10)
+    print(df)
+    print(&#39;=&#39;*5 + &#39;上面输出的是传入的df&#39;)
+    ret = df.index.values
+    # 可以返回一个变量
+    # return &#39;hahah&#39;
+    # 也可以返回一组变量
+    return ret 
+df2.assign(new4=foo)
+
+解析：当我们使用函数的方式向df对象添加新列时，foo函数要求必须有一个参数，这个参数来自于调用assign的df对象，如上图所示
+当我们给foo(df)定义一个df参数时，当assign方法开始执行，则系统会自动将df2对象作为参数传递给foo函数中的df参数
+</code></pre><ul><li>df.assign函数可以同时添加多列</li></ul><pre><code class="python"># assign特殊
+def fn1(my_df):
+    return 22
+
+def fn2(my_df):
+    return my_df.GDP/1000000+my_df.year
+
+df_5 = df_4.assign(
+    new1=100,
+    new2=[11,22,33,44,55],
+    new3=df_4.year*100,
+    new4=fn1,
+    new5=fn2
+)
+df_5
+</code></pre><h2 id="删除与去重"><a href="#删除与去重" class="headerlink" title="删除与去重"></a>删除与去重</h2><ul><li>1- df.drop删除行数据</li></ul><pre><code class="python">df3.drop([0]) # 默认删除行
+df3.drop([0, 2, 4]) # 可以删除多行
+df3.GDP.drop([0, 2]) # 对series对象按索引删除
+</code></pre><ul><li>2- df.drop删除列数据【掌握】<ul><li>df.drop默认删除指定索引值的行；如果添加参数<code>axis=1</code>，则删除指定列名的列</li></ul></li></ul><pre><code class="python">df3.drop([&#39;new col 3&#39;], axis=1)
+</code></pre><ul><li>3- 使用del删除指定的列<ul><li>注意区别：<ul><li>del是直接永久删除原df中的列【慎重使用】</li><li>drop是返回删除后的df或seires，原df或seires没有被修改</li></ul></li></ul></li></ul><pre><code class="python">del df3[&#39;new col 3&#39;]
+df3
+# 重复运行本段代码将会报错，因为df3中的指定列在第一次运行时就被删除了
+</code></pre><ul><li>4- Dataframe数据去重</li></ul><pre><code class="python"># 添加一部分重复的数据
+df6 = pd.concat([df5, df5], axis=0).reset_index(drop=True)
+
+# keep：保留重复数据中的第几条。first表示第一条；last表示最后一条
+# df7 = df6.drop_duplicates(keep=&quot;first&quot;)
+df7 = df6.drop_duplicates(keep=&quot;last&quot;)
+df7
+</code></pre><p><img src="/posts/3f7f6b33/image-20220123175505374.png" alt="image-20220123175505374"></p><ul><li>5- series去重</li></ul><pre><code class="python"># Series数据去重
+from pandas import Series
+s2:Series = df6.country
+s3 = s2.drop_duplicates()  # 返回结果数据类型 是 Series对象
+s3
+
+arr1 = s2.unique()  # 返回结果数据类型 是 Numpy中的ndarray
+arr1
+</code></pre><h2 id="修改DataFrame中的数据"><a href="#修改DataFrame中的数据" class="headerlink" title="修改DataFrame中的数据"></a>修改DataFrame中的数据</h2><ul><li>1- df.assign替换列</li></ul><pre><code class="python">df = pd.read_csv(&#39;data/1960-2019全球GDP数据.csv&#39;, encoding=&#39;GBK&#39;)  
+df5 = df.head()
+df5
+df5.assign(GDP=66) # 可以接收单变量或列表、数组
+df5  # 此时原始的df5不会发生改变
+</code></pre><ul><li>2- 直接对原始的DF进行赋值修改处理</li></ul><pre><code class="python">df = pd.read_csv(&#39;../数据集/1960-2019全球GDP数据.csv&#39;, encoding=&#39;gbk&#39;, )  
+df5 = df.head()
+df5
+df5[&#39;GDP&#39;] = [5, 4, 3, 2, 1]
+df5  # 此时原始的df5会发生改变
+</code></pre><ul><li>3- replace函数替换数据</li></ul><pre><code class="python"># replace替换函数：DF、Series对象都有该方法。只能够整体匹配然后替换，不能局部替换
+df10 = df.head().copy()
+
+
+df11 = df10.replace(to_replace=&quot;日本&quot;,value=&quot;扶桑&quot;)
+df11
+
+# 只能够整体匹配然后替换，不能局部替换
+s4 = df10.year.replace(to_replace=1960,value=196666)
+# s4 = df10.year.replace(to_replace=196,value=1999999)
+# s4 = df10.country.replace(to_replace=&quot;日&quot;,value=&quot;sun&quot;)
+s4
+</code></pre><h2 id="查询dataFrame中的数据"><a href="#查询dataFrame中的数据" class="headerlink" title="查询dataFrame中的数据"></a>查询dataFrame中的数据</h2><ul><li><p>1- 从前从后取多行数据</p><ul><li>head()</li></ul><pre><code class="python"># 导包 
+import pandas as pd
+# 加载csv数据，指定gbk编码格式来读取文件，返回df
+df = pd.read_csv(&#39;../数据集/1960-2019全球GDP数据.csv&#39;, encoding=&#39;gbk&#39;) 
+
+# 默认取前5行数据
+df.head()
+df.head(10) # 取前10行
+</code></pre><ul><li>tail()</li></ul><pre><code class="python"># 默认取后5行数据
+df.tail()
+df2 = df.tail(15) # 倒数15行
+df2
+</code></pre></li><li><p>2- 获取一列或多列数据</p><ul><li>获取一列数据<code>df[col_name]</code>等同于<code>df.col_name</code></li></ul><pre><code class="python"># 下面两种方式获得的结果类型都是Series对象
+df2[&#39;country&#39;]
+df2.country
+# 注意！如果列名字符串中间有空格的，只能使用df[&#39;country&#39;]这种形式
+</code></pre><ul><li>获取多列数据<code>df[[col_name1,col_name2,...]]</code></li></ul><pre><code class="python">df2[[&#39;country&#39;, &#39;GDP&#39;]] # 返回新的df
+</code></pre></li><li><p>3- 索引下标切片取行</p><ul><li><code>df[start:stop:step]</code>:</li></ul><blockquote><p><code>df[start:stop:step]</code> &#x3D;&#x3D; <code>df[起始行下标:结束行下标:步长]</code> ， 遵循<code>顾头不顾尾</code>原则（包含起始行，不包含结束行），<code>步长</code>默认为1</p></blockquote><pre><code class="python">df4 = df.head(10) # 取原df前10行数据作为df4，默认自增索引由0到9
+df4[0:3] # 取前3行
+df4[:5:2] # 取前5行，步长为2
+df4[1::3] # 取第2行到最后所有行，步长为3
+</code></pre></li><li><p>4- 查询函数获取子集: df.query()</p><blockquote><ul><li><code>df.query(判断表达式)</code>可以依据判断表达式返回的符合条件的df子集</li><li>与<code>df[布尔值向量]</code>效果相同</li><li>特别注意<code>df.query()</code>中传入的字符串格式</li></ul></blockquote><ul><li>示例:</li></ul><pre><code class="python">df3.query(&#39;country==&quot;帕劳&quot;&#39;)
+df3[df3[&#39;country&#39;]==&#39;帕劳&#39;]
+</code></pre><ul><li>查询中国, 美国 日本 三国 2015年至2019年的数据</li></ul><pre><code class="python">df.query(&#39;country==&quot;中国&quot; or country==&quot;日本&quot; or country==&quot;美国&quot;&#39;).query(&#39;year in [&quot;2015&quot;, &quot;2016&quot;, &quot;2017&quot;, &quot;2018&quot;, &quot;2019&quot;]&#39;)
+
+df.query(&#39;(country==&quot;中国&quot; or country==&quot;日本&quot; or country==&quot;美国&quot;) and year in [&quot;2015&quot;, &quot;2016&quot;, &quot;2017&quot;, &quot;2018&quot;, &quot;2019&quot;]&#39;)
+</code></pre></li><li><p>5- 排序函数</p><ul><li>sort_values函数: 按照指定的一列或多列的值进行排序</li></ul><pre><code class="properties"># 按GDP列的数值由小到大进行排序
+df2.sort_values([&#39;GDP&#39;])
+# 按GDP列的数值由大到小进行排序
+df2.sort_values([&#39;GDP&#39;], ascending=False) # 倒序， ascending默认为True
+# 先对year年份进行由小到大排序，再对GDP由小到大排序
+df2.sort_values([&#39;year&#39;, &#39;GDP&#39;])
+</code></pre><ul><li>rank函数【了解】:</li></ul><blockquote><ul><li>rank函数用法：<code>DataFrame.rank()</code> 或 <code>Series.rank()</code></li><li>rank函数返回值：以Series或者DataFrame的类型返回数据的排名（哪个类型调用返回哪个类型）</li><li>rank函数包含有6个参数：</li><li><strong>axis</strong>：设置沿着哪个轴计算排名（0或者1)，默认为0按纵轴计算排名</li><li><strong>numeric_only</strong>：是否仅仅计算数字型的columns，默认为False</li><li>na_option ：NaN值是否参与排序及如何排序，固定参数：keep top bottom</li><li>keep: NaN值保留原有位置</li><li>top: NaN值全部放在前边</li><li>bottom: NaN值全部放在最后</li><li><strong>ascending</strong>：设定升序排还是降序排，默认True升序</li><li><strong>pct</strong>：percent是否以排名的百分比显示排名（所有排名与最大排名的百分比），默认False</li><li>method：排名评分的计算方式，固定值参数，常用固定值如下：</li><li>average : 默认值，排名评分不连续；数值相同的评分一致，都为平均值</li><li>min : 排名评分不连续；数值相同的评分一致，都为最小值</li><li>max : 排名评分不连续；数值相同的评分一致，都为最大值</li><li>dense : 排名评分是连续的；数值相同的评分一致</li></ul></blockquote><pre><code class="properties">df2
+df2.rank()
+df2.rank(axis=0)
+df2.rank(numeric_only=True) # 只对数值类型的列进行统计
+df2.rank(ascending=False) # 降序
+df2.rank(pct=True) # 以最高分作为1，放回百分数形式的评分，pct参数默认为False
+</code></pre><p><img src="/posts/3f7f6b33/image-20220124010302102.png" alt="image-20220124010302102"></p><pre><code class="properties">df2.rank(method=&#39;average&#39;)
+df2.rank(method=&#39;min&#39;)
+df2.rank(method=&#39;max&#39;)
+df2.rank(method=&#39;dense&#39;)
+</code></pre><p><img src="/posts/3f7f6b33/image-20220124010717941.png" alt="image-20220124010717941"></p><p>rank使用详解</p><pre><code class="python">df7 = pd.DataFrame(&#123;
+    &#39;姓名&#39;:[&#39;小明&#39;, &#39;小美&#39;, &#39;小强&#39;, &#39;小兰&#39;],
+    &#39;成绩&#39;:[100, 90, 90, 80]
+&#125;)
+
+df7.rank()  # 等价于df7.rank(method=&#39;average&#39;, ascending=True)
+
+df7[&#39;成绩排名&#39;] = df7.成绩.rank(method=&#39;min&#39;, ascending=False)
+df7
+
+df7[&#39;成绩排名&#39;] = df7.成绩.rank(method=&#39;max&#39;, ascending=False)
+df7
+
+df7[&#39;成绩排名&#39;] = df7.成绩.rank(method=&#39;dense&#39;, ascending=False)
+df7
+
+最后一种希望大家重点掌握，其他几种搞清楚原理即可。
+</code></pre></li><li><p>6- 聚合函数:</p><blockquote><p>常用聚合函数有：</p><ul><li>min 最小值</li><li>max 最大值</li><li>mean 平均值</li><li>sum 求和</li><li>count 求个数</li></ul></blockquote><ul><li>min函数</li></ul><pre><code class="properties">df2.min()
+
+df2[&#39;year&#39;].min() 
+</code></pre><ul><li>max函数</li></ul><pre><code class="properties">df2.max()
+df2[&#39;year&#39;].max()
+</code></pre><ul><li>mean 平均值</li></ul><pre><code class="properties">df2.mean()
+df2[&#39;year&#39;].mean()
+df2[&#39;GDP&#39;].mean()
+</code></pre></li></ul><h1 id="七、【掌握】高级处理-缺失值处理"><a href="#七、【掌握】高级处理-缺失值处理" class="headerlink" title="七、【掌握】高级处理-缺失值处理"></a>七、【掌握】高级处理-缺失值处理</h1><h2 id="掌握内容-5"><a href="#掌握内容-5" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">fillna()：填充缺失值
+dropna(axis=0)：删除带有缺失值的行
+</code></pre><h2 id="如何处理NAN"><a href="#如何处理NAN" class="headerlink" title="如何处理NAN"></a>如何处理NAN</h2><ul><li><p>获取缺失值的标记方式(nan或者其他标记方式)</p></li><li><p>如果缺失值的标记方式是nan</p><ul><li>判断数据中是否包含nan：<ul><li>pd.isnull(df),</li><li>pd.notnull(df)</li></ul></li><li>存在缺失值nan:<ul><li>1、删除存在缺失值的:dropna(axis)<ul><li>注：不会修改原数据，需要接受返回值</li></ul></li><li>2、替换缺失值:fillna(value, inplace&#x3D;True)<ul><li>value:替换成的值</li><li>inplace:True:会修改原数据，False:不替换修改原数据，生成新的对象</li></ul></li></ul></li></ul></li><li><p>如果缺失值没有使用nan标记，比如使用”？”</p><ul><li>先替换‘?’为np.nan，然后继续处理</li></ul></li></ul><h2 id="电影数据的缺失值处理"><a href="#电影数据的缺失值处理" class="headerlink" title="电影数据的缺失值处理"></a>电影数据的缺失值处理</h2><ul><li>电影数据文件获取</li></ul><pre><code class="python"># 读取电影数据
+movie = pd.read_csv(&quot;data/movie.csv&quot;)
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831130641684.png" alt="image-20240831130641684"></p><h2 id="判断缺失值是否存在"><a href="#判断缺失值是否存在" class="headerlink" title="判断缺失值是否存在"></a>判断缺失值是否存在</h2><ul><li>pd.notnull(DataFrame对象)：等同于SQL语句中的 is not null</li></ul><pre><code>pd.notnull(movie)
+
+Rank    Title    Genre    Description    Director    Actors    Year    Runtime (Minutes)    Rating    Votes    Revenue (Millions)    Metascore
+0    True    True    True    True    True    True    True    True    True    True    True    True
+1    True    True    True    True    True    True    True    True    True    True    True    True
+2    True    True    True    True    True    True    True    True    True    True    True    True
+3    True    True    True    True    True    True    True    True    True    True    True    True
+4    True    True    True    True    True    True    True    True    True    True    True    True
+5    True    True    True    True    True    True    True    True    True    True    True    True
+6    True    True    True    True    True    True    True    True    True    True    True    True
+7    True    True    True    True    True    True    True    True    True    True    False    True
+</code></pre><ul><li>np.all(pd.notnull(DataFrame对象))</li></ul><ul><li>pd.isnull(DataFrame对象)：等同于SQL语句中的 is null</li></ul><h2 id="存在缺失值nan-并且是np-nan"><a href="#存在缺失值nan-并且是np-nan" class="headerlink" title="存在缺失值nan,并且是np.nan"></a>存在缺失值nan,并且是np.nan</h2><ul><li>1- 删除</li></ul><p>pandas删除缺失值，使用dropna的前提是，缺失值的类型必须是np.nan</p><pre><code class="python"># 不修改原数据
+movie.dropna()
+
+# 可以定义新的变量接受或者用原来的变量名
+data = movie.dropna()
+</code></pre><ul><li>2- 替换缺失值</li></ul><pre><code class="python"># 替换存在缺失值的样本的两列
+# 替换填充平均值，中位数
+ movie[&#39;Revenue (Millions)&#39;].fillna(movie[&#39;Revenue (Millions)&#39;].mean(), inplace=True)
+</code></pre><h2 id="不是缺失值nan，有默认标记的"><a href="#不是缺失值nan，有默认标记的" class="headerlink" title="不是缺失值nan，有默认标记的"></a>不是缺失值nan，有默认标记的</h2><p>数据是这样的：</p><p><img src="/posts/3f7f6b33/image-20240831130954530.png" alt="image-20240831130954530"></p><p><strong>处理思路分析：</strong></p><ul><li><p>1、先替换‘?’为np.nan</p><ul><li><p>df.replace(to_replace&#x3D;, value&#x3D;)</p><ul><li>to_replace:替换前的值</li><li>value:替换后的值</li></ul><pre><code class="python"># 替换特殊数据,然后对空值进行处理
+df = pd.read_csv(&quot;data/breast-cancer-wisconsin.data&quot;,encoding=&quot;UTF-8&quot;)
+# 链式编程
+df4 = df.replace(&quot;?&quot;,np.nan).dropna()
+df4
+</code></pre></li></ul></li></ul><h1 id="八、【熟悉】高级处理-数据合并"><a href="#八、【熟悉】高级处理-数据合并" class="headerlink" title="八、【熟悉】高级处理-数据合并"></a>八、【熟悉】高级处理-数据合并</h1><h2 id="掌握内容-6"><a href="#掌握内容-6" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">concat：等价于SQL中的union操作
+</code></pre><h2 id="pd-concat实现数据合并"><a href="#pd-concat实现数据合并" class="headerlink" title="pd.concat实现数据合并"></a>pd.concat实现数据合并</h2><ul><li>pd.concat([data1, data2], axis&#x3D;1)：等价于SQL中的union操作<ul><li>按照行或列进行合并</li></ul></li></ul><pre><code class="python"># 拼接concat
+&quot;&quot;&quot;
+    参数解释：
+        objs：参与拼接的数据。可以是DF对象，也可以是Series对象，可以两者混合
+        axis：0的时候在下面（也就是垂直方向）进行拼接；1的时候在后面（也就是水平方向）进行拼接
+&quot;&quot;&quot;
+con_1 = pd.concat(objs=[df1,df2], axis=0)
+con_1 = pd.concat(objs=[df1,df2[&quot;A&quot;]], axis=0)
+con_1 = pd.concat(objs=[df1,df2], axis=1)
+con_1
+</code></pre><h2 id="pd-merge"><a href="#pd-merge" class="headerlink" title="pd.merge"></a>pd.merge</h2><ul><li>pd.merge(left, right, how&#x3D;’inner’, on&#x3D;None)：等价于SQL中的join操作<ul><li>可以指定按照两组数据的共同键值对合并或者左右各自</li><li><code>left</code>: DataFrame</li><li><code>right</code>: 另一个DataFrame</li><li><code>on</code>: 指定的共同键</li><li>how:按照什么方式连接</li></ul></li></ul><table><thead><tr><th>Merge method</th><th>SQL Join Name</th><th>Description</th></tr></thead><tbody><tr><td><code>left</code></td><td><code>LEFT OUTER JOIN</code></td><td>Use keys from left frame only</td></tr><tr><td><code>right</code></td><td><code>RIGHT OUTER JOIN</code></td><td>Use keys from right frame only</td></tr><tr><td><code>outer</code></td><td><code>FULL OUTER JOIN</code></td><td>Use union of keys from both frames</td></tr><tr><td><code>inner</code></td><td><code>INNER JOIN</code></td><td>Use intersection of keys from both frames</td></tr></tbody></table><p>内连接：</p><pre><code class="python">left = pd.DataFrame(&#123;&#39;key1&#39;: [&#39;K0&#39;, &#39;K0&#39;, &#39;K1&#39;, &#39;K2&#39;],
+                        &#39;key2&#39;: [&#39;K0&#39;, &#39;K1&#39;, &#39;K0&#39;, &#39;K1&#39;],
+                        &#39;A&#39;: [&#39;A0&#39;, &#39;A1&#39;, &#39;A2&#39;, &#39;A3&#39;],
+                        &#39;B&#39;: [&#39;B0&#39;, &#39;B1&#39;, &#39;B2&#39;, &#39;B3&#39;]&#125;)
+
+right = pd.DataFrame(&#123;&#39;key1&#39;: [&#39;K0&#39;, &#39;K1&#39;, &#39;K1&#39;, &#39;K2&#39;],
+                        &#39;key2&#39;: [&#39;K0&#39;, &#39;K0&#39;, &#39;K0&#39;, &#39;K0&#39;],
+                        &#39;C&#39;: [&#39;C0&#39;, &#39;C1&#39;, &#39;C2&#39;, &#39;C3&#39;],
+                        &#39;D&#39;: [&#39;D0&#39;, &#39;D1&#39;, &#39;D2&#39;, &#39;D3&#39;]&#125;)
+
+# 默认内连接
+result = pd.merge(left, right, on=[&#39;key1&#39;, &#39;key2&#39;])  # on t1.key1=t2.key1 and t1.key2=t2.key2
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831231631642.png" alt="image-20240831231631642"></p><p>左连接</p><pre><code class="python">result = pd.merge(left, right, how=&#39;left&#39;, on=[&#39;key1&#39;, &#39;key2&#39;])
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831231730179.png" alt="image-20240831231730179"></p><p>右连接</p><pre><code class="python">result = pd.merge(left, right, how=&#39;right&#39;, on=[&#39;key1&#39;, &#39;key2&#39;])
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831231751903.png" alt="image-20240831231751903"></p><p>外连接</p><pre><code class="python">result = pd.merge(left, right, how=&#39;outer&#39;, on=[&#39;key1&#39;, &#39;key2&#39;])
+</code></pre><p><img src="/posts/3f7f6b33/image-20240831231814065.png" alt="image-20240831231814065"></p><h1 id="九、【理解】高级处理-数据分组"><a href="#九、【理解】高级处理-数据分组" class="headerlink" title="九、【理解】高级处理-数据分组"></a>九、【理解】高级处理-数据分组</h1><h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><ul><li>加载优衣库的销售数据集，包含了不同城市优衣库门店的所有产品类别的销售记录，数据字段说明如下<ul><li>store_id 门店随机id</li><li>city 城市</li><li>channel 销售渠道 网购自提 门店购买</li><li>gender_group 客户性别 男女</li><li>age_group 客户年龄段</li><li>wkd_ind 购买发生的时间（周末，周间）</li><li>product 产品类别</li><li>customer 客户数量</li><li>revenue 销售金额</li><li>order 订单数量</li><li>quant 购买产品的数量</li><li>unit_cost 成本（制作+运营）</li></ul></li></ul><pre><code class="properties"># 导包 加载数据集
+import pandas as pd 
+df = pd.read_csv(&#39;data/uniqlo.csv&#39;)
+</code></pre><h2 id="groupby分组聚合"><a href="#groupby分组聚合" class="headerlink" title="groupby分组聚合"></a>groupby分组聚合</h2><ul><li><p>1- df.groupby分组函数返回分组对象</p><p>【基于一列进行分组】</p></li></ul><pre><code class="python"># 基于顾客性别分组
+gs = df.groupby([&#39;gender_group&#39;])
+gs
+gs[&#39;city&#39;]
+# 返回结果如下
+&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000001B1DA988B80&gt;
+&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x000001B1DB2B4FA0&gt;
+</code></pre><p>​ 【基于多列进行分组】</p><pre><code class="python"># 基于顾客性别、不同城市分组
+gs2 = df.groupby([&#39;gender_group&#39;, &#39;city&#39;])
+gs2
+# 返回结果如下
+&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000001B1DB24F1F0&gt;
+</code></pre><ul><li><p>2- 分组后获取各个组内的数据</p><ul><li>2.1 取出每组第一条或最后一条数据</li></ul><pre><code class="properties">gs2 = df.groupby([&#39;gender_group&#39;, &#39;channel&#39;])
+gs2.first() # 取出每组第一条数据
+gs2.last() # 取出每组最后一条数据
+</code></pre><p><img src="/posts/3f7f6b33/image-20220124012357765.png" alt="image-20220124012357765"></p><ul><li>2.2 - 按分组依据获取其中一组</li></ul><pre><code class="python">gs2.get_group((&#39;Female&#39;, &#39;线上&#39;))
+</code></pre><p><img src="/posts/3f7f6b33/image-20220124012526559.png" alt="image-20220124012526559"></p></li><li><p>3- 分组聚合</p><ul><li>格式:分组后对多列分别使用不同的聚合函数。agg-&gt;aggregate</li></ul><pre><code class="python">df.groupby([&#39;列名1&#39;, &#39;列名2&#39;]).agg(&#123;
+    &#39;指定列1&#39;:&#39;聚合函数名&#39;, 
+    &#39;指定列2&#39;:&#39;聚合函数名&#39;, 
+    &#39;指定列3&#39;:&#39;聚合函数名&#39;
+&#125;)
+</code></pre><ul><li>按城市和线上线下划分，分别计算销售金额的平均值、成本的总和</li></ul><pre><code class="python">agg_1 = df.groupby([&quot;city&quot;,&quot;channel&quot;]).agg(
+    &#123;
+        &quot;revenue&quot;:&quot;mean&quot;,
+        &quot;unit_cost&quot;:&quot;sum&quot;
+    &#125;
+)
+agg_1
+</code></pre></li></ul><p><strong>分组聚合过滤操作</strong>：&#x3D;&#x3D;Pandas不支持 groupby().agg().filter&#x3D;&#x3D;</p><ul><li>格式:</li></ul><pre><code class="python">df.groupby([&#39;列名1&#39;,...]).filter(
+   lambda x: dosomething returun True or False
+)
+</code></pre><pre><code class="python">案例: 按城市分组，查询每组销售金额平均值大于200的全部数据
+df.groupby([&#39;city&#39;]).filter(lambda d: d[&#39;revenue&#39;].mean() &gt; 200)
+
+df.groupby([&#39;city&#39;])[&#39;revenue&#39;].filter(lambda s: s.mean() &gt; 200)
+</code></pre><h1 id="十、【了解】高级处理-交叉表与透视表"><a href="#十、【了解】高级处理-交叉表与透视表" class="headerlink" title="十、【了解】高级处理-交叉表与透视表"></a>十、【了解】高级处理-交叉表与透视表</h1><h2 id="交叉表与透视表有什么作用？"><a href="#交叉表与透视表有什么作用？" class="headerlink" title="交叉表与透视表有什么作用？"></a>交叉表与透视表有什么作用？</h2><p>探究股票的涨跌与星期几有关？</p><p>以下图当中表示，week代表星期几，1,0代表这一天股票的涨跌幅是好还是坏，里面的数据代表比例</p><p>可以理解为所有时间为星期一等等的数据当中涨跌幅好坏的比例</p><p><img src="/posts/3f7f6b33/image-20260525165533772.png" alt="image-20260525165533772"></p><p><img src="/posts/3f7f6b33/image-20260525165613241.png" alt="image-20260525165613241"></p><ul><li><p>交叉表：</p><p>交叉表用于计算<strong>一列数据对于另外一列数据的分组个数</strong>(用于统计分组频率的特殊透视表)</p><ul><li>pd.crosstab(value1, value2)</li></ul></li><li><p>透视表：</p><p>透视表是将原有的DataFrame的列分别作为行索引和列索引，然后对指定的列应用<strong>聚集函数</strong></p><ul><li>data.pivot_table(）</li><li>DataFrame.pivot_table([], index&#x3D;[])</li></ul></li></ul><h2 id="交叉表"><a href="#交叉表" class="headerlink" title="交叉表"></a>交叉表</h2><pre><code class="python">import pandas as pd
+
+# 创建一个示例数据集
+data = &#123;
+    &#39;性别&#39;: [&#39;男&#39;, &#39;女&#39;, &#39;男&#39;, &#39;女&#39;, &#39;男&#39;, &#39;女&#39;, &#39;女&#39;, &#39;男&#39;],
+    &#39;购买&#39;: [&#39;是&#39;, &#39;否&#39;, &#39;是&#39;, &#39;是&#39;, &#39;否&#39;, &#39;否&#39;, &#39;是&#39;, &#39;否&#39;]
+&#125;
+
+df = pd.DataFrame(data)
+
+# 创建交叉表
+crosstab = pd.crosstab(df[&#39;性别&#39;], df[&#39;购买&#39;])
+print(crosstab)
+
+购买  否  是
+性别        
+女    2   2
+男    2   2
+</code></pre><h2 id="透视表"><a href="#透视表" class="headerlink" title="透视表"></a>透视表</h2><pre><code class="python">import pandas as pd
+
+data = &#123;
+    &#39;性别&#39;: [&#39;男&#39;, &#39;女&#39;, &#39;男&#39;, &#39;女&#39;, &#39;男&#39;, &#39;女&#39;],
+    &#39;购买&#39;: [&#39;是&#39;, &#39;否&#39;, &#39;是&#39;, &#39;是&#39;, &#39;否&#39;, &#39;否&#39;],
+    &#39;金额&#39;: [100, 150, 200, 130, 160, 120]
+&#125;
+df = pd.DataFrame(data)
+
+# 创建透视表
+pivot_table = pd.pivot_table(df, values=&#39;金额&#39;, index=&#39;性别&#39;, columns=&#39;购买&#39;, aggfunc=&#39;mean&#39;)
+print(pivot_table)
+
+购买      否     是
+性别             
+女   135.0  130.0
+男   180.0  150.0
+</code></pre><h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><h3 id="数据准备-1"><a href="#数据准备-1" class="headerlink" title="数据准备"></a>数据准备</h3><ul><li>准备两列数据，星期数据以及涨跌幅是好是坏数据</li><li>进行交叉表计算</li></ul><pre><code class="python"># 寻找星期几跟股票张得的关系
+# 1、先把对应的日期找到星期几
+date = pd.to_datetime(data.index).weekday
+data[&#39;week&#39;] = date
+
+# 2、假如把p_change按照大小去分个类0为界限
+data[&#39;posi_neg&#39;] = np.where(data[&#39;p_change&#39;] &gt; 0, 1, 0)
+
+# 通过交叉表找寻两列数据的关系
+count = pd.crosstab(data[&#39;week&#39;], data[&#39;posi_neg&#39;])
+</code></pre><p>但是我们看到count只是每个星期日子的好坏天数，并没有得到比例，该怎么去做？</p><ul><li>对于每个星期一等的总天数求和，运用除法运算求出比例</li></ul><pre><code class="python"># 算数运算，先求和
+sum = count.sum(axis=1)
+
+# 进行相除操作，得出比例
+pro = count.div(sum, axis=0)
+</code></pre><h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><p>使用plot画出这个比例，使用stacked的柱状图</p><pre><code class="python">pro.plot(kind=&#39;bar&#39;, stacked=True)
+plt.show()
+</code></pre><h3 id="使用pivot-table-透视表-实现"><a href="#使用pivot-table-透视表-实现" class="headerlink" title="使用pivot_table(透视表)实现"></a>使用pivot_table(透视表)实现</h3><p>使用透视表，刚才的过程更加简单</p><pre><code class="python"># 通过透视表，将整个过程变成更简单一些
+data.pivot_table([&#39;posi_neg&#39;], index=&#39;week&#39;)
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>交叉表和透视表的区别：</p><ul><li><p>交叉表cross_tab：功能简单，适合处理简单任务</p></li><li><p>透视表pivot_table：功能强大，适合复杂任务</p></li><li><p>如果你的目标是复杂的数值汇总，请使用 <code>pivot_table</code>；如果你的目标是快速查看分类数据的频数或比例分布，<code>crosstab</code> 会更高效、更直观</p></li></ul></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>程序员青阳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/3f7f6b33/">https://heliufang.github.io/posts/3f7f6b33/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">322.7k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script>var element=null;layui.use(["element","layer"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>'),$("#article img").on("click",function(){$(this).attr("src"),$(this).attr("alt");var e=[],o=($("#article img").each(function(o){e.push({alt:$(this).attr("alt")||"图片"+(o+1),src:$(this).attr("src")})}),$(this).index());layer.photos({photos:{title:"图片预览",id:123,start:o,data:e},shade:.7,anim:5})}),$("#mobileTocToggle").on("click",function(){$("#mobileTocPanel").addClass("active"),$("#mobileTocMask").addClass("active"),$("body").css("overflow","hidden")}),$("#mobileTocClose, #mobileTocMask").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")}),$("#mobileTocBody .toc-link").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")})})</script></html>

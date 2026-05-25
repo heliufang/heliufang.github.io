@@ -1,0 +1,449 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>程序员青阳</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="程序员青阳" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 程序员青阳</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="mobile-toc-toggle hide-md hide-lg" id="mobileTocToggle"><i class="layui-icon layui-icon-list"></i></div><div class="mobile-toc-panel hide-md" id="mobileTocPanel"><div class="mobile-toc-header"><span><i class="layui-icon layui-icon-align-center"></i> 本文目录</span> <i class="layui-icon layui-icon-close" id="mobileTocClose"></i></div><div class="mobile-toc-body" id="mobileTocBody"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Numpy"><span class="toc-text">Numpy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91Numpy%E4%BC%98%E5%8A%BF"><span class="toc-text">一、【了解】Numpy优势</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy%E4%BB%8B%E7%BB%8D"><span class="toc-text">Numpy介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E4%BB%8B%E7%BB%8D"><span class="toc-text">ndarray介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E4%B8%8EPython%E5%8E%9F%E7%94%9Flist%E8%BF%90%E7%AE%97%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94"><span class="toc-text">ndarray与Python原生list运算效率对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-text">ndarray的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9D%97%E9%A3%8E%E6%A0%BC"><span class="toc-text">内存块风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray%E6%94%AF%E6%8C%81%E5%B9%B6%E8%A1%8C%E5%8C%96%E8%BF%90%E7%AE%97%EF%BC%88%E5%90%91%E9%87%8F%E5%8C%96%E8%BF%90%E7%AE%97%EF%BC%89"><span class="toc-text">ndarray支持并行化运算（向量化运算）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E7%8E%87%E8%BF%9C%E9%AB%98%E4%BA%8E%E7%BA%AFPython%E4%BB%A3%E7%A0%81"><span class="toc-text">效率远高于纯Python代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ndarray%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">二、ndarray数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">ndarray的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="toc-text">ndarray的形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">ndarray的类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">三、基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-1"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">生成数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%900%E5%92%8C1%E7%9A%84%E6%95%B0%E7%BB%84"><span class="toc-text">生成0和1的数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E7%BB%84%E7%94%9F%E6%88%90"><span class="toc-text">从现有数组生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E6%95%B0%E7%BB%84"><span class="toc-text">生成固定范围的数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#np-linspace-start-stop-num-endpoint"><span class="toc-text">np.linspace (start, stop, num, endpoint)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#np-arange-start-stop-step-dtype"><span class="toc-text">np.arange(start,stop, step, dtype)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#np-logspace-start-stop-num"><span class="toc-text">np.logspace(start,stop, num)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%BB%84"><span class="toc-text">生成随机数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D"><span class="toc-text">使用模块介绍</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%B4%A2%E5%BC%95%E3%80%81%E5%88%87%E7%89%87"><span class="toc-text">数组的索引、切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A2%E7%8A%B6%E4%BF%AE%E6%94%B9"><span class="toc-text">形状修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-reshape-shape"><span class="toc-text">ndarray.reshape(shape)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#np-resize-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1-new-shape"><span class="toc-text">np.resize(数组对象, new_shape)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-T"><span class="toc-text">ndarray.T</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E4%BF%AE%E6%94%B9"><span class="toc-text">类型修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-astype-type"><span class="toc-text">ndarray.astype(type)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-tobytes"><span class="toc-text">ndarray.tobytes()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%8E%BB%E9%87%8D"><span class="toc-text">数组的去重</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#np-unique"><span class="toc-text">np.unique()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81ndarray%E8%BF%90%E7%AE%97"><span class="toc-text">四、ndarray运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-2"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">逻辑运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-text">通用判断函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#np-where%EF%BC%88%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89"><span class="toc-text">np.where（三元运算符）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E8%BF%90%E7%AE%97"><span class="toc-text">统计运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%8C%87%E6%A0%87"><span class="toc-text">统计指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%BB%9F%E8%AE%A1%E8%BF%90%E7%AE%97"><span class="toc-text">案例：学生成绩统计运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E7%BB%84%E9%97%B4%E8%BF%90%E7%AE%97"><span class="toc-text">五、数组间运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-3"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">数组与数的运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-text">矩阵运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">【了解】数组与数组的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-text">思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6"><span class="toc-text">广播机制</span></a></li></ol></li></ol></li></ol></div></div><div class="mobile-toc-mask hide-md" id="mobileTocMask"></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head2.jpg"><div class="name">淡泊明志，宁静致远</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">75</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">11</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">70</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">322.7k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">20.19.6</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2026-05-25 17:11:23"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/9ebec7b8/">1.matplotlib</a></li><li><a href="/posts/fa288682/">2.numpy</a></li><li><a href="/posts/3f7f6b33/">3.pandas</a></li><li><a href="/posts/9520183a/">4.mysql</a></li><li><a href="/posts/53d0684b/">5.Linux</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">3</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Numpy"><span class="toc-text">Numpy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91Numpy%E4%BC%98%E5%8A%BF"><span class="toc-text">一、【了解】Numpy优势</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Numpy%E4%BB%8B%E7%BB%8D"><span class="toc-text">Numpy介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E4%BB%8B%E7%BB%8D"><span class="toc-text">ndarray介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E4%B8%8EPython%E5%8E%9F%E7%94%9Flist%E8%BF%90%E7%AE%97%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94"><span class="toc-text">ndarray与Python原生list运算效率对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-text">ndarray的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9D%97%E9%A3%8E%E6%A0%BC"><span class="toc-text">内存块风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray%E6%94%AF%E6%8C%81%E5%B9%B6%E8%A1%8C%E5%8C%96%E8%BF%90%E7%AE%97%EF%BC%88%E5%90%91%E9%87%8F%E5%8C%96%E8%BF%90%E7%AE%97%EF%BC%89"><span class="toc-text">ndarray支持并行化运算（向量化运算）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E7%8E%87%E8%BF%9C%E9%AB%98%E4%BA%8E%E7%BA%AFPython%E4%BB%A3%E7%A0%81"><span class="toc-text">效率远高于纯Python代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ndarray%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">二、ndarray数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">ndarray的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E5%BD%A2%E7%8A%B6"><span class="toc-text">ndarray的形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ndarray%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">ndarray的类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-text">三、基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-1"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">生成数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%900%E5%92%8C1%E7%9A%84%E6%95%B0%E7%BB%84"><span class="toc-text">生成0和1的数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%8E%B0%E6%9C%89%E6%95%B0%E7%BB%84%E7%94%9F%E6%88%90"><span class="toc-text">从现有数组生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E6%95%B0%E7%BB%84"><span class="toc-text">生成固定范围的数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#np-linspace-start-stop-num-endpoint"><span class="toc-text">np.linspace (start, stop, num, endpoint)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#np-arange-start-stop-step-dtype"><span class="toc-text">np.arange(start,stop, step, dtype)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#np-logspace-start-stop-num"><span class="toc-text">np.logspace(start,stop, num)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%BB%84"><span class="toc-text">生成随机数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D"><span class="toc-text">使用模块介绍</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E7%B4%A2%E5%BC%95%E3%80%81%E5%88%87%E7%89%87"><span class="toc-text">数组的索引、切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A2%E7%8A%B6%E4%BF%AE%E6%94%B9"><span class="toc-text">形状修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-reshape-shape"><span class="toc-text">ndarray.reshape(shape)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#np-resize-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1-new-shape"><span class="toc-text">np.resize(数组对象, new_shape)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-T"><span class="toc-text">ndarray.T</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E4%BF%AE%E6%94%B9"><span class="toc-text">类型修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-astype-type"><span class="toc-text">ndarray.astype(type)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ndarray-tobytes"><span class="toc-text">ndarray.tobytes()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%8E%BB%E9%87%8D"><span class="toc-text">数组的去重</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#np-unique"><span class="toc-text">np.unique()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81ndarray%E8%BF%90%E7%AE%97"><span class="toc-text">四、ndarray运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-2"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><span class="toc-text">逻辑运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-text">通用判断函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#np-where%EF%BC%88%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%89"><span class="toc-text">np.where（三元运算符）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E8%BF%90%E7%AE%97"><span class="toc-text">统计运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%8C%87%E6%A0%87"><span class="toc-text">统计指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%BB%9F%E8%AE%A1%E8%BF%90%E7%AE%97"><span class="toc-text">案例：学生成绩统计运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E7%BB%84%E9%97%B4%E8%BF%90%E7%AE%97"><span class="toc-text">五、数组间运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%8C%E6%8F%A1%E5%86%85%E5%AE%B9-3"><span class="toc-text">掌握内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">数组与数的运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-text">矩阵运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">【了解】数组与数组的运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-text">思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6"><span class="toc-text">广播机制</span></a></li></ol></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">python</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">numpy</span></span></p><h1>numpy</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2026-05-25 16:49:28 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 5.8k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 28分钟</span></p></div><div id="article"><h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><h1 id="一、【了解】Numpy优势"><a href="#一、【了解】Numpy优势" class="headerlink" title="一、【了解】Numpy优势"></a>一、【了解】Numpy优势</h1><h2 id="Numpy介绍"><a href="#Numpy介绍" class="headerlink" title="Numpy介绍"></a>Numpy介绍</h2><p>Numpy（Numerical Python）是一个开源的Python科学计算库，<strong>用于快速处理任意维度的数组</strong>。</p><p>Numpy<strong>支持常见的数组和矩阵操作</strong>。对于同样的数值计算任务，使用Numpy比直接使用Python要简洁的多。</p><p>Numpy<strong>使用ndarray对象来处理多维数组</strong>，该对象是一个快速而灵活的大数据容器。</p><p>ndarray：n dimension array</p><h2 id="ndarray介绍"><a href="#ndarray介绍" class="headerlink" title="ndarray介绍"></a>ndarray介绍</h2><pre><code class="python">NumPy provides an N-dimensional array type, the ndarray, 
+which describes a collection of “items” of the same type.
+</code></pre><p>NumPy提供了一个<strong>N维数组类型ndarray</strong>，它描述了<strong>相同类型</strong>的“items”的集合。</p><p><img src="/posts/fa288682/image-20260525165020850.png" alt="image-20260525165020850"></p><p>用ndarray进行存储：</p><pre><code class="python">import numpy as np
+
+# 创建ndarray
+score = np.array(
+[[80, 89, 86, 67, 79],
+[78, 97, 89, 67, 81],
+[90, 94, 78, 67, 74],
+[91, 91, 90, 67, 69],
+[76, 87, 75, 67, 86],
+[70, 79, 84, 67, 84],
+[94, 92, 93, 67, 64],
+[86, 85, 83, 67, 80]])
+
+score
+</code></pre><p>返回结果：</p><pre><code class="python">array([[80, 89, 86, 67, 79],
+       [78, 97, 89, 67, 81],
+       [90, 94, 78, 67, 74],
+       [91, 91, 90, 67, 69],
+       [76, 87, 75, 67, 86],
+       [70, 79, 84, 67, 84],
+       [94, 92, 93, 67, 64],
+       [86, 85, 83, 67, 80]])
+</code></pre><p><strong>提问:</strong></p><p><strong>使用Python列表可以存储一维数组，通过列表的嵌套可以实现多维数组，那么为什么还需要使用Numpy的ndarray呢？</strong></p><h2 id="ndarray与Python原生list运算效率对比"><a href="#ndarray与Python原生list运算效率对比" class="headerlink" title="ndarray与Python原生list运算效率对比"></a>ndarray与Python原生list运算效率对比</h2><p>在这里我们通过一段代码运行来体会到ndarray的好处</p><pre><code class="python">import random
+import time
+import numpy as np
+
+a = []
+for i in range(100000000):
+    a.append(random.random())
+
+start = time.time()
+sum(a)
+print(&quot;python运行耗时：&quot;,time.time()-start)
+
+print(&quot;-&quot;*50)
+
+b = np.array(a)
+
+start = time.time()
+np.sum(b)
+print(&quot;numpy运行耗时：&quot;,time.time()-start)
+</code></pre><p>其中第一个时间显示的是使用原生Python计算时间,第二个内容是使用numpy计算时间:</p><pre><code>python运行耗时： 0.7574722766876221
+--------------------------------------------------
+numpy运行耗时： 0.11530804634094238
+</code></pre><p>从中我们看到ndarray的计算速度要快很多，节约了时间。</p><p><strong>机器学习的最大特点就是大量的数据运算</strong>，那么如果没有一个快速的解决方案，那可能现在python也在机器学习领域达不到好的效果。</p><p><img src="/posts/fa288682/%E8%AE%A1%E7%AE%97%E9%87%8F%E5%A4%A7.png" alt="计算量大"></p><p>Numpy专门针对ndarray的操作和运算进行了设计，所以数组的存储效率和输入输出性能远优于Python中的嵌套列表，数组越大，Numpy的优势就越明显。</p><p><strong>思考：</strong></p><p><strong>ndarray为什么可以这么快？</strong></p><h2 id="ndarray的优势"><a href="#ndarray的优势" class="headerlink" title="ndarray的优势"></a>ndarray的优势</h2><h3 id="内存块风格"><a href="#内存块风格" class="headerlink" title="内存块风格"></a>内存块风格</h3><p>ndarray到底跟原生python列表有什么不同呢，请看一张图：</p><p><img src="/posts/fa288682/image-20260525165059671.png" alt="image-20260525165059671"></p><p>从图中我们可以看出ndarray在存储数据的时候，数据与数据的地址都是连续的，这样就给使得批量操作数组元素时速度更快。</p><p>这是因为ndarray中的所有元素的类型都是相同的，而Python列表中的元素类型是任意的，所以ndarray在存储元素时内存可以连续，而python原生list就只能通过寻址方式找到下一个元素，这虽然也导致了在通用性能方面Numpy的ndarray不及Python原生list，但在科学计算中，Numpy的ndarray就可以省掉很多循环语句，代码使用方面比Python原生list简单的多。</p><h3 id="ndarray支持并行化运算（向量化运算）"><a href="#ndarray支持并行化运算（向量化运算）" class="headerlink" title="ndarray支持并行化运算（向量化运算）"></a>ndarray支持并行化运算（向量化运算）</h3><p>numpy内置了并行运算功能，当系统有多个核心时，做某种计算时，numpy会自动做并行计算</p><h3 id="效率远高于纯Python代码"><a href="#效率远高于纯Python代码" class="headerlink" title="效率远高于纯Python代码"></a>效率远高于纯Python代码</h3><p>Numpy底层使用C语言编写，内部解除了GIL（全局解释器锁），其对数组的操作速度不受Python解释器的限制，所以，其效率远高于纯Python代码。</p><h1 id="二、ndarray数据结构"><a href="#二、ndarray数据结构" class="headerlink" title="二、ndarray数据结构"></a>二、ndarray数据结构</h1><h2 id="掌握内容"><a href="#掌握内容" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">属性
+    shape
+    dtype
+</code></pre><h2 id="ndarray的属性"><a href="#ndarray的属性" class="headerlink" title="ndarray的属性"></a>ndarray的属性</h2><p>数组属性反映了数组本身固有的信息。</p><table><thead><tr><th align="center">属性名字</th><th align="center">属性解释</th></tr></thead><tbody><tr><td align="center"><strong>ndarray.shape</strong></td><td align="center">数组维度的元组</td></tr><tr><td align="center">ndarray.ndim</td><td align="center">数组维数</td></tr><tr><td align="center">ndarray.size</td><td align="center">数组中的元素数量（个数）</td></tr><tr><td align="center">ndarray.itemsize</td><td align="center">一个数组元素的长度（字节）</td></tr><tr><td align="center"><strong>ndarray.dtype</strong></td><td align="center">数组元素的类型</td></tr></tbody></table><h2 id="ndarray的形状"><a href="#ndarray的形状" class="headerlink" title="ndarray的形状"></a>ndarray的形状</h2><p>首先创建一些数组。</p><pre><code class="python">arr1 = np.array([11, 22, 33, 44])
+print(&quot;arr1的维度个数：&quot;,arr1.ndim)
+print(&quot;arr1的形状：&quot;,arr1.shape)    # 4个元素
+print(&quot;arr1的元素数据类型：&quot;,arr1.dtype)
+
+
+arr2 = np.array([
+    [1,2,3],
+    [4,5,6]
+])
+print(&quot;arr2的维度个数：&quot;,arr2.ndim) # 2
+print(&quot;arr2的形状：&quot;,arr2.shape) # 2行3列
+print(&quot;arr2的元素数据类型：&quot;,arr2.dtype)
+
+
+arr3 = np.array([
+    [
+        [1,2,3],
+        [4,5,6]
+    ],
+    [
+        [1,2,3],
+        [4,5,6]
+    ]
+])
+print(&quot;arr3的元素个数：&quot;,arr3.size)   # 12个元素
+print(&quot;arr3的维度个数：&quot;,arr3.ndim) # 3
+print(&quot;arr3的形状：&quot;,arr3.shape) # 2,2,3
+print(&quot;arr3的元素数据类型：&quot;,arr3.dtype)
+</code></pre><p>如何理解数组的形状？</p><p>二维数组：</p><p><img src="/posts/fa288682/image-20260525165119841.png" alt="image-20260525165119841"></p><p>三维数组：</p><p><img src="/posts/fa288682/image-20260525165131498.png" alt="image-20260525165131498"></p><h2 id="ndarray的类型"><a href="#ndarray的类型" class="headerlink" title="ndarray的类型"></a>ndarray的类型</h2><table><thead><tr><th align="center">名称</th><th align="center">描述</th><th align="center">简写</th></tr></thead><tbody><tr><td align="center">np.bool</td><td align="center">用一个字节存储的布尔类型（True或False）</td><td align="center">‘b’</td></tr><tr><td align="center">np.int8</td><td align="center">tinyint一个字节大小，-128 至 127</td><td align="center">‘i’</td></tr><tr><td align="center">np.int16</td><td align="center">smallint整数，-32768 至 32767</td><td align="center">‘i2’</td></tr><tr><td align="center">np.int32</td><td align="center">int整数，-2^31​ 至 2^32 -1</td><td align="center">‘i4’</td></tr><tr><td align="center">np.int64</td><td align="center">bigint整数，-2^63 至 2^63 - 1</td><td align="center">‘i8’</td></tr><tr><td align="center">np.uint8</td><td align="center">tinyint unsigned&#x3D;&#x3D;无符号&#x3D;&#x3D;整数，0 至 255</td><td align="center">‘u’</td></tr><tr><td align="center">np.uint16</td><td align="center">smallint unsigned无符号整数，0 至 65535</td><td align="center">‘u2’</td></tr><tr><td align="center">np.uint32</td><td align="center">无符号整数，0 至 2^32 - 1</td><td align="center">‘u4’</td></tr><tr><td align="center">np.uint64</td><td align="center">无符号整数，0 至 2^64 - 1</td><td align="center">‘u8’</td></tr><tr><td align="center">np.float16</td><td align="center">半精度浮点数：16位，正负号1位，指数5位，精度10位</td><td align="center">‘f2’</td></tr><tr><td align="center">np.float32</td><td align="center">float单精度浮点数：32位，正负号1位，指数8位，精度23位</td><td align="center">‘f4’</td></tr><tr><td align="center">np.float64</td><td align="center">double双精度浮点数：64位，正负号1位，指数11位，精度52位</td><td align="center">‘f8’</td></tr><tr><td align="center">np.complex64</td><td align="center">复数，分别用两个32位浮点数表示实部和虚部</td><td align="center">‘c8’</td></tr><tr><td align="center">np.complex128</td><td align="center">复数，分别用两个64位浮点数表示实部和虚部</td><td align="center">‘c16’</td></tr><tr><td align="center"><strong>np.object_</strong></td><td align="center">python对象</td><td align="center">‘O’</td></tr><tr><td align="center"><strong>np.string_</strong></td><td align="center">字符串</td><td align="center">‘S’</td></tr><tr><td align="center">np.unicode_</td><td align="center">unicode类型（字符串）</td><td align="center">‘U’</td></tr></tbody></table><p>常用的几个：</p><p>无符号：只有正数，没有负数，也就是&gt;&#x3D;0</p><p>**<code>np.int32</code>**：32位整数，是最常用的整数类型，适用于大多数整数运算。</p><p>**<code>np.float64</code>**：64位浮点数，是默认的浮点数类型，广泛用于科学计算。</p><p>**<code>np.bool_</code>**：布尔类型，用于表示True或False，常用于条件判断和逻辑操作。</p><p>**<code>np.string_/np.unicode_</code>**：定长字符串类型，常用于二进制数据 或 多语言文本数据</p><p>**<code>np.object_</code>**：用于存储任意Python对象，特别是在处理混合类型数据或需要灵活性的时候。</p><blockquote><p><code>np.string_</code>只支持ASCII编码，不支持Unicode，而<code>np.unicode_</code>支持Unicode字符。</p><p><code>np.string_</code>更适合处理旧有的二进制数据，而<code>np.unicode_</code>更适合处理现代文本数据。</p></blockquote><p><strong>创建数组的时候指定类型</strong></p><pre><code class="python"># 小数转成整数，直接舍弃所有的小数内容，只保留整数部分
+arr5 = np.array([[1.999, 2.123, 3.456],[4.5, 5.6, 6.7]], dtype=np.int32)
+arr5,arr5.dtype
+
+# S15：S是string的首字母；15表示的是最长字符串的长度
+arr6 = np.array([&#39;python&#39;, &#39;tensorflow&#39;, &#39;scikit-learnabc&#39;, &#39;numpy&#39;], dtype=np.string_)
+arr6,arr6.dtype
+
+arr7 = np.array([[1, 2, 3],[4, 5, 6]], dtype=np.double) # double就是float64
+arr7,arr7.dtype
+</code></pre><ul><li>注意：若不指定，整数默认int64，小数默认float64</li></ul><h1 id="三、基本操作"><a href="#三、基本操作" class="headerlink" title="三、基本操作"></a>三、基本操作</h1><h2 id="掌握内容-1"><a href="#掌握内容-1" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">生成数组
+    ones
+    zeros
+    array
+    arange
+    np.random.randint
+    
+索引切片
+    二维数组[行索引开始:行索引结束:步长, 列索引开始:列索引结束:步长]，注意是左闭右开的区间
+    
+形状修改
+    reshape
+    T
+    
+去重
+    unique
+</code></pre><h2 id="生成数组的方法"><a href="#生成数组的方法" class="headerlink" title="生成数组的方法"></a>生成数组的方法</h2><h3 id="生成0和1的数组"><a href="#生成0和1的数组" class="headerlink" title="生成0和1的数组"></a>生成0和1的数组</h3><ul><li>**np.ones(shape, dtype)**：创建形状指定的，并且元素值都为1的数组</li><li>np.ones_like(a, dtype) ：用于创建一个与数组 <code>a</code> 形状相同且所有元素都为1的数组的函数。</li><li>**np.zeros(shape, dtype)**：创建形状指定的，并且元素值都为0的数组</li><li>np.zeros_like(a, dtype) : ：用于创建一个与数组 <code>a</code> 形状相同且所有元素都为0的数组的函数。</li></ul><pre><code class="python">ones = np.ones([4,8])
+ones
+</code></pre><p>返回结果:</p><pre><code class="python">array([[1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1.],
+       [1., 1., 1., 1., 1., 1., 1., 1.]])
+</code></pre><pre><code class="python">np.zeros_like(ones)
+</code></pre><p>返回结果:</p><pre><code class="python">array([[0., 0., 0., 0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0., 0., 0., 0.]])
+</code></pre><h3 id="从现有数组生成"><a href="#从现有数组生成" class="headerlink" title="从现有数组生成"></a>从现有数组生成</h3><ul><li>**np.array(object, dtype)**：新建一个，相当于深拷贝</li></ul><ul><li>**np.asarray(a, dtype)**：没有新建，引用指向同一片内存区域，相当于浅拷贝</li></ul><pre><code class="python">import numpy as np
+
+a = np.array([[1,2,3],[4,5,6]])
+
+# 从现有的数组当中创建
+a1 = np.array(a)
+id(a1)
+
+# 相当于浅拷贝，并没有真正的创建一个新的
+a2 = np.asarray(a)
+id(a2)
+
+# 修改值
+a[1,1] = 99
+
+print(f&quot;a---&gt;&#123;a&#125;&quot;)
+print(f&quot;a1---&gt;&#123;a1&#125;&quot;)
+print(f&quot;a2---&gt;&#123;a2&#125;&quot;)
+</code></pre><h3 id="生成固定范围的数组"><a href="#生成固定范围的数组" class="headerlink" title="生成固定范围的数组"></a>生成固定范围的数组</h3><p>类似于之前讲过的range()</p><h4 id="np-linspace-start-stop-num-endpoint"><a href="#np-linspace-start-stop-num-endpoint" class="headerlink" title="np.linspace (start, stop, num, endpoint)"></a>np.linspace (start, stop, num, endpoint)</h4><ul><li>创建等差数组 — &#x3D;&#x3D;指定数量&#x3D;&#x3D;</li><li>参数:<ul><li>start:序列的起始值</li><li>stop:序列的终止值</li><li>num:要生成的等间隔样例数量，默认为50</li><li>endpoint:序列中是否包含stop值，默认为True</li></ul></li></ul><pre><code class="python">&quot;&quot;&quot;
+    参数解释：
+        start：开始值
+        stop：结束值
+        endpoint：stop是否包含在内
+        num：等差数组中元素的个数
+&quot;&quot;&quot;
+arr9 = np.linspace(start=1,stop=10,num=10,endpoint=True) 
+arr9    # 产生的是 10行1列 的 列向量（既有大小，也有方向）
+</code></pre><h4 id="np-arange-start-stop-step-dtype"><a href="#np-arange-start-stop-step-dtype" class="headerlink" title="np.arange(start,stop, step, dtype)"></a>np.arange(start,stop, step, dtype)</h4><ul><li>创建等差数组 — &#x3D;&#x3D;指定步长&#x3D;&#x3D;</li><li>参数<ul><li>step:步长,默认值为1</li></ul></li></ul><pre><code class="python"># np.arange：使用和参数与range函数完全一样
+arr10 = np.arange(start=1,stop=6,step=2)
+arr10
+</code></pre><h4 id="np-logspace-start-stop-num"><a href="#np-logspace-start-stop-num" class="headerlink" title="np.logspace(start,stop, num)"></a>np.logspace(start,stop, num)</h4><ul><li><p>创建等比数列</p></li><li><p>参数:</p><ul><li>num:要生成的等比数列数量，默认为50</li></ul></li></ul><pre><code class="python">&quot;&quot;&quot;
+    参数解释： 
+        start：开始值
+        stop：结束值
+        endpoint：stop是否包含在内
+        num：等差数组中元素的个数
+        base：幂次方的底。a**x，也就是这里的a的值
+&quot;&quot;&quot;
+arr11 = np.logspace(start=0,stop=5,num=6,endpoint=True,base=10)
+arr11 = np.logspace(start=0,stop=5,num=6,endpoint=True,base=2)
+arr11
+</code></pre><h3 id="生成随机数组"><a href="#生成随机数组" class="headerlink" title="生成随机数组"></a>生成随机数组</h3><h4 id="使用模块介绍"><a href="#使用模块介绍" class="headerlink" title="使用模块介绍"></a>使用模块介绍</h4><ul><li>np.random模块</li></ul><pre><code class="python"># 设置随机数种子
+np.random.seed(523)
+
+&quot;&quot;&quot;
+    np.random.rand()：产生0-1的随机小数；结果数据是均匀分布的
+&quot;&quot;&quot;
+arr12 = np.random.rand(2,4)
+arr12
+
+
+&quot;&quot;&quot;
+    np.random.randint：生成指定范围的随机整数
+    参数解释：
+        low：范围下限。包含
+        high：范围上限。不包含
+        size：数组的形状
+&quot;&quot;&quot;
+arr13 = np.random.randint(low=1,high=7,size=(2,3,4))
+arr13
+
+
+&quot;&quot;&quot;
+    np.random.randn：生成随机小数，结果符合标准正态分布
+    标准正态分布：也称之为高斯分布。均值mean=0，标准差std=1
+&quot;&quot;&quot;
+arr14 = np.random.randn(10,10,10)
+arr14
+</code></pre><h2 id="数组的索引、切片"><a href="#数组的索引、切片" class="headerlink" title="数组的索引、切片"></a>数组的索引、切片</h2><p>一维、二维、三维的数组如何索引？</p><ul><li>直接进行索引,切片</li><li>二维数组[行索引开始:行索引结束:步长, 列索引开始:列索引结束:步长]，<strong>含头不含尾</strong></li></ul><p>基本索引：</p><pre><code class="python">import numpy as np
+
+# 创建一个 2x3 的数组
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+# 访问第1行第2列的元素（注意：索引从0开始）
+element = arr[0, 1]
+print(&quot;第1行第2列的元素:&quot;, element)  # 输出: 2
+
+# 访问第2行第3列的元素
+element = arr[1, 2]
+print(&quot;第2行第3列的元素:&quot;, element)  # 输出: 6
+</code></pre><p>切片操作</p><p><strong>二维数组</strong>：可以通过 <code>[row, column]</code> 进行索引和切片，提取特定的行、列或子矩阵。</p><p><strong>三维数组</strong>：可以通过 <code>[depth, row, column]</code> 进行索引和切片，提取特定的层、行、列或子阵列。</p><pre><code class="python">import numpy as np
+
+# 创建一个 7x7 的数组
+# 二维数组[行索引开始:行索引结束:步长, 列索引开始:列索引结束:步长]
+arr = np.array(
+    [
+        [10, 2, 3, 73, 8, 7, 6],
+        [11, 5, 6, 74, 8, 9, 10],
+        [22, 5, 6, 75, 8, 9, 10],
+        [33, 5, 6, 76, 8, 9, 10],
+        [44, 5, 6, 77, 8, 9, 10],
+        [55, 5, 6, 78, 8, 9, 10],
+        [66, 5, 6, 79, 8, 9, 10],
+    ]
+)
+
+sub_array = arr[1:6:2, 0:6:3]
+print(sub_array)
+
+# 提取第1行和第2行的所有列
+sub_array = arr[0:2, :]
+print(&quot;第1行和第2行的所有列:\n&quot;, sub_array)
+
+# 提取第2列和第3列的所有行
+sub_array = arr[:, 1:3]
+print(&quot;第2列和第3列的所有行:\n&quot;, sub_array)
+
+# 提取第1行第2列到第3列的元素
+sub_array = arr[0, 1:3]
+print(&quot;第1行第2列到第3列的元素:&quot;, sub_array)
+</code></pre><ul><li>三维数组索引方式：</li></ul><pre><code class="python"># 三维
+a1 = np.array([[[1,2,3],[4,5,6]], [[12,3,34],[5,6,7]]])
+# 返回结果
+array([[[ 1,  2,  3],
+        [ 4,  5,  6]],
+
+       [[12,  3, 34],
+        [ 5,  6,  7]]])
+
+# 索引、切片
+sub_array = a1[0, 0, 1]
+print(sub_array) # 输出: 2
+</code></pre><h2 id="形状修改"><a href="#形状修改" class="headerlink" title="形状修改"></a>形状修改</h2><h3 id="ndarray-reshape-shape"><a href="#ndarray-reshape-shape" class="headerlink" title="ndarray.reshape(shape)"></a>ndarray.reshape(shape)</h3><ul><li>修改前后元素个数不能变</li></ul><pre><code class="python">arr2 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr2
+
+# reshape前后的元素个数不能变，不能变多不能变少
+# reshape中的-1表示Numpy自动的帮我们计算形状
+# reshape还可以升维或者降维
+arr3 = arr2.reshape(3,3)
+arr3 = arr2.reshape(1,9)
+arr3 = arr2.reshape(1,-1)
+# arr3 = arr2.reshape(1,3,3) # 升维
+arr3 = arr2.reshape(9,1,1) # 升维
+
+# 下面的都是错误的写法
+# arr3 = arr2.reshape(2,4)      # 元素个数少了
+# arr3 = arr2.reshape(2,5)      # 元素个数多了
+# arr3 = arr2.reshape(2,4.5)    # 传递小数
+
+arr3
+</code></pre><h3 id="np-resize-数组对象-new-shape"><a href="#np-resize-数组对象-new-shape" class="headerlink" title="np.resize(数组对象, new_shape)"></a>np.resize(数组对象, new_shape)</h3><ul><li>修改前后元素个数可以不同</li></ul><pre><code class="python"># 【了解】resize：调整形状前后的元素个数可以不一致
+arr3 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr3
+
+# 注意：resize需要通过np来进行调用，不能直接通过具体的array数组调用
+arr4 = np.resize(a=arr3,new_shape=(3,3))
+arr4 = np.resize(a=arr3,new_shape=(3,4))
+arr4 = np.resize(a=arr3,new_shape=(3,2))
+arr4
+</code></pre><h3 id="ndarray-T"><a href="#ndarray-T" class="headerlink" title="ndarray.T"></a>ndarray.T</h3><ul><li>数组的转置</li><li>将数组的行、列进行互换</li></ul><pre><code class="python">import numpy as np
+
+# 创建一个 2x3 的二维数组
+arr = np.array([[1, 2, 3],
+                [4, 5, 6]])
+
+# 对数组进行转置
+transposed_arr = arr.T
+
+print(&quot;原始数组:\n&quot;, arr)
+print(&quot;转置后的数组:\n&quot;, transposed_arr)
+
+运行结果
+原始数组:
+ [[1 2 3]
+  [4 5 6]]
+转置后的数组:
+ [[1 4]
+  [2 5]
+  [3 6]]
+</code></pre><h2 id="类型修改"><a href="#类型修改" class="headerlink" title="类型修改"></a>类型修改</h2><h3 id="ndarray-astype-type"><a href="#ndarray-astype-type" class="headerlink" title="ndarray.astype(type)"></a>ndarray.astype(type)</h3><ul><li>返回修改了类型之后的数组</li></ul><pre><code class="python">import numpy as np
+
+# 创建一个浮点数类型的数组
+arr = np.array([1.1, 2.2, 3.3, 4.4, 5.5])
+
+# 使用 .astype(np.int32) 将数组的元素类型转换为 int32
+arr_int32 = arr.astype(np.int32)
+
+print(&quot;原始数组:&quot;, arr)
+print(&quot;原始数组的类型:&quot;, arr.dtype)
+
+print(&quot;转换后的数组:&quot;, arr_int32)
+print(&quot;转换后的数组类型:&quot;, arr_int32.dtype)
+</code></pre><h3 id="ndarray-tobytes"><a href="#ndarray-tobytes" class="headerlink" title="ndarray.tobytes()"></a>ndarray.tobytes()</h3><ul><li>构造包含数组中原始数据字节的Python字节</li></ul><pre><code class="python">arr = np.array([[[1, 2, 3], [4, 5, 6]], [[12, 3, 34], [5, 6, 7]]])
+arr.tobytes()
+</code></pre><p>为什么转二进制？方便网络传输</p><h2 id="数组的去重"><a href="#数组的去重" class="headerlink" title="数组的去重"></a>数组的去重</h2><h3 id="np-unique"><a href="#np-unique" class="headerlink" title="np.unique()"></a>np.unique()</h3><pre><code class="python">temp = np.array([[1, 2, 3, 4],[3, 4, 5, 6]])
+np.unique(temp)
+array([1, 2, 3, 4, 5, 6])
+</code></pre><h1 id="四、ndarray运算"><a href="#四、ndarray运算" class="headerlink" title="四、ndarray运算"></a>四、ndarray运算</h1><h2 id="掌握内容-2"><a href="#掌握内容-2" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">all
+any
+argmax：与idxmax的作用完全一致，取最大值对应的索引
+</code></pre><h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><pre><code class="python"># 过滤出分数超过60分，并且小于90分的成绩
+score = np.random.randint(40, 100, (10, 5))
+six_stu = score[6:, :]
+six_stu
+
+# 过滤出分数超过60分，并且小于90分的成绩。将对应成绩设置为1
+six_stu[ (six_stu&gt;60) &amp; (six_stu&lt;90)] = 1
+six_stu
+</code></pre><h2 id="通用判断函数"><a href="#通用判断函数" class="headerlink" title="通用判断函数"></a>通用判断函数</h2><ul><li><p>np.all()</p><p>当你需要检查数组中的所有元素是否都满足条件时使用，如果所有元素都满足条件，返回 <code>True</code>，否则返回 <code>False</code></p></li><li><p>np.any()</p><p>当你需要检查数组中是否至少有一个元素满足条件时使用，如果有一个元素满足条件，返回 <code>True</code>，否则返回 <code>False</code></p></li></ul><pre><code class="python"># 判断前4名同学的成绩[0:4, :]是否全及格
+four_stu = score2[0:4, :]
+four_stu&gt;=60
+
+# 所有学生的所有成绩，全部都&gt;=60分的时候，结果才是True；否则，只要出现一个成绩&lt;60，结果就是False
+np.all(four_stu&gt;=60)
+
+# 判断前4名同学的成绩[0:4, :]是否有大于90分的
+# 只要能够找出一个值满足条件，结果就是True；否则，全部都不满足的时候才是False
+np.any(four_stu&gt;90)
+</code></pre><h2 id="np-where（三元运算符）"><a href="#np-where（三元运算符）" class="headerlink" title="np.where（三元运算符）"></a>np.where（三元运算符）</h2><p>通过使用np.where能够进行更加复杂的运算</p><ul><li><p>np.where() &#x3D;&gt; 类似Python中的if…else结构</p></li><li><p>复合逻辑需要结合np.logical_and和np.logical_or使用</p></li></ul><pre><code class="python">np.random.seed(523)
+score3 = np.random.randint(40, 100, (10, 5))
+score3
+
+# 判断前四名学生,前四门课程中，成绩中大于60的置为1，否则为0
+arr1 = np.where(score3[:4, :4]&gt;60, 1,0)
+arr1
+
+# 判断前四名学生,前四门课程中，成绩中大于60且小于90的换为1，否则为0
+# 写法一：推荐
+arr2 = np.where((score3[:4, :4]&gt;60) &amp; (score3[:4, :4]&lt;90), 1,0)
+
+# 写法二：使用函数包起来
+arr2 = np.where(np.logical_and(score3[:4, :4]&gt;60, score3[:4, :4]&lt;90), 1,0)
+arr2
+
+# 判断前四名学生,前四门课程中，成绩中大于90或小于60的换为1，否则为0
+# 写法一：推荐
+arr3 = np.where((score3[:4, :4]&lt;60) | (score3[:4, :4]&gt;90), 1,0)
+
+# 写法二：使用函数包起来
+arr3 = np.where(np.logical_or(score3[:4, :4]&lt;60, score3[:4, :4]&gt;90), 1,0)
+arr3
+</code></pre><h2 id="统计运算"><a href="#统计运算" class="headerlink" title="统计运算"></a>统计运算</h2><p><strong>如果想要知道学生成绩最大的分数，或者做小分数应该怎么做？</strong></p><h3 id="统计指标"><a href="#统计指标" class="headerlink" title="统计指标"></a>统计指标</h3><p>在数据挖掘&#x2F;机器学习领域，统计指标的值也是我们分析问题的一种方式。常用的指标如下：</p><ul><li>min(a, axis)<ul><li>Return the minimum of an array or minimum along an axis.</li></ul></li><li>max(a, axis])<ul><li>Return the maximum of an array or maximum along an axis.</li></ul></li><li>median(a, axis)<ul><li>Compute the median along the specified axis.</li></ul></li><li>mean(a, axis, dtype)<ul><li>Compute the arithmetic mean along the specified axis.</li></ul></li><li>std(a, axis, dtype)<ul><li>Compute the standard deviation along the specified axis.</li></ul></li><li>var(a, axis, dtype)<ul><li>Compute the variance along the specified axis.</li></ul></li></ul><blockquote><p>var方差是衡量数据点离平均值的平方偏差程度。方差的值总是非负的，方差越大，数据越分散。</p><p>std标准方差是衡量数据点离平均值的平均偏差程度。值越小，数据越集中；值越大，数据越分散。</p></blockquote><h3 id="案例：学生成绩统计运算"><a href="#案例：学生成绩统计运算" class="headerlink" title="案例：学生成绩统计运算"></a>案例：学生成绩统计运算</h3><pre><code class="python">score = np.random.randint(40, 100, (10, 5))
+
+print(&quot;学生各科成绩的最大分：&#123;&#125;&quot;.format(np.max(temp, axis=0)))
+print(&quot;学生各科成绩的最小分：&#123;&#125;&quot;.format(np.min(temp, axis=0)))
+print(&quot;学生各科成绩波动情况：&#123;&#125;&quot;.format(np.std(temp, axis=0)))
+print(&quot;学生各科成绩的平均分：&#123;&#125;&quot;.format(np.mean(temp, axis=0)))
+</code></pre><p>&#x3D;&#x3D;axis&#x3D;0&#x3D;&#x3D;：表示沿着行的方向（垂直向下）跨越，<strong>对每一列进行操作</strong>，结果是行数被修改了。</p><p>&#x3D;&#x3D;axis&#x3D;1&#x3D;&#x3D;：表示沿着列的方向（水平向右）跨越，<strong>对每一行进行操作</strong>，结果是列数被修改了。</p><p>&#x3D;&#x3D;该参数的使用和参数值含义，与Pandas中完全一样。&#x3D;&#x3D;</p><p>如果需要统计出某科最高分对应的是哪个同学？</p><ul><li>np.argmax(temp, axis&#x3D;)</li><li>np.argmin(temp, axis&#x3D;)</li></ul><pre><code class="python">print(&quot;学生各科成绩最高分对应的学生下标：&#123;&#125;&quot;.format(np.argmax(temp, axis=0)))
+</code></pre><h1 id="五、数组间运算"><a href="#五、数组间运算" class="headerlink" title="五、数组间运算"></a>五、数组间运算</h1><h2 id="掌握内容-3"><a href="#掌握内容-3" class="headerlink" title="掌握内容"></a>掌握内容</h2><pre><code class="properties">矩阵运算
+    np.matmul(矩阵A, 矩阵B)   或者  矩阵A@矩阵B
+    前提：前一个矩阵的列数，与后一个矩阵的行数相同，才能计算。矩阵运算没有广播机制
+</code></pre><h2 id="数组与数的运算"><a href="#数组与数的运算" class="headerlink" title="数组与数的运算"></a>数组与数的运算</h2><pre><code class="properties">arr = np.array([[1, 2, 3, 2, 1, 4], [5, 6, 1, 2, 3, 1]])
+arr + 1
+arr / 2
+
+# 可以对比python列表的运算，看出区别 =&gt; 列表是整体操作，numpy是每个元素单独操作
+a = [1, 2, 3, 4, 5]
+a * 3
+</code></pre><h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><p>矩阵运算的前提：前一个矩阵的列数，与后一个矩阵的行数相同，才能计算</p><pre><code class="python">&quot;&quot;&quot;
+    矩阵乘法运算总结：
+        1- A @ B = C，  A的列数 必须 与 B的行数 相同
+        2- A[m行,n列] B[p行,q列]，那么结果C的形状是[m行,q列]
+&quot;&quot;&quot;
+
+np.random.seed(520)
+arr3 = np.random.randint(low=1,high=5,size=(2,4))
+arr3
+
+
+np.random.seed(520)
+arr4 = np.random.randint(low=1,high=5,size=(4,3))
+arr4
+
+
+# 写法一：推荐。使用@符号
+result_1 = arr3 @ arr4
+# 写法二：使用matmul函数。matrix multiply
+result_1 = np.matmul(arr3, arr4)
+result_1
+</code></pre><h2 id="【了解】数组与数组的运算"><a href="#【了解】数组与数组的运算" class="headerlink" title="【了解】数组与数组的运算"></a>【了解】数组与数组的运算</h2><pre><code class="properties">广播机制总结：
+    1- 是Numpy底层内部自动进行的一种机制，我们无法人为的控制
+    2- 价值：实现形状不同数组之间的运算，核心就是通过广播机制自动的达到数组形状完全相同的前提要求
+</code></pre><h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><pre><code class="python">arr1 = np.array([[1, 2, 3, 2, 1, 4], [5, 6, 1, 2, 3, 1]])   # 2 x 6
+arr2 = np.array([[1, 2, 3, 4], [3, 4, 5, 6]])  # 2 x 4
+</code></pre><p>上面这个能进行加法运算吗，结果是不行的！</p><h3 id="广播机制"><a href="#广播机制" class="headerlink" title="广播机制"></a>广播机制</h3><p>数组在进行加法运算时，<strong>要求数组的形状要完全相等的</strong>。当形状不相等的数组执行算术运算的时候，就会出现广播机制，该机制会对数组进行扩展，使数组的shape属性值一样，这样，就可以进行矢量化运算了。下面通过一个例子进行说明：</p><pre><code class="python">arr1 = np.array([[0],[1],[2],[3]])  # 4 x 1
+arr1.shape
+# (4, 1)
+
+arr2 = np.array([1,2,3])  # 1 x 3
+arr2.shape
+# (3,)
+
+arr1+arr2
+# 结果是：
+array([[1, 2, 3],
+       [2, 3, 4],
+       [3, 4, 5],
+       [4, 5, 6]])
+</code></pre><p>上述代码中，数组arr1是4行1列，arr2是1行3列。这两个数组要进行相加，按照广播机制会对数组arr1和arr2都进行扩展，使得数组arr1和arr2都变成4行3列。</p><p>下面通过一张图来描述广播机制扩展数组的过程：</p><p><img src="/posts/fa288682/image-20190620005224076-1776170757479.png" alt="image-20190620005224076"></p><p><strong>什么情况下才能进行广播机制：</strong></p><ul><li><strong>形状完全相等</strong><br>两个数组在该维度上的大小完全相同。</li></ul><pre><code class="python">import numpy as np
+
+# 数组 A: 形状 (2, 3)
+A = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+# 数组 B: 形状 (2, 3)
+B = np.array([[10, 20, 30],
+              [40, 50, 60]])
+
+# 运算
+result = A + B
+
+print(&quot;结果:\n&quot;, result)
+</code></pre><p>运行结果：<br>[[11 22 33]<br>[44 55 66]]</p><ul><li><strong>其中至少一个维度大小为 1</strong><br>两个数组中，至少有一个在该维度上的大小为 1。NumPy 会自动将这个大小为 1 的维度“拉伸”以匹配另一个数组。</li></ul><pre><code class="python">import numpy as np
+
+# 数组 A: 形状 (2, 3)
+A = np.array([[1, 2, 3],
+              [4, 5, 6]])
+
+# 数组 B: 形状 (1, 3)
+B = np.array([[10, 20, 30]])
+
+# 运算
+result = A + B
+
+print(&quot;结果:\n&quot;, result)
+</code></pre><p>运行结果：</p><p>[[11 22 33]<br>[14 25 36]]</p><ul><li><strong>其中一个数组缺少该维度</strong><br>如果两个数组的维度数量不同，维度较少的数组在前面会被视为用 <code>1</code> 来填充，然后再进行比较。<ul><li>例如：形状为 <code>(3, 4)</code> 的数组和形状为 <code>(4,)</code> 的数组比较时，<code>(4,)</code> 会被视为 <code>(1, 4)</code>，因此它们是兼容的。</li></ul></li></ul><pre><code class="python">import numpy as np
+
+# 1. 创建一个形状: (3, 4)
+arr1 = np.array([
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+])
+
+# 2. 创建一个形状: (1,4)
+arr2 = np.array([10, 20, 30, 40])
+
+# 3. 进行加法运算
+result = arr1 + arr2
+
+print(&quot;运算结果:\n&quot;, result)
+</code></pre><p>运行结果：<br>[[11 22 33 44]<br>[15 26 37 48]<br>[19 30 41 52]]</p><p><strong>思考：下面两个ndarray是否能够进行加法运算？</strong>可以</p><pre><code class="python">arr1 = np.array([[1, 2, 3, 2, 1, 4], [5, 6, 1, 2, 3, 1]])   # (2, 6)
+arr2 = np.array([[1], [3]])  # (2, 1)
+</code></pre></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>程序员青阳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/fa288682/">https://heliufang.github.io/posts/fa288682/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">322.7k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script>var element=null;layui.use(["element","layer"],function(){element=layui.element}),$(function(){var e=$("#toc-area"),t=$(e).offset().top;$.event.add(window,"scroll",function(){var o=$(".markdown-body").height(),o=(($(window).scrollTop()+t)/o*100).toFixed(2);element.progress("demo",(o=0==(o=99<o?100:o)?0:o)+"%"),$("#progressTxt").text(o),console.log("percent",o),$(e).css("position",$(window).scrollTop()>t?"fixed":"static"),$(e).css("top",$(window).scrollTop()>t?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*o*.01)}),$("pre code").each(function(){var o=$(this).attr("class");o="language-"+(null==o||""==o||null==o?"plaintext":o),$(this).attr("class",o)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>'),$("#article img").on("click",function(){$(this).attr("src"),$(this).attr("alt");var e=[],o=($("#article img").each(function(o){e.push({alt:$(this).attr("alt")||"图片"+(o+1),src:$(this).attr("src")})}),$(this).index());layer.photos({photos:{title:"图片预览",id:123,start:o,data:e},shade:.7,anim:5})}),$("#mobileTocToggle").on("click",function(){$("#mobileTocPanel").addClass("active"),$("#mobileTocMask").addClass("active"),$("body").css("overflow","hidden")}),$("#mobileTocClose, #mobileTocMask").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")}),$("#mobileTocBody .toc-link").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")})})</script></html>
