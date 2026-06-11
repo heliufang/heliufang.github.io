@@ -1,0 +1,719 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>程序员青阳</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="程序员青阳" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 程序员青阳</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="mobile-toc-toggle hide-md hide-lg" id="mobileTocToggle"><i class="layui-icon layui-icon-list"></i></div><div class="mobile-toc-panel hide-md" id="mobileTocPanel"><div class="mobile-toc-header"><span><i class="layui-icon layui-icon-align-center"></i> 本文目录</span> <i class="layui-icon layui-icon-close" id="mobileTocClose"></i></div><div class="mobile-toc-body" id="mobileTocBody"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Coze%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%80%E5%8F%91"><span class="toc-text">Coze智能体开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Coze%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%85%A5%E9%97%A8"><span class="toc-text">Coze介绍和入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent%E6%99%BA%E8%83%BD%E4%BD%93%E6%A6%82%E5%BF%B5"><span class="toc-text">Agent智能体概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Coze%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D"><span class="toc-text">Coze平台介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Coze%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-text">Coze中的模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E5%BA%93"><span class="toc-text">资源库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-text">插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">工作流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93"><span class="toc-text">知识库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">提示词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">创建第一个工作流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E4%BB%8B%E7%BB%8D"><span class="toc-text">常用节点介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E8%8A%82%E7%82%B9"><span class="toc-text">选择器节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">意图识别节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-text">输入和输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%90%86%E8%A7%A3%E6%8F%92%E4%BB%B6"><span class="toc-text">图片理解插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">创建第一个智能体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-text">创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%95%88%E6%9E%9C"><span class="toc-text">优化效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93-1"><span class="toc-text">知识库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9F%A5%E8%AF%86%E5%BA%93"><span class="toc-text">创建知识库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%AD%96%E7%95%A5"><span class="toc-text">分段策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5"><span class="toc-text">搜索策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E5%BA%94%E7%94%A8"><span class="toc-text">知识库应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-1"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">导入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">数据库增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84"><span class="toc-text">整体结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB"><span class="toc-text">意图识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-text">查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E"><span class="toc-text">新增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9"><span class="toc-text">修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-text">删除</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%A4%9A%E4%B8%BB%E9%A2%98%E6%A1%88%E4%BE%8B"><span class="toc-text">小红书多主题案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">多智能体【了解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">多模态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">单智能体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">多智能体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E6%A1%88%E4%BE%8B"><span class="toc-text">翻译案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%8F%82%E8%80%83"><span class="toc-text">工作流参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2"><span class="toc-text">天气查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB-1"><span class="toc-text">意图识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%8F%90%E7%A4%BA"><span class="toc-text">信息提示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%8E%E5%B8%82%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">城市识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IF%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">IF选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%8E%E5%B8%82%E5%90%8D%E8%81%9A%E5%90%88%E8%8A%82%E7%82%B9"><span class="toc-text">城市名聚合节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">时间识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E8%8A%82%E7%82%B9"><span class="toc-text">日期转换节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2%E8%8A%82%E7%82%B9"><span class="toc-text">天气查询节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92"><span class="toc-text">旅行规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IF%E9%80%89%E6%8B%A9%E5%99%A8-1"><span class="toc-text">IF选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E5%8F%91%E5%9C%B0%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">出发地识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E5%8F%91%E5%9C%B0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">出发地选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E5%8F%91%E5%9C%B0%E8%81%9A%E5%90%88"><span class="toc-text">出发地聚合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%9C%B0%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">目的地识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%9C%B0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">目的地选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%9C%B0%E8%81%9A%E5%90%88"><span class="toc-text">目的地聚合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92%E8%8A%82%E7%82%B9"><span class="toc-text">旅游规划节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E8%AF%BB%E5%8F%96"><span class="toc-text">文档读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E8%AF%BB%E5%8F%96"><span class="toc-text">链接读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">知识库查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E8%8A%82%E7%82%B9"><span class="toc-text">知识库检索节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-search%E8%8A%82%E7%82%B9"><span class="toc-text">web_search节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-text">数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2-1"><span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%BA%E5%90%8D%E6%8A%BD%E5%8F%96%E8%8A%82%E7%82%B9"><span class="toc-text">人名抽取节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8A%82%E7%82%B9"><span class="toc-text">查询数据库节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E-1"><span class="toc-text">新增</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E8%8A%82%E7%82%B9"><span class="toc-text">信息抽取节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E6%95%B0%E6%8D%AE%E8%8A%82%E7%82%B9"><span class="toc-text">新增数据节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-text">更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E4%BF%A1%E6%81%AF%E8%8A%82%E7%82%B9"><span class="toc-text">更新信息节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-1"><span class="toc-text">删除</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-text">删除节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-text">语音识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90"><span class="toc-text">语音合成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90"><span class="toc-text">视频生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%BD%93%E7%BB%83%E4%B9%A0%E9%A2%98-%E5%A4%9A%E6%A8%A1%E6%80%81"><span class="toc-text">三体练习题-多模态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%8A%82%E7%82%B9"><span class="toc-text">大模型节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%8A%82%E7%82%B9"><span class="toc-text">视频生成节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%8A%A9%E6%89%8B%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B"><span class="toc-text">面试助手项目案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF"><span class="toc-text">项目基础信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B"><span class="toc-text">业务流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E5%A4%84%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">简历处理工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E5%86%85%E5%AE%B9%E6%8A%BD%E5%8F%96%E8%8A%82%E7%82%B9"><span class="toc-text">简历内容抽取节点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9D%E7%A6%81%E8%AF%8D%E6%9F%A5%E8%AF%A2"><span class="toc-text">违禁词查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E6%96%87%E5%AD%97%E6%8F%90%E5%8F%96"><span class="toc-text">简历文字提取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4"><span class="toc-text">当前时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%88%86%E5%9D%97"><span class="toc-text">内容分块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E8%AF%84%E4%BC%B0"><span class="toc-text">个人信息评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E8%AF%84%E4%BC%B0"><span class="toc-text">技能评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%A6%E5%8E%86%E8%AF%84%E4%BC%B0"><span class="toc-text">学历评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86%E8%AF%84%E4%BC%B0"><span class="toc-text">工作经历评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7%E8%AF%84%E4%BC%B0"><span class="toc-text">个人评价评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C"><span class="toc-text">循环处理项目经验</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E8%AF%84%E4%BC%B0"><span class="toc-text">循环项目经验评估</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93"><span class="toc-text">循环体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E8%AF%84%E4%BC%B0%E8%8A%82%E7%82%B9"><span class="toc-text">项目经验评估节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AEquery%E4%BC%98%E5%8C%96%E8%8A%82%E7%82%B9"><span class="toc-text">项目query优化节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E8%8A%82%E7%82%B9-1"><span class="toc-text">知识库检索节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%87%8D%E5%A4%8D%E5%88%A4%E6%96%AD%E8%8A%82%E7%82%B9"><span class="toc-text">项目重复判断节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E8%8A%82%E7%82%B9"><span class="toc-text">字符串拼接节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%95%B4%E5%90%88%E8%8A%82%E7%82%B9"><span class="toc-text">信息整合节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">试运行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%95%E9%9F%B3%E5%88%86%E6%9E%90%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">录音分析工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fun-ASR%E6%8F%92%E4%BB%B6%E8%8A%82%E7%82%B9"><span class="toc-text">Fun_ASR插件节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E5%88%86%E9%85%8D%E8%8A%82%E7%82%B9"><span class="toc-text">角色分配节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E5%92%8C%E9%9D%A2%E8%AF%95%E6%A6%82%E5%86%B5%E8%8A%82%E7%82%B9"><span class="toc-text">自我介绍和面试概况节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E8%AF%84%E4%BC%B0%E8%8A%82%E7%82%B9"><span class="toc-text">自我介绍评估节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96%E9%97%AE%E7%AD%94%E5%AF%B9%E8%8A%82%E7%82%B9"><span class="toc-text">抽取问答对节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%8A%82%E7%82%B9"><span class="toc-text">循环节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93-1"><span class="toc-text">循环体</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%AE%E7%AD%94%E5%AF%B9%E5%88%86%E7%A6%BB%E8%8A%82%E7%82%B9"><span class="toc-text">问答对分离节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">面试问题存储到数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E9%97%AE%E9%A2%98%E5%AF%B9%E5%BA%94%E7%9A%84%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="toc-text">知识库检索问题对应的参考答案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%9B%9E%E7%AD%94%E8%8A%82%E7%82%B9"><span class="toc-text">评估回答节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%B4%E5%90%88%E8%8A%82%E7%82%B9"><span class="toc-text">最终整合节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">面试题生成工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E6%96%87%E5%AD%97%E6%8F%90%E5%8F%96-1"><span class="toc-text">简历文字提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96%E6%9C%80%E8%BF%91200%E9%A2%98%E7%9B%AE%EF%BC%88%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A3%80%E7%B4%A2%EF%BC%89%E8%8A%82%E7%82%B9"><span class="toc-text">抽取最近200题目（数据库检索）节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E7%82%B9%E5%A4%84%E7%90%86%E5%BE%AA%E7%8E%AF"><span class="toc-text">技能点处理循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93-%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E8%8A%82%E7%82%B9"><span class="toc-text">循环体-知识库检索节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93-%E9%92%88%E5%AF%B9%E6%AF%8F%E4%B8%AA%E6%8A%80%E8%83%BD%E7%94%9F%E6%88%90%E9%97%AE%E9%A2%98%E8%8A%82%E7%82%B9"><span class="toc-text">循环体-针对每个技能生成问题节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E5%A4%84%E7%90%86%E5%BE%AA%E7%8E%AF"><span class="toc-text">项目经验处理循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%95%B4%E5%90%88%E8%8A%82%E7%82%B9-1"><span class="toc-text">信息整合节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-text">运行</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%90%88%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD"><span class="toc-text">整合工作流到智能体中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%BA%E8%AE%BE%E5%92%8C%E5%9B%9E%E5%A4%8D%E9%80%BB%E8%BE%91"><span class="toc-text">人设和回复逻辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86"><span class="toc-text">长期记忆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%9C%BA%E7%99%BD"><span class="toc-text">开场白</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%9C%BA%E7%99%BD%E9%A2%84%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">开场白预制问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E5%B8%83"><span class="toc-text">发布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E8%B0%83%E7%94%A8%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">Python调用智能体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAAPI-KEY"><span class="toc-text">创建API_KEY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%99%BA%E8%83%BD%E4%BD%93ID"><span class="toc-text">获取智能体ID</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Python%E4%BE%9D%E8%B5%96"><span class="toc-text">安装Python依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E4%BB%A3%E7%A0%81"><span class="toc-text">调用代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91"><span class="toc-text">扩展-插件开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%8F%92%E4%BB%B6"><span class="toc-text">新建插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="toc-text">创建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81"><span class="toc-text">编写代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83-1"><span class="toc-text">发布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%9E%B6"><span class="toc-text">上架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">如何开发工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">智能体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93-2"><span class="toc-text">知识库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-2"><span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6-1"><span class="toc-text">插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81-1"><span class="toc-text">工作流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%AF%B9%E6%AF%94%E5%87%BD%E6%95%B0"><span class="toc-text">工作流对比函数</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="mobile-toc-mask hide-md" id="mobileTocMask"></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head2.jpg"><div class="name">愿代码无错，前程无坎</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">79</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">11</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">73</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">372.1k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">20.19.6</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2026-06-11 17:12:45"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/fdaff1c7/">1.Dify智能体</a></li><li><a href="/posts/dbcd824/">2.Coze智能体</a></li><li><a href="/posts/e9e7c246/">3.提示词工程</a></li><li><a href="/posts/9ebec7b8/">4.matplotlib</a></li><li><a href="/posts/fa288682/">5.numpy</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">3</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Coze%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%80%E5%8F%91"><span class="toc-text">Coze智能体开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Coze%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%85%A5%E9%97%A8"><span class="toc-text">Coze介绍和入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent%E6%99%BA%E8%83%BD%E4%BD%93%E6%A6%82%E5%BF%B5"><span class="toc-text">Agent智能体概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Coze%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D"><span class="toc-text">Coze平台介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Coze%E4%B8%AD%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-text">Coze中的模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E5%BA%93"><span class="toc-text">资源库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-text">插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">工作流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93"><span class="toc-text">知识库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">提示词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">创建第一个工作流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%8A%82%E7%82%B9%E4%BB%8B%E7%BB%8D"><span class="toc-text">常用节点介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%99%A8%E8%8A%82%E7%82%B9"><span class="toc-text">选择器节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">意图识别节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-text">输入和输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E7%90%86%E8%A7%A3%E6%8F%92%E4%BB%B6"><span class="toc-text">图片理解插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">创建第一个智能体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA"><span class="toc-text">创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%95%88%E6%9E%9C"><span class="toc-text">优化效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93-1"><span class="toc-text">知识库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9F%A5%E8%AF%86%E5%BA%93"><span class="toc-text">创建知识库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%AD%96%E7%95%A5"><span class="toc-text">分段策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5"><span class="toc-text">搜索策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E5%BA%94%E7%94%A8"><span class="toc-text">知识库应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-1"><span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">导入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-text">数据库增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84"><span class="toc-text">整体结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB"><span class="toc-text">意图识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2"><span class="toc-text">查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E"><span class="toc-text">新增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9"><span class="toc-text">修改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-text">删除</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="toc-text">循环结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%A4%9A%E4%B8%BB%E9%A2%98%E6%A1%88%E4%BE%8B"><span class="toc-text">小红书多主题案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E3%80%90%E4%BA%86%E8%A7%A3%E3%80%91"><span class="toc-text">多智能体【了解】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E6%A8%A1%E5%9E%8B"><span class="toc-text">多模态模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">单智能体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">多智能体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E8%AF%91%E6%A1%88%E4%BE%8B"><span class="toc-text">翻译案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%8F%82%E8%80%83"><span class="toc-text">工作流参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2"><span class="toc-text">天气查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB-1"><span class="toc-text">意图识别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%8F%90%E7%A4%BA"><span class="toc-text">信息提示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%8E%E5%B8%82%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">城市识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IF%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">IF选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%8E%E5%B8%82%E5%90%8D%E8%81%9A%E5%90%88%E8%8A%82%E7%82%B9"><span class="toc-text">城市名聚合节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">时间识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E8%8A%82%E7%82%B9"><span class="toc-text">日期转换节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2%E8%8A%82%E7%82%B9"><span class="toc-text">天气查询节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%85%E8%A1%8C%E8%A7%84%E5%88%92"><span class="toc-text">旅行规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IF%E9%80%89%E6%8B%A9%E5%99%A8-1"><span class="toc-text">IF选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E5%8F%91%E5%9C%B0%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">出发地识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E5%8F%91%E5%9C%B0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">出发地选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E5%8F%91%E5%9C%B0%E8%81%9A%E5%90%88"><span class="toc-text">出发地聚合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%9C%B0%E8%AF%86%E5%88%AB%E8%8A%82%E7%82%B9"><span class="toc-text">目的地识别节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%9C%B0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-text">目的地选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E5%9C%B0%E8%81%9A%E5%90%88"><span class="toc-text">目的地聚合</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92%E8%8A%82%E7%82%B9"><span class="toc-text">旅游规划节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E8%AF%BB%E5%8F%96"><span class="toc-text">文档读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E8%AF%BB%E5%8F%96"><span class="toc-text">链接读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">知识库查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E8%8A%82%E7%82%B9"><span class="toc-text">知识库检索节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-search%E8%8A%82%E7%82%B9"><span class="toc-text">web_search节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-text">数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2-1"><span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%BA%E5%90%8D%E6%8A%BD%E5%8F%96%E8%8A%82%E7%82%B9"><span class="toc-text">人名抽取节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8A%82%E7%82%B9"><span class="toc-text">查询数据库节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E-1"><span class="toc-text">新增</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96%E8%8A%82%E7%82%B9"><span class="toc-text">信息抽取节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E6%95%B0%E6%8D%AE%E8%8A%82%E7%82%B9"><span class="toc-text">新增数据节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-text">更新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E4%BF%A1%E6%81%AF%E8%8A%82%E7%82%B9"><span class="toc-text">更新信息节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-1"><span class="toc-text">删除</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-text">删除节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-text">语音识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90"><span class="toc-text">语音合成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90"><span class="toc-text">视频生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%BD%93%E7%BB%83%E4%B9%A0%E9%A2%98-%E5%A4%9A%E6%A8%A1%E6%80%81"><span class="toc-text">三体练习题-多模态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%A8%A1%E5%9E%8B%E8%8A%82%E7%82%B9"><span class="toc-text">大模型节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%8A%82%E7%82%B9"><span class="toc-text">视频生成节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%8A%A9%E6%89%8B%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B"><span class="toc-text">面试助手项目案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF"><span class="toc-text">项目基础信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E6%B5%81%E7%A8%8B"><span class="toc-text">业务流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="toc-text">技术选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E5%A4%84%E7%90%86%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">简历处理工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E5%86%85%E5%AE%B9%E6%8A%BD%E5%8F%96%E8%8A%82%E7%82%B9"><span class="toc-text">简历内容抽取节点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9D%E7%A6%81%E8%AF%8D%E6%9F%A5%E8%AF%A2"><span class="toc-text">违禁词查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E6%96%87%E5%AD%97%E6%8F%90%E5%8F%96"><span class="toc-text">简历文字提取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4"><span class="toc-text">当前时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%88%86%E5%9D%97"><span class="toc-text">内容分块</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E8%AF%84%E4%BC%B0"><span class="toc-text">个人信息评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E8%AF%84%E4%BC%B0"><span class="toc-text">技能评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%A6%E5%8E%86%E8%AF%84%E4%BC%B0"><span class="toc-text">学历评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86%E8%AF%84%E4%BC%B0"><span class="toc-text">工作经历评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E8%AF%84%E4%BB%B7%E8%AF%84%E4%BC%B0"><span class="toc-text">个人评价评估</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%A4%84%E7%90%86%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C"><span class="toc-text">循环处理项目经验</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E8%AF%84%E4%BC%B0"><span class="toc-text">循环项目经验评估</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93"><span class="toc-text">循环体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E8%AF%84%E4%BC%B0%E8%8A%82%E7%82%B9"><span class="toc-text">项目经验评估节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AEquery%E4%BC%98%E5%8C%96%E8%8A%82%E7%82%B9"><span class="toc-text">项目query优化节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E8%8A%82%E7%82%B9-1"><span class="toc-text">知识库检索节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%87%8D%E5%A4%8D%E5%88%A4%E6%96%AD%E8%8A%82%E7%82%B9"><span class="toc-text">项目重复判断节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E8%8A%82%E7%82%B9"><span class="toc-text">字符串拼接节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%95%B4%E5%90%88%E8%8A%82%E7%82%B9"><span class="toc-text">信息整合节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%95%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">试运行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%95%E9%9F%B3%E5%88%86%E6%9E%90%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">录音分析工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fun-ASR%E6%8F%92%E4%BB%B6%E8%8A%82%E7%82%B9"><span class="toc-text">Fun_ASR插件节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E5%88%86%E9%85%8D%E8%8A%82%E7%82%B9"><span class="toc-text">角色分配节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E5%92%8C%E9%9D%A2%E8%AF%95%E6%A6%82%E5%86%B5%E8%8A%82%E7%82%B9"><span class="toc-text">自我介绍和面试概况节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E8%AF%84%E4%BC%B0%E8%8A%82%E7%82%B9"><span class="toc-text">自我介绍评估节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96%E9%97%AE%E7%AD%94%E5%AF%B9%E8%8A%82%E7%82%B9"><span class="toc-text">抽取问答对节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%8A%82%E7%82%B9"><span class="toc-text">循环节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93-1"><span class="toc-text">循环体</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%97%AE%E7%AD%94%E5%AF%B9%E5%88%86%E7%A6%BB%E8%8A%82%E7%82%B9"><span class="toc-text">问答对分离节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E5%AD%98%E5%82%A8%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">面试问题存储到数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E9%97%AE%E9%A2%98%E5%AF%B9%E5%BA%94%E7%9A%84%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88"><span class="toc-text">知识库检索问题对应的参考答案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%9B%9E%E7%AD%94%E8%8A%82%E7%82%B9"><span class="toc-text">评估回答节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%B4%E5%90%88%E8%8A%82%E7%82%B9"><span class="toc-text">最终整合节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98%E7%94%9F%E6%88%90%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">面试题生成工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E6%96%87%E5%AD%97%E6%8F%90%E5%8F%96-1"><span class="toc-text">简历文字提取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96%E6%9C%80%E8%BF%91200%E9%A2%98%E7%9B%AE%EF%BC%88%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A3%80%E7%B4%A2%EF%BC%89%E8%8A%82%E7%82%B9"><span class="toc-text">抽取最近200题目（数据库检索）节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%80%E8%83%BD%E7%82%B9%E5%A4%84%E7%90%86%E5%BE%AA%E7%8E%AF"><span class="toc-text">技能点处理循环</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93-%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A3%80%E7%B4%A2%E8%8A%82%E7%82%B9"><span class="toc-text">循环体-知识库检索节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E4%BD%93-%E9%92%88%E5%AF%B9%E6%AF%8F%E4%B8%AA%E6%8A%80%E8%83%BD%E7%94%9F%E6%88%90%E9%97%AE%E9%A2%98%E8%8A%82%E7%82%B9"><span class="toc-text">循环体-针对每个技能生成问题节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E5%A4%84%E7%90%86%E5%BE%AA%E7%8E%AF"><span class="toc-text">项目经验处理循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%95%B4%E5%90%88%E8%8A%82%E7%82%B9-1"><span class="toc-text">信息整合节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C"><span class="toc-text">运行</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%90%88%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%B0%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD"><span class="toc-text">整合工作流到智能体中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%BA%E8%AE%BE%E5%92%8C%E5%9B%9E%E5%A4%8D%E9%80%BB%E8%BE%91"><span class="toc-text">人设和回复逻辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86"><span class="toc-text">长期记忆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%9C%BA%E7%99%BD"><span class="toc-text">开场白</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%9C%BA%E7%99%BD%E9%A2%84%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">开场白预制问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E5%B8%83"><span class="toc-text">发布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python%E8%B0%83%E7%94%A8%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">Python调用智能体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAAPI-KEY"><span class="toc-text">创建API_KEY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%99%BA%E8%83%BD%E4%BD%93ID"><span class="toc-text">获取智能体ID</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Python%E4%BE%9D%E8%B5%96"><span class="toc-text">安装Python依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E4%BB%A3%E7%A0%81"><span class="toc-text">调用代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91"><span class="toc-text">扩展-插件开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%8F%92%E4%BB%B6"><span class="toc-text">新建插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="toc-text">创建工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E4%BB%A3%E7%A0%81"><span class="toc-text">编写代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B8%83-1"><span class="toc-text">发布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%9E%B6"><span class="toc-text">上架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81"><span class="toc-text">如何开发工作流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">智能体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E5%BA%93-2"><span class="toc-text">知识库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-2"><span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6-1"><span class="toc-text">插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81-1"><span class="toc-text">工作流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%AF%B9%E6%AF%94%E5%87%BD%E6%95%B0"><span class="toc-text">工作流对比函数</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">python</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">Coze</span></span></p><h1>Coze智能体</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2026-06-08 20:22:34 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 16.5k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 82分钟</span></p></div><div id="article"><h1 id="Coze智能体开发"><a href="#Coze智能体开发" class="headerlink" title="Coze智能体开发"></a>Coze智能体开发</h1><h2 id="Coze介绍和入门"><a href="#Coze介绍和入门" class="headerlink" title="Coze介绍和入门"></a>Coze介绍和入门</h2><h3 id="Agent智能体概念"><a href="#Agent智能体概念" class="headerlink" title="Agent智能体概念"></a>Agent智能体概念</h3><p>Agent智能体：大模型+工具，就形成了智能体</p><ul><li>大模型：只能思考（脑袋），给模型文字输入，模型给出文字输出</li><li>工具：程序员写的函数（这些函数可以做什么就非常自由了）（手脚、身体）</li></ul><p>大模型（脑袋）+工具（身体） &#x3D; 智能体</p><blockquote><p>智能体：以大模型作为思考核心，以工具函数作为行动，形成的能思考，能行动（干真正的活）的智能。</p></blockquote><p><img src="/posts/dbcd824/20260227120814.png" alt="image-20251129154946138"></p><p>智能体主要有如下核心：</p><ul><li><code>工具（核心）</code>：这就是智能体的核心中的核心，是智能体的行动依据</li><li>行动（辅助）：基于模型的思考给出的行动方案，指导决定调用哪个工具</li><li>规划（辅助）：模型的思考、用来形成决策方案（调哪个工具、如何执行下一步）</li><li>记忆（辅助）：历史对话记录</li></ul><h3 id="Coze平台介绍"><a href="#Coze平台介绍" class="headerlink" title="Coze平台介绍"></a>Coze平台介绍</h3><pre><code class="properties">Coze和Dify的对比总结：
+    1- Coze
+        优点：插件丰富，实现需求效率高
+        缺点：闭源；你上传的数据、文档，字节公司是知道的
+        使用：功能不涉及保密的数据，而且工期很短，可以使用Coze
+        
+    2-Dify
+        优点：开源，部署在本地；你上传的数据、文档，只有你们公司知道，别人不知道
+        缺点：插件比较少，需要自己公司开发
+        使用：功能涉及保密的数据，而且工期很短，可以使用Dify
+</code></pre><p><code>低代码</code>智能体开发平台。</p><ul><li>低代码：无需代码或少量代码，即可做开发的相关技术或框架平台。</li></ul><p>Coze是基于网页使用的，全程联网，通过鼠标拖拉拽的方式即可自由完成模型+工具的组合，形成符合自己想法的各类智能体。</p><p>地址：<a target="_blank" rel="noopener" href="https://code.coze.cn/home">https://code.coze.cn/home</a></p><img src="/posts/dbcd824/image-20260528073958337.png" alt="image-20260528073958337" style="zoom:40%"> <img src="/posts/dbcd824/image-20260528074237554.png" alt="image-20260528074237554" style="zoom:56%"><h3 id="Coze中的模块"><a href="#Coze中的模块" class="headerlink" title="Coze中的模块"></a>Coze中的模块</h3><h4 id="资源库"><a href="#资源库" class="headerlink" title="资源库"></a>资源库</h4><img src="/posts/dbcd824/20260227153740.png" alt="image-20260227153740198" style="zoom:50%"><h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>就是模型的技能，可以提供联网搜索、天气查询、车票查询、硬件控制、等各类功能，插件可以在Coze网页内搜索使用。</p><img src="/posts/dbcd824/20260227153841.png" alt="image-20260227153841233" style="zoom:67%"><h4 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h4><p>工作流是一个特殊的资源：是一个DAG有向无环图（有方向无闭环的工作流程图）</p><p>里面的每一个节点就可以是插件、数据库、知识库、大模型等内容</p><p><img src="/posts/dbcd824/20260227154056.png" alt="image-20260227154056273"></p><pre><code class="properties">工作流和对话流的区别：
+    1: 工作流：主要用来基于设置好的流程，自动化执行固定的任务
+    2: 对话流：处理与大模型的聊天，主要用于构建聊天机器人。不会自动调用工具、不会拆解复杂需求
+</code></pre><h4 id="知识库"><a href="#知识库" class="headerlink" title="知识库"></a>知识库</h4><p>就是外挂的知识库，可以支持上传PDF、Word等文档知识，作为模型的辅助参考资料。</p><h4 id="提示词"><a href="#提示词" class="headerlink" title="提示词"></a>提示词</h4><p>可以记录用户自己准备好的提示词，随时取用。</p><h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><p>支持用户上传数据作为二维表格数据库，供模型使用。</p><h2 id="创建第一个工作流"><a href="#创建第一个工作流" class="headerlink" title="创建第一个工作流"></a>创建第一个工作流</h2><ul><li><p>进入<a target="_blank" rel="noopener" href="https://www.coze.cn/home%E9%A1%B5%E9%9D%A2">https://www.coze.cn/home页面</a></p></li><li><p>创建工作流</p></li></ul><p>资源库 -&gt; 右上角资源 -&gt; 选择工作流 -&gt; 填写信息 -&gt; 确认</p><img src="/posts/dbcd824/image-20260528095255355.png" alt="image-20260528095255355" style="zoom:45%"><ul><li>添加大模型节点</li></ul><img src="/posts/dbcd824/image-20260528095428166.png" alt="image-20260528095428166" style="zoom:45%"><ul><li>节点间连线</li></ul><p>前后连接起来。鼠标放在 + 号上，左键按住进行连线</p><p><img src="/posts/dbcd824/image-20260528095539865.png" alt="image-20260528095539865"></p><ul><li>大模型基础配置</li></ul><img src="/posts/dbcd824/image-20260528095803433.png" alt="image-20260528095803433" style="zoom:50%"><ul><li>设置大模型提示词</li></ul><img src="/posts/dbcd824/image-20260528100056666.png" alt="image-20260528100056666" style="zoom:60%"><p>系统提示词：直接复制</p><pre><code class="properties">你是一个旅游规划助手，能够根据用户输入的内容规划行程，并根据互联网搜索结果给出可执行的方案。需要注意
+
+1. 你的回复必须言简意赅，不要有太多的长篇大论
+2. 请从每天的行程安排、天气和应对措施、主要景点、特色食物、民族特色等多个维度按天安排行程
+3. 最后整理一个表格，按照吃、住、行等多个维度，计算2-4个人的人均支出
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>添加技能【可选】</li></ul><img src="/posts/dbcd824/image-20260528100304168.png" alt="image-20260528100304168" style="zoom:60%"> <img src="/posts/dbcd824/image-20260528100245791.png" alt="image-20260528100245791" style="zoom:60%"><ul><li>配置【结束】节点</li></ul><img src="/posts/dbcd824/image-20260528100500377.png" alt="image-20260528100500377" style="zoom:67%"><ul><li>试运行</li></ul><img src="/posts/dbcd824/image-20260528100535691.png" alt="image-20260528100535691" style="zoom:50%"><ul><li>运行结果</li></ul><img src="/posts/dbcd824/image-20260528100628959.png" alt="image-20260528100628959" style="zoom:50%"><h2 id="常用节点介绍"><a href="#常用节点介绍" class="headerlink" title="常用节点介绍"></a>常用节点介绍</h2><h3 id="选择器节点"><a href="#选择器节点" class="headerlink" title="选择器节点"></a>选择器节点</h3><p>该节点是一个 if-else 节点，用于工作流内的分支判断。</p><ul><li>添加节点</li></ul><img src="/posts/dbcd824/image-20260528102338946.png" alt="image-20260528102338946" style="zoom:50%"><ul><li>连线</li></ul><p><img src="/posts/dbcd824/image-20260528102408490.png" alt="image-20260528102408490"></p><p>等价于如下的Python代码</p><pre><code class="python">if 判断条件:
+    大模型
+else:
+    结束
+</code></pre><p>&#x3D;&#x3D;注意：大模型的系统提示词、用户提示词 与 第2章节的完全一样&#x3D;&#x3D;</p><ul><li>配置选择器</li></ul><p>input不为空</p><img src="/posts/dbcd824/image-20260528102545827.png" alt="image-20260528102539004" style="zoom:60%"> <img src="/posts/dbcd824/image-20260528102516648.png" alt="image-20260528102516648" style="zoom:67%"><h3 id="意图识别节点"><a href="#意图识别节点" class="headerlink" title="意图识别节点"></a>意图识别节点</h3><p>意图识别（Intent Recognition）指的是让智能体理解用户通过自然语言表达的意图或目的。</p><ul><li>添加节点</li></ul><img src="/posts/dbcd824/image-20260528103642120.png" alt="image-20260528103642120" style="zoom:50%"><ul><li>配置</li></ul><p>&#x3D;&#x3D;意图识别，为了提高准确性，最好选择能力强的模型&#x3D;&#x3D;</p><p><img src="/posts/dbcd824/image-20260531112014817.png" alt="image-20260531112014817"></p><ul><li>连线</li></ul><p><img src="/posts/dbcd824/image-20260528104033560.png" alt="image-20260528104033560"></p><ul><li>试运行</li></ul><img src="/posts/dbcd824/image-20260528104345872.png" alt="image-20260528104345872" style="zoom:67%"><p>旅游规划：广州有什么好吃好玩的</p><p>瞎扯淡：好无聊啊</p><h3 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h3><p>场景：我想出去旅游，但是在提示词中没有告诉工作流目的地是啥</p><ul><li>整体结构</li></ul><p><img src="/posts/dbcd824/gzai8_second_workflow.png" alt="gzai8_second_workflow"></p><ul><li>添加节点</li></ul><img src="/posts/dbcd824/image-20260528111449417.png" alt="image-20260528111449417" style="zoom:50%"><ul><li>连线</li></ul><p><img src="/posts/dbcd824/image-20260528111620219.png" alt="image-20260528111620219"></p><ul><li>配置输入</li></ul><p>为了与前面的区分开，这里取名city</p><p><img src="/posts/dbcd824/image-20260528111649063.png" alt="image-20260528111649063"></p><ul><li>配置大模型</li></ul><p>输入增加 city变量</p><p>用户提示词改成：</p><pre><code class="properties">用户的问题：&#123;&#123;input&#125;&#125;
+用户的目的地是：&#123;&#123;city&#125;&#125;
+</code></pre><img src="/posts/dbcd824/image-20260531115224663.png" alt="image-20260531115224663" style="zoom:67%"><ul><li>配置输出</li></ul><p><img src="/posts/dbcd824/image-20260531115011329.png" alt="image-20260531115011329"></p><ul><li>试运行</li></ul><img src="/posts/dbcd824/image-20260528111829785.png" alt="image-20260528111829785" style="zoom:60%"> <img src="/posts/dbcd824/image-20260528111935397.png" alt="image-20260528111935397" style="zoom:60%"><h3 id="图片理解插件"><a href="#图片理解插件" class="headerlink" title="图片理解插件"></a>图片理解插件</h3><p>课件上的【图片理解插件】已无法正常使用。</p><ul><li><p>首先创建一个新的工作流进行演示</p></li><li><p>添加 图片理解 插件</p></li></ul><img src="/posts/dbcd824/image-20260528115540919.png" alt="image-20260528115540919" style="zoom:50%"><ul><li>搜索插件</li></ul><p>OCR</p><p><img src="/posts/dbcd824/image-20260531145537900.png" alt="image-20260531145537900"></p><ul><li><p>连线</p></li><li><p>设置输入</p></li></ul><p>Image在File下面。变量名取名img</p><p><img src="/posts/dbcd824/image-20260528123931763.png" alt="image-20260528123931763"></p><ul><li>设置插件</li></ul><p><img src="/posts/dbcd824/image-20260528124114391.png" alt="image-20260528124114391"></p><ul><li>设置结束</li></ul><img src="/posts/dbcd824/image-20260528124012216.png" alt="image-20260528124012216" style="zoom:57%"><ul><li>试运行</li></ul><p>上传一张本地图片，图片中带有文字</p><img src="/posts/dbcd824/image-20260528124145086.png" alt="image-20260528124145086" style="zoom:50%"><h2 id="创建第一个智能体"><a href="#创建第一个智能体" class="headerlink" title="创建第一个智能体"></a>创建第一个智能体</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><ul><li>创建</li></ul><img src="/posts/dbcd824/image-20260528131443490.png" alt="image-20260528131443490" style="zoom:70%"> <img src="/posts/dbcd824/image-20260528131436724.png" alt="image-20260528131436724" style="zoom:60%"><ul><li>系统提示词</li></ul><img src="/posts/dbcd824/image-20260528131735044.png" alt="image-20260528131735044" style="zoom:60%"><pre><code class="properties"># 角色 
+你是一个多功能机器人，能够根据用户输入的提示词选择使用不同的工作流完成对应的工作。
+
+
+## 工作步骤 
+- 如果用户上传了文档，则识别文档中的文本内容
+- 如果用户输入的内容和旅行相关，则进行旅游规划
+</code></pre><ul><li>配置模型和工作流</li></ul><p>&#x3D;&#x3D;注意：工作流要先发布&#x3D;&#x3D;</p><img src="/posts/dbcd824/image-20260528131653453.png" alt="image-20260528131653453" style="zoom:50%"><ul><li>开场白配置</li></ul><img src="/posts/dbcd824/image-20260528131946698.png" alt="image-20260528131946698" style="zoom:67%"><pre><code class="properties">你好，我是一个多功能机器人，支持旅游规划和图片文字提取。
+
+
+请帮我规划一个7天的行程
+请帮我从这张图片中提取文字
+</code></pre><ul><li>预览和调试</li></ul><img src="/posts/dbcd824/image-20260528132133332.png" alt="image-20260528132133332" style="zoom:67%"><ul><li>发布</li></ul><h3 id="优化效果"><a href="#优化效果" class="headerlink" title="优化效果"></a>优化效果</h3><ul><li>工作流功能描述清楚</li></ul><img src="/posts/dbcd824/image-20260531162315848.png" alt="image-20260531162315848" style="zoom:67%"><ul><li>Agent的提示词中写清楚调用哪个工作流</li></ul><img src="/posts/dbcd824/image-20260531162415454.png" alt="image-20260531162415454" style="zoom:67%"><ul><li>Agent使用功能强大的大模型</li></ul><img src="/posts/dbcd824/image-20260531162428903.png" alt="image-20260531162428903" style="zoom:67%"><h2 id="知识库-1"><a href="#知识库-1" class="headerlink" title="知识库"></a>知识库</h2><h3 id="创建知识库"><a href="#创建知识库" class="headerlink" title="创建知识库"></a>创建知识库</h3><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul><li>选择知识库</li></ul><p>创建扣子知识库。免费，并且存放在扣子平台上。</p><img src="/posts/dbcd824/image-20260528151428989.png" alt="image-20260528151428989" style="zoom:50%"><ul><li>设置名称</li></ul><p>最后点击【完成创建】，也就是只创建，文档后续自己手动导入。</p><img src="/posts/dbcd824/image-20260528151637255.png" alt="image-20260528151637255" style="zoom:67%"><ul><li>添加内容-&gt;本地文档</li></ul><p><img src="/posts/dbcd824/image-20260528151800168.png" alt="image-20260528151800168"></p><ul><li>上传</li></ul><img src="/posts/dbcd824/image-20260528151832602.png" alt="image-20260528151832602" style="zoom:50%"><ul><li>文档设置</li></ul><img src="/posts/dbcd824/image-20260528151905974.png" alt="image-20260528151905974" style="zoom:57%"> <img src="/posts/dbcd824/image-20260528151931607.png" alt="image-20260528151931607" style="zoom:56%"><ul><li>下一步、确认即可</li></ul><p><img src="/posts/dbcd824/image-20260528152125356.png" alt="image-20260528152125356"></p><h4 id="分段策略"><a href="#分段策略" class="headerlink" title="分段策略"></a>分段策略</h4><p>因为一般文档都很大，检索只需要有关联的那一小部分，所以要将大文档拆分为多个小分段，这样匹配到的是小分段</p><p>便于询问模型的使用用小分段作为参考资料。</p><p><img src="/posts/dbcd824/20260301104658.png" alt="image-20260301104657990"></p><ul><li>自动分段和清洗</li></ul><p>一般用的少，除非你懒，完全自动化</p><ul><li>自定义</li></ul><p><img src="/posts/dbcd824/20260301104726.png" alt="image-20260301104726546"></p><pre><code class="properties">1- 分段标识符: 可以选换行、2个换行、句号、问号、感叹号等。表示，如果出现标识符就分段
+2- 分段最大长度: 表示最大字符数量（一个分段）
+3- 分段重叠度: 为了保证语义的连贯，当前分段数据最大可以重叠上一个连续分度的内容的比例
+</code></pre><ul><li>按层级分段</li></ul><p><img src="/posts/dbcd824/20260301104910.png" alt="image-20260301104910805"></p><p>就是按照文档中天然层级做分段，比如Word文档里面的一级、二级标题等。</p><ul><li>使用总结</li></ul><pre><code class="properties">1: 懒了或很小的知识库文档，用自动
+2: 如果没有天然层级的文档，用自定义
+3: 如果带有天然层级文档，如Word，选用层级分段
+</code></pre><h4 id="搜索策略"><a href="#搜索策略" class="headerlink" title="搜索策略"></a>搜索策略</h4><p>这些东西在Coze中是自动提供的，后续我们学习RAG等，是需要自己带代码实现的。</p><p><img src="/posts/dbcd824/20260301105205.png" alt="image-20260301105205327"></p><ul><li>搜索策略</li></ul><pre><code class="properties">1- 语义: 按照用户查询所表达的含义做匹配
+    语义一般是将文档转为向量存储，将用户查询也转为向量
+    两份向量做余弦相似度匹配，结果是0~1的小数，结果越大，语义就越相似
+2- 全文: 按照用户查询所表达的文字做匹配
+3- 混合: 两者都有
+</code></pre><p><img src="/posts/dbcd824/image-20260531174246598.png" alt="image-20260531174246598"></p><ul><li>最大召回数量</li></ul><pre><code class="properties">召回：查到的结果
+
+最大召回数量：查询的返回结果分段数量
+</code></pre><ul><li>最小匹配度</li></ul><pre><code class="properties">默认是0.5，表示的就是语义的相似度，只要高于0.5的才能作为结果被召回。
+
+0.5就是2份向量的相似度结果。
+    大于0.5，表示2者含义，看起来有关联
+    大于0.7，表示2者含义，肯定有关联
+    大于0.85，表示2者含义，基本相同
+    如果是0.99，完全相同
+</code></pre><h3 id="知识库应用"><a href="#知识库应用" class="headerlink" title="知识库应用"></a>知识库应用</h3><ul><li>创建工作流</li><li>添加知识库检索节点</li></ul><img src="/posts/dbcd824/image-20260528152259586.png" alt="image-20260528152259586" style="zoom:50%"><ul><li><p>添加2个大模型节点</p><p>修改名称。连线，效果如下</p><p><img src="/posts/dbcd824/image-20260528152442970.png" alt="image-20260528152442970"></p></li><li><p>设置 知识库检索</p></li></ul><p>添加5.1创建好的知识库。其他设置保持默认</p><img src="/posts/dbcd824/image-20260528152639945.png" alt="image-20260528152639945" style="zoom:57%"><ul><li>设置 联网搜索</li></ul><p>设置模型；添加 头条搜索技能</p><img src="/posts/dbcd824/image-20260528153529982.png" alt="image-20260528153529982" style="zoom:57%"><p>用户提示词：</p><pre><code class="properties">用户搜索的内容：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>设置 结果润色</li></ul><img src="/posts/dbcd824/image-20260528153706170.png" alt="image-20260528153706170" style="zoom:57%"><p>系统提示词：</p><pre><code class="properties">你是一个知识库查询结果润色和兜底的助手，能够根据用户输入的问题对查询结果做润色。也可以在检索结果为空时，负责调用搜索插件，在互联网检索相关内容并返回给用户。  你的职责如下：
+1.  如果检索结果不为空，根据用户输入的问题进行优化，并使用比较大方和专业的话术回复用户。这个过程不需要联网搜索。
+2. 如果检索结果为空，则调用工具，在互联网检索对应的内容，并根据用户输入的问题进行优化，并使用比较大方和专业的话术回复用户
+
+注意：
+1. 知识库检索结果可能是空的
+2. 以知识库检索结果为主，联网搜索结果为辅，进行合并润色输出
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户的原始查询：&#123;&#123;input&#125;&#125;
+知识库检索结果：&#123;&#123;from_knowledge&#125;&#125;
+联网搜索结果：&#123;&#123;from_search&#125;&#125;
+</code></pre><ul><li>设置结束</li></ul><img src="/posts/dbcd824/image-20260528153727645.png" alt="image-20260528153727645" style="zoom:57%"><ul><li>试运行</li></ul><p><img src="/posts/dbcd824/image-20260528153747743.png" alt="image-20260528153747743"></p><h2 id="数据库-1"><a href="#数据库-1" class="headerlink" title="数据库"></a>数据库</h2><h3 id="导入数据"><a href="#导入数据" class="headerlink" title="导入数据"></a>导入数据</h3><ul><li>选择</li></ul><img src="/posts/dbcd824/image-20260528162155093.png" alt="image-20260528162155093" style="zoom:50%"><ul><li>设置名称</li></ul><img src="/posts/dbcd824/image-20260528162304408.png" alt="image-20260528162304408" style="zoom:50%"><ul><li>手动添加字段</li></ul><p>选择 单用户模式、渠道共享</p><p>下面的操作，相当于在通过create table建表</p><img src="/posts/dbcd824/image-20260528162447032.png" alt="image-20260528162447032" style="zoom:57%"><ul><li>导入数据</li></ul><p>将资料中【&#x3D;&#x3D;04-绩效数据.xlsx&#x3D;&#x3D;】数据上传导入</p><p>测试数据：数据只在工作流、Agent&#x3D;&#x3D;开发过程&#x3D;&#x3D;中起效。功能上线以后，工作流、Agent、用户无法访问到这个数据</p><p>线上数据：面向真实业务的数据，当你的工作流、Agent&#x3D;&#x3D;上线以后&#x3D;&#x3D;，其他使用你的工作流、Agent的用户能访问</p><img src="/posts/dbcd824/image-20260528162605142.png" alt="image-20260528162605142" style="zoom:67%"> <img src="/posts/dbcd824/image-20260528162633625.png" alt="image-20260528162633625" style="zoom:67%"><ul><li>导入成功</li></ul><h3 id="数据库增删改查"><a href="#数据库增删改查" class="headerlink" title="数据库增删改查"></a>数据库增删改查</h3><h4 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h4><p><img src="/posts/dbcd824/image-20260528165026697.png" alt="image-20260528165026697"></p><h4 id="意图识别"><a href="#意图识别" class="headerlink" title="意图识别"></a>意图识别</h4><p>&#x3D;&#x3D;涉及到要做决策、意图识别的地方，推荐选择聪明的大模型&#x3D;&#x3D;</p><img src="/posts/dbcd824/image-20260528165056327.png" alt="image-20260528165056327" style="zoom:67%"><h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ul><li>信息提取</li></ul><img src="/posts/dbcd824/image-20260528165228522.png" alt="image-20260528165228522" style="zoom:67%"> <img src="/posts/dbcd824/image-20260528165331347.png" alt="image-20260528165331347" style="zoom:67%"><p>系统提示词：</p><pre><code class="properties">你是一个人名提取助手，能够根据用户输入的内容，提取出里面的人名。
+
+示例1：
+用户输入：查询张三的绩效
+提取结果：张三
+
+示例2：
+用户输入：看下李四的绩效
+提取结果：李四
+
+示例3：
+用户输入：查询绩效
+提取结果：无
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>查询</li></ul><p>select work_code,name,performance_level from user_table where name&#x3D;’’;</p><img src="/posts/dbcd824/image-20260528165421282.png" alt="image-20260528165421282" style="zoom:67%"><ul><li>结果润色</li></ul><img src="/posts/dbcd824/image-20260528165533610.png" alt="image-20260528165533610" style="zoom:67%"><p>系统提示词：</p><pre><code class="properties">你是一个查询结果整理助手，能够根据用户输入的问题和数据库中查询到的结果进行整合，并给到用户一个专业、得体的答复。
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+数据库查询结果：&#123;&#123;outputList&#125;&#125;
+</code></pre><h4 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h4><ul><li>信息提取</li></ul><img src="/posts/dbcd824/image-20260602112131698.png" alt="image-20260602112131698" style="zoom:67%"><p>系统提示词：</p><pre><code class="properties">你是一个信息提取专家，能够从用户输入的内容中，提取出里面包含的工号&quot;&quot;&quot;work_code&quot;&quot;&quot;、人名&quot;&quot;&quot;name&quot;&quot;&quot;、绩效级别&quot;&quot;&quot;performance_level&quot;&quot;&quot;，以JSON格式返回。
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><p>本步骤的底层流程：</p><p><img src="/posts/dbcd824/image-20260602105238674.png" alt="image-20260602105238674"></p><ul><li>新增</li></ul><img src="/posts/dbcd824/image-20260528165721316.png" alt="image-20260528165721316" style="zoom:67%"><ul><li>试运行提示词</li></ul><pre><code class="properties">帮我添加如下员工的绩效信息，姓名猪八戒，工号999，绩效级别C
+</code></pre><ul><li>运行结果</li></ul><p><img src="/posts/dbcd824/image-20260602105744984.png" alt="image-20260602105744984"></p><h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><ul><li>信息提取</li></ul><img src="/posts/dbcd824/image-20260528165801119.png" alt="image-20260528165801119" style="zoom:67%"><p>系统提示词：</p><pre><code class="properties">你是一个用户信息提取助手，，能够根据用户输入的内容，提取出来里面的人名&#123;name&#125;、工号&#123;work_code&#125;、绩效&#123;performance_level&#125;，以json格式返回。
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>修改</li></ul><img src="/posts/dbcd824/image-20260528165840075.png" alt="image-20260528165840075" style="zoom:67%"><p>上面的操作等价于该SQL语句：update tb set performance_level&#x3D;’A’ where name&#x3D;’输入的name’ and work_code&#x3D;’输入的work_code’</p><ul><li>试运行提示词</li></ul><pre><code class="properties">帮我将基太美员工的绩效改为A，他的工号是1009
+</code></pre><ul><li>运行结果</li></ul><p><img src="/posts/dbcd824/image-20260602111318983.png" alt="image-20260602111318983"></p><p><img src="/posts/dbcd824/image-20260602111321686.png" alt="image-20260602111321686"></p><h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><ul><li>信息提取</li></ul><img src="/posts/dbcd824/image-20260528165912785.png" alt="image-20260528165912785" style="zoom:67%"><p>系统提示词：</p><pre><code class="properties">你是一个信息提取专家，能够从用户输入的内容中，提取出里面包含的工号&quot;&quot;&quot;work_code&quot;&quot;&quot;、人名&quot;&quot;&quot;name&quot;&quot;&quot;，以JSON格式返回。
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>删除</li></ul><img src="/posts/dbcd824/image-20260528165941873.png" alt="image-20260528165941873" style="zoom:67%"><ul><li>试运行提示词</li></ul><pre><code class="properties">删除员工猪八戒，工号是999的绩效数据
+</code></pre><h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="小红书多主题案例"><a href="#小红书多主题案例" class="headerlink" title="小红书多主题案例"></a>小红书多主题案例</h3><ul><li>整体结构</li></ul><p><img src="/posts/dbcd824/image-20260602082024016.png" alt="image-20260602082024016"></p><ul><li>主题提取</li></ul><img src="/posts/dbcd824/image-20260528185821183.png" alt="image-20260528185821183" style="zoom:67%"><p>&#x3D;&#x3D;注意：输出的变量类型是Array<string>&#x3D;&#x3D;</string></p><p><img src="/posts/dbcd824/image-20260528185919950.png" alt="image-20260528185919950"></p><p>系统提示词：</p><pre><code class="properties">你是一个小红书电商文案批量生成工作流主体提取助手，能够根据用户输入的内容提取出来里面包含的主体，并以数组格式返回
+</code></pre><p>用户提示词：</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>循环</li></ul><img src="/posts/dbcd824/image-20260528190019828.png" alt="image-20260528190019828" style="zoom:67%"><ul><li>循环体中的大模型</li></ul><img src="/posts/dbcd824/image-20260602162053322.png" alt="image-20260602162053322" style="zoom:57%"><p><img src="/posts/dbcd824/image-20260528190141836.png" alt="image-20260528190141836"></p><p>系统提示词：</p><pre><code class="properties">你是一个小红书文案生成专家，能够根据用输入的主题进行互联网检索，并生成小红书文风的爆款文案，作为软广内容，提升产品销售的转化率。请注意
+
+1. 文案不少于500个字
+2. 文案需要严格按照小红书的文风输出
+</code></pre><p>用户提示词：</p><pre><code class="properties">主题：&#123;&#123;topic&#125;&#125;
+</code></pre><ul><li>结束</li></ul><p><img src="/posts/dbcd824/image-20260528190209228.png" alt="image-20260528190209228"></p><ul><li>效果</li></ul><pre><code class="properties">请我帮我生成：始祖鸟Alpha SV冲锋衣、凯乐石Mont-X冲锋衣、拓路者雪鹰2.0冲锋衣的文案
+</code></pre><img src="/posts/dbcd824/image-20260528190448416.png" alt="image-20260528190448416" style="zoom:67%"><h2 id="多智能体【了解】"><a href="#多智能体【了解】" class="headerlink" title="多智能体【了解】"></a>多智能体【了解】</h2><h3 id="多模态模型"><a href="#多模态模型" class="headerlink" title="多模态模型"></a>多模态模型</h3><p>大模型常见分类有：</p><ul><li><code>LLM</code> (Large Language Model)大语言模型：基于对文字语义的理解，生成回复（文字）<ul><li>文字 -&gt; 文字</li></ul></li><li><code>Chat Model</code> 对话模型：是<code>LLM 的一种</code>，是专用于对话的大语言模型，加强了会话记忆，多轮对话识别等聊天业务常见<ul><li>文字 -&gt; 文字</li></ul></li><li><code>音视频模型</code> ：能够处理音频、视频、图像等数据<ul><li>音视频、图像-&gt; 音视频、图像</li></ul></li><li><code>多模态模型</code>：音频、视频、图像、文字，都能处理</li></ul><h3 id="单智能体"><a href="#单智能体" class="headerlink" title="单智能体"></a>单智能体</h3><p><img src="/posts/dbcd824/20260301181205.png" alt="image-20260301181205744"></p><h3 id="多智能体"><a href="#多智能体" class="headerlink" title="多智能体"></a>多智能体</h3><p><img src="/posts/dbcd824/image-20260602164924890.png" alt="image-20260602164924890"></p><p><img src="/posts/dbcd824/20260301181220.png" alt="image-20260301181220779"></p><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p><img src="/posts/dbcd824/20260301181231.png" alt="image-20260301181231740"></p><h3 id="翻译案例"><a href="#翻译案例" class="headerlink" title="翻译案例"></a>翻译案例</h3><p><img src="/posts/dbcd824/image-20260528191105792.png" alt="image-20260528191105792"></p><p>父Agent的适用场景：</p><pre><code class="properties">你是一个路由智能体，主要功能是基于用户输入的内容，选择对应的子智能体执行即可。
+例如：
+1. 用户说把某句话翻译成中文，你就调用 中文 agent
+2. 用户说把某句话翻译成韩文，你就调用 韩文 agent
+3. 用户说把某句话翻译成日文，你就调用 日文 agent
+</code></pre><p>子Agent的适用场景：</p><pre><code class="properties">将用户输入的内容翻译成中文
+</code></pre><p>子Agent的提示词：</p><pre><code class="properties">1. 将用户输入的内容翻译成中文
+2. 如果目标语言不是中文，就返回“抱歉，我无法翻译”
+</code></pre><p>试运行文本：</p><pre><code class="properties">&quot;Good morning&quot; 翻译成中文
+
+&quot;Good morning&quot; 翻译成韩文
+
+&quot;Good morning&quot; 翻译成日文
+</code></pre><p>运行结果</p><p><img src="/posts/dbcd824/image-20260602171736043.png" alt="image-20260602171736043"></p><h2 id="工作流参考"><a href="#工作流参考" class="headerlink" title="工作流参考"></a>工作流参考</h2><h3 id="天气查询"><a href="#天气查询" class="headerlink" title="天气查询"></a>天气查询</h3><p><img src="/posts/dbcd824/image-20260603075229661.png" alt="image-20260603075229661"></p><h4 id="意图识别-1"><a href="#意图识别-1" class="headerlink" title="意图识别"></a>意图识别</h4><img src="/posts/dbcd824/image-20260603071544535.png" alt="image-20260603071544535" style="zoom:67%"><h4 id="信息提示"><a href="#信息提示" class="headerlink" title="信息提示"></a>信息提示</h4><img src="/posts/dbcd824/image-20260603071532114.png" alt="image-20260603071532114" style="zoom:67%"><h4 id="城市识别节点"><a href="#城市识别节点" class="headerlink" title="城市识别节点"></a>城市识别节点</h4><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个天气查询信息抽取的助手，你可以协助抽取用户的天气查询城市。
+如果用户输入内容中包含城市，请输出要查询的城市名，如果未包含城市信息，请输出空。
+我将提供示例，如下：
+
+【示例1】
+用户输入：查询南京天气
+AI输出：南京
+【示例2】
+用户输入：查询天气
+AI输出：空
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h4 id="IF选择器"><a href="#IF选择器" class="headerlink" title="IF选择器"></a>IF选择器</h4><img src="/posts/dbcd824/image-20260603073408202.png" alt="image-20260603073408202" style="zoom:67%"><h4 id="城市名聚合节点"><a href="#城市名聚合节点" class="headerlink" title="城市名聚合节点"></a>城市名聚合节点</h4><p>&#x3D;&#x3D;注意：要把 输入的放在上面，否则结果可能为空&#x3D;&#x3D;</p><p><img src="/posts/dbcd824/image-20260603073423807.png" alt="image-20260603073423807"></p><h4 id="时间识别节点"><a href="#时间识别节点" class="headerlink" title="时间识别节点"></a>时间识别节点</h4><ul><li>系统提示词</li></ul><pre><code class="properties"># 任务目标
+你需要分析用户的输入文本，判断其中是否包含**查询天气的日期或日期段**。
+- 如果包含，仅输出该**日期/日期段**（纯文本，无任何多余字符、标点或解释）；
+- 如果不包含，仅输出**今天**（纯文本，无任何多余字符、标点或解释）。
+
+# 核心判定规则
+1. 仅识别**明确指向天气查询**且**包含具体日期/日期段**的输入；
+2. 输入中仅出现“天气”“查天气”等词汇但无日期时，判定为今天；
+3. 日期/日期段与天气查询强关联（如“今天天气”“明天天气”“周末天气”“3月5号天气”），才输出；
+4. 禁止编造、替换日期，仅提取输入中真实存在的日期/日期段；
+5. 若包含多个日期，仅输出**第一个出现**的日期/日期段；
+6. 输出保持原文表述，不做改写（如“明天”就输出“明天”，“周五到周日”就输出“周五到周日”）。
+
+# 标准示例
+【示例1】
+用户输入：南京今天天气
+AI回复：今天
+
+【示例2】
+用户输入：查天气
+AI回复：今天
+
+【示例3】
+用户输入：杭州明天天气怎么样
+AI回复：明天
+
+【示例4】
+用户输入：北京周末天气
+AI回复：周末
+
+【示例5】
+用户输入：3月5号上海天气
+AI回复：3月5号
+
+【示例6】
+用户输入：下周一到周三天气
+AI回复：下周一到周三
+
+【示例7】
+用户输入：天气好吗
+AI回复：今天
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h4 id="日期转换节点"><a href="#日期转换节点" class="headerlink" title="日期转换节点"></a>日期转换节点</h4><p><img src="/posts/dbcd824/20260301114838.png" alt="image-20260301114838697"></p><p>添加技能</p><ul><li>系统提示词</li></ul><pre><code class="properties">你是时间解析助手。
+用户会输入相对时间或时间范围，例如：今天、明天、3天后、下周一、下周、未来3到5天等。
+
+你需要：
+1. 调用工具 get_current_datetime 获取当前日期时间。
+2. 以当前时间为基准，把用户输入的时间或时间范围，转换成标准日期格式。
+3. 输出格式只有两种：
+   - 单个日期：YYYY-MM-DD
+   - 日期范围：YYYY-MM-DD 至 YYYY-MM-DD
+4. 只输出标准日期结果，不添加任何解释、文字、标点、说明。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h4 id="天气查询节点"><a href="#天气查询节点" class="headerlink" title="天气查询节点"></a>天气查询节点</h4><p>&#x3D;&#x3D;注意：如果墨迹天气插件无法使用。可以换成能联网搜索的大模型&#x3D;&#x3D;</p><img src="/posts/dbcd824/image-20260603073525604.png" alt="image-20260603073525604" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你的任务：根据用户输入，查询指定城市和日期的天气。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">查询城市：&#123;&#123;city&#125;&#125;
+查询日期：&#123;&#123;date&#125;&#125;
+</code></pre><h3 id="旅行规划"><a href="#旅行规划" class="headerlink" title="旅行规划"></a>旅行规划</h3><img src="/posts/dbcd824/image-20260603075211214.png" alt="image-20260603075211214"><h4 id="IF选择器-1"><a href="#IF选择器-1" class="headerlink" title="IF选择器"></a>IF选择器</h4><img src="/posts/dbcd824/image-20260603074141766.png" alt="image-20260603074141766" style="zoom:67%"><h4 id="出发地识别节点"><a href="#出发地识别节点" class="headerlink" title="出发地识别节点"></a>出发地识别节点</h4><img src="/posts/dbcd824/image-20260603074721653.png" alt="image-20260603074721653" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个旅行信息抽取的助手，你可以协助抽取用户的旅行出发地。
+如果用户输入内容中包含出发地，请输出出发地城市，如果未包含出发地城市信息，请输出空。
+我将提供示例，如下：
+
+【示例1】
+用户输入：规划南京到上海的3天旅游行程
+AI输出：南京
+【示例2】
+用户输入：规划到上海的3天旅游行程
+AI输出：空
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h4 id="出发地选择器"><a href="#出发地选择器" class="headerlink" title="出发地选择器"></a>出发地选择器</h4><img src="/posts/dbcd824/image-20260603074840197.png" alt="image-20260603074840197" style="zoom:67%"><h4 id="出发地聚合"><a href="#出发地聚合" class="headerlink" title="出发地聚合"></a>出发地聚合</h4><img src="/posts/dbcd824/image-20260603074906225.png" alt="image-20260603074906225" style="zoom:67%"><h4 id="目的地识别节点"><a href="#目的地识别节点" class="headerlink" title="目的地识别节点"></a>目的地识别节点</h4><img src="/posts/dbcd824/image-20260603074748815.png" alt="image-20260603074748815" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个旅行信息抽取的助手，你可以协助抽取用户的旅行目的地。
+如果用户输入内容中包含目的地，请输出目的地城市，如果未包含目的地城市信息，请输出空。
+我将提供示例，如下：
+
+【示例1】
+用户输入：规划南京到上海的3天旅游行程
+AI输出：上海
+【示例2】
+用户输入：规划南京出发的3天旅游行程
+AI输出：空
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h4 id="目的地选择器"><a href="#目的地选择器" class="headerlink" title="目的地选择器"></a>目的地选择器</h4><img src="/posts/dbcd824/image-20260603074952045.png" alt="image-20260603074952045" style="zoom:67%"><h4 id="目的地聚合"><a href="#目的地聚合" class="headerlink" title="目的地聚合"></a>目的地聚合</h4><img src="/posts/dbcd824/image-20260603075001189.png" alt="image-20260603075001189" style="zoom:67%"><h4 id="旅游规划节点"><a href="#旅游规划节点" class="headerlink" title="旅游规划节点"></a>旅游规划节点</h4><img src="/posts/dbcd824/image-20260603075025328.png" alt="image-20260603075025328" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个旅游规划助手，能够根据用户输入的内容规划行程，并根据互联网搜索结果给出可执行的方案。需要注意
+
+1. 你的回复必须言简意赅，不要有太多的长篇大论
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">出发地：&#123;&#123;from_city&#125;&#125;
+目的地：&#123;&#123;to_city&#125;&#125;
+用户需求：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>试运行提示词</li></ul><pre><code class="properties">提示词1：
+帮我规划从广州出发到马尔代夫3天的旅游行程
+
+
+提示词2：
+帮我规划3天的旅游行程
+</code></pre><h3 id="文档读取"><a href="#文档读取" class="headerlink" title="文档读取"></a>文档读取</h3><p><img src="/posts/dbcd824/20260301121231.png" alt="image-20260301121231403"></p><p>大模型节点系统提示词</p><pre><code class="properties">你是一个助手，可以根据用户输入的意图，对文件读取后的内容做回答。
+</code></pre><p>大模型节点用户提示词</p><pre><code class="properties">用户输入的意图：&#123;&#123;query&#125;&#125;
+文件读取后的内容：&#123;&#123;file_content&#125;&#125;
+</code></pre><h3 id="链接读取"><a href="#链接读取" class="headerlink" title="链接读取"></a>链接读取</h3><p><img src="/posts/dbcd824/20260301121322.png" alt="image-20260301121322514"></p><p>大模型节点系统提示词</p><pre><code class="properties">你是一个润色的助手，用户会给你提供读取的URL网站的内容，你需要整理润色后输出。
+</code></pre><p>大模型节点用户提示词</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h3 id="知识库查询"><a href="#知识库查询" class="headerlink" title="知识库查询"></a>知识库查询</h3><p><img src="/posts/dbcd824/20260301121408.png" alt="image-20260301121408128"></p><h4 id="知识库检索节点"><a href="#知识库检索节点" class="headerlink" title="知识库检索节点"></a>知识库检索节点</h4><p><img src="/posts/dbcd824/20260301121429.png" alt="image-20260301121429736"></p><h4 id="web-search节点"><a href="#web-search节点" class="headerlink" title="web_search节点"></a>web_search节点</h4><p><img src="/posts/dbcd824/20260301121448.png" alt="image-20260301121448507"></p><ul><li>系统提示词</li></ul><pre><code class="properties">你可以调用技能：头条搜索（search）
+搜索用户提供的输入
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p><img src="/posts/dbcd824/20260302121855.png" alt="image-20260302121855459"></p><h4 id="查询-1"><a href="#查询-1" class="headerlink" title="查询"></a>查询</h4><p><img src="/posts/dbcd824/20260302121946.png" alt="image-20260302121945988"></p><h5 id="人名抽取节点"><a href="#人名抽取节点" class="headerlink" title="人名抽取节点"></a>人名抽取节点</h5><p>系统提示词</p><pre><code class="properties">你是一个人名抽取专家，你从用户输入的查询中抽取人名。
+
+示例1
+用户输入：王大的绩效
+你的回复：王大
+
+示例2：
+用户输入：查一下刘德华
+你的回复：刘德华
+
+示例3：
+用户输入：查一下绩效
+你的回复：无
+</code></pre><p>用户提示词</p><pre><code class="properties">用户输入：&#123;&#123;input&#125;&#125;
+</code></pre><h5 id="查询数据库节点"><a href="#查询数据库节点" class="headerlink" title="查询数据库节点"></a>查询数据库节点</h5><img src="/posts/dbcd824/20260302122148.png" alt="image-20260302122148558" style="zoom:67%"><h4 id="新增-1"><a href="#新增-1" class="headerlink" title="新增"></a>新增</h4><p><img src="/posts/dbcd824/20260302122033.png" alt="image-20260302122033657"></p><h5 id="信息抽取节点"><a href="#信息抽取节点" class="headerlink" title="信息抽取节点"></a>信息抽取节点</h5><p>系统提示词</p><pre><code class="properties">你是一个人名提取助手，能够根据用户输入的内容，提取出来里面的人名&#123;name&#125;、工号&#123;work_code&#125;、绩效&#123;performance_level&#125;，以json格式返回
+如果无法识别，则对应数据提供无
+
+示例1：
+用户输入：新增王丽红，绩效等级A，工号1011
+你的回复：name=王丽红, work_code=1011, performance_level=A
+
+示例2：
+用户输入：新增王丽红，工号1011
+你的回复：name=王丽红, work_code=1011, performance_level=无
+
+示例3：
+用户输入：新增王丽红，绩效等级A
+你的回复：name=王丽红, work_code=无, performance_level=A
+
+示例4：
+用户输入：绩效等级A，工号1011
+你的回复：name=无, work_code=1011, performance_level=A
+</code></pre><p>用户提示词</p><pre><code class="properties">用户输入的内容：&#123;&#123;input&#125;&#125;
+</code></pre><h5 id="新增数据节点"><a href="#新增数据节点" class="headerlink" title="新增数据节点"></a>新增数据节点</h5><img src="/posts/dbcd824/20260302122129.png" alt="image-20260302122129193" style="zoom:67%"><h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><p><img src="/posts/dbcd824/20260302122209.png" alt="image-20260302122209907"></p><p>信息抽取节点，同新增流程的信息抽取节点</p><h5 id="更新信息节点"><a href="#更新信息节点" class="headerlink" title="更新信息节点"></a>更新信息节点</h5><img src="/posts/dbcd824/20260302122301.png" alt="image-20260302122301712" style="zoom:67%"><h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><p><img src="/posts/dbcd824/20260302122229.png" alt="image-20260302122229735"></p><p>信息抽取节点，同新增流程中的信息抽取节点</p><h5 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h5><img src="/posts/dbcd824/20260302122339.png" alt="image-20260302122339788" style="zoom:67%"> <img src="/posts/dbcd824/20260302122349.png" alt="image-20260302122349886" style="zoom:67%"> <img src="/posts/dbcd824/20260302122402.png" alt="image-20260302122400947" style="zoom:67%"><h3 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a>语音识别</h3><img src="/posts/dbcd824/20260302122517.png" alt="image-20260302122517418" style="zoom:67%"> <img src="/posts/dbcd824/20260302122529.png" alt="image-20260302122529729" style="zoom:67%"><h3 id="语音合成"><a href="#语音合成" class="headerlink" title="语音合成"></a>语音合成</h3><img src="/posts/dbcd824/20260302122555.png" alt="image-20260302122554974" style="zoom:67%"><h3 id="视频生成"><a href="#视频生成" class="headerlink" title="视频生成"></a>视频生成</h3><img src="/posts/dbcd824/20260302122632.png" alt="image-20260302122631936" style="zoom:67%"><h3 id="三体练习题-多模态"><a href="#三体练习题-多模态" class="headerlink" title="三体练习题-多模态"></a>三体练习题-多模态</h3><img src="/posts/dbcd824/20260302122711.png" alt="image-20260302122711119" style="zoom:67%"><h4 id="大模型节点"><a href="#大模型节点" class="headerlink" title="大模型节点"></a>大模型节点</h4><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个文生视频的prompt生成专家，我会给你提供知识库的检索结果和用户的原始输入内容。
+
+你的职责是按照用户输入内容的要求，总结归纳知识库的结果，并形成一个用于生成视频的prompt提示词。
+
+要求，提供3个分镜的切换
+要求，尽量文字简洁节省token
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户原始输入：
+&#123;&#123;query&#125;&#125;
+知识库检索结果：
+&#123;&#123;input&#125;&#125;
+</code></pre><h4 id="视频生成节点"><a href="#视频生成节点" class="headerlink" title="视频生成节点"></a>视频生成节点</h4><img src="/posts/dbcd824/20260302122806.png" style="zoom:67%"><h2 id="面试助手项目案例"><a href="#面试助手项目案例" class="headerlink" title="面试助手项目案例"></a>面试助手项目案例</h2><h3 id="项目基础信息"><a href="#项目基础信息" class="headerlink" title="项目基础信息"></a>项目基础信息</h3><ol><li>40个人天的核心开发，投入2个人力</li><li>周期3个月</li><li>时间节点：<ol><li>2周内<strong>MVP</strong>(<strong>Minimum Viable Product，最小可行产品）</strong>（可行性验证demo）</li><li>2月完成主体功能开发</li><li>2.5月完成功能联调测试</li><li>3个月完成小流量测试（上线试用）</li><li>视情况正式上线</li></ol></li></ol><h3 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h3><p><img src="/posts/dbcd824/20260302101147.png" alt="概念绘图-面试助手项目案例业务流程.drawio"></p><p>如图，完成3个业务线（以Coze工作流实现）功能：</p><ol><li>简历分析给出修改建议</li><li>面试录音分析给出评估</li><li>生成针对简历专属面试模拟问题</li></ol><blockquote><p>项目开发之前，业务流程是第一步，表示的是规划我们项目要做什么，每一步的细节是什么。</p><p>在企业中，做项目，一般业务流程先有，再做技术规划，和实际开发。</p><p>没有业务流程，直接开干，返工概率大</p></blockquote><h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><table><thead><tr><th align="left">技术栈</th><th align="left">优势</th><th align="left">劣势</th></tr></thead><tbody><tr><td align="left">Coze 版</td><td align="left">快速实现需求，低代码</td><td align="left">限制较多，无法实现比较定制化的功能</td></tr><tr><td align="left">Dify本地版</td><td align="left">快速实现需求，低代码，能够对接本地模型和服务</td><td align="left">本地版插件太少，很多功能需要重新造轮子</td></tr><tr><td align="left">Langgraph等框架</td><td align="left">扩展性极强，基本上不受限制，可以对接本地模型，实现自定义复杂逻辑等</td><td align="left">上手成本太高，开发周期长</td></tr></tbody></table><ul><li>LangGraph、LangChain等开发框架，周期长，虽然能够开发很复杂很自由的业务，但是我们用不上，并且成本高（时间长），人员紧张，pass掉</li><li>Dify本地版本，公司硬件资源紧张，没有足够的资源为当前项目提供本地模型运行，并且Dify本地插件太少，需要写代码造插件，没必要，所以pass</li><li>最终选择Coze在线平台，插件丰富、云端模型OK，Token消耗的成本，对比增购硬件就很省了，并且开发超快，符合需求。</li></ul><h3 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h3><p><img src="/posts/dbcd824/20260302104957.jpg" alt="img"></p><p>经过对Coze的前期测试，我们所需的能力Coze可以提供，主要是：</p><ul><li>3个业务线，可以通过Coze工作流提供</li><li>整体使用，可以用Coze智能体，自动路由到工作流上使用</li><li>依赖的功能能力：<ul><li>文档识别：OK</li><li>语音识别：OK</li><li>知识库和数据库能力：OK</li><li>联网搜索：OK</li></ul></li><li>部署后：<ul><li>Coze应用商店使用智能体：OK（网页使用）</li><li>API和Python调用：OK</li></ul></li></ul><blockquote><p>整体上我们所需要的技术能力，Coze都能提供，就可以开干了。</p></blockquote><h3 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h3><ul><li><strong>违禁词：</strong>将物料中的：<code>07-违禁词数据.xlsx</code> 上传为数据表，结构如下</li></ul><p><img src="/posts/dbcd824/20260302155110.png" alt="image-20260302155110681"></p><p><img src="/posts/dbcd824/image-20260531233546126.png" alt="image-20260531233546126"></p><ul><li><strong>简历项目库：</strong>将物料中的：<code>08-简历项目库.pdf</code> 上传为知识库，如下</li></ul><p>&#x3D;&#x3D;所有的配置全部都保持默认&#x3D;&#x3D;</p><p><img src="/posts/dbcd824/20260302155145.png" alt="image-20260302155145259"></p><ul><li><strong>面试题库：</strong>将物料中的：<code>04-人工智能面试宝典_V6.5.pdf</code> 上传为知识库，如下</li></ul><img src="/posts/dbcd824/image-20260602072442919.png" alt="image-20260602072442919" style="zoom:50%"> <img src="/posts/dbcd824/image-20260602072518309.png" alt="image-20260602072518309" style="zoom:50%"><ul><li><strong>最新面试题：</strong>上传物料中的：<code>面试题目200道.xlsx</code>到Coze中作为<code>数据库</code>存在。</li></ul><img src="/posts/dbcd824/20260302164626.png" alt="image-20260302164626327" style="zoom:67%"><h3 id="简历处理工作流"><a href="#简历处理工作流" class="headerlink" title="简历处理工作流"></a>简历处理工作流</h3><p><img src="/posts/dbcd824/20260302151601.png" alt="image-20260302151601415"></p><h4 id="简历内容抽取节点"><a href="#简历内容抽取节点" class="headerlink" title="简历内容抽取节点"></a>简历内容抽取节点</h4><h5 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h5><p><img src="/posts/dbcd824/image-20260602072807060.png" alt="image-20260602072807060"></p><h5 id="违禁词查询"><a href="#违禁词查询" class="headerlink" title="违禁词查询"></a>违禁词查询</h5><img src="/posts/dbcd824/image-20260602072935390.png" alt="image-20260602072935390" style="zoom:57%"><h5 id="简历文字提取"><a href="#简历文字提取" class="headerlink" title="简历文字提取"></a>简历文字提取</h5><p>添加 【链接读取】 插件</p><img src="/posts/dbcd824/image-20260602073136442.png" alt="image-20260602073136442" style="zoom:57%"> <img src="/posts/dbcd824/image-20260602073050094.png" alt="image-20260602073050094" style="zoom:57%"><h5 id="当前时间"><a href="#当前时间" class="headerlink" title="当前时间"></a>当前时间</h5><p>添加 【现在时间】 插件</p><img src="/posts/dbcd824/image-20260602073234734.png" alt="image-20260602073234734" style="zoom:57%"><h5 id="内容分块"><a href="#内容分块" class="headerlink" title="内容分块"></a>内容分块</h5><ul><li>读取简历文字提取节点输出的：<code>pdf_content</code>字段。</li></ul><img src="/posts/dbcd824/image-20260602073532887.png" alt="image-20260602073532887" style="zoom:57%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历内容提取助手，能够根据简历中的内容提取出来对应的实体。你将接受简历内容作为输入，并按照下列要求进行拆分，并输出为json格式:
+
+姓名：字段名&#123;&#123;name&#125;&#125;
+
+基本信息: 字段名 &#123;base_info&#125;&#125;, 包含个人姓名、求职岗位、期望薪资、工作年限、手机号、邮箱号等基本信息，不包含学历、技能、爱好
+
+个人技能：字段名 &#123;&#123;skill&#125;&#125;, 个人掌握的IT相关的技能
+
+教育经历：字段名 &#123;&#123;education&#125;&#125;， 包含学历、在校时间、专业、是否为计算机专业、以及在简历内容的第几部分
+
+工作经历：字段名 &#123;&#123;work_exp&#125;&#125;,  包括公司、时间、角色，在公司里面从事哪些内容、以及在简历内容的第几部分
+
+项目经验：字段名 &#123;&#123;project_exp&#125;&#125; , 包含简历上所有项目相关的内容，包括项目背景，项目目标，项目成果等、以及在简历内容的第几部分，每个项目作为数组中的一个元素返回，最后返回一个字符串数组，数组长度和项目数一致
+
+
+个人爱好、评价：字段名 &#123;&#123;self&#125;&#125;, 包含所有的个人爱好以及软素质评价等部分、以及在简历内容的第几部分
+
+上下文：字段名&#123;&#123;context&#125;&#125;，包含以上所有内容的概括，后续用于分块检验（比如单独校验基本信息、单独校验教育经历）作为参考使用。
+
+
+注意，以上的要求需要严格遵循，除了上下文以外，其他的内容不要省略和总结，直接拆出来原文即可，不要出现错误的划分
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">简历内容：
+&#123;&#123;content&#125;&#125;
+</code></pre><ul><li>输出配置</li></ul><img src="/posts/dbcd824/image-20260602073728226.png" alt="image-20260602073728226" style="zoom:67%"><h4 id="个人信息评估"><a href="#个人信息评估" class="headerlink" title="个人信息评估"></a>个人信息评估</h4><ul><li>输入</li></ul><p><img src="/posts/dbcd824/image-20260603150143102.png" alt="image-20260603150143102"></p><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责个人基本信息部分，能够根据输入的个人信息内容基于规则，参考上下文，并判断是否有需要修改的部分。
+
+规则如下：
+1. 个人信息中不要包含具体的期望薪资
+2. 求职意向不明确：如果上下文里面的项目大部分都是大模型的，求职意向就不要写“算法工程师”
+3. 不要使用QQ邮箱，显得不专业
+4. 学历非优秀本科不建议意向是算法工程师
+5. 需要有手机号、邮箱、年龄，城市，信息完整
+6. 工作年限和毕业时间需要对得上， 比如2023年毕业，现在是2025年，最多写3年（1年实习+2年实际工作）
+
+
+如果违反规则，则需要给用户列出需要修改的部分， 你也可以提出一些建议，但是为了减少输出量，最终返回的格式：
+
+- 需要修改：需要修改的部分以及怎么修改，需要附带简历原文
+
+- 参考建议：其他参考建议，这里只能是给个人信息相关的修改建议，控制在3条以内，不得超过需要修改的部分。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">个人信息部分：&#123;&#123;base_info&#125;&#125;
+当前时间：&#123;&#123;date&#125;&#125;
+上下文信息：&#123;&#123;context&#125;&#125;
+学历：&#123;&#123;education&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302151829.png" alt="image-20260302151829600"></p><h4 id="技能评估"><a href="#技能评估" class="headerlink" title="技能评估"></a>技能评估</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/image-20260602074047638.png" alt="image-20260602074047638" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责个人技能部分，能够根据输入的个人技能基于规则，参考上下文，并判断是否有需要修改的部分。
+
+规则，具有最高优先级，需要保证执行到位：
+1. 个人技能不要超过12条
+2. 个人技能中需要有至少2-3条专门描述大模型技术的，比如RAG、微调（可选，不写也行）、大模型使用相关
+3. 每一条中的内容之间需要是相关的，比如： 掌握深度学习的原理，如RNN、LSTM、GRU、Transformer等， 不要一条里面混入多个不相关的
+4. 不要写精通，但凡遇到精通的，统统需要去掉。掌握和熟练等不要干涉，候选者自己写就行
+5. 如果是转行的，需要注意，还是要体现AI的技术栈，其他方向的少些， 篇幅不超过1/3
+6. 技能点要多体现一些技能点，不要概括，因为HR看不懂，把关键词抛出来
+7. 项目中出现的技能点，在技能中需要体现关键词。比如milvus出现在了项目中，那么个人技能也得有。项目中没有用到的技术点，需要给用户指出来
+8. 技能点里面但凡是熟练、掌握的，在项目内容中要有联系
+9. 个人技能所在的位置需要在工作经历和项目经历前面
+
+注意：
+1. 只输出技能相关的，不要输出项目相关
+2. 技术栈的表述不要过多介入，有关键词即可
+3. 没有违反以上规则的内容的部分，不要建议用户删除数据
+
+如果违反规则，则需要给用户列出需要修改的部分，并指出犯了什么错误
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">简历中的技能：
+&#123;&#123;skill&#125;&#125;
+当前时间：
+&#123;&#123;date&#125;&#125;
+可供参考的上下文信息：
+&#123;&#123;context&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302151917.png" alt="image-20260302151917432"></p><h4 id="学历评估"><a href="#学历评估" class="headerlink" title="学历评估"></a>学历评估</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/image-20260602074220574.png" alt="image-20260602074220574" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责教育部分，具备联网搜索学生给出的学校的信息的能力，能够根据输入的学历内容基于规则，参考上下文，并判断是否有需要修改的部分。
+
+可用工具：头条搜索（search），用于联网搜索信息。
+
+规则，具有最高优先级，需要保证执行到位：
+1. 学历不可造假或者包装，这一条直接在返回的内容中提醒用户： 需要保证学历的真实性，造假会有严重后果
+
+2. 避短，参考上下文工作经历和项目经历的位置， 如果学校是三本甚至专科，建议调整位置，放到后面
+
+3. 扬长，如果学校是计算机专业，且毕业时间在4年以内，可以把相关课程展开写一下，尤其是毕业2年以内的，建议这么做。 如果学校是211或者985，最好标记出来
+
+4. 教育经历和上下文内容不要有冲突
+
+
+如果违反规则，则需要给用户列出需要修改的部分， 你也可以提出一些建议，但是为了减少，最终返回的格式：
+
+需要修改：需要修改的部分以及怎么修改，需要附带简历原文
+参考建议：其他参考建议，这里只能是给学历信息相关的修改建议，控制在3条以内，不得超过需要修改的部分。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">学历信息：
+&#123;&#123;education&#125;&#125;
+当前日期：
+&#123;&#123;date&#125;&#125;
+可供参考的上下文信息：
+&#123;&#123;context&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302151951.png" alt="image-20260302151951105"></p><h4 id="工作经历评估"><a href="#工作经历评估" class="headerlink" title="工作经历评估"></a>工作经历评估</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/image-20260602074247132.png" alt="image-20260602074247132" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责工作经历部分，能够根据输入的工作经历内容基于规则，参考上下文，并判断是否有需要修改的部分。
+
+规则，具有最高优先级，需要保证执行到位：
+1. 每段经历的公司名、工作年限、以及角色必须是完整的
+2. 工作经历和项目经历需要分开来写， 工作经历是工作经历，项目是项目
+3. 每份工作中的工作内容需要列出来
+4. 如果工作经验特别长的， 和AI、大模型无关的篇幅不要太多，控制在一半以内
+5. 如果毕业3年以内的，如果实习和实际工作不在一个公司的，建议改成一家公司
+6. 工作经历和上下文里面的项目相关的内容不要有冲突
+7. 工作经历内容的位置需要在项目经验前面
+
+
+对于没有内容的，可以简单给一些提示。
+
+如果违反规则，则需要给用户列出需要修改的部分， 你也可以提出一些建议，但是为了减少，最终返回的格式：
+
+需要修改：需要修改的部分以及怎么修改，需要附带简历原文
+参考建议：其他参考建议，这里只能是给工作经历信息相关的修改建议，控制在3条以内，不得超过需要修改的部分。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">工作经历：
+&#123;&#123;work_exp&#125;&#125;
+当前时间：
+&#123;&#123;date&#125;&#125;
+可供参考的上下文：
+&#123;&#123;context&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302152044.png" alt="image-20260302152044268"></p><h4 id="个人评价评估"><a href="#个人评价评估" class="headerlink" title="个人评价评估"></a>个人评价评估</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/image-20260602074348721.png" alt="image-20260602074348721" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责个人评价和爱好部分，能够根据输入的个人评价和爱好部分基于规则，参考上下文，并判断是否有需要修改的部分。
+
+注意：
+1. 如果输入内容没有个人爱好和个人评价，这部分为空的，最后返回空就可以。不需要输出任何内容
+
+规则，具有最高优先级，需要保证执行到位：
+1. 个人爱好和评价篇幅不要过多，控制在4行以及以内
+2. 个人爱好如果要写的话，写健身等能体现个人优秀品质，比如坚持、身体好等，不要写王者荣耀这类容易留下坏印象的
+3. 不要和上下文有冲突
+4. 不要出现能够体现出过度自信、过度自卑的文字
+5. 尽量体现和工作相关的个人优势
+
+
+
+如果违反规则，则需要给用户列出需要修改的部分， 你也可以提出一些建议，但是为了减少，最终返回的格式：
+
+需要修改：需要修改的部分以及怎么修改，需要附带简历原文
+
+
+参考建议：其他参考建议，这里只能是给项个人评价和爱好部分的修改建议，控制在3条以内，不得超过需要修改的部分。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">个人爱好和评价：
+&#123;&#123;self&#125;&#125;
+可供参考的上下文信息：
+&#123;&#123;context&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302152109.png" alt="image-20260302152109575"></p><h4 id="循环处理项目经验"><a href="#循环处理项目经验" class="headerlink" title="循环处理项目经验"></a>循环处理项目经验</h4><h5 id="循环项目经验评估"><a href="#循环项目经验评估" class="headerlink" title="循环项目经验评估"></a>循环项目经验评估</h5><img src="/posts/dbcd824/image-20260602074931066.png" alt="image-20260602074931066" style="zoom:67%"><h5 id="循环体"><a href="#循环体" class="headerlink" title="循环体"></a>循环体</h5><p><img src="/posts/dbcd824/image-20260602074716115.png" alt="image-20260602074716115"></p><h5 id="项目经验评估节点"><a href="#项目经验评估节点" class="headerlink" title="项目经验评估节点"></a>项目经验评估节点</h5><ul><li>输入</li></ul><p><img src="/posts/dbcd824/image-20260603162611121.png" alt="image-20260603162611121"></p><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责项目经历部分，能够根据输入的项目经历内容基于规则，参考上下文，并判断是否有需要修改的部分。
+
+
+规则：
+1. 项目数量部分，刚毕业写2个项目即可。， 工作2年（含实习）不能低于3个，3年不要低于4个，无论几年，最好不要超过5个。
+2. 工作经历和项目经历需要分开来写， 工作经历是工作经历，项目是项目
+3. 每个项目的结构至少需要包含项目介绍（或者背景）、个人负责部分、成果数据，需要分开写
+4. 建议在每个项目前面加上技术栈
+5. 项目的内容需要强调算法、大模型这些技术，如果是之前做java的等其他方向的，需要缩减篇幅
+6. 项目的背景需要合理， 需要是实时在在的需求，描述需要让人觉得这个项目做出来是有价值的而不是编造的
+7. 项目中用到的技术点需要合理
+8. 实习阶段避免写：精通、主导、负责等字眼，写参与、设计部分小的功能都可以
+9. 项目周期需要合理，一般来讲一个小项目的开发需要控制在半年以内，如果超过半年，自己需要想清楚这么久的周期时间上是怎么安排的
+10. 禁止出现: &#123;&#123;forbid_list&#125;&#125; 中的单词
+11. 对于项目中的个人职责，除了实现项目以外，一般在公司还有技术调研、上线后的维护、迭代、优化等工作
+12. 对于每个面试者，都提醒需要准备话术文档（逐字稿）
+13. 对于项目中的成果数据，尤其是指标类的，如果有一些不好解释的，需要给用户提醒
+14. 项目经历和上下文的内容不要有冲突
+15. 技术栈的描述不要写太多
+
+
+如果违反规则，则需要给用户列出需要修改的部分，以及违反了哪条规则。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">项目经验：
+&#123;&#123;project&#125;&#125;
+可供参考的上下文：
+&#123;&#123;context&#125;&#125;
+违禁词列表：
+&#123;&#123;forbid_list&#125;&#125;
+当前时间：
+&#123;&#123;date&#125;&#125;
+</code></pre><h5 id="项目query优化节点"><a href="#项目query优化节点" class="headerlink" title="项目query优化节点"></a>项目query优化节点</h5><ul><li>输入</li></ul><p><img src="/posts/dbcd824/image-20260603162657294.png" alt="image-20260603162657294"></p><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责项目经历部分，能够根据输入的项目内容整合成更易查询的结构。
+
+需要严格执行：
+1. 基于输入的内容进行总结或者优化，不可以添加不存在、杜撰的内容。
+2. 项目内容根据项目背景、技术点、业务流程、个人职责、优化点、成果数据进行排序，不存在的部分跳过即可。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">项目经验：
+&#123;&#123;project&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302152428.png" alt="image-20260302152428694"></p><h5 id="知识库检索节点-1"><a href="#知识库检索节点-1" class="headerlink" title="知识库检索节点"></a>知识库检索节点</h5><img src="/posts/dbcd824/image-20260602075145039.png" alt="image-20260602075145039" style="zoom:67%"><h5 id="项目重复判断节点"><a href="#项目重复判断节点" class="headerlink" title="项目重复判断节点"></a>项目重复判断节点</h5><ul><li>输入</li></ul><p><img src="/posts/dbcd824/image-20260603162728709.png" alt="image-20260603162728709"></p><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历审核大师，专门负责项目经历部分，能够根据用户输入的项目内容和知识库中检索出来的内容进行对比，并提示用户重合的情况如何。
+
+需要严格执行：
+1. 对于雷同的表述，包括技术点、业务流程、个人职责、优化点、成果数据一致或基本相似的，认为是雷同部分
+2. 输出内容的时候，需要做对比的部分需要给出哪些部分雷同
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">项目内容：
+&#123;&#123;project&#125;&#125;
+检索出来的内容：
+&#123;&#123;outputList&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302152406.png" alt="image-20260302152406499"></p><h5 id="字符串拼接节点"><a href="#字符串拼接节点" class="headerlink" title="字符串拼接节点"></a>字符串拼接节点</h5><img src="/posts/dbcd824/image-20260602075450430.png" alt="image-20260602075450430" style="zoom:67%"><p>提示词：</p><pre><code class="properties">项目经验评估结果：&#123;&#123;String1&#125;&#125;
+简历重复评估结果：&#123;&#123;String2&#125;&#125;
+</code></pre><h4 id="信息整合节点"><a href="#信息整合节点" class="headerlink" title="信息整合节点"></a>信息整合节点</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/image-20260602074601678.png" alt="image-20260602074601678" style="zoom:67%"> <img src="/posts/dbcd824/image-20260602074540734.png" alt="image-20260602074540734" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历修改评估专家，我将为你提供用户简历的各个部分的评估结果，如下：
+1. 针对简历的个人基础信息评估结果
+2. 针对简历的技能评估结果
+3. 针对简历的学历评估结果
+4. 针对简历的工作经历评估结果
+5. 针对简历的个人评价评估结果
+6. 针对简历的各个项目的评估结果
+
+你的职责是将这些评估结果进行整合，给出一份可供使用的修改建议，并删除重复文字和润色内容输出。
+
+要求，以我为你提供的各个部分的评估结果作为内容依据，拒绝杜撰内容。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">个人基础信息评估结果：
+&#123;&#123;base_info&#125;&#125;
+技能评估结果：
+&#123;&#123;skill&#125;&#125;
+学历评估结果：
+&#123;&#123;education&#125;&#125;
+工作经历评估结果：
+&#123;&#123;work_exp&#125;&#125;
+个人评价评估结果：
+&#123;&#123;self&#125;&#125;
+各个项目的评估结果：
+&#123;&#123;project_exp&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302152540.png" alt="image-20260302152540588"></p><h4 id="试运行结果"><a href="#试运行结果" class="headerlink" title="试运行结果"></a>试运行结果</h4><img src="/posts/dbcd824/image-20260603164312798.png" alt="image-20260603164312798" style="zoom:77%"><p><img src="/posts/dbcd824/image-20260603170115612.png" alt="image-20260603170115612"></p><h3 id="录音分析工作流"><a href="#录音分析工作流" class="headerlink" title="录音分析工作流"></a>录音分析工作流</h3><p><img src="/posts/dbcd824/image-20260604233448833.png" alt="image-20260604233448833"></p><h4 id="Fun-ASR插件节点"><a href="#Fun-ASR插件节点" class="headerlink" title="Fun_ASR插件节点"></a>Fun_ASR插件节点</h4><p>主要功能就是，用阿里云百炼的<code>fun-asr</code>模型，完成语音转文字。</p><p><img src="/posts/dbcd824/image-20260602150406553.png" alt="image-20260602150406553"></p><h4 id="角色分配节点"><a href="#角色分配节点" class="headerlink" title="角色分配节点"></a>角色分配节点</h4><p>主要作用是将转换号的面试文字内容，分配对话角色，输入类似如下：</p><pre><code class="properties">面试官：xxxxxxxxxxxx
+应试者：xxxxxxxxxxxx
+面试官：xxxxxxxxxxxx
+应试者：xxxxxxxxxxxx
+...
+...
+面试官：xxxxxxxxxxxx
+应试者：xxxxxxxxxxxx
+</code></pre><blockquote><p>梳理这里面到底是谁在说话</p></blockquote><ul><li>输入</li></ul><img src="/posts/dbcd824/20260302182219.png" alt="image-20260302182219067" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个语音转文字内容总结助手，专门负责处理大模型和算法工程师的面试内容的总结。 你能够根据给定的输入对话的进行内容的提取，你需要做的事情如下
+1.  提取出来对话内容，以面试官和应试者进行区分，存放到字段&#123;&#123;result&#125;&#125;面试原文 ，按照原内容就行，不要省略，注意每次说话需要换行。
+
+需要注意：
+1. 以上内容以文本形式返回，如果中间有卡顿或者表现不好的情况，用[]括起来，在里面注明是什么异常情况
+2. 在内容的开头注明是面试官还是应试者，以“面试官：内容” 换行 “应试者：内容”这样的方式组织文本
+3. 如果你认为本次的内容不是面试的对话，直接输出空字符
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">语音转文字内容：
+&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260302182229.png" alt="image-20260302182229302" style="zoom:67%"><h4 id="自我介绍和面试概况节点"><a href="#自我介绍和面试概况节点" class="headerlink" title="自我介绍和面试概况节点"></a>自我介绍和面试概况节点</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/20260302182251.png" alt="image-20260302182250997" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个面试过程概要总结助手，能够根据用户的面试内容总结出来概要信息，包括以下内容：
+1. 个人简介部分：个人简介说了什么，从我是谁到最后，包括自我介绍中的项目部分，要求直接返回原文，以&#123;self_introduce&#125;变量返回。 如果是面试官问的介绍一下项目，不作为个人简介部分。
+2. 其他内容总结：主要问了哪些知识点，哪些技术问题，哪些项目问题，人事问题 ，有哪些不好回答的问题。各自占比怎么样，用户回答怎么样，以&#123;summarize&#125;变量返回
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">面试内容：&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260302182300.png" alt="image-20260302182300369"></p><h4 id="自我介绍评估节点"><a href="#自我介绍评估节点" class="headerlink" title="自我介绍评估节点"></a>自我介绍评估节点</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/20260302184128.png" alt="image-20260302184128868" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型算法工程师的面试官，能够基于给出的规则对用户的自我介绍和项目介绍做一个评价，规则如下：
+
+自我介绍：
+1. 自我介绍应当包含姓名、学历、工作经历、做过哪些项目等，不可以有缺失
+2. 工作经历的介绍主要介绍自己做过什么，担任过什么角色，突出自己的能力。篇幅长短要合适
+3. 如果提到了自己的技能有哪些，不要直接说太多的技能点，比如擅长pytorch、擅长mysql这种，如果太多会比较啰嗦
+4. 自我介绍中如果包含自己讲了项目经历，需要计算一下项目的篇幅。正确的方式应该是全部的自我介绍加起来3-5分钟，介绍一下最有价值的3个项目，并说一下3各项目都做了什么。不要直接一个项目说半天
+5. 自我介绍中不要包含太多软素质的篇幅，靠说无法打动面试官，意义不大。需要以事实说服面试官
+6. 以上违反了哪条，需要在评估结果中指出，并引用面试回答中的原文
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户的自我介绍：
+&#123;&#123;self_introduce&#125;&#125;
+面试整体的概况信息：
+&#123;&#123;summarize&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260302184202.png" alt="image-20260302184202476" style="zoom:67%"><h4 id="抽取问答对节点"><a href="#抽取问答对节点" class="headerlink" title="抽取问答对节点"></a>抽取问答对节点</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/20260302183955.png" alt="image-20260302183955599" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个面试内容提取助手，能够根据面试官和面试者的对话提取出问题和回答两部分内容，格式：“问题：” + 换行 + “回答：”， 并以数组形式返回。
+
+需要注意：
+1. 每个问题和答案只保留问题和对应的回答，中间的一些无关的连接词什么的省略
+2. 保留回答中的【停顿】等信息，以便后续评估
+3. 不需要提取自我介绍和项目介绍
+4. 问题需要结合上文进行补充，比如面试官先问了transformer的编码器是什么，然后又问了“解码器呢”， 这里需要把第二个问题“解码器呢”改写成 “transformer的解码器是什么”
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">面试内容：&#123;&#123;qa&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260302184009.png" alt="image-20260302184009303" style="zoom:67%"><h4 id="循环节点"><a href="#循环节点" class="headerlink" title="循环节点"></a>循环节点</h4><img src="/posts/dbcd824/image-20260605101133843.png" alt="image-20260605101133843" style="zoom:67%"><h4 id="循环体-1"><a href="#循环体-1" class="headerlink" title="循环体"></a>循环体</h4><h5 id="问答对分离节点"><a href="#问答对分离节点" class="headerlink" title="问答对分离节点"></a>问答对分离节点</h5><ul><li>输入</li></ul><img src="/posts/dbcd824/image-20260605101157389.png" alt="image-20260605101157389" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个数据格式处理专家，能够基于用输入的问题和回答拆分成两部分， 问题以&#123;question&#125;变量返回，答案以&#123;answer&#125;变量返回。
+
+需要注意：
+1. 答案保留原文即可
+2. 问题要用来落库和查询，尽量书面化一些
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">用户输入的问题和回答：
+&#123;&#123;qa&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260302184320.png" alt="image-20260302184320910" style="zoom:67%"><h5 id="面试问题存储到数据库"><a href="#面试问题存储到数据库" class="headerlink" title="面试问题存储到数据库"></a>面试问题存储到数据库</h5><img src="/posts/dbcd824/20260302184336.png" alt="image-20260302184336752" style="zoom:67%"><h5 id="知识库检索问题对应的参考答案"><a href="#知识库检索问题对应的参考答案" class="headerlink" title="知识库检索问题对应的参考答案"></a>知识库检索问题对应的参考答案</h5><img src="/posts/dbcd824/20260302184418.png" style="zoom:67%"><ul><li>最大召回数量：2，参考答案2个就行了，多了造成误导</li><li>最小匹配度：0.85，高一些，参考答案要求匹配度更高，这样不出错</li></ul><h5 id="评估回答节点"><a href="#评估回答节点" class="headerlink" title="评估回答节点"></a>评估回答节点</h5><ul><li>输入</li></ul><img src="/posts/dbcd824/20260302184538.png" alt="image-20260302184538702" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型算法工程师的面试官，能够根据面试的问题、 用户的回答、 题目库中查询出来的结果，以及互联网上搜索到的答案对用户的问题进行综合的评估。
+
+步骤如下：
+1. 请根据知识库查询出来的结果先判断检查出来的是否是问题的答案，如果查询出来的内容和答案无关，则进行互联网查询；如果就是答案，请以这个答案为准
+2. 对比问题和答案，判断用户回答的结果怎么样
+
+需要注意：
+1. 需要给本题的回答进行评价，ABCD 4个级别， D是完全不会，C是只能回答一小部分，或者卡壳太厉害，B是能够回答对大部分但是不够深入，A是回答的非常好甚至超越面试题库或者接近互联网上的答案
+2. 回答的不好的问题，需要告诉用户正确答案
+3. 回答复杂问题的方式需要易懂，言简意赅，先回答整体，再回答细节。 如果回答的不易懂或者逻辑比较乱，需要告诉面试者要培养更好的表达方式
+4. 如果面试官问的是项目介绍（不是项目架构这类具体问题），要从项目的业务背景、项目架构、自己做了哪些、优化项表达，并参考3的判断条件当做一个复杂问题评判
+5. 回答的问题如果和题目不太相干，或者说理解错了。需要指出面试者需要先理解问题再回答
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">面试问题：
+&#123;&#123;question&#125;&#125;
+用户回答：
+&#123;&#123;answer&#125;&#125;
+题库检索结果：
+&#123;&#123;outputList&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260302184618.png" alt="image-20260302184618745" style="zoom:67%"><h4 id="最终整合节点"><a href="#最终整合节点" class="headerlink" title="最终整合节点"></a>最终整合节点</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/20260302184643.png" alt="image-20260302184643334" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个面试助手，服务于大模型算法工程师的面试官。能够根据输入的面试整体概述、自我介绍内容评估、问答结果评估进行整合，需要注意，面试整体描述在前、然后是自我介绍评估、最后是问答结果评估。
+
+需要注意：
+1. 把问答结果的整体情况，比如问了多少个题，多少个回答不错，多少个没有回答上来，结合问题的难易程度，评估面试者的技术如何，如果回答不对的有一些，需要提醒面试者有针对性的复习。如果回答不对的比较多，提醒面试者需要投入更多的时间复习技术，并联系老师寻求帮助。这部分内容加到整体描述部分
+2. 问答结果部分在整合时只保留回答的不好的部分，并在返回结果中说明哪些回答的不好，应该怎么回答更好。把评估结果中的原文直接返回就行
+3. 如果问答结果中或者自我介绍评估结果中提到的表述方面的问题比较多， 需要在整体概述中进行强调，要求将面试者加强
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">面试整体概述：
+&#123;&#123;summarize&#125;&#125;
+自我介绍内容评估结果：
+&#123;&#123;self_introduce&#125;&#125;
+问答评估结果：
+&#123;&#123;qa_pair&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260302184713.png" alt="image-20260302184713396" style="zoom:67%"><h3 id="面试题生成工作流"><a href="#面试题生成工作流" class="headerlink" title="面试题生成工作流"></a>面试题生成工作流</h3><p><img src="/posts/dbcd824/image-20260604232400935.png" alt="image-20260604232400935"></p><h4 id="简历文字提取-1"><a href="#简历文字提取-1" class="headerlink" title="简历文字提取"></a>简历文字提取</h4><ul><li>输入</li></ul><p><img src="/posts/dbcd824/image-20260604232330360.png" alt="image-20260604232330360"></p><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型和算法工程师简历内容提取助手，能够根据简历中的内容提取出来对应的实体。你将接受简历内容作为输入，并按照下列要求进行拆分，并输出为json格式:
+
+个人技能：字段名 &#123;&#123;skill&#125;&#125;, 个人掌握的IT相关的技能，按行按内容拆分，拆分成尽可能多的单独的技术点，并最终以字符串数组返回，数组中元素顺序随机打散，然后只返回前10个。
+
+
+项目经验：字段名 &#123;&#123;project_exp&#125;&#125; , 包含简历上所有项目相关的、以及在简历内容的第几部分，每个项目作为数组中的一个元素返回，最后返回一个字符串数组，数组长度和项目数一致
+
+
+注意，以上的要求需要严格遵循，除了上下文以外，其他的内容不要省略和总结，直接拆出来原文即可，不要出现错误的划分
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">简历内容：
+&#123;&#123;input&#125;&#125;
+</code></pre><ul><li>输出</li></ul><p><img src="/posts/dbcd824/20260304102416.png" alt="image-20260304102416040"></p><p>注意，输出为<code>Array&lt;String&gt;</code> 数组内存放字符串的类型。</p><h4 id="抽取最近200题目（数据库检索）节点"><a href="#抽取最近200题目（数据库检索）节点" class="headerlink" title="抽取最近200题目（数据库检索）节点"></a>抽取最近200题目（数据库检索）节点</h4><img src="/posts/dbcd824/image-20260604232549056.png" alt="image-20260604232549056" style="zoom:67%"><p>&#x3D;&#x3D;如果发现，无法查询到200道题，那么要检查下数据库的共享情况。需要将数据库设置为【渠道共享】&#x3D;&#x3D;</p><p><img src="/posts/dbcd824/image-20260605113755867.png" alt="image-20260605113755867"></p><h4 id="技能点处理循环"><a href="#技能点处理循环" class="headerlink" title="技能点处理循环"></a>技能点处理循环</h4><img src="https://image-set.oss-cn-zhangjiakou.aliyuncs.com/img-out/2026/03/04/20260304102619.png" alt="image-20260304102619044" style="zoom:67%"> <img src="/posts/dbcd824/20260304102630.png" alt="image-20260304102630870" style="zoom:67%"><h5 id="循环体-知识库检索节点"><a href="#循环体-知识库检索节点" class="headerlink" title="循环体-知识库检索节点"></a>循环体-知识库检索节点</h5><img src="/posts/dbcd824/20260304102710.png" alt="image-20260304102710156" style="zoom:67%"><ul><li>最大召回3个检索结果用于辅助生成面试题</li><li>匹配度<code>0.7</code> 尽量匹配要求高一些，这样检索的结果更精准<ul><li>可以单独测试这个参数的合适值</li></ul></li></ul><h5 id="循环体-针对每个技能生成问题节点"><a href="#循环体-针对每个技能生成问题节点" class="headerlink" title="循环体-针对每个技能生成问题节点"></a>循环体-针对每个技能生成问题节点</h5><ul><li>输入</li></ul><img src="/posts/dbcd824/20260304102856.png" alt="image-20260304102856860" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型算法的面试题生成专家，能够根据输入的技能点和面试题题库中相关的内容，生成对应的面试题。如果没有检索出来的内容，请查询互联网并生成对应的面试题
+
+注意：
+1. 问题难易适中，不要故意刁难，也不要简单到三言两语就能说清楚
+2. 从面试题中总结出来的问题要完整，具有良好的可读性。如果查询出来的结果中有问题原文，直接保留原文即可。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">技能点：
+&#123;&#123;skill&#125;&#125;
+
+面试题库：
+&#123;&#123;outputList&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260304102926.png" alt="image-20260304102926350" style="zoom:67%"><h4 id="项目经验处理循环"><a href="#项目经验处理循环" class="headerlink" title="项目经验处理循环"></a>项目经验处理循环</h4><img src="/posts/dbcd824/20260304103002.png" alt="image-20260304103002086" style="zoom:67%"> <img src="/posts/dbcd824/20260304103010.png" alt="image-20260304103010445" style="zoom:67%"><ul><li>输入</li></ul><img src="/posts/dbcd824/20260304103026.png" alt="image-20260304103026608" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个大模型算法专家，能够根据用户的项目内容提问高质量问题
+
+注意：
+1. 对于项目的业务背景部分，找到可疑的点，提问用户。尤其是是质疑背景的真实性，如果觉得项目的立项有一些牵强，可以直接问到对应的点上。至少提问一个问题
+
+2. 对于项目的技术栈部分，结合项目个人职责的具体的内容，对于比较难实现的部分，
+
+3. 对于项目中所有的成果指标类的数据，比如效率提升多少，提问分子和分母是什么。对于性能类指标比如f1分数大于0.9，如果分数比较难实现，提问怎么实现的。这里提问2-3个问题，其他指标比如训练数据集多少，结合业务背景，提问用户怎么分布的
+
+4. 如果项目中谈到了优化，针对优化项里面的内容，询问实现细节，以及是否有别的方案。
+
+5. 直接提问：在落地这个项目中，你觉得你做的最有难度的一件事是什么，你是怎么克服的
+
+6. 对于项目中的技术选型问题，比如某个文本分类项目使用的bert-base-chinese作为核心技术点。询问用户为什么要使用它，而不使用其他方案
+
+7. 对于项目中用到的核心技术点，提问用户对于这个核心技术点的理解。问至少2个问题
+
+8. 针对项目中个人职责部分，问至少2个怎么实现的，之类的问题。
+
+除了以上必须要提的问题以外，根据你的理解，基于当前项目的特点，发挥几个问题。 提问的问题以问号分割 ，每个问题之前加一个项目名的前缀， 比如： 对于xxx项目：你的数据预处理部分怎么实现的？
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">项目经验：
+&#123;&#123;project_exp&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260304103057.png" alt="image-20260304103056942" style="zoom:67%"><h4 id="信息整合节点-1"><a href="#信息整合节点-1" class="headerlink" title="信息整合节点"></a>信息整合节点</h4><ul><li>输入</li></ul><img src="/posts/dbcd824/20260304103129.png" alt="image-20260304103129693" style="zoom:67%"><ul><li>系统提示词</li></ul><pre><code class="properties">你是一个面试题整理整合专家，能够根据输入的多个来源的面试题进行整合：
+
+1. 如果是基础比如java、python、mysql之类的，对于每个技术点保留2个就可以了。 如果是对于比较核心的比如RAG、agent的技术，数量则需要进行增加， 至少4个以上；其他的比如transformer的，2个核心问题即可
+2. 项目面试题可以直接保留
+3. 面试题不可出现重复
+4. 整合的结果以字符串数组数据格式返回，一个问题一个元素
+5. 问题要进行书面化表达，不要出现“你好”，“那你们是怎么做的”之类的过于口语化的表达，如果有类似的表达，提来出来问题本身。
+6. 提问几个常见的人事问题，比如：为什么从上家公司离职，如果你的领导当面说你能力不行你该怎么办等问题，这部分问题需要有适当难度。
+</code></pre><ul><li>用户提示词</li></ul><pre><code class="properties">针对技能点的提问：
+&#123;&#123;skill&#125;&#125;
+
+针对项目的提问：
+&#123;&#123;project_exp&#125;&#125;
+
+作为参考，提供200道企业真实面试题：
+&#123;&#123;real_questions&#125;&#125;
+</code></pre><ul><li>输出</li></ul><img src="/posts/dbcd824/20260304103200.png" alt="image-20260304103159912" style="zoom:67%"><h4 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h4><p>大概消耗12~15分钟。</p><h3 id="整合工作流到智能体中"><a href="#整合工作流到智能体中" class="headerlink" title="整合工作流到智能体中"></a>整合工作流到智能体中</h3><p><img src="/posts/dbcd824/image-20260605120343523.png" alt="image-20260605120343523"></p><h4 id="人设和回复逻辑"><a href="#人设和回复逻辑" class="headerlink" title="人设和回复逻辑"></a>人设和回复逻辑</h4><pre><code class="properties"># 角色：
+大模型算法工程师面试助手
+
+## 目标：
+帮助求职者解决面试中的问题，比如简历修改、面试录音分析、模拟面试题生成等
+## 技能：
+1. 简历评估，调用工作流实现简历的评估
+2. 面试录音判断，调用工作流处理上传的录音文件
+3. 简历校验，通过调用工作流实现简历内容的验证
+4. 如果是闲聊或者不是以上3种场景，不要搭理。返回固定话术： 目前只支持简历修改、面试录音分析、模拟面试题，请上传简历或者面试录音，有问题请联系管理员
+
+## 工作流：
+1. 如果用户上传简历，没有做说明或者表达帮我看看简历之类的内容，先调用简历校验gzai8_resume_evaluate工作流
+2. 如果用户上传了语音文件，不管说什么，执行gzai8_audio_evaluate
+3. 如果用户上传了简历，说明要生成面试题，执行面试题生成gzai8_question_generation工作流，。如果用户没有上传简历，不要执行任何工作流，并提示用户上传简历。
+
+## 输出格式：
+无特定格式
+
+## 限制：
+- 多给用户鼓励而不是打击
+- 对用户屏蔽调用工作流等细节
+</code></pre><h4 id="长期记忆"><a href="#长期记忆" class="headerlink" title="长期记忆"></a>长期记忆</h4><p><img src="/posts/dbcd824/image-20260605120403183.png" alt="image-20260605120403183"></p><h4 id="开场白"><a href="#开场白" class="headerlink" title="开场白"></a>开场白</h4><pre><code class="properties">同学你好，我是黑马程序员面试助手，服务于AI学科，请上传你的简历并耐心等待。 目前面试助手支持简历校验、面试录音分析、基于简历生成面试题三个功能， 基于公司面试宝典、高频面试题等知识库生成和判断。
+操作流程： 
+上传简历(pdf/word均可，最好pdf) / MP3格式的录音
+在聊天框中输入要做的事情，目前支持三类： 帮我看看简历/ 帮我分析录音/帮我生成面试题
+
+ 等待模型返回最终结果即可
+</code></pre><h4 id="开场白预制问题"><a href="#开场白预制问题" class="headerlink" title="开场白预制问题"></a>开场白预制问题</h4><p><img src="/posts/dbcd824/20260304104526.png" alt="image-20260304104526875"></p><h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><p><img src="/posts/dbcd824/image-20260605120634924.png" alt="image-20260605120634924"></p><p><img src="/posts/dbcd824/20260304104415.png" alt="image-20260304104415755"></p><p>&#x3D;&#x3D;务必勾选这两个&#x3D;&#x3D;</p><img src="/posts/dbcd824/20260304104550.png" alt="image-20260304104550553" style="zoom:67%"><h3 id="Python调用智能体"><a href="#Python调用智能体" class="headerlink" title="Python调用智能体"></a>Python调用智能体</h3><h4 id="创建API-KEY"><a href="#创建API-KEY" class="headerlink" title="创建API_KEY"></a>创建API_KEY</h4><img src="/posts/dbcd824/20260304143610.png" alt="image-20260304143610194" style="zoom:67%"> <img src="/posts/dbcd824/20260304143657.png" alt="image-20260304143657813" style="zoom:67%"> <img src="/posts/dbcd824/20260304143713.png" alt="image-20260304143712979" style="zoom:67%"> <img src="/posts/dbcd824/20260304143740.png" alt="image-20260304143740254" style="zoom:67%"><h4 id="获取智能体ID"><a href="#获取智能体ID" class="headerlink" title="获取智能体ID"></a>获取智能体ID</h4><img src="/posts/dbcd824/20260304150430.png" alt="image-20260304150430707" style="zoom:67%"><p>然后找到URL中的ID</p><img src="/posts/dbcd824/20260304150454.png" alt="image-20260304150454239" style="zoom:67%"><p>如图，在网页链接中可以找到ID</p><h4 id="安装Python依赖"><a href="#安装Python依赖" class="headerlink" title="安装Python依赖"></a>安装Python依赖</h4><pre><code class="properties">pip install cozepy -i https://pypi.tuna.tsinghua.edu.cn/simple/
+</code></pre><h4 id="调用代码"><a href="#调用代码" class="headerlink" title="调用代码"></a>调用代码</h4><p>对应的官方网站：<a target="_blank" rel="noopener" href="https://www.coze.cn/open/docs/developer_guides/python_getting_started#75c24ee6">https://www.coze.cn/open/docs/developer_guides/python_getting_started#75c24ee6</a></p><p>以调用 <strong>简历分析Coze智能体</strong> 为例</p><pre><code class="python">&quot;&quot;&quot;
+上传一个简历到智能体，要求分析简历得到分析报告
+&quot;&quot;&quot;
+from cozepy import Coze, Message, TokenAuth, MessageObjectString, COZE_CN_BASE_URL, ChatEventType
+from pathlib import Path
+
+# API_KEY
+coze_api_token = &#39;pat_O81pyw8pUPmNSitugKTmCf7jfuQaI8YtMc7fDFTuN445C5hBPfFeduR4F257uDQt&#39;
+# 智能体ID
+bot_id = &quot;7613223449653706815&quot;
+# 用户ID，随意自己指定即可
+user_id = &quot;xiaocao&quot;
+# 结果保存路径
+RESULT_PATH = &quot;./result/resume_analysis2.md&quot;
+
+# 初始化Coze客户端
+coze = Coze(
+    auth=TokenAuth(coze_api_token),         # 授权Token
+    base_url=COZE_CN_BASE_URL,              # Coze 的连接URL
+)
+
+# 1. 将文件上传到Coze平台，获取文件在平台的文件ID
+upload_result = coze.files.upload(file=Path(r&quot;C:\Users\caoyu\Desktop\小甜_nlp算法工程师_应届.docx&quot;))
+
+if not upload_result:
+    print(&quot;上传失败程序退出&quot;)
+    exit()
+else:
+    print(f&quot;上传成功，文件id：&#123;upload_result.id&#125;&quot;)
+
+# 调用Coze智能体
+# 创建消息
+messages = [
+    Message.build_user_question_objects(
+        [
+            # 提供文件
+            MessageObjectString.build_file(file_id=upload_result.id),
+            # 提供对话消息
+            MessageObjectString.build_text(&quot;帮我看看简历&quot;)
+        ]
+    )
+]
+
+# 获取流式响应
+# 最终返回结果：result_text
+result_text = &#39;&#39;
+
+stream = coze.chat.stream(
+    bot_id=bot_id,
+    user_id=user_id,
+    additional_messages=messages,
+)
+
+for chunk in stream:
+    # 如果返回的流式片段，符合CONVERSATION_MESSAGE_DELTA类型（流式片段类型），则记录数据
+    if chunk.event == ChatEventType.CONVERSATION_MESSAGE_DELTA:
+        print(chunk.message.content, end=&quot;&quot;, flush=True)
+        result_text += chunk.message.content
+    elif chunk.event in [
+        ChatEventType.CONVERSATION_CHAT_COMPLETED,      # 表示完事
+        ChatEventType.CONVERSATION_CHAT_FAILED          # 表示失败
+    ]:
+        break
+
+# 将结果写入指定的文件中
+with open(RESULT_PATH, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f:
+    f.write(result_text)
+
+print(&quot;流程结束&quot;)
+</code></pre><h2 id="扩展-插件开发"><a href="#扩展-插件开发" class="headerlink" title="扩展-插件开发"></a>扩展-插件开发</h2><h3 id="新建插件"><a href="#新建插件" class="headerlink" title="新建插件"></a>新建插件</h3><p><img src="/posts/dbcd824/image-20260605163925881.png" alt="image-20260605163925881"></p><p>在资源中点击新建插件。</p><img src="/posts/dbcd824/20260304084637.png" alt="image-20260304084637388" style="zoom:67%"> <img src="/posts/dbcd824/20260304084726.png" alt="image-20260304084726098" style="zoom:67%"><ul><li>云端插件：在浏览器里面写代码（最简单）</li></ul><h3 id="创建工具"><a href="#创建工具" class="headerlink" title="创建工具"></a>创建工具</h3><p><img src="/posts/dbcd824/20260304085238.png" alt="image-20260304085238739"></p><img src="/posts/dbcd824/20260304085249.png" alt="image-20260304085249373" style="zoom:67%"><p><img src="/posts/dbcd824/image-20260605164408245.png" alt="image-20260605164408245"></p><h3 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h3><p>指定输入输出</p><img src="/posts/dbcd824/20260304085321.png" alt="image-20260304085321038" style="zoom:67%"><p>编写代码：</p><pre><code class="python">def handler(args: Args[Input])-&gt;Output:
+    result_arr = args.input.content.split(args.input.sep)
+    return &#123;&quot;arr_str&quot;: result_arr&#125;
+</code></pre><ul><li>输入的数据通过：<code>args.input.xxx</code> 这个xxx就是你定义的输入参数名</li><li>返回一个字典，字典里面的key就是你定好的输出参数名</li><li>中间代码，自己爱怎么写怎么写</li></ul><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><img src="/posts/dbcd824/20260304085513.png" alt="image-20260304085513585"></p><p>测试通过</p><p><img src="/posts/dbcd824/20260304085538.png" alt="image-20260304085538067"></p><h3 id="发布-1"><a href="#发布-1" class="headerlink" title="发布"></a>发布</h3><img src="/posts/dbcd824/image-20260605165414760.png" alt="image-20260605165414760" style="zoom:67%"><p><img src="/posts/dbcd824/20260304090052.png" alt="image-20260304090052498"></p><p>测试完成点击右上角发布。</p><h3 id="上架"><a href="#上架" class="headerlink" title="上架"></a>上架</h3><p><img src="/posts/dbcd824/image-20260605165607733.png" alt="image-20260605165607733"></p><img src="/posts/dbcd824/20260304090253.png" alt="image-20260304090253323" style="zoom:67%"><p>等待审核通过就可以在插件商店中找到了。</p><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>插件每一次代码更新后，都要再次点击发布。</p><p>如果是已经上架的插件，需要二次上架（点击上架更新）</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="如何开发工作流"><a href="#如何开发工作流" class="headerlink" title="如何开发工作流"></a>如何开发工作流</h3><p>开发步骤：</p><ul><li>1- 公司小组内部讨论工作流的执行流程，也就是开始节点后面需要哪些节点、是否需要循环等</li><li>2- 基于执行流程，快速的创建工作流，将各个节点连线起来</li><li>3- 根据业务需求，修改各个节点的名称，为了后续好维护</li><li>4- 针对大模型节点：输入参数、输出参数、系统提示词、用户提示词<ul><li>4.1- 针对提示词，首先用几句简单的文字描述需求，给到商用大模型，得到详细的提示词</li><li>4.2- 根据业务需求，细调大模型提供的提示词</li><li>4.3- 需要耐心的经过几个轮次，才能够得到优秀的提示词</li></ul></li><li>5- &#x3D;&#x3D;从前往后&#x3D;&#x3D;，针对核心节点，例如：意图识别、大模型节点进行单独的详细测试</li><li>6- 各个环节测试成功，暂时发现不了太大的问题的时候。再将工作流进行整体的测试。</li></ul><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="智能体"><a href="#智能体" class="headerlink" title="智能体"></a>智能体</h4><p>智能体（Agent）：脑袋（模型）+工具（函数、插件、工作流等）</p><h4 id="知识库-2"><a href="#知识库-2" class="headerlink" title="知识库"></a>知识库</h4><p>Coze用的知识库，还是比较简单的，主体是给智能体提供：外挂知识</p><h4 id="数据库-2"><a href="#数据库-2" class="headerlink" title="数据库"></a>数据库</h4><p>Coze用的就是标准的二维表格，主题是给智能体提供结构化的数据。</p><p>也可以让智能体操作这些数据</p><h4 id="插件-1"><a href="#插件-1" class="headerlink" title="插件"></a>插件</h4><p>给定输入，给定输入，代码执行逻辑</p><p>插件，扩展Coze平台的功能，提供了丰富的第三方集成能力</p><h4 id="工作流-1"><a href="#工作流-1" class="headerlink" title="工作流"></a>工作流</h4><p>工作流是一个DAG</p><ul><li>DAG，有向无环图，表示有具体方向具体流程，不形成闭环的工作流程图。</li></ul><p>工作流：就是一个编排好的，特定任务的工作流程。</p><h4 id="工作流对比函数"><a href="#工作流对比函数" class="headerlink" title="工作流对比函数"></a>工作流对比函数</h4><p>前面学习提示词写过<code>ReAct</code>智能体，内置了工具（函数）</p><p>相同：</p><ul><li>Coze工作流和Python的函数，都是工具，都是智能体的手脚</li></ul><p>不同：</p><ul><li>函数功能单一</li><li>工作流功能强大</li></ul></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>程序员青阳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/dbcd824/">https://heliufang.github.io/posts/dbcd824/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">372.1k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script>var element=null;layui.use(["element","layer"],function(){element=layui.element}),$(function(){var o=$("#toc-area"),l=$(o).offset().top;$.event.add(window,"scroll",function(){var e=$(".markdown-body").height(),e=(($(window).scrollTop()+l)/e*100).toFixed(2);element.progress("demo",(e=0==(e=99<e?100:e)?0:e)+"%"),$("#progressTxt").text(e),console.log("percent",e),$(o).css("position",$(window).scrollTop()>l?"fixed":"static"),$(o).css("top",$(window).scrollTop()>l?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var e=$(this).attr("class");e="language-"+(null==e||""==e||null==e?"plaintext":e),$(this).attr("class",e)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>'),$("#article img").on("click",function(){var e=$(this).attr("src"),o=$(this).attr("alt")||"图片预览";layer.open({type:1,title:!1,closeBtn:1,shade:.7,shadeClose:!0,anim:5,content:'<div style="text-align:center;"><img src="'+e+'" alt="'+o+'" style="max-width:90%;max-height:90vh;"></div>'})}),$("#mobileTocToggle").on("click",function(){$("#mobileTocPanel").addClass("active"),$("#mobileTocMask").addClass("active"),$("body").css("overflow","hidden")}),$("#mobileTocClose, #mobileTocMask").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")}),$("#mobileTocBody .toc-link").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")})})</script></html>

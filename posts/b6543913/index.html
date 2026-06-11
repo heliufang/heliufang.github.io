@@ -1,0 +1,936 @@
+<!DOCTYPE html><html lang="zh-CN"><head><title>程序员青阳</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="stylesheet" href="../../layui/css/layui.css"><link rel="stylesheet" href="../../css/common.css"><link rel="stylesheet" href="../../css/post.css"><link rel="stylesheet" href="../../lib/prism/prism.css"><link rel="shortcut icon" href="../../img/favicon.ico"><link rel="stylesheet" href="../../lib/iconfont/iconfont.css"><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="atom.xml" title="程序员青阳" type="application/atom+xml"></head><body style="overflow:hidden" data-prismjs-copy="复制" data-prismjs-copy-success="复制成功!"><div class="qy-nav"><ul class="layui-nav" lay-filter="" lay-bar="disabled" lay-unselect><li class="hide-xs layui-nav-item" id="searchBtn" style="float:right"><a class="searchBtn" href="javascript:void(0);"><i class="layui-icon layui-icon-search"></i> 搜索</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/study"><i class="layui-icon layui-icon-video"></i> 前端教程</a></li><li class="layui-nav-item"><a class="title" href="/" style="padding:0"><i class="layui-anim layui-anim-rotate layui-anim-loop layui-icon layui-icon-star-fill"></i> 程序员青阳</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/about"><i class="layui-icon layui-icon-friends"></i> 关于</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/archives"><i class="layui-icon layui-icon-date"></i> 归档</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/tags"><i class="layui-icon layui-icon-note"></i> 标签</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/categories"><i class="layui-icon layui-icon-template-1"></i> 分类</a></li><li class="hide-xs layui-nav-item" style="float:right"><a href="/"><i class="layui-icon layui-icon-home"></i> 首页</a></li><li class="layui-nav-item hide-sm hide-md hide-lg" style="float:right"><a href="javascript:;">菜单</a><dl class="layui-nav-child"><dd><a href="/">首页</a></dd><dd><a href="/archives">归档</a></dd><dd><a href="/tags">标签</a></dd><dd><a href="/categories">分类</a></dd><dd><a href="/about">关于</a></dd><dd><a href="/study">前端教程</a></dd><dd><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github">github</a></dd><dd><a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee">gitee</a></dd><dd><a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园">博客园</a></dd><dd><a href="javascript:void(0)" onclick='document.querySelector("#searchShade").style.display="block"'>搜索</a></dd></dl></li></ul><div id="loadingBox" class="loadingBox"><img src="/img/loading.gif"></div></div><div id="searchShade" class="searchShade"><div id="searchLayer"><div id="closeBtn" class="close"><i class="layui-icon layui-icon-close"></i></div><input id="searchTxt" type="text" placeholder="搜索文章(只支持文章标题关键字)" autofocus><div id="searchResult"></div></div></div><div class="mobile-toc-toggle hide-md hide-lg" id="mobileTocToggle"><i class="layui-icon layui-icon-list"></i></div><div class="mobile-toc-panel hide-md" id="mobileTocPanel"><div class="mobile-toc-header"><span><i class="layui-icon layui-icon-align-center"></i> 本文目录</span> <i class="layui-icon layui-icon-close" id="mobileTocClose"></i></div><div class="mobile-toc-body" id="mobileTocBody"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%9A-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">📚 目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Java%E7%AE%80%E4%BB%8B"><span class="toc-text">1. Java简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFJava%EF%BC%9F"><span class="toc-text">1.1 什么是Java？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Java%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">1.2 Java能做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Java%E5%89%8D%E6%99%AF%E5%A6%82%E4%BD%95%EF%BC%9F"><span class="toc-text">1.3 Java前景如何？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Java%E7%89%B9%E7%82%B9"><span class="toc-text">1.4 Java特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Java%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-text">1.5 Java核心概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-JDK%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">1.6 JDK目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">2. 开发环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-JDK%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.1 JDK安装步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-text">2.2 环境变量配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-IDE%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-text">2.3 IDE开发工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text">3. 基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.1 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%8F%98%E9%87%8F"><span class="toc-text">3.2 变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%B3%A8%E9%87%8A"><span class="toc-text">3.3 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">3.4 类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3.5 运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-text">4. 流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-if-else%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.1 if-else语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-switch-case%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.2 switch-case语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.3 循环语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">4.4 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E6%96%B9%E6%B3%95%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">4.5 方法（函数）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E7%BB%84"><span class="toc-text">5. 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%95%B0%E7%BB%84%E6%A6%82%E5%BF%B5"><span class="toc-text">5.1 数组概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%95%B0%E7%BB%84%E8%AF%AD%E6%B3%95"><span class="toc-text">5.2 数组语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">5.3 数组初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86"><span class="toc-text">5.4 数组遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E6%95%B0%E7%BB%84%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">5.5 数组工具类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-text">6. 面向对象编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">6.1 面向对象基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="toc-text">6.2 面向对象的四大特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">6.3 面向对象相关概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">6.4 类的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-text">6.5 对象的创建与使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">6.6 局部变量与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-%E6%9E%84%E9%80%A0%E5%99%A8%EF%BC%88%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-text">6.7 构造器（构造方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-9-%E5%B0%81%E8%A3%85"><span class="toc-text">6.9 封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-10-%E7%BB%A7%E6%89%BF"><span class="toc-text">6.10 继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-11-%E5%A4%9A%E6%80%81"><span class="toc-text">6.11 多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-12-%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D"><span class="toc-text">6.12 方法签名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%B8%B8%E7%94%A8%E7%B1%BB"><span class="toc-text">7. 常用类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-Scanner%E7%B1%BB"><span class="toc-text">7.1 Scanner类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-Random%E7%B1%BB"><span class="toc-text">7.2 Random类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-Arrays%E7%B1%BB"><span class="toc-text">7.3 Arrays类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-String%E7%B1%BB"><span class="toc-text">7.4 String类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-StringBuilder%E5%92%8CStringBuffer"><span class="toc-text">7.5 StringBuilder和StringBuffer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6"><span class="toc-text">8. 集合框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0"><span class="toc-text">8.1 集合概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-List%E6%8E%A5%E5%8F%A3"><span class="toc-text">8.2 List接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Set%E6%8E%A5%E5%8F%A3"><span class="toc-text">8.3 Set接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-Map%E6%8E%A5%E5%8F%A3"><span class="toc-text">8.4 Map接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-Collections%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">8.5 Collections工具类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF"><span class="toc-text">9. 泛型与增强for循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B"><span class="toc-text">9.1 泛型编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF%EF%BC%88foreach%EF%BC%89"><span class="toc-text">9.2 增强for循环（foreach）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">10. 异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0"><span class="toc-text">10.1 异常概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8"><span class="toc-text">10.2 常见异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-text">10.3 异常处理机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-IO%E6%B5%81"><span class="toc-text">11. IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-IO%E6%B5%81%E6%A6%82%E8%BF%B0"><span class="toc-text">11.1 IO流概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-File%E7%B1%BB"><span class="toc-text">11.2 File类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3-%E5%AD%97%E8%8A%82%E6%B5%81"><span class="toc-text">11.3 字节流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4-%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="toc-text">11.4 字符流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-5-%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="toc-text">11.5 转换流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6-%E6%89%93%E5%8D%B0%E6%B5%81"><span class="toc-text">11.6 打印流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B"><span class="toc-text">12. 数据库编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="toc-text">12.1 数据库概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-JDBC%E5%9F%BA%E7%A1%80"><span class="toc-text">12.2 JDBC基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-PreparedStatement"><span class="toc-text">12.3 PreparedStatement</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80"><span class="toc-text">13. Web前端基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-1-HTML%E5%9F%BA%E7%A1%80"><span class="toc-text">13.1 HTML基础</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-text">&#96;</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#13-2-CSS%E6%A0%B7%E5%BC%8F"><span class="toc-text">13.2 CSS样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-3-JavaScript%E5%9F%BA%E7%A1%80"><span class="toc-text">13.3 JavaScript基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Spring%E6%A1%86%E6%9E%B6"><span class="toc-text">14. Spring框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14-1-Spring%E7%AE%80%E4%BB%8B"><span class="toc-text">14.1 Spring简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-2-IOC%EF%BC%88%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%EF%BC%89"><span class="toc-text">14.2 IOC（控制反转）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-3-AOP%EF%BC%88%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B%EF%BC%89"><span class="toc-text">14.3 AOP（面向切面编程）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-MyBatis%E6%A1%86%E6%9E%B6"><span class="toc-text">15. MyBatis框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#15-1-MyBatis%E7%AE%80%E4%BB%8B"><span class="toc-text">15.1 MyBatis简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-2-MyBatis%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="toc-text">15.2 MyBatis开发步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3-MyBatis%E6%A0%B8%E5%BF%83API"><span class="toc-text">15.3 MyBatis核心API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-4-%E5%8A%A8%E6%80%81SQL"><span class="toc-text">15.4 动态SQL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-SpringMVC%E6%A1%86%E6%9E%B6"><span class="toc-text">16. SpringMVC框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-SpringMVC%E7%AE%80%E4%BB%8B"><span class="toc-text">16.1 SpringMVC简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-SpringMVC%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="toc-text">16.2 SpringMVC开发步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3"><span class="toc-text">16.3 常用注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">16.4 数据绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%9D-%E9%99%84%E5%BD%95"><span class="toc-text">📝 附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-text">常用面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE"><span class="toc-text">学习建议</span></a></li></ol></li></div></div><div class="mobile-toc-mask hide-md" id="mobileTocMask"></div><div class="layui-container center" id="top"><div class="layui-row layui-col-space20"><div class="layui-col-md3 hide-xs hide-sm"><div class="layui-card"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-speaker"></i> 公告</div><div class="layui-card-body"><div class="userinfo"><img src="/head2.jpg"><div class="name">愿代码无错，前程无坎</div><div class="icons"><a target="_blank" rel="noopener" href="https://github.com/heliufang" title="github"><i class="icon iconfont icon-github"></i></a> <a target="_blank" rel="noopener" href="https://gitee.com/heliufang" title="gitee"><i class="icon iconfont icon-gitee"></i></a> <a target="_blank" rel="noopener" href="https://www.cnblogs.com/helf" title="博客园"><i class="icon iconfont icon-cnblogs"></i></a></div><div class="other"><div class="item"><a class="title" style="color:#ff5722" href="/"><p class="num">79</p><div>文章</div></a></div><div class="item"><a style="color:#009688" href="/categories"><div class="num">11</div><div class="title">分类</div></a></div><div class="item"><a class="title" style="color:#01aaed" href="/tags"><div class="num">73</div><div>标签</div></a></div></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-website"></i> 网站资讯</div><div class="layui-card-body"><div class="webInfo-item"><div class="title">本站文章字数合计</div><div class="content">372.1k</div></div><div class="webInfo-item"><div class="title">本站Hexo版本</div><div class="content">6.1.0</div></div><div class="webInfo-item"><div class="title">本站Node版本</div><div class="content">20.19.6</div></div><div class="webInfo-item"><div class="title">本站已运行时间</div><div class="content"><span id="runDays" data-since-date="2020-12-24"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span>天</div></div><div class="webInfo-item"><div class="title">最后更新时间</div><div class="content" id="lastUpdate" data-last-update="2026-06-11 17:12:58"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></div></div></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-time"></i> 最新文章</div><div class="layui-card-body"><ul><li><a href="/posts/fdaff1c7/">1.Dify智能体</a></li><li><a href="/posts/dbcd824/">2.Coze智能体</a></li><li><a href="/posts/e9e7c246/">3.提示词工程</a></li><li><a href="/posts/9ebec7b8/">4.matplotlib</a></li><li><a href="/posts/fa288682/">5.numpy</a></li></ul></div></div><div class="layui-card ahover"><div class="layui-card-header"><i style="font-weight:700" class="layui-icon layui-icon-template-1"></i> 文章分类</div><div class="layui-card-body left-a-color"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../categories/AI/">AI</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/docker/">docker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/java/">java</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/python/">python</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/vue/">vue</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/web%E5%89%8D%E7%AB%AF/">web前端</a><span class="category-list-count">34</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%AC%E4%BC%97%E5%8F%B7%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F/">公众号和小程序</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E5%85%B6%E5%AE%83%E6%8A%80%E6%9C%AF/">其它技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="../../categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="category-list-count">3</span></li></ul></div></div><div style="height:calc(100% - 60px - 60px);width:267px" id="toc-area" class="layui-card ahover"><div class="layui-card-header"><i class="layui-icon layui-icon-align-center"></i> 本文目录</div><div id="tocMain" class="layui-card-body" style="overflow:auto;height:calc(100% - 60px - 60px)"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%9A-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">📚 目录结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Java%E7%AE%80%E4%BB%8B"><span class="toc-text">1. Java简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFJava%EF%BC%9F"><span class="toc-text">1.1 什么是Java？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-Java%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">1.2 Java能做什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Java%E5%89%8D%E6%99%AF%E5%A6%82%E4%BD%95%EF%BC%9F"><span class="toc-text">1.3 Java前景如何？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Java%E7%89%B9%E7%82%B9"><span class="toc-text">1.4 Java特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-Java%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-text">1.5 Java核心概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-JDK%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">1.6 JDK目录结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">2. 开发环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-JDK%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.1 JDK安装步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-text">2.2 环境变量配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-IDE%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-text">2.3 IDE开发工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text">3. 基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.1 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%8F%98%E9%87%8F"><span class="toc-text">3.2 变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E6%B3%A8%E9%87%8A"><span class="toc-text">3.3 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">3.4 类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">3.5 运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-text">4. 流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-if-else%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.1 if-else语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-switch-case%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.2 switch-case语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">4.3 循环语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">4.4 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E6%96%B9%E6%B3%95%EF%BC%88%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">4.5 方法（函数）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E7%BB%84"><span class="toc-text">5. 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%95%B0%E7%BB%84%E6%A6%82%E5%BF%B5"><span class="toc-text">5.1 数组概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%95%B0%E7%BB%84%E8%AF%AD%E6%B3%95"><span class="toc-text">5.2 数组语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">5.3 数组初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86"><span class="toc-text">5.4 数组遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E6%95%B0%E7%BB%84%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">5.5 数组工具类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-text">6. 面向对象编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">6.1 面向对象基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="toc-text">6.2 面向对象的四大特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">6.3 面向对象相关概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">6.4 类的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-text">6.5 对象的创建与使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%B8%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">6.6 局部变量与全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-%E6%9E%84%E9%80%A0%E5%99%A8%EF%BC%88%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-text">6.7 构造器（构造方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-9-%E5%B0%81%E8%A3%85"><span class="toc-text">6.9 封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-10-%E7%BB%A7%E6%89%BF"><span class="toc-text">6.10 继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-11-%E5%A4%9A%E6%80%81"><span class="toc-text">6.11 多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-12-%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D"><span class="toc-text">6.12 方法签名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%B8%B8%E7%94%A8%E7%B1%BB"><span class="toc-text">7. 常用类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-Scanner%E7%B1%BB"><span class="toc-text">7.1 Scanner类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-Random%E7%B1%BB"><span class="toc-text">7.2 Random类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-Arrays%E7%B1%BB"><span class="toc-text">7.3 Arrays类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-String%E7%B1%BB"><span class="toc-text">7.4 String类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-StringBuilder%E5%92%8CStringBuffer"><span class="toc-text">7.5 StringBuilder和StringBuffer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6"><span class="toc-text">8. 集合框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0"><span class="toc-text">8.1 集合概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-List%E6%8E%A5%E5%8F%A3"><span class="toc-text">8.2 List接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-Set%E6%8E%A5%E5%8F%A3"><span class="toc-text">8.3 Set接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-Map%E6%8E%A5%E5%8F%A3"><span class="toc-text">8.4 Map接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-Collections%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">8.5 Collections工具类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF"><span class="toc-text">9. 泛型与增强for循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B"><span class="toc-text">9.1 泛型编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF%EF%BC%88foreach%EF%BC%89"><span class="toc-text">9.2 增强for循环（foreach）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-text">10. 异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E5%BC%82%E5%B8%B8%E6%A6%82%E8%BF%B0"><span class="toc-text">10.1 异常概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8"><span class="toc-text">10.2 常见异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="toc-text">10.3 异常处理机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-IO%E6%B5%81"><span class="toc-text">11. IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-IO%E6%B5%81%E6%A6%82%E8%BF%B0"><span class="toc-text">11.1 IO流概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-File%E7%B1%BB"><span class="toc-text">11.2 File类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3-%E5%AD%97%E8%8A%82%E6%B5%81"><span class="toc-text">11.3 字节流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4-%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="toc-text">11.4 字符流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-5-%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="toc-text">11.5 转换流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6-%E6%89%93%E5%8D%B0%E6%B5%81"><span class="toc-text">11.6 打印流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B"><span class="toc-text">12. 数据库编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%A6%82%E8%BF%B0"><span class="toc-text">12.1 数据库概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-JDBC%E5%9F%BA%E7%A1%80"><span class="toc-text">12.2 JDBC基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-PreparedStatement"><span class="toc-text">12.3 PreparedStatement</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-Web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80"><span class="toc-text">13. Web前端基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-1-HTML%E5%9F%BA%E7%A1%80"><span class="toc-text">13.1 HTML基础</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-text">&#96;</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#13-2-CSS%E6%A0%B7%E5%BC%8F"><span class="toc-text">13.2 CSS样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-3-JavaScript%E5%9F%BA%E7%A1%80"><span class="toc-text">13.3 JavaScript基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Spring%E6%A1%86%E6%9E%B6"><span class="toc-text">14. Spring框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14-1-Spring%E7%AE%80%E4%BB%8B"><span class="toc-text">14.1 Spring简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-2-IOC%EF%BC%88%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%EF%BC%89"><span class="toc-text">14.2 IOC（控制反转）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-3-AOP%EF%BC%88%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B%EF%BC%89"><span class="toc-text">14.3 AOP（面向切面编程）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-MyBatis%E6%A1%86%E6%9E%B6"><span class="toc-text">15. MyBatis框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#15-1-MyBatis%E7%AE%80%E4%BB%8B"><span class="toc-text">15.1 MyBatis简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-2-MyBatis%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="toc-text">15.2 MyBatis开发步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3-MyBatis%E6%A0%B8%E5%BF%83API"><span class="toc-text">15.3 MyBatis核心API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-4-%E5%8A%A8%E6%80%81SQL"><span class="toc-text">15.4 动态SQL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-SpringMVC%E6%A1%86%E6%9E%B6"><span class="toc-text">16. SpringMVC框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-1-SpringMVC%E7%AE%80%E4%BB%8B"><span class="toc-text">16.1 SpringMVC简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-2-SpringMVC%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="toc-text">16.2 SpringMVC开发步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3-%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3"><span class="toc-text">16.3 常用注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-4-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A"><span class="toc-text">16.4 数据绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%9D-%E9%99%84%E5%BD%95"><span class="toc-text">📝 附录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-text">常用面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE"><span class="toc-text">学习建议</span></a></li></ol></li></div><div class="readprocess"><div><i class="layui-icon layui-icon-read"></i> 已阅读：<span id="progressTxt"></span>%</div><div class="layui-progress" lay-filter="demo"><div class="layui-progress-bar" lay-percent="10%"></div></div></div></div></div><div class="layui-col-md9 markdown-body" style="background:#fff;margin-top:10px"><div class="article-title"><p><span><i class="layui-icon layui-icon-template-1"></i> 分类: <span class="layui-badge layui-bg-cyan">java</span> </span>| <span><i class="layui-icon layui-icon-note"></i> 标签: <span class="layui-badge layui-bg-black">java</span></span></p><h1>Java学习笔记</h1><p><span><i class="layui-icon layui-icon-survey"></i> 发表于: 2016-05-01 14:08:07 </span>| <span><i class="layui-icon layui-icon-app"></i> 字数统计: 9.4k </span>| <span><i class="layui-icon layui-icon-log"></i> 阅读时长预计: 47分钟</span></p></div><div id="article"><h2 id="📚-目录结构"><a href="#📚-目录结构" class="headerlink" title="📚 目录结构"></a>📚 目录结构</h2><ul><li><a href="#1-java%E7%AE%80%E4%BB%8B">Java简介</a></li><li><a href="#2-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">开发环境搭建</a></li><li><a href="#3-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95">基础语法</a></li><li><a href="#4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6">流程控制</a></li><li><a href="#5-%E6%95%B0%E7%BB%84">数组</a></li><li><a href="#6-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B">面向对象编程</a></li><li><a href="#7-%E5%B8%B8%E7%94%A8%E7%B1%BB">常用类</a></li><li><a href="#8-%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6">集合框架</a></li><li><a href="#9-%E6%B3%9B%E5%9E%8B%E4%B8%8E%E5%A2%9E%E5%BC%BAfor%E5%BE%AA%E7%8E%AF">泛型与增强for循环</a></li><li><a href="#10-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">异常处理</a></li><li><a href="#11-io%E6%B5%81">IO流</a></li><li><a href="#12-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B">数据库编程</a></li><li><a href="#13-web%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80">Web前端基础</a></li><li><a href="#14-spring%E6%A1%86%E6%9E%B6">Spring框架</a></li><li><a href="#15-mybatis%E6%A1%86%E6%9E%B6">MyBatis框架</a></li><li><a href="#16-springmvc%E6%A1%86%E6%9E%B6">SpringMVC框架</a></li></ul><hr><h2 id="1-Java简介"><a href="#1-Java简介" class="headerlink" title="1. Java简介"></a>1. Java简介</h2><h3 id="1-1-什么是Java？"><a href="#1-1-什么是Java？" class="headerlink" title="1.1 什么是Java？"></a>1.1 什么是Java？</h3><p>Java是一门<strong>编程语言</strong>，是一组有序的指令集，用于驱动计算机工作。</p><p><strong>编程语言发展史：</strong></p><ul><li><strong>第一代语言</strong>：机器语言（0,1）</li><li><strong>第二代语言</strong>：汇编语言（mov、add、寄存器）</li><li><strong>第三代语言</strong>：高级语言<ul><li>面向过程：C（指针）、C++（游戏引擎）</li><li>面向对象：Java、C#、Objective-C、JavaScript</li></ul></li><li><strong>第四代语言</strong>：SQL</li></ul><h3 id="1-2-Java能做什么？"><a href="#1-2-Java能做什么？" class="headerlink" title="1.2 Java能做什么？"></a>1.2 Java能做什么？</h3><ol><li><strong>企业级开发</strong>：OA、ERP、教务系统、电商平台（淘宝）</li><li><strong>移动互联网</strong>：App、车联网、互联网电视、智能家居</li><li><strong>大数据</strong>：数据挖掘与分析</li></ol><h3 id="1-3-Java前景如何？"><a href="#1-3-Java前景如何？" class="headerlink" title="1.3 Java前景如何？"></a>1.3 Java前景如何？</h3><ul><li><strong>平台开发</strong>：后端服务、微服务架构</li><li><strong>移动互联网</strong>：Android应用开发</li><li><strong>物联网时代</strong>：云计算、大数据、物联网设备</li></ul><h3 id="1-4-Java特点"><a href="#1-4-Java特点" class="headerlink" title="1.4 Java特点"></a>1.4 Java特点</h3><table><thead><tr><th>特点</th><th>说明</th></tr></thead><tbody><tr><td><strong>跨平台</strong></td><td>Java代码跨平台，JVM不跨平台</td></tr><tr><td><strong>多线程</strong></td><td>单位时间内完成多个任务</td></tr><tr><td><strong>安全性</strong></td><td>相对其他语言更安全</td></tr><tr><td><strong>面向对象</strong></td><td>支持封装、继承、多态等OOP特性</td></tr></tbody></table><h3 id="1-5-Java核心概念"><a href="#1-5-Java核心概念" class="headerlink" title="1.5 Java核心概念"></a>1.5 Java核心概念</h3><p><strong>JDK、JRE、JVM关系图：</strong></p><pre><code>JDK (Java开发工具包)
+├── JRE (Java运行环境)
+│   ├── JVM (Java虚拟机)
+│   └── 核心类库
+└── 开发工具（javac、java等）
+</code></pre><p><strong>详细说明：</strong></p><ul><li><p><strong>JDK</strong> (Java Development Kit)：Java开发工具包</p><ul><li>包含：可执行文件 + JRE + 源代码</li></ul></li><li><p><strong>JRE</strong> (Java Runtime Environment)：Java运行环境</p><ul><li>包含：JAR包（工具代码）+ JVM</li></ul></li><li><p><strong>JVM</strong> (Java Virtual Machine)：Java虚拟机</p><ul><li>作用：模拟一台计算机，运行Java程序</li></ul></li></ul><p><strong>Java技术体系：</strong></p><table><thead><tr><th>技术平台</th><th>说明</th></tr></thead><tbody><tr><td><strong>JavaSE</strong></td><td>Java标准版，基础语法</td></tr><tr><td><strong>JavaEE</strong></td><td>Java企业版，用于企业级开发（Web应用）</td></tr><tr><td><strong>JavaME</strong></td><td>Java微型版，用于移动设备开发</td></tr></tbody></table><h3 id="1-6-JDK目录结构"><a href="#1-6-JDK目录结构" class="headerlink" title="1.6 JDK目录结构"></a>1.6 JDK目录结构</h3><pre><code>jdk/
+├── bin/          开发过程中依赖的工具包（命令）
+├── db/           数据方面的案例
+├── demo/         Java新功能的案例
+├── include/      Java底层是C语言
+├── jre/          运行环境
+├── lib/          库文件
+└── src.zip       Java源代码
+</code></pre><hr><h2 id="2-开发环境搭建"><a href="#2-开发环境搭建" class="headerlink" title="2. 开发环境搭建"></a>2. 开发环境搭建</h2><h3 id="2-1-JDK安装步骤"><a href="#2-1-JDK安装步骤" class="headerlink" title="2.1 JDK安装步骤"></a>2.1 JDK安装步骤</h3><ol><li>下载JDK安装包（推荐Oracle JDK）</li><li>按提示一步步安装即可</li><li>配置环境变量</li></ol><h3 id="2-2-环境变量配置"><a href="#2-2-环境变量配置" class="headerlink" title="2.2 环境变量配置"></a>2.2 环境变量配置</h3><p><strong>Windows系统配置步骤：</strong></p><ol><li>右击”计算机” → “高级系统设置”</li><li>在”系统变量”中找到<code>Path</code>变量</li><li>在变量值的最前面输入JDK的bin目录路径，并以<code>;</code>结尾</li></ol><pre><code class="bash"># 示例：C:\Program Files\Java\jdk1.8.0\bin;
+</code></pre><ol start="4"><li>点击”确定”保存</li></ol><p><strong>验证安装：</strong></p><pre><code class="bash"># 打开命令行窗口，输入以下命令
+java -version
+javac -version
+</code></pre><h3 id="2-3-IDE开发工具"><a href="#2-3-IDE开发工具" class="headerlink" title="2.3 IDE开发工具"></a>2.3 IDE开发工具</h3><p><strong>MyEclipse&#x2F;Eclipse安装与配置：</strong></p><ol><li>下载并安装IDE</li><li>配置JRE路径：<code>Window → Preferences → Java → Installed JREs</code></li><li>配置工作空间编码：<code>Window → Preferences → General → Workspace → Text file encoding</code></li></ol><p><strong>常用操作：</strong></p><table><thead><tr><th>操作</th><th>菜单路径</th></tr></thead><tbody><tr><td>新建项目</td><td>File → New → Java Project</td></tr><tr><td>新建包</td><td>File → New → Package</td></tr><tr><td>新建类</td><td>File → New → Class</td></tr><tr><td>更改字体</td><td>Window → Preferences → General → Appearance → Colors and Fonts</td></tr></tbody></table><p><strong>命名规范：</strong></p><ul><li>项目名：英文小写</li><li>包名：<code>com.xxx</code>格式</li><li>类名：驼峰命名法（如：<code>HelloWorld</code>）</li></ul><hr><h2 id="3-基础语法"><a href="#3-基础语法" class="headerlink" title="3. 基础语法"></a>3. 基础语法</h2><h3 id="3-1-数据类型"><a href="#3-1-数据类型" class="headerlink" title="3.1 数据类型"></a>3.1 数据类型</h3><p><strong>Java数据类型分为两大类：</strong></p><pre><code>数据类型
+├── 基本数据类型
+│   ├── 数值型
+│   │   ├── 整数型：byte、short、int、long
+│   │   └── 浮点型：float、double
+│   ├── 字符型：char
+│   └── 布尔型：boolean
+└── 引用类型
+    ├── 类：String、Scanner、Random等
+    ├── 接口
+    └── 数组
+</code></pre><p><strong>基本数据类型详细表：</strong></p><table><thead><tr><th>类型</th><th>取值范围</th><th>默认值</th><th>占用字节</th><th>说明</th></tr></thead><tbody><tr><td><code>boolean</code></td><td>true|false</td><td>false</td><td>1位</td><td>布尔类型</td></tr><tr><td><code>byte</code></td><td>-2⁷ ~ 2⁷-1 (-128 ~ 127)</td><td>0</td><td>1字节</td><td>字节型</td></tr><tr><td><code>short</code></td><td>-2¹⁵ ~ 2¹⁵-1 (-32768 ~ 32767)</td><td>0</td><td>2字节</td><td>短整型</td></tr><tr><td><code>char</code></td><td>0~65535 (Unicode字符集)</td><td>\u0000</td><td>2字节</td><td>字符型</td></tr><tr><td><code>int</code></td><td>-2³¹ ~ 2³¹-1</td><td>0</td><td>4字节</td><td>整型（默认）</td></tr><tr><td><code>long</code></td><td>-2⁶³ ~ 2⁶³-1</td><td>0L</td><td>8字节</td><td>长整型</td></tr><tr><td><code>float</code></td><td>±3.4e38 (7位有效数字)</td><td>0.0f</td><td>4字节</td><td>单精度浮点</td></tr><tr><td><code>double</code></td><td>±1.8e308 (15位有效数字)</td><td>0.0d</td><td>8字节</td><td>双精度浮点（默认）</td></tr></tbody></table><p><strong>重要提示：</strong></p><ol><li><p><strong>整数的默认类型是int类型</strong></p><pre><code class="java">long k;
+k = 123123213L;  // 必须加L或l
+</code></pre></li><li><p><strong>小数的默认类型是double类型</strong></p><pre><code class="java">float f;
+f = 1.3f;  // 必须加f或F
+</code></pre></li></ol><h3 id="3-2-变量"><a href="#3-2-变量" class="headerlink" title="3.2 变量"></a>3.2 变量</h3><p><strong>概念：</strong> 用来指代一定范围的值的一个代词</p><p><strong>定义语法：</strong></p><pre><code class="java">数据类型 变量名;  // int a;
+</code></pre><p><strong>赋值语法：</strong></p><pre><code class="java">变量名 = 值;  // a = 10; 注意：&#39;=&#39;前后各空一格
+</code></pre><p><strong>变量命名规范：</strong></p><ul><li>只能包含字母、数字、下划线和美元符号</li><li>不能以数字开头</li><li>不能使用Java关键字</li><li>见名知意</li></ul><h3 id="3-3-注释"><a href="#3-3-注释" class="headerlink" title="3.3 注释"></a>3.3 注释</h3><p><strong>三种注释方式：</strong></p><table><thead><tr><th>注释类型</th><th>语法</th><th>用途</th></tr></thead><tbody><tr><td>单行注释</td><td><code>//注释内容</code></td><td>解释某一行代码</td></tr><tr><td>多行注释</td><td><code>/* 注释内容 */</code></td><td>解释某一段代码</td></tr><tr><td>文档注释</td><td><code>/** 注释内容 */</code></td><td>解释某个方法或类</td></tr></tbody></table><p><strong>文档注释示例：</strong></p><pre><code class="java">/**
+ * VarExample主要用来演示变量定义及变量的赋值
+ *
+ * @author Andy
+ * @since 2016-4-25
+ */
+public class VarExample &#123;
+    /**
+     * main函数是用来给操作系统调用的函数，所以写法固定
+     *
+     * @param args 在执行java命令时可以传递参数
+     * @return 没有返回值
+     */
+    public static void main(String[] args) &#123;
+        // 代码内容
+    &#125;
+&#125;
+</code></pre><h3 id="3-4-类型转换"><a href="#3-4-类型转换" class="headerlink" title="3.4 类型转换"></a>3.4 类型转换</h3><p><strong>数据类型范围从小到大：</strong></p><pre><code>char → byte → short → int → long → float → double
+</code></pre><p><strong>两种类型转换方式：</strong></p><ol><li><p><strong>隐式转换（自动转换）</strong></p><ul><li>小类型 → 大类型</li><li>示例：<code>int a = 10; double b = a;</code></li></ul></li><li><p><strong>强制转换</strong></p><ul><li>大类型 → 小类型</li><li>语法：<code>(目标类型)值</code></li><li>示例：<code>double a = 3.14; int b = (int)a;</code></li></ul></li></ol><p><strong>面试题：</strong></p><pre><code class="java">// 题目1：short i = 11; 正确还是错误？
+short i = 11;  // 正确
+// 原因：javac会判断11是否在short范围内，如果是就自动转换
+
+// 题目2：short m = 10; short t = 11; short n = m + t; 结果如何？
+short m = 10;
+short t = 11;
+short n = m + t;  // 编译错误
+// 原因：表达式中有变量时，short/char/byte会提升为int类型
+// 正确写法：short n = (short)(m + t);
+</code></pre><h3 id="3-5-运算符"><a href="#3-5-运算符" class="headerlink" title="3.5 运算符"></a>3.5 运算符</h3><p><strong>算术运算符：</strong></p><table><thead><tr><th>运算符</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><code>+</code></td><td>加法&#x2F;字符串连接</td><td><code>a + b</code></td></tr><tr><td><code>-</code></td><td>减法</td><td><code>a - b</code></td></tr><tr><td><code>*</code></td><td>乘法</td><td><code>a * b</code></td></tr><tr><td><code>/</code></td><td>除法</td><td><code>a / b</code></td></tr><tr><td><code>%</code></td><td>取余</td><td><code>a % b</code></td></tr><tr><td><code>++</code></td><td>自增</td><td><code>a++</code> 或 <code>++a</code></td></tr><tr><td><code>--</code></td><td>自减</td><td><code>a--</code> 或 <code>--a</code></td></tr></tbody></table><p><strong>注意事项：</strong></p><ol><li>整数除法结果仍为整数</li><li>取余结果符号与被除数相同</li><li>快速将整数转换为小数：乘以1.0</li></ol><p><strong>扩展算术运算符：</strong></p><pre><code class="java">a += b;  // 等价于 a = a + b;
+a -= b;  // 等价于 a = a - b;
+a *= b;  // 等价于 a = a * b;
+a /= b;  // 等价于 a = a / b;
+a %= b;  // 等价于 a = a % b;
+</code></pre><p><strong>自增自减运算符：</strong></p><pre><code class="java">int i = 3;
+int a = ++i;  // 前自增：先加1再使用，a=4, i=4
+int j = 3;
+int b = j++;  // 后自增：先使用再加1，b=3, j=4
+</code></pre><p><strong>逻辑运算符：</strong></p><table><thead><tr><th>运算符</th><th>说明</th><th>特点</th></tr></thead><tbody><tr><td><code>&amp;&amp;</code></td><td>短路与</td><td>表达式1为false时，表达式2不执行</td></tr><tr><td><code>||</code></td><td>短路或</td><td>表达式1为true时，表达式2不执行</td></tr><tr><td><code>!</code></td><td>逻辑非</td><td>取反</td></tr></tbody></table><p><strong>比较运算符：</strong></p><table><thead><tr><th>运算符</th><th>说明</th></tr></thead><tbody><tr><td><code>&gt;</code></td><td>大于</td></tr><tr><td><code>&lt;</code></td><td>小于</td></tr><tr><td><code>==</code></td><td>等于</td></tr><tr><td><code>!=</code></td><td>不等于</td></tr><tr><td><code>&gt;=</code></td><td>大于等于</td></tr><tr><td><code>&lt;=</code></td><td>小于等于</td></tr></tbody></table><p><strong>注意：</strong></p><ul><li>基本类型比较的是数值</li><li>引用类型比较的是地址</li></ul><p><strong>三目运算符：</strong></p><pre><code class="java">语法：（表达式）？返回值1 : 返回值2;
+
+示例：
+boolean isGender = true;
+char c1 = (isGender == true) ? &#39;男&#39; : &#39;女&#39;;
+</code></pre><hr><h2 id="4-流程控制"><a href="#4-流程控制" class="headerlink" title="4. 流程控制"></a>4. 流程控制</h2><h3 id="4-1-if-else语句"><a href="#4-1-if-else语句" class="headerlink" title="4.1 if-else语句"></a>4.1 if-else语句</h3><p><strong>语法格式：</strong></p><p><strong>1. 基本if语句：</strong></p><pre><code class="java">if(条件表达式) &#123;
+    // 语句块
+&#125;
+</code></pre><p><strong>2. if-else语句：</strong></p><pre><code class="java">if(条件表达式) &#123;
+    // 语句块1
+&#125; else &#123;
+    // 语句块2
+&#125;
+</code></pre><p><strong>3. if-else if-else语句：</strong></p><pre><code class="java">if(条件表达式1) &#123;
+    // 语句块1
+&#125; else if(条件表达式2) &#123;
+    // 语句块2
+&#125; else if(条件表达式3) &#123;
+    // 语句块3
+&#125; else &#123;
+    // 语句块4
+&#125;
+</code></pre><p><strong>注意：</strong></p><ul><li>if不能省略，else if可以有0个或多个，else最多有一个</li><li>if-else嵌套不宜超过3层</li></ul><p><strong>面试题：</strong></p><pre><code class="java">boolean flag = true;
+if(flag = false) &#123;  // 注意：这里是赋值，不是比较
+    System.out.println(&quot;A&quot;);
+&#125; else if(flag == false) &#123;
+    System.out.println(&quot;B&quot;);  // 输出B
+&#125; else if(flag = true) &#123;
+    System.out.println(&quot;C&quot;);
+&#125; else &#123;
+    System.out.println(&quot;D&quot;);
+&#125;
+</code></pre><h3 id="4-2-switch-case语句"><a href="#4-2-switch-case语句" class="headerlink" title="4.2 switch-case语句"></a>4.2 switch-case语句</h3><p><strong>语法格式：</strong></p><pre><code class="java">switch(表达式) &#123;
+    case 值1:
+        // 语句块1
+        break;
+    case 值2:
+        // 语句块2
+        break;
+    // ...
+    default:
+        // 默认语句块
+&#125;
+</code></pre><p><strong>支持的数据类型：</strong></p><ul><li><strong>JDK 6.0及以下</strong>：byte、short、char、int</li><li><strong>JDK 7.0及以上</strong>：byte、short、char、int、long、String</li></ul><p><strong>注意事项：</strong></p><ol><li>case后的值必须是常量</li><li>break可以省略（会穿透）</li><li>default可以省略</li></ol><h3 id="4-3-循环语句"><a href="#4-3-循环语句" class="headerlink" title="4.3 循环语句"></a>4.3 循环语句</h3><p><strong>1. while循环：</strong></p><pre><code class="java">while(条件表达式) &#123;  // 先判断，后执行
+    // 循环体
+&#125;
+</code></pre><p><strong>2. do-while循环：</strong></p><pre><code class="java">do &#123;  // 先执行，后判断
+    // 循环体
+&#125; while(条件表达式);
+</code></pre><p><strong>区别：</strong></p><ul><li>while：先判断后执行，可能一次都不执行</li><li>do-while：先执行后判断，至少执行一次</li></ul><p><strong>3. for循环：</strong></p><pre><code class="java">for(初始化; 条件; 更新) &#123;  // 条件明确时使用
+    // 循环体
+&#125;
+</code></pre><p><strong>经典死循环：</strong></p><pre><code class="java">// 方式1：while死循环
+while(true) &#123;
+    if(条件) break;
+&#125;
+
+// 方式2：for死循环
+for(;;) &#123;
+    if(条件) break;
+&#125;
+</code></pre><h3 id="4-4-关键字"><a href="#4-4-关键字" class="headerlink" title="4.4 关键字"></a>4.4 关键字</h3><p><strong>break和continue对比：</strong></p><table><thead><tr><th>关键字</th><th>作用</th><th>使用场景</th></tr></thead><tbody><tr><td><code>break</code></td><td>终止循环，继续执行循环后的代码</td><td>switch、循环</td></tr><tr><td><code>continue</code></td><td>跳过当次循环，继续执行下一次循环</td><td>仅循环</td></tr></tbody></table><p><strong>示例：</strong></p><pre><code class="java">// break示例
+for(int i = 0; i &lt; 10; i++) &#123;
+    if(i == 5) break;  // 当i=5时跳出循环
+    System.out.println(i);
+&#125;
+
+// continue示例
+for(int i = 0; i &lt; 10; i++) &#123;
+    if(i == 5) continue;  // 跳过i=5的情况
+    System.out.println(i);
+&#125;
+</code></pre><h3 id="4-5-方法（函数）"><a href="#4-5-方法（函数）" class="headerlink" title="4.5 方法（函数）"></a>4.5 方法（函数）</h3><p><strong>概念：</strong> 某一个功能块</p><p><strong>定义语法：</strong></p><pre><code class="java">修饰符 返回值类型 方法名(数据类型 参数名, 数据类型 参数名, ...) &#123;
+    // 方法体
+    return 返回值;
+&#125;
+</code></pre><p><strong>注意：</strong></p><ol><li>当方法没有返回值时，使用<code>void</code>关键字占位</li><li>使用void后，return语句可以省略</li></ol><p><strong>方法调用：</strong></p><pre><code class="java">// 同一类中调用：方法名(实参);
+int result = max(10, 20);
+
+// 不同类中调用：对象.方法名(实参);
+int distance = point.distance(otherPoint);
+</code></pre><p><strong>形参和实参：</strong></p><ul><li><strong>形参</strong>：形式参数，出现在方法定义的参数列表中</li><li><strong>实参</strong>：实际参数，出现在方法调用的参数列表中</li></ul><p><strong>方法重载：</strong></p><ul><li><strong>条件</strong>：方法名相同，参数列表不同（个数或类型）</li><li><strong>注意</strong>：与返回值类型无关</li><li><strong>本质</strong>：多态的一种体现形式</li></ul><hr><h2 id="5-数组"><a href="#5-数组" class="headerlink" title="5. 数组"></a>5. 数组</h2><h3 id="5-1-数组概念"><a href="#5-1-数组概念" class="headerlink" title="5.1 数组概念"></a>5.1 数组概念</h3><p><strong>定义：</strong> 一组相同数据类型的集合</p><p><strong>特点：</strong></p><ol><li>类型相同</li><li>内存空间连续</li></ol><h3 id="5-2-数组语法"><a href="#5-2-数组语法" class="headerlink" title="5.2 数组语法"></a>5.2 数组语法</h3><p><strong>声明方式：</strong></p><pre><code class="java">// 推荐方式
+数据类型[] 数组名;  // int[] arr; String[] pokers;
+
+// 不推荐方式
+数据类型 数组名[];  // int arr[]; String pokers[];
+</code></pre><h3 id="5-3-数组初始化"><a href="#5-3-数组初始化" class="headerlink" title="5.3 数组初始化"></a>5.3 数组初始化</h3><p><strong>1. 静态初始化：</strong></p><pre><code class="java">int[] array = &#123;1, 2, 3, 4, 5, 6, 7&#125;;
+String[] strs = &#123;&quot;A&quot;, &quot;1&quot;, &quot;2&quot;, &quot;K&quot;, &quot;10&quot;&#125;;
+</code></pre><p><strong>2. 动态初始化：</strong></p><pre><code class="java">// 第一种：不赋值
+String[] rooms = new String[3];  // 创建长度为3的数组
+boolean[] flags = new boolean[3];
+
+// 第二种：赋值
+String[] rs = new String[]&#123;&quot;单人间&quot;, &quot;双人间&quot;, &quot;商务房&quot;&#125;;
+int[] ars = new int[]&#123;1, 2, 3&#125;;
+</code></pre><h3 id="5-4-数组遍历"><a href="#5-4-数组遍历" class="headerlink" title="5.4 数组遍历"></a>5.4 数组遍历</h3><p><strong>数组元素访问：</strong></p><pre><code class="java">数组名[下标];  // 下标从0开始
+</code></pre><p><strong>数组长度：</strong></p><pre><code class="java">int len = array.length;  // 获取数组长度
+</code></pre><p><strong>遍历数组：</strong></p><pre><code class="java">// 使用for循环遍历
+for(int index = 0; index &lt; array.length; index++) &#123;
+    int content = array[index];
+    System.out.println(&quot;数组下标为&quot; + index + &quot;的元素:&quot; + content);
+&#125;
+</code></pre><p><strong>注意事项：</strong></p><ul><li>数组下标越界会抛出<code>ArrayIndexOutOfBoundsException</code></li><li>推荐使用<code>index &lt; array.length</code>避免越界</li></ul><h3 id="5-5-数组工具类"><a href="#5-5-数组工具类" class="headerlink" title="5.5 数组工具类"></a>5.5 数组工具类</h3><p><strong>System.arraycopy()方法：</strong></p><pre><code class="java">// 作用：复制数组内容
+System.arraycopy(src, srcPos, dest, destPos, length);
+
+// 参数说明：
+// src: 源数组
+// srcPos: 源数组起始位置
+// dest: 目标数组
+// destPos: 目标数组起始位置
+// length: 复制长度
+</code></pre><p><strong>Arrays.copyOf()方法：</strong></p><pre><code class="java">// 作用：复制数组内容并返回新数组
+int[] newArray = Arrays.copyOf(oldArray, newLength);
+
+// 参数说明：
+// oldArray: 原数组
+// newLength: 新数组长度
+</code></pre><p><strong>自我复制示例：</strong></p><pre><code class="java">// 数组扩容常用技巧
+pokers = Arrays.copyOf(pokers, pokers.length + 1);
+pokers[pokers.length - 1] = &quot;大王&quot;;
+</code></pre><hr><h2 id="6-面向对象编程"><a href="#6-面向对象编程" class="headerlink" title="6. 面向对象编程"></a>6. 面向对象编程</h2><h3 id="6-1-面向对象基本概念"><a href="#6-1-面向对象基本概念" class="headerlink" title="6.1 面向对象基本概念"></a>6.1 面向对象基本概念</h3><p><strong>什么是对象？</strong></p><ul><li>对象是客观世界存在的物体</li><li>一切皆对象，看得见、看不见的都可以是对象</li></ul><p><strong>什么是面向对象？</strong></p><ul><li>以对象为主体，研究对象及对象之间的关系</li><li>OOA&#x2F;OOD：面向对象分析与设计</li></ul><p><strong>面向对象与面向过程的区别：</strong></p><table><thead><tr><th>对比项</th><th>面向对象</th><th>面向过程</th></tr></thead><tbody><tr><td><strong>关注方向</strong></td><td>对象、对象之间的关系</td><td>功能、功能之间的关系</td></tr><tr><td><strong>内部细节</strong></td><td>忽略实现细节，注重结果</td><td>关注内部实现细节</td></tr><tr><td><strong>适用范围</strong></td><td>大型项目（ERP、OA、电商平台）</td><td>小型项目（驱动程序、芯片程序）</td></tr></tbody></table><h3 id="6-2-面向对象的四大特征"><a href="#6-2-面向对象的四大特征" class="headerlink" title="6.2 面向对象的四大特征"></a>6.2 面向对象的四大特征</h3><ol><li><strong>封装</strong>：隐藏内部实现细节（如：发动机、存款）</li><li><strong>继承</strong>：子类拥有父类的特性</li><li><strong>多态</strong>：同一行为的不同表现形式（如：打酱油、打仗、打牌）</li><li><strong>抽象</strong>：提取共同特征（如：时间概念）</li></ol><h3 id="6-3-面向对象相关概念"><a href="#6-3-面向对象相关概念" class="headerlink" title="6.3 面向对象相关概念"></a>6.3 面向对象相关概念</h3><table><thead><tr><th>概念</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><strong>类</strong></td><td>类型、名词</td><td>动物、人、狗</td></tr><tr><td><strong>对象</strong></td><td>实例、东西</td><td>张三、小白</td></tr><tr><td><strong>引用</strong></td><td>保存对象地址的变量</td><td>张三（代词）</td></tr><tr><td><strong>属性</strong></td><td>构成对象的不可分割部分</td><td>身高、体重、年龄</td></tr><tr><td><strong>方法</strong></td><td>行为、动作</td><td>吃、运动、笑</td></tr></tbody></table><h3 id="6-4-类的定义"><a href="#6-4-类的定义" class="headerlink" title="6.4 类的定义"></a>6.4 类的定义</h3><p><strong>语法格式：</strong></p><pre><code class="java">修饰符 class 类名 &#123;
+    // 属性
+    数据类型 属性名;
+
+    // 方法
+    返回值类型 方法名(参数列表) &#123;
+        // 方法体
+    &#125;
+&#125;
+</code></pre><p><strong>示例：</strong></p><pre><code class="java">public class Book &#123;
+    // 属性
+    String name;
+    String author;
+    double price;
+
+    // 方法
+    public void showInfo() &#123;
+        System.out.println(&quot;书名：&quot; + name);
+        System.out.println(&quot;作者：&quot; + author);
+        System.out.println(&quot;价格：&quot; + price);
+    &#125;
+&#125;
+</code></pre><h3 id="6-5-对象的创建与使用"><a href="#6-5-对象的创建与使用" class="headerlink" title="6.5 对象的创建与使用"></a>6.5 对象的创建与使用</h3><p><strong>创建对象：</strong></p><pre><code class="java">Book book = new Book();
+</code></pre><p><strong>访问属性：</strong></p><pre><code class="java">book.name = &quot;Java编程思想&quot;;
+book.author = &quot;Bruce Eckel&quot;;
+book.price = 108.0;
+</code></pre><p><strong>调用方法：</strong></p><pre><code class="java">book.showInfo();
+</code></pre><h3 id="6-6-局部变量与全局变量"><a href="#6-6-局部变量与全局变量" class="headerlink" title="6.6 局部变量与全局变量"></a>6.6 局部变量与全局变量</h3><p><strong>局部变量：</strong></p><ul><li>定义在函数内部的变量</li><li>作用域在定义的函数内部</li><li>函数调用结束时自动销毁</li><li>保存在栈区</li></ul><p><strong>属性（全局变量）：</strong></p><ul><li>定义在类的内部，与方法同级</li><li>对象的组成部分</li><li>保存在堆区</li><li>创建对象后自动赋默认值</li></ul><h3 id="6-7-构造器（构造方法）"><a href="#6-7-构造器（构造方法）" class="headerlink" title="6.7 构造器（构造方法）"></a>6.7 构造器（构造方法）</h3><p><strong>概念：</strong> 用来创建对象的特殊方法</p><p><strong>语法格式：</strong></p><pre><code class="java">修饰符 类名(数据类型 参数名, ...) &#123;
+    // 构造器代码
+&#125;
+</code></pre><p><strong>特点：</strong></p><ol><li>方法名和类名相同</li><li>无返回值</li></ol><p><strong>构造器重载：</strong></p><ul><li><p>条件：方法名相同，参数列表不同（个数或类型）</p></li><li><p>示例：<br>&#96;&#96;&#96;java<br>public class Book {<br>public Book() { &#x2F;&#x2F; 无参构造器<br>}</p><p>public Book(String name) { &#x2F;&#x2F; 有参构造器<br>this.name &#x3D; name;<br>}</p><p>public Book(String name, double price) { &#x2F;&#x2F; 参数不同的构造器<br>this.name &#x3D; name;<br>this.price &#x3D; price;<br>}</p></li></ul><p>}</p><pre><code>
+### 6.8 this关键字
+
+**概念：** 一个特殊的引用，保存的是当前对象的地址
+
+**作用：**
+1. 区分局部变量和属性
+2. 在类的内部调用属性和方法
+
+**示例：**
+```java
+public class Person &#123;
+    String name;
+    int age;
+
+    public Person(String name, int age) &#123;
+        this.name = name;  // this.name表示属性，name表示参数
+        this.age = age;
+    &#125;
+
+    public void showInfo() &#123;
+        this.printInfo();  // 调用本类方法
+    &#125;
+
+    private void printInfo() &#123;
+        System.out.println(&quot;姓名：&quot; + name + &quot;，年龄：&quot; + age);
+    &#125;
+&#125;
+</code></pre><h3 id="6-9-封装"><a href="#6-9-封装" class="headerlink" title="6.9 封装"></a>6.9 封装</h3><p><strong>概念：</strong> 隐藏内部实现细节</p><p><strong>实现步骤：</strong></p><ol><li><p><strong>将属性私有化</strong></p><pre><code class="java">private int id;
+private String name;
+</code></pre></li><li><p><strong>提供setter和getter方法</strong></p></li></ol><pre><code class="java">// setter方法：用于赋值
+public void setId(int id) &#123;
+    this.id = id;
+&#125;
+
+// getter方法：用于取值
+public int getId() &#123;
+    return this.id;
+&#125;
+</code></pre><p><strong>访问控制修饰符：</strong></p><table><thead><tr><th>修饰符</th><th>类内部</th><th>同包</th><th>子类</th><th>不同包</th></tr></thead><tbody><tr><td><code>private</code></td><td>✓</td><td>✗</td><td>✗</td><td>✗</td></tr><tr><td><code>[default]</code></td><td>✓</td><td>✓</td><td>✗</td><td>✗</td></tr><tr><td><code>protected</code></td><td>✓</td><td>✓</td><td>✓</td><td>✗</td></tr><tr><td><code>public</code></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr></tbody></table><h3 id="6-10-继承"><a href="#6-10-继承" class="headerlink" title="6.10 继承"></a>6.10 继承</h3><p><strong>概念：</strong> 一个类拥有另一个类的特性（属性、方法）</p><p><strong>判断方法：</strong> is-a（是）关系</p><ul><li>学生是人 ✓</li><li>书是人 ✗</li></ul><p><strong>语法格式：</strong></p><pre><code class="java">class 子类 extends 父类 &#123;
+&#125;
+</code></pre><p><strong>示例：</strong></p><pre><code class="java">class Person &#123;
+    String name;
+    int age;
+
+    public Person(String name, int age) &#123;
+        this.name = name;
+        this.age = age;
+    &#125;
+&#125;
+
+class Student extends Person &#123;
+    String school;
+
+    public Student(String name, int age, String school) &#123;
+        super(name, age);  // 调用父类构造器
+        this.school = school;
+    &#125;
+&#125;
+</code></pre><p><strong>this和super对比：</strong></p><table><thead><tr><th>关键字</th><th>作用</th></tr></thead><tbody><tr><td><code>this()</code></td><td>访问当前类的构造器</td></tr><tr><td><code>super()</code></td><td>访问父类的构造器</td></tr><tr><td><code>this</code></td><td>访问本类方法（含继承方法）</td></tr><tr><td><code>super</code></td><td>只访问父类方法</td></tr></tbody></table><p><strong>注意：</strong></p><ol><li><code>this()</code>和<code>super()</code>必须出现在第一行</li><li>不能同时出现在同一个构造器中</li><li>构造器中未显式调用时，javac会自动调用父类无参构造器</li></ol><h3 id="6-11-多态"><a href="#6-11-多态" class="headerlink" title="6.11 多态"></a>6.11 多态</h3><p><strong>分类：</strong></p><ol><li><strong>行为多态</strong>：方法重载、方法重写</li><li><strong>引用多态</strong>：父类引用指向子类对象</li></ol><p><strong>方法重写（Override）：</strong></p><ul><li>子类中出现和父类一样的方法</li><li>要求：<ul><li>方法名必须相同</li><li>参数列表必须相同</li><li>返回值类型必须相同</li><li>子类方法修饰范围 ≥ 父类方法</li></ul></li></ul><p><strong>示例：</strong></p><pre><code class="java">class Animal &#123;
+    void speak() &#123;
+        System.out.println(&quot;动物叫&quot;);
+    &#125;
+&#125;
+
+class Dog extends Animal &#123;
+    @Override
+    void speak() &#123;
+        System.out.println(&quot;汪汪汪&quot;);
+    &#125;
+&#125;
+</code></pre><p><strong>引用多态示例：</strong></p><pre><code class="java">Animal animal = new Dog();  // 父类引用指向子类对象
+animal.speak();  // 输出：汪汪汪
+</code></pre><h3 id="6-12-方法签名"><a href="#6-12-方法签名" class="headerlink" title="6.12 方法签名"></a>6.12 方法签名</h3><p><strong>概念：</strong> 方法名 + 参数列表</p><p><strong>就近原则：</strong></p><ul><li>实参类型 ≤ 形参类型（数据类型范围）</li><li>在满足理论前提下，选择最接近的</li></ul><p><strong>示例：</strong></p><pre><code class="java">public class Test &#123;
+    void test(short a) &#123; &#125;
+    void test(int a) &#123; &#125;
+    void test(double a) &#123; &#125;
+
+    public static void main(String[] args) &#123;
+        Test t = new Test();
+        short s = 10;
+        t.test(s);  // 调用test(short)，因为最接近
+    &#125;
+&#125;
+</code></pre><hr><h2 id="7-常用类"><a href="#7-常用类" class="headerlink" title="7. 常用类"></a>7. 常用类</h2><h3 id="7-1-Scanner类"><a href="#7-1-Scanner类" class="headerlink" title="7.1 Scanner类"></a>7.1 Scanner类</h3><p><strong>作用：</strong> 从控制台获取用户输入</p><p><strong>使用步骤：</strong></p><pre><code class="java">// 1. 导入包
+import java.util.Scanner;
+
+// 2. 创建Scanner对象
+Scanner sc = new Scanner(System.in);
+
+// 3. 获取输入
+int num = sc.nextInt();      // 获取整数
+double d = sc.nextDouble();  // 获取小数
+String str = sc.next();      // 获取字符串
+String line = sc.nextLine(); // 获取一行
+
+// 4. 关闭扫描器
+sc.close();
+</code></pre><h3 id="7-2-Random类"><a href="#7-2-Random类" class="headerlink" title="7.2 Random类"></a>7.2 Random类</h3><p><strong>作用：</strong> 生成随机数</p><p><strong>使用步骤：</strong></p><pre><code class="java">// 1. 导入包
+import java.util.Random;
+
+// 2. 创建Random对象
+Random ran = new Random();
+
+// 3. 生成随机数
+int num = ran.nextInt(10);  // 生成0~9的随机数
+int num2 = ran.nextInt(5) + 1;  // 生成1~5的随机数
+</code></pre><h3 id="7-3-Arrays类"><a href="#7-3-Arrays类" class="headerlink" title="7.3 Arrays类"></a>7.3 Arrays类</h3><p><strong>作用：</strong> 数组操作工具类</p><p><strong>常用方法：</strong></p><pre><code class="java">import java.util.Arrays;
+
+// 1. 数组转字符串
+String str = Arrays.toString(array);
+
+// 2. 数组排序
+Arrays.sort(array);
+
+// 3. 数组复制
+int[] newArray = Arrays.copyOf(oldArray, newLength);
+
+// 4. 数组填充
+Arrays.fill(array, value);
+
+// 5. 二分查找
+int index = Arrays.binarySearch(array, key);
+</code></pre><h3 id="7-4-String类"><a href="#7-4-String类" class="headerlink" title="7.4 String类"></a>7.4 String类</h3><p><strong>概念：</strong> 字符串常量，不可变</p><p><strong>创建方式：</strong></p><pre><code class="java">// 方式1：字面量
+String str1 = &quot;Hello&quot;;
+
+// 方式2：构造方法
+String str2 = new String(&quot;Hello&quot;);
+</code></pre><p><strong>常用方法：</strong></p><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td><code>length()</code></td><td>获取字符串长度</td></tr><tr><td><code>charAt(int index)</code></td><td>获取指定位置字符</td></tr><tr><td><code>indexOf(String str)</code></td><td>查找子串位置，不存在返回-1</td></tr><tr><td><code>substring(int start)</code></td><td>从start截取到末尾</td></tr><tr><td><code>substring(int start, int end)</code></td><td>截取[start, end)</td></tr><tr><td><code>trim()</code></td><td>去除首尾空格</td></tr><tr><td><code>toLowerCase()</code></td><td>转小写</td></tr><tr><td><code>toUpperCase()</code></td><td>转大写</td></tr><tr><td><code>startsWith(String prefix)</code></td><td>判断是否以prefix开头</td></tr><tr><td><code>endsWith(String suffix)</code></td><td>判断是否以suffix结尾</td></tr><tr><td><code>equals(Object obj)</code></td><td>判断内容是否相等</td></tr><tr><td><code>equalsIgnoreCase(String str)</code></td><td>忽略大小写比较</td></tr><tr><td><code>split(String regex)</code></td><td>按正则分割字符串</td></tr></tbody></table><p><strong>字符串比较：</strong></p><pre><code class="java">String str1 = &quot;Hello&quot;;
+String str2 = &quot;Hello&quot;;
+
+// 使用equals比较内容
+boolean isEqual = str1.equals(str2);  // true
+
+// 使用==比较地址
+boolean isSame = (str1 == str2);  // true（字面量在常量池）
+</code></pre><h3 id="7-5-StringBuilder和StringBuffer"><a href="#7-5-StringBuilder和StringBuffer" class="headerlink" title="7.5 StringBuilder和StringBuffer"></a>7.5 StringBuilder和StringBuffer</h3><p><strong>区别：</strong></p><ul><li><code>String</code>：不可变字符序列</li><li><code>StringBuilder</code>：可变字符序列，线程不安全，效率高</li><li><code>StringBuffer</code>：可变字符序列，线程安全，效率低</li></ul><p><strong>常用方法：</strong></p><pre><code class="java">StringBuilder sb = new StringBuilder();
+sb.append(&quot;Hello&quot;);      // 追加
+sb.insert(0, &quot;World&quot;);   // 插入
+sb.delete(0, 5);         // 删除
+sb.replace(0, 5, &quot;Java&quot;); // 替换
+sb.reverse();            // 反转
+String result = sb.toString();  // 转为String
+</code></pre><hr><h2 id="8-集合框架"><a href="#8-集合框架" class="headerlink" title="8. 集合框架"></a>8. 集合框架</h2><h3 id="8-1-集合概述"><a href="#8-1-集合概述" class="headerlink" title="8.1 集合概述"></a>8.1 集合概述</h3><p><strong>为什么使用集合？</strong></p><ul><li>数组长度固定，集合长度动态</li><li>数组只能存储同类型，集合可以存储多种类型</li><li>集合提供了丰富的方法</li></ul><p><strong>集合体系结构：</strong></p><pre><code>Collection(接口)
+├── List(接口) - 有序、可重复
+│   ├── ArrayList
+│   ├── LinkedList
+│   └── Vector
+├── Set(接口) - 无序、不可重复
+│   ├── HashSet
+│   ├── LinkedHashSet
+│   └── TreeSet
+└── Queue(接口) - 队列
+    ├── ConcurrentLinkedQueue
+    └── ArrayDeque
+
+Map(接口) - 键值对
+├── HashMap
+├── LinkedHashMap
+├── TreeMap
+└── Hashtable
+    └── Properties
+</code></pre><h3 id="8-2-List接口"><a href="#8-2-List接口" class="headerlink" title="8.2 List接口"></a>8.2 List接口</h3><p><strong>特点：</strong></p><ol><li>有序的（插入顺序）</li><li>可以重复</li><li>可以有多个null</li></ol><p><strong>ArrayList vs Vector：</strong></p><table><thead><tr><th>特性</th><th>ArrayList</th><th>Vector</th></tr></thead><tbody><tr><td>线程安全</td><td>否</td><td>是</td></tr><tr><td>性能</td><td>高</td><td>低</td></tr><tr><td>扩容倍数</td><td>1.5倍</td><td>2倍</td></tr><tr><td>推荐使用</td><td>✓</td><td>✗</td></tr></tbody></table><p><strong>ArrayList示例：</strong></p><pre><code class="java">import java.util.ArrayList;
+
+// 创建ArrayList
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+
+// 添加元素
+list.add(&quot;Apple&quot;);
+list.add(&quot;Banana&quot;);
+list.add(1, &quot;Orange&quot;);  // 在指定位置插入
+
+// 获取元素
+String fruit = list.get(0);
+
+// 修改元素
+list.set(0, &quot;Grape&quot;);
+
+// 删除元素
+list.remove(0);      // 删除指定位置
+list.remove(&quot;Apple&quot;); // 删除指定对象
+
+// 获取大小
+int size = list.size();
+
+// 判断是否包含
+boolean contains = list.contains(&quot;Apple&quot;);
+
+// 清空
+list.clear();
+</code></pre><p><strong>LinkedList特点：</strong></p><ul><li>内部使用链表实现</li><li>插入删除效率高</li><li>查询效率低</li></ul><h3 id="8-3-Set接口"><a href="#8-3-Set接口" class="headerlink" title="8.3 Set接口"></a>8.3 Set接口</h3><p><strong>特点：</strong></p><ol><li>无序的</li><li>不可重复</li><li>只能有一个null</li></ol><p><strong>HashSet示例：</strong></p><pre><code class="java">import java.util.HashSet;
+
+HashSet&lt;String&gt; set = new HashSet&lt;&gt;();
+
+// 添加元素（自动去重）
+set.add(&quot;A&quot;);
+set.add(&quot;B&quot;);
+set.add(&quot;A&quot;);  // 重复，不会添加
+
+// 判断包含
+boolean contains = set.contains(&quot;A&quot;);
+
+// 遍历
+for(String item : set) &#123;
+    System.out.println(item);
+&#125;
+</code></pre><p><strong>TreeSet特点：</strong></p><ul><li>基于树结构实现</li><li>自动排序（升序）</li><li>不可重复</li></ul><h3 id="8-4-Map接口"><a href="#8-4-Map接口" class="headerlink" title="8.4 Map接口"></a>8.4 Map接口</h3><p><strong>特点：</strong></p><ol><li>键值对（Key-Value）集合</li><li>键不可重复，值可以重复</li><li>键只能有一个null，值可以有多个null</li></ol><p><strong>HashMap示例：</strong></p><pre><code class="java">import java.util.HashMap;
+
+// 创建HashMap
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+
+// 添加键值对
+map.put(&quot;张三&quot;, 90);
+map.put(&quot;李四&quot;, 85);
+map.put(&quot;王五&quot;, 95);
+
+// 获取值
+Integer score = map.get(&quot;张三&quot;);
+
+// 删除
+map.remove(&quot;李四&quot;);
+
+// 判断包含
+boolean hasKey = map.containsKey(&quot;张三&quot;);
+boolean hasValue = map.containsValue(90);
+
+// 获取大小
+int size = map.size();
+
+// 遍历
+for(Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;
+    System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());
+&#125;
+</code></pre><p><strong>Hashtable vs HashMap：</strong></p><table><thead><tr><th>特性</th><th>Hashtable</th><th>HashMap</th></tr></thead><tbody><tr><td>线程安全</td><td>是</td><td>否</td></tr><tr><td>效率</td><td>低</td><td>高</td></tr><tr><td>null键值</td><td>不允许</td><td>允许</td></tr><tr><td>推荐</td><td>✗</td><td>✓</td></tr></tbody></table><h3 id="8-5-Collections工具类"><a href="#8-5-Collections工具类" class="headerlink" title="8.5 Collections工具类"></a>8.5 Collections工具类</h3><p><strong>作用：</strong> 集合操作的工具类</p><p><strong>常用方法：</strong></p><pre><code class="java">import java.util.Collections;
+
+// 排序（升序）
+Collections.sort(list);
+
+// 反转
+Collections.reverse(list);
+
+// 二分查找（前提：已排序）
+int index = Collections.binarySearch(list, key);
+
+// 获取最大值/最小值
+Object max = Collections.max(list);
+Object min = Collections.min(list);
+
+// 填充
+Collections.fill(list, object);
+
+// 洗牌（打乱顺序）
+Collections.shuffle(list);
+
+// 交换位置
+Collections.swap(list, i, j);
+
+// 转为线程安全
+List&lt;T&gt; synchronizedList = Collections.synchronizedList(list);
+</code></pre><hr><h2 id="9-泛型与增强for循环"><a href="#9-泛型与增强for循环" class="headerlink" title="9. 泛型与增强for循环"></a>9. 泛型与增强for循环</h2><h3 id="9-1-泛型编程"><a href="#9-1-泛型编程" class="headerlink" title="9.1 泛型编程"></a>9.1 泛型编程</h3><p><strong>作用：</strong></p><ol><li>规定集合中保存的对象类型（只能是引用类型）</li><li>迭代器遍历时不需要强制类型转换</li></ol><p><strong>语法：</strong></p><pre><code class="java">// 泛型类
+ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+
+// 泛型方法（菱形运算符，JDK7+）
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+</code></pre><p><strong>示例：</strong></p><pre><code class="java">// 使用泛型的ArrayList
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add(&quot;Hello&quot;);
+list.add(&quot;World&quot;);
+
+// 遍历时不需要类型转换
+for(String str : list) &#123;
+    System.out.println(str);
+&#125;
+</code></pre><p><strong>Map集合泛型：</strong></p><pre><code class="java">Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put(&quot;张三&quot;, 90);
+map.put(&quot;李四&quot;, 85);
+
+// 遍历
+for(Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;
+    System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());
+&#125;
+</code></pre><h3 id="9-2-增强for循环（foreach）"><a href="#9-2-增强for循环（foreach）" class="headerlink" title="9.2 增强for循环（foreach）"></a>9.2 增强for循环（foreach）</h3><p><strong>作用：</strong> 替代迭代器遍历集合和数组</p><p><strong>语法：</strong></p><pre><code class="java">for(类型 变量名 : 集合/数组) &#123;
+    // 循环体
+&#125;
+</code></pre><p><strong>示例：</strong></p><pre><code class="java">// 遍历数组
+int[] array = &#123;1, 2, 3, 4, 5&#125;;
+for(int num : array) &#123;
+    System.out.println(num);
+&#125;
+
+// 遍历集合
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add(&quot;A&quot;);
+list.add(&quot;B&quot;);
+for(String str : list) &#123;
+    System.out.println(str);
+&#125;
+</code></pre><p><strong>注意：</strong></p><ol><li>变量名就是从集合中获取的一个个对象</li><li>底层实现是迭代器，运行效率高于普通for循环</li><li>无法获取当前索引</li></ol><hr><h2 id="10-异常处理"><a href="#10-异常处理" class="headerlink" title="10. 异常处理"></a>10. 异常处理</h2><h3 id="10-1-异常概述"><a href="#10-1-异常概述" class="headerlink" title="10.1 异常概述"></a>10.1 异常概述</h3><p><strong>异常层次结构：</strong></p><pre><code>Throwable
+├── Error（错误）
+│   ├── OutOfMemoryError
+│   └── StackOverflowError
+└── Exception（异常）
+    ├── RuntimeException（运行时异常）
+    │   ├── NullPointerException
+    │   ├── ArrayIndexOutOfBoundsException
+    │   └── ArithmeticException
+    └── 其他异常（编译时异常）
+        ├── IOException
+        ├── SQLException
+        └── ClassNotFoundException
+</code></pre><h3 id="10-2-常见异常"><a href="#10-2-常见异常" class="headerlink" title="10.2 常见异常"></a>10.2 常见异常</h3><p><strong>NullPointerException（空指针异常）：</strong></p><pre><code class="java">String str = null;
+int len = str.length();  // 抛出NullPointerException
+</code></pre><p><strong>ArrayIndexOutOfBoundsException（数组越界）：</strong></p><pre><code class="java">int[] array = &#123;1, 2, 3&#125;;
+int num = array[5];  // 抛出ArrayIndexOutOfBoundsException
+</code></pre><p><strong>ArithmeticException（算术异常）：</strong></p><pre><code class="java">int result = 10 / 0;  // 抛出ArithmeticException
+</code></pre><h3 id="10-3-异常处理机制"><a href="#10-3-异常处理机制" class="headerlink" title="10.3 异常处理机制"></a>10.3 异常处理机制</h3><p><strong>try-catch-finally语法：</strong></p><pre><code class="java">try &#123;
+    // 可能出现异常的代码
+&#125; catch(异常类型 变量名) &#123;
+    // 异常处理代码
+&#125; catch(异常类型 变量名) &#123;
+    // 异常处理代码
+&#125; finally &#123;
+    // 无论是否异常都执行的代码
+&#125;
+</code></pre><p><strong>示例：</strong></p><pre><code class="java">try &#123;
+    int result = 10 / 0;
+&#125; catch(ArithmeticException e) &#123;
+    System.out.println(&quot;算术异常：&quot; + e.getMessage());
+&#125; finally &#123;
+    System.out.println(&quot;finally块执行&quot;);
+&#125;
+</code></pre><p><strong>throws关键字（声明异常）：</strong></p><pre><code class="java">public void readFile() throws IOException &#123;
+    // 可能抛出IOException的代码
+&#125;
+</code></pre><p><strong>throw关键字（手动抛出异常）：</strong></p><pre><code class="java">if(age &lt; 0) &#123;
+    throw new IllegalArgumentException(&quot;年龄不能为负&quot;);
+&#125;
+</code></pre><hr><h2 id="11-IO流"><a href="#11-IO流" class="headerlink" title="11. IO流"></a>11. IO流</h2><h3 id="11-1-IO流概述"><a href="#11-1-IO流概述" class="headerlink" title="11.1 IO流概述"></a>11.1 IO流概述</h3><p><strong>流的概念：</strong></p><ul><li>输入流（Input）：从外部读取数据到程序</li><li>输出流（Output）：从程序写出数据到外部</li></ul><p><strong>流的分类：</strong></p><pre><code>按流向分：
+├── 输入流：InputStream、Reader
+└── 输出流：OutputStream、Writer
+
+按单位分：
+├── 字节流：InputStream、OutputStream（处理二进制文件）
+└── 字符流：Reader、Writer（处理文本文件）
+
+按角色分：
+├── 节点流：直接连接介质（FileInputStream、FileReader）
+└── 处理流：修饰节点流（BufferedInputStream、BufferedReader）
+</code></pre><h3 id="11-2-File类"><a href="#11-2-File类" class="headerlink" title="11.2 File类"></a>11.2 File类</h3><p><strong>作用：</strong> 表示文件或目录</p><p><strong>常用方法：</strong></p><pre><code class="java">import java.io.File;
+
+File file = new File(&quot;D:/test.txt&quot;);
+
+// 判断
+boolean exists = file.exists();      // 是否存在
+boolean isFile = file.isFile();     // 是否是文件
+boolean isDirectory = file.isDirectory();  // 是否是目录
+
+// 操作
+boolean create = file.createNewFile();  // 创建文件
+boolean mkdir = file.mkdir();           // 创建目录
+boolean delete = file.delete();         // 删除
+
+// 信息
+String name = file.getName();          // 获取名称
+long length = file.length();           // 获取大小（字节）
+long modified = file.lastModified();   // 最后修改时间
+
+// 目录内容
+File[] files = file.listFiles();      // 获取目录下所有文件
+</code></pre><h3 id="11-3-字节流"><a href="#11-3-字节流" class="headerlink" title="11.3 字节流"></a>11.3 字节流</h3><p><strong>FileInputStream（文件输入流）：</strong></p><pre><code class="java">import java.io.FileInputStream;
+
+// 读取单个字节
+FileInputStream fis = new FileInputStream(&quot;input.txt&quot;);
+int data = fis.read();  // 读取一个字节，返回-1表示结束
+fis.close();
+
+// 读取多个字节
+byte[] buffer = new byte[1024];
+int len = fis.read(buffer);  // 返回实际读取的字节数
+fis.close();
+</code></pre><p><strong>FileOutputStream（文件输出流）：</strong></p><pre><code class="java">import java.io.FileOutputStream;
+
+// 写入数据
+FileOutputStream fos = new FileOutputStream(&quot;output.txt&quot;);
+fos.write(65);  // 写入单个字节（ASCII码）
+fos.close();
+
+// 追加模式
+FileOutputStream fos = new FileOutputStream(&quot;output.txt&quot;, true);
+</code></pre><p><strong>缓冲字节流：</strong></p><pre><code class="java">import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+
+BufferedInputStream bis = new BufferedInputStream(new FileInputStream(&quot;input.txt&quot;));
+BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(&quot;output.txt&quot;));
+
+// 使用缓冲区提高效率
+byte[] buffer = new byte[8192];
+int len;
+while((len = bis.read(buffer)) != -1) &#123;
+    bos.write(buffer, 0, len);
+&#125;
+
+bis.close();
+bos.close();
+</code></pre><h3 id="11-4-字符流"><a href="#11-4-字符流" class="headerlink" title="11.4 字符流"></a>11.4 字符流</h3><p><strong>FileReader（文件读取器）：</strong></p><pre><code class="java">import java.io.FileReader;
+
+FileReader fr = new FileReader(&quot;input.txt&quot;);
+int ch = fr.read();  // 读取一个字符
+fr.close();
+
+// 读取多个字符
+char[] buffer = new char[1024];
+int len = fr.read(buffer);
+fr.close();
+</code></pre><p><strong>FileWriter（文件写入器）：</strong></p><pre><code class="java">import java.io.FileWriter;
+
+FileWriter fw = new FileWriter(&quot;output.txt&quot;);
+fw.write(&quot;Hello, World!&quot;);
+fw.close();
+
+// 追加模式
+FileWriter fw = new FileWriter(&quot;output.txt&quot;, true);
+</code></pre><p><strong>BufferedReader（缓冲读取器）：</strong></p><pre><code class="java">import java.io.BufferedReader;
+
+BufferedReader br = new BufferedReader(new FileReader(&quot;input.txt&quot;));
+String line;
+while((line = br.readLine()) != null) &#123;
+    System.out.println(line);
+&#125;
+br.close();
+</code></pre><p><strong>BufferedWriter（缓冲写入器）：</strong></p><pre><code class="java">import java.io.BufferedWriter;
+
+BufferedWriter bw = new BufferedWriter(new FileWriter(&quot;output.txt&quot;));
+bw.write(&quot;Hello&quot;);
+bw.newLine();  // 写换行符
+bw.write(&quot;World&quot;);
+bw.close();
+</code></pre><h3 id="11-5-转换流"><a href="#11-5-转换流" class="headerlink" title="11.5 转换流"></a>11.5 转换流</h3><p><strong>InputStreamReader（输入转换流）：</strong></p><pre><code class="java">import java.io.InputStreamReader;
+import java.io.FileInputStream;
+
+// 指定字符集
+InputStreamReader isr = new InputStreamReader(
+    new FileInputStream(&quot;input.txt&quot;),
+    &quot;UTF-8&quot;
+);
+</code></pre><p><strong>OutputStreamWriter（输出转换流）：</strong></p><pre><code class="java">import java.io.OutputStreamWriter;
+import java.io.FileOutputStream;
+
+OutputStreamWriter osw = new OutputStreamWriter(
+    new FileOutputStream(&quot;output.txt&quot;),
+    &quot;UTF-8&quot;
+);
+</code></pre><h3 id="11-6-打印流"><a href="#11-6-打印流" class="headerlink" title="11.6 打印流"></a>11.6 打印流</h3><p><strong>PrintWriter：</strong></p><pre><code class="java">import java.io.PrintWriter;
+
+PrintWriter pw = new PrintWriter(&quot;output.txt&quot;);
+pw.println(&quot;Hello&quot;);  // 自动换行
+pw.print(&quot;World&quot;);
+pw.close();
+</code></pre><hr><h2 id="12-数据库编程"><a href="#12-数据库编程" class="headerlink" title="12. 数据库编程"></a>12. 数据库编程</h2><h3 id="12-1-数据库概述"><a href="#12-1-数据库概述" class="headerlink" title="12.1 数据库概述"></a>12.1 数据库概述</h3><p><strong>数据库组成：</strong></p><ul><li><strong>DBMS</strong>（Database Manager System）：数据库管理系统</li><li><strong>Data文件</strong>：存储数据的文件</li></ul><p><strong>常用数据库：</strong></p><ul><li><strong>关系型数据库</strong>：Oracle、DB2、MySQL、SQL Server</li><li><strong>NoSQL数据库</strong>：MongoDB、HBase</li></ul><h3 id="12-2-JDBC基础"><a href="#12-2-JDBC基础" class="headerlink" title="12.2 JDBC基础"></a>12.2 JDBC基础</h3><p><strong>JDBC（Java Database Connectivity）：</strong> Java数据库连接</p><p><strong>JDBC驱动：</strong></p><pre><code class="java">// Oracle驱动
+Class.forName(&quot;oracle.jdbc.driver.OracleDriver&quot;);
+
+// MySQL驱动
+Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+</code></pre><p><strong>连接数据库：</strong></p><pre><code class="java">import java.sql.Connection;
+import java.sql.DriverManager;
+
+// Oracle连接
+String url = &quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;;
+String user = &quot;scott&quot;;
+String password = &quot;tiger&quot;;
+Connection conn = DriverManager.getConnection(url, user, password);
+
+// MySQL连接
+String url = &quot;jdbc:mysql://localhost:3306/mydb&quot;;
+String user = &quot;root&quot;;
+String password = &quot;123456&quot;;
+Connection conn = DriverManager.getConnection(url, user, password);
+</code></pre><p><strong>执行SQL语句：</strong></p><pre><code class="java">import java.sql.Statement;
+import java.sql.ResultSet;
+
+// 创建Statement
+Statement stmt = conn.createStatement();
+
+// 执行查询
+ResultSet rs = stmt.executeQuery(&quot;SELECT * FROM users&quot;);
+while(rs.next()) &#123;
+    int id = rs.getInt(&quot;id&quot;);
+    String name = rs.getString(&quot;name&quot;);
+    System.out.println(id + &quot;:&quot; + name);
+&#125;
+
+// 执行增删改
+int rows = stmt.executeUpdate(&quot;UPDATE users SET name=&#39;Tom&#39; WHERE id=1&quot;);
+
+// 关闭资源
+rs.close();
+stmt.close();
+conn.close();
+</code></pre><h3 id="12-3-PreparedStatement"><a href="#12-3-PreparedStatement" class="headerlink" title="12.3 PreparedStatement"></a>12.3 PreparedStatement</h3><p><strong>特点：</strong></p><ol><li>预编译SQL语句</li><li>防止SQL注入</li><li>性能更好</li></ol><p><strong>使用示例：</strong></p><pre><code class="java">import java.sql.PreparedStatement;
+
+String sql = &quot;INSERT INTO users(id, name, age) VALUES(?, ?, ?)&quot;;
+PreparedStatement pstmt = conn.prepareStatement(sql);
+
+// 设置参数
+pstmt.setInt(1, 1);
+pstmt.setString(2, &quot;张三&quot;);
+pstmt.setInt(3, 20);
+
+// 执行
+int rows = pstmt.executeUpdate();
+pstmt.close();
+</code></pre><hr><h2 id="13-Web前端基础"><a href="#13-Web前端基础" class="headerlink" title="13. Web前端基础"></a>13. Web前端基础</h2><h3 id="13-1-HTML基础"><a href="#13-1-HTML基础" class="headerlink" title="13.1 HTML基础"></a>13.1 HTML基础</h3><p><strong>HTML（HyperText Markup Language）：</strong> 超文本标记语言</p><p><strong>基本结构：</strong></p><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;网页标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 页面内容 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong>常用标签：</strong></p><table><thead><tr><th>标签</th><th>说明</th></tr></thead><tbody><tr><td><code>&lt;h1&gt;</code>~&#96;<h6>&#96;</h6></td><td>标题标签</td></tr><tr><td><code>&lt;p&gt;</code></td><td>段落标签</td></tr><tr><td><code>&lt;br&gt;</code></td><td>换行</td></tr><tr><td><code>&lt;hr&gt;</code></td><td>水平线</td></tr><tr><td><code>&lt;font&gt;</code></td><td>字体标签</td></tr><tr><td><code>&lt;b&gt;</code></td><td>粗体</td></tr><tr><td><code>&lt;i&gt;</code></td><td>斜体</td></tr><tr><td><code>&lt;u&gt;</code></td><td>下划线</td></tr><tr><td><code>&lt;img&gt;</code></td><td>图片</td></tr><tr><td><code>&lt;a&gt;</code></td><td>链接</td></tr><tr><td><code>&lt;table&gt;</code></td><td>表格</td></tr><tr><td><code>&lt;form&gt;</code></td><td>表单</td></tr></tbody></table><p><strong>表单示例：</strong></p><pre><code class="html">&lt;form action=&quot;login&quot; method=&quot;post&quot;&gt;
+    用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;&lt;br/&gt;
+    密码：&lt;input type=&quot;password&quot; name=&quot;pwd&quot;/&gt;&lt;br/&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;
+    &lt;input type=&quot;reset&quot; value=&quot;重置&quot;/&gt;
+&lt;/form&gt;
+</code></pre><h3 id="13-2-CSS样式"><a href="#13-2-CSS样式" class="headerlink" title="13.2 CSS样式"></a>13.2 CSS样式</h3><p><strong>CSS（Cascading Style Sheets）：</strong> 层叠样式表</p><p><strong>三种引入方式：</strong></p><ol><li><p><strong>内嵌式</strong>（不推荐）</p><pre><code class="html">&lt;div style=&quot;border:1px solid red; width:200px;&quot;&gt;内容&lt;/div&gt;
+</code></pre></li><li><p><strong>内联式</strong></p><pre><code class="html">&lt;style type=&quot;text/css&quot;&gt;
+ .myClass &#123;
+     color: red;
+     font-size: 16px;
+ &#125;
+&lt;/style&gt;
+</code></pre></li><li><p><strong>外部引入</strong>（推荐）</p><pre><code class="html">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;/&gt;
+</code></pre></li></ol><p><strong>常用选择器：</strong></p><table><thead><tr><th>选择器</th><th>语法</th><th>说明</th></tr></thead><tbody><tr><td>ID选择器</td><td><code>#id值&#123;&#125;</code></td><td>通过ID选择</td></tr><tr><td>类选择器</td><td><code>.类名&#123;&#125;</code></td><td>通过class选择</td></tr><tr><td>标签选择器</td><td><code>标签名&#123;&#125;</code></td><td>通过标签名选择</td></tr><tr><td>派生选择器</td><td><code>父标签 子标签&#123;&#125;</code></td><td>选择子标签</td></tr></tbody></table><h3 id="13-3-JavaScript基础"><a href="#13-3-JavaScript基础" class="headerlink" title="13.3 JavaScript基础"></a>13.3 JavaScript基础</h3><p><strong>JavaScript特点：</strong></p><ol><li>运行在浏览器上</li><li>弱类型语言</li><li>动态改变HTML显示效果</li></ol><p><strong>变量声明：</strong></p><pre><code class="javascript">var i = 10;        // 数字
+var str = &quot;Hello&quot;; // 字符串
+var flag = true;   // 布尔值
+</code></pre><p><strong>函数定义：</strong></p><pre><code class="javascript">// 方式1：函数声明
+function add(a, b) &#123;
+    return a + b;
+&#125;
+
+// 方式2：函数表达式
+var add = function(a, b) &#123;
+    return a + b;
+&#125;;
+
+// 方式3：匿名函数
+var add = new Function(&quot;a&quot;, &quot;b&quot;, &quot;return a + b;&quot;);
+</code></pre><p><strong>常用对象：</strong></p><pre><code class="javascript">// Array对象
+var arr = [1, 2, 3, 4, 5];
+arr.push(6);      // 添加元素
+arr.pop();        // 删除最后一个元素
+arr.sort();       // 排序
+
+// String对象
+var str = &quot;Hello World&quot;;
+var len = str.length;
+var sub = str.substring(0, 5);
+
+// Date对象
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;  // 0-11，需要+1
+
+// Math对象
+var num = Math.random();  // 随机数0~1
+var max = Math.max(1, 2, 3);
+</code></pre><hr><h2 id="14-Spring框架"><a href="#14-Spring框架" class="headerlink" title="14. Spring框架"></a>14. Spring框架</h2><h3 id="14-1-Spring简介"><a href="#14-1-Spring简介" class="headerlink" title="14.1 Spring简介"></a>14.1 Spring简介</h3><p><strong>Spring是什么？</strong></p><ul><li>轻量级Java EE应用框架</li><li>IOC（控制反转）和AOP（面向切面编程）容器框架</li></ul><p><strong>Spring特点：</strong></p><ol><li>降低组件之间的耦合度</li><li>提供众多服务（事务管理、持久层集成等）</li><li>单例模式</li><li>AOP技术</li><li>对常用API（JDBC、JavaMail、远程调用等）提供封装</li></ol><h3 id="14-2-IOC（控制反转）"><a href="#14-2-IOC（控制反转）" class="headerlink" title="14.2 IOC（控制反转）"></a>14.2 IOC（控制反转）</h3><p><strong>概念：</strong></p><ul><li>传统方式：程序创建对象</li><li>IOC方式：Spring容器创建和管理对象</li></ul><p><strong>依赖注入（DI）：</strong></p><ul><li>Setter注入</li><li>构造器注入</li><li>接口注入</li></ul><p><strong>配置方式：</strong></p><pre><code class="xml">&lt;!-- XML配置 --&gt;
+&lt;bean id=&quot;userService&quot; class=&quot;com.example.UserService&quot;&gt;
+    &lt;property name=&quot;userDao&quot; ref=&quot;userDao&quot;/&gt;
+&lt;/bean&gt;
+
+&lt;bean id=&quot;userDao&quot; class=&quot;com.example.UserDaoImpl&quot;/&gt;
+</code></pre><h3 id="14-3-AOP（面向切面编程）"><a href="#14-3-AOP（面向切面编程）" class="headerlink" title="14.3 AOP（面向切面编程）"></a>14.3 AOP（面向切面编程）</h3><p><strong>概念：</strong> 将公共逻辑从业务代码中分离出来</p><p><strong>核心概念：</strong></p><ul><li><strong>切面</strong>（Aspect）：横切关注点的模块化</li><li><strong>连接点</strong>（JoinPoint）：程序执行的某个位置</li><li><strong>切点</strong>（Pointcut）：匹配连接点的表达式</li><li><strong>通知</strong>（Advice）：切面在特定连接点执行的动作</li><li><strong>目标</strong>（Target）：被通知的对象</li><li><strong>代理</strong>（Proxy）：AOP创建的对象</li></ul><p><strong>通知类型：</strong></p><ul><li>前置通知（Before）</li><li>后置通知（AfterReturning）</li><li>异常通知（AfterThrowing）</li><li>最终通知（After）</li><li>环绕通知（Around）</li></ul><p><strong>配置示例：</strong></p><pre><code class="xml">&lt;aop:config&gt;
+    &lt;aop:aspect ref=&quot;logAspect&quot;&gt;
+        &lt;aop:before method=&quot;before&quot; pointcut=&quot;execution(* com.example.*.*(..))&quot;/&gt;
+        &lt;aop:after-returning method=&quot;after&quot; pointcut=&quot;execution(* com.example.*.*(..))&quot;/&gt;
+    &lt;/aop:aspect&gt;
+&lt;/aop:config&gt;
+</code></pre><hr><h2 id="15-MyBatis框架"><a href="#15-MyBatis框架" class="headerlink" title="15. MyBatis框架"></a>15. MyBatis框架</h2><h3 id="15-1-MyBatis简介"><a href="#15-1-MyBatis简介" class="headerlink" title="15.1 MyBatis简介"></a>15.1 MyBatis简介</h3><p><strong>MyBatis是什么？</strong></p><ul><li>优秀的持久层框架</li><li>支持定制化SQL、存储过程和高级映射</li><li>避免了几乎所有的JDBC代码和手动参数设置</li></ul><p><strong>ORM（Object-Relation Mapping）：</strong> 对象关系映射</p><h3 id="15-2-MyBatis开发步骤"><a href="#15-2-MyBatis开发步骤" class="headerlink" title="15.2 MyBatis开发步骤"></a>15.2 MyBatis开发步骤</h3><p><strong>1. 导入jar包</strong></p><ul><li>mybatis-x.x.x.jar</li><li>数据库驱动jar包</li></ul><p><strong>2. 创建配置文件</strong></p><pre><code class="xml">&lt;!-- mybatis-config.xml --&gt;
+&lt;configuration&gt;
+    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;oracle.jdbc.driver.OracleDriver&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;scott&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;tiger&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+
+    &lt;mappers&gt;
+        &lt;mapper resource=&quot;com/example/UserMapper.xml&quot;/&gt;
+    &lt;/mappers&gt;
+&lt;/configuration&gt;
+</code></pre><p><strong>3. 创建映射文件</strong></p><pre><code class="xml">&lt;!-- UserMapper.xml --&gt;
+&lt;mapper namespace=&quot;com.example.UserMapper&quot;&gt;
+    &lt;select id=&quot;selectUser&quot; resultType=&quot;com.example.User&quot;&gt;
+        SELECT * FROM users WHERE id = #&#123;id&#125;
+    &lt;/select&gt;
+
+    &lt;insert id=&quot;insertUser&quot; parameterType=&quot;com.example.User&quot;&gt;
+        INSERT INTO users(id, name) VALUES(#&#123;id&#125;, #&#123;name&#125;)
+    &lt;/insert&gt;
+&lt;/mapper&gt;
+</code></pre><p><strong>4. 使用MyBatis</strong></p><pre><code class="java">// 创建SqlSessionFactory
+SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+SqlSessionFactory factory = builder.build(Resources.getResourceAsStream(&quot;mybatis-config.xml&quot;));
+
+// 创建SqlSession
+SqlSession session = factory.openSession();
+
+// 执行SQL
+User user = session.selectOne(&quot;com.example.UserMapper.selectUser&quot;, 1);
+session.commit();  // 提交事务
+session.close();   // 关闭会话
+</code></pre><h3 id="15-3-MyBatis核心API"><a href="#15-3-MyBatis核心API" class="headerlink" title="15.3 MyBatis核心API"></a>15.3 MyBatis核心API</h3><p><strong>SqlSessionFactoryBuilder：</strong></p><pre><code class="java">SqlSessionFactory build(InputStream inputStream)
+</code></pre><p><strong>SqlSessionFactory：</strong></p><pre><code class="java">SqlSession openSession()              // 创建会话（不自动提交）
+SqlSession openSession(boolean autoCommit)  // 创建会话（自动提交）
+</code></pre><p><strong>SqlSession：</strong></p><pre><code class="java">Object selectOne(String statement)                    // 查询单个对象
+List selectList(String statement)                     // 查询多个对象
+int insert(String statement)                         // 插入
+int update(String statement)                         // 更新
+int delete(String statement)                         // 删除
+void commit()                                         // 提交事务
+void rollback()                                       // 回滚事务
+void close()                                          // 关闭会话
+</code></pre><h3 id="15-4-动态SQL"><a href="#15-4-动态SQL" class="headerlink" title="15.4 动态SQL"></a>15.4 动态SQL</h3><p><strong>if标签：</strong></p><pre><code class="xml">&lt;select id=&quot;selectUsers&quot; resultType=&quot;User&quot;&gt;
+    SELECT * FROM users
+    WHERE 1=1
+    &lt;if test=&quot;name != null&quot;&gt;
+        AND name LIKE #&#123;name&#125;
+    &lt;/if&gt;
+    &lt;if test=&quot;age != null&quot;&gt;
+        AND age = #&#123;age&#125;
+    &lt;/if&gt;
+&lt;/select&gt;
+</code></pre><p><strong>foreach标签：</strong></p><pre><code class="xml">&lt;select id=&quot;selectUsers&quot; resultType=&quot;User&quot;&gt;
+    SELECT * FROM users
+    WHERE id IN
+    &lt;foreach collection=&quot;list&quot; item=&quot;id&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+        #&#123;id&#125;
+    &lt;/foreach&gt;
+&lt;/select&gt;
+</code></pre><hr><h2 id="16-SpringMVC框架"><a href="#16-SpringMVC框架" class="headerlink" title="16. SpringMVC框架"></a>16. SpringMVC框架</h2><h3 id="16-1-SpringMVC简介"><a href="#16-1-SpringMVC简介" class="headerlink" title="16.1 SpringMVC简介"></a>16.1 SpringMVC简介</h3><p><strong>SpringMVC是什么？</strong></p><ul><li>Spring提供的Web框架</li><li>基于MVC设计模式</li><li>轻量级、灵活、易扩展</li></ul><p><strong>MVC设计模式：</strong></p><ul><li><strong>Model</strong>（模型）：数据模型</li><li><strong>View</strong>（视图）：页面展示</li><li><strong>Controller</strong>（控制器）：处理请求</li></ul><h3 id="16-2-SpringMVC开发步骤"><a href="#16-2-SpringMVC开发步骤" class="headerlink" title="16.2 SpringMVC开发步骤"></a>16.2 SpringMVC开发步骤</h3><p><strong>1. 导入jar包</strong></p><ul><li>spring-webmvc-x.x.x.jar</li><li>spring-web-x.x.x.jar</li><li>相关依赖包</li></ul><p><strong>2. 配置web.xml</strong></p><pre><code class="xml">&lt;servlet&gt;
+    &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre><p><strong>3. 创建配置文件</strong></p><pre><code class="xml">&lt;!-- springmvc.xml --&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+       xsi:schemaLocation=&quot;...&quot;&gt;
+
+    &lt;!-- 扫描控制器 --&gt;
+    &lt;context:component-scan base-package=&quot;com.example.controller&quot;/&gt;
+
+    &lt;!-- 开启MVC注解 --&gt;
+    &lt;mvc:annotation-driven/&gt;
+
+    &lt;!-- 视图解析器 --&gt;
+    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/view/&quot;/&gt;
+        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre><p><strong>4. 创建控制器</strong></p><pre><code class="java">@Controller
+@RequestMapping(&quot;/user&quot;)
+public class UserController &#123;
+
+    @RequestMapping(&quot;/list&quot;)
+    public String list(Model model) &#123;
+        // 获取用户列表
+        List&lt;User&gt; users = userService.findAll();
+        model.addAttribute(&quot;users&quot;, users);
+        return &quot;user/list&quot;;  // 返回视图名称
+    &#125;
+
+    @RequestMapping(&quot;/save&quot;)
+    public String save(User user) &#123;
+        userService.save(user);
+        return &quot;redirect:/user/list&quot;;  // 重定向
+    &#125;
+&#125;
+</code></pre><h3 id="16-3-常用注解"><a href="#16-3-常用注解" class="headerlink" title="16.3 常用注解"></a>16.3 常用注解</h3><table><thead><tr><th>注解</th><th>说明</th></tr></thead><tbody><tr><td><code>@Controller</code></td><td>标识控制器类</td></tr><tr><td><code>@RequestMapping</code></td><td>映射请求URL</td></tr><tr><td><code>@RequestParam</code></td><td>绑定请求参数</td></tr><tr><td><code>@PathVariable</code></td><td>绑定路径变量</td></tr><tr><td><code>@RequestBody</code></td><td>绑定请求体</td></tr><tr><td><code>@ResponseBody</code></td><td>返回JSON</td></tr><tr><td><code>@ModelAttribute</code></td><td>绑定模型数据</td></tr><tr><td><code>@SessionAttributes</code></td><td>设置会话属性</td></tr></tbody></table><h3 id="16-4-数据绑定"><a href="#16-4-数据绑定" class="headerlink" title="16.4 数据绑定"></a>16.4 数据绑定</h3><p><strong>绑定请求参数：</strong></p><pre><code class="java">@RequestMapping(&quot;/login&quot;)
+public String login(@RequestParam(&quot;username&quot;) String username,
+                   @RequestParam(&quot;password&quot;) String password) &#123;
+    // 登录逻辑
+    return &quot;success&quot;;
+&#125;
+</code></pre><p><strong>绑定POJO对象：</strong></p><pre><code class="java">@RequestMapping(&quot;/save&quot;)
+public String save(User user) &#123;
+    userService.save(user);
+    return &quot;success&quot;;
+&#125;
+</code></pre><p><strong>绑定日期类型：</strong></p><pre><code class="java">@InitBinder
+public void initBinder(WebDataBinder binder) &#123;
+    SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+&#125;
+</code></pre><hr><h2 id="📝-附录"><a href="#📝-附录" class="headerlink" title="📝 附录"></a>📝 附录</h2><h3 id="常用面试题"><a href="#常用面试题" class="headerlink" title="常用面试题"></a>常用面试题</h3><p><strong>1. &#x3D;&#x3D;和equals的区别</strong></p><ul><li><code>==</code>：比较地址（引用类型）或数值（基本类型）</li><li><code>equals</code>：比较内容（需要重写）</li></ul><p><strong>2. String、StringBuilder、StringBuffer的区别</strong></p><ul><li><code>String</code>：不可变，线程安全</li><li><code>StringBuilder</code>：可变，线程不安全，效率高</li><li><code>StringBuffer</code>：可变，线程安全，效率低</li></ul><p><strong>3. ArrayList和LinkedList的区别</strong></p><ul><li><code>ArrayList</code>：基于数组，查询快，增删慢</li><li><code>LinkedList</code>：基于链表，增删快，查询慢</li></ul><p><strong>4. HashMap和Hashtable的区别</strong></p><ul><li><code>HashMap</code>：线程不安全，允许null键值</li><li><code>Hashtable</code>：线程安全，不允许null键值</li></ul><h3 id="学习建议"><a href="#学习建议" class="headerlink" title="学习建议"></a>学习建议</h3><ol><li><strong>基础要扎实</strong>：Java基础是学习框架的前提</li><li><strong>多动手实践</strong>：理论结合实践，多做项目</li><li><strong>阅读源码</strong>：理解框架内部实现原理</li><li><strong>持续学习</strong>：技术更新快，保持学习热情</li></ol></div><div class="post-ending"><div class="end-txt">------ 本文结束，感谢您的阅读 ------</div><blockquote class="layui-elem-quote layui-quote-nm" style="padding:10px"><div><span class="title">本文作者: </span>程序员青阳</div><div><span class="title">本文链接: </span><a target="_blank" href="https://heliufang.github.io/posts/b6543913/">https://heliufang.github.io/posts/b6543913/</a></div><div><span class="title">版权声明: </span>本文采用知识共享署名-非商业性使用-禁止演绎 2.5 中国大陆许可协议进行许可。</div></blockquote><div id="vcomments"></div></div></div></div></div><ul id="toTopBtn" class="layui-fixbar" style="right:-70px" title="置顶"><div><a href="javascript:void(0)" class="icon iconfont icon-huojian"></a></div></ul><div class="qy-footer"><div class="font-Area"><p>本站已运行 <span style="color:red" id="runDaysFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span> 天 | 本站文章字数合计 <span style="color:red">372.1k</span> | 最后更新于 <span style="color:red" id="lastUpdateFooter"><i class="layui-icon layui-icon-loading layui-anim layui-anim-rotate layui-anim-loop"></i></span></p><p>由 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a> <span style="color:red" class="layui-icon layui-icon-find-fill layui-anim layui-anim-rotate layui-anim-loop"></span> 强力驱动 v6.1.0</p><p>Copyright © 2020 ~<span id="currentYear">2022</span> <span class="layui-icon layui-icon-heart-fill footer-heart"></span> HeLiuFang</p></div></div></body><script src="../../js/jquery.min.js"></script><script src="../../js/moment.min.js"></script><script src="../../layui/layui.js"></script><script src="../../lib/prism/prism.js"></script><script>$("#searchBtn").click(function(){$("#searchShade").show(),$("#searchLayer").addClass("layui-anim layui-anim-scaleSpring")}),$("#closeBtn").click(function(){$("#searchShade").hide()});var searchFunc=function(e,o,a){$.ajax({url:e,dataType:"json",success:function(e){var t=document.getElementById(o),n=document.getElementById(a);t.addEventListener("input",function(){var t='<ul class="search-result-list">',a=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(e){var n=!0,o=e.title.trim().toLowerCase(),e=e.url;""!=o&&a.forEach(function(e,t){o.indexOf(e)<0?n=!1:o=o.replace(new RegExp(e,"g"),'<span style="color:red">'+e+"</span>")}),n&&(t=t+"<li><a href='"+e+"' class='search-result-title'>"+o+"</a></li>")}),t+="</ul>",n.innerHTML=t)})}})};function DynamicLine(){function e(e,t,n){return e.getAttribute(t)||n}function t(e){return document.getElementsByTagName(e)}function n(){s=a.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,r=a.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var n,o,a,i,l;m.clearRect(0,0,s,r),y.forEach(function(e,t){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>s||e.x<0?-1:1,e.ya*=e.y>r||e.y<0?-1:1,m.fillRect(e.x-.5,e.y-.5,1,1),o=t+1;o<d.length;o++)null!==(n=d[o]).x&&null!==n.y&&(a=e.x-n.x,i=e.y-n.y,(l=a*a+i*i)<n.max)&&(n===h&&l>=n.max/2&&(e.x-=.03*a,e.y-=.03*i),a=(n.max-l)/n.max,m.beginPath(),m.lineWidth=a/2,m.strokeStyle="rgba("+u.c+","+(.2+a)+")",m.moveTo(e.x,e.y),m.lineTo(n.x,n.y),m.stroke())}),w(c)}var s,r,d,o,a=document.createElement("canvas"),u=(i=(o=t("script")).length,o=o[i-1],{l:i,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,50"),n:e(o,"count",99)}),i="c_n"+u.l,m=a.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},l=Math.random,h={x:null,y:null,max:2e4};a.id=i,a.style.cssText="position:fixed;top:0;left:0;z-index:"+u.z+";opacity:"+u.o,t("body")[0].appendChild(a),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,h.x=e.clientX,h.y=e.clientY},window.onmouseout=function(){h.x=null,h.y=null};for(var y=[],x=0;x<u.n;x++){var f=l()*s,p=l()*r,$=2*l()-1,v=2*l()-1;y.push({x:f,y:p,xa:$,ya:v,max:6e3})}d=y.concat([h]),setTimeout(function(){c()},100)}searchFunc("/search.json","searchTxt","searchResult"),DynamicLine(),document.querySelector("#currentYear").innerText=(new Date).getFullYear();var days=moment().diff($("#runDays")[0].dataset.sinceDate,"days"),lastUpdate=($("#runDays").html(days),$("#runDaysFooter").html(days),moment($("#lastUpdate")[0].dataset.lastUpdate,"YYYY-MM-DD HH:mm:ss").locale("zh-CN").fromNow());$("#lastUpdate").html(lastUpdate),$("#lastUpdateFooter").html(lastUpdate),$("#toTopBtn").click(function(){var e=$(window).scrollTop(),t=parseInt(e/60),n=setInterval(function(){$(window).scrollTop($(window).scrollTop()-t),0===$(window).scrollTop()&&clearInterval(n)},1)}),$.event.add(window,"scroll",function(){$("#toTopBtn").css("transform",0<$(window).scrollTop()?"translateX(-85px)":"translateX(85px)"),$("#toTopBtn").css("transition","all 0.5s")}),$("#loadingBox").hide(),$("body").css("overflow","auto")</script><script>var element=null;layui.use(["element","layer"],function(){element=layui.element}),$(function(){var o=$("#toc-area"),l=$(o).offset().top;$.event.add(window,"scroll",function(){var e=$(".markdown-body").height(),e=(($(window).scrollTop()+l)/e*100).toFixed(2);element.progress("demo",(e=0==(e=99<e?100:e)?0:e)+"%"),$("#progressTxt").text(e),console.log("percent",e),$(o).css("position",$(window).scrollTop()>l?"fixed":"static"),$(o).css("top",$(window).scrollTop()>l?"60px":""),$("#tocMain").scrollTop($("#tocMain .toc").height()*e*.01)}),$("pre code").each(function(){var e=$(this).attr("class");e="language-"+(null==e||""==e||null==e?"plaintext":e),$(this).attr("class",e)}),$("pre").prepend('<div class="copy-to-clipboard-button"></div>'),$("#article img").on("click",function(){var e=$(this).attr("src"),o=$(this).attr("alt")||"图片预览";layer.open({type:1,title:!1,closeBtn:1,shade:.7,shadeClose:!0,anim:5,content:'<div style="text-align:center;"><img src="'+e+'" alt="'+o+'" style="max-width:90%;max-height:90vh;"></div>'})}),$("#mobileTocToggle").on("click",function(){$("#mobileTocPanel").addClass("active"),$("#mobileTocMask").addClass("active"),$("body").css("overflow","hidden")}),$("#mobileTocClose, #mobileTocMask").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")}),$("#mobileTocBody .toc-link").on("click",function(){$("#mobileTocPanel").removeClass("active"),$("#mobileTocMask").removeClass("active"),$("body").css("overflow","")})})</script></html>
